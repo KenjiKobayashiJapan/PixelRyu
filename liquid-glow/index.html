@@ -27,18 +27,22 @@
     position: absolute;
     top: 24px;
     right: 24px;
-    font-size: 13px;
   }
-  .lang-switch a {
-    color: #8b9bbd;
-    text-decoration: none;
-    padding: 4px 10px;
+  .lang-switch select {
+    background: rgba(122, 176, 255, 0.06);
+    color: #e4ebf5;
     border: 1px solid rgba(122, 176, 255, 0.20);
     border-radius: 4px;
-    margin-left: 4px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
   }
-  .lang-switch a:hover { background: rgba(122, 176, 255, 0.08); color: #e4ebf5; }
-  .lang-switch a.active { color: #e4ebf5; border-color: rgba(122, 176, 255, 0.60); background: rgba(122, 176, 255, 0.12); }
+  .lang-switch select:hover {
+    background: rgba(122, 176, 255, 0.12);
+    border-color: rgba(122, 176, 255, 0.50);
+  }
+  .lang-switch select option { background: #0d1428; color: #e4ebf5; }
   h1 {
     font-size: 56px;
     margin: 0 0 12px;
@@ -89,8 +93,7 @@
 <body>
 <div class="container">
   <div class="lang-switch">
-    <a href="#" data-lang-btn="en" onclick="setLang('en'); return false;">English</a>
-    <a href="#" data-lang-btn="ja" onclick="setLang('ja'); return false;">日本語</a>
+    <select id="lang-select" aria-label="Language"></select>
   </div>
   <h1>Liquid Glow</h1>
   <div class="tagline" data-i18n="tagline">Legal Documents</div>
@@ -101,6 +104,18 @@
   <a href="../" class="back" data-i18n="back">← PixelRyu</a>
 </div>
 <script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
   const i18n = {
     en: {
       title: "Liquid Glow — Legal",
@@ -117,29 +132,99 @@
       link_privacy: "プライバシーポリシー",
       link_terms: "利用規約",
       back: "← PixelRyu へ戻る"
+    },
+    zh: {
+      title: "Liquid Glow — 法律条款",
+      meta_desc: "PixelRyu 出品《Liquid Glow》的法律文件。",
+      tagline: "法律文件",
+      link_privacy: "隐私政策",
+      link_terms: "服务条款",
+      back: "← 返回 PixelRyu"
+    },
+    ko: {
+      title: "Liquid Glow — 법적 고지",
+      meta_desc: "PixelRyu의 'Liquid Glow' 법적 고지.",
+      tagline: "법적 고지",
+      link_privacy: "개인정보 처리방침",
+      link_terms: "서비스 이용약관",
+      back: "← PixelRyu로 돌아가기"
+    },
+    de: {
+      title: "Liquid Glow — Rechtliches",
+      meta_desc: "Rechtsdokumente für Liquid Glow von PixelRyu.",
+      tagline: "Rechtsdokumente",
+      link_privacy: "Datenschutzerklärung",
+      link_terms: "Nutzungsbedingungen",
+      back: "← Zurück zu PixelRyu"
+    },
+    fr: {
+      title: "Liquid Glow — Mentions légales",
+      meta_desc: "Documents légaux pour Liquid Glow, par PixelRyu.",
+      tagline: "Documents légaux",
+      link_privacy: "Politique de confidentialité",
+      link_terms: "Conditions d'utilisation",
+      back: "← Retour à PixelRyu"
+    },
+    es: {
+      title: "Liquid Glow — Legal",
+      meta_desc: "Documentos legales para Liquid Glow, por PixelRyu.",
+      tagline: "Documentos legales",
+      link_privacy: "Política de privacidad",
+      link_terms: "Términos del servicio",
+      back: "← Volver a PixelRyu"
+    },
+    pt: {
+      title: "Liquid Glow — Legal",
+      meta_desc: "Documentos legais de Liquid Glow, da PixelRyu.",
+      tagline: "Documentos legais",
+      link_privacy: "Política de privacidade",
+      link_terms: "Termos de serviço",
+      back: "← Voltar para PixelRyu"
+    },
+    ru: {
+      title: "Liquid Glow — Правовые документы",
+      meta_desc: "Правовые документы для Liquid Glow от PixelRyu.",
+      tagline: "Правовые документы",
+      link_privacy: "Политика конфиденциальности",
+      link_terms: "Условия использования",
+      back: "← Назад к PixelRyu"
     }
   };
 
+  function detectLang() {
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
   function setLang(lang) {
-    if (!i18n[lang]) return;
     const dict = i18n[lang];
+    if (!dict) return;
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (!(key in dict)) return;
       const attr = el.getAttribute('data-i18n-attr');
-      if (attr) {
-        el.setAttribute(attr, dict[key]);
-      } else {
-        el.textContent = dict[key];
-      }
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
     });
-    document.querySelectorAll('[data-lang-btn]').forEach(b => {
-      b.classList.toggle('active', b.getAttribute('data-lang-btn') === lang);
-    });
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
   }
 
-  setLang((navigator.language || '').toLowerCase().startsWith('ja') ? 'ja' : 'en');
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(opt);
+    }
+    setLang(detectLang());
+    sel.addEventListener('change', e => setLang(e.target.value));
+  })();
 </script>
 </body>
 </html>

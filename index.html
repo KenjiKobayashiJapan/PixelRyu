@@ -27,18 +27,22 @@
     position: absolute;
     top: 24px;
     right: 24px;
-    font-size: 13px;
   }
-  .lang-switch a {
-    color: #8b9bbd;
-    text-decoration: none;
-    padding: 4px 10px;
+  .lang-switch select {
+    background: rgba(122, 176, 255, 0.06);
+    color: #e4ebf5;
     border: 1px solid rgba(122, 176, 255, 0.20);
     border-radius: 4px;
-    margin-left: 4px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
   }
-  .lang-switch a:hover { background: rgba(122, 176, 255, 0.08); color: #e4ebf5; }
-  .lang-switch a.active { color: #e4ebf5; border-color: rgba(122, 176, 255, 0.60); background: rgba(122, 176, 255, 0.12); }
+  .lang-switch select:hover {
+    background: rgba(122, 176, 255, 0.12);
+    border-color: rgba(122, 176, 255, 0.50);
+  }
+  .lang-switch select option { background: #0d1428; color: #e4ebf5; }
   .logo-wrap { margin-bottom: 24px; }
   h1 {
     font-size: 72px;
@@ -115,8 +119,7 @@
 <body>
 <div class="container">
   <div class="lang-switch">
-    <a href="#" data-lang-btn="en" onclick="setLang('en'); return false;">English</a>
-    <a href="#" data-lang-btn="ja" onclick="setLang('ja'); return false;">日本語</a>
+    <select id="lang-select" aria-label="Language"></select>
   </div>
   <div class="logo-wrap">
     <h1>PixelRyu</h1>
@@ -134,7 +137,7 @@
       </div>
     </li>
     <li class="game-card">
-      <a href="liquid-glow/" data-i18n="lg_title">Liquid Glow</a>
+      <a href="liquid-glow/">Liquid Glow</a>
       <div class="desc" data-i18n="lg_desc">A meditative sort puzzle. Pour glowing liquids between glass tubes and watch them flow through the cosmos.</div>
       <div class="links">
         <a href="liquid-glow/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
@@ -148,6 +151,18 @@
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
 
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
   const i18n = {
     en: {
       title: "PixelRyu — Calm cosmic puzzle games",
@@ -156,7 +171,6 @@
       games_heading: "Games",
       hotaru_title: "HOTARU — The Lost House",
       hotaru_desc: "A beautiful Japanese horror walking simulator. Follow the fireflies, gather them at the andon, hurl them at yokai — and find the back gate before dawn.",
-      lg_title: "Liquid Glow",
       lg_desc: "A meditative sort puzzle. Pour glowing liquids between glass tubes and watch them flow through the cosmos.",
       link_privacy: "Privacy",
       link_terms: "Terms"
@@ -168,33 +182,123 @@
       games_heading: "ゲーム",
       hotaru_title: "HOTARU — 失われた屋敷",
       hotaru_desc: "美しい和ホラーのウォーキングシミュレーター。蛍を追い、行燈に集め、妖怪に投げ放ち — 夜明けまでに裏門を見つけ出せ。",
-      lg_title: "Liquid Glow",
       lg_desc: "瞑想的なソートパズル。光る液体をガラス管に注ぎ分け、宇宙を流れる様子を眺めましょう。",
       link_privacy: "プライバシー",
       link_terms: "利用規約"
+    },
+    zh: {
+      title: "PixelRyu — 宁静的宇宙益智游戏",
+      meta_desc: "PixelRyu 为移动设备制作宁静而美丽的益智游戏。",
+      tagline: "宁静的宇宙益智游戏",
+      games_heading: "游戏",
+      hotaru_title: "HOTARU — 失落的屋舍",
+      hotaru_desc: "美丽的日式恐怖步行模拟。追逐萤火,将它们汇聚于行灯,投向妖怪 — 在天明前找到后门。",
+      lg_desc: "一款冥想式分类益智游戏。在玻璃管间倾倒发光液体,看它们在宇宙中流淌。",
+      link_privacy: "隐私",
+      link_terms: "条款"
+    },
+    ko: {
+      title: "PixelRyu — 고요한 우주 퍼즐 게임",
+      meta_desc: "PixelRyu는 모바일을 위한 고요하고 아름다운 퍼즐 게임을 만듭니다.",
+      tagline: "고요한 우주 퍼즐 게임",
+      games_heading: "게임",
+      hotaru_title: "HOTARU — 잃어버린 저택",
+      hotaru_desc: "아름다운 일본 호러 워킹 시뮬레이터. 반딧불을 따라가 행등에 모으고, 요괴에게 던져 — 동트기 전에 뒷문을 찾아라.",
+      lg_desc: "명상적인 정렬 퍼즐. 빛나는 액체를 유리관에 부어 우주를 흐르는 모습을 감상하세요.",
+      link_privacy: "개인정보",
+      link_terms: "약관"
+    },
+    de: {
+      title: "PixelRyu — Ruhige kosmische Puzzlespiele",
+      meta_desc: "PixelRyu entwickelt ruhige, schöne Puzzlespiele für mobile Geräte.",
+      tagline: "Ruhige kosmische Puzzlespiele",
+      games_heading: "Spiele",
+      hotaru_title: "HOTARU — Das verlorene Haus",
+      hotaru_desc: "Ein wunderschöner japanischer Horror-Walking-Simulator. Folge den Glühwürmchen, sammle sie am Andon, schleudere sie auf Yokai — und finde das Hintertor vor Tagesanbruch.",
+      lg_desc: "Ein meditatives Sortier-Puzzle. Gieße leuchtende Flüssigkeiten zwischen Glasröhren und beobachte, wie sie durch den Kosmos fließen.",
+      link_privacy: "Datenschutz",
+      link_terms: "Bedingungen"
+    },
+    fr: {
+      title: "PixelRyu — Jeux de réflexion cosmiques apaisants",
+      meta_desc: "PixelRyu crée de beaux jeux de réflexion apaisants pour mobile.",
+      tagline: "Jeux de réflexion cosmiques apaisants",
+      games_heading: "Jeux",
+      hotaru_title: "HOTARU — La Maison Perdue",
+      hotaru_desc: "Un magnifique walking simulator d'horreur japonais. Suis les lucioles, rassemble-les près de l'andon, lance-les sur les yokai — et trouve la porte arrière avant l'aube.",
+      lg_desc: "Un puzzle de tri méditatif. Verse des liquides lumineux entre des tubes de verre et regarde-les couler à travers le cosmos.",
+      link_privacy: "Confidentialité",
+      link_terms: "Conditions"
+    },
+    es: {
+      title: "PixelRyu — Juegos de puzzle cósmicos y serenos",
+      meta_desc: "PixelRyu crea hermosos juegos de puzzle serenos para móvil.",
+      tagline: "Juegos de puzzle cósmicos y serenos",
+      games_heading: "Juegos",
+      hotaru_title: "HOTARU — La Casa Perdida",
+      hotaru_desc: "Un hermoso simulador de caminata de terror japonés. Sigue a las luciérnagas, reúnelas en el andon, arrójalas a los yokai — y encuentra la puerta trasera antes del amanecer.",
+      lg_desc: "Un puzzle de clasificación meditativo. Vierte líquidos brillantes entre tubos de cristal y míralos fluir por el cosmos.",
+      link_privacy: "Privacidad",
+      link_terms: "Términos"
+    },
+    pt: {
+      title: "PixelRyu — Jogos de puzzle cósmicos e tranquilos",
+      meta_desc: "A PixelRyu cria belos jogos de puzzle tranquilos para celular.",
+      tagline: "Jogos de puzzle cósmicos e tranquilos",
+      games_heading: "Jogos",
+      hotaru_title: "HOTARU — A Casa Perdida",
+      hotaru_desc: "Um belo simulador de caminhada de horror japonês. Siga os vaga-lumes, reúna-os no andon, atire-os nos yokai — e encontre o portão dos fundos antes do amanhecer.",
+      lg_desc: "Um puzzle de classificação meditativo. Despeje líquidos brilhantes entre tubos de vidro e veja-os fluir pelo cosmos.",
+      link_privacy: "Privacidade",
+      link_terms: "Termos"
+    },
+    ru: {
+      title: "PixelRyu — Спокойные космические головоломки",
+      meta_desc: "PixelRyu создаёт спокойные и красивые мобильные головоломки.",
+      tagline: "Спокойные космические головоломки",
+      games_heading: "Игры",
+      hotaru_title: "HOTARU — Затерянный дом",
+      hotaru_desc: "Красивый японский хоррор-симулятор ходьбы. Следуй за светлячками, собирай их у андона, бросай в ёкаев — и найди заднюю калитку до рассвета.",
+      lg_desc: "Медитативная сортировочная головоломка. Переливай светящиеся жидкости между стеклянными колбами и наблюдай, как они текут сквозь космос.",
+      link_privacy: "Конфиденциальность",
+      link_terms: "Условия"
     }
   };
 
+  function detectLang() {
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
   function setLang(lang) {
-    if (!i18n[lang]) return;
     const dict = i18n[lang];
+    if (!dict) return;
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');
       if (!(key in dict)) return;
       const attr = el.getAttribute('data-i18n-attr');
-      if (attr) {
-        el.setAttribute(attr, dict[key]);
-      } else {
-        el.textContent = dict[key];
-      }
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
     });
-    document.querySelectorAll('[data-lang-btn]').forEach(b => {
-      b.classList.toggle('active', b.getAttribute('data-lang-btn') === lang);
-    });
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
   }
 
-  setLang((navigator.language || '').toLowerCase().startsWith('ja') ? 'ja' : 'en');
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(opt);
+    }
+    setLang(detectLang());
+    sel.addEventListener('change', e => setLang(e.target.value));
+  })();
 </script>
 </body>
 </html>
