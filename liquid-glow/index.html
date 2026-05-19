@@ -3,8 +3,8 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Liquid Glow — Legal</title>
-<meta name="description" content="Legal documents for Liquid Glow by PixelRyu.">
+<title data-i18n="title">Liquid Glow — Legal</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Legal documents for Liquid Glow by PixelRyu.">
 <style>
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
@@ -21,7 +21,24 @@
     width: 100%;
     padding: 80px 32px;
     text-align: center;
+    position: relative;
   }
+  .lang-switch {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+    font-size: 13px;
+  }
+  .lang-switch a {
+    color: #8b9bbd;
+    text-decoration: none;
+    padding: 4px 10px;
+    border: 1px solid rgba(122, 176, 255, 0.20);
+    border-radius: 4px;
+    margin-left: 4px;
+  }
+  .lang-switch a:hover { background: rgba(122, 176, 255, 0.08); color: #e4ebf5; }
+  .lang-switch a.active { color: #e4ebf5; border-color: rgba(122, 176, 255, 0.60); background: rgba(122, 176, 255, 0.12); }
   h1 {
     font-size: 56px;
     margin: 0 0 12px;
@@ -64,17 +81,65 @@
     font-size: 14px;
   }
   .back:hover { color: #aac0e0; }
+  @media (max-width: 600px) {
+    .lang-switch { top: 16px; right: 16px; }
+  }
 </style>
 </head>
 <body>
 <div class="container">
+  <div class="lang-switch">
+    <a href="#" data-lang-btn="en" onclick="setLang('en'); return false;">English</a>
+    <a href="#" data-lang-btn="ja" onclick="setLang('ja'); return false;">日本語</a>
+  </div>
   <h1>Liquid Glow</h1>
-  <div class="tagline">Legal Documents</div>
+  <div class="tagline" data-i18n="tagline">Legal Documents</div>
   <ul class="links">
-    <li><a href="privacy_policy.html">Privacy Policy</a></li>
-    <li><a href="terms_of_service.html">Terms of Service</a></li>
+    <li><a href="privacy_policy.html" data-i18n="link_privacy">Privacy Policy</a></li>
+    <li><a href="terms_of_service.html" data-i18n="link_terms">Terms of Service</a></li>
   </ul>
-  <a href="../" class="back">← PixelRyu</a>
+  <a href="../" class="back" data-i18n="back">← PixelRyu</a>
 </div>
+<script>
+  const i18n = {
+    en: {
+      title: "Liquid Glow — Legal",
+      meta_desc: "Legal documents for Liquid Glow by PixelRyu.",
+      tagline: "Legal Documents",
+      link_privacy: "Privacy Policy",
+      link_terms: "Terms of Service",
+      back: "← PixelRyu"
+    },
+    ja: {
+      title: "Liquid Glow — 規約",
+      meta_desc: "PixelRyu 提供「Liquid Glow」の規約類。",
+      tagline: "規約類",
+      link_privacy: "プライバシーポリシー",
+      link_terms: "利用規約",
+      back: "← PixelRyu へ戻る"
+    }
+  };
+
+  function setLang(lang) {
+    if (!i18n[lang]) return;
+    const dict = i18n[lang];
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) {
+        el.setAttribute(attr, dict[key]);
+      } else {
+        el.textContent = dict[key];
+      }
+    });
+    document.querySelectorAll('[data-lang-btn]').forEach(b => {
+      b.classList.toggle('active', b.getAttribute('data-lang-btn') === lang);
+    });
+  }
+
+  setLang((navigator.language || '').toLowerCase().startsWith('ja') ? 'ja' : 'en');
+</script>
 </body>
 </html>
