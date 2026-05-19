@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>モグラぽかぽか — PixelRyu</title>
-<meta name="description" content="30秒タップアクション「モグラぽかぽか」公式ページ。プライバシーポリシーと利用規約。">
+<meta name="description" content="モグラぽかぽか — PixelRyu によるシンプルな 30 秒タップアクション。14 日間の Android クローズドテストにご参加ください。">
 <style>
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
@@ -49,18 +49,71 @@
     display: block;
     box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
   }
-  .description {
-    background: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(45, 90, 26, 0.20);
+  .tester-card {
+    background: rgba(255, 255, 255, 0.40);
+    border: 1px solid rgba(45, 90, 26, 0.30);
     border-radius: 16px;
-    padding: 24px 28px;
+    padding: 24px 24px 28px;
     margin: 32px 0 40px;
     text-align: left;
-    font-size: 15px;
-    line-height: 1.75;
-    color: #2d3a23;
+    box-shadow: 0 4px 20px rgba(45, 90, 26, 0.08);
   }
-  .description p { margin: 8px 0; }
+  .tester-heading {
+    font-size: 13px;
+    color: #2d5a1a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 4px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .tester-android-note {
+    display: block;
+    font-size: 11px;
+    color: #4a6b3a;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .tester-card p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #2d3a23;
+    margin: 12px 0;
+  }
+  .tester-section-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #4a8a3a;
+    margin: 20px 0 6px;
+  }
+  .tester-step {
+    display: block;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(45, 90, 26, 0.35);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    color: #2d5a1a;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  .tester-step:hover {
+    background: rgba(255, 255, 255, 0.80);
+    border-color: rgba(45, 90, 26, 0.65);
+    color: #1a3d0c;
+  }
+  .tester-card ul {
+    margin: 6px 0 0;
+    padding-left: 22px;
+    color: #2d3a23;
+    font-size: 14px;
+    line-height: 1.7;
+  }
   .legal-divider {
     font-size: 12px;
     color: #4a6b3a;
@@ -68,37 +121,37 @@
     letter-spacing: 2px;
     margin: 32px 0 12px;
   }
-  .legal-list {
-    list-style: none;
-    padding: 0;
-    margin: 0;
+  .links { list-style: none; padding: 0; margin: 0; }
+  .links li {
+    background: rgba(255, 255, 255, 0.40);
+    border: 1px solid rgba(45, 90, 26, 0.25);
+    border-radius: 14px;
+    margin-bottom: 14px;
+    transition: all 0.25s ease;
   }
-  .legal-list li {
-    margin: 8px 0;
+  .links li:hover {
+    background: rgba(255, 255, 255, 0.65);
+    border-color: rgba(45, 90, 26, 0.55);
   }
-  .legal-list a {
-    display: inline-block;
+  .links a {
     color: #2d5a1a;
     text-decoration: none;
-    padding: 8px 20px;
-    border: 1px solid rgba(45, 90, 26, 0.30);
-    border-radius: 8px;
-    font-size: 14px;
-    background: rgba(255, 255, 255, 0.30);
-    transition: all 0.2s ease;
-  }
-  .legal-list a:hover {
-    background: rgba(255, 255, 255, 0.55);
-    border-color: rgba(45, 90, 26, 0.60);
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    padding: 18px 22px;
   }
   .back {
     display: inline-block;
     margin-top: 32px;
     color: #4a6b3a;
-    font-size: 13px;
     text-decoration: none;
+    font-size: 13px;
   }
   .back:hover { color: #2d5a1a; }
+  @media (max-width: 600px) {
+    .tester-card { padding: 20px 18px 22px; }
+  }
 </style>
 </head>
 <body>
@@ -106,20 +159,39 @@
   <img src="../icon.png" alt="" class="icon">
   <h1>モグラぽかぽか</h1>
   <div class="tagline">Mole Whack</div>
-  <div class="subtitle">30秒タップアクション</div>
+  <div class="subtitle">30 秒タップアクション</div>
 
-  <section class="description">
-    <p>飛び出すモグラをタップして 30 秒間でハイスコアを目指す、シンプルなタップゲーム。</p>
-    <p>説明不要のルール、軽量インストール、すきま時間にぴったり。</p>
+  <section class="tester-card" aria-labelledby="tester-heading">
+    <div id="tester-heading" class="tester-heading">
+      🔨 Android テスター募集中
+      <span class="tester-android-note">📱 Android 専用</span>
+    </div>
+    <p>個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。</p>
+
+    <div class="tester-section-label">🎮 ゲーム内容</div>
+    <p>30 秒間に飛び出すモグラをタップしてハイスコアを目指す、シンプルなタップアクション。説明不要のルール、軽量インストール、すきま時間にぴったりの 1 ラウンド 30 秒のカジュアルゲームです。</p>
+
+    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">
+      🔗 ステップ 1 — テスターグループに参加
+    </a>
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.molewhack" target="_blank" rel="noopener">
+      📱 ステップ 2 — Play ストアでオプトイン
+    </a>
+
+    <div class="tester-section-label">📌 お願いしたいこと</div>
+    <ul>
+      <li>14 日間インストールしたままにしておく</li>
+      <li>数日に一度は起動する（数回で OK）</li>
+      <li>1 セッションあたり 1〜2 分の軽いプレイで十分です</li>
+    </ul>
   </section>
 
-  <div class="legal-divider">Legal Documents</div>
-  <ul class="legal-list">
+  <div class="legal-divider">規約類</div>
+  <ul class="links">
     <li><a href="privacy_policy.html">プライバシーポリシー</a></li>
     <li><a href="terms_of_service.html">利用規約</a></li>
   </ul>
-
-  <a href="../" class="back">← PixelRyu</a>
+  <a href="../" class="back">← PixelRyu へ戻る</a>
 </div>
 </body>
 </html>
