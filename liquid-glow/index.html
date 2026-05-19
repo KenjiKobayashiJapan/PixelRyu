@@ -399,7 +399,13 @@
     }
   };
 
+  const LANG_STORAGE_KEY = 'pixelryu_lang';
+
   function detectLang() {
+    try {
+      const stored = localStorage.getItem(LANG_STORAGE_KEY);
+      if (stored && i18n[stored]) return stored;
+    } catch (e) {}
     const raw = (navigator.language || 'en').toLowerCase();
     for (const l of LANGUAGES) if (raw === l.code) return l.code;
     const head = raw.split(/[-_]/)[0];
@@ -410,6 +416,7 @@
   function setLang(lang) {
     const dict = i18n[lang];
     if (!dict) return;
+    try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {}
     document.documentElement.lang = lang;
     document.querySelectorAll('[data-i18n]').forEach(el => {
       const key = el.getAttribute('data-i18n');

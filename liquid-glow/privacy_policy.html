@@ -178,12 +178,25 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  function showLang(lang) {
+  const LANG_STORAGE_KEY = 'pixelryu_lang';
+  function applyLang(lang) {
+    const display = (lang === 'ja') ? 'ja' : 'en';
     document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
-    document.getElementById('lang-' + lang).classList.add('active');
+    document.getElementById('lang-' + display).classList.add('active');
   }
-  // ブラウザ言語に基づき初期表示
-  if ((navigator.language || '').startsWith('ja')) showLang('ja');
+  function showLang(lang) {
+    applyLang(lang);
+    try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {}
+  }
+  (function init() {
+    let stored = null;
+    try { stored = localStorage.getItem(LANG_STORAGE_KEY); } catch (e) {}
+    if (stored) {
+      applyLang(stored);
+    } else if ((navigator.language || '').startsWith('ja')) {
+      applyLang('ja');
+    }
+  })();
 </script>
 
 </body>
