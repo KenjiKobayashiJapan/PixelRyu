@@ -53,9 +53,81 @@
   .tagline {
     font-size: 16px;
     color: #6c7d9d;
-    margin-bottom: 56px;
+    margin-bottom: 32px;
     text-transform: uppercase;
     letter-spacing: 2px;
+  }
+  .tester-card {
+    background: rgba(122, 176, 255, 0.06);
+    border: 1px solid rgba(122, 176, 255, 0.30);
+    border-radius: 16px;
+    padding: 24px 24px 28px;
+    margin: 32px 0 40px;
+    text-align: left;
+    box-shadow: 0 0 30px rgba(122, 176, 255, 0.05);
+  }
+  .tester-heading {
+    font-size: 13px;
+    color: #7ab0ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 4px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .tester-android-note {
+    display: block;
+    font-size: 11px;
+    color: #6c7d9d;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .tester-card p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #c5d0e6;
+    margin: 12px 0;
+  }
+  .tester-section-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #8b9bbd;
+    margin: 20px 0 6px;
+  }
+  .tester-step {
+    display: block;
+    background: rgba(122, 176, 255, 0.10);
+    border: 1px solid rgba(122, 176, 255, 0.30);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    color: #7ab0ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  .tester-step:hover {
+    background: rgba(122, 176, 255, 0.18);
+    border-color: rgba(122, 176, 255, 0.60);
+    color: #a0c8ff;
+  }
+  .tester-card ul {
+    margin: 6px 0 0;
+    padding-left: 22px;
+    color: #c5d0e6;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .legal-divider {
+    font-size: 13px;
+    color: #6c7d9d;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 8px 0 16px;
   }
   .links { list-style: none; padding: 0; margin: 0; }
   .links li {
@@ -87,6 +159,7 @@
   .back:hover { color: #aac0e0; }
   @media (max-width: 600px) {
     .lang-switch { top: 16px; right: 16px; }
+    .tester-card { padding: 20px 18px 22px; }
   }
 </style>
 </head>
@@ -96,7 +169,34 @@
     <select id="lang-select" aria-label="Language"></select>
   </div>
   <h1>Liquid Glow</h1>
-  <div class="tagline" data-i18n="tagline">Legal Documents</div>
+  <div class="tagline" data-i18n="tagline">Indie Sort Puzzle from Japan</div>
+
+  <section class="tester-card" aria-labelledby="tester-heading">
+    <div id="tester-heading" class="tester-heading">
+      🧪 <span data-i18n="tester_heading">Android Tester Recruitment</span>
+      <span class="tester-android-note">📱 <span data-i18n="tester_android_note">Android only</span></span>
+    </div>
+    <p data-i18n="tester_intro">Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.</p>
+
+    <div class="tester-section-label">🎨 <span data-i18n="tester_what_label">What it is</span></div>
+    <p data-i18n="tester_what">A cozy sort puzzle where you arrange flowing liquid colors. Minimal UI, satisfying mechanics, perfect for quick breaks.</p>
+
+    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">
+      🔗 <span data-i18n="tester_step1_label">Step 1 — Join the tester group</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.liquidglow" target="_blank" rel="noopener">
+      📱 <span data-i18n="tester_step2_label">Step 2 — Opt-in via Play Store</span>
+    </a>
+
+    <div class="tester-section-label">📌 <span data-i18n="tester_ask_label">What I'm asking for</span></div>
+    <ul>
+      <li data-i18n="tester_ask_keep">Keep installed for the full 14 days</li>
+      <li data-i18n="tester_ask_launch">Launch every couple of days (a few times is enough)</li>
+      <li data-i18n="tester_ask_minutes">1–2 minutes of casual play per session works fine</li>
+    </ul>
+  </section>
+
+  <div class="legal-divider" data-i18n="legal_divider">Legal Documents</div>
   <ul class="links">
     <li><a href="privacy_policy.html" data-i18n="link_privacy">Privacy Policy</a></li>
     <li><a href="terms_of_service.html" data-i18n="link_terms">Terms of Service</a></li>
@@ -118,76 +218,184 @@
 
   const i18n = {
     en: {
-      title: "Liquid Glow — Legal",
-      meta_desc: "Legal documents for Liquid Glow by PixelRyu.",
-      tagline: "Legal Documents",
+      title: "Liquid Glow — Indie Sort Puzzle from Japan",
+      meta_desc: "Liquid Glow — a cozy sort puzzle by PixelRyu. Join the 14-day Android closed testing.",
+      tagline: "Indie Sort Puzzle from Japan",
+      legal_divider: "Legal Documents",
       link_privacy: "Privacy Policy",
       link_terms: "Terms of Service",
-      back: "← PixelRyu"
+      back: "← PixelRyu",
+      tester_heading: "Android Tester Recruitment",
+      tester_android_note: "Android only",
+      tester_intro: "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
+      tester_what_label: "What it is",
+      tester_what: "A cozy sort puzzle where you arrange flowing liquid colors. Minimal UI, satisfying mechanics, perfect for quick breaks.",
+      tester_step1_label: "Step 1 — Join the tester group",
+      tester_step2_label: "Step 2 — Opt-in via Play Store",
+      tester_ask_label: "What I'm asking for",
+      tester_ask_keep: "Keep installed for the full 14 days",
+      tester_ask_launch: "Launch every couple of days (a few times is enough)",
+      tester_ask_minutes: "1–2 minutes of casual play per session works fine"
     },
     ja: {
-      title: "Liquid Glow — 規約",
-      meta_desc: "PixelRyu 提供「Liquid Glow」の規約類。",
-      tagline: "規約類",
+      title: "Liquid Glow — 日本のインディーソートパズル",
+      meta_desc: "Liquid Glow — PixelRyu によるほっこり系ソートパズル。14日間の Android クローズドテストにご参加ください。",
+      tagline: "日本のインディーソートパズル",
+      legal_divider: "規約類",
       link_privacy: "プライバシーポリシー",
       link_terms: "利用規約",
-      back: "← PixelRyu へ戻る"
+      back: "← PixelRyu へ戻る",
+      tester_heading: "Android テスター募集中",
+      tester_android_note: "Android 専用",
+      tester_intro: "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
+      tester_what_label: "ゲーム内容",
+      tester_what: "流れる色とりどりの液体を並べ替える、ほっこり系ソートパズル。シンプルな UI と心地よい操作感で、すきま時間にぴったりです。",
+      tester_step1_label: "ステップ 1 — テスターグループに参加",
+      tester_step2_label: "ステップ 2 — Play ストアでオプトイン",
+      tester_ask_label: "お願いしたいこと",
+      tester_ask_keep: "14 日間アンインストールせずに保持",
+      tester_ask_launch: "数日に一度起動 (合計数回で OK)",
+      tester_ask_minutes: "1 回 1〜2 分の軽いプレイで大丈夫"
     },
     zh: {
-      title: "Liquid Glow — 法律条款",
-      meta_desc: "PixelRyu 出品《Liquid Glow》的法律文件。",
-      tagline: "法律文件",
+      title: "Liquid Glow — 来自日本的独立分类益智游戏",
+      meta_desc: "Liquid Glow — PixelRyu 出品的温馨分类益智游戏。欢迎参加为期 14 天的 Android 封闭测试。",
+      tagline: "来自日本的独立分类益智游戏",
+      legal_divider: "法律文件",
       link_privacy: "隐私政策",
       link_terms: "服务条款",
-      back: "← 返回 PixelRyu"
+      back: "← 返回 PixelRyu",
+      tester_heading: "招募 Android 测试者",
+      tester_android_note: "仅限 Android",
+      tester_intro: "我是一名独立开发者,正在为期 14 天的封闭测试招募积极的 Android 测试者。",
+      tester_what_label: "游戏简介",
+      tester_what: "一款温馨的分类益智游戏,整理流动的彩色液体。极简界面、舒适手感,最适合零碎时间。",
+      tester_step1_label: "第一步 — 加入测试者群组",
+      tester_step2_label: "第二步 — 通过 Play 商店加入测试",
+      tester_ask_label: "我希望你能做到",
+      tester_ask_keep: "完整保留 14 天不卸载",
+      tester_ask_launch: "每隔几天启动一次（几次即可）",
+      tester_ask_minutes: "每次随意玩 1-2 分钟即可"
     },
     ko: {
-      title: "Liquid Glow — 법적 고지",
-      meta_desc: "PixelRyu의 'Liquid Glow' 법적 고지.",
-      tagline: "법적 고지",
+      title: "Liquid Glow — 일본의 인디 정렬 퍼즐",
+      meta_desc: "Liquid Glow — PixelRyu의 아늑한 정렬 퍼즐. 14일간의 Android 비공개 테스트에 참여해 보세요.",
+      tagline: "일본의 인디 정렬 퍼즐",
+      legal_divider: "법적 고지",
       link_privacy: "개인정보 처리방침",
       link_terms: "서비스 이용약관",
-      back: "← PixelRyu로 돌아가기"
+      back: "← PixelRyu로 돌아가기",
+      tester_heading: "Android 테스터 모집",
+      tester_android_note: "Android 전용",
+      tester_intro: "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
+      tester_what_label: "게임 소개",
+      tester_what: "흘러내리는 색색의 액체를 정리하는 아늑한 정렬 퍼즐. 미니멀한 UI와 만족스러운 조작감으로 짧은 휴식에 안성맞춤.",
+      tester_step1_label: "1단계 — 테스터 그룹 가입",
+      tester_step2_label: "2단계 — Play 스토어에서 옵트인",
+      tester_ask_label: "부탁드리는 것",
+      tester_ask_keep: "14일 동안 설치 상태 유지",
+      tester_ask_launch: "며칠에 한 번씩 실행 (몇 번이면 충분합니다)",
+      tester_ask_minutes: "한 번에 1~2분 정도의 가벼운 플레이로 충분"
     },
     de: {
-      title: "Liquid Glow — Rechtliches",
-      meta_desc: "Rechtsdokumente für Liquid Glow von PixelRyu.",
-      tagline: "Rechtsdokumente",
+      title: "Liquid Glow — Indie-Sortier-Puzzle aus Japan",
+      meta_desc: "Liquid Glow — ein gemütliches Sortier-Puzzle von PixelRyu. Nimm an der 14-tägigen geschlossenen Android-Testphase teil.",
+      tagline: "Indie-Sortier-Puzzle aus Japan",
+      legal_divider: "Rechtsdokumente",
       link_privacy: "Datenschutzerklärung",
       link_terms: "Nutzungsbedingungen",
-      back: "← Zurück zu PixelRyu"
+      back: "← Zurück zu PixelRyu",
+      tester_heading: "Android-Tester gesucht",
+      tester_android_note: "Nur für Android",
+      tester_intro: "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
+      tester_what_label: "Worum es geht",
+      tester_what: "Ein gemütliches Sortier-Puzzle, in dem du fließende, bunte Flüssigkeiten ordnest. Minimalistische UI, befriedigende Mechanik — perfekt für kurze Pausen.",
+      tester_step1_label: "Schritt 1 — Tester-Gruppe beitreten",
+      tester_step2_label: "Schritt 2 — Über den Play Store anmelden",
+      tester_ask_label: "Worum ich bitte",
+      tester_ask_keep: "14 Tage lang installiert lassen",
+      tester_ask_launch: "Alle paar Tage starten (ein paar Mal reicht)",
+      tester_ask_minutes: "1–2 Minuten lockeres Spielen pro Sitzung reichen aus"
     },
     fr: {
-      title: "Liquid Glow — Mentions légales",
-      meta_desc: "Documents légaux pour Liquid Glow, par PixelRyu.",
-      tagline: "Documents légaux",
+      title: "Liquid Glow — Puzzle de tri indé venu du Japon",
+      meta_desc: "Liquid Glow — un puzzle de tri cosy de PixelRyu. Rejoignez les 14 jours de test fermé Android.",
+      tagline: "Puzzle de tri indé venu du Japon",
+      legal_divider: "Documents légaux",
       link_privacy: "Politique de confidentialité",
       link_terms: "Conditions d'utilisation",
-      back: "← Retour à PixelRyu"
+      back: "← Retour à PixelRyu",
+      tester_heading: "Recherche de testeurs Android",
+      tester_android_note: "Android uniquement",
+      tester_intro: "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
+      tester_what_label: "De quoi il s'agit",
+      tester_what: "Un puzzle de tri cosy où tu organises des liquides colorés en mouvement. UI minimaliste, mécaniques satisfaisantes — parfait pour les courtes pauses.",
+      tester_step1_label: "Étape 1 — Rejoindre le groupe de testeurs",
+      tester_step2_label: "Étape 2 — S'inscrire via le Play Store",
+      tester_ask_label: "Ce que je demande",
+      tester_ask_keep: "Garder installé pendant les 14 jours complets",
+      tester_ask_launch: "Lancer tous les deux jours (quelques fois suffisent)",
+      tester_ask_minutes: "1 à 2 minutes de jeu décontracté par session suffisent"
     },
     es: {
-      title: "Liquid Glow — Legal",
-      meta_desc: "Documentos legales para Liquid Glow, por PixelRyu.",
-      tagline: "Documentos legales",
+      title: "Liquid Glow — Puzzle de clasificación indie desde Japón",
+      meta_desc: "Liquid Glow — un acogedor puzzle de clasificación de PixelRyu. Únete a la fase de pruebas cerradas de Android de 14 días.",
+      tagline: "Puzzle de clasificación indie desde Japón",
+      legal_divider: "Documentos legales",
       link_privacy: "Política de privacidad",
       link_terms: "Términos del servicio",
-      back: "← Volver a PixelRyu"
+      back: "← Volver a PixelRyu",
+      tester_heading: "Buscamos testers de Android",
+      tester_android_note: "Solo Android",
+      tester_intro: "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
+      tester_what_label: "De qué se trata",
+      tester_what: "Un acogedor puzzle de clasificación donde ordenas líquidos de colores en movimiento. UI minimalista, mecánica satisfactoria — perfecto para descansos breves.",
+      tester_step1_label: "Paso 1 — Únete al grupo de testers",
+      tester_step2_label: "Paso 2 — Inscríbete vía Play Store",
+      tester_ask_label: "Lo que pido",
+      tester_ask_keep: "Mantener instalado los 14 días completos",
+      tester_ask_launch: "Abrir cada par de días (unas pocas veces basta)",
+      tester_ask_minutes: "1-2 minutos de juego casual por sesión es suficiente"
     },
     pt: {
-      title: "Liquid Glow — Legal",
-      meta_desc: "Documentos legais de Liquid Glow, da PixelRyu.",
-      tagline: "Documentos legais",
+      title: "Liquid Glow — Puzzle de classificação indie do Japão",
+      meta_desc: "Liquid Glow — um puzzle de classificação aconchegante da PixelRyu. Junte-se ao teste fechado Android de 14 dias.",
+      tagline: "Puzzle de classificação indie do Japão",
+      legal_divider: "Documentos legais",
       link_privacy: "Política de privacidade",
       link_terms: "Termos de serviço",
-      back: "← Voltar para PixelRyu"
+      back: "← Voltar para PixelRyu",
+      tester_heading: "Procuramos testers de Android",
+      tester_android_note: "Apenas Android",
+      tester_intro: "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
+      tester_what_label: "Sobre o jogo",
+      tester_what: "Um puzzle de classificação aconchegante onde você organiza líquidos coloridos. UI minimalista, mecânica satisfatória — perfeito para pausas curtas.",
+      tester_step1_label: "Passo 1 — Entrar no grupo de testers",
+      tester_step2_label: "Passo 2 — Adesão via Play Store",
+      tester_ask_label: "O que peço",
+      tester_ask_keep: "Manter instalado por 14 dias completos",
+      tester_ask_launch: "Abra a cada poucos dias (algumas vezes basta)",
+      tester_ask_minutes: "1-2 minutos de jogo casual por sessão é suficiente"
     },
     ru: {
-      title: "Liquid Glow — Правовые документы",
-      meta_desc: "Правовые документы для Liquid Glow от PixelRyu.",
-      tagline: "Правовые документы",
+      title: "Liquid Glow — Инди-сортировочная головоломка из Японии",
+      meta_desc: "Liquid Glow — уютная сортировочная головоломка от PixelRyu. Присоединяйтесь к 14-дневному закрытому Android-тестированию.",
+      tagline: "Инди-сортировочная головоломка из Японии",
+      legal_divider: "Правовые документы",
       link_privacy: "Политика конфиденциальности",
       link_terms: "Условия использования",
-      back: "← Назад к PixelRyu"
+      back: "← Назад к PixelRyu",
+      tester_heading: "Поиск Android-тестеров",
+      tester_android_note: "Только для Android",
+      tester_intro: "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",
+      tester_what_label: "О чём игра",
+      tester_what: "Уютная сортировочная головоломка, где вы упорядочиваете переливающиеся цветные жидкости. Минималистичный интерфейс, приятная механика — идеально для коротких пауз.",
+      tester_step1_label: "Шаг 1 — Вступить в группу тестеров",
+      tester_step2_label: "Шаг 2 — Подписаться через Play Store",
+      tester_ask_label: "О чём я прошу",
+      tester_ask_keep: "Не удалять приложение все 14 дней",
+      tester_ask_launch: "Запускайте раз в пару дней (нескольких раз достаточно)",
+      tester_ask_minutes: "1–2 минуты неспешной игры за сессию вполне достаточно"
     }
   };
 

@@ -59,10 +59,82 @@
   }
   .subtitle {
     font-size: 14px;
-    color: #6c7d9d;
-    margin-bottom: 56px;
+    color: #9a8a6e;
+    margin-bottom: 32px;
     text-transform: uppercase;
     letter-spacing: 2px;
+  }
+  .tester-card {
+    background: rgba(245, 213, 122, 0.05);
+    border: 1px solid rgba(245, 213, 122, 0.30);
+    border-radius: 16px;
+    padding: 24px 24px 28px;
+    margin: 32px 0 40px;
+    text-align: left;
+    box-shadow: 0 0 30px rgba(245, 213, 122, 0.05);
+  }
+  .tester-heading {
+    font-size: 13px;
+    color: #f5d57a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 4px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .tester-android-note {
+    display: block;
+    font-size: 11px;
+    color: #9a8a6e;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .tester-card p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #d8caa6;
+    margin: 12px 0;
+  }
+  .tester-section-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #c9b370;
+    margin: 20px 0 6px;
+  }
+  .tester-step {
+    display: block;
+    background: rgba(245, 213, 122, 0.10);
+    border: 1px solid rgba(245, 213, 122, 0.30);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    color: #f5d57a;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  .tester-step:hover {
+    background: rgba(245, 213, 122, 0.18);
+    border-color: rgba(245, 213, 122, 0.60);
+    color: #ffe9a0;
+  }
+  .tester-card ul {
+    margin: 6px 0 0;
+    padding-left: 22px;
+    color: #d8caa6;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .legal-divider {
+    font-size: 14px;
+    color: #6c7d9d;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 8px 0 16px;
   }
   .links { list-style: none; padding: 0; margin: 0; }
   .links li {
@@ -94,6 +166,7 @@
   .back:hover { color: #aac0e0; }
   @media (max-width: 600px) {
     .lang-switch { top: 16px; right: 16px; }
+    .tester-card { padding: 20px 18px 22px; }
   }
 </style>
 </head>
@@ -104,7 +177,35 @@
   </div>
   <div class="tagline" data-i18n="tagline">The Lost House</div>
   <h1>HOTARU</h1>
-  <div class="subtitle" data-i18n="subtitle">Legal Documents</div>
+  <div class="subtitle" data-i18n="subtitle">Japanese Horror Walk Sim</div>
+
+  <section class="tester-card" aria-labelledby="tester-heading">
+    <div id="tester-heading" class="tester-heading">
+      🏮 <span data-i18n="tester_heading">Android Tester Recruitment</span>
+      <span class="tester-android-note">📱 <span data-i18n="tester_android_note">Android only</span></span>
+    </div>
+    <p data-i18n="tester_intro">Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.</p>
+
+    <div class="tester-section-label">🕯 <span data-i18n="tester_what_label">What it is</span></div>
+    <p data-i18n="tester_what">A first-person Japanese horror walk-sim set in a "lost house" (maioiga). Gather fireflies under andon lantern light, follow glowing green map fragments, and avoid the yokai that wander the halls. Atmospheric, quiet, and a little unsettling.</p>
+
+    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">
+      🔗 <span data-i18n="tester_step1_label">Step 1 — Join the tester group</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.hotaru" target="_blank" rel="noopener">
+      📱 <span data-i18n="tester_step2_label">Step 2 — Opt-in via Play Store</span>
+    </a>
+
+    <div class="tester-section-label">📌 <span data-i18n="tester_ask_label">What I'm asking for</span></div>
+    <ul>
+      <li data-i18n="tester_ask_keep">Keep installed for the full 14 days</li>
+      <li data-i18n="tester_ask_launch">Launch every couple of days (a few times is enough)</li>
+      <li data-i18n="tester_ask_minutes">2–3 minutes of casual play per session works fine</li>
+      <li data-i18n="tester_ask_headphones">Headphones recommended for the ambience 🎧</li>
+    </ul>
+  </section>
+
+  <div class="legal-divider" data-i18n="legal_divider">Legal Documents</div>
   <ul class="links">
     <li><a href="privacy_policy.html" data-i18n="link_privacy">Privacy Policy</a></li>
     <li><a href="terms_of_service.html" data-i18n="link_terms">Terms of Service</a></li>
@@ -126,85 +227,202 @@
 
   const i18n = {
     en: {
-      title: "HOTARU — Legal",
-      meta_desc: "Legal documents for HOTARU — The Lost House, by PixelRyu.",
+      title: "HOTARU — The Lost House",
+      meta_desc: "HOTARU — a quiet Japanese horror walking simulator by PixelRyu. Join the 14-day Android closed testing.",
       tagline: "The Lost House",
-      subtitle: "Legal Documents",
+      subtitle: "Japanese Horror Walk Sim",
+      legal_divider: "Legal Documents",
       link_privacy: "Privacy Policy",
       link_terms: "Terms of Service",
-      back: "← PixelRyu"
+      back: "← PixelRyu",
+      tester_heading: "Android Tester Recruitment",
+      tester_android_note: "Android only",
+      tester_intro: "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
+      tester_what_label: "What it is",
+      tester_what: "A first-person Japanese horror walk-sim set in a \"lost house\" (maioiga). Gather fireflies under andon lantern light, follow glowing green map fragments, and avoid the yokai that wander the halls. Atmospheric, quiet, and a little unsettling.",
+      tester_step1_label: "Step 1 — Join the tester group",
+      tester_step2_label: "Step 2 — Opt-in via Play Store",
+      tester_ask_label: "What I'm asking for",
+      tester_ask_keep: "Keep installed for the full 14 days",
+      tester_ask_launch: "Launch every couple of days (a few times is enough)",
+      tester_ask_minutes: "2–3 minutes of casual play per session works fine",
+      tester_ask_headphones: "Headphones recommended for the ambience 🎧"
     },
     ja: {
-      title: "HOTARU — 規約",
-      meta_desc: "PixelRyu 提供「HOTARU — 失われた屋敷」の規約類。",
+      title: "HOTARU — 失われた屋敷",
+      meta_desc: "HOTARU — PixelRyu による静かな和ホラーウォーキングシム。14日間の Android クローズドテストにご参加ください。",
       tagline: "失われた屋敷",
-      subtitle: "規約類",
+      subtitle: "和ホラー一人称ウォーキングシム",
+      legal_divider: "規約類",
       link_privacy: "プライバシーポリシー",
       link_terms: "利用規約",
-      back: "← PixelRyu へ戻る"
+      back: "← PixelRyu へ戻る",
+      tester_heading: "Android テスター募集中",
+      tester_android_note: "Android 専用",
+      tester_intro: "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
+      tester_what_label: "ゲーム内容",
+      tester_what: "舞台は「迷い家(まよいが)」。行燈(あんどん)の光のもとで蛍を集め、緑色に光る古地図の断片を辿りながら、屋敷を彷徨う妖怪を避けて出口を目指す、静かで少し不気味な一人称和ホラーです。",
+      tester_step1_label: "ステップ 1 — テスターグループに参加",
+      tester_step2_label: "ステップ 2 — Play ストアでオプトイン",
+      tester_ask_label: "お願いしたいこと",
+      tester_ask_keep: "14 日間アンインストールせずに保持",
+      tester_ask_launch: "数日に一度起動 (合計数回で OK)",
+      tester_ask_minutes: "1 回 2〜3 分の軽いプレイで大丈夫",
+      tester_ask_headphones: "雰囲気を楽しむためヘッドホン推奨 🎧"
     },
     zh: {
-      title: "HOTARU — 法律条款",
-      meta_desc: "PixelRyu 出品《HOTARU — 失落的屋舍》的法律文件。",
+      title: "HOTARU — 失落的屋舍",
+      meta_desc: "HOTARU — PixelRyu 出品的宁静日式恐怖步行模拟。欢迎参加为期 14 天的 Android 封闭测试。",
       tagline: "失落的屋舍",
-      subtitle: "法律文件",
+      subtitle: "日式恐怖步行模拟",
+      legal_divider: "法律文件",
       link_privacy: "隐私政策",
       link_terms: "服务条款",
-      back: "← 返回 PixelRyu"
+      back: "← 返回 PixelRyu",
+      tester_heading: "招募 Android 测试者",
+      tester_android_note: "仅限 Android",
+      tester_intro: "我是一名独立开发者,正在为期 14 天的封闭测试招募积极的 Android 测试者。",
+      tester_what_label: "游戏简介",
+      tester_what: "一款第一人称日式恐怖步行模拟,舞台是「迷家」(maioiga)。在行灯的光辉下收集萤火虫,跟随发出绿光的旧地图碎片,避开徘徊于宅邸中的妖怪。氛围沉静,略带不安。",
+      tester_step1_label: "第一步 — 加入测试者群组",
+      tester_step2_label: "第二步 — 通过 Play 商店加入测试",
+      tester_ask_label: "我希望你能做到",
+      tester_ask_keep: "完整保留 14 天不卸载",
+      tester_ask_launch: "每隔几天启动一次（几次即可）",
+      tester_ask_minutes: "每次随意玩 2-3 分钟即可",
+      tester_ask_headphones: "为了氛围,推荐佩戴耳机 🎧"
     },
     ko: {
-      title: "HOTARU — 법적 고지",
-      meta_desc: "PixelRyu의 'HOTARU — 잃어버린 저택' 법적 고지.",
+      title: "HOTARU — 잃어버린 저택",
+      meta_desc: "HOTARU — PixelRyu의 조용한 일본 호러 워킹 시뮬레이터. 14일간의 Android 비공개 테스트에 참여해 보세요.",
       tagline: "잃어버린 저택",
-      subtitle: "법적 고지",
+      subtitle: "일본 호러 워킹 시뮬레이터",
+      legal_divider: "법적 고지",
       link_privacy: "개인정보 처리방침",
       link_terms: "서비스 이용약관",
-      back: "← PixelRyu로 돌아가기"
+      back: "← PixelRyu로 돌아가기",
+      tester_heading: "Android 테스터 모집",
+      tester_android_note: "Android 전용",
+      tester_intro: "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
+      tester_what_label: "게임 소개",
+      tester_what: "'미오이가(잃어버린 집)'를 무대로 한 1인칭 일본 호러 워킹 시뮬레이터. 행등의 불빛 아래에서 반딧불이를 모으고, 초록빛으로 빛나는 옛 지도 조각을 따라가며, 저택을 떠도는 요괴를 피해 출구를 찾으세요. 조용하고 약간 불안한 분위기의 게임입니다.",
+      tester_step1_label: "1단계 — 테스터 그룹 가입",
+      tester_step2_label: "2단계 — Play 스토어에서 옵트인",
+      tester_ask_label: "부탁드리는 것",
+      tester_ask_keep: "14일 동안 설치 상태 유지",
+      tester_ask_launch: "며칠에 한 번씩 실행 (몇 번이면 충분합니다)",
+      tester_ask_minutes: "한 번에 2~3분 정도의 가벼운 플레이로 충분",
+      tester_ask_headphones: "분위기를 즐기시려면 헤드폰을 추천합니다 🎧"
     },
     de: {
-      title: "HOTARU — Rechtliches",
-      meta_desc: "Rechtsdokumente für HOTARU — Das verlorene Haus von PixelRyu.",
+      title: "HOTARU — Das verlorene Haus",
+      meta_desc: "HOTARU — ein ruhiger japanischer Horror-Walking-Simulator von PixelRyu. Nimm an der 14-tägigen geschlossenen Android-Testphase teil.",
       tagline: "Das verlorene Haus",
-      subtitle: "Rechtsdokumente",
+      subtitle: "Japanischer Horror-Walking-Simulator",
+      legal_divider: "Rechtsdokumente",
       link_privacy: "Datenschutzerklärung",
       link_terms: "Nutzungsbedingungen",
-      back: "← Zurück zu PixelRyu"
+      back: "← Zurück zu PixelRyu",
+      tester_heading: "Android-Tester gesucht",
+      tester_android_note: "Nur für Android",
+      tester_intro: "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
+      tester_what_label: "Worum es geht",
+      tester_what: "Ein japanischer First-Person-Horror-Walk-Sim in einem „verlorenen Haus\" (Maioiga). Sammle Glühwürmchen im Licht der Andon-Laternen, folge leuchtend grünen Karten-Fragmenten und meide die Yokai, die durch die Flure wandeln. Atmosphärisch, ruhig und ein wenig beunruhigend.",
+      tester_step1_label: "Schritt 1 — Tester-Gruppe beitreten",
+      tester_step2_label: "Schritt 2 — Über den Play Store anmelden",
+      tester_ask_label: "Worum ich bitte",
+      tester_ask_keep: "14 Tage lang installiert lassen",
+      tester_ask_launch: "Alle paar Tage starten (ein paar Mal reicht)",
+      tester_ask_minutes: "2–3 Minuten lockeres Spielen pro Sitzung reichen aus",
+      tester_ask_headphones: "Kopfhörer empfohlen für die Atmosphäre 🎧"
     },
     fr: {
-      title: "HOTARU — Mentions légales",
-      meta_desc: "Documents légaux pour HOTARU — La Maison Perdue, par PixelRyu.",
+      title: "HOTARU — La Maison Perdue",
+      meta_desc: "HOTARU — un walking simulator d'horreur japonaise paisible par PixelRyu. Rejoignez les 14 jours de test fermé Android.",
       tagline: "La Maison Perdue",
-      subtitle: "Documents légaux",
+      subtitle: "Walking sim d'horreur japonaise",
+      legal_divider: "Documents légaux",
       link_privacy: "Politique de confidentialité",
       link_terms: "Conditions d'utilisation",
-      back: "← Retour à PixelRyu"
+      back: "← Retour à PixelRyu",
+      tester_heading: "Recherche de testeurs Android",
+      tester_android_note: "Android uniquement",
+      tester_intro: "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
+      tester_what_label: "De quoi il s'agit",
+      tester_what: "Un walking simulator d'horreur japonaise à la première personne dans une « maison perdue » (maioiga). Rassemble des lucioles sous la lumière des lanternes andon, suis les fragments de carte verts luminescents et évite les yokai qui errent dans les couloirs. Atmosphérique, calme et un peu inquiétant.",
+      tester_step1_label: "Étape 1 — Rejoindre le groupe de testeurs",
+      tester_step2_label: "Étape 2 — S'inscrire via le Play Store",
+      tester_ask_label: "Ce que je demande",
+      tester_ask_keep: "Garder installé pendant les 14 jours complets",
+      tester_ask_launch: "Lancer tous les deux jours (quelques fois suffisent)",
+      tester_ask_minutes: "2 à 3 minutes de jeu décontracté par session suffisent",
+      tester_ask_headphones: "Casque recommandé pour l'ambiance 🎧"
     },
     es: {
-      title: "HOTARU — Legal",
-      meta_desc: "Documentos legales para HOTARU — La Casa Perdida, por PixelRyu.",
+      title: "HOTARU — La Casa Perdida",
+      meta_desc: "HOTARU — un tranquilo simulador de caminata de terror japonés por PixelRyu. Únete a la fase de pruebas cerradas de Android de 14 días.",
       tagline: "La Casa Perdida",
-      subtitle: "Documentos legales",
+      subtitle: "Simulador de caminata de terror japonés",
+      legal_divider: "Documentos legales",
       link_privacy: "Política de privacidad",
       link_terms: "Términos del servicio",
-      back: "← Volver a PixelRyu"
+      back: "← Volver a PixelRyu",
+      tester_heading: "Buscamos testers de Android",
+      tester_android_note: "Solo Android",
+      tester_intro: "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
+      tester_what_label: "De qué se trata",
+      tester_what: "Un simulador de caminata de terror japonés en primera persona ambientado en una \"casa perdida\" (maioiga). Reúne luciérnagas bajo la luz de las lámparas andon, sigue los fragmentos de mapa que brillan en verde y evita a los yokai que vagan por los pasillos. Atmosférico, silencioso y algo inquietante.",
+      tester_step1_label: "Paso 1 — Únete al grupo de testers",
+      tester_step2_label: "Paso 2 — Inscríbete vía Play Store",
+      tester_ask_label: "Lo que pido",
+      tester_ask_keep: "Mantener instalado los 14 días completos",
+      tester_ask_launch: "Abrir cada par de días (unas pocas veces basta)",
+      tester_ask_minutes: "2-3 minutos de juego casual por sesión es suficiente",
+      tester_ask_headphones: "Auriculares recomendados para disfrutar del ambiente 🎧"
     },
     pt: {
-      title: "HOTARU — Legal",
-      meta_desc: "Documentos legais de HOTARU — A Casa Perdida, da PixelRyu.",
+      title: "HOTARU — A Casa Perdida",
+      meta_desc: "HOTARU — um simulador de caminhada de horror japonês tranquilo da PixelRyu. Junte-se ao teste fechado Android de 14 dias.",
       tagline: "A Casa Perdida",
-      subtitle: "Documentos legais",
+      subtitle: "Simulador de caminhada de horror japonês",
+      legal_divider: "Documentos legais",
       link_privacy: "Política de privacidade",
       link_terms: "Termos de serviço",
-      back: "← Voltar para PixelRyu"
+      back: "← Voltar para PixelRyu",
+      tester_heading: "Procuramos testers de Android",
+      tester_android_note: "Apenas Android",
+      tester_intro: "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
+      tester_what_label: "Sobre o jogo",
+      tester_what: "Um simulador de caminhada de horror japonês em primeira pessoa ambientado em uma \"casa perdida\" (maioiga). Reúna vaga-lumes sob a luz das lanternas andon, siga os fragmentos de mapa brilhando em verde e evite os yokai que vagam pelos corredores. Atmosférico, silencioso e um tanto perturbador.",
+      tester_step1_label: "Passo 1 — Entrar no grupo de testers",
+      tester_step2_label: "Passo 2 — Adesão via Play Store",
+      tester_ask_label: "O que peço",
+      tester_ask_keep: "Manter instalado por 14 dias completos",
+      tester_ask_launch: "Abra a cada poucos dias (algumas vezes basta)",
+      tester_ask_minutes: "2-3 minutos de jogo casual por sessão é suficiente",
+      tester_ask_headphones: "Recomenda-se o uso de fones para a atmosfera 🎧"
     },
     ru: {
-      title: "HOTARU — Правовые документы",
-      meta_desc: "Правовые документы для HOTARU — Затерянный дом от PixelRyu.",
+      title: "HOTARU — Затерянный дом",
+      meta_desc: "HOTARU — тихий японский хоррор-симулятор ходьбы от PixelRyu. Присоединяйтесь к 14-дневному закрытому Android-тестированию.",
       tagline: "Затерянный дом",
-      subtitle: "Правовые документы",
+      subtitle: "Японский хоррор-симулятор ходьбы",
+      legal_divider: "Правовые документы",
       link_privacy: "Политика конфиденциальности",
       link_terms: "Условия использования",
-      back: "← Назад к PixelRyu"
+      back: "← Назад к PixelRyu",
+      tester_heading: "Поиск Android-тестеров",
+      tester_android_note: "Только для Android",
+      tester_intro: "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",
+      tester_what_label: "О чём игра",
+      tester_what: "Японский хоррор-симулятор ходьбы от первого лица в «затерянном доме» (майоига). Собирайте светлячков в свете фонарей-андон, следуйте за светящимися зелёными фрагментами карты и избегайте ёкаев, бродящих по коридорам. Атмосферно, тихо и немного тревожно.",
+      tester_step1_label: "Шаг 1 — Вступить в группу тестеров",
+      tester_step2_label: "Шаг 2 — Подписаться через Play Store",
+      tester_ask_label: "О чём я прошу",
+      tester_ask_keep: "Не удалять приложение все 14 дней",
+      tester_ask_launch: "Запускайте раз в пару дней (нескольких раз достаточно)",
+      tester_ask_minutes: "2–3 минуты неспешной игры за сессию вполне достаточно",
+      tester_ask_headphones: "Для атмосферы рекомендуются наушники 🎧"
     }
   };
 
