@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>モグラぽかぽか — ゲーム概要</title>
-<meta name="description" content="モグラぽかぽかのゲーム概要。世界観、遊び方、操作方法をスクリーンショットで紹介します。">
+<title data-i18n="title">Mole Whack — Game Overview</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Game overview of Mole Whack: the world, how to play, the stage system, and highlights, with a screenshot.">
 <style>
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
@@ -21,7 +21,21 @@
     width: 100%;
     padding: 64px 32px 80px;
     text-align: center;
+    position: relative;
   }
+  .lang-switch { position: absolute; top: 24px; right: 24px; }
+  .lang-switch select {
+    background: rgba(45, 90, 26, 0.06);
+    color: #2d3a23;
+    border: 1px solid rgba(45, 90, 26, 0.25);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .lang-switch select:hover { background: rgba(45, 90, 26, 0.12); border-color: rgba(45, 90, 26, 0.55); }
+  .lang-switch select option { background: #eaf3df; color: #2d3a23; }
   .icon {
     width: 96px;
     height: 96px;
@@ -67,11 +81,8 @@
     font-weight: 800;
   }
   .section .sub {
-    font-size: 11px;
-    color: #4a6b3a;
-    letter-spacing: 2px;
-    text-transform: uppercase;
-    margin-bottom: 14px;
+    font-size: 16px;
+    margin-bottom: 12px;
   }
   .section p {
     font-size: 14px;
@@ -120,6 +131,7 @@
   .back:hover { color: #2d5a1a; }
   @media (max-width: 600px) {
     .container { padding: 48px 18px 64px; }
+    .lang-switch { top: 16px; right: 16px; }
     .section { padding: 20px 18px 22px; }
     .shot { width: 46%; max-width: 46%; }
   }
@@ -127,54 +139,458 @@
 </head>
 <body>
 <div class="container">
-  <img src="icon.png" alt="モグラぽかぽか アイコン" class="icon">
-  <div class="page-label">Game Overview</div>
+  <div class="lang-switch"><select id="lang-select" aria-label="Language"></select></div>
+  <img src="icon.png" alt="Mole Whack icon" class="icon">
+  <div class="page-label" data-i18n="page_label">Game Overview</div>
   <h1>モグラぽかぽか</h1>
-  <p class="lead">飛び出すモグラをタップして 30 秒でハイスコアを目指す、説明不要のシンプルなタップアクション。すきま時間にぴったりの、ほのぼの暇つぶしゲームです。</p>
+  <p class="lead" data-i18n="lead">Tap the moles within 30 seconds, reach each stage's target, and advance to the next — a stage-based tap action. 100 stages in all, getting faster as you go. A cozy little time-killer you can chip away at in spare moments.</p>
 
   <section class="section">
-    <h2>🌱 世界観</h2>
-    <div class="sub">The World</div>
-    <p>舞台は緑あふれる草原。あちこちの穴からコミカルなモグラがひょっこり顔を出します。暴力的な要素はなく、全年齢で気軽に楽しめる、ほっこりとした雰囲気が魅力です。</p>
+    <h2><span data-i18n="world_label">The World</span></h2>
+    <div class="sub">🌱</div>
+    <p data-i18n="world_text">The stage is a grassy green field where comical moles pop up from holes here and there. No violence at all — a warm, lighthearted vibe that's friendly for all ages.</p>
     <div class="shots">
       <figure class="shot">
-        <img src="screenshots/gameplay.png" alt="草原から飛び出すモグラをタップするプレイ画面">
-        <figcaption>草原に次々と現れるモグラ</figcaption>
+        <img src="screenshots/gameplay.png" alt="Tapping moles popping out of a grassy field">
+        <figcaption data-i18n="cap_gameplay">Moles popping up across the field</figcaption>
       </figure>
     </div>
   </section>
 
   <section class="section">
-    <h2>🔨 操作方法</h2>
-    <div class="sub">How to Play</div>
-    <p>操作はいたってシンプル。画面に出てくるモグラを指でタップするだけです。</p>
+    <h2><span data-i18n="howto_label">How to Play</span></h2>
+    <div class="sub">🔨</div>
+    <p data-i18n="howto_text">Controls are simple. Each stage has a "target" number; hit at least that many moles within the 30-second limit to clear the stage.</p>
     <ol>
-      <li>ゲームを開始すると 30 秒のカウントダウンがスタート</li>
-      <li>穴から飛び出したモグラをすばやくタップ</li>
-      <li>叩いた数だけスコアが加算されていく</li>
-      <li>制限時間内にどれだけ多く叩けるかでハイスコアが決まる</li>
+      <li data-i18n="step1">When the stage starts, a 30-second countdown and the target number appear.</li>
+      <li data-i18n="step2">Quickly tap the moles popping out of their holes (the screen shows "score / target").</li>
+      <li data-i18n="step3">Reach the target within the time limit for a "STAGE CLEAR!"</li>
+      <li data-i18n="step4">Leftover time is added to your score as a Time Bonus (remaining seconds × 10).</li>
     </ol>
-    <div class="shots">
-      <figure class="shot">
-        <img src="screenshots/result.png" alt="ゲーム終了後のスコア表示と PLAY AGAIN ボタン">
-        <figcaption>終了後はスコア表示 → すぐ再挑戦</figcaption>
-      </figure>
-    </div>
   </section>
 
   <section class="section">
-    <h2>✨ 特徴</h2>
-    <div class="sub">Highlights</div>
+    <h2><span data-i18n="stages_label">Take on the Stages</span></h2>
+    <div class="sub">🚩</div>
+    <p data-i18n="stages_intro">Clear stage after stage and aim to conquer all 100.</p>
     <ul>
-      <li>説明不要のシンプルなルール</li>
-      <li>BGM と効果音で爽快なプレイ感</li>
-      <li>ロードもインストールも軽量</li>
-      <li>いつでもどこでも、すきま時間に 1 ラウンド 30 秒</li>
-      <li>完全無料</li>
+      <li data-i18n="stage1">100 stages in all. Clearing one unlocks the next, and progress saves automatically.</li>
+      <li data-i18n="stage2">As you progress, moles appear faster and stay up for less time, and the target rises — difficulty ramps up.</li>
+      <li data-i18n="stage3">Didn't reach the target? Retry as many times as you like.</li>
+      <li data-i18n="stage4">Jump back to any cleared stage anytime from "Stage Select."</li>
     </ul>
   </section>
 
-  <a href="./" class="back">← モグラぽかぽか のページへ戻る</a>
+  <section class="section">
+    <h2><span data-i18n="feat_label">Highlights</span></h2>
+    <div class="sub">✨</div>
+    <ul>
+      <li data-i18n="feat1">100 stages of content to work through</li>
+      <li data-i18n="feat2">Clear-to-unlock progression that's easy to follow (progress auto-saves)</li>
+      <li data-i18n="feat3">Targets and time bonuses make for fun score attacks</li>
+      <li data-i18n="feat4">Snappy feel with BGM and sound effects; light install, completely free</li>
+      <li data-i18n="feat5">Anytime, anywhere — one stage is 30 seconds</li>
+    </ul>
+  </section>
+
+  <a href="./" class="back" data-i18n="back">← Back to Mole Whack</a>
 </div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+    en: {
+      title: "Mole Whack — Game Overview",
+      meta_desc: "Game overview of Mole Whack: the world, how to play, the stage system, and highlights, with a screenshot.",
+      page_label: "Game Overview",
+      lead: "Tap the moles within 30 seconds, reach each stage's target, and advance to the next — a stage-based tap action. 100 stages in all, getting faster as you go. A cozy little time-killer you can chip away at in spare moments.",
+      world_label: "The World",
+      world_text: "The stage is a grassy green field where comical moles pop up from holes here and there. No violence at all — a warm, lighthearted vibe that's friendly for all ages.",
+      howto_label: "How to Play",
+      howto_text: "Controls are simple. Each stage has a \"target\" number; hit at least that many moles within the 30-second limit to clear the stage.",
+      step1: "When the stage starts, a 30-second countdown and the target number appear.",
+      step2: "Quickly tap the moles popping out of their holes (the screen shows \"score / target\").",
+      step3: "Reach the target within the time limit for a \"STAGE CLEAR!\"",
+      step4: "Leftover time is added to your score as a Time Bonus (remaining seconds × 10).",
+      stages_label: "Take on the Stages",
+      stages_intro: "Clear stage after stage and aim to conquer all 100.",
+      stage1: "100 stages in all. Clearing one unlocks the next, and progress saves automatically.",
+      stage2: "As you progress, moles appear faster and stay up for less time, and the target rises — difficulty ramps up.",
+      stage3: "Didn't reach the target? Retry as many times as you like.",
+      stage4: "Jump back to any cleared stage anytime from \"Stage Select.\"",
+      feat_label: "Highlights",
+      feat1: "100 stages of content to work through",
+      feat2: "Clear-to-unlock progression that's easy to follow (progress auto-saves)",
+      feat3: "Targets and time bonuses make for fun score attacks",
+      feat4: "Snappy feel with BGM and sound effects; light install, completely free",
+      feat5: "Anytime, anywhere — one stage is 30 seconds",
+      cap_gameplay: "Moles popping up across the field",
+      back: "← Back to Mole Whack"
+    },
+    ja: {
+      title: "モグラぽかぽか — ゲーム概要",
+      meta_desc: "モグラぽかぽかのゲーム概要。世界観・遊び方・ステージ制・特徴をスクリーンショットで紹介します。",
+      page_label: "ゲーム概要",
+      lead: "飛び出すモグラを 30 秒でタップし、ステージごとの目標数を達成して次のステージへ進む、ステージ制のタップアクション。全 100 ステージ、進むほどモグラの動きはスピードアップ。すきま時間にコツコツ攻略できる、ほのぼの暇つぶしゲームです。",
+      world_label: "世界観",
+      world_text: "舞台は緑あふれる草原。あちこちの穴からコミカルなモグラがひょっこり顔を出します。暴力的な要素はなく、全年齢で気軽に楽しめる、ほっこりとした雰囲気が魅力です。",
+      howto_label: "操作方法",
+      howto_text: "操作はシンプル。各ステージには「目標数（Target）」が設定されていて、制限時間 30 秒以内に目標数以上のモグラを叩けばステージクリアです。",
+      step1: "ステージが始まると 30 秒のカウントダウンと目標数が表示される",
+      step2: "穴から飛び出したモグラをすばやくタップ（画面には「スコア / 目標数」を表示）",
+      step3: "制限時間内に目標数を達成すると「STAGE CLEAR!」",
+      step4: "残り時間はタイムボーナス（残り秒 × 10）としてスコアに加算",
+      stages_label: "ステージに挑戦",
+      stages_intro: "クリアを重ねて、全 100 ステージの攻略を目指しましょう。",
+      stage1: "全 100 ステージ。クリアすると次のステージが解放され、進捗は自動セーブ",
+      stage2: "ステージが進むほどモグラの出現が速く・顔を出す時間が短くなり、目標数も増えて難易度アップ",
+      stage3: "目標に届かなくても「RETRY」で何度でも再挑戦",
+      stage4: "「STAGE SELECT」からクリア済みのステージにいつでも戻れる",
+      feat_label: "特徴",
+      feat1: "全 100 ステージのやりこみ要素",
+      feat2: "クリアで次が解放される、わかりやすいステージ進行（進捗は自動セーブ）",
+      feat3: "目標数とタイムボーナスでスコアアタックも楽しめる",
+      feat4: "BGM と効果音で爽快なプレイ感、軽量インストール・完全無料",
+      feat5: "いつでもどこでも、1 ステージ 30 秒",
+      cap_gameplay: "草原に次々と現れるモグラ",
+      back: "← モグラぽかぽか のページへ戻る"
+    },
+    zh: {
+      title: "Mole Whack — 游戏简介",
+      meta_desc: "Mole Whack 的游戏简介：世界观、玩法、闯关系统与特色,附截图说明。",
+      page_label: "游戏简介",
+      lead: "在 30 秒内点击地鼠,达成各关目标即可进入下一关——一款闯关式点击动作游戏。共 100 关,越往后地鼠动作越快。可在零碎时间里慢慢攻略的温馨小品。",
+      world_label: "世界观",
+      world_text: "舞台是一片绿意盎然的草原,四处的洞口里不时探出滑稽的地鼠。没有任何暴力元素,氛围温暖轻松,老少皆宜。",
+      howto_label: "玩法",
+      howto_text: "操作很简单。每一关都设有「目标数(Target)」,在 30 秒限时内叩打到目标数以上的地鼠即可通关。",
+      step1: "关卡开始时,显示 30 秒倒计时和目标数",
+      step2: "迅速点击从洞口探出的地鼠(画面会显示「分数 / 目标数」)",
+      step3: "在限时内达成目标即「STAGE CLEAR!」",
+      step4: "剩余时间会作为时间奖励(剩余秒数 × 10)计入分数",
+      stages_label: "挑战关卡",
+      stages_intro: "不断通关,向全 100 关发起挑战吧。",
+      stage1: "共 100 关。通关后解锁下一关,进度自动保存",
+      stage2: "关卡越往后,地鼠出现越快、露头时间越短,目标数也增加,难度逐步提升",
+      stage3: "没达成目标也没关系,用「RETRY」可随意重试",
+      stage4: "可从「STAGE SELECT」随时回到已通关的关卡",
+      feat_label: "特色",
+      feat1: "全 100 关的耐玩内容",
+      feat2: "通关解锁下一关,进程一目了然(进度自动保存)",
+      feat3: "目标数与时间奖励,也能享受刷分乐趣",
+      feat4: "BGM 与音效带来爽快手感;安装轻巧、完全免费",
+      feat5: "随时随地,一关只需 30 秒",
+      cap_gameplay: "草原上接连出现的地鼠",
+      back: "← 返回 Mole Whack"
+    },
+    ko: {
+      title: "Mole Whack — 게임 소개",
+      meta_desc: "Mole Whack 게임 소개: 세계관, 플레이 방법, 스테이지 시스템, 특징을 스크린샷과 함께 소개합니다.",
+      page_label: "게임 소개",
+      lead: "30초 안에 두더지를 탭해 각 스테이지의 목표를 달성하고 다음으로 진행하는 스테이지 방식 탭 액션. 총 100스테이지, 갈수록 두더지의 움직임이 빨라집니다. 짬짬이 조금씩 공략할 수 있는 아늑한 시간 때우기 게임입니다.",
+      world_label: "세계관",
+      world_text: "무대는 초록빛 가득한 들판. 여기저기 구멍에서 익살스러운 두더지가 불쑥 고개를 내밉니다. 폭력적인 요소는 전혀 없고, 전 연령이 부담 없이 즐길 수 있는 따뜻하고 훈훈한 분위기가 매력입니다.",
+      howto_label: "플레이 방법",
+      howto_text: "조작은 간단합니다. 각 스테이지에는 '목표 수(Target)'가 정해져 있어, 제한 시간 30초 안에 목표 수 이상의 두더지를 두드리면 스테이지 클리어입니다.",
+      step1: "스테이지가 시작되면 30초 카운트다운과 목표 수가 표시됩니다",
+      step2: "구멍에서 튀어나온 두더지를 재빠르게 탭(화면에 '점수 / 목표 수' 표시)",
+      step3: "제한 시간 내 목표를 달성하면 'STAGE CLEAR!'",
+      step4: "남은 시간은 타임 보너스(남은 초 × 10)로 점수에 가산",
+      stages_label: "스테이지에 도전",
+      stages_intro: "클리어를 거듭하며 전 100스테이지 공략을 노려보세요.",
+      stage1: "총 100스테이지. 클리어하면 다음 스테이지가 해금되고 진행 상황은 자동 저장",
+      stage2: "스테이지가 진행될수록 두더지가 더 빨리 나오고 머무는 시간이 짧아지며, 목표 수도 늘어 난이도가 상승",
+      stage3: "목표에 못 미쳐도 'RETRY'로 몇 번이든 재도전",
+      stage4: "'STAGE SELECT'에서 클리어한 스테이지로 언제든 돌아갈 수 있어요",
+      feat_label: "특징",
+      feat1: "전 100스테이지의 풍성한 콘텐츠",
+      feat2: "클리어로 다음이 해금되는 알기 쉬운 진행(진행 상황 자동 저장)",
+      feat3: "목표 수와 타임 보너스로 스코어 어택도 즐길 수 있음",
+      feat4: "BGM과 효과음의 경쾌한 손맛, 가벼운 설치·완전 무료",
+      feat5: "언제 어디서나, 한 스테이지 30초",
+      cap_gameplay: "들판에 잇따라 나타나는 두더지",
+      back: "← Mole Whack로 돌아가기"
+    },
+    hi: {
+      title: "Mole Whack — गेम अवलोकन",
+      meta_desc: "Mole Whack का गेम अवलोकन: दुनिया, खेलने का तरीका, स्टेज सिस्टम और ख़ासियतें, स्क्रीनशॉट के साथ।",
+      page_label: "गेम अवलोकन",
+      lead: "30 सेकंड में छछूंदरों को टैप करें, हर स्टेज का लक्ष्य पूरा करें और अगले पर बढ़ें — एक स्टेज-आधारित टैप एक्शन। कुल 100 स्टेज, आगे बढ़ते-बढ़ते छछूंदर तेज़ होते जाते हैं। फ़ुरसत के पलों में थोड़ा-थोड़ा खेलने लायक एक प्यारा टाइम-पास।",
+      world_label: "दुनिया",
+      world_text: "मंच है हरा-भरा मैदान, जहाँ जगह-जगह बिलों से मज़ेदार छछूंदर अचानक सिर निकालते हैं। कोई हिंसा नहीं — एक गरम, हल्का-फुल्का माहौल जो हर उम्र के लिए ठीक है।",
+      howto_label: "कैसे खेलें",
+      howto_text: "नियंत्रण आसान हैं। हर स्टेज पर एक \"लक्ष्य संख्या (Target)\" होती है; 30 सेकंड की समय-सीमा में उतने या उससे ज़्यादा छछूंदर ठोक दें तो स्टेज क्लियर।",
+      step1: "स्टेज शुरू होते ही 30 सेकंड का काउंटडाउन और लक्ष्य संख्या दिखती है",
+      step2: "बिलों से निकलते छछूंदरों को फटाफट टैप करें (स्क्रीन पर \"स्कोर / लक्ष्य\" दिखता है)",
+      step3: "समय रहते लक्ष्य पूरा करें तो \"STAGE CLEAR!\"",
+      step4: "बचा हुआ समय टाइम बोनस (बचे सेकंड × 10) के रूप में स्कोर में जुड़ता है",
+      stages_label: "स्टेज की चुनौती",
+      stages_intro: "एक के बाद एक क्लियर करते जाएँ और पूरे 100 स्टेज जीतने का लक्ष्य रखें।",
+      stage1: "कुल 100 स्टेज। एक क्लियर करने पर अगला अनलॉक होता है, और प्रगति अपने आप सेव होती है",
+      stage2: "जैसे-जैसे आगे बढ़ें, छछूंदर तेज़ी से निकलते और कम देर रुकते हैं, लक्ष्य भी बढ़ता है — कठिनाई बढ़ती जाती है",
+      stage3: "लक्ष्य न छू पाएँ तो \"RETRY\" से जितनी बार चाहें फिर कोशिश करें",
+      stage4: "\"STAGE SELECT\" से किसी भी क्लियर किए स्टेज पर कभी भी लौट सकते हैं",
+      feat_label: "ख़ासियतें",
+      feat1: "पूरे 100 स्टेज की भरपूर सामग्री",
+      feat2: "क्लियर करो-अनलॉक करो वाली आसान प्रगति (प्रगति अपने आप सेव)",
+      feat3: "लक्ष्य और टाइम बोनस से स्कोर अटैक का मज़ा",
+      feat4: "BGM और साउंड इफ़ेक्ट्स से चुस्त एहसास; हल्की इंस्टॉल, पूरी तरह मुफ़्त",
+      feat5: "कभी भी, कहीं भी — एक स्टेज 30 सेकंड",
+      cap_gameplay: "मैदान में लगातार निकलते छछूंदर",
+      back: "← Mole Whack पर वापस"
+    },
+    id: {
+      title: "Mole Whack — Ikhtisar Game",
+      meta_desc: "Ikhtisar game Mole Whack: dunia, cara bermain, sistem stage, dan keunggulan, lengkap dengan tangkapan layar.",
+      page_label: "Ikhtisar Game",
+      lead: "Ketuk tikus tanah dalam 30 detik, capai target tiap stage, dan maju ke berikutnya — aksi ketuk berbasis stage. Total 100 stage, makin cepat seiring kemajuanmu. Pengisi waktu mungil yang bisa kamu cicil di sela-sela waktu.",
+      world_label: "Dunia",
+      world_text: "Latarnya padang rumput hijau tempat tikus tanah lucu bermunculan dari lubang di sana-sini. Tanpa kekerasan sama sekali — suasana hangat dan ringan yang cocok untuk segala usia.",
+      howto_label: "Cara Bermain",
+      howto_text: "Kontrolnya sederhana. Setiap stage punya angka \"target\"; pukul tikus tanah sebanyak target itu atau lebih dalam batas 30 detik untuk menyelesaikan stage.",
+      step1: "Saat stage dimulai, muncul hitung mundur 30 detik dan angka target",
+      step2: "Ketuk cepat tikus tanah yang muncul dari lubang (layar menampilkan \"skor / target\")",
+      step3: "Capai target dalam batas waktu untuk \"STAGE CLEAR!\"",
+      step4: "Sisa waktu ditambahkan ke skor sebagai Time Bonus (sisa detik × 10)",
+      stages_label: "Tantang Stage-nya",
+      stages_intro: "Selesaikan stage demi stage dan taklukkan seluruh 100 stage.",
+      stage1: "Total 100 stage. Menyelesaikan satu membuka berikutnya, dan progres tersimpan otomatis",
+      stage2: "Makin maju, tikus tanah muncul lebih cepat dan menongol lebih singkat, target pun naik — kesulitan meningkat",
+      stage3: "Tak mencapai target? Coba lagi sepuasnya lewat \"RETRY\"",
+      stage4: "Lompat kembali ke stage yang sudah selesai kapan saja lewat \"STAGE SELECT\"",
+      feat_label: "Keunggulan",
+      feat1: "Konten 100 stage untuk ditamatkan",
+      feat2: "Progres selesai-buka yang mudah diikuti (progres tersimpan otomatis)",
+      feat3: "Target dan time bonus bikin score attack seru",
+      feat4: "Terasa renyah dengan BGM dan efek suara; instal ringan, sepenuhnya gratis",
+      feat5: "Kapan saja, di mana saja — satu stage 30 detik",
+      cap_gameplay: "Tikus tanah bermunculan di padang",
+      back: "← Kembali ke Mole Whack"
+    },
+    de: {
+      title: "Mole Whack — Spielübersicht",
+      meta_desc: "Spielübersicht zu Mole Whack: die Welt, das Gameplay, das Stage-System und die Highlights, mit Screenshot.",
+      page_label: "Spielübersicht",
+      lead: "Tippe die Maulwürfe in 30 Sekunden, erreiche das Ziel jeder Stage und komm weiter — eine Tap-Action mit Stages. Insgesamt 100 Stages, die mit der Zeit schneller werden. Ein gemütlicher Zeitvertreib für zwischendurch.",
+      world_label: "Die Welt",
+      world_text: "Schauplatz ist eine grüne Wiese, auf der hier und da komische Maulwürfe aus Löchern auftauchen. Keinerlei Gewalt — eine warme, unbeschwerte Stimmung, die für alle Altersgruppen geeignet ist.",
+      howto_label: "So wird gespielt",
+      howto_text: "Die Steuerung ist simpel. Jede Stage hat eine \"Ziel\"-Zahl; triff innerhalb des 30-Sekunden-Limits mindestens so viele Maulwürfe, um die Stage zu schaffen.",
+      step1: "Zu Beginn der Stage erscheinen ein 30-Sekunden-Countdown und die Zielzahl",
+      step2: "Tippe schnell die aus den Löchern auftauchenden Maulwürfe (der Bildschirm zeigt \"Punkte / Ziel\")",
+      step3: "Erreiche das Ziel rechtzeitig für ein \"STAGE CLEAR!\"",
+      step4: "Verbleibende Zeit wird als Time Bonus (Restsekunden × 10) zu den Punkten addiert",
+      stages_label: "Stell dich den Stages",
+      stages_intro: "Schaffe Stage um Stage und nimm dir vor, alle 100 zu meistern.",
+      stage1: "Insgesamt 100 Stages. Eine zu schaffen schaltet die nächste frei, und der Fortschritt wird automatisch gespeichert",
+      stage2: "Je weiter du kommst, desto schneller erscheinen die Maulwürfe und bleiben kürzer oben, und das Ziel steigt — der Schwierigkeitsgrad zieht an",
+      stage3: "Ziel nicht erreicht? Mit \"RETRY\" beliebig oft erneut versuchen",
+      stage4: "Über \"STAGE SELECT\" jederzeit zu einer geschafften Stage zurückspringen",
+      feat_label: "Highlights",
+      feat1: "100 Stages an Inhalt zum Durchspielen",
+      feat2: "Leicht nachvollziehbarer Schaffe-und-schalte-frei-Fortschritt (Fortschritt speichert automatisch)",
+      feat3: "Ziele und Time-Boni machen Score-Attacks zum Spaß",
+      feat4: "Knackiges Gefühl mit BGM und Soundeffekten; schlanke Installation, völlig kostenlos",
+      feat5: "Jederzeit, überall — eine Stage dauert 30 Sekunden",
+      cap_gameplay: "Maulwürfe tauchen über die Wiese verteilt auf",
+      back: "← Zurück zu Mole Whack"
+    },
+    fr: {
+      title: "Mole Whack — Aperçu du jeu",
+      meta_desc: "Aperçu du jeu Mole Whack : l'univers, comment jouer, le système de niveaux et les points forts, avec capture d'écran.",
+      page_label: "Aperçu du jeu",
+      lead: "Tape les taupes en 30 secondes, atteins l'objectif de chaque niveau et passe au suivant — une action de tap par niveaux. 100 niveaux en tout, de plus en plus rapides. Un petit passe-temps cosy à grignoter dans les moments creux.",
+      world_label: "L'univers",
+      world_text: "Le décor est une prairie verdoyante où des taupes comiques surgissent des trous ici et là. Aucune violence — une ambiance chaleureuse et légère, adaptée à tous les âges.",
+      howto_label: "Comment jouer",
+      howto_text: "Les commandes sont simples. Chaque niveau a un nombre \"objectif\" ; tape au moins autant de taupes dans la limite de 30 secondes pour réussir le niveau.",
+      step1: "Au début du niveau, un compte à rebours de 30 secondes et l'objectif s'affichent",
+      step2: "Tape vite les taupes qui sortent des trous (l'écran montre \"score / objectif\")",
+      step3: "Atteins l'objectif à temps pour un \"STAGE CLEAR!\"",
+      step4: "Le temps restant est ajouté au score en bonus de temps (secondes restantes × 10)",
+      stages_label: "Relève les niveaux",
+      stages_intro: "Enchaîne les niveaux et vise à conquérir les 100.",
+      stage1: "100 niveaux en tout. En réussir un débloque le suivant, et la progression est sauvegardée automatiquement",
+      stage2: "Plus tu avances, plus les taupes sortent vite et restent peu de temps, et l'objectif monte — la difficulté grimpe",
+      stage3: "Objectif manqué ? Recommence autant que tu veux avec \"RETRY\"",
+      stage4: "Reviens à tout moment à un niveau réussi via \"STAGE SELECT\"",
+      feat_label: "Points forts",
+      feat1: "100 niveaux de contenu à parcourir",
+      feat2: "Une progression réussir-pour-débloquer facile à suivre (progression sauvegardée auto)",
+      feat3: "Objectifs et bonus de temps pour des score-attacks amusants",
+      feat4: "Sensations vives avec musique et effets sonores ; installation légère, entièrement gratuit",
+      feat5: "À tout moment, partout — un niveau dure 30 secondes",
+      cap_gameplay: "Des taupes surgissent un peu partout dans le pré",
+      back: "← Retour à Mole Whack"
+    },
+    it: {
+      title: "Mole Whack — Panoramica del gioco",
+      meta_desc: "Panoramica di Mole Whack: il mondo, come si gioca, il sistema a livelli e i punti forti, con screenshot.",
+      page_label: "Panoramica del gioco",
+      lead: "Tocca le talpe in 30 secondi, raggiungi l'obiettivo di ogni livello e avanza — un'action a tocchi a livelli. 100 livelli in tutto, sempre più veloci. Un passatempo accogliente da centellinare nei ritagli di tempo.",
+      world_label: "Il mondo",
+      world_text: "L'ambientazione è un prato verde dove talpe buffe spuntano dai buchi qua e là. Nessuna violenza — un'atmosfera calda e spensierata, adatta a tutte le età.",
+      howto_label: "Come si gioca",
+      howto_text: "I comandi sono semplici. Ogni livello ha un numero \"obiettivo\"; colpisci almeno quel numero di talpe entro i 30 secondi per superare il livello.",
+      step1: "All'inizio del livello compaiono un conto alla rovescia di 30 secondi e l'obiettivo",
+      step2: "Tocca in fretta le talpe che spuntano dai buchi (lo schermo mostra \"punteggio / obiettivo\")",
+      step3: "Raggiungi l'obiettivo in tempo per uno \"STAGE CLEAR!\"",
+      step4: "Il tempo rimasto si aggiunge al punteggio come Time Bonus (secondi rimasti × 10)",
+      stages_label: "Affronta i livelli",
+      stages_intro: "Supera un livello dopo l'altro e punta a conquistarli tutti e 100.",
+      stage1: "100 livelli in tutto. Superarne uno sblocca il successivo e i progressi si salvano automaticamente",
+      stage2: "Più avanzi, più le talpe spuntano veloci e restano poco, e l'obiettivo sale — la difficoltà cresce",
+      stage3: "Obiettivo mancato? Riprova quante volte vuoi con \"RETRY\"",
+      stage4: "Torna a un livello superato quando vuoi da \"STAGE SELECT\"",
+      feat_label: "Punti forti",
+      feat1: "100 livelli di contenuto da affrontare",
+      feat2: "Progressione supera-e-sblocca facile da seguire (progressi salvati in automatico)",
+      feat3: "Obiettivi e time bonus rendono divertenti gli score attack",
+      feat4: "Feeling reattivo con BGM ed effetti sonori; installazione leggera, del tutto gratis",
+      feat5: "Sempre e ovunque — un livello dura 30 secondi",
+      cap_gameplay: "Talpe che spuntano sparse nel prato",
+      back: "← Torna a Mole Whack"
+    },
+    es: {
+      title: "Mole Whack — Descripción del juego",
+      meta_desc: "Descripción del juego Mole Whack: el mundo, cómo se juega, el sistema de niveles y lo más destacado, con captura.",
+      page_label: "Descripción del juego",
+      lead: "Toca a los topos en 30 segundos, alcanza el objetivo de cada nivel y avanza — una acción de toques por niveles. 100 niveles en total, cada vez más rápidos. Un pasatiempo entrañable para ir avanzando en los ratos libres.",
+      world_label: "El mundo",
+      world_text: "El escenario es una pradera verde donde topos cómicos asoman por los agujeros aquí y allá. Sin violencia alguna — un ambiente cálido y desenfadado, apto para todas las edades.",
+      howto_label: "Cómo se juega",
+      howto_text: "Los controles son simples. Cada nivel tiene un número \"objetivo\"; golpea al menos esa cantidad de topos dentro del límite de 30 segundos para superar el nivel.",
+      step1: "Al empezar el nivel aparecen una cuenta atrás de 30 segundos y el objetivo",
+      step2: "Toca rápido a los topos que salen de los agujeros (la pantalla muestra \"puntuación / objetivo\")",
+      step3: "Alcanza el objetivo a tiempo para un \"STAGE CLEAR!\"",
+      step4: "El tiempo restante se suma a la puntuación como bonus de tiempo (segundos restantes × 10)",
+      stages_label: "Afronta los niveles",
+      stages_intro: "Supera nivel tras nivel y proponte conquistar los 100.",
+      stage1: "100 niveles en total. Superar uno desbloquea el siguiente, y el progreso se guarda automáticamente",
+      stage2: "Cuanto más avanzas, más rápido salen los topos y menos tiempo asoman, y el objetivo sube — la dificultad aumenta",
+      stage3: "¿No llegaste al objetivo? Reintenta las veces que quieras con \"RETRY\"",
+      stage4: "Vuelve a cualquier nivel superado cuando quieras desde \"STAGE SELECT\"",
+      feat_label: "Lo más destacado",
+      feat1: "100 niveles de contenido por completar",
+      feat2: "Progresión de superar-para-desbloquear fácil de seguir (el progreso se guarda solo)",
+      feat3: "Objetivos y bonus de tiempo para divertidos score attacks",
+      feat4: "Sensación ágil con música y efectos de sonido; instalación ligera, totalmente gratis",
+      feat5: "En cualquier momento y lugar — un nivel dura 30 segundos",
+      cap_gameplay: "Topos que asoman por toda la pradera",
+      back: "← Volver a Mole Whack"
+    },
+    pt: {
+      title: "Mole Whack — Visão geral do jogo",
+      meta_desc: "Visão geral do Mole Whack: o mundo, como jogar, o sistema de fases e os destaques, com captura de tela.",
+      page_label: "Visão geral do jogo",
+      lead: "Toque nas toupeiras em 30 segundos, alcance o alvo de cada fase e avance — uma ação de toques por fases. 100 fases no total, cada vez mais rápidas. Um passatempo aconchegante para ir avançando nos momentos livres.",
+      world_label: "O mundo",
+      world_text: "O cenário é um campo verde onde toupeiras cômicas surgem dos buracos aqui e ali. Sem nenhuma violência — um clima caloroso e leve, adequado para todas as idades.",
+      howto_label: "Como jogar",
+      howto_text: "Os controles são simples. Cada fase tem um número \"alvo\"; acerte pelo menos essa quantidade de toupeiras dentro do limite de 30 segundos para concluir a fase.",
+      step1: "Ao iniciar a fase, aparecem uma contagem de 30 segundos e o número-alvo",
+      step2: "Toque rápido nas toupeiras que saem dos buracos (a tela mostra \"pontuação / alvo\")",
+      step3: "Alcance o alvo a tempo para um \"STAGE CLEAR!\"",
+      step4: "O tempo restante é somado à pontuação como Time Bonus (segundos restantes × 10)",
+      stages_label: "Encare as fases",
+      stages_intro: "Conclua fase após fase e mire conquistar todas as 100.",
+      stage1: "100 fases no total. Concluir uma desbloqueia a próxima, e o progresso é salvo automaticamente",
+      stage2: "Quanto mais você avança, mais rápido as toupeiras surgem e menos tempo ficam de fora, e o alvo sobe — a dificuldade aumenta",
+      stage3: "Não alcançou o alvo? Tente de novo quantas vezes quiser com \"RETRY\"",
+      stage4: "Volte a qualquer fase concluída quando quiser em \"STAGE SELECT\"",
+      feat_label: "Destaques",
+      feat1: "100 fases de conteúdo para concluir",
+      feat2: "Progressão concluir-para-desbloquear fácil de acompanhar (progresso salvo automaticamente)",
+      feat3: "Alvos e time bonus tornam os score attacks divertidos",
+      feat4: "Sensação ágil com BGM e efeitos sonoros; instalação leve, totalmente grátis",
+      feat5: "A qualquer hora, em qualquer lugar — uma fase dura 30 segundos",
+      cap_gameplay: "Toupeiras surgindo pelo campo",
+      back: "← Voltar para Mole Whack"
+    },
+    ru: {
+      title: "Mole Whack — Об игре",
+      meta_desc: "Об игре Mole Whack: мир, как играть, система этапов и ключевые особенности, со скриншотом.",
+      page_label: "Об игре",
+      lead: "Бейте кротов за 30 секунд, достигайте цели каждого этапа и продвигайтесь дальше — тап-экшен по этапам. Всего 100 этапов, и они становятся быстрее. Уютная игра-таймкиллер, которую можно проходить понемногу в свободные минуты.",
+      world_label: "Мир",
+      world_text: "Действие происходит на зелёном лугу, где из норок тут и там забавно высовываются кроты. Никакого насилия — тёплая, лёгкая атмосфера, подходящая для всех возрастов.",
+      howto_label: "Как играть",
+      howto_text: "Управление простое. У каждого этапа есть число-\"цель\"; выбейте хотя бы столько кротов за 30 секунд, чтобы пройти этап.",
+      step1: "В начале этапа появляются 30-секундный отсчёт и число цели",
+      step2: "Быстро нажимайте на кротов, высовывающихся из норок (на экране — \"счёт / цель\")",
+      step3: "Достигните цели вовремя — и получите \"STAGE CLEAR!\"",
+      step4: "Оставшееся время добавляется к счёту как бонус времени (оставшиеся секунды × 10)",
+      stages_label: "Бросьте вызов этапам",
+      stages_intro: "Проходите этап за этапом и стремитесь покорить все 100.",
+      stage1: "Всего 100 этапов. Прохождение одного открывает следующий, а прогресс сохраняется автоматически",
+      stage2: "Чем дальше, тем быстрее появляются кроты и меньше времени торчат наружу, а цель растёт — сложность повышается",
+      stage3: "Не дотянули до цели? Повторяйте сколько угодно через \"RETRY\"",
+      stage4: "В любой момент возвращайтесь к пройденному этапу через \"STAGE SELECT\"",
+      feat_label: "Особенности",
+      feat1: "100 этапов контента для прохождения",
+      feat2: "Понятная система «пройди-и-открой» (прогресс сохраняется автоматически)",
+      feat3: "Цели и бонусы времени делают увлекательным забег за очками",
+      feat4: "Бодрое ощущение с музыкой и звуками; лёгкая установка, полностью бесплатно",
+      feat5: "В любое время и в любом месте — один этап 30 секунд",
+      cap_gameplay: "Кроты появляются по всему лугу",
+      back: "← Назад к Mole Whack"
+    }
+  };
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang';
+
+  function detectLang() {
+    try {
+      const stored = localStorage.getItem(LANG_STORAGE_KEY);
+      if (stored && i18n[stored]) return stored;
+    } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {}
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(opt);
+    }
+    setLang(detectLang());
+    sel.addEventListener('change', e => setLang(e.target.value));
+  })();
+</script>
 </body>
 </html>
