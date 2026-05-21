@@ -44,6 +44,13 @@
   }
   .lang-switch select option { background: #0d1428; color: #e4ebf5; }
   .logo-wrap { margin-bottom: 24px; }
+  .brand-icon {
+    width: 132px;
+    height: 132px;
+    display: block;
+    margin: 22px auto 0;
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
+  }
   h1 {
     font-size: 72px;
     margin: 0;
@@ -119,6 +126,7 @@
   }
   @media (max-width: 600px) {
     h1 { font-size: 56px; }
+    .brand-icon { width: 104px; height: 104px; }
     .container { padding: 60px 24px; }
     .lang-switch { top: 16px; right: 16px; }
   }
@@ -131,6 +139,7 @@
   </div>
   <div class="logo-wrap">
     <h1>PixelRyu</h1>
+    <img src="icon.png" alt="PixelRyu" class="brand-icon">
   </div>
   <div class="tagline" data-i18n="tagline">Calm cosmic puzzle games</div>
 
