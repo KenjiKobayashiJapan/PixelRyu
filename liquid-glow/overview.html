@@ -1,0 +1,504 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">Liquid Glow — Game Overview</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Game overview of Liquid Glow: the world, how to play, and highlights, with screenshots.">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: radial-gradient(ellipse at top, #172244 0%, #080d1f 50%, #02040c 100%);
+    color: #e4ebf5;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .container {
+    max-width: 620px;
+    width: 100%;
+    padding: 64px 32px 80px;
+    text-align: center;
+    position: relative;
+  }
+  .lang-switch { position: absolute; top: 24px; right: 24px; }
+  .lang-switch select {
+    background: rgba(122, 176, 255, 0.06);
+    color: #e4ebf5;
+    border: 1px solid rgba(122, 176, 255, 0.20);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .lang-switch select:hover { background: rgba(122, 176, 255, 0.12); border-color: rgba(122, 176, 255, 0.50); }
+  .lang-switch select option { background: #0d1428; color: #e4ebf5; }
+  h1 {
+    font-size: 44px;
+    margin: 0 0 6px;
+    color: #d8e3f5;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .page-label {
+    font-size: 13px;
+    color: #6c7d9d;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+  }
+  .lead {
+    font-size: 15px;
+    line-height: 1.8;
+    color: #c5d0e6;
+    margin: 14px auto 8px;
+    max-width: 480px;
+  }
+  .section {
+    background: rgba(122, 176, 255, 0.06);
+    border: 1px solid rgba(122, 176, 255, 0.30);
+    border-radius: 16px;
+    padding: 24px 24px 28px;
+    margin: 28px 0;
+    text-align: left;
+    box-shadow: 0 0 30px rgba(122, 176, 255, 0.05);
+  }
+  .section h2 { font-size: 18px; color: #d8e3f5; margin: 0 0 4px; font-weight: 800; }
+  .section .sub { font-size: 11px; color: #6c7d9d; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  .section p { font-size: 14px; line-height: 1.75; color: #c5d0e6; margin: 12px 0; }
+  .section ol, .section ul { margin: 12px 0 0; padding-left: 22px; font-size: 14px; line-height: 1.85; color: #c5d0e6; }
+  .shots { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin: 18px 0 4px; }
+  .shot { width: 200px; max-width: 44%; }
+  .shot img {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(122, 176, 255, 0.25);
+    box-shadow: 0 6px 22px rgba(0, 0, 0, 0.35);
+    display: block;
+  }
+  .shot figcaption { font-size: 12px; color: #6c7d9d; margin-top: 8px; text-align: center; }
+  .hero-shot { margin: 22px auto 4px; width: 220px; max-width: 60%; }
+  .hero-shot img {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid rgba(122, 176, 255, 0.25);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.40);
+    display: block;
+  }
+  .back {
+    display: inline-block;
+    margin-top: 28px;
+    color: #6c7d9d;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .back:hover { color: #aac0e0; }
+  @media (max-width: 600px) {
+    .container { padding: 48px 18px 64px; }
+    .lang-switch { top: 16px; right: 16px; }
+    .section { padding: 20px 18px 22px; }
+    .shot { width: 46%; max-width: 46%; }
+    .hero-shot { width: 60%; max-width: 60%; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch"><select id="lang-select" aria-label="Language"></select></div>
+  <h1>Liquid Glow</h1>
+  <div class="page-label" data-i18n="page_label">Game Overview</div>
+  <p class="lead" data-i18n="lead">A calm, cosmic sort puzzle. Pour glowing neon liquids between glass tubes and sort each one by color. Easy to learn, deeply relaxing, surprisingly addictive.</p>
+
+  <figure class="hero-shot">
+    <img src="screenshots/hero.png" alt="Liquid Glow title screen with glowing tubes">
+    <figcaption data-i18n="cap_hero">Calm, cosmic sort puzzle</figcaption>
+  </figure>
+
+  <section class="section">
+    <h2 data-i18n="world_label">The World</h2>
+    <div class="sub">🌌</div>
+    <p data-i18n="world_text">Glass tubes filled with glowing neon liquid float in deep, starlit space. Engine-rendered lighting and particles make every pour soft and satisfying — a quiet, ASMR-like place with no timers and no pressure.</p>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="howto_label">How to Play</h2>
+    <div class="sub">🧩</div>
+    <p data-i18n="howto_text">Tap to pick up a color, tap to pour. Sort every tube into a single color to clear the level.</p>
+    <ol>
+      <li data-i18n="step1">Tap a tube to lift the color on top.</li>
+      <li data-i18n="step2">Tap another tube to pour it in.</li>
+      <li data-i18n="step3">You can only pour onto the same color or an empty tube — sort every tube to one color to win.</li>
+    </ol>
+    <div class="shots">
+      <figure class="shot">
+        <img src="screenshots/pour.png" alt="Glowing pour animation between tubes">
+        <figcaption data-i18n="cap_pour">Tap. Pour. Sort.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="feat_label">Highlights</h2>
+    <div class="sub">✨</div>
+    <ul>
+      <li data-i18n="feat1">100+ hand-tuned, solvable levels</li>
+      <li data-i18n="feat2">Golden bonus stage every 5 levels for extra stars</li>
+      <li data-i18n="feat3">Ambient original soundtrack, free volume & mute</li>
+      <li data-i18n="feat4">Auto-save, level select, and gentle helpers — play offline at your own pace</li>
+    </ul>
+    <div class="shots">
+      <figure class="shot">
+        <img src="screenshots/bonus.png" alt="Bonus stage with colorful tubes">
+        <figcaption data-i18n="cap_bonus">Bonus stage every 5 levels</figcaption>
+      </figure>
+      <figure class="shot">
+        <img src="screenshots/select.png" alt="Level select grid with stars">
+        <figcaption data-i18n="cap_select">Pick any level, replay anytime</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <a href="./" class="back" data-i18n="back">← Back to Liquid Glow</a>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+    en: {
+      title: "Liquid Glow — Game Overview",
+      meta_desc: "Game overview of Liquid Glow: the world, how to play, and highlights, with screenshots.",
+      page_label: "Game Overview",
+      lead: "A calm, cosmic sort puzzle. Pour glowing neon liquids between glass tubes and sort each one by color. Easy to learn, deeply relaxing, surprisingly addictive.",
+      world_label: "The World",
+      world_text: "Glass tubes filled with glowing neon liquid float in deep, starlit space. Engine-rendered lighting and particles make every pour soft and satisfying — a quiet, ASMR-like place with no timers and no pressure.",
+      howto_label: "How to Play",
+      howto_text: "Tap to pick up a color, tap to pour. Sort every tube into a single color to clear the level.",
+      step1: "Tap a tube to lift the color on top.",
+      step2: "Tap another tube to pour it in.",
+      step3: "You can only pour onto the same color or an empty tube — sort every tube to one color to win.",
+      feat_label: "Highlights",
+      feat1: "100+ hand-tuned, solvable levels",
+      feat2: "Golden bonus stage every 5 levels for extra stars",
+      feat3: "Ambient original soundtrack, free volume & mute",
+      feat4: "Auto-save, level select, and gentle helpers — play offline at your own pace",
+      cap_hero: "Calm, cosmic sort puzzle",
+      cap_pour: "Tap. Pour. Sort.",
+      cap_bonus: "Bonus stage every 5 levels",
+      cap_select: "Pick any level, replay anytime",
+      back: "← Back to Liquid Glow"
+    },
+    ja: {
+      title: "Liquid Glow — ゲーム概要",
+      meta_desc: "Liquid Glow のゲーム概要。世界観・遊び方・特徴をスクリーンショットで紹介します。",
+      page_label: "ゲーム概要",
+      lead: "宇宙的に静かな並び替えパズル。光るネオン液体をガラスの試験管へ注ぎ、色ごとに整理します。ルールは単純、深くリラックスでき、驚くほど中毒性があります。",
+      world_label: "世界観",
+      world_text: "星屑が漂うダークな宇宙空間に、ネオンに輝く液体を湛えたガラスの試験管が浮かびます。内製のライティングとパーティクル演出で、注ぐたびに柔らかく心地よい — タイマーもプレッシャーもない、ASMR 的な静けさの世界です。",
+      howto_label: "操作方法",
+      howto_text: "タップで色を選び、タップで注ぐだけ。すべての試験管を単色にすればレベルクリアです。",
+      step1: "試験管をタップして上の色を選択",
+      step2: "別の試験管をタップして注ぐ",
+      step3: "注ぎ先は同じ色か空の試験管のみ。すべて単色にすればクリア",
+      feat_label: "特徴",
+      feat1: "100 以上の手調整済み・解法検証済みレベル",
+      feat2: "5 レベルごとにゴールドのボーナスステージで追加スター",
+      feat3: "癒しのオリジナル BGM、音量調整・ミュート自由",
+      feat4: "自動セーブ・レベル選択・やさしいヘルパー。オフラインで自分のペースで",
+      cap_hero: "宇宙的に静かな並び替えパズル",
+      cap_pour: "タップ・注ぐ・整理する",
+      cap_bonus: "5 レベルごとのボーナスステージ",
+      cap_select: "好きなレベルをいつでも再挑戦",
+      back: "← Liquid Glow のページへ戻る"
+    },
+    zh: {
+      title: "Liquid Glow — 游戏简介",
+      meta_desc: "Liquid Glow 的游戏简介：世界观、玩法与特色,附截图说明。",
+      page_label: "游戏简介",
+      lead: "一款宇宙般宁静的分类益智游戏。将发光的霓虹液体在玻璃试管间倾倒,按颜色整理。易学、放松,却出奇地令人上瘾。",
+      world_label: "世界观",
+      world_text: "在星尘漂浮的深邃宇宙中,盛着霓虹液体的玻璃试管静静悬浮。引擎实时光照与粒子效果,让每一次倾倒都柔和而舒适——没有计时、没有压力,宛如 ASMR 般静谧的世界。",
+      howto_label: "玩法",
+      howto_text: "点击选择颜色,点击倾倒。把每根试管都整理成单一颜色即可通关。",
+      step1: "点击试管,拾取最上层的颜色",
+      step2: "点击另一根试管倒入",
+      step3: "只能倒在相同颜色或空试管上——把所有试管整理成单色即获胜",
+      feat_label: "特色",
+      feat1: "100+ 关精心调校、保证可解的关卡",
+      feat2: "每 5 关出现金色奖励关,获得额外星星",
+      feat3: "舒缓的原创配乐,可自由调节音量与静音",
+      feat4: "自动存档、关卡选择与贴心提示——可离线、按自己的节奏畅玩",
+      cap_hero: "宇宙般宁静的分类益智",
+      cap_pour: "点击 · 倾倒 · 整理",
+      cap_bonus: "每 5 关一个奖励关",
+      cap_select: "任选关卡,随时重玩",
+      back: "← 返回 Liquid Glow"
+    },
+    ko: {
+      title: "Liquid Glow — 게임 소개",
+      meta_desc: "Liquid Glow 게임 소개: 세계관, 플레이 방법, 특징을 스크린샷과 함께 소개합니다.",
+      page_label: "게임 소개",
+      lead: "우주처럼 고요한 정렬 퍼즐. 빛나는 네온 액체를 유리 시험관에 부어 색깔별로 정리하세요. 배우기 쉽고, 깊이 편안하며, 놀랍도록 중독적입니다.",
+      world_label: "세계관",
+      world_text: "별먼지가 떠다니는 깊은 우주 공간에, 네온빛 액체를 담은 유리 시험관이 떠 있습니다. 엔진 내장 라이팅과 파티클 연출로 부을 때마다 부드럽고 만족스럽습니다 — 타이머도 압박도 없는, ASMR 같은 고요함의 세계입니다.",
+      howto_label: "플레이 방법",
+      howto_text: "탭으로 색을 고르고, 탭으로 붓습니다. 모든 시험관을 한 가지 색으로 정리하면 레벨 클리어.",
+      step1: "시험관을 탭해 맨 위 색을 선택",
+      step2: "다른 시험관을 탭해 부어 넣기",
+      step3: "같은 색이나 빈 시험관에만 부을 수 있어요 — 모두 단색으로 만들면 승리",
+      feat_label: "특징",
+      feat1: "100개 이상의 손수 조정한 해결 가능 레벨",
+      feat2: "5레벨마다 골드 보너스 스테이지로 추가 별 획득",
+      feat3: "잔잔한 오리지널 BGM, 볼륨 조절·음소거 자유",
+      feat4: "자동 저장·레벨 선택·친절한 도우미 — 오프라인으로 내 페이스대로",
+      cap_hero: "우주처럼 고요한 정렬 퍼즐",
+      cap_pour: "탭 · 붓기 · 정렬",
+      cap_bonus: "5레벨마다 보너스 스테이지",
+      cap_select: "원하는 레벨을 언제든 다시",
+      back: "← Liquid Glow로 돌아가기"
+    },
+    hi: {
+      title: "Liquid Glow — गेम अवलोकन",
+      meta_desc: "Liquid Glow का गेम अवलोकन: दुनिया, खेलने का तरीका और ख़ासियतें, स्क्रीनशॉट के साथ।",
+      page_label: "गेम अवलोकन",
+      lead: "एक शांत, ब्रह्मांडीय सॉर्ट पज़ल। चमकते नियॉन लिक्विड को काँच की नलियों में डालें और रंग के हिसाब से व्यवस्थित करें। सीखने में आसान, बेहद आरामदायक और हैरान कर देने वाला लती।",
+      world_label: "दुनिया",
+      world_text: "तारों की धूल से भरे गहरे अंतरिक्ष में नियॉन लिक्विड से भरी काँच की नलियाँ तैरती हैं। इंजन की लाइटिंग और पार्टिकल्स हर बार डालने को नरम और संतोषजनक बनाते हैं — कोई टाइमर नहीं, कोई दबाव नहीं, ASMR जैसी शांति की दुनिया।",
+      howto_label: "कैसे खेलें",
+      howto_text: "रंग चुनने के लिए टैप करें, डालने के लिए टैप करें। हर नली को एक ही रंग में व्यवस्थित करके लेवल पूरा करें।",
+      step1: "नली पर टैप करके ऊपर का रंग उठाएँ",
+      step2: "दूसरी नली पर टैप करके उसमें डालें",
+      step3: "सिर्फ़ समान रंग या ख़ाली नली में ही डाल सकते हैं — सब एक रंग कर दें और जीतें",
+      feat_label: "ख़ासियतें",
+      feat1: "100+ हाथ से ट्यून किए, हल-योग्य लेवल",
+      feat2: "हर 5 लेवल पर गोल्डन बोनस स्टेज, अतिरिक्त सितारे",
+      feat3: "सुकून भरा ओरिजिनल साउंडट्रैक, वॉल्यूम व म्यूट आज़ाद",
+      feat4: "ऑटो-सेव, लेवल चयन और आसान हेल्पर — ऑफ़लाइन, अपनी रफ़्तार से",
+      cap_hero: "शांत, ब्रह्मांडीय सॉर्ट पज़ल",
+      cap_pour: "टैप · डालें · सॉर्ट",
+      cap_bonus: "हर 5 लेवल पर बोनस स्टेज",
+      cap_select: "कोई भी लेवल, कभी भी दोबारा",
+      back: "← Liquid Glow पर वापस"
+    },
+    id: {
+      title: "Liquid Glow — Ikhtisar Game",
+      meta_desc: "Ikhtisar game Liquid Glow: dunia, cara bermain, dan keunggulan, lengkap dengan tangkapan layar.",
+      page_label: "Ikhtisar Game",
+      lead: "Puzzle sortir yang tenang dan kosmik. Tuang cairan neon yang bercahaya ke tabung kaca dan susun berdasarkan warna. Mudah dipelajari, sangat menenangkan, dan bikin ketagihan.",
+      world_label: "Dunia",
+      world_text: "Tabung kaca berisi cairan neon bercahaya melayang di angkasa gelap bertabur bintang. Pencahayaan dan partikel dari engine membuat setiap tuangan terasa lembut dan memuaskan — tanpa timer, tanpa tekanan, dunia hening ala ASMR.",
+      howto_label: "Cara Bermain",
+      howto_text: "Ketuk untuk mengambil warna, ketuk untuk menuang. Susun setiap tabung menjadi satu warna untuk menyelesaikan level.",
+      step1: "Ketuk tabung untuk mengangkat warna teratas",
+      step2: "Ketuk tabung lain untuk menuangkannya",
+      step3: "Hanya bisa dituang ke warna sama atau tabung kosong — jadikan semua satu warna untuk menang",
+      feat_label: "Keunggulan",
+      feat1: "100+ level yang disetel manual dan pasti bisa diselesaikan",
+      feat2: "Bonus stage emas setiap 5 level untuk bintang ekstra",
+      feat3: "Musik orisinal yang menenangkan, volume & mute bebas",
+      feat4: "Simpan otomatis, pilih level, dan bantuan ramah — main offline sesuai tempomu",
+      cap_hero: "Puzzle sortir yang tenang & kosmik",
+      cap_pour: "Ketuk. Tuang. Sortir.",
+      cap_bonus: "Bonus stage tiap 5 level",
+      cap_select: "Pilih level mana saja, ulangi kapan saja",
+      back: "← Kembali ke Liquid Glow"
+    },
+    de: {
+      title: "Liquid Glow — Spielübersicht",
+      meta_desc: "Spielübersicht zu Liquid Glow: die Welt, das Gameplay und die Highlights, mit Screenshots.",
+      page_label: "Spielübersicht",
+      lead: "Ein ruhiges, kosmisches Sortier-Puzzle. Gieße leuchtende Neon-Flüssigkeiten zwischen Glasröhren und sortiere sie nach Farbe. Leicht zu lernen, tief entspannend, erstaunlich süchtig machend.",
+      world_label: "Die Welt",
+      world_text: "Glasröhren voller leuchtender Neon-Flüssigkeit schweben im tiefen, sternenübersäten All. Engine-Beleuchtung und Partikel machen jedes Gießen weich und befriedigend — ein stiller, ASMR-artiger Ort ohne Timer und ohne Druck.",
+      howto_label: "So wird gespielt",
+      howto_text: "Tippe, um eine Farbe aufzunehmen, tippe, um sie zu gießen. Sortiere jede Röhre in eine einzige Farbe, um das Level zu schaffen.",
+      step1: "Tippe auf eine Röhre, um die oberste Farbe aufzunehmen",
+      step2: "Tippe auf eine andere Röhre, um sie hineinzugießen",
+      step3: "Nur auf gleiche Farbe oder eine leere Röhre gießen — alle einfarbig machen, um zu gewinnen",
+      feat_label: "Highlights",
+      feat1: "100+ handabgestimmte, lösbare Level",
+      feat2: "Goldene Bonusstufe alle 5 Level für Extra-Sterne",
+      feat3: "Entspannender Original-Soundtrack, Lautstärke & Stumm frei",
+      feat4: "Auto-Speichern, Levelauswahl und sanfte Helfer — offline im eigenen Tempo",
+      cap_hero: "Ruhiges, kosmisches Sortier-Puzzle",
+      cap_pour: "Tippen. Gießen. Sortieren.",
+      cap_bonus: "Bonusstufe alle 5 Level",
+      cap_select: "Jedes Level jederzeit erneut spielen",
+      back: "← Zurück zu Liquid Glow"
+    },
+    fr: {
+      title: "Liquid Glow — Aperçu du jeu",
+      meta_desc: "Aperçu du jeu Liquid Glow : l'univers, comment jouer et les points forts, avec captures d'écran.",
+      page_label: "Aperçu du jeu",
+      lead: "Un puzzle de tri paisible et cosmique. Verse des liquides néon lumineux entre des tubes en verre et trie-les par couleur. Facile à prendre en main, profondément relaxant, étonnamment addictif.",
+      world_label: "L'univers",
+      world_text: "Des tubes en verre remplis de liquide néon lumineux flottent dans un espace profond et étoilé. L'éclairage et les particules du moteur rendent chaque versement doux et satisfaisant — un lieu calme, façon ASMR, sans minuteur ni pression.",
+      howto_label: "Comment jouer",
+      howto_text: "Touche pour prendre une couleur, touche pour la verser. Trie chaque tube en une seule couleur pour réussir le niveau.",
+      step1: "Touche un tube pour prendre la couleur du dessus",
+      step2: "Touche un autre tube pour l'y verser",
+      step3: "On ne verse que sur la même couleur ou un tube vide — réunis chaque tube en une couleur pour gagner",
+      feat_label: "Points forts",
+      feat1: "Plus de 100 niveaux réglés à la main et résolubles",
+      feat2: "Étape bonus dorée tous les 5 niveaux pour des étoiles en plus",
+      feat3: "Bande-son originale apaisante, volume & sourdine libres",
+      feat4: "Sauvegarde auto, sélection de niveau et aides bienveillantes — hors ligne, à ton rythme",
+      cap_hero: "Puzzle de tri paisible et cosmique",
+      cap_pour: "Toucher. Verser. Trier.",
+      cap_bonus: "Niveau bonus tous les 5 niveaux",
+      cap_select: "Choisis un niveau, rejoue quand tu veux",
+      back: "← Retour à Liquid Glow"
+    },
+    it: {
+      title: "Liquid Glow — Panoramica del gioco",
+      meta_desc: "Panoramica di Liquid Glow: il mondo, come si gioca e i punti forti, con screenshot.",
+      page_label: "Panoramica del gioco",
+      lead: "Un puzzle di smistamento quieto e cosmico. Versa liquidi al neon luminosi tra provette di vetro e ordinali per colore. Facile da imparare, profondamente rilassante, sorprendentemente coinvolgente.",
+      world_label: "Il mondo",
+      world_text: "Provette di vetro piene di liquido al neon luminoso fluttuano nello spazio profondo e stellato. Illuminazione e particelle del motore rendono ogni versata morbida e appagante — un luogo quieto, in stile ASMR, senza timer né pressione.",
+      howto_label: "Come si gioca",
+      howto_text: "Tocca per prendere un colore, tocca per versarlo. Ordina ogni provetta in un solo colore per superare il livello.",
+      step1: "Tocca una provetta per prendere il colore in cima",
+      step2: "Tocca un'altra provetta per versarlo",
+      step3: "Puoi versare solo su colore uguale o provetta vuota — rendi tutto monocolore per vincere",
+      feat_label: "Punti forti",
+      feat1: "Oltre 100 livelli rifiniti a mano e risolvibili",
+      feat2: "Bonus stage dorato ogni 5 livelli per stelle extra",
+      feat3: "Colonna sonora originale rilassante, volume e muto liberi",
+      feat4: "Salvataggio automatico, scelta livello e aiuti gentili — offline, al tuo ritmo",
+      cap_hero: "Puzzle di smistamento quieto e cosmico",
+      cap_pour: "Tocca. Versa. Ordina.",
+      cap_bonus: "Bonus stage ogni 5 livelli",
+      cap_select: "Scegli un livello, rigioca quando vuoi",
+      back: "← Torna a Liquid Glow"
+    },
+    es: {
+      title: "Liquid Glow — Descripción del juego",
+      meta_desc: "Descripción del juego Liquid Glow: el mundo, cómo se juega y lo más destacado, con capturas.",
+      page_label: "Descripción del juego",
+      lead: "Un puzzle de clasificación tranquilo y cósmico. Vierte líquidos de neón brillantes entre tubos de vidrio y ordénalos por color. Fácil de aprender, muy relajante y sorprendentemente adictivo.",
+      world_label: "El mundo",
+      world_text: "Tubos de vidrio llenos de líquido de neón brillante flotan en un espacio profundo y estrellado. La iluminación y las partículas del motor hacen que cada vertido sea suave y satisfactorio — un lugar tranquilo, tipo ASMR, sin temporizadores ni presión.",
+      howto_label: "Cómo se juega",
+      howto_text: "Toca para tomar un color, toca para verterlo. Ordena cada tubo en un solo color para superar el nivel.",
+      step1: "Toca un tubo para tomar el color de arriba",
+      step2: "Toca otro tubo para verterlo",
+      step3: "Solo puedes verter sobre el mismo color o un tubo vacío — deja todo de un color para ganar",
+      feat_label: "Lo más destacado",
+      feat1: "Más de 100 niveles ajustados a mano y resolubles",
+      feat2: "Fase de bonificación dorada cada 5 niveles por estrellas extra",
+      feat3: "Banda sonora original relajante, volumen y silencio libres",
+      feat4: "Guardado automático, selección de nivel y ayudas amables — sin conexión, a tu ritmo",
+      cap_hero: "Puzzle de clasificación tranquilo y cósmico",
+      cap_pour: "Toca. Vierte. Ordena.",
+      cap_bonus: "Fase de bonificación cada 5 niveles",
+      cap_select: "Elige cualquier nivel, repítelo cuando quieras",
+      back: "← Volver a Liquid Glow"
+    },
+    pt: {
+      title: "Liquid Glow — Visão geral do jogo",
+      meta_desc: "Visão geral do Liquid Glow: o mundo, como jogar e os destaques, com capturas de tela.",
+      page_label: "Visão geral do jogo",
+      lead: "Um puzzle de classificação tranquilo e cósmico. Despeje líquidos de neon brilhantes entre tubos de vidro e organize-os por cor. Fácil de aprender, muito relaxante e surpreendentemente viciante.",
+      world_label: "O mundo",
+      world_text: "Tubos de vidro cheios de líquido de neon brilhante flutuam no espaço profundo e estrelado. A iluminação e as partículas do motor tornam cada despejo suave e satisfatório — um lugar silencioso, estilo ASMR, sem cronômetro e sem pressão.",
+      howto_label: "Como jogar",
+      howto_text: "Toque para pegar uma cor, toque para despejar. Organize cada tubo em uma única cor para concluir o nível.",
+      step1: "Toque em um tubo para pegar a cor do topo",
+      step2: "Toque em outro tubo para despejá-la",
+      step3: "Só dá para despejar sobre a mesma cor ou tubo vazio — deixe tudo de uma cor para vencer",
+      feat_label: "Destaques",
+      feat1: "Mais de 100 níveis ajustados à mão e solucionáveis",
+      feat2: "Fase bônus dourada a cada 5 níveis para estrelas extras",
+      feat3: "Trilha original relaxante, volume e mudo livres",
+      feat4: "Salvamento automático, seleção de nível e ajudas gentis — offline, no seu ritmo",
+      cap_hero: "Puzzle de classificação tranquilo e cósmico",
+      cap_pour: "Toque. Despeje. Organize.",
+      cap_bonus: "Fase bônus a cada 5 níveis",
+      cap_select: "Escolha qualquer nível, rejogue quando quiser",
+      back: "← Voltar para Liquid Glow"
+    },
+    ru: {
+      title: "Liquid Glow — Об игре",
+      meta_desc: "Об игре Liquid Glow: мир, как играть и ключевые особенности, со скриншотами.",
+      page_label: "Об игре",
+      lead: "Спокойная, космическая сортировочная головоломка. Переливайте светящиеся неоновые жидкости между стеклянными колбами и сортируйте по цвету. Легко освоить, глубоко расслабляет и неожиданно затягивает.",
+      world_label: "Мир",
+      world_text: "Стеклянные колбы со светящейся неоновой жидкостью парят в глубоком звёздном космосе. Освещение и частицы движка делают каждое переливание мягким и приятным — тихое, ASMR-подобное место без таймеров и давления.",
+      howto_label: "Как играть",
+      howto_text: "Нажмите, чтобы взять цвет, нажмите, чтобы перелить. Соберите каждую колбу в один цвет, чтобы пройти уровень.",
+      step1: "Нажмите на колбу, чтобы взять верхний цвет",
+      step2: "Нажмите на другую колбу, чтобы перелить",
+      step3: "Переливать можно только на такой же цвет или в пустую колбу — сделайте все колбы одноцветными, чтобы победить",
+      feat_label: "Особенности",
+      feat1: "100+ вручную настроенных, решаемых уровней",
+      feat2: "Золотой бонусный этап каждые 5 уровней за дополнительные звёзды",
+      feat3: "Спокойный оригинальный саундтрек, громкость и отключение звука свободно",
+      feat4: "Автосохранение, выбор уровня и мягкие подсказки — офлайн, в своём темпе",
+      cap_hero: "Спокойная космическая головоломка",
+      cap_pour: "Нажми. Перелей. Сортируй.",
+      cap_bonus: "Бонусный этап каждые 5 уровней",
+      cap_select: "Выбирайте любой уровень, переигрывайте когда угодно",
+      back: "← Назад к Liquid Glow"
+    }
+  };
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang';
+
+  function detectLang() {
+    try {
+      const stored = localStorage.getItem(LANG_STORAGE_KEY);
+      if (stored && i18n[stored]) return stored;
+    } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {}
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(opt);
+    }
+    setLang(detectLang());
+    sel.addEventListener('change', e => setLang(e.target.value));
+  })();
+</script>
+</body>
+</html>

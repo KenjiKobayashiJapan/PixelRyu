@@ -122,6 +122,20 @@
     font-size: 14px;
     line-height: 1.7;
   }
+  .overview-link {
+    display: block;
+    background: #7ab0ff;
+    color: #08122b;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 18px 22px;
+    border-radius: 14px;
+    margin: 0 0 24px;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 22px rgba(122, 176, 255, 0.25);
+  }
+  .overview-link:hover { background: #a0c8ff; transform: translateY(-1px); }
   .legal-divider {
     font-size: 13px;
     color: #6c7d9d;
@@ -196,6 +210,8 @@
     </ul>
   </section>
 
+  <a href="overview.html" class="overview-link">🎮 <span data-i18n="link_overview">View Game Overview</span> →</a>
+
   <div class="legal-divider" data-i18n="legal_divider">Legal Documents</div>
   <ul class="links">
     <li><a href="privacy_policy.html" data-i18n="link_privacy">Privacy Policy</a></li>
@@ -228,6 +244,7 @@
       link_privacy: "Privacy Policy",
       link_terms: "Terms of Service",
       back: "← PixelRyu",
+      link_overview: "View Game Overview",
       tester_heading: "Android Tester Recruitment",
       tester_android_note: "Android only",
       tester_intro: "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
@@ -248,6 +265,7 @@
       link_privacy: "プライバシーポリシー",
       link_terms: "利用規約",
       back: "← PixelRyu へ戻る",
+      link_overview: "ゲーム概要を見る",
       tester_heading: "Android テスター募集中",
       tester_android_note: "Android 専用",
       tester_intro: "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
@@ -268,6 +286,7 @@
       link_privacy: "隐私政策",
       link_terms: "服务条款",
       back: "← 返回 PixelRyu",
+      link_overview: "查看游戏简介",
       tester_heading: "招募 Android 测试者",
       tester_android_note: "仅限 Android",
       tester_intro: "我是一名独立开发者,正在为期 14 天的封闭测试招募积极的 Android 测试者。",
@@ -288,6 +307,7 @@
       link_privacy: "개인정보 처리방침",
       link_terms: "서비스 이용약관",
       back: "← PixelRyu로 돌아가기",
+      link_overview: "게임 소개 보기",
       tester_heading: "Android 테스터 모집",
       tester_android_note: "Android 전용",
       tester_intro: "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
@@ -308,6 +328,7 @@
       link_privacy: "गोपनीयता नीति",
       link_terms: "सेवा शर्तें",
       back: "← PixelRyu पर वापस",
+      link_overview: "गेम अवलोकन देखें",
       tester_heading: "Android टेस्टर्स की तलाश",
       tester_android_note: "केवल Android",
       tester_intro: "सोलो इंडी डेवलपर हूँ, 14 दिन की क्लोज़्ड टेस्टिंग के लिए सक्रिय Android टेस्टर्स ढूँढ रहा हूँ।",
@@ -328,6 +349,7 @@
       link_privacy: "Kebijakan Privasi",
       link_terms: "Ketentuan Layanan",
       back: "← Kembali ke PixelRyu",
+      link_overview: "Lihat Ikhtisar Game",
       tester_heading: "Mencari Tester Android",
       tester_android_note: "Hanya Android",
       tester_intro: "Saya developer indie solo, mencari tester Android aktif untuk fase closed test 14 hari.",
@@ -348,6 +370,7 @@
       link_privacy: "Datenschutzerklärung",
       link_terms: "Nutzungsbedingungen",
       back: "← Zurück zu PixelRyu",
+      link_overview: "Spielübersicht ansehen",
       tester_heading: "Android-Tester gesucht",
       tester_android_note: "Nur für Android",
       tester_intro: "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
@@ -368,6 +391,7 @@
       link_privacy: "Politique de confidentialité",
       link_terms: "Conditions d'utilisation",
       back: "← Retour à PixelRyu",
+      link_overview: "Voir l'aperçu du jeu",
       tester_heading: "Recherche de testeurs Android",
       tester_android_note: "Android uniquement",
       tester_intro: "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
@@ -388,6 +412,7 @@
       link_privacy: "Informativa sulla privacy",
       link_terms: "Termini di servizio",
       back: "← Torna a PixelRyu",
+      link_overview: "Vedi la panoramica",
       tester_heading: "Cercasi tester Android",
       tester_android_note: "Solo Android",
       tester_intro: "Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.",
@@ -408,6 +433,7 @@
       link_privacy: "Política de privacidad",
       link_terms: "Términos del servicio",
       back: "← Volver a PixelRyu",
+      link_overview: "Ver descripción del juego",
       tester_heading: "Buscamos testers de Android",
       tester_android_note: "Solo Android",
       tester_intro: "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
@@ -428,6 +454,7 @@
       link_privacy: "Política de privacidade",
       link_terms: "Termos de serviço",
       back: "← Voltar para PixelRyu",
+      link_overview: "Ver visão geral do jogo",
       tester_heading: "Procuramos testers de Android",
       tester_android_note: "Apenas Android",
       tester_intro: "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
@@ -448,6 +475,7 @@
       link_privacy: "Политика конфиденциальности",
       link_terms: "Условия использования",
       back: "← Назад к PixelRyu",
+      link_overview: "Посмотреть об игре",
       tester_heading: "Поиск Android-тестеров",
       tester_android_note: "Только для Android",
       tester_intro: "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",

@@ -1,0 +1,535 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">HOTARU — Game Overview</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Game overview of HOTARU — The Lost House: the world, how to play, and highlights, with screenshots.">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: radial-gradient(ellipse at top, #1a1024 0%, #0d0816 50%, #02020a 100%);
+    color: #f4ecd4;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .container {
+    max-width: 620px;
+    width: 100%;
+    padding: 64px 32px 80px;
+    text-align: center;
+    position: relative;
+  }
+  .lang-switch { position: absolute; top: 24px; right: 24px; }
+  .lang-switch select {
+    background: rgba(245, 213, 122, 0.05);
+    color: #f4ecd4;
+    border: 1px solid rgba(245, 213, 122, 0.20);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .lang-switch select:hover { background: rgba(245, 213, 122, 0.12); border-color: rgba(245, 213, 122, 0.50); }
+  .lang-switch select option { background: #160d18; color: #f4ecd4; }
+  .tagline {
+    font-size: 13px;
+    color: #9a8a6e;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+  }
+  h1 {
+    font-size: 48px;
+    margin: 0 0 6px;
+    color: #f5d57a;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+  .page-label {
+    font-size: 13px;
+    color: #9a8a6e;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+  }
+  .lead {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #d8caa6;
+    margin: 14px auto 8px;
+    max-width: 500px;
+  }
+  .section {
+    background: rgba(245, 213, 122, 0.05);
+    border: 1px solid rgba(245, 213, 122, 0.30);
+    border-radius: 16px;
+    padding: 24px 24px 28px;
+    margin: 28px 0;
+    text-align: left;
+    box-shadow: 0 0 30px rgba(245, 213, 122, 0.05);
+  }
+  .section h2 { font-size: 18px; color: #f5d57a; margin: 0 0 4px; font-weight: 800; }
+  .section .sub { font-size: 11px; color: #9a8a6e; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  .section p { font-size: 14px; line-height: 1.8; color: #d8caa6; margin: 12px 0; }
+  .section ol, .section ul { margin: 12px 0 0; padding-left: 22px; font-size: 14px; line-height: 1.85; color: #d8caa6; }
+  .shot-wide { width: 100%; max-width: 460px; margin: 18px auto 4px; }
+  .shot-wide + .shot-wide { margin-top: 22px; }
+  .shot-wide img {
+    width: 100%;
+    border-radius: 14px;
+    border: 1px solid rgba(245, 213, 122, 0.22);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.55);
+    display: block;
+  }
+  .shot-wide figcaption { font-size: 12px; color: #9a8a6e; margin-top: 8px; text-align: center; }
+  .hero-shot { width: 100%; max-width: 500px; margin: 22px auto 4px; }
+  .hero-shot img {
+    width: 100%;
+    border-radius: 16px;
+    border: 1px solid rgba(245, 213, 122, 0.22);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.6);
+    display: block;
+  }
+  .hero-shot figcaption { font-size: 12px; color: #9a8a6e; margin-top: 8px; text-align: center; }
+  .back {
+    display: inline-block;
+    margin-top: 28px;
+    color: #9a8a6e;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .back:hover { color: #f5d57a; }
+  @media (max-width: 600px) {
+    .container { padding: 48px 18px 64px; }
+    .lang-switch { top: 16px; right: 16px; }
+    .section { padding: 20px 18px 22px; }
+  }
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch"><select id="lang-select" aria-label="Language"></select></div>
+  <div class="tagline" data-i18n="tagline">The Lost House</div>
+  <h1>HOTARU</h1>
+  <div class="page-label" data-i18n="page_label">Game Overview</div>
+  <p class="lead" data-i18n="lead">A quiet first-person Japanese horror walk-sim. One night, lost in the dark, you come upon an old house no one knows — and once the door closes behind you, there is no way back out.</p>
+
+  <figure class="hero-shot">
+    <img src="screenshots/story.jpg" alt="Story intro: lost in the dark, you find the house">
+    <figcaption data-i18n="cap_story">Lost in the dark, you find the house</figcaption>
+  </figure>
+
+  <section class="section">
+    <h2 data-i18n="world_label">The World</h2>
+    <div class="sub">🏮</div>
+    <p data-i18n="world_text">The stage is a "lost house" (maioiga) — a sprawling estate that should not exist. Andon lantern light glows warm against the dark, fireflies drift through the halls, and something else wanders there with you. Atmospheric, quiet, and a little unsettling.</p>
+    <figure class="shot-wide">
+      <img src="screenshots/safezone.jpg" alt="Andon lantern lighting a corridor safe zone">
+      <figcaption data-i18n="cap_safezone">Andon lantern safe zones light the way</figcaption>
+    </figure>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="howto_label">How to Play</h2>
+    <div class="sub">🕯</div>
+    <p data-i18n="howto_text">Explore in first person with on-screen touch controls. Gather fireflies, reach the lantern-lit safe zones, and find your way out — without being caught.</p>
+    <ol>
+      <li data-i18n="step1">Move with the left stick and look around by dragging.</li>
+      <li data-i18n="step2">Collect glowing fireflies and follow the green map fragments toward the exit.</li>
+      <li data-i18n="step3">Avoid the yokai roaming the halls — throw an item to distract it, or hide until it passes.</li>
+    </ol>
+    <figure class="shot-wide">
+      <img src="screenshots/firefly.jpg" alt="Glowing fireflies drifting in the dark">
+      <figcaption data-i18n="cap_firefly">Gather drifting fireflies</figcaption>
+    </figure>
+    <figure class="shot-wide">
+      <img src="screenshots/yokai.jpg" alt="A yokai wandering the grounds at night">
+      <figcaption data-i18n="cap_yokai">Avoid the yokai in the halls</figcaption>
+    </figure>
+    <figure class="shot-wide">
+      <img src="screenshots/hide.jpg" alt="Hiding behind cover with hide and throw buttons">
+      <figcaption data-i18n="cap_hide">Hide or throw to slip past</figcaption>
+    </figure>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="feat_label">Highlights</h2>
+    <div class="sub">✨</div>
+    <ul>
+      <li data-i18n="feat1">Eerie first-person atmosphere across multiple nights</li>
+      <li data-i18n="feat2">Andon lanterns mark warm, safe resting spots</li>
+      <li data-i18n="feat3">Hint system when you lose your way</li>
+      <li data-i18n="feat4">Headphones recommended for the full ambience 🎧</li>
+    </ul>
+  </section>
+
+  <a href="./" class="back" data-i18n="back">← Back to HOTARU</a>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+    en: {
+      title: "HOTARU — Game Overview",
+      meta_desc: "Game overview of HOTARU — The Lost House: the world, how to play, and highlights, with screenshots.",
+      tagline: "The Lost House",
+      page_label: "Game Overview",
+      lead: "A quiet first-person Japanese horror walk-sim. One night, lost in the dark, you come upon an old house no one knows — and once the door closes behind you, there is no way back out.",
+      world_label: "The World",
+      world_text: "The stage is a \"lost house\" (maioiga) — a sprawling estate that should not exist. Andon lantern light glows warm against the dark, fireflies drift through the halls, and something else wanders there with you. Atmospheric, quiet, and a little unsettling.",
+      howto_label: "How to Play",
+      howto_text: "Explore in first person with on-screen touch controls. Gather fireflies, reach the lantern-lit safe zones, and find your way out — without being caught.",
+      step1: "Move with the left stick and look around by dragging.",
+      step2: "Collect glowing fireflies and follow the green map fragments toward the exit.",
+      step3: "Avoid the yokai roaming the halls — throw an item to distract it, or hide until it passes.",
+      feat_label: "Highlights",
+      feat1: "Eerie first-person atmosphere across multiple nights",
+      feat2: "Andon lanterns mark warm, safe resting spots",
+      feat3: "Hint system when you lose your way",
+      feat4: "Headphones recommended for the full ambience 🎧",
+      cap_story: "Lost in the dark, you find the house",
+      cap_safezone: "Andon lantern safe zones light the way",
+      cap_firefly: "Gather drifting fireflies",
+      cap_yokai: "Avoid the yokai in the halls",
+      cap_hide: "Hide or throw to slip past",
+      back: "← Back to HOTARU"
+    },
+    ja: {
+      title: "HOTARU — ゲーム概要",
+      meta_desc: "HOTARU — 失われた屋敷 のゲーム概要。世界観・遊び方・特徴をスクリーンショットで紹介します。",
+      tagline: "失われた屋敷",
+      page_label: "ゲーム概要",
+      lead: "静かな一人称の和ホラーウォーキングシム。ある夜、暗闇の中で道に迷ったあなたは、誰も知らない古い屋敷にたどり着く。一度扉が閉まれば、もう後戻りはできない。",
+      world_label: "世界観",
+      world_text: "舞台は「迷い家(まよいが)」 — 本来あるはずのない、広大な屋敷。行燈(あんどん)の灯りが暗闇に温かくにじみ、蛍が廊下を漂う。そして、そこにはあなた以外の「何か」も彷徨っている。静かで、少し不気味な雰囲気が魅力です。",
+      howto_label: "操作方法",
+      howto_text: "画面上のタッチ操作で一人称視点で探索します。蛍を集め、行燈の灯る安全地帯にたどり着き、捕まらずに出口を目指しましょう。",
+      step1: "左スティックで移動、画面をドラッグして視点を回す",
+      step2: "光る蛍を集め、緑に光る地図の断片を辿って出口へ",
+      step3: "廊下を彷徨う妖怪を避ける — アイテムを投げて気を逸らすか、やり過ごすまで隠れる",
+      feat_label: "特徴",
+      feat1: "複数の夜にわたる不気味な一人称の雰囲気",
+      feat2: "行燈は温かく安全な休息ポイントの目印",
+      feat3: "道に迷ったときのヒント機能",
+      feat4: "雰囲気を存分に味わうならヘッドホン推奨 🎧",
+      cap_story: "暗闇で道に迷い、屋敷にたどり着く",
+      cap_safezone: "行燈の安全地帯が道を照らす",
+      cap_firefly: "漂う蛍を集める",
+      cap_yokai: "廊下の妖怪を避ける",
+      cap_hide: "隠れる・投げて切り抜ける",
+      back: "← HOTARU のページへ戻る"
+    },
+    zh: {
+      title: "HOTARU — 游戏简介",
+      meta_desc: "HOTARU — 失落的屋舍 的游戏简介：世界观、玩法与特色,附截图说明。",
+      tagline: "失落的屋舍",
+      page_label: "游戏简介",
+      lead: "一款宁静的第一人称日式恐怖步行模拟。某个夜晚,你在黑暗中迷了路,误入一座无人知晓的古老宅邸——门一旦在身后关上,便再也无法回头。",
+      world_label: "世界观",
+      world_text: "舞台是一座「迷家」(maioiga)——本不该存在的庞大宅邸。行灯的光在黑暗中温暖晕开,萤火虫在走廊间飘荡,而那里还游荡着你之外的「某种东西」。氛围沉静,略带不安。",
+      howto_label: "玩法",
+      howto_text: "用屏幕上的触摸操作以第一人称探索。收集萤火虫,抵达行灯照亮的安全区,在不被抓住的前提下找到出口。",
+      step1: "用左摇杆移动,拖动画面转动视角",
+      step2: "收集发光的萤火虫,跟随绿色地图碎片走向出口",
+      step3: "避开走廊里游荡的妖怪——投掷道具引开它,或躲藏到它走过",
+      feat_label: "特色",
+      feat1: "横跨多个夜晚的诡异第一人称氛围",
+      feat2: "行灯标示出温暖安全的休息点",
+      feat3: "迷路时的提示功能",
+      feat4: "建议佩戴耳机以充分感受氛围 🎧",
+      cap_story: "在黑暗中迷路,发现宅邸",
+      cap_safezone: "行灯安全区照亮前路",
+      cap_firefly: "收集飘荡的萤火虫",
+      cap_yokai: "避开走廊里的妖怪",
+      cap_hide: "躲藏或投掷以脱身",
+      back: "← 返回 HOTARU"
+    },
+    ko: {
+      title: "HOTARU — 게임 소개",
+      meta_desc: "HOTARU — 잃어버린 저택 게임 소개: 세계관, 플레이 방법, 특징을 스크린샷과 함께 소개합니다.",
+      tagline: "잃어버린 저택",
+      page_label: "게임 소개",
+      lead: "조용한 1인칭 일본 호러 워킹 시뮬레이터. 어느 밤, 어둠 속에서 길을 잃은 당신은 아무도 모르는 오래된 저택에 이르고 — 등 뒤로 문이 닫히면, 더 이상 돌아갈 길은 없습니다.",
+      world_label: "세계관",
+      world_text: "무대는 '미오이가(잃어버린 집)' — 본래 존재해서는 안 될 광대한 저택. 행등의 불빛이 어둠 속에 따스하게 번지고, 반딧불이가 복도를 떠다니며, 그곳에는 당신 외의 '무언가'도 배회합니다. 조용하고 약간 불안한 분위기가 매력입니다.",
+      howto_label: "플레이 방법",
+      howto_text: "화면의 터치 조작으로 1인칭 시점에서 탐색합니다. 반딧불이를 모으고, 행등이 켜진 안전 지대에 도달해, 잡히지 않고 출구를 찾으세요.",
+      step1: "왼쪽 스틱으로 이동, 화면을 드래그해 시점 회전",
+      step2: "빛나는 반딧불이를 모으고, 초록빛 지도 조각을 따라 출구로",
+      step3: "복도를 배회하는 요괴를 피하세요 — 아이템을 던져 주의를 끌거나, 지나갈 때까지 숨기",
+      feat_label: "특징",
+      feat1: "여러 밤에 걸친 으스스한 1인칭 분위기",
+      feat2: "행등은 따뜻하고 안전한 휴식 지점의 표시",
+      feat3: "길을 잃었을 때의 힌트 기능",
+      feat4: "분위기를 제대로 즐기려면 헤드폰 추천 🎧",
+      cap_story: "어둠 속에서 길을 잃고 저택을 발견",
+      cap_safezone: "행등 안전 지대가 길을 밝힙니다",
+      cap_firefly: "떠다니는 반딧불이를 모으기",
+      cap_yokai: "복도의 요괴를 피하기",
+      cap_hide: "숨거나 던져서 빠져나가기",
+      back: "← HOTARU로 돌아가기"
+    },
+    hi: {
+      title: "HOTARU — गेम अवलोकन",
+      meta_desc: "HOTARU — खोया हुआ घर का गेम अवलोकन: दुनिया, खेलने का तरीका और ख़ासियतें, स्क्रीनशॉट के साथ।",
+      tagline: "खोया हुआ घर",
+      page_label: "गेम अवलोकन",
+      lead: "एक शांत प्रथम-पुरुष जापानी हॉरर वॉक-सिम। एक रात, अँधेरे में रास्ता भटककर आप एक पुराने घर तक पहुँचते हैं जिसे कोई नहीं जानता — और जैसे ही दरवाज़ा पीछे बंद होता है, वापसी का कोई रास्ता नहीं बचता।",
+      world_label: "दुनिया",
+      world_text: "मंच है एक \"खोया हुआ घर\" (maioiga) — एक विशाल हवेली जिसका होना ही नहीं चाहिए। अंदोन की रौशनी अँधेरे में गरमाहट से फैलती है, जुगनू गलियारों में तैरते हैं, और वहाँ आपके अलावा \"कुछ और\" भी भटकता है। माहौलिक, शांत और थोड़ा बेचैन कर देने वाला।",
+      howto_label: "कैसे खेलें",
+      howto_text: "स्क्रीन पर टच कंट्रोल्स से प्रथम-पुरुष में खोजबीन करें। जुगनू बटोरें, अंदोन से रौशन सुरक्षित ज़ोन तक पहुँचें, और पकड़े बिना बाहर का रास्ता खोजें।",
+      step1: "बाएँ स्टिक से चलें, स्क्रीन खींचकर नज़र घुमाएँ",
+      step2: "चमकते जुगनू बटोरें और हरी नक़्शे की कतरनों का पीछा करते हुए बाहर निकलें",
+      step3: "गलियारों में भटकते यो-काई से बचें — कोई चीज़ फेंककर उसका ध्यान भटकाएँ, या गुज़र जाने तक छिपें",
+      feat_label: "ख़ासियतें",
+      feat1: "कई रातों में फैला डरावना प्रथम-पुरुष माहौल",
+      feat2: "अंदोन गरम, सुरक्षित विश्राम-स्थलों को दर्शाते हैं",
+      feat3: "रास्ता भटकने पर हिंट सुविधा",
+      feat4: "पूरे माहौल के लिए हेडफ़ोन की सिफ़ारिश 🎧",
+      cap_story: "अँधेरे में भटककर घर तक पहुँचना",
+      cap_safezone: "अंदोन सुरक्षित ज़ोन राह दिखाते हैं",
+      cap_firefly: "तैरते जुगनू बटोरें",
+      cap_yokai: "गलियारों के यो-काई से बचें",
+      cap_hide: "छिपकर या फेंककर निकल जाएँ",
+      back: "← HOTARU पर वापस"
+    },
+    id: {
+      title: "HOTARU — Ikhtisar Game",
+      meta_desc: "Ikhtisar game HOTARU — Rumah yang Hilang: dunia, cara bermain, dan keunggulan, lengkap dengan tangkapan layar.",
+      tagline: "Rumah yang Hilang",
+      page_label: "Ikhtisar Game",
+      lead: "Walking sim horor Jepang first-person yang tenang. Suatu malam, tersesat dalam gelap, kamu menemukan rumah tua yang tak dikenal siapa pun — dan begitu pintu tertutup di belakangmu, tak ada jalan untuk kembali.",
+      world_label: "Dunia",
+      world_text: "Latarnya adalah \"rumah yang hilang\" (maioiga) — kediaman luas yang seharusnya tak ada. Cahaya lampion andon menghangat dalam gelap, kunang-kunang melayang di koridor, dan ada \"sesuatu\" lain yang juga berkeliaran bersamamu. Atmosferik, tenang, dan sedikit menggelisahkan.",
+      howto_label: "Cara Bermain",
+      howto_text: "Jelajahi dengan sudut pandang orang pertama lewat kontrol sentuh di layar. Kumpulkan kunang-kunang, capai zona aman bercahaya lampion, dan temukan jalan keluar tanpa tertangkap.",
+      step1: "Bergerak dengan stik kiri, seret layar untuk memutar pandangan",
+      step2: "Kumpulkan kunang-kunang bercahaya dan ikuti fragmen peta hijau menuju pintu keluar",
+      step3: "Hindari yokai yang berkeliaran di koridor — lempar benda untuk mengalihkannya, atau bersembunyi hingga ia lewat",
+      feat_label: "Keunggulan",
+      feat1: "Atmosfer first-person mencekam selama beberapa malam",
+      feat2: "Lampion andon menandai titik istirahat yang hangat dan aman",
+      feat3: "Fitur petunjuk saat kamu tersesat",
+      feat4: "Headphone disarankan untuk atmosfer penuh 🎧",
+      cap_story: "Tersesat dalam gelap, kamu menemukan rumah itu",
+      cap_safezone: "Zona aman lampion andon menerangi jalan",
+      cap_firefly: "Kumpulkan kunang-kunang yang melayang",
+      cap_yokai: "Hindari yokai di koridor",
+      cap_hide: "Bersembunyi atau melempar untuk lolos",
+      back: "← Kembali ke HOTARU"
+    },
+    de: {
+      title: "HOTARU — Spielübersicht",
+      meta_desc: "Spielübersicht zu HOTARU — Das verlorene Haus: die Welt, das Gameplay und die Highlights, mit Screenshots.",
+      tagline: "Das verlorene Haus",
+      page_label: "Spielübersicht",
+      lead: "Ein ruhiger japanischer First-Person-Horror-Walk-Sim. Eines Nachts, im Dunkeln verirrt, stößt du auf ein altes Haus, das niemand kennt — und sobald die Tür hinter dir zufällt, gibt es kein Zurück mehr.",
+      world_label: "Die Welt",
+      world_text: "Schauplatz ist ein „verlorenes Haus\" (Maioiga) — ein weitläufiges Anwesen, das es nicht geben dürfte. Andon-Laternen glühen warm gegen die Dunkelheit, Glühwürmchen treiben durch die Flure, und etwas anderes wandelt dort mit dir umher. Atmosphärisch, ruhig und ein wenig beunruhigend.",
+      howto_label: "So wird gespielt",
+      howto_text: "Erkunde in der Ego-Perspektive mit Touch-Steuerung auf dem Bildschirm. Sammle Glühwürmchen, erreiche die laternenbeleuchteten Sicherheitszonen und finde hinaus — ohne erwischt zu werden.",
+      step1: "Mit dem linken Stick bewegen, durch Ziehen umsehen",
+      step2: "Leuchtende Glühwürmchen sammeln und den grünen Karten-Fragmenten zum Ausgang folgen",
+      step3: "Den Yokai in den Fluren ausweichen — wirf einen Gegenstand zur Ablenkung oder verstecke dich, bis er vorbei ist",
+      feat_label: "Highlights",
+      feat1: "Unheimliche Ego-Atmosphäre über mehrere Nächte",
+      feat2: "Andon-Laternen markieren warme, sichere Rastplätze",
+      feat3: "Hinweis-System, wenn du dich verirrst",
+      feat4: "Kopfhörer empfohlen für die volle Atmosphäre 🎧",
+      cap_story: "Im Dunkeln verirrt, findest du das Haus",
+      cap_safezone: "Andon-Sicherheitszonen weisen den Weg",
+      cap_firefly: "Treibende Glühwürmchen sammeln",
+      cap_yokai: "Den Yokai in den Fluren ausweichen",
+      cap_hide: "Verstecken oder werfen, um vorbeizukommen",
+      back: "← Zurück zu HOTARU"
+    },
+    fr: {
+      title: "HOTARU — Aperçu du jeu",
+      meta_desc: "Aperçu du jeu HOTARU — La Maison Perdue : l'univers, comment jouer et les points forts, avec captures d'écran.",
+      tagline: "La Maison Perdue",
+      page_label: "Aperçu du jeu",
+      lead: "Un walking simulator d'horreur japonaise paisible à la première personne. Une nuit, perdu dans le noir, tu tombes sur une vieille maison que personne ne connaît — et dès que la porte se referme derrière toi, plus aucun retour possible.",
+      world_label: "L'univers",
+      world_text: "Le décor est une « maison perdue » (maioiga) — une vaste demeure qui ne devrait pas exister. La lumière des lanternes andon réchauffe l'obscurité, des lucioles dérivent dans les couloirs, et autre chose y erre avec toi. Atmosphérique, calme et un peu inquiétant.",
+      howto_label: "Comment jouer",
+      howto_text: "Explore à la première personne avec les commandes tactiles à l'écran. Rassemble des lucioles, atteins les zones sûres éclairées par les lanternes et trouve la sortie — sans te faire attraper.",
+      step1: "Déplace-toi avec le stick gauche, regarde autour en glissant le doigt",
+      step2: "Récupère les lucioles lumineuses et suis les fragments de carte verts vers la sortie",
+      step3: "Évite les yokai qui rôdent dans les couloirs — lance un objet pour le distraire, ou cache-toi le temps qu'il passe",
+      feat_label: "Points forts",
+      feat1: "Atmosphère à la première personne inquiétante sur plusieurs nuits",
+      feat2: "Les lanternes andon marquent des points de repos chauds et sûrs",
+      feat3: "Système d'indices quand tu te perds",
+      feat4: "Casque recommandé pour toute l'ambiance 🎧",
+      cap_story: "Perdu dans le noir, tu trouves la maison",
+      cap_safezone: "Les zones sûres des lanternes andon éclairent le chemin",
+      cap_firefly: "Rassemble les lucioles dérivantes",
+      cap_yokai: "Évite les yokai dans les couloirs",
+      cap_hide: "Cache-toi ou lance pour passer",
+      back: "← Retour à HOTARU"
+    },
+    it: {
+      title: "HOTARU — Panoramica del gioco",
+      meta_desc: "Panoramica di HOTARU — La Casa Perduta: il mondo, come si gioca e i punti forti, con screenshot.",
+      tagline: "La Casa Perduta",
+      page_label: "Panoramica del gioco",
+      lead: "Un quieto walking simulator horror giapponese in prima persona. Una notte, perso nel buio, ti imbatti in una vecchia casa che nessuno conosce — e appena la porta si chiude alle tue spalle, non c'è più via di ritorno.",
+      world_label: "Il mondo",
+      world_text: "L'ambientazione è una \"casa perduta\" (maioiga) — una dimora sterminata che non dovrebbe esistere. La luce delle lanterne andon riscalda il buio, le lucciole fluttuano nei corridoi e qualcos'altro vi si aggira insieme a te. Atmosferico, quieto e un po' inquietante.",
+      howto_label: "Come si gioca",
+      howto_text: "Esplora in prima persona con i comandi touch a schermo. Raccogli lucciole, raggiungi le zone sicure illuminate dalle lanterne e trova l'uscita — senza farti prendere.",
+      step1: "Muoviti con lo stick sinistro, guardati intorno trascinando",
+      step2: "Raccogli le lucciole luminose e segui i frammenti di mappa verdi verso l'uscita",
+      step3: "Evita gli yokai che vagano nei corridoi — lancia un oggetto per distrarlo, o nasconditi finché non passa",
+      feat_label: "Punti forti",
+      feat1: "Atmosfera inquietante in prima persona lungo più notti",
+      feat2: "Le lanterne andon segnano punti di sosta caldi e sicuri",
+      feat3: "Sistema di suggerimenti quando ti perdi",
+      feat4: "Cuffie consigliate per l'atmosfera completa 🎧",
+      cap_story: "Perso nel buio, trovi la casa",
+      cap_safezone: "Le zone sicure delle lanterne andon illuminano la via",
+      cap_firefly: "Raccogli le lucciole fluttuanti",
+      cap_yokai: "Evita gli yokai nei corridoi",
+      cap_hide: "Nasconditi o lancia per sgattaiolare",
+      back: "← Torna a HOTARU"
+    },
+    es: {
+      title: "HOTARU — Descripción del juego",
+      meta_desc: "Descripción del juego HOTARU — La Casa Perdida: el mundo, cómo se juega y lo más destacado, con capturas.",
+      tagline: "La Casa Perdida",
+      page_label: "Descripción del juego",
+      lead: "Un tranquilo simulador de caminata de terror japonés en primera persona. Una noche, perdido en la oscuridad, te topas con una vieja casa que nadie conoce — y en cuanto la puerta se cierra a tu espalda, ya no hay vuelta atrás.",
+      world_label: "El mundo",
+      world_text: "El escenario es una \"casa perdida\" (maioiga) — una mansión inmensa que no debería existir. La luz de las lámparas andon entibia la oscuridad, las luciérnagas flotan por los pasillos y algo más merodea allí contigo. Atmosférico, silencioso y algo inquietante.",
+      howto_label: "Cómo se juega",
+      howto_text: "Explora en primera persona con los controles táctiles en pantalla. Reúne luciérnagas, llega a las zonas seguras iluminadas por las lámparas y encuentra la salida — sin que te atrapen.",
+      step1: "Muévete con el stick izquierdo, mira alrededor arrastrando",
+      step2: "Reúne las luciérnagas brillantes y sigue los fragmentos de mapa verdes hacia la salida",
+      step3: "Evita a los yokai que rondan los pasillos — lanza un objeto para distraerlo, o escóndete hasta que pase",
+      feat_label: "Lo más destacado",
+      feat1: "Atmósfera inquietante en primera persona a lo largo de varias noches",
+      feat2: "Las lámparas andon marcan puntos de descanso cálidos y seguros",
+      feat3: "Sistema de pistas cuando te pierdes",
+      feat4: "Auriculares recomendados para el ambiente completo 🎧",
+      cap_story: "Perdido en la oscuridad, encuentras la casa",
+      cap_safezone: "Las zonas seguras de las lámparas andon iluminan el camino",
+      cap_firefly: "Reúne las luciérnagas flotantes",
+      cap_yokai: "Evita a los yokai en los pasillos",
+      cap_hide: "Escóndete o lanza para escabullirte",
+      back: "← Volver a HOTARU"
+    },
+    pt: {
+      title: "HOTARU — Visão geral do jogo",
+      meta_desc: "Visão geral do HOTARU — A Casa Perdida: o mundo, como jogar e os destaques, com capturas de tela.",
+      tagline: "A Casa Perdida",
+      page_label: "Visão geral do jogo",
+      lead: "Um tranquilo simulador de caminhada de horror japonês em primeira pessoa. Certa noite, perdido no escuro, você se depara com uma casa antiga que ninguém conhece — e assim que a porta se fecha atrás de você, não há mais volta.",
+      world_label: "O mundo",
+      world_text: "O cenário é uma \"casa perdida\" (maioiga) — uma mansão imensa que não deveria existir. A luz das lanternas andon aquece a escuridão, vaga-lumes flutuam pelos corredores e algo mais vagueia ali com você. Atmosférico, silencioso e um tanto perturbador.",
+      howto_label: "Como jogar",
+      howto_text: "Explore em primeira pessoa com os controles de toque na tela. Reúna vaga-lumes, alcance as zonas seguras iluminadas pelas lanternas e encontre a saída — sem ser pego.",
+      step1: "Mova-se com o direcional esquerdo, arraste para olhar ao redor",
+      step2: "Reúna os vaga-lumes brilhantes e siga os fragmentos de mapa verdes rumo à saída",
+      step3: "Evite os yokai que vagam pelos corredores — jogue um item para distraí-lo, ou esconda-se até ele passar",
+      feat_label: "Destaques",
+      feat1: "Atmosfera assustadora em primeira pessoa por várias noites",
+      feat2: "As lanternas andon marcam pontos de descanso quentes e seguros",
+      feat3: "Sistema de dicas quando você se perde",
+      feat4: "Fones recomendados para a atmosfera completa 🎧",
+      cap_story: "Perdido no escuro, você encontra a casa",
+      cap_safezone: "As zonas seguras das lanternas andon iluminam o caminho",
+      cap_firefly: "Reúna os vaga-lumes flutuantes",
+      cap_yokai: "Evite os yokai nos corredores",
+      cap_hide: "Esconda-se ou jogue para escapar",
+      back: "← Voltar para HOTARU"
+    },
+    ru: {
+      title: "HOTARU — Об игре",
+      meta_desc: "Об игре HOTARU — Затерянный дом: мир, как играть и ключевые особенности, со скриншотами.",
+      tagline: "Затерянный дом",
+      page_label: "Об игре",
+      lead: "Тихий японский хоррор-симулятор ходьбы от первого лица. Однажды ночью, заблудившись в темноте, вы набредаете на старый дом, которого никто не знает, — и стоит двери закрыться за спиной, обратного пути уже нет.",
+      world_label: "Мир",
+      world_text: "Место действия — «затерянный дом» (майоига), огромная усадьба, которой не должно существовать. Свет фонарей-андон тепло рассеивает тьму, светлячки парят по коридорам, и там вместе с вами бродит ещё «нечто». Атмосферно, тихо и немного тревожно.",
+      howto_label: "Как играть",
+      howto_text: "Исследуйте от первого лица с помощью экранного сенсорного управления. Собирайте светлячков, добирайтесь до освещённых фонарями безопасных зон и найдите выход — не попавшись.",
+      step1: "Двигайтесь левым стиком, осматривайтесь, проводя по экрану",
+      step2: "Собирайте светящихся светлячков и идите за зелёными фрагментами карты к выходу",
+      step3: "Избегайте ёкаев, бродящих по коридорам, — бросьте предмет, чтобы отвлечь, или спрячьтесь, пока он не пройдёт",
+      feat_label: "Особенности",
+      feat1: "Жуткая атмосфера от первого лица на протяжении нескольких ночей",
+      feat2: "Фонари-андон отмечают тёплые безопасные места отдыха",
+      feat3: "Система подсказок, если вы заблудились",
+      feat4: "Для полной атмосферы рекомендуются наушники 🎧",
+      cap_story: "Заблудившись в темноте, вы находите дом",
+      cap_safezone: "Безопасные зоны с фонарями-андон освещают путь",
+      cap_firefly: "Собирайте парящих светлячков",
+      cap_yokai: "Избегайте ёкаев в коридорах",
+      cap_hide: "Прячьтесь или бросайте, чтобы проскользнуть",
+      back: "← Назад к HOTARU"
+    }
+  };
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang';
+
+  function detectLang() {
+    try {
+      const stored = localStorage.getItem(LANG_STORAGE_KEY);
+      if (stored && i18n[stored]) return stored;
+    } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {}
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(opt);
+    }
+    setLang(detectLang());
+    sel.addEventListener('change', e => setLang(e.target.value));
+  })();
+</script>
+</body>
+</html>
