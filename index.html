@@ -90,6 +90,19 @@
     border-color: rgba(122, 176, 255, 0.50);
     transform: translateY(-2px);
   }
+  .game-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .game-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 13px;
+    flex-shrink: 0;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  }
   .game-card a {
     color: #7ab0ff;
     text-decoration: none;
@@ -129,6 +142,7 @@
     .brand-icon { width: 104px; height: 104px; }
     .container { padding: 60px 24px; }
     .lang-switch { top: 16px; right: 16px; }
+    .game-icon { width: 48px; height: 48px; border-radius: 11px; }
   }
 </style>
 </head>
@@ -146,7 +160,10 @@
   <h2 data-i18n="games_heading">Games</h2>
   <ul class="game-list">
     <li class="game-card">
-      <a href="hotaru/" data-i18n="hotaru_title">HOTARU — The Lost House</a>
+      <div class="game-head">
+        <img class="game-icon" src="hotaru/icon.png" alt="">
+        <a href="hotaru/" data-i18n="hotaru_title">HOTARU — The Lost House</a>
+      </div>
       <div class="desc" data-i18n="hotaru_desc">A beautiful Japanese horror walking simulator. Follow the fireflies, gather them at the andon, hurl them at yokai — and find the back gate before dawn.</div>
       <div class="links">
         <a href="hotaru/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
@@ -154,7 +171,10 @@
       </div>
     </li>
     <li class="game-card">
-      <a href="liquid-glow/">Liquid Glow</a>
+      <div class="game-head">
+        <img class="game-icon" src="liquid-glow/icon.png" alt="">
+        <a href="liquid-glow/">Liquid Glow</a>
+      </div>
       <div class="desc" data-i18n="lg_desc">A meditative sort puzzle. Pour glowing liquids between glass tubes and watch them flow through the cosmos.</div>
       <div class="links">
         <a href="liquid-glow/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
@@ -162,7 +182,10 @@
       </div>
     </li>
     <li class="game-card">
-      <a href="mole-whack/" data-i18n="mw_title">モグラぽかぽか — Mole Whack</a>
+      <div class="game-head">
+        <img class="game-icon" src="mole-whack/icon.png?v=20260521172609" alt="">
+        <a href="mole-whack/" data-i18n="mw_title">モグラぽかぽか — Mole Whack</a>
+      </div>
       <div class="desc" data-i18n="mw_desc">A simple 30-second tap action. Whack the moles as they pop up and chase your high score.</div>
       <a class="appstore-badge" href="https://apps.apple.com/app/id6770864132" target="_blank" rel="noopener" aria-label="Download Mole Whack on the App Store">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
