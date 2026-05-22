@@ -64,6 +64,27 @@
     text-transform: uppercase;
     letter-spacing: 2px;
   }
+  .store-live {
+    margin: 28px 0 4px;
+    text-align: center;
+  }
+  .store-live-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #f5d57a;
+    letter-spacing: 1px;
+    margin-bottom: 12px;
+  }
+  .appstore-badge {
+    display: inline-block;
+    line-height: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .appstore-badge:hover {
+    transform: translateY(-2px);
+    opacity: 0.88;
+  }
+  .appstore-badge svg { display: block; margin: 0 auto; }
   .tester-card {
     background: rgba(245, 213, 122, 0.05);
     border: 1px solid rgba(245, 213, 122, 0.30);
@@ -193,6 +214,20 @@
   <h1>HOTARU</h1>
   <div class="subtitle" data-i18n="subtitle">Japanese Horror Walk Sim</div>
 
+  <section class="store-live" aria-label="App Store">
+    <div class="store-live-label">🍎 <span data-i18n="store_live_label">iOS version now on the App Store</span></div>
+    <a class="appstore-badge" href="https://apps.apple.com/app/id6770427114" target="_blank" rel="noopener" aria-label="Download HOTARU on the App Store">
+      <svg viewBox="0 0 130 44" width="170" height="58" role="img" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#000" stroke="#A6A6A6" stroke-width="1"/>
+        <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+          <path fill="#fff" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+        </svg>
+        <text x="44" y="18" fill="#fff" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+        <text x="43" y="34" fill="#fff" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+      </svg>
+    </a>
+  </section>
+
   <section class="tester-card" aria-labelledby="tester-heading">
     <div id="tester-heading" class="tester-heading">
       🏮 <span data-i18n="tester_heading">Android Tester Recruitment</span>
@@ -250,6 +285,7 @@
       meta_desc: "HOTARU — a quiet Japanese horror walking simulator by PixelRyu. Join the 14-day Android closed testing.",
       tagline: "The Lost House",
       subtitle: "Japanese Horror Walk Sim",
+      store_live_label: "iOS version now on the App Store",
       legal_divider: "Legal Documents",
       link_privacy: "Privacy Policy",
       link_terms: "Terms of Service",
@@ -273,6 +309,7 @@
       meta_desc: "HOTARU — PixelRyu による静かな和ホラーウォーキングシム。14日間の Android クローズドテストにご参加ください。",
       tagline: "失われた屋敷",
       subtitle: "和ホラー一人称ウォーキングシム",
+      store_live_label: "iOS 版を App Store で配信中",
       legal_divider: "規約類",
       link_privacy: "プライバシーポリシー",
       link_terms: "利用規約",
@@ -296,6 +333,7 @@
       meta_desc: "HOTARU — PixelRyu 出品的宁静日式恐怖步行模拟。欢迎参加为期 14 天的 Android 封闭测试。",
       tagline: "失落的屋舍",
       subtitle: "日式恐怖步行模拟",
+      store_live_label: "iOS 版已在 App Store 上线",
       legal_divider: "法律文件",
       link_privacy: "隐私政策",
       link_terms: "服务条款",
@@ -319,6 +357,7 @@
       meta_desc: "HOTARU — PixelRyu의 조용한 일본 호러 워킹 시뮬레이터. 14일간의 Android 비공개 테스트에 참여해 보세요.",
       tagline: "잃어버린 저택",
       subtitle: "일본 호러 워킹 시뮬레이터",
+      store_live_label: "iOS 버전 App Store 출시 중",
       legal_divider: "법적 고지",
       link_privacy: "개인정보 처리방침",
       link_terms: "서비스 이용약관",
@@ -342,6 +381,7 @@
       meta_desc: "HOTARU — PixelRyu द्वारा शांत जापानी हॉरर वॉकिंग सिमुलेटर। 14 दिन के Android क्लोज़्ड टेस्ट में शामिल हों।",
       tagline: "खोया हुआ घर",
       subtitle: "जापानी हॉरर वॉक सिम",
+      store_live_label: "iOS संस्करण अब App Store पर",
       legal_divider: "क़ानूनी दस्तावेज़",
       link_privacy: "गोपनीयता नीति",
       link_terms: "सेवा शर्तें",
@@ -365,6 +405,7 @@
       meta_desc: "HOTARU — simulator berjalan horor Jepang yang tenang dari PixelRyu. Ikuti closed test Android selama 14 hari.",
       tagline: "Rumah yang Hilang",
       subtitle: "Walking Sim Horor Jepang",
+      store_live_label: "Versi iOS kini di App Store",
       legal_divider: "Dokumen Hukum",
       link_privacy: "Kebijakan Privasi",
       link_terms: "Ketentuan Layanan",
@@ -388,6 +429,7 @@
       meta_desc: "HOTARU — ein ruhiger japanischer Horror-Walking-Simulator von PixelRyu. Nimm an der 14-tägigen geschlossenen Android-Testphase teil.",
       tagline: "Das verlorene Haus",
       subtitle: "Japanischer Horror-Walking-Simulator",
+      store_live_label: "iOS-Version jetzt im App Store",
       legal_divider: "Rechtsdokumente",
       link_privacy: "Datenschutzerklärung",
       link_terms: "Nutzungsbedingungen",
@@ -411,6 +453,7 @@
       meta_desc: "HOTARU — un walking simulator d'horreur japonaise paisible par PixelRyu. Rejoignez les 14 jours de test fermé Android.",
       tagline: "La Maison Perdue",
       subtitle: "Walking sim d'horreur japonaise",
+      store_live_label: "Version iOS sur l'App Store",
       legal_divider: "Documents légaux",
       link_privacy: "Politique de confidentialité",
       link_terms: "Conditions d'utilisation",
@@ -434,6 +477,7 @@
       meta_desc: "HOTARU — un quieto walking simulator horror giapponese di PixelRyu. Partecipa al closed test Android di 14 giorni.",
       tagline: "La Casa Perduta",
       subtitle: "Walk Sim Horror Giapponese",
+      store_live_label: "Versione iOS ora sull'App Store",
       legal_divider: "Documenti legali",
       link_privacy: "Informativa sulla privacy",
       link_terms: "Termini di servizio",
@@ -457,6 +501,7 @@
       meta_desc: "HOTARU — un tranquilo simulador de caminata de terror japonés por PixelRyu. Únete a la fase de pruebas cerradas de Android de 14 días.",
       tagline: "La Casa Perdida",
       subtitle: "Simulador de caminata de terror japonés",
+      store_live_label: "Versión iOS ya en la App Store",
       legal_divider: "Documentos legales",
       link_privacy: "Política de privacidad",
       link_terms: "Términos del servicio",
@@ -480,6 +525,7 @@
       meta_desc: "HOTARU — um simulador de caminhada de horror japonês tranquilo da PixelRyu. Junte-se ao teste fechado Android de 14 dias.",
       tagline: "A Casa Perdida",
       subtitle: "Simulador de caminhada de horror japonês",
+      store_live_label: "Versão iOS já na App Store",
       legal_divider: "Documentos legais",
       link_privacy: "Política de privacidade",
       link_terms: "Termos de serviço",
@@ -503,6 +549,7 @@
       meta_desc: "HOTARU — тихий японский хоррор-симулятор ходьбы от PixelRyu. Присоединяйтесь к 14-дневному закрытому Android-тестированию.",
       tagline: "Затерянный дом",
       subtitle: "Японский хоррор-симулятор ходьбы",
+      store_live_label: "Версия для iOS теперь в App Store",
       legal_divider: "Правовые документы",
       link_privacy: "Политика конфиденциальности",
       link_terms: "Условия использования",
