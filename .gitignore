@@ -1,0 +1,4 @@
+.DS_Store
+
+# 配布アーカイブ/素材アーカイブ (GitHub 100MB 制限超過・Pages 不要)
+*.zip
