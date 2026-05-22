@@ -178,7 +178,7 @@
 
 <script>
   document.getElementById('year').textContent = new Date().getFullYear();
-  const LANG_STORAGE_KEY = 'pixelryu_lang';
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
   function applyLang(lang) {
     const display = (lang === 'ja') ? 'ja' : 'en';
     document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
