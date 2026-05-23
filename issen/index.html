@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">ISSEN — One breath, one cut</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="ISSEN — a sumi-e timing-action game of the iaido draw by PixelRyu. In development; coming soon to Android & iOS.">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: radial-gradient(ellipse at top, #241b18 0%, #150f0d 50%, #080504 100%);
+    color: #ece4d2;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    max-width: 580px;
+    width: 100%;
+    padding: 80px 32px;
+    text-align: center;
+    position: relative;
+  }
+  .lang-switch {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
+  .lang-switch select {
+    background: rgba(224, 80, 63, 0.06);
+    color: #ece4d2;
+    border: 1px solid rgba(224, 80, 63, 0.22);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .lang-switch select:hover {
+    background: rgba(224, 80, 63, 0.14);
+    border-color: rgba(224, 80, 63, 0.55);
+  }
+  .lang-switch select option { background: #1a1310; color: #ece4d2; }
+  .tagline {
+    font-size: 14px;
+    color: #a1907a;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  h1 {
+    font-size: 56px;
+    margin: 0 0 4px;
+    color: #ece4d2;
+    font-weight: 800;
+    letter-spacing: 2px;
+  }
+  h1 .kanji {
+    color: #e0503f;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-left: 10px;
+    vertical-align: 6px;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: #a1907a;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .dev-card {
+    background: rgba(224, 80, 63, 0.05);
+    border: 1px solid rgba(224, 80, 63, 0.30);
+    border-radius: 16px;
+    padding: 24px 24px 28px;
+    margin: 32px 0 40px;
+    text-align: left;
+    box-shadow: 0 0 30px rgba(224, 80, 63, 0.05);
+  }
+  .dev-heading {
+    font-size: 13px;
+    color: #e0503f;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 4px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .dev-note {
+    display: block;
+    font-size: 11px;
+    color: #a1907a;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    margin-top: 6px;
+    margin-bottom: 4px;
+    text-align: center;
+  }
+  .dev-card p {
+    font-size: 14px;
+    line-height: 1.7;
+    color: #d8ccb2;
+    margin: 14px 0 0;
+  }
+  .dev-section-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #cf7a4a;
+    margin: 20px 0 4px;
+  }
+  .overview-link {
+    display: block;
+    background: #e0503f;
+    color: #1a0f0c;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 18px 22px;
+    border-radius: 14px;
+    margin: 0 0 24px;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 22px rgba(224, 80, 63, 0.25);
+  }
+  .overview-link:hover { background: #f26a58; transform: translateY(-1px); }
+  .legal-divider {
+    font-size: 14px;
+    color: #8a7c66;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 8px 0 16px;
+  }
+  .links { list-style: none; padding: 0; margin: 0; }
+  .links li {
+    background: rgba(224, 80, 63, 0.05);
+    border: 1px solid rgba(224, 80, 63, 0.20);
+    border-radius: 14px;
+    margin-bottom: 14px;
+    transition: all 0.25s ease;
+  }
+  .links li:hover {
+    background: rgba(224, 80, 63, 0.12);
+    border-color: rgba(224, 80, 63, 0.50);
+  }
+  .links a {
+    color: #e0503f;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    padding: 22px 24px;
+  }
+  .back {
+    display: inline-block;
+    margin-top: 48px;
+    color: #8a7c66;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .back:hover { color: #e0a08a; }
+  @media (max-width: 600px) {
+    .lang-switch { top: 16px; right: 16px; }
+    .dev-card { padding: 20px 18px 22px; }
+    h1 { font-size: 46px; }
+    h1 .kanji { font-size: 28px; }
+  }
+  .social-heading{font-size:13px;color:#a1907a;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(224,80,63,0.06);border:1px solid rgba(224,80,63,0.20);color:#a1907a;transition:all .25s ease;}
+  .social a:hover{background:rgba(224,80,63,0.12);border-color:rgba(224,80,63,0.45);color:#e0503f;transform:translateY(-2px);}
+  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch">
+    <select id="lang-select" aria-label="Language"></select>
+  </div>
+  <div class="tagline" data-i18n="tagline">One breath. One cut.</div>
+  <h1>ISSEN <span class="kanji">一閃</span></h1>
+  <div class="subtitle" data-i18n="subtitle">Sumi-e Timing Action</div>
+
+  <section class="dev-card" aria-labelledby="dev-heading">
+    <div id="dev-heading" class="dev-heading">
+      ⚔ <span data-i18n="dev_label">In Development</span>
+      <span class="dev-note">🖌 <span data-i18n="dev_note">Coming soon to Android &amp; iOS</span></span>
+    </div>
+    <p data-i18n="dev_intro">A new PixelRyu game in the making — currently in prototype. Follow along for the launch.</p>
+
+    <div class="dev-section-label">🗡 <span data-i18n="dev_what_label">What it is</span></div>
+    <p data-i18n="dev_what">A sumi-e (ink-wash) timing-action game built on the iaido draw — breathe, read the distance, and unleash a single perfect cut. Slash the red flames, spare the blue souls, and chase the gold for a true flash.</p>
+  </section>
+
+  <a href="overview.html" class="overview-link">🖌 <span data-i18n="link_overview">View Game Overview</span> →</a>
+
+  <div class="legal-divider" data-i18n="legal_divider">Legal Documents</div>
+  <ul class="links">
+    <li><a href="privacy_policy.html" data-i18n="link_privacy">Privacy Policy</a></li>
+    <li><a href="terms_of_service.html" data-i18n="link_terms">Terms of Service</a></li>
+  </ul>
+  <a href="../" class="back" data-i18n="back">← PixelRyu</a>
+  <h2 class="social-heading">Follow</h2>
+  <div class="social">
+    <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note"><svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+    en: {
+      title: "ISSEN — One breath, one cut",
+      meta_desc: "ISSEN — a sumi-e timing-action game of the iaido draw by PixelRyu. In development; coming soon to Android & iOS.",
+      tagline: "One breath. One cut.",
+      subtitle: "Sumi-e Timing Action",
+      dev_label: "In Development",
+      dev_note: "Coming soon to Android & iOS",
+      dev_intro: "A new PixelRyu game in the making — currently in prototype. Follow along for the launch.",
+      dev_what_label: "What it is",
+      dev_what: "A sumi-e (ink-wash) timing-action game built on the iaido draw — breathe, read the distance, and unleash a single perfect cut. Slash the red flames, spare the blue souls, and chase the gold for a true flash.",
+      legal_divider: "Legal Documents",
+      link_overview: "View Game Overview",
+      link_privacy: "Privacy Policy",
+      link_terms: "Terms of Service",
+      back: "← PixelRyu"
+    },
+    ja: {
+      title: "ISSEN（一閃）— 一拍で、すべてを断つ",
+      meta_desc: "ISSEN（一閃）— PixelRyu による居合の一閃を描く墨絵タイミングアクション。開発中、Android・iOS で近日公開。",
+      tagline: "一拍で、すべてを断つ。",
+      subtitle: "墨絵タイミングアクション",
+      dev_label: "開発中",
+      dev_note: "Android・iOS で近日公開",
+      dev_intro: "PixelRyu が制作中の新作です。現在プロトタイプ段階。公開までフォローしてお待ちください。",
+      dev_what_label: "ゲーム内容",
+      dev_what: "居合の「抜き」を核にした墨絵(すみえ)のタイミングアクション。呼吸を整え、間合いを見切り、ただ一筆の完璧な一閃を放つ。赤い鬼火を斬り、青い人魂は避け、金を狙って真・一閃を決めろ。",
+      legal_divider: "規約類",
+      link_overview: "ゲーム概要を見る",
+      link_privacy: "プライバシーポリシー",
+      link_terms: "利用規約",
+      back: "← PixelRyu へ戻る"
+    },
+    zh: {
+      title: "ISSEN（一闪）— 一息,一斩",
+      meta_desc: "ISSEN（一闪）— PixelRyu 出品,以居合拔刀为核心的水墨节奏动作游戏。开发中,即将登陆 Android 与 iOS。",
+      tagline: "一息,一斩。",
+      subtitle: "水墨节奏动作",
+      dev_label: "开发中",
+      dev_note: "即将登陆 Android 与 iOS",
+      dev_intro: "PixelRyu 正在制作的新作,目前处于原型阶段。欢迎关注,等待上线。",
+      dev_what_label: "游戏简介",
+      dev_what: "以居合「拔刀」为核心的水墨节奏动作游戏。调匀呼吸,看准间距,挥出唯一一笔完美的斩击。斩断红色鬼火,放过蓝色魂火,瞄准金色打出真·一闪。",
+      legal_divider: "法律文件",
+      link_overview: "查看游戏简介",
+      link_privacy: "隐私政策",
+      link_terms: "服务条款",
+      back: "← 返回 PixelRyu"
+    },
+    ko: {
+      title: "ISSEN（一閃）— 한 호흡, 한 베기",
+      meta_desc: "ISSEN（一閃）— PixelRyu의 거합 발도를 그린 수묵 타이밍 액션. 개발 중이며 Android·iOS 출시 예정.",
+      tagline: "한 호흡, 한 베기.",
+      subtitle: "수묵 타이밍 액션",
+      dev_label: "개발 중",
+      dev_note: "Android·iOS 출시 예정",
+      dev_intro: "PixelRyu가 제작 중인 신작입니다. 현재 프로토타입 단계이며, 출시 소식을 팔로우해 주세요.",
+      dev_what_label: "게임 소개",
+      dev_what: "거합의 '발도'를 핵심으로 한 수묵 타이밍 액션. 호흡을 가다듬고 간격을 가늠해, 단 한 번의 완벽한 베기를 펼치세요. 붉은 도깨비불은 베고, 푸른 혼불은 피하며, 금빛을 노려 진·일섬을 완성하세요.",
+      legal_divider: "법적 고지",
+      link_overview: "게임 소개 보기",
+      link_privacy: "개인정보 처리방침",
+      link_terms: "서비스 이용약관",
+      back: "← PixelRyu로 돌아가기"
+    },
+    hi: {
+      title: "ISSEN — एक साँस, एक वार",
+      meta_desc: "ISSEN — PixelRyu द्वारा इआइदो वार पर आधारित सुमी-ए टाइमिंग एक्शन। विकासाधीन; Android और iOS पर जल्द।",
+      tagline: "एक साँस। एक वार।",
+      subtitle: "सुमी-ए टाइमिंग एक्शन",
+      dev_label: "विकासाधीन",
+      dev_note: "Android और iOS पर जल्द आ रहा है",
+      dev_intro: "PixelRyu का बनता हुआ नया गेम — फ़िलहाल प्रोटोटाइप चरण में। लॉन्च के लिए फ़ॉलो करते रहें।",
+      dev_what_label: "यह क्या है",
+      dev_what: "इआइदो के 'वार' पर आधारित सुमी-ए (स्याही) टाइमिंग एक्शन। साँस साधें, दूरी भाँपें और बस एक संपूर्ण वार छोड़ें। लाल लपटों को काटें, नीली आत्माओं को बख़्शें, और सच्चे वार के लिए सुनहरे का पीछा करें।",
+      legal_divider: "क़ानूनी दस्तावेज़",
+      link_overview: "गेम अवलोकन देखें",
+      link_privacy: "गोपनीयता नीति",
+      link_terms: "सेवा शर्तें",
+      back: "← PixelRyu पर वापस"
+    },
+    id: {
+      title: "ISSEN — Satu napas, satu tebasan",
+      meta_desc: "ISSEN — game aksi ketepatan bergaya sumi-e tentang tarikan pedang iaido dari PixelRyu. Dalam pengembangan; segera di Android & iOS.",
+      tagline: "Satu napas. Satu tebasan.",
+      subtitle: "Aksi Ketepatan Sumi-e",
+      dev_label: "Dalam Pengembangan",
+      dev_note: "Segera hadir di Android & iOS",
+      dev_intro: "Game baru PixelRyu yang sedang dibuat — saat ini tahap prototipe. Ikuti terus untuk peluncurannya.",
+      dev_what_label: "Tentang game ini",
+      dev_what: "Game aksi ketepatan bergaya sumi-e (tinta) yang berpusat pada tarikan pedang iaido — atur napas, baca jarak, dan lepaskan satu tebasan sempurna. Tebas api merah, biarkan jiwa biru, dan kejar yang emas untuk kilatan sejati.",
+      legal_divider: "Dokumen Hukum",
+      link_overview: "Lihat Ikhtisar Game",
+      link_privacy: "Kebijakan Privasi",
+      link_terms: "Ketentuan Layanan",
+      back: "← Kembali ke PixelRyu"
+    },
+    de: {
+      title: "ISSEN — Ein Atemzug, ein Schnitt",
+      meta_desc: "ISSEN — ein Sumi-e-Timing-Actionspiel über den Iaido-Zug von PixelRyu. In Entwicklung; demnächst für Android & iOS.",
+      tagline: "Ein Atemzug. Ein Schnitt.",
+      subtitle: "Sumi-e-Timing-Action",
+      dev_label: "In Entwicklung",
+      dev_note: "Demnächst für Android & iOS",
+      dev_intro: "Ein neues PixelRyu-Spiel in Arbeit — derzeit als Prototyp. Bleib dran für den Launch.",
+      dev_what_label: "Worum es geht",
+      dev_what: "Ein Sumi-e-Timing-Actionspiel rund um den Iaido-Zug — atme, lies die Distanz und entfessle einen einzigen perfekten Schnitt. Zerschneide die roten Flammen, verschone die blauen Seelen und jage das Gold für einen wahren Hieb.",
+      legal_divider: "Rechtsdokumente",
+      link_overview: "Spielübersicht ansehen",
+      link_privacy: "Datenschutzerklärung",
+      link_terms: "Nutzungsbedingungen",
+      back: "← Zurück zu PixelRyu"
+    },
+    fr: {
+      title: "ISSEN — Un souffle, une entaille",
+      meta_desc: "ISSEN — un jeu d'action de précision sumi-e sur le dégainé de l'iaido par PixelRyu. En développement ; bientôt sur Android et iOS.",
+      tagline: "Un souffle. Une entaille.",
+      subtitle: "Action de précision sumi-e",
+      dev_label: "En développement",
+      dev_note: "Bientôt sur Android et iOS",
+      dev_intro: "Un nouveau jeu PixelRyu en cours de création — actuellement au stade du prototype. Suivez-nous pour la sortie.",
+      dev_what_label: "De quoi il s'agit",
+      dev_what: "Un jeu d'action de précision sumi-e bâti sur le dégainé de l'iaido — respire, jauge la distance et libère une seule entaille parfaite. Tranche les flammes rouges, épargne les âmes bleues et vise l'or pour un véritable éclair.",
+      legal_divider: "Documents légaux",
+      link_overview: "Voir l'aperçu du jeu",
+      link_privacy: "Politique de confidentialité",
+      link_terms: "Conditions d'utilisation",
+      back: "← Retour à PixelRyu"
+    },
+    it: {
+      title: "ISSEN — Un respiro, un taglio",
+      meta_desc: "ISSEN — un gioco d'azione a tempo in stile sumi-e sull'estrazione dell'iaido di PixelRyu. In sviluppo; presto su Android e iOS.",
+      tagline: "Un respiro. Un taglio.",
+      subtitle: "Action a tempo sumi-e",
+      dev_label: "In sviluppo",
+      dev_note: "Presto su Android e iOS",
+      dev_intro: "Un nuovo gioco PixelRyu in lavorazione — attualmente in fase di prototipo. Seguici per il lancio.",
+      dev_what_label: "Di cosa si tratta",
+      dev_what: "Un gioco d'azione a tempo in stile sumi-e incentrato sull'estrazione dell'iaido — respira, valuta la distanza e libera un solo taglio perfetto. Taglia le fiamme rosse, risparmia le anime blu e insegui l'oro per un vero lampo.",
+      legal_divider: "Documenti legali",
+      link_overview: "Vedi la panoramica",
+      link_privacy: "Informativa sulla privacy",
+      link_terms: "Termini di servizio",
+      back: "← Torna a PixelRyu"
+    },
+    es: {
+      title: "ISSEN — Un aliento, un corte",
+      meta_desc: "ISSEN — un juego de acción de precisión sumi-e sobre el desenvaine del iaido de PixelRyu. En desarrollo; próximamente en Android e iOS.",
+      tagline: "Un aliento. Un corte.",
+      subtitle: "Acción de precisión sumi-e",
+      dev_label: "En desarrollo",
+      dev_note: "Próximamente en Android e iOS",
+      dev_intro: "Un nuevo juego de PixelRyu en desarrollo — actualmente en fase de prototipo. Síguenos para el lanzamiento.",
+      dev_what_label: "De qué se trata",
+      dev_what: "Un juego de acción de precisión sumi-e basado en el desenvaine del iaido — respira, mide la distancia y libera un único corte perfecto. Corta las llamas rojas, perdona las almas azules y persigue el oro para un destello verdadero.",
+      legal_divider: "Documentos legales",
+      link_overview: "Ver descripción del juego",
+      link_privacy: "Política de privacidad",
+      link_terms: "Términos del servicio",
+      back: "← Volver a PixelRyu"
+    },
+    pt: {
+      title: "ISSEN — Um sopro, um corte",
+      meta_desc: "ISSEN — um jogo de ação de precisão em estilo sumi-e sobre o saque do iaido da PixelRyu. Em desenvolvimento; em breve para Android e iOS.",
+      tagline: "Um sopro. Um corte.",
+      subtitle: "Ação de precisão sumi-e",
+      dev_label: "Em desenvolvimento",
+      dev_note: "Em breve para Android e iOS",
+      dev_intro: "Um novo jogo da PixelRyu em criação — atualmente em fase de protótipo. Acompanhe para o lançamento.",
+      dev_what_label: "Sobre o jogo",
+      dev_what: "Um jogo de ação de precisão em estilo sumi-e centrado no saque do iaido — respire, leia a distância e desfira um único corte perfeito. Corte as chamas vermelhas, poupe as almas azuis e persiga o ouro para um verdadeiro lampejo.",
+      legal_divider: "Documentos legais",
+      link_overview: "Ver visão geral do jogo",
+      link_privacy: "Política de privacidade",
+      link_terms: "Termos de serviço",
+      back: "← Voltar para PixelRyu"
+    },
+    ru: {
+      title: "ISSEN — Один вдох, один разрез",
+      meta_desc: "ISSEN — тайминг-экшен в стиле суми-э о выхватывании меча иайдо от PixelRyu. В разработке; скоро на Android и iOS.",
+      tagline: "Один вдох. Один разрез.",
+      subtitle: "Тайминг-экшен в стиле суми-э",
+      dev_label: "В разработке",
+      dev_note: "Скоро на Android и iOS",
+      dev_intro: "Новая игра PixelRyu в разработке — сейчас на стадии прототипа. Следите за новостями о выходе.",
+      dev_what_label: "О чём игра",
+      dev_what: "Тайминг-экшен в стиле суми-э, построенный на выхватывании меча иайдо: дышите, чувствуйте дистанцию и наносите единственный идеальный разрез. Рубите красное пламя, щадите синие души и ловите золото ради истинной вспышки.",
+      legal_divider: "Правовые документы",
+      link_overview: "Посмотреть об игре",
+      link_privacy: "Политика конфиденциальности",
+      link_terms: "Условия использования",
+      back: "← Назад к PixelRyu"
+    }
+  };
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
+
+  function detectLang() {
+    try {
+      const stored = localStorage.getItem(LANG_STORAGE_KEY);
+      if (stored && i18n[stored]) return stored;
+    } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang, persist) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(opt);
+    }
+    setLang(detectLang());
+    sel.addEventListener('change', e => setLang(e.target.value, true));
+  })();
+</script>
+</body>
+</html>

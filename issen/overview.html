@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">ISSEN — Game Overview</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Game overview of ISSEN: the sumi-e world, how to play, and highlights, with in-development concept art.">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: radial-gradient(ellipse at top, #241b18 0%, #150f0d 50%, #080504 100%);
+    color: #ece4d2;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .container {
+    max-width: 620px;
+    width: 100%;
+    padding: 64px 32px 80px;
+    text-align: center;
+    position: relative;
+  }
+  .lang-switch { position: absolute; top: 24px; right: 24px; }
+  .lang-switch select {
+    background: rgba(224, 80, 63, 0.06);
+    color: #ece4d2;
+    border: 1px solid rgba(224, 80, 63, 0.22);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .lang-switch select:hover { background: rgba(224, 80, 63, 0.14); border-color: rgba(224, 80, 63, 0.55); }
+  .lang-switch select option { background: #1a1310; color: #ece4d2; }
+  .tagline {
+    font-size: 13px;
+    color: #a1907a;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+  }
+  h1 {
+    font-size: 48px;
+    margin: 0 0 6px;
+    color: #ece4d2;
+    font-weight: 800;
+    letter-spacing: 1px;
+  }
+  h1 .kanji {
+    color: #e0503f;
+    font-size: 30px;
+    font-weight: 700;
+    letter-spacing: 4px;
+    margin-left: 8px;
+    vertical-align: 5px;
+  }
+  .page-label {
+    font-size: 13px;
+    color: #a1907a;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+  }
+  .lead {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #d8ccb2;
+    margin: 14px auto 8px;
+    max-width: 500px;
+  }
+  .dev-banner {
+    font-size: 12px;
+    color: #cf7a4a;
+    background: rgba(224, 80, 63, 0.06);
+    border: 1px solid rgba(224, 80, 63, 0.25);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin: 16px auto 0;
+    max-width: 460px;
+    line-height: 1.5;
+  }
+  .section {
+    background: rgba(224, 80, 63, 0.05);
+    border: 1px solid rgba(224, 80, 63, 0.30);
+    border-radius: 16px;
+    padding: 24px 24px 28px;
+    margin: 28px 0;
+    text-align: left;
+    box-shadow: 0 0 30px rgba(224, 80, 63, 0.05);
+  }
+  .section h2 { font-size: 18px; color: #e0503f; margin: 0 0 4px; font-weight: 800; }
+  .section .sub { font-size: 11px; color: #a1907a; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  .section p { font-size: 14px; line-height: 1.8; color: #d8ccb2; margin: 12px 0; }
+  .section ol, .section ul { margin: 12px 0 0; padding-left: 22px; font-size: 14px; line-height: 1.85; color: #d8ccb2; }
+  .hero-shot { width: 100%; max-width: 360px; margin: 22px auto 4px; }
+  .hero-shot img {
+    width: 100%;
+    border-radius: 18px;
+    border: 1px solid rgba(224, 80, 63, 0.22);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.6);
+    display: block;
+  }
+  .hero-shot figcaption { font-size: 12px; color: #a1907a; margin-top: 8px; text-align: center; }
+  .art-figure { max-width: 340px; margin: 18px auto 4px; }
+  .ink-panel {
+    background: #ece4d2;
+    border-radius: 14px;
+    padding: 24px;
+    border: 1px solid rgba(224, 80, 63, 0.22);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .ink-panel img { display: block; margin: 0 auto; max-height: 240px; width: auto; max-width: 100%; }
+  .art-figure figcaption { font-size: 12px; color: #a1907a; margin-top: 8px; text-align: center; }
+  .back {
+    display: inline-block;
+    margin-top: 28px;
+    color: #a1907a;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .back:hover { color: #e0503f; }
+  @media (max-width: 600px) {
+    .container { padding: 48px 18px 64px; }
+    .lang-switch { top: 16px; right: 16px; }
+    .section { padding: 20px 18px 22px; }
+    h1 { font-size: 40px; }
+    h1 .kanji { font-size: 26px; }
+  }
+  .social-heading{font-size:13px;color:#a1907a;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(224,80,63,0.06);border:1px solid rgba(224,80,63,0.20);color:#a1907a;transition:all .25s ease;}
+  .social a:hover{background:rgba(224,80,63,0.12);border-color:rgba(224,80,63,0.45);color:#e0503f;transform:translateY(-2px);}
+  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+</style>
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch"><select id="lang-select" aria-label="Language"></select></div>
+  <div class="tagline" data-i18n="tagline">One breath. One cut.</div>
+  <h1>ISSEN <span class="kanji">一閃</span></h1>
+  <div class="page-label" data-i18n="page_label">Game Overview</div>
+  <p class="lead" data-i18n="lead">A sumi-e timing-action game distilled to a single motion: the iaido draw. Breathe, read the distance, and answer with one perfect cut — the way of a single, decisive flash.</p>
+  <div class="dev-banner" data-i18n="dev_banner">🖌 In development — concept art shown below, not final gameplay.</div>
+
+  <figure class="hero-shot">
+    <img src="icon.png" alt="ISSEN key art: a lone samurai within a vermilion ensō">
+    <figcaption data-i18n="cap_key">Key art — in development</figcaption>
+  </figure>
+
+  <section class="section">
+    <h2 data-i18n="world_label">The World</h2>
+    <div class="sub">🖌</div>
+    <p data-i18n="world_text">Painted in sumi-e — ink wash and the beauty of empty space, with a single stroke of vermilion. Across the seasons — cherry blossoms, autumn leaves, snow, moonlight, mist and bamboo — silence holds, until the instant the ink bursts into a cut.</p>
+    <figure class="art-figure">
+      <div class="ink-panel"><img src="art/enso.png" alt="A hand-brushed ensō ink circle"></div>
+      <figcaption data-i18n="cap_enso">Sumi-e: ink and empty space</figcaption>
+    </figure>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="howto_label">How to Play</h2>
+    <div class="sub">🗡</div>
+    <p data-i18n="howto_text">One stroke is all you have. Drag across the screen to draw your blade through the targets at the perfect moment — no spamming, no flailing, just a single decisive line.</p>
+    <ol>
+      <li data-i18n="step1">Read the distance — wait as a target closes into range.</li>
+      <li data-i18n="step2">Slash the red oni-fire with one stroke; line several up and cut them in a single sweep.</li>
+      <li data-i18n="step3">Spare the blue souls — slip your stroke past them, or lose the combo. Chase the gold for a true flash (perfect only).</li>
+      <li data-i18n="step4">Fill the breath gauge, then "settle" (totonou) — time slows, the cut window widens, and you land a flurry of perfect flashes.</li>
+    </ol>
+    <figure class="art-figure">
+      <div class="ink-panel"><img src="art/katana.png" alt="A single katana, ink silhouette"></div>
+      <figcaption data-i18n="cap_katana">One stroke, one blade</figcaption>
+    </figure>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="feat_label">Highlights</h2>
+    <div class="sub">✨</div>
+    <ul>
+      <li data-i18n="feat1">Tap-perfect timing built on the iaido draw — a mechanic of its own</li>
+      <li data-i18n="feat2">Sumi-e ink art with a single vermilion accent</li>
+      <li data-i18n="feat3">A "breath / settle" focus mode that slows the world</li>
+      <li data-i18n="feat4">True-flash slow-motion replays, made to share</li>
+      <li data-i18n="feat5">Seasonal stages, a dojo of stances and blades, and a yokai bestiary (planned)</li>
+    </ul>
+    <figure class="art-figure">
+      <div class="ink-panel"><img src="art/samurai.png" alt="A lone samurai, ink silhouette"></div>
+      <figcaption data-i18n="cap_samurai">The way of the single cut</figcaption>
+    </figure>
+  </section>
+
+  <a href="./" class="back" data-i18n="back">← Back to ISSEN</a>
+  <h2 class="social-heading">Follow</h2>
+  <div class="social">
+    <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note"><svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+    en: {
+      title: "ISSEN — Game Overview",
+      meta_desc: "Game overview of ISSEN: the sumi-e world, how to play, and highlights, with in-development concept art.",
+      tagline: "One breath. One cut.",
+      page_label: "Game Overview",
+      lead: "A sumi-e timing-action game distilled to a single motion: the iaido draw. Breathe, read the distance, and answer with one perfect cut — the way of a single, decisive flash.",
+      dev_banner: "🖌 In development — concept art shown below, not final gameplay.",
+      world_label: "The World",
+      world_text: "Painted in sumi-e — ink wash and the beauty of empty space, with a single stroke of vermilion. Across the seasons — cherry blossoms, autumn leaves, snow, moonlight, mist and bamboo — silence holds, until the instant the ink bursts into a cut.",
+      howto_label: "How to Play",
+      howto_text: "One stroke is all you have. Drag across the screen to draw your blade through the targets at the perfect moment — no spamming, no flailing, just a single decisive line.",
+      step1: "Read the distance — wait as a target closes into range.",
+      step2: "Slash the red oni-fire with one stroke; line several up and cut them in a single sweep.",
+      step3: "Spare the blue souls — slip your stroke past them, or lose the combo. Chase the gold for a true flash (perfect only).",
+      step4: "Fill the breath gauge, then \"settle\" (totonou) — time slows, the cut window widens, and you land a flurry of perfect flashes.",
+      feat_label: "Highlights",
+      feat1: "Tap-perfect timing built on the iaido draw — a mechanic of its own",
+      feat2: "Sumi-e ink art with a single vermilion accent",
+      feat3: "A \"breath / settle\" focus mode that slows the world",
+      feat4: "True-flash slow-motion replays, made to share",
+      feat5: "Seasonal stages, a dojo of stances and blades, and a yokai bestiary (planned)",
+      cap_key: "Key art — in development",
+      cap_enso: "Sumi-e: ink and empty space",
+      cap_katana: "One stroke, one blade",
+      cap_samurai: "The way of the single cut",
+      back: "← Back to ISSEN"
+    },
+    ja: {
+      title: "ISSEN（一閃）— ゲーム概要",
+      meta_desc: "ISSEN（一閃）のゲーム概要。墨絵の世界観・遊び方・特徴を、開発中のコンセプトアートとともに紹介します。",
+      tagline: "一拍で、すべてを断つ。",
+      page_label: "ゲーム概要",
+      lead: "居合の「抜き」という一動作に絞り込んだ、墨絵のタイミングアクション。呼吸を整え、間合いを見切り、ただ一筆の完璧な一閃で応える。",
+      dev_banner: "🖌 開発中 — 以下は開発中のコンセプトアートで、実際のゲーム画面ではありません。",
+      world_label: "世界観",
+      world_text: "墨絵(すみえ)の濃淡と「余白の美」、そこに朱(しゅ)を一点だけ差す。桜・紅葉・雪・月・霧・竹林——四季の景の中で静寂が続き、一閃の瞬間にだけ墨が爆ぜる。",
+      howto_label: "遊び方",
+      howto_text: "斬撃は「一拍の一筆」が基本。画面をなぞって、完璧なタイミングで対象を一刀両断する。連打も乱れ斬りもなく、ただ一筋の決定的な線を引く。",
+      step1: "間合いを見切る——対象が間合いへ近づくのを待つ。",
+      step2: "赤い鬼火を一筆で斬る。一直線に揃えれば、一閃で同時に薙ぐ。",
+      step3: "青い人魂は避ける——斬ると命とコンボを失う。金は「真・一閃(perfect)」でのみ斬れて大得点。",
+      step4: "呼吸ゲージを満たして「ととのう」を発動——時が遅くなり、斬の窓が広がり、真・一閃を連続で決められる。",
+      feat_label: "特徴",
+      feat1: "居合の「抜き」を核にした独自のタイミング判定",
+      feat2: "朱を一点差した墨絵のアート",
+      feat3: "世界がスローになる「呼吸／ととのう」集中モード",
+      feat4: "共有しやすい「真・一閃」のスロー自動リプレイ",
+      feat5: "季節のステージ、流派と刀の道場、妖怪の図鑑（予定）",
+      cap_key: "キーアート — 開発中",
+      cap_enso: "墨と余白の美",
+      cap_katana: "一筆、一刀",
+      cap_samurai: "一閃の美学",
+      back: "← ISSEN のページへ戻る"
+    },
+    zh: {
+      title: "ISSEN（一闪）— 游戏简介",
+      meta_desc: "ISSEN（一闪）的游戏简介:水墨世界观、玩法与特色,附开发中的概念美术。",
+      tagline: "一息,一斩。",
+      page_label: "游戏简介",
+      lead: "一款凝练为单一动作——居合拔刀——的水墨节奏动作游戏。调匀呼吸,看准间距,以一笔完美的斩击回应,这便是「一闪」之道。",
+      dev_banner: "🖌 开发中 — 以下为开发阶段的概念美术,并非最终游戏画面。",
+      world_label: "世界观",
+      world_text: "以水墨(sumi-e)绘就——墨色浓淡与「留白之美」,再点上一抹朱红。樱、枫、雪、月、雾、竹林——四季之景中静寂常驻,唯有一闪的瞬间,墨色才骤然迸裂。",
+      howto_label: "玩法",
+      howto_text: "斩击以「一息一笔」为本。在画面上划动,于完美时机将刀锋穿过目标。无需连打,不必乱舞,只需一道决定性的线。",
+      step1: "看准间距——等待目标进入间合。",
+      step2: "一笔斩断红色鬼火;将数个排成一线,一闪同时斩落。",
+      step3: "放过蓝色魂火——让笔锋绕过它们,否则连击中断。瞄准金色打出真·一闪(仅限完美)。",
+      step4: "蓄满呼吸槽后发动「调息」(ととのう)——时间放缓,斩窗扩大,连续打出真·一闪。",
+      feat_label: "特色",
+      feat1: "以居合拔刀为核心、自成一格的精准节奏判定",
+      feat2: "仅点一抹朱红的水墨美术",
+      feat3: "让世界放缓的「呼吸／调息」专注模式",
+      feat4: "便于分享的真·一闪慢动作自动回放",
+      feat5: "四季关卡、流派与刀的道场,以及妖怪图鉴(规划中)",
+      cap_key: "概念主视觉 — 开发中",
+      cap_enso: "水墨与留白之美",
+      cap_katana: "一笔,一刀",
+      cap_samurai: "一闪之道",
+      back: "← 返回 ISSEN"
+    },
+    ko: {
+      title: "ISSEN（一閃）— 게임 소개",
+      meta_desc: "ISSEN（一閃）의 게임 소개: 수묵 세계관, 플레이 방법, 특징을 개발 중 콘셉트 아트와 함께 소개합니다.",
+      tagline: "한 호흡, 한 베기.",
+      page_label: "게임 소개",
+      lead: "거합의 '발도'라는 단 하나의 동작으로 응축한 수묵 타이밍 액션. 호흡을 가다듬고 간격을 가늠해, 한 번의 완벽한 베기로 답하는 일섬(一閃)의 길.",
+      dev_banner: "🖌 개발 중 — 아래는 개발 단계의 콘셉트 아트이며, 실제 게임 화면이 아닙니다.",
+      world_label: "세계관",
+      world_text: "수묵(sumi-e)으로 그려진 세계 — 먹의 농담과 '여백의 미', 그리고 단 한 점의 주홍(朱). 벚꽃·단풍·눈·달·안개·대숲, 사계의 풍경 속에 정적이 흐르고, 일섬의 순간에만 먹이 터져 나옵니다.",
+      howto_label: "플레이 방법",
+      howto_text: "베기는 '한 호흡의 한 획'이 기본. 화면을 그어 완벽한 순간에 칼날을 대상에 통과시키세요. 연타도, 난도질도 없이, 오직 하나의 결정적인 선을.",
+      step1: "간격을 가늠하기 — 대상이 간합으로 다가올 때까지 기다리세요.",
+      step2: "붉은 도깨비불을 한 획으로 베고, 일직선으로 모이면 한 번에 베어 넘기세요.",
+      step3: "푸른 혼불은 피하기 — 베면 목숨과 콤보를 잃습니다. 금빛은 '진·일섬(perfect)'으로만 벨 수 있어 큰 점수.",
+      step4: "호흡 게이지를 채워 '정돈(ととのう)'을 발동 — 시간이 느려지고 베기 창이 넓어져 진·일섬을 연속으로 터뜨립니다.",
+      feat_label: "특징",
+      feat1: "거합의 '발도'를 핵심으로 한 독자적인 타이밍 판정",
+      feat2: "주홍 한 점을 더한 수묵 아트",
+      feat3: "세계를 느리게 하는 '호흡／정돈' 집중 모드",
+      feat4: "공유하기 좋은 '진·일섬' 슬로모션 자동 리플레이",
+      feat5: "계절 스테이지, 유파와 검의 도장, 요괴 도감(예정)",
+      cap_key: "키 아트 — 개발 중",
+      cap_enso: "먹과 여백의 미",
+      cap_katana: "한 획, 한 자루",
+      cap_samurai: "일섬의 미학",
+      back: "← ISSEN으로 돌아가기"
+    },
+    hi: {
+      title: "ISSEN — गेम अवलोकन",
+      meta_desc: "ISSEN का गेम अवलोकन: सुमी-ए दुनिया, खेलने का तरीका और ख़ासियतें, विकासाधीन कॉन्सेप्ट आर्ट के साथ।",
+      tagline: "एक साँस। एक वार।",
+      page_label: "गेम अवलोकन",
+      lead: "एक ही गति—इआइदो वार—में सिमटी सुमी-ए टाइमिंग एक्शन। साँस साधें, दूरी भाँपें और एक संपूर्ण वार से जवाब दें — एक निर्णायक चमक का मार्ग।",
+      dev_banner: "🖌 विकासाधीन — नीचे विकास-चरण की कॉन्सेप्ट आर्ट है, अंतिम गेमप्ले नहीं।",
+      world_label: "दुनिया",
+      world_text: "सुमी-ए (स्याही) में चित्रित — स्याही की छाया-प्रकाश और \"ख़ाली जगह का सौंदर्य\", साथ में सिंदूरी रंग का बस एक स्पर्श। ऋतुएँ — चेरी फूल, पतझड़, बर्फ़, चाँदनी, कुहासा और बाँस-वन — में सन्नाटा बना रहता है, और बस वार के क्षण में स्याही फूट पड़ती है।",
+      howto_label: "कैसे खेलें",
+      howto_text: "वार का आधार है \"एक साँस, एक स्ट्रोक\"। स्क्रीन पर खींचकर सही पल में अपनी तलवार लक्ष्यों के आर-पार ले जाएँ — न बार-बार दबाना, न अंधाधुंध, बस एक निर्णायक रेखा।",
+      step1: "दूरी भाँपें — लक्ष्य के पास आने का इंतज़ार करें।",
+      step2: "लाल ओनी-अग्नि को एक स्ट्रोक में काटें; कई को एक पंक्ति में लाकर एक ही झटके में काट दें।",
+      step3: "नीली आत्माओं को बख़्शें — स्ट्रोक उनसे बचाकर ले जाएँ, वरना कॉम्बो टूट जाएगा। सच्चे वार के लिए सुनहरे का पीछा करें (केवल परफ़ेक्ट)।",
+      step4: "साँस-गेज भरें, फिर \"संतुलन\" (totonou) सक्रिय करें — समय धीमा होता है, वार-खिड़की चौड़ी होती है, और आप लगातार सच्चे वार करते हैं।",
+      feat_label: "ख़ासियतें",
+      feat1: "इआइदो वार पर आधारित, अपनी अलग पहचान वाला सटीक टाइमिंग",
+      feat2: "बस एक सिंदूरी स्पर्श वाली सुमी-ए स्याही कला",
+      feat3: "दुनिया को धीमा करने वाला \"साँस／संतुलन\" फ़ोकस मोड",
+      feat4: "साझा करने लायक़ सच्चे-वार के स्लो-मोशन ऑटो रीप्ले",
+      feat5: "ऋतु-आधारित स्टेज, शैलियों व तलवारों का दोजो, और यो-काई बेस्टियरी (नियोजित)",
+      cap_key: "की-आर्ट — विकासाधीन",
+      cap_enso: "स्याही और ख़ाली जगह का सौंदर्य",
+      cap_katana: "एक स्ट्रोक, एक तलवार",
+      cap_samurai: "एकल वार का मार्ग",
+      back: "← ISSEN पर वापस"
+    },
+    id: {
+      title: "ISSEN — Ikhtisar Game",
+      meta_desc: "Ikhtisar game ISSEN: dunia sumi-e, cara bermain, dan keunggulan, lengkap dengan concept art tahap pengembangan.",
+      tagline: "Satu napas. Satu tebasan.",
+      page_label: "Ikhtisar Game",
+      lead: "Game aksi ketepatan bergaya sumi-e yang disuling menjadi satu gerakan: tarikan pedang iaido. Atur napas, baca jarak, dan jawab dengan satu tebasan sempurna — jalan satu kilatan yang menentukan.",
+      dev_banner: "🖌 Dalam pengembangan — yang ditampilkan di bawah adalah concept art, bukan gameplay final.",
+      world_label: "Dunia",
+      world_text: "Dilukis dengan sumi-e — sapuan tinta dan keindahan ruang kosong, dengan satu goresan merah vermilion. Sepanjang musim — sakura, daun musim gugur, salju, cahaya bulan, kabut, dan rumpun bambu — kesunyian bertahan, hingga saat tinta meledak menjadi sebuah tebasan.",
+      howto_label: "Cara Bermain",
+      howto_text: "Kamu hanya punya satu goresan. Seret di layar untuk menarik bilahmu menembus sasaran pada saat yang tepat — tanpa spam, tanpa asal tebas, hanya satu garis yang menentukan.",
+      step1: "Baca jarak — tunggu sasaran masuk ke jangkauan.",
+      step2: "Tebas api oni merah dengan satu goresan; sejajarkan beberapa lalu tebas dalam satu sapuan.",
+      step3: "Biarkan jiwa biru — selipkan goresanmu melewatinya, atau combo hilang. Kejar yang emas untuk kilatan sejati (hanya perfect).",
+      step4: "Isi gauge napas, lalu \"settle\" (totonou) — waktu melambat, jendela tebasan melebar, dan kamu melepas serangkaian kilatan sempurna.",
+      feat_label: "Keunggulan",
+      feat1: "Ketepatan waktu berbasis tarikan pedang iaido — mekanik tersendiri",
+      feat2: "Seni tinta sumi-e dengan satu aksen vermilion",
+      feat3: "Mode fokus \"napas / settle\" yang memperlambat dunia",
+      feat4: "Replay slow-motion kilatan sejati, dibuat untuk dibagikan",
+      feat5: "Stage musiman, dojo berisi stance dan bilah, serta bestiari yokai (direncanakan)",
+      cap_key: "Key art — dalam pengembangan",
+      cap_enso: "Sumi-e: tinta dan ruang kosong",
+      cap_katana: "Satu goresan, satu bilah",
+      cap_samurai: "Jalan satu tebasan",
+      back: "← Kembali ke ISSEN"
+    },
+    de: {
+      title: "ISSEN — Spielübersicht",
+      meta_desc: "Spielübersicht zu ISSEN: die Sumi-e-Welt, das Gameplay und die Highlights, mit Konzeptkunst aus der Entwicklung.",
+      tagline: "Ein Atemzug. Ein Schnitt.",
+      page_label: "Spielübersicht",
+      lead: "Ein Sumi-e-Timing-Actionspiel, destilliert auf eine einzige Bewegung: den Iaido-Zug. Atme, lies die Distanz und antworte mit einem perfekten Schnitt — der Weg eines einzigen, entscheidenden Hiebs.",
+      dev_banner: "🖌 In Entwicklung — unten ist Konzeptkunst zu sehen, kein finales Gameplay.",
+      world_label: "Die Welt",
+      world_text: "Gemalt in Sumi-e — Tuschelavur und die Schönheit des leeren Raums, mit einem einzigen Strich Zinnoberrot. Über die Jahreszeiten hinweg — Kirschblüten, Herbstlaub, Schnee, Mondlicht, Nebel und Bambushain — hält die Stille, bis in dem einen Augenblick die Tusche zu einem Schnitt aufbricht.",
+      howto_label: "So wird gespielt",
+      howto_text: "Ein Strich ist alles, was du hast. Ziehe über den Bildschirm, um deine Klinge im perfekten Moment durch die Ziele zu führen — kein Gehämmer, kein wildes Schlagen, nur eine einzige entscheidende Linie.",
+      step1: "Lies die Distanz — warte, bis ein Ziel in Reichweite kommt.",
+      step2: "Zerschneide das rote Oni-Feuer mit einem Strich; reihe mehrere auf und schneide sie in einem Zug.",
+      step3: "Verschone die blauen Seelen — führe deinen Strich an ihnen vorbei, sonst reißt die Combo. Jage das Gold für einen wahren Hieb (nur perfekt).",
+      step4: "Fülle die Atem-Anzeige und „sammle dich\" (totonou) — die Zeit verlangsamt sich, das Schnittfenster wird größer, und du landest eine Serie perfekter Hiebe.",
+      feat_label: "Highlights",
+      feat1: "Punktgenaues Timing rund um den Iaido-Zug — eine eigene Mechanik",
+      feat2: "Sumi-e-Tuschekunst mit einem einzigen zinnoberroten Akzent",
+      feat3: "Ein „Atem / Sammeln\"-Fokusmodus, der die Welt verlangsamt",
+      feat4: "Slow-Motion-Replays wahrer Hiebe, gemacht zum Teilen",
+      feat5: "Jahreszeiten-Stages, ein Dojo aus Haltungen und Klingen sowie ein Yokai-Bestiarium (geplant)",
+      cap_key: "Key Art — in Entwicklung",
+      cap_enso: "Sumi-e: Tusche und leerer Raum",
+      cap_katana: "Ein Strich, eine Klinge",
+      cap_samurai: "Der Weg des einzigen Schnitts",
+      back: "← Zurück zu ISSEN"
+    },
+    fr: {
+      title: "ISSEN — Aperçu du jeu",
+      meta_desc: "Aperçu du jeu ISSEN : l'univers sumi-e, comment jouer et les points forts, avec des illustrations conceptuelles en développement.",
+      tagline: "Un souffle. Une entaille.",
+      page_label: "Aperçu du jeu",
+      lead: "Un jeu d'action de précision sumi-e ramené à un seul geste : le dégainé de l'iaido. Respire, jauge la distance et réponds par une entaille parfaite — la voie d'un unique éclair décisif.",
+      dev_banner: "🖌 En développement — ci-dessous des illustrations conceptuelles, pas le gameplay final.",
+      world_label: "L'univers",
+      world_text: "Peint en sumi-e — lavis d'encre et beauté du vide, avec une seule touche de vermillon. Au fil des saisons — fleurs de cerisier, feuilles d'automne, neige, clair de lune, brume et bambouseraie — le silence demeure, jusqu'à l'instant où l'encre éclate en une entaille.",
+      howto_label: "Comment jouer",
+      howto_text: "Tu n'as qu'un seul trait. Glisse sur l'écran pour faire passer ta lame à travers les cibles au moment parfait — pas de matraquage, pas de gestes désordonnés, juste une ligne décisive.",
+      step1: "Jauge la distance — attends qu'une cible entre à portée.",
+      step2: "Tranche le feu d'oni rouge d'un seul trait ; aligne-en plusieurs et coupe-les d'un seul mouvement.",
+      step3: "Épargne les âmes bleues — fais passer ton trait à côté, sinon le combo s'interrompt. Vise l'or pour un véritable éclair (parfait uniquement).",
+      step4: "Remplis la jauge de souffle, puis « apaise-toi » (totonou) — le temps ralentit, la fenêtre de coupe s'élargit, et tu enchaînes une rafale d'éclairs parfaits.",
+      feat_label: "Points forts",
+      feat1: "Un timing au poil bâti sur le dégainé de l'iaido — une mécanique à part entière",
+      feat2: "Un art à l'encre sumi-e avec une seule touche de vermillon",
+      feat3: "Un mode focus « souffle / apaisement » qui ralentit le monde",
+      feat4: "Des replays au ralenti des véritables éclairs, faits pour être partagés",
+      feat5: "Des niveaux saisonniers, un dojo de postures et de lames, et un bestiaire de yokai (prévu)",
+      cap_key: "Illustration clé — en développement",
+      cap_enso: "Sumi-e : l'encre et le vide",
+      cap_katana: "Un trait, une lame",
+      cap_samurai: "La voie de l'entaille unique",
+      back: "← Retour à ISSEN"
+    },
+    it: {
+      title: "ISSEN — Panoramica del gioco",
+      meta_desc: "Panoramica di ISSEN: il mondo sumi-e, come si gioca e i punti forti, con concept art in fase di sviluppo.",
+      tagline: "Un respiro. Un taglio.",
+      page_label: "Panoramica del gioco",
+      lead: "Un gioco d'azione a tempo in stile sumi-e ridotto a un solo gesto: l'estrazione dell'iaido. Respira, valuta la distanza e rispondi con un taglio perfetto — la via di un unico, decisivo lampo.",
+      dev_banner: "🖌 In sviluppo — qui sotto trovi concept art, non il gameplay definitivo.",
+      world_label: "Il mondo",
+      world_text: "Dipinto in sumi-e — lavaggio d'inchiostro e la bellezza dello spazio vuoto, con un solo tratto di vermiglio. Lungo le stagioni — fiori di ciliegio, foglie d'autunno, neve, chiaro di luna, nebbia e bambuseto — regna il silenzio, fino all'istante in cui l'inchiostro esplode in un taglio.",
+      howto_label: "Come si gioca",
+      howto_text: "Hai a disposizione un solo tratto. Trascina sullo schermo per far passare la lama tra i bersagli nel momento perfetto — niente spam, niente fendenti scomposti, solo una linea decisiva.",
+      step1: "Valuta la distanza — attendi che un bersaglio entri nel raggio.",
+      step2: "Taglia il fuoco oni rosso con un tratto; allineane diversi e recidili in un solo colpo.",
+      step3: "Risparmia le anime blu — fai scivolare il tratto accanto a loro, o perdi la combo. Insegui l'oro per un vero lampo (solo perfetto).",
+      step4: "Riempi la barra del respiro, poi \"calmati\" (totonou) — il tempo rallenta, la finestra del taglio si allarga e metti a segno una raffica di lampi perfetti.",
+      feat_label: "Punti forti",
+      feat1: "Tempismo perfetto basato sull'estrazione dell'iaido — una meccanica a sé",
+      feat2: "Arte a inchiostro sumi-e con un unico accento vermiglio",
+      feat3: "Una modalità focus \"respiro / calma\" che rallenta il mondo",
+      feat4: "Replay al rallentatore dei veri lampi, pensati per essere condivisi",
+      feat5: "Livelli stagionali, un dojo di posture e lame e un bestiario di yokai (previsto)",
+      cap_key: "Key art — in sviluppo",
+      cap_enso: "Sumi-e: inchiostro e spazio vuoto",
+      cap_katana: "Un tratto, una lama",
+      cap_samurai: "La via del taglio unico",
+      back: "← Torna a ISSEN"
+    },
+    es: {
+      title: "ISSEN — Descripción del juego",
+      meta_desc: "Descripción del juego ISSEN: el mundo sumi-e, cómo se juega y lo más destacado, con arte conceptual en desarrollo.",
+      tagline: "Un aliento. Un corte.",
+      page_label: "Descripción del juego",
+      lead: "Un juego de acción de precisión sumi-e reducido a un solo gesto: el desenvaine del iaido. Respira, mide la distancia y responde con un corte perfecto — la vía de un único destello decisivo.",
+      dev_banner: "🖌 En desarrollo — abajo se muestra arte conceptual, no la jugabilidad final.",
+      world_label: "El mundo",
+      world_text: "Pintado en sumi-e — aguada de tinta y la belleza del espacio vacío, con un único trazo bermellón. A lo largo de las estaciones — cerezos, hojas de otoño, nieve, luz de luna, niebla y bambú — reina el silencio, hasta el instante en que la tinta estalla en un corte.",
+      howto_label: "Cómo se juega",
+      howto_text: "Solo tienes un trazo. Arrastra por la pantalla para pasar tu hoja a través de los objetivos en el momento perfecto — sin machacar botones, sin tajos al azar, solo una línea decisiva.",
+      step1: "Mide la distancia — espera a que un objetivo entre en alcance.",
+      step2: "Corta el fuego oni rojo de un solo trazo; alinea varios y córtalos de un solo movimiento.",
+      step3: "Perdona las almas azules — pasa tu trazo junto a ellas, o perderás el combo. Persigue el oro para un destello verdadero (solo perfecto).",
+      step4: "Llena el medidor de aliento y luego \"serénate\" (totonou) — el tiempo se ralentiza, la ventana de corte se ensancha y encadenas una ráfaga de destellos perfectos.",
+      feat_label: "Lo más destacado",
+      feat1: "Sincronización milimétrica basada en el desenvaine del iaido — una mecánica propia",
+      feat2: "Arte a tinta sumi-e con un único acento bermellón",
+      feat3: "Un modo de concentración \"aliento / serenarse\" que ralentiza el mundo",
+      feat4: "Repeticiones a cámara lenta de los destellos verdaderos, hechas para compartir",
+      feat5: "Niveles estacionales, un dojo de posturas y hojas, y un bestiario de yokai (previsto)",
+      cap_key: "Arte clave — en desarrollo",
+      cap_enso: "Sumi-e: tinta y espacio vacío",
+      cap_katana: "Un trazo, una hoja",
+      cap_samurai: "La vía del corte único",
+      back: "← Volver a ISSEN"
+    },
+    pt: {
+      title: "ISSEN — Visão geral do jogo",
+      meta_desc: "Visão geral do ISSEN: o mundo sumi-e, como jogar e os destaques, com arte conceitual em desenvolvimento.",
+      tagline: "Um sopro. Um corte.",
+      page_label: "Visão geral do jogo",
+      lead: "Um jogo de ação de precisão em estilo sumi-e reduzido a um único gesto: o saque do iaido. Respire, leia a distância e responda com um corte perfeito — o caminho de um único lampejo decisivo.",
+      dev_banner: "🖌 Em desenvolvimento — abaixo há arte conceitual, não a jogabilidade final.",
+      world_label: "O mundo",
+      world_text: "Pintado em sumi-e — aguada de tinta e a beleza do espaço vazio, com um único traço de vermelhão. Ao longo das estações — flores de cerejeira, folhas de outono, neve, luar, névoa e bambuzal — o silêncio permanece, até o instante em que a tinta irrompe num corte.",
+      howto_label: "Como jogar",
+      howto_text: "Você tem apenas um traço. Arraste pela tela para passar sua lâmina pelos alvos no momento perfeito — sem martelar, sem golpes desordenados, apenas uma linha decisiva.",
+      step1: "Leia a distância — espere o alvo entrar no alcance.",
+      step2: "Corte o fogo oni vermelho com um traço; alinhe vários e corte-os num só movimento.",
+      step3: "Poupe as almas azuis — passe seu traço ao lado delas, ou perca o combo. Persiga o ouro para um lampejo verdadeiro (só perfeito).",
+      step4: "Encha o medidor de respiração e então \"acalme-se\" (totonou) — o tempo desacelera, a janela de corte se alarga e você emenda uma sequência de lampejos perfeitos.",
+      feat_label: "Destaques",
+      feat1: "Tempo milimétrico baseado no saque do iaido — uma mecânica própria",
+      feat2: "Arte a tinta sumi-e com um único acento vermelhão",
+      feat3: "Um modo de foco \"respiração / acalmar\" que desacelera o mundo",
+      feat4: "Replays em câmera lenta dos lampejos verdadeiros, feitos para compartilhar",
+      feat5: "Fases sazonais, um dojo de posturas e lâminas, e um bestiário de yokai (planejado)",
+      cap_key: "Arte-chave — em desenvolvimento",
+      cap_enso: "Sumi-e: tinta e espaço vazio",
+      cap_katana: "Um traço, uma lâmina",
+      cap_samurai: "O caminho do corte único",
+      back: "← Voltar para ISSEN"
+    },
+    ru: {
+      title: "ISSEN — Об игре",
+      meta_desc: "Об игре ISSEN: мир суми-э, как играть и ключевые особенности, с концепт-артом из разработки.",
+      tagline: "Один вдох. Один разрез.",
+      page_label: "Об игре",
+      lead: "Тайминг-экшен в стиле суми-э, сведённый к одному движению — выхватыванию меча иайдо. Дышите, чувствуйте дистанцию и отвечайте одним идеальным разрезом — путь единственной решающей вспышки.",
+      dev_banner: "🖌 В разработке — ниже показан концепт-арт, а не финальный геймплей.",
+      world_label: "Мир",
+      world_text: "Написан в технике суми-э — размывка тушью и красота пустого пространства, с единственным мазком киновари. Сквозь времена года — цветущая сакура, осенние листья, снег, лунный свет, туман и бамбуковая роща — держится тишина, пока в одно мгновение тушь не взрывается разрезом.",
+      howto_label: "Как играть",
+      howto_text: "У вас лишь один мазок. Проведите по экрану, чтобы пронести клинок сквозь цели в идеальный момент — без долбёжки, без беспорядочных взмахов, только одна решающая линия.",
+      step1: "Чувствуйте дистанцию — ждите, пока цель войдёт в зону.",
+      step2: "Рубите красный огонь они одним мазком; выстройте несколько в линию и срежьте одним движением.",
+      step3: "Щадите синие души — проведите мазок мимо них, иначе потеряете комбо. Ловите золото ради истинной вспышки (только идеально).",
+      step4: "Заполните шкалу дыхания и «соберитесь» (тотоноу) — время замедляется, окно разреза расширяется, и вы наносите серию идеальных вспышек.",
+      feat_label: "Особенности",
+      feat1: "Филигранный тайминг на основе выхватывания иайдо — самостоятельная механика",
+      feat2: "Рисунок тушью суми-э с единственным акцентом киновари",
+      feat3: "Режим концентрации «дыхание / сбор», замедляющий мир",
+      feat4: "Замедленные авто-повторы истинных вспышек, созданные для шеринга",
+      feat5: "Сезонные этапы, додзё со стойками и клинками и бестиарий ёкаев (в планах)",
+      cap_key: "Ключевой арт — в разработке",
+      cap_enso: "Суми-э: тушь и пустое пространство",
+      cap_katana: "Один мазок, один клинок",
+      cap_samurai: "Путь единственного разреза",
+      back: "← Назад к ISSEN"
+    }
+  };
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
+
+  function detectLang() {
+    try {
+      const stored = localStorage.getItem(LANG_STORAGE_KEY);
+      if (stored && i18n[stored]) return stored;
+    } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang, persist) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(opt);
+    }
+    setLang(detectLang());
+    sel.addEventListener('change', e => setLang(e.target.value, true));
+  })();
+</script>
+</body>
+</html>
