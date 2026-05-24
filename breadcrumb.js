@@ -95,13 +95,14 @@
   function injectStyle() {
     if (document.getElementById("pr-breadcrumb-style")) return;
     var css =
-      // Anchored to the viewport's top-left on EVERY page (not to the per-page
-      // content container) so the breadcrumb keeps the exact same position and
-      // size across navigations and never shifts. Reserve room on the right for
-      // the language switcher.
-      ".breadcrumb{position:absolute;top:22px;left:24px;max-width:calc(100% - 230px);" +
-        "font-size:13px;line-height:1.5;opacity:.85;font-family:inherit;z-index:50;}" +
-      ".breadcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;}" +
+      // The breadcrumb and the language switcher share ONE top bar on every page,
+      // in normal flow, so the order (breadcrumb left, switcher right) and the
+      // layout are identical everywhere and nothing overlaps. On narrow screens
+      // only the switcher drops to a second line — the breadcrumb never wraps.
+      "#pr-topbar{display:flex;flex-wrap:wrap;align-items:center;column-gap:14px;row-gap:8px;margin:0 0 22px;width:100%;box-sizing:border-box;}" +
+      "#pr-topbar .lang-switch{position:static;top:auto;right:auto;left:auto;bottom:auto;margin:0 0 0 auto;flex:0 0 auto;text-align:right;}" +
+      ".breadcrumb{font-size:13px;line-height:1.5;opacity:.85;font-family:inherit;white-space:nowrap;flex:0 0 auto;}" +
+      ".breadcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:nowrap;align-items:center;gap:4px 6px;white-space:nowrap;}" +
       ".breadcrumb li{display:flex;align-items:center;gap:4px 6px;}" +
       ".breadcrumb a{color:inherit;text-decoration:none;opacity:.85;}" +
       ".breadcrumb a:hover{opacity:1;text-decoration:underline;}" +
@@ -160,21 +161,32 @@
   function mount() {
     if (!info) return; // not an app sub-page → render nothing
     injectStyle();
-    var nav = document.getElementById("breadcrumb");
-    if (!nav) {
-      nav = document.createElement("nav");
+    var topbar = document.getElementById("pr-topbar");
+    if (!topbar) {
+      topbar = document.createElement("div");
+      topbar.id = "pr-topbar";
+      var nav = document.createElement("nav");
       nav.id = "breadcrumb";
-      // Always a direct child of <body> (never the content container) so its
-      // absolute positioning is anchored to the page, identically everywhere.
-      document.body.insertBefore(nav, document.body.firstChild);
+      nav.className = "breadcrumb";
+      topbar.appendChild(nav);
+      // Relocate the page's existing language switcher next to the breadcrumb so
+      // every page shows the same "breadcrumb | switcher" bar. The <select> keeps
+      // its id and event listeners when moved, so the page's own i18n still works.
+      var ls = document.querySelector(".lang-switch");
+      if (ls) topbar.appendChild(ls);
+      // Insert at the top of the page's main content wrapper (the content card on
+      // app pages, the document body on legal pages) — normal flow, no overlap.
+      var host = document.querySelector(".container") || document.body;
+      host.insertBefore(topbar, host.firstChild);
     }
-    nav.className = "breadcrumb";
+    var navEl = document.getElementById("breadcrumb");
+    navEl.className = "breadcrumb";
     var lang = detectLang();
-    render(nav, lang);
+    render(navEl, lang);
     var sel = document.getElementById("lang-select");
     if (sel) {
       sel.addEventListener("change", function (e) {
-        render(nav, e.target.value || detectLang());
+        render(navEl, e.target.value || detectLang());
       });
     }
   }
