@@ -136,6 +136,15 @@
     box-shadow: 0 6px 22px rgba(122, 176, 255, 0.25);
   }
   .overview-link:hover { background: #a0c8ff; transform: translateY(-1px); }
+  .promo-video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    margin: 16px 0 8px;
+    background: #000;
+    box-shadow: 0 6px 22px rgba(122, 176, 255, 0.25);
+  }
   .legal-divider {
     font-size: 13px;
     color: #6c7d9d;
@@ -223,6 +232,10 @@
   </section>
 
   <a href="overview.html" class="overview-link">🎮 <span data-i18n="link_overview">View Game Overview</span> →</a>
+
+  <video class="promo-video" autoplay loop muted playsinline controls preload="auto">
+    <source src="promotion_H_02.mp4" type="video/mp4">
+  </video>
 
   <div class="legal-divider" data-i18n="legal_divider">Legal Documents</div>
   <ul class="links">
