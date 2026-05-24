@@ -113,6 +113,32 @@
     color: #cf7a4a;
     margin: 20px 0 4px;
   }
+  .tester-card {
+    background: rgba(224, 80, 63, 0.05);
+    border: 1px solid rgba(224, 80, 63, 0.30);
+    border-radius: 16px;
+    padding: 24px 24px 28px;
+    margin: 32px 0 40px;
+    text-align: left;
+    box-shadow: 0 0 30px rgba(224, 80, 63, 0.05);
+  }
+  .tester-heading {
+    font-size: 13px; color: #e0503f; text-transform: uppercase;
+    letter-spacing: 2px; margin: 0 0 4px; font-weight: 700; text-align: center;
+  }
+  .tester-android-note {
+    display: block; font-size: 11px; color: #a1907a; text-transform: none;
+    letter-spacing: 0; font-weight: 400; margin-bottom: 16px; text-align: center;
+  }
+  .tester-card p { font-size: 14px; line-height: 1.65; color: #d8ccb2; margin: 12px 0; }
+  .tester-section-label { font-size: 13px; font-weight: 700; color: #cf7a4a; margin: 20px 0 6px; }
+  .tester-step {
+    display: block; background: rgba(224, 80, 63, 0.10); border: 1px solid rgba(224, 80, 63, 0.30);
+    border-radius: 10px; padding: 12px 16px; margin: 10px 0; color: #e0503f;
+    text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s ease;
+  }
+  .tester-step:hover { background: rgba(224, 80, 63, 0.18); border-color: rgba(224, 80, 63, 0.60); color: #f26a58; }
+  .tester-card ul { margin: 6px 0 0; padding-left: 22px; color: #d8ccb2; font-size: 14px; line-height: 1.7; }
   .overview-link {
     display: block;
     background: #e0503f;
@@ -184,15 +210,29 @@
   <h1>ISSEN <span class="kanji">一閃</span></h1>
   <div class="subtitle" data-i18n="subtitle">Sumi-e Timing Action</div>
 
-  <section class="dev-card" aria-labelledby="dev-heading">
-    <div id="dev-heading" class="dev-heading">
-      ⚔ <span data-i18n="dev_label">In Development</span>
-      <span class="dev-note">📱 <span data-i18n="dev_note">Coming soon to Android &amp; iOS</span></span>
+  <section class="tester-card" aria-labelledby="tester-heading">
+    <div id="tester-heading" class="tester-heading">
+      ⚔ <span data-i18n="tester_heading">Android Tester Recruitment</span>
+      <span class="tester-android-note">📱 <span data-i18n="tester_android_note">Android only</span></span>
     </div>
-    <p data-i18n="dev_intro">A new PixelRyu game in the making — currently in prototype. Follow along for the launch.</p>
+    <p data-i18n="tester_intro">Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.</p>
 
-    <div class="dev-section-label">🎴 <span data-i18n="dev_what_label">What it is</span></div>
+    <div class="tester-section-label">🎴 <span data-i18n="dev_what_label">What it is</span></div>
     <p data-i18n="dev_what">A sumi-e (ink-wash) timing-action game built on the iaido draw — breathe, read the distance, and unleash a single perfect cut. Slash the red flames, spare the blue souls, and chase the gold for a true flash.</p>
+
+    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">
+      🔗 <span data-i18n="tester_step1_label">Step 1 — Join the tester group</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.issen" target="_blank" rel="noopener">
+      📱 <span data-i18n="tester_step2_label">Step 2 — Opt-in via Play Store</span>
+    </a>
+
+    <div class="tester-section-label">📌 <span data-i18n="tester_ask_label">What I'm asking for</span></div>
+    <ul>
+      <li data-i18n="tester_ask_keep">Keep installed for the full 14 days</li>
+      <li data-i18n="tester_ask_launch">Launch every couple of days (a few times is enough)</li>
+      <li data-i18n="tester_ask_minutes">A minute or two of play per session is plenty</li>
+    </ul>
   </section>
 
   <a href="overview.html" class="overview-link">🌸 <span data-i18n="link_overview">View Game Overview</span> →</a>
@@ -241,6 +281,15 @@
       dev_intro: "A new PixelRyu game in the making — currently in prototype. Follow along for the launch.",
       dev_what_label: "What it is",
       dev_what: "A sumi-e (ink-wash) timing-action game built on the iaido draw — breathe, read the distance, and unleash a single perfect cut. Slash the red flames, spare the blue souls, and chase the gold for a true flash.",
+      tester_heading: "Android Tester Recruitment",
+      tester_android_note: "Android only",
+      tester_intro: "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
+      tester_step1_label: "Step 1 — Join the tester group",
+      tester_step2_label: "Step 2 — Opt-in via Play Store",
+      tester_ask_label: "What I'm asking for",
+      tester_ask_keep: "Keep installed for the full 14 days",
+      tester_ask_launch: "Launch every couple of days (a few times is enough)",
+      tester_ask_minutes: "A minute or two of play per session is plenty",
       legal_divider: "Legal Documents",
       link_overview: "View Game Overview",
       link_privacy: "Privacy Policy",
@@ -257,6 +306,15 @@
       dev_intro: "PixelRyu が制作中の新作です。現在プロトタイプ段階。公開までフォローしてお待ちください。",
       dev_what_label: "ゲーム内容",
       dev_what: "居合の「抜き」を核にした墨絵(すみえ)のタイミングアクション。呼吸を整え、間合いを見切り、ただ一筆の完璧な一閃を放つ。赤い鬼火を斬り、青い人魂は避け、金を狙って真・一閃を決めろ。",
+      tester_heading: "Android テスター募集中",
+      tester_android_note: "Android 専用",
+      tester_intro: "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
+      tester_step1_label: "ステップ 1 — テスターグループに参加",
+      tester_step2_label: "ステップ 2 — Play ストアでオプトイン",
+      tester_ask_label: "お願いしたいこと",
+      tester_ask_keep: "14 日間アンインストールせずに保持",
+      tester_ask_launch: "数日に一度起動 (合計数回で OK)",
+      tester_ask_minutes: "1 回 1〜2 分の軽いプレイで大丈夫",
       legal_divider: "規約類",
       link_overview: "ゲーム概要を見る",
       link_privacy: "プライバシーポリシー",
@@ -273,6 +331,15 @@
       dev_intro: "PixelRyu 正在制作的新作,目前处于原型阶段。欢迎关注,等待上线。",
       dev_what_label: "游戏简介",
       dev_what: "以居合「拔刀」为核心的水墨节奏动作游戏。调匀呼吸,看准间距,挥出唯一一笔完美的斩击。斩断红色鬼火,放过蓝色魂火,瞄准金色打出真·一闪。",
+      tester_heading: "招募 Android 测试者",
+      tester_android_note: "仅限 Android",
+      tester_intro: "我是一名独立开发者,正在为期 14 天的封闭测试招募积极的 Android 测试者。",
+      tester_step1_label: "第一步 — 加入测试者群组",
+      tester_step2_label: "第二步 — 通过 Play 商店加入测试",
+      tester_ask_label: "我希望你能做到",
+      tester_ask_keep: "完整保留 14 天不卸载",
+      tester_ask_launch: "每隔几天启动一次（几次即可）",
+      tester_ask_minutes: "每次玩一两分钟就够了",
       legal_divider: "法律文件",
       link_overview: "查看游戏简介",
       link_privacy: "隐私政策",
@@ -289,6 +356,15 @@
       dev_intro: "PixelRyu가 제작 중인 신작입니다. 현재 프로토타입 단계이며, 출시 소식을 팔로우해 주세요.",
       dev_what_label: "게임 소개",
       dev_what: "거합의 '발도'를 핵심으로 한 수묵 타이밍 액션. 호흡을 가다듬고 간격을 가늠해, 단 한 번의 완벽한 베기를 펼치세요. 붉은 도깨비불은 베고, 푸른 혼불은 피하며, 금빛을 노려 진·일섬을 완성하세요.",
+      tester_heading: "Android 테스터 모집",
+      tester_android_note: "Android 전용",
+      tester_intro: "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
+      tester_step1_label: "1단계 — 테스터 그룹 가입",
+      tester_step2_label: "2단계 — Play 스토어에서 옵트인",
+      tester_ask_label: "부탁드리는 것",
+      tester_ask_keep: "14일 동안 설치 상태 유지",
+      tester_ask_launch: "며칠에 한 번씩 실행 (몇 번이면 충분합니다)",
+      tester_ask_minutes: "한 번에 1~2분 가벼운 플레이면 충분합니다",
       legal_divider: "법적 고지",
       link_overview: "게임 소개 보기",
       link_privacy: "개인정보 처리방침",
@@ -305,6 +381,15 @@
       dev_intro: "PixelRyu का बनता हुआ नया गेम — फ़िलहाल प्रोटोटाइप चरण में। लॉन्च के लिए फ़ॉलो करते रहें।",
       dev_what_label: "यह क्या है",
       dev_what: "इआइदो के 'वार' पर आधारित सुमी-ए (स्याही) टाइमिंग एक्शन। साँस साधें, दूरी भाँपें और बस एक संपूर्ण वार छोड़ें। लाल लपटों को काटें, नीली आत्माओं को बख़्शें, और सच्चे वार के लिए सुनहरे का पीछा करें।",
+      tester_heading: "Android टेस्टर्स की तलाश",
+      tester_android_note: "केवल Android",
+      tester_intro: "सोलो इंडी डेवलपर हूँ, 14 दिन की क्लोज़्ड टेस्टिंग के लिए सक्रिय Android टेस्टर्स ढूँढ रहा हूँ।",
+      tester_step1_label: "चरण 1 — टेस्टर ग्रुप में शामिल हों",
+      tester_step2_label: "चरण 2 — Play Store पर ऑप्ट-इन",
+      tester_ask_label: "मैं क्या माँग रहा हूँ",
+      tester_ask_keep: "पूरे 14 दिन इंस्टॉल रखें",
+      tester_ask_launch: "हर कुछ दिन में लॉन्च करें (कुछ बार ही काफ़ी है)",
+      tester_ask_minutes: "हर सत्र में एक-दो मिनट का खेल काफ़ी है",
       legal_divider: "क़ानूनी दस्तावेज़",
       link_overview: "गेम अवलोकन देखें",
       link_privacy: "गोपनीयता नीति",
@@ -321,6 +406,15 @@
       dev_intro: "Game baru PixelRyu yang sedang dibuat — saat ini tahap prototipe. Ikuti terus untuk peluncurannya.",
       dev_what_label: "Tentang game ini",
       dev_what: "Game aksi ketepatan bergaya sumi-e (tinta) yang berpusat pada tarikan pedang iaido — atur napas, baca jarak, dan lepaskan satu tebasan sempurna. Tebas api merah, biarkan jiwa biru, dan kejar yang emas untuk kilatan sejati.",
+      tester_heading: "Mencari Tester Android",
+      tester_android_note: "Hanya Android",
+      tester_intro: "Saya developer indie solo, mencari tester Android aktif untuk fase closed test 14 hari.",
+      tester_step1_label: "Langkah 1 — Bergabung dengan grup tester",
+      tester_step2_label: "Langkah 2 — Opt-in via Play Store",
+      tester_ask_label: "Yang saya mintakan",
+      tester_ask_keep: "Pertahankan terinstal selama 14 hari penuh",
+      tester_ask_launch: "Luncurkan setiap beberapa hari (beberapa kali sudah cukup)",
+      tester_ask_minutes: "Cukup main satu–dua menit per sesi",
       legal_divider: "Dokumen Hukum",
       link_overview: "Lihat Ikhtisar Game",
       link_privacy: "Kebijakan Privasi",
@@ -337,6 +431,15 @@
       dev_intro: "Ein neues PixelRyu-Spiel in Arbeit — derzeit als Prototyp. Bleib dran für den Launch.",
       dev_what_label: "Worum es geht",
       dev_what: "Ein Sumi-e-Timing-Actionspiel rund um den Iaido-Zug — atme, lies die Distanz und entfessle einen einzigen perfekten Schnitt. Zerschneide die roten Flammen, verschone die blauen Seelen und jage das Gold für einen wahren Hieb.",
+      tester_heading: "Android-Tester gesucht",
+      tester_android_note: "Nur für Android",
+      tester_intro: "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
+      tester_step1_label: "Schritt 1 — Tester-Gruppe beitreten",
+      tester_step2_label: "Schritt 2 — Über den Play Store anmelden",
+      tester_ask_label: "Worum ich bitte",
+      tester_ask_keep: "14 Tage lang installiert lassen",
+      tester_ask_launch: "Alle paar Tage starten (ein paar Mal reicht)",
+      tester_ask_minutes: "Ein bis zwei Minuten Spiel pro Sitzung genügen",
       legal_divider: "Rechtsdokumente",
       link_overview: "Spielübersicht ansehen",
       link_privacy: "Datenschutzerklärung",
@@ -353,6 +456,15 @@
       dev_intro: "Un nouveau jeu PixelRyu en cours de création — actuellement au stade du prototype. Suivez-nous pour la sortie.",
       dev_what_label: "De quoi il s'agit",
       dev_what: "Un jeu d'action de précision sumi-e bâti sur le dégainé de l'iaido — respire, jauge la distance et libère une seule entaille parfaite. Tranche les flammes rouges, épargne les âmes bleues et vise l'or pour un véritable éclair.",
+      tester_heading: "Recherche de testeurs Android",
+      tester_android_note: "Android uniquement",
+      tester_intro: "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
+      tester_step1_label: "Étape 1 — Rejoindre le groupe de testeurs",
+      tester_step2_label: "Étape 2 — S'inscrire via le Play Store",
+      tester_ask_label: "Ce que je demande",
+      tester_ask_keep: "Garder installé pendant les 14 jours complets",
+      tester_ask_launch: "Lancer tous les deux jours (quelques fois suffisent)",
+      tester_ask_minutes: "Une à deux minutes de jeu par session suffisent",
       legal_divider: "Documents légaux",
       link_overview: "Voir l'aperçu du jeu",
       link_privacy: "Politique de confidentialité",
@@ -369,6 +481,15 @@
       dev_intro: "Un nuovo gioco PixelRyu in lavorazione — attualmente in fase di prototipo. Seguici per il lancio.",
       dev_what_label: "Di cosa si tratta",
       dev_what: "Un gioco d'azione a tempo in stile sumi-e incentrato sull'estrazione dell'iaido — respira, valuta la distanza e libera un solo taglio perfetto. Taglia le fiamme rosse, risparmia le anime blu e insegui l'oro per un vero lampo.",
+      tester_heading: "Cercasi tester Android",
+      tester_android_note: "Solo Android",
+      tester_intro: "Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.",
+      tester_step1_label: "Passo 1 — Unisciti al gruppo tester",
+      tester_step2_label: "Passo 2 — Opt-in tramite Play Store",
+      tester_ask_label: "Cosa chiedo",
+      tester_ask_keep: "Tienilo installato per tutti i 14 giorni",
+      tester_ask_launch: "Aprilo ogni paio di giorni (poche volte basta)",
+      tester_ask_minutes: "Bastano un paio di minuti di gioco a sessione",
       legal_divider: "Documenti legali",
       link_overview: "Vedi la panoramica",
       link_privacy: "Informativa sulla privacy",
@@ -385,6 +506,15 @@
       dev_intro: "Un nuevo juego de PixelRyu en desarrollo — actualmente en fase de prototipo. Síguenos para el lanzamiento.",
       dev_what_label: "De qué se trata",
       dev_what: "Un juego de acción de precisión sumi-e basado en el desenvaine del iaido — respira, mide la distancia y libera un único corte perfecto. Corta las llamas rojas, perdona las almas azules y persigue el oro para un destello verdadero.",
+      tester_heading: "Buscamos testers de Android",
+      tester_android_note: "Solo Android",
+      tester_intro: "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
+      tester_step1_label: "Paso 1 — Únete al grupo de testers",
+      tester_step2_label: "Paso 2 — Inscríbete vía Play Store",
+      tester_ask_label: "Lo que pido",
+      tester_ask_keep: "Mantener instalado los 14 días completos",
+      tester_ask_launch: "Abrir cada par de días (unas pocas veces basta)",
+      tester_ask_minutes: "Con un par de minutos de juego por sesión basta",
       legal_divider: "Documentos legales",
       link_overview: "Ver descripción del juego",
       link_privacy: "Política de privacidad",
@@ -401,6 +531,15 @@
       dev_intro: "Um novo jogo da PixelRyu em criação — atualmente em fase de protótipo. Acompanhe para o lançamento.",
       dev_what_label: "Sobre o jogo",
       dev_what: "Um jogo de ação de precisão em estilo sumi-e centrado no saque do iaido — respire, leia a distância e desfira um único corte perfeito. Corte as chamas vermelhas, poupe as almas azuis e persiga o ouro para um verdadeiro lampejo.",
+      tester_heading: "Procuramos testers de Android",
+      tester_android_note: "Apenas Android",
+      tester_intro: "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
+      tester_step1_label: "Passo 1 — Entrar no grupo de testers",
+      tester_step2_label: "Passo 2 — Adesão via Play Store",
+      tester_ask_label: "O que peço",
+      tester_ask_keep: "Manter instalado por 14 dias completos",
+      tester_ask_launch: "Abra a cada poucos dias (algumas vezes basta)",
+      tester_ask_minutes: "Um ou dois minutos de jogo por sessão já bastam",
       legal_divider: "Documentos legais",
       link_overview: "Ver visão geral do jogo",
       link_privacy: "Política de privacidade",
@@ -417,6 +556,15 @@
       dev_intro: "Новая игра PixelRyu в разработке — сейчас на стадии прототипа. Следите за новостями о выходе.",
       dev_what_label: "О чём игра",
       dev_what: "Тайминг-экшен в стиле суми-э, построенный на выхватывании меча иайдо: дышите, чувствуйте дистанцию и наносите единственный идеальный разрез. Рубите красное пламя, щадите синие души и ловите золото ради истинной вспышки.",
+      tester_heading: "Поиск Android-тестеров",
+      tester_android_note: "Только для Android",
+      tester_intro: "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",
+      tester_step1_label: "Шаг 1 — Вступить в группу тестеров",
+      tester_step2_label: "Шаг 2 — Подписаться через Play Store",
+      tester_ask_label: "О чём я прошу",
+      tester_ask_keep: "Не удалять приложение все 14 дней",
+      tester_ask_launch: "Запускайте раз в пару дней (нескольких раз достаточно)",
+      tester_ask_minutes: "Достаточно одной–двух минут игры за сессию",
       legal_divider: "Правовые документы",
       link_overview: "Посмотреть об игре",
       link_privacy: "Политика конфиденциальности",
