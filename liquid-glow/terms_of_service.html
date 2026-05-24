@@ -16,12 +16,15 @@
   }
   h1 { font-size: 28px; margin-top: 0; color: #1a2c4f; }
   h2 { font-size: 20px; margin-top: 32px; color: #1a2c4f; border-bottom: 2px solid #c8d4e8; padding-bottom: 6px; }
+  h3 { font-size: 16px; margin-top: 22px; color: #2a3b60; }
   p, li { font-size: 15px; }
   code { background: #eef1f7; padding: 2px 6px; border-radius: 4px; font-size: 14px; }
   .meta { color: #666; font-size: 14px; margin-bottom: 24px; }
   .lang-switch { text-align: right; margin-bottom: 16px; }
-  .lang-switch a { color: #1a2c4f; text-decoration: none; padding: 4px 10px; border: 1px solid #c8d4e8; border-radius: 4px; }
-  .lang-switch a:hover { background: #e8eef7; }
+  .lang-switch select { background: #ffffff; color: #1a2c4f; border: 1px solid #c8d4e8; border-radius: 4px; padding: 5px 10px; font-size: 13px; font-family: inherit; cursor: pointer; }
+  .lang-switch select:hover { background: #e8eef7; border-color: #1a2c4f; }
+  .lang-switch select option { background: #ffffff; color: #222; }
+  .gov-note { font-size: 13px; line-height: 1.6; color: #555; background: #eef1f7; border: 1px solid #c8d4e8; border-left: 3px solid #1a2c4f; border-radius: 6px; padding: 10px 14px; margin: 0 0 28px; }
   .footer { margin-top: 64px; padding-top: 24px; border-top: 1px solid #c8d4e8; color: #666; font-size: 13px; }
   ul { padding-left: 24px; }
   .lang-section { display: none; }
@@ -36,107 +39,331 @@
 <body>
 
 <div class="lang-switch">
-  <a href="#" onclick="showLang('en'); return false;">English</a>
-  <a href="#" onclick="showLang('ja'); return false;">日本語</a>
+  <select id="lang-select" aria-label="Language"></select>
 </div>
 
-<!-- ============== ENGLISH ============== -->
 <section id="lang-en" class="lang-section active">
 <h1>Terms of Service — Liquid Glow</h1>
 <p class="meta">Effective date: <strong>2026-05-11</strong> &nbsp;|&nbsp; Last updated: <strong>2026-05-17</strong></p>
-
-<p>These Terms of Service (the "Terms") govern your use of the mobile application <strong>Liquid Glow</strong> (the "App") provided by <strong>PixelRyu</strong> ("we", "us"). By installing or using the App you agree to be bound by these Terms.</p>
-
+<p class="gov-note">Translations into other languages are provided for your convenience. The English and Japanese versions are the authoritative versions of this document; in the event of any discrepancy, the English and Japanese versions prevail.</p>
+<p>These Terms of Service (the “Terms”) govern your use of the mobile application <strong>Liquid Glow</strong> (the “App”) provided by <strong>PixelRyu</strong> (“we”, “us”). By installing or using the App you agree to be bound by these Terms.</p>
 <h2>1. License</h2>
 <p>We grant you a personal, revocable, non-exclusive, non-transferable license to download and use the App on devices you own or control, for non-commercial entertainment purposes only.</p>
-
 <h2>2. Restrictions</h2>
-<p>You agree not to:</p>
-<ul>
-  <li>Reverse-engineer, decompile, or disassemble the App except as expressly permitted by law.</li>
-  <li>Modify, distribute, sell, or create derivative works of the App.</li>
-  <li>Use the App for any unlawful purpose or in violation of these Terms.</li>
-  <li>Attempt to disable, bypass, or interfere with advertising or analytics components.</li>
-</ul>
-
+<p>You agree not to:</p><ul><li>Reverse-engineer, decompile, or disassemble the App except as expressly permitted by law.</li><li>Modify, distribute, sell, or create derivative works of the App.</li><li>Use the App for any unlawful purpose or in violation of these Terms.</li><li>Attempt to disable, bypass, or interfere with advertising or analytics components.</li></ul>
 <h2>3. Advertising</h2>
-<p>The App is supported by advertising. By using the App you acknowledge that ads may be displayed and that ad networks may collect information as described in our Privacy Policy.</p>
-<p>Ads include:</p>
-<ul>
-  <li><strong>Banner ads</strong> shown at the bottom of certain screens.</li>
-  <li><strong>Interstitial ads</strong> shown automatically between levels.</li>
-  <li><strong>Optional rewarded video ads</strong> that the user may choose to watch in order to receive an in-game reward (e.g., doubled bonus stars). Rewarded video viewing is never required to play the game.</li>
-</ul>
-
+<p>The App is supported by advertising. By using the App you acknowledge that ads may be displayed and that ad networks may collect information as described in our Privacy Policy.</p><p>Ads include:</p><ul><li><strong>Banner ads</strong> shown at the bottom of certain screens.</li><li><strong>Interstitial ads</strong> shown automatically between levels.</li><li><strong>Optional rewarded video ads</strong> that the user may choose to watch in order to receive an in-game reward (e.g., doubled bonus stars). Rewarded video viewing is never required to play the game.</li></ul>
 <h2>4. Virtual Items</h2>
 <p>The App may include virtual currency (e.g., stars) or virtual items that have no monetary value, cannot be redeemed for real-world money, and may be modified or removed at our discretion. Virtual items may be obtained by progressing through the game or by watching an optional rewarded video advertisement (e.g., doubled bonus stars).</p>
-
 <h2>5. Disclaimer of Warranty</h2>
-<p>The App is provided "as is" without warranties of any kind, express or implied. We do not warrant that the App will be uninterrupted or error-free.</p>
-
+<p>The App is provided “as is” without warranties of any kind, express or implied. We do not warrant that the App will be uninterrupted or error-free.</p>
 <h2>6. Limitation of Liability</h2>
 <p>To the maximum extent permitted by applicable law, in no event shall we be liable for any indirect, incidental, special, consequential, or punitive damages arising out of or related to your use of the App.</p>
-
 <h2>7. Termination</h2>
 <p>We may suspend or terminate your access to the App at any time, with or without notice, if we believe you have violated these Terms.</p>
-
 <h2>8. Changes to These Terms</h2>
-<p>We may revise these Terms from time to time. The "Effective date" at the top of this page reflects the most recent revision. Continued use of the App after changes take effect constitutes acceptance.</p>
-
+<p>We may revise these Terms from time to time. The “Effective date” at the top of this page reflects the most recent revision. Continued use of the App after changes take effect constitutes acceptance.</p>
 <h2>9. Governing Law</h2>
 <p>These Terms are governed by and construed in accordance with the laws of <strong>Japan</strong>, without regard to its conflict-of-law principles.</p>
-
 <h2>10. Contact</h2>
 <p><strong>Email:</strong> <code>idev10752@gmail.com</code></p>
 </section>
 
-<!-- ============== 日本語 ============== -->
 <section id="lang-ja" class="lang-section">
 <h1>利用規約 — Liquid Glow</h1>
 <p class="meta">施行日: <strong>2026-05-11</strong> &nbsp;|&nbsp; 最終更新: <strong>2026-05-17</strong></p>
-
+<p class="gov-note">他言語への翻訳は便宜上提供されるものです。本書面は英語版および日本語版を正文とし、各言語版との間に相違がある場合は、英語版および日本語版が優先します。</p>
 <p>本利用規約（以下「本規約」）は、<strong>PixelRyu</strong>（以下「当方」）が提供するモバイルアプリケーション <strong>Liquid Glow</strong>（以下「本アプリ」）の利用条件を定めるものです。本アプリをインストール・利用することにより、本規約に同意したものとみなされます。</p>
-
 <h2>1. ライセンス</h2>
 <p>当方は、ユーザーが所有または管理する端末に本アプリをインストールし、非商用の娯楽目的で利用する、個人的・取消可能・非独占・譲渡不可のライセンスを付与します。</p>
-
 <h2>2. 禁止事項</h2>
-<ul>
-  <li>法令で明示的に許容される場合を除き、本アプリのリバースエンジニアリング・逆コンパイル・逆アセンブル</li>
-  <li>本アプリの改変・再配布・販売・派生著作物の作成</li>
-  <li>違法目的または本規約に違反する利用</li>
-  <li>広告または分析機能の無効化・回避・妨害</li>
-</ul>
-
+<ul><li>法令で明示的に許容される場合を除き、本アプリのリバースエンジニアリング・逆コンパイル・逆アセンブル</li><li>本アプリの改変・再配布・販売・派生著作物の作成</li><li>違法目的または本規約に違反する利用</li><li>広告または分析機能の無効化・回避・妨害</li></ul>
 <h2>3. 広告</h2>
-<p>本アプリは広告収益によって運営されます。本アプリの利用をもって、広告が表示されること、および広告ネットワークがプライバシーポリシーに記載のとおり情報を取得することに同意したものとみなされます。</p>
-<p>本アプリで表示される広告には以下が含まれます:</p>
-<ul>
-  <li><strong>バナー広告</strong> — 一部画面の下部に表示されます。</li>
-  <li><strong>インタースティシャル広告</strong> — レベル間に自動的に表示されます。</li>
-  <li><strong>リワード動画広告（任意）</strong> — ユーザーが任意で視聴することにより、ゲーム内報酬（ボーナススター2倍など）を獲得できます。リワード動画の視聴はゲームプレイ上、必須ではありません。</li>
-</ul>
-
+<p>本アプリは広告収益によって運営されます。本アプリの利用をもって、広告が表示されること、および広告ネットワークがプライバシーポリシーに記載のとおり情報を取得することに同意したものとみなされます。</p><p>本アプリで表示される広告には以下が含まれます:</p><ul><li><strong>バナー広告</strong> — 一部画面の下部に表示されます。</li><li><strong>インタースティシャル広告</strong> — レベル間に自動的に表示されます。</li><li><strong>リワード動画広告（任意）</strong> — ユーザーが任意で視聴することにより、ゲーム内報酬（ボーナススター2倍）を獲得できます。リワード動画の視聴はゲームプレイ上、必須ではありません。</li></ul>
 <h2>4. 仮想アイテム</h2>
 <p>本アプリは仮想通貨（スター等）または仮想アイテムを含むことがあります。これらは金銭的価値を持たず、現金との交換不可、当方の裁量により変更・廃止される可能性があります。仮想アイテムは、ゲームの進行またはリワード動画広告の任意視聴によって獲得できます（例: ボーナススター2倍）。</p>
-
 <h2>5. 保証の否認</h2>
 <p>本アプリは「現状有姿」で提供され、明示・黙示を問わず一切の保証を行いません。当方は、本アプリが中断なく、誤りなく動作することを保証しません。</p>
-
 <h2>6. 責任の制限</h2>
 <p>適用法令で許容される最大限の範囲において、当方は本アプリの利用に起因または関連する間接的・付随的・特別・結果的・懲罰的損害について一切の責任を負いません。</p>
-
 <h2>7. 利用停止</h2>
 <p>当方は、本規約違反があると認める場合、事前通知なく本アプリへのアクセスを停止または終了することがあります。</p>
-
 <h2>8. 規約の変更</h2>
 <p>本規約は随時改訂される場合があります。本ページ上部の「施行日」が最新の改訂を示します。改訂後の本アプリの継続利用は改訂内容への同意とみなされます。</p>
-
 <h2>9. 準拠法</h2>
 <p>本規約は、抵触法の原則を考慮することなく、<strong>日本</strong>の法律に準拠し解釈されます。</p>
-
 <h2>10. お問い合わせ</h2>
 <p><strong>メール:</strong> <code>idev10752@gmail.com</code></p>
+</section>
+
+<section id="lang-zh" class="lang-section">
+<h1>服务条款 — Liquid Glow</h1>
+<p class="meta">生效日期: <strong>2026-05-11</strong> &nbsp;|&nbsp; 最后更新: <strong>2026-05-17</strong></p>
+<p class="gov-note">其他语言的翻译仅为方便阅读而提供。本文件以英文版和日文版为准；如有任何不一致，以英文版和日文版为准。</p>
+<p>本服务条款（以下简称“本条款”）规定您对 <strong>PixelRyu</strong>（以下简称“我们”）提供的移动应用程序 <strong>Liquid Glow</strong>（以下简称“本应用”）的使用。安装或使用本应用即表示您同意受本条款约束。</p>
+<h2>1. 许可</h2>
+<p>我们授予您一项个人的、可撤销的、非独占的、不可转让的许可，允许您在自己拥有或控制的设备上下载和使用本应用，且仅限于非商业娱乐目的。</p>
+<h2>2. 限制</h2>
+<p>您同意不会：</p><ul><li>除法律明确允许外，对本应用进行逆向工程、反编译或反汇编。</li><li>修改、分发、出售本应用或创建其衍生作品。</li><li>将本应用用于任何非法目的或违反本条款的用途。</li><li>试图停用、绕过或干扰广告或分析组件。</li></ul>
+<h2>3. 广告</h2>
+<p>本应用依靠广告获得支持。使用本应用即表示您知悉可能会展示广告，且广告网络可能会按照我们的隐私政策所述收集信息。</p><p>广告包括：</p><ul><li><strong>横幅广告</strong> — 显示在某些屏幕的底部。</li><li><strong>插页广告</strong> — 在关卡之间自动展示。</li><li><strong>可选的激励视频广告</strong> — 用户可自行选择观看，以获得游戏内奖励（例如双倍奖励星星）。观看激励视频从来不是游玩本游戏的必要条件。</li></ul>
+<h2>4. 虚拟物品</h2>
+<p>本应用可能包含虚拟货币（如星星）或虚拟物品，它们没有货币价值，不能兑换为现实货币，并可能由我们酌情修改或移除。虚拟物品可通过游戏进程或观看可选的激励视频广告获得（例如双倍奖励星星）。</p>
+<h2>5. 保证免责声明</h2>
+<p>本应用按“现状”提供，不附带任何明示或默示的保证。我们不保证本应用将不间断或无差错地运行。</p>
+<h2>6. 责任限制</h2>
+<p>在适用法律允许的最大范围内，对于因您使用本应用而产生或与之相关的任何间接、附带、特殊、后果性或惩罚性损害，我们概不负责。</p>
+<h2>7. 终止</h2>
+<p>如果我们认为您违反了本条款，我们可随时在通知或不通知的情况下暂停或终止您对本应用的访问。</p>
+<h2>8. 本条款的变更</h2>
+<p>我们可能会不时修订本条款。本页顶部的“生效日期”反映了最近一次修订。变更生效后继续使用本应用即表示接受。</p>
+<h2>9. 管辖法律</h2>
+<p>本条款受 <strong>日本</strong> 法律管辖并依其解释，不考虑其法律冲突原则。</p>
+<h2>10. 联系我们</h2>
+<p><strong>邮箱:</strong> <code>idev10752@gmail.com</code></p>
+</section>
+
+<section id="lang-ko" class="lang-section">
+<h1>서비스 이용약관 — Liquid Glow</h1>
+<p class="meta">시행일: <strong>2026-05-11</strong> &nbsp;|&nbsp; 최종 업데이트: <strong>2026-05-17</strong></p>
+<p class="gov-note">다른 언어로의 번역은 편의를 위해 제공됩니다. 본 문서는 영어판과 일본어판을 정본으로 하며, 내용에 차이가 있을 경우 영어판과 일본어판이 우선합니다.</p>
+<p>본 서비스 이용약관(이하 “본 약관”)은 <strong>PixelRyu</strong>(이하 “당사”)가 제공하는 모바일 애플리케이션 <strong>Liquid Glow</strong>(이하 “본 앱”)의 이용을 규율합니다. 본 앱을 설치하거나 사용함으로써 귀하는 본 약관에 구속되는 것에 동의합니다.</p>
+<h2>1. 라이선스</h2>
+<p>당사는 귀하가 소유하거나 관리하는 기기에서 비상업적 오락 목적으로만 본 앱을 다운로드하고 사용할 수 있는 개인적·취소 가능·비독점적·양도 불가능한 라이선스를 부여합니다.</p>
+<h2>2. 금지 사항</h2>
+<p>귀하는 다음 행위를 하지 않을 것에 동의합니다:</p><ul><li>법률이 명시적으로 허용하는 경우를 제외하고 본 앱을 리버스 엔지니어링, 디컴파일 또는 디스어셈블하는 행위.</li><li>본 앱을 수정, 배포, 판매하거나 2차적 저작물을 만드는 행위.</li><li>본 앱을 불법적인 목적으로 또는 본 약관을 위반하여 사용하는 행위.</li><li>광고 또는 분석 구성 요소를 비활성화, 우회 또는 방해하려는 행위.</li></ul>
+<h2>3. 광고</h2>
+<p>본 앱은 광고로 운영됩니다. 본 앱을 사용함으로써 귀하는 광고가 표시될 수 있으며 광고 네트워크가 당사의 개인정보 처리방침에 설명된 대로 정보를 수집할 수 있음을 인정합니다.</p><p>광고에는 다음이 포함됩니다:</p><ul><li><strong>배너 광고</strong> — 일부 화면 하단에 표시됩니다.</li><li><strong>전면 광고</strong> — 레벨 사이에 자동으로 표시됩니다.</li><li><strong>선택형 보상형 동영상 광고</strong> — 사용자가 게임 내 보상(예: 보너스 별 2배)을 받기 위해 시청을 선택할 수 있습니다. 보상형 동영상 시청은 게임 플레이에 결코 필수가 아닙니다.</li></ul>
+<h2>4. 가상 아이템</h2>
+<p>본 앱에는 가상 화폐(예: 별) 또는 가상 아이템이 포함될 수 있습니다. 이는 금전적 가치가 없고 실제 화폐로 환전할 수 없으며 당사의 재량으로 변경되거나 삭제될 수 있습니다. 가상 아이템은 게임을 진행하거나 선택형 보상형 동영상 광고를 시청하여 획득할 수 있습니다(예: 보너스 별 2배).</p>
+<h2>5. 보증의 부인</h2>
+<p>본 앱은 명시적이든 묵시적이든 어떠한 종류의 보증 없이 “있는 그대로” 제공됩니다. 당사는 본 앱이 중단 없이 또는 오류 없이 작동할 것을 보증하지 않습니다.</p>
+<h2>6. 책임의 제한</h2>
+<p>관련 법률이 허용하는 최대 범위 내에서, 당사는 귀하의 본 앱 사용으로 인해 발생하거나 이와 관련된 간접적·부수적·특별·결과적 또는 징벌적 손해에 대해 어떠한 경우에도 책임을 지지 않습니다.</p>
+<h2>7. 이용 중지</h2>
+<p>당사는 귀하가 본 약관을 위반했다고 판단하는 경우 사전 통지 여부와 관계없이 언제든지 본 앱에 대한 귀하의 접근을 중지하거나 종료할 수 있습니다.</p>
+<h2>8. 본 약관의 변경</h2>
+<p>당사는 본 약관을 수시로 개정할 수 있습니다. 본 페이지 상단의 “시행일”이 가장 최근 개정을 나타냅니다. 변경이 적용된 후 본 앱을 계속 사용하는 것은 동의로 간주됩니다.</p>
+<h2>9. 준거법</h2>
+<p>본 약관은 법률 충돌 원칙과 관계없이 <strong>일본</strong> 법률에 따라 규율되고 해석됩니다.</p>
+<h2>10. 문의</h2>
+<p><strong>이메일:</strong> <code>idev10752@gmail.com</code></p>
+</section>
+
+<section id="lang-hi" class="lang-section">
+<h1>सेवा शर्तें — Liquid Glow</h1>
+<p class="meta">प्रभावी तिथि: <strong>2026-05-11</strong> &nbsp;|&nbsp; अंतिम अद्यतन: <strong>2026-05-17</strong></p>
+<p class="gov-note">अन्य भाषाओं में अनुवाद आपकी सुविधा के लिए प्रदान किए गए हैं। इस दस्तावेज़ के अंग्रेज़ी और जापानी संस्करण ही आधिकारिक हैं; किसी भी विसंगति की स्थिति में अंग्रेज़ी और जापानी संस्करण मान्य होंगे।</p>
+<p>ये सेवा शर्तें (“शर्तें”) <strong>PixelRyu</strong> (“हम”) द्वारा प्रदान किए गए मोबाइल एप्लिकेशन <strong>Liquid Glow</strong> (“ऐप”) के आपके उपयोग को नियंत्रित करती हैं। ऐप को इंस्टॉल या उपयोग करके आप इन शर्तों से बंधे होने के लिए सहमत होते हैं।</p>
+<h2>1. लाइसेंस</h2>
+<p>हम आपको एक व्यक्तिगत, प्रतिसंहरणीय, गैर-अनन्य, गैर-हस्तांतरणीय लाइसेंस प्रदान करते हैं, जिससे आप अपने स्वामित्व या नियंत्रण वाले डिवाइस पर केवल गैर-व्यावसायिक मनोरंजन उद्देश्यों के लिए ऐप डाउनलोड और उपयोग कर सकते हैं।</p>
+<h2>2. प्रतिबंध</h2>
+<p>आप सहमत हैं कि आप:</p><ul><li>कानून द्वारा स्पष्ट रूप से अनुमत के अलावा, ऐप की रिवर्स-इंजीनियरिंग, डिकंपाइल या डिसअसेंबल नहीं करेंगे।</li><li>ऐप को संशोधित, वितरित, बेचेंगे नहीं या उसकी व्युत्पन्न कृतियाँ नहीं बनाएँगे।</li><li>ऐप का उपयोग किसी भी गैरकानूनी उद्देश्य के लिए या इन शर्तों के उल्लंघन में नहीं करेंगे।</li><li>विज्ञापन या एनालिटिक्स घटकों को अक्षम, बायपास या उनमें हस्तक्षेप करने का प्रयास नहीं करेंगे।</li></ul>
+<h2>3. विज्ञापन</h2>
+<p>ऐप विज्ञापन द्वारा समर्थित है। ऐप का उपयोग करके आप स्वीकार करते हैं कि विज्ञापन दिखाए जा सकते हैं और विज्ञापन नेटवर्क हमारी गोपनीयता नीति में वर्णित अनुसार जानकारी एकत्र कर सकते हैं।</p><p>विज्ञापनों में शामिल हैं:</p><ul><li><strong>बैनर विज्ञापन</strong> — कुछ स्क्रीन के नीचे दिखाए जाते हैं।</li><li><strong>इंटरस्टीशियल विज्ञापन</strong> — स्तरों के बीच स्वतः दिखाए जाते हैं।</li><li><strong>ऐच्छिक रिवॉर्ड वीडियो विज्ञापन</strong> — जिन्हें उपयोगकर्ता गेम-भीतर इनाम (जैसे दोगुने बोनस सितारे) पाने के लिए देखना चुन सकते हैं। रिवॉर्ड वीडियो देखना गेम खेलने के लिए कभी आवश्यक नहीं है।</li></ul>
+<h2>4. वर्चुअल आइटम</h2>
+<p>ऐप में वर्चुअल मुद्रा (जैसे सितारे) या वर्चुअल आइटम शामिल हो सकते हैं, जिनका कोई मौद्रिक मूल्य नहीं है, जिन्हें वास्तविक मुद्रा में नहीं बदला जा सकता, और जिन्हें हम अपने विवेक से बदल या हटा सकते हैं। वर्चुअल आइटम गेम में आगे बढ़कर या ऐच्छिक रिवॉर्ड वीडियो विज्ञापन देखकर प्राप्त किए जा सकते हैं (जैसे दोगुने बोनस सितारे)।</p>
+<h2>5. वारंटी का अस्वीकरण</h2>
+<p>ऐप “जैसा है” के आधार पर प्रदान किया जाता है, बिना किसी प्रकार की स्पष्ट या निहित वारंटी के। हम यह वारंटी नहीं देते कि ऐप निर्बाध या त्रुटिरहित रहेगा।</p>
+<h2>6. दायित्व की सीमा</h2>
+<p>लागू कानून द्वारा अनुमत अधिकतम सीमा तक, किसी भी स्थिति में हम ऐप के आपके उपयोग से उत्पन्न या उससे संबंधित किसी भी अप्रत्यक्ष, आकस्मिक, विशेष, परिणामी या दंडात्मक क्षति के लिए उत्तरदायी नहीं होंगे।</p>
+<h2>7. समाप्ति</h2>
+<p>यदि हमें लगता है कि आपने इन शर्तों का उल्लंघन किया है, तो हम किसी भी समय, सूचना के साथ या बिना, ऐप तक आपकी पहुँच को निलंबित या समाप्त कर सकते हैं।</p>
+<h2>8. इन शर्तों में परिवर्तन</h2>
+<p>हम समय-समय पर इन शर्तों को संशोधित कर सकते हैं। इस पृष्ठ के शीर्ष पर दी गई “प्रभावी तिथि” नवीनतम संशोधन दर्शाती है। परिवर्तन प्रभावी होने के बाद ऐप का निरंतर उपयोग स्वीकृति माना जाता है।</p>
+<h2>9. शासी कानून</h2>
+<p>ये शर्तें <strong>जापान</strong> के कानूनों द्वारा शासित और उनके अनुसार व्याख्यायित की जाती हैं, इसके विधि-संघर्ष सिद्धांतों पर ध्यान दिए बिना।</p>
+<h2>10. संपर्क</h2>
+<p><strong>ईमेल:</strong> <code>idev10752@gmail.com</code></p>
+</section>
+
+<section id="lang-id" class="lang-section">
+<h1>Ketentuan Layanan — Liquid Glow</h1>
+<p class="meta">Tanggal berlaku: <strong>2026-05-11</strong> &nbsp;|&nbsp; Terakhir diperbarui: <strong>2026-05-17</strong></p>
+<p class="gov-note">Terjemahan ke bahasa lain disediakan untuk kemudahan Anda. Versi bahasa Inggris dan Jepang merupakan versi resmi dokumen ini; jika terjadi perbedaan, versi bahasa Inggris dan Jepang yang berlaku.</p>
+<p>Ketentuan Layanan ini (“Ketentuan”) mengatur penggunaan Anda atas aplikasi seluler <strong>Liquid Glow</strong> (“Aplikasi”) yang disediakan oleh <strong>PixelRyu</strong> (“kami”). Dengan memasang atau menggunakan Aplikasi, Anda setuju untuk terikat oleh Ketentuan ini.</p>
+<h2>1. Lisensi</h2>
+<p>Kami memberi Anda lisensi yang bersifat pribadi, dapat dicabut, non-eksklusif, dan tidak dapat dipindahtangankan untuk mengunduh dan menggunakan Aplikasi pada perangkat yang Anda miliki atau kendalikan, hanya untuk tujuan hiburan non-komersial.</p>
+<h2>2. Pembatasan</h2>
+<p>Anda setuju untuk tidak:</p><ul><li>Merekayasa balik, mendekompilasi, atau membongkar Aplikasi kecuali sebagaimana diizinkan secara tegas oleh hukum.</li><li>Mengubah, mendistribusikan, menjual, atau membuat karya turunan dari Aplikasi.</li><li>Menggunakan Aplikasi untuk tujuan melanggar hukum atau yang melanggar Ketentuan ini.</li><li>Mencoba menonaktifkan, melewati, atau mengganggu komponen periklanan atau analitik.</li></ul>
+<h2>3. Periklanan</h2>
+<p>Aplikasi didukung oleh iklan. Dengan menggunakan Aplikasi, Anda mengakui bahwa iklan dapat ditampilkan dan jaringan iklan dapat mengumpulkan informasi sebagaimana dijelaskan dalam Kebijakan Privasi kami.</p><p>Iklan meliputi:</p><ul><li><strong>Iklan banner</strong> ditampilkan di bagian bawah layar tertentu.</li><li><strong>Iklan interstitial</strong> ditampilkan secara otomatis di antara level.</li><li><strong>Iklan video berhadiah opsional</strong> yang dapat dipilih pengguna untuk ditonton demi memperoleh hadiah dalam game (mis. bintang bonus ganda). Menonton video berhadiah tidak pernah diwajibkan untuk memainkan game.</li></ul>
+<h2>4. Item Virtual</h2>
+<p>Aplikasi dapat menyertakan mata uang virtual (mis. bintang) atau item virtual yang tidak memiliki nilai uang, tidak dapat ditukar dengan uang nyata, dan dapat kami ubah atau hapus sesuai kebijakan kami. Item virtual dapat diperoleh dengan memainkan game atau menonton iklan video berhadiah opsional (mis. bintang bonus ganda).</p>
+<h2>5. Penafian Jaminan</h2>
+<p>Aplikasi disediakan “sebagaimana adanya” tanpa jaminan apa pun, baik tersurat maupun tersirat. Kami tidak menjamin bahwa Aplikasi akan berjalan tanpa gangguan atau tanpa kesalahan.</p>
+<h2>6. Pembatasan Tanggung Jawab</h2>
+<p>Sejauh diizinkan oleh hukum yang berlaku, dalam keadaan apa pun kami tidak bertanggung jawab atas kerugian tidak langsung, insidental, khusus, konsekuensial, atau punitif yang timbul dari atau terkait dengan penggunaan Aplikasi oleh Anda.</p>
+<h2>7. Pengakhiran</h2>
+<p>Kami dapat menangguhkan atau mengakhiri akses Anda ke Aplikasi kapan saja, dengan atau tanpa pemberitahuan, jika kami yakin Anda telah melanggar Ketentuan ini.</p>
+<h2>8. Perubahan Ketentuan Ini</h2>
+<p>Kami dapat merevisi Ketentuan ini dari waktu ke waktu. “Tanggal berlaku” di bagian atas halaman ini mencerminkan revisi terbaru. Penggunaan Aplikasi yang berkelanjutan setelah perubahan berlaku merupakan penerimaan.</p>
+<h2>9. Hukum yang Mengatur</h2>
+<p>Ketentuan ini diatur oleh dan ditafsirkan sesuai dengan hukum <strong>Jepang</strong>, tanpa memperhatikan prinsip pertentangan hukumnya.</p>
+<h2>10. Kontak</h2>
+<p><strong>Email:</strong> <code>idev10752@gmail.com</code></p>
+</section>
+
+<section id="lang-de" class="lang-section">
+<h1>Nutzungsbedingungen — Liquid Glow</h1>
+<p class="meta">Datum des Inkrafttretens: <strong>2026-05-11</strong> &nbsp;|&nbsp; Zuletzt aktualisiert: <strong>2026-05-17</strong></p>
+<p class="gov-note">Übersetzungen in andere Sprachen werden zu Ihrer Bequemlichkeit bereitgestellt. Maßgeblich sind die englische und die japanische Fassung dieses Dokuments; im Falle von Abweichungen haben die englische und die japanische Fassung Vorrang.</p>
+<p>Diese Nutzungsbedingungen (die „Bedingungen“) regeln Ihre Nutzung der mobilen Anwendung <strong>Liquid Glow</strong> (die „App“), die von <strong>PixelRyu</strong> („wir“, „uns“) bereitgestellt wird. Durch die Installation oder Nutzung der App erklären Sie sich mit diesen Bedingungen einverstanden.</p>
+<h2>1. Lizenz</h2>
+<p>Wir gewähren Ihnen eine persönliche, widerrufliche, nicht ausschließliche, nicht übertragbare Lizenz zum Herunterladen und Nutzen der App auf Geräten, die Sie besitzen oder kontrollieren, ausschließlich zu nicht-kommerziellen Unterhaltungszwecken.</p>
+<h2>2. Beschränkungen</h2>
+<p>Sie verpflichten sich, Folgendes zu unterlassen:</p><ul><li>die App zurückzuentwickeln, zu dekompilieren oder zu disassemblieren, sofern dies nicht ausdrücklich gesetzlich gestattet ist.</li><li>die App zu verändern, zu verbreiten, zu verkaufen oder abgeleitete Werke davon zu erstellen.</li><li>die App für rechtswidrige Zwecke oder unter Verstoß gegen diese Bedingungen zu nutzen.</li><li>zu versuchen, Werbe- oder Analysekomponenten zu deaktivieren, zu umgehen oder zu beeinträchtigen.</li></ul>
+<h2>3. Werbung</h2>
+<p>Die App wird durch Werbung finanziert. Durch die Nutzung der App erkennen Sie an, dass Werbung angezeigt werden kann und dass Werbenetzwerke Informationen erheben können, wie in unserer Datenschutzerklärung beschrieben.</p><p>Zur Werbung gehören:</p><ul><li><strong>Banner-Anzeigen</strong>, die am unteren Rand bestimmter Bildschirme angezeigt werden.</li><li><strong>Interstitial-Anzeigen</strong>, die automatisch zwischen den Levels angezeigt werden.</li><li><strong>Optionale Rewarded-Video-Anzeigen</strong>, die der Nutzer ansehen kann, um eine Belohnung im Spiel zu erhalten (z. B. doppelte Bonussterne). Das Ansehen von Rewarded-Videos ist zum Spielen niemals erforderlich.</li></ul>
+<h2>4. Virtuelle Gegenstände</h2>
+<p>Die App kann virtuelle Währung (z. B. Sterne) oder virtuelle Gegenstände enthalten, die keinen Geldwert haben, nicht in echtes Geld umgewandelt werden können und nach unserem Ermessen geändert oder entfernt werden können. Virtuelle Gegenstände können durch Spielfortschritt oder durch Ansehen einer optionalen Rewarded-Video-Anzeige erlangt werden (z. B. doppelte Bonussterne).</p>
+<h2>5. Gewährleistungsausschluss</h2>
+<p>Die App wird „wie besehen“ ohne jegliche ausdrückliche oder stillschweigende Gewährleistung bereitgestellt. Wir gewährleisten nicht, dass die App unterbrechungs- oder fehlerfrei läuft.</p>
+<h2>6. Haftungsbeschränkung</h2>
+<p>Soweit nach geltendem Recht zulässig, haften wir in keinem Fall für indirekte, beiläufige, besondere, Folge- oder Strafschäden, die sich aus Ihrer Nutzung der App ergeben oder damit zusammenhängen.</p>
+<h2>7. Kündigung</h2>
+<p>Wir können Ihren Zugang zur App jederzeit mit oder ohne Vorankündigung aussetzen oder beenden, wenn wir der Ansicht sind, dass Sie gegen diese Bedingungen verstoßen haben.</p>
+<h2>8. Änderungen dieser Bedingungen</h2>
+<p>Wir können diese Bedingungen von Zeit zu Zeit überarbeiten. Das „Datum des Inkrafttretens“ oben auf dieser Seite gibt die letzte Überarbeitung an. Die fortgesetzte Nutzung der App nach Inkrafttreten der Änderungen gilt als Annahme.</p>
+<h2>9. Anwendbares Recht</h2>
+<p>Diese Bedingungen unterliegen dem Recht <strong>Japans</strong> und werden nach diesem ausgelegt, ungeachtet seiner kollisionsrechtlichen Grundsätze.</p>
+<h2>10. Kontakt</h2>
+<p><strong>E-Mail:</strong> <code>idev10752@gmail.com</code></p>
+</section>
+
+<section id="lang-fr" class="lang-section">
+<h1>Conditions d’utilisation — Liquid Glow</h1>
+<p class="meta">Date d’entrée en vigueur: <strong>2026-05-11</strong> &nbsp;|&nbsp; Dernière mise à jour: <strong>2026-05-17</strong></p>
+<p class="gov-note">Les traductions dans d’autres langues sont fournies à titre indicatif. Les versions anglaise et japonaise de ce document font foi ; en cas de divergence, les versions anglaise et japonaise prévalent.</p>
+<p>Les présentes Conditions d’utilisation (les « Conditions ») régissent votre utilisation de l’application mobile <strong>Liquid Glow</strong> (l’« Application ») fournie par <strong>PixelRyu</strong> (« nous »). En installant ou en utilisant l’Application, vous acceptez d’être lié par les présentes Conditions.</p>
+<h2>1. Licence</h2>
+<p>Nous vous accordons une licence personnelle, révocable, non exclusive et non transférable pour télécharger et utiliser l’Application sur des appareils que vous possédez ou contrôlez, à des fins de divertissement non commerciales uniquement.</p>
+<h2>2. Restrictions</h2>
+<p>Vous acceptez de ne pas :</p><ul><li>procéder à l’ingénierie inverse, décompiler ou désassembler l’Application, sauf dans les cas expressément autorisés par la loi.</li><li>modifier, distribuer, vendre l’Application ou en créer des œuvres dérivées.</li><li>utiliser l’Application à des fins illégales ou en violation des présentes Conditions.</li><li>tenter de désactiver, contourner ou perturber les composants de publicité ou d’analyse.</li></ul>
+<h2>3. Publicité</h2>
+<p>L’Application est financée par la publicité. En utilisant l’Application, vous reconnaissez que des publicités peuvent être affichées et que les réseaux publicitaires peuvent collecter des informations comme décrit dans notre Politique de confidentialité.</p><p>Les publicités comprennent :</p><ul><li><strong>Bannières publicitaires</strong> affichées en bas de certains écrans.</li><li><strong>Publicités interstitielles</strong> affichées automatiquement entre les niveaux.</li><li><strong>Publicités vidéo avec récompense facultatives</strong> que l’utilisateur peut choisir de regarder afin de recevoir une récompense en jeu (par ex. des étoiles bonus doublées). Le visionnage de vidéos avec récompense n’est jamais requis pour jouer.</li></ul>
+<h2>4. Objets virtuels</h2>
+<p>L’Application peut inclure une monnaie virtuelle (par ex. des étoiles) ou des objets virtuels qui n’ont aucune valeur monétaire, ne peuvent pas être échangés contre de l’argent réel et peuvent être modifiés ou supprimés à notre discrétion. Les objets virtuels peuvent être obtenus en progressant dans le jeu ou en regardant une publicité vidéo avec récompense facultative (par ex. des étoiles bonus doublées).</p>
+<h2>5. Exclusion de garantie</h2>
+<p>L’Application est fournie « en l’état », sans garantie d’aucune sorte, expresse ou implicite. Nous ne garantissons pas que l’Application sera ininterrompue ou exempte d’erreurs.</p>
+<h2>6. Limitation de responsabilité</h2>
+<p>Dans toute la mesure permise par la loi applicable, nous ne saurions en aucun cas être tenus responsables des dommages indirects, accessoires, spéciaux, consécutifs ou punitifs découlant de votre utilisation de l’Application ou liés à celle-ci.</p>
+<h2>7. Résiliation</h2>
+<p>Nous pouvons suspendre ou résilier votre accès à l’Application à tout moment, avec ou sans préavis, si nous estimons que vous avez enfreint les présentes Conditions.</p>
+<h2>8. Modifications des présentes Conditions</h2>
+<p>Nous pouvons réviser les présentes Conditions de temps à autre. La « Date d’entrée en vigueur » en haut de cette page reflète la révision la plus récente. La poursuite de l’utilisation de l’Application après l’entrée en vigueur des modifications vaut acceptation.</p>
+<h2>9. Droit applicable</h2>
+<p>Les présentes Conditions sont régies par le droit du <strong>Japon</strong> et interprétées conformément à celui-ci, sans égard à ses principes de conflit de lois.</p>
+<h2>10. Contact</h2>
+<p><strong>E-mail :</strong> <code>idev10752@gmail.com</code></p>
+</section>
+
+<section id="lang-it" class="lang-section">
+<h1>Termini di servizio — Liquid Glow</h1>
+<p class="meta">Data di entrata in vigore: <strong>2026-05-11</strong> &nbsp;|&nbsp; Ultimo aggiornamento: <strong>2026-05-17</strong></p>
+<p class="gov-note">Le traduzioni in altre lingue sono fornite per comodità dell’utente. Le versioni in inglese e in giapponese di questo documento fanno fede; in caso di discrepanza, prevalgono le versioni in inglese e in giapponese.</p>
+<p>I presenti Termini di servizio (i “Termini”) disciplinano l’utilizzo dell’applicazione mobile <strong>Liquid Glow</strong> (l’“App”) fornita da <strong>PixelRyu</strong> (“noi”). Installando o utilizzando l’App, l’utente accetta di essere vincolato dai presenti Termini.</p>
+<h2>1. Licenza</h2>
+<p>Ti concediamo una licenza personale, revocabile, non esclusiva e non trasferibile per scaricare e utilizzare l’App su dispositivi di tua proprietà o sotto il tuo controllo, esclusivamente per scopi di intrattenimento non commerciali.</p>
+<h2>2. Restrizioni</h2>
+<p>L’utente accetta di non:</p><ul><li>decodificare, decompilare o disassemblare l’App, salvo quanto espressamente consentito dalla legge.</li><li>modificare, distribuire, vendere l’App o crearne opere derivate.</li><li>utilizzare l’App per scopi illeciti o in violazione dei presenti Termini.</li><li>tentare di disabilitare, eludere o interferire con i componenti pubblicitari o di analisi.</li></ul>
+<h2>3. Pubblicità</h2>
+<p>L’App è supportata dalla pubblicità. Utilizzando l’App, l’utente riconosce che possono essere visualizzati annunci e che le reti pubblicitarie possono raccogliere informazioni come descritto nella nostra Informativa sulla privacy.</p><p>Gli annunci includono:</p><ul><li><strong>Banner pubblicitari</strong> mostrati nella parte inferiore di alcune schermate.</li><li><strong>Annunci interstitial</strong> mostrati automaticamente tra un livello e l’altro.</li><li><strong>Annunci video con premio facoltativi</strong> che l’utente può scegliere di guardare per ricevere una ricompensa nel gioco (ad es. stelle bonus raddoppiate). La visione dei video con premio non è mai necessaria per giocare.</li></ul>
+<h2>4. Oggetti virtuali</h2>
+<p>L’App può includere valuta virtuale (ad es. stelle) o oggetti virtuali privi di valore monetario, non convertibili in denaro reale e che possiamo modificare o rimuovere a nostra discrezione. Gli oggetti virtuali possono essere ottenuti avanzando nel gioco o guardando un annuncio video con premio facoltativo (ad es. stelle bonus raddoppiate).</p>
+<h2>5. Esclusione di garanzia</h2>
+<p>L’App è fornita “così com’è”, senza garanzie di alcun tipo, espresse o implicite. Non garantiamo che l’App sarà ininterrotta o priva di errori.</p>
+<h2>6. Limitazione di responsabilità</h2>
+<p>Nella misura massima consentita dalla legge applicabile, in nessun caso saremo responsabili per danni indiretti, incidentali, speciali, consequenziali o punitivi derivanti da o connessi all’uso dell’App da parte dell’utente.</p>
+<h2>7. Risoluzione</h2>
+<p>Possiamo sospendere o cessare il tuo accesso all’App in qualsiasi momento, con o senza preavviso, qualora riteniamo che tu abbia violato i presenti Termini.</p>
+<h2>8. Modifiche ai presenti Termini</h2>
+<p>Possiamo rivedere i presenti Termini di tanto in tanto. La “Data di entrata in vigore” in cima a questa pagina riflette la revisione più recente. L’uso continuato dell’App dopo l’entrata in vigore delle modifiche costituisce accettazione.</p>
+<h2>9. Legge applicabile</h2>
+<p>I presenti Termini sono regolati e interpretati in conformità alle leggi del <strong>Giappone</strong>, senza riguardo ai suoi principi sui conflitti di legge.</p>
+<h2>10. Contatti</h2>
+<p><strong>E-mail:</strong> <code>idev10752@gmail.com</code></p>
+</section>
+
+<section id="lang-es" class="lang-section">
+<h1>Términos del servicio — Liquid Glow</h1>
+<p class="meta">Fecha de entrada en vigor: <strong>2026-05-11</strong> &nbsp;|&nbsp; Última actualización: <strong>2026-05-17</strong></p>
+<p class="gov-note">Las traducciones a otros idiomas se ofrecen para su comodidad. Las versiones en inglés y japonés de este documento son las auténticas; en caso de discrepancia, prevalecerán las versiones en inglés y japonés.</p>
+<p>Estos Términos del servicio (los «Términos») rigen el uso que usted hace de la aplicación móvil <strong>Liquid Glow</strong> (la «App») proporcionada por <strong>PixelRyu</strong> («nosotros»). Al instalar o usar la App, usted acepta quedar vinculado por estos Términos.</p>
+<h2>1. Licencia</h2>
+<p>Le concedemos una licencia personal, revocable, no exclusiva e intransferible para descargar y usar la App en dispositivos de su propiedad o bajo su control, únicamente con fines de entretenimiento no comerciales.</p>
+<h2>2. Restricciones</h2>
+<p>Usted se compromete a no:</p><ul><li>realizar ingeniería inversa, descompilar o desensamblar la App, salvo cuando la ley lo permita expresamente.</li><li>modificar, distribuir, vender la App ni crear obras derivadas de ella.</li><li>usar la App con fines ilícitos o en infracción de estos Términos.</li><li>intentar desactivar, eludir o interferir con los componentes de publicidad o análisis.</li></ul>
+<h2>3. Publicidad</h2>
+<p>La App se financia con publicidad. Al usar la App, usted reconoce que pueden mostrarse anuncios y que las redes publicitarias pueden recopilar información según se describe en nuestra Política de privacidad.</p><p>Los anuncios incluyen:</p><ul><li><strong>Anuncios de banner</strong> que se muestran en la parte inferior de algunas pantallas.</li><li><strong>Anuncios interstitial</strong> que se muestran automáticamente entre niveles.</li><li><strong>Anuncios de vídeo recompensados opcionales</strong> que el usuario puede elegir ver para recibir una recompensa en el juego (p. ej., estrellas de bonificación dobles). Ver vídeos recompensados nunca es obligatorio para jugar.</li></ul>
+<h2>4. Objetos virtuales</h2>
+<p>La App puede incluir moneda virtual (p. ej., estrellas) u objetos virtuales que no tienen valor monetario, no pueden canjearse por dinero real y pueden ser modificados o eliminados a nuestra discreción. Los objetos virtuales pueden obtenerse avanzando en el juego o viendo un anuncio de vídeo recompensado opcional (p. ej., estrellas de bonificación dobles).</p>
+<h2>5. Renuncia de garantía</h2>
+<p>La App se proporciona «tal cual», sin garantías de ningún tipo, expresas o implícitas. No garantizamos que la App funcione de forma ininterrumpida o sin errores.</p>
+<h2>6. Limitación de responsabilidad</h2>
+<p>En la máxima medida permitida por la ley aplicable, en ningún caso seremos responsables de daños indirectos, incidentales, especiales, consecuentes o punitivos que surjan del uso que usted haga de la App o estén relacionados con él.</p>
+<h2>7. Terminación</h2>
+<p>Podemos suspender o cancelar su acceso a la App en cualquier momento, con o sin previo aviso, si consideramos que ha infringido estos Términos.</p>
+<h2>8. Cambios en estos Términos</h2>
+<p>Podemos revisar estos Términos de vez en cuando. La «Fecha de entrada en vigor» en la parte superior de esta página refleja la revisión más reciente. El uso continuado de la App tras la entrada en vigor de los cambios constituye su aceptación.</p>
+<h2>9. Ley aplicable</h2>
+<p>Estos Términos se rigen e interpretan de conformidad con las leyes de <strong>Japón</strong>, sin tener en cuenta sus principios sobre conflicto de leyes.</p>
+<h2>10. Contacto</h2>
+<p><strong>Correo electrónico:</strong> <code>idev10752@gmail.com</code></p>
+</section>
+
+<section id="lang-pt" class="lang-section">
+<h1>Termos de serviço — Liquid Glow</h1>
+<p class="meta">Data de vigência: <strong>2026-05-11</strong> &nbsp;|&nbsp; Última atualização: <strong>2026-05-17</strong></p>
+<p class="gov-note">As traduções para outros idiomas são fornecidas para sua conveniência. As versões em inglês e em japonês deste documento são as oficiais; em caso de divergência, prevalecem as versões em inglês e em japonês.</p>
+<p>Estes Termos de Serviço (os “Termos”) regem o seu uso do aplicativo móvel <strong>Liquid Glow</strong> (o “Aplicativo”) fornecido pela <strong>PixelRyu</strong> (“nós”). Ao instalar ou usar o Aplicativo, você concorda em ficar vinculado a estes Termos.</p>
+<h2>1. Licença</h2>
+<p>Concedemos a você uma licença pessoal, revogável, não exclusiva e intransferível para baixar e usar o Aplicativo em dispositivos de sua propriedade ou sob seu controle, apenas para fins de entretenimento não comerciais.</p>
+<h2>2. Restrições</h2>
+<p>Você concorda em não:</p><ul><li>fazer engenharia reversa, descompilar ou desmontar o Aplicativo, exceto quando expressamente permitido por lei.</li><li>modificar, distribuir, vender o Aplicativo ou criar obras derivadas dele.</li><li>usar o Aplicativo para qualquer finalidade ilegal ou em violação destes Termos.</li><li>tentar desativar, contornar ou interferir nos componentes de publicidade ou análise.</li></ul>
+<h2>3. Publicidade</h2>
+<p>O Aplicativo é mantido por publicidade. Ao usar o Aplicativo, você reconhece que anúncios podem ser exibidos e que as redes de anúncios podem coletar informações conforme descrito em nossa Política de Privacidade.</p><p>Os anúncios incluem:</p><ul><li><strong>Anúncios de banner</strong> exibidos na parte inferior de determinadas telas.</li><li><strong>Anúncios intersticiais</strong> exibidos automaticamente entre os níveis.</li><li><strong>Anúncios em vídeo premiados opcionais</strong> que o usuário pode optar por assistir para receber uma recompensa no jogo (por ex., estrelas de bônus em dobro). Assistir a vídeos premiados nunca é necessário para jogar.</li></ul>
+<h2>4. Itens virtuais</h2>
+<p>O Aplicativo pode incluir moeda virtual (por ex., estrelas) ou itens virtuais que não têm valor monetário, não podem ser trocados por dinheiro real e podem ser modificados ou removidos a nosso critério. Os itens virtuais podem ser obtidos avançando no jogo ou assistindo a um anúncio em vídeo premiado opcional (por ex., estrelas de bônus em dobro).</p>
+<h2>5. Isenção de garantia</h2>
+<p>O Aplicativo é fornecido “no estado em que se encontra”, sem garantias de qualquer tipo, expressas ou implícitas. Não garantimos que o Aplicativo funcionará de forma ininterrupta ou livre de erros.</p>
+<h2>6. Limitação de responsabilidade</h2>
+<p>Na extensão máxima permitida pela lei aplicável, em nenhuma hipótese seremos responsáveis por quaisquer danos indiretos, incidentais, especiais, consequenciais ou punitivos decorrentes ou relacionados ao seu uso do Aplicativo.</p>
+<h2>7. Rescisão</h2>
+<p>Podemos suspender ou encerrar seu acesso ao Aplicativo a qualquer momento, com ou sem aviso prévio, se acreditarmos que você violou estes Termos.</p>
+<h2>8. Alterações nestes Termos</h2>
+<p>Podemos revisar estes Termos periodicamente. A “Data de vigência” no topo desta página reflete a revisão mais recente. O uso contínuo do Aplicativo após a entrada em vigor das alterações constitui aceitação.</p>
+<h2>9. Lei aplicável</h2>
+<p>Estes Termos são regidos e interpretados de acordo com as leis do <strong>Japão</strong>, independentemente de seus princípios de conflito de leis.</p>
+<h2>10. Contato</h2>
+<p><strong>E-mail:</strong> <code>idev10752@gmail.com</code></p>
+</section>
+
+<section id="lang-ru" class="lang-section">
+<h1>Условия использования — Liquid Glow</h1>
+<p class="meta">Дата вступления в силу: <strong>2026-05-11</strong> &nbsp;|&nbsp; Последнее обновление: <strong>2026-05-17</strong></p>
+<p class="gov-note">Переводы на другие языки предоставляются для вашего удобства. Официальными являются английская и японская версии настоящего документа; в случае расхождений преимущественную силу имеют английская и японская версии.</p>
+<p>Настоящие Условия использования («Условия») регулируют использование вами мобильного приложения <strong>Liquid Glow</strong> («Приложение»), предоставляемого <strong>PixelRyu</strong> («мы»). Устанавливая или используя Приложение, вы соглашаетесь соблюдать настоящие Условия.</p>
+<h2>1. Лицензия</h2>
+<p>Мы предоставляем вам личную, отзывную, неисключительную, непередаваемую лицензию на загрузку и использование Приложения на устройствах, которыми вы владеете или которые контролируете, исключительно в некоммерческих развлекательных целях.</p>
+<h2>2. Ограничения</h2>
+<p>Вы соглашаетесь не:</p><ul><li>осуществлять обратное проектирование, декомпиляцию или дизассемблирование Приложения, за исключением случаев, прямо разрешённых законом.</li><li>изменять, распространять, продавать Приложение или создавать производные от него произведения.</li><li>использовать Приложение в любых незаконных целях или в нарушение настоящих Условий.</li><li>пытаться отключить, обойти рекламные или аналитические компоненты либо вмешиваться в их работу.</li></ul>
+<h2>3. Реклама</h2>
+<p>Приложение поддерживается за счёт рекламы. Используя Приложение, вы признаёте, что может отображаться реклама и что рекламные сети могут собирать информацию, как описано в нашей Политике конфиденциальности.</p><p>Реклама включает:</p><ul><li><strong>Баннерная реклама</strong>, отображаемая в нижней части некоторых экранов.</li><li><strong>Межстраничная реклама</strong>, показываемая автоматически между уровнями.</li><li><strong>Необязательная видеореклама с вознаграждением</strong>, которую пользователь может посмотреть по своему выбору, чтобы получить игровую награду (например, удвоенные бонусные звёзды). Просмотр видеорекламы с вознаграждением никогда не требуется для игры.</li></ul>
+<h2>4. Виртуальные предметы</h2>
+<p>Приложение может включать виртуальную валюту (например, звёзды) или виртуальные предметы, которые не имеют денежной ценности, не подлежат обмену на реальные деньги и могут быть изменены или удалены по нашему усмотрению. Виртуальные предметы можно получить, продвигаясь в игре или просматривая необязательную видеорекламу с вознаграждением (например, удвоенные бонусные звёзды).</p>
+<h2>5. Отказ от гарантий</h2>
+<p>Приложение предоставляется «как есть», без каких-либо явных или подразумеваемых гарантий. Мы не гарантируем, что работа Приложения будет бесперебойной или безошибочной.</p>
+<h2>6. Ограничение ответственности</h2>
+<p>В максимально допустимой применимым законодательством степени мы ни при каких обстоятельствах не несём ответственности за любые косвенные, случайные, специальные, последующие или штрафные убытки, возникающие в связи с использованием вами Приложения.</p>
+<h2>7. Прекращение доступа</h2>
+<p>Мы можем приостановить или прекратить ваш доступ к Приложению в любое время, с уведомлением или без него, если сочтём, что вы нарушили настоящие Условия.</p>
+<h2>8. Изменения настоящих Условий</h2>
+<p>Время от времени мы можем пересматривать настоящие Условия. Дата «Дата вступления в силу» вверху этой страницы отражает последнюю редакцию. Продолжение использования Приложения после вступления изменений в силу означает их принятие.</p>
+<h2>9. Применимое право</h2>
+<p>Настоящие Условия регулируются и толкуются в соответствии с законодательством <strong>Японии</strong>, без учёта его коллизионных норм.</p>
+<h2>10. Контакты</h2>
+<p><strong>Эл. почта:</strong> <code>idev10752@gmail.com</code></p>
 </section>
 
 <h2 class="social-heading">Follow</h2>
@@ -151,27 +378,60 @@
 <div class="footer">
   © <span id="year"></span> PixelRyu. All rights reserved.
 </div>
-
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
   const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
-  function applyLang(lang) {
-    const display = (lang === 'ja') ? 'ja' : 'en';
+
+  function detectLang() {
+    try {
+      const stored = localStorage.getItem(LANG_STORAGE_KEY);
+      if (stored && document.getElementById('lang-' + stored)) return stored;
+    } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang, persist) {
+    if (!document.getElementById('lang-' + lang)) lang = 'en';
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
     document.querySelectorAll('.lang-section').forEach(s => s.classList.remove('active'));
-    document.getElementById('lang-' + display).classList.add('active');
+    const sec = document.getElementById('lang-' + lang);
+    sec.classList.add('active');
+    const h1 = sec.querySelector('h1');
+    if (h1) document.title = h1.textContent;
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
   }
-  function showLang(lang) {
-    applyLang(lang);
-    try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {}
-  }
+
   (function init() {
-    let stored = null;
-    try { stored = localStorage.getItem(LANG_STORAGE_KEY); } catch (e) {}
-    if (stored) {
-      applyLang(stored);
-    } else if ((navigator.language || '').startsWith('ja')) {
-      applyLang('ja');
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(opt);
     }
+    const y = document.getElementById('year');
+    if (y) y.textContent = new Date().getFullYear();
+    setLang(detectLang());
+    sel.addEventListener('change', e => setLang(e.target.value, true));
   })();
 </script>
 
