@@ -95,7 +95,12 @@
   function injectStyle() {
     if (document.getElementById("pr-breadcrumb-style")) return;
     var css =
-      ".breadcrumb{font-size:13px;line-height:1.5;margin:0 0 20px;opacity:.85;font-family:inherit;}" +
+      // Anchored to the viewport's top-left on EVERY page (not to the per-page
+      // content container) so the breadcrumb keeps the exact same position and
+      // size across navigations and never shifts. Reserve room on the right for
+      // the language switcher.
+      ".breadcrumb{position:absolute;top:22px;left:24px;max-width:calc(100% - 230px);" +
+        "font-size:13px;line-height:1.5;opacity:.85;font-family:inherit;z-index:50;}" +
       ".breadcrumb ol{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:4px 6px;}" +
       ".breadcrumb li{display:flex;align-items:center;gap:4px 6px;}" +
       ".breadcrumb a{color:inherit;text-decoration:none;opacity:.85;}" +
@@ -159,8 +164,9 @@
     if (!nav) {
       nav = document.createElement("nav");
       nav.id = "breadcrumb";
-      var host = document.querySelector(".container") || document.body;
-      host.insertBefore(nav, host.firstChild);
+      // Always a direct child of <body> (never the content container) so its
+      // absolute positioning is anchored to the page, identically everywhere.
+      document.body.insertBefore(nav, document.body.firstChild);
     }
     nav.className = "breadcrumb";
     var lang = detectLang();
