@@ -1,0 +1,39 @@
+# PixelRyu
+
+> PixelRyu is a solo Japanese indie game studio making small, polished, fully multilingual (12-language) mobile games for Android and iOS.
+
+PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This site is a multilingual portfolio (en, ja, zh, ko, hi, id, de, fr, it, es, pt, ru) with a page per game, plus a privacy policy and terms of service for each game. Language is selected client-side; English is the default content.
+
+## Games
+
+- [ISSEN (一閃)](https://pixelryu.github.io/issen/): A sumi-e (ink-wash) timing-action game built on the iaido draw — breathe, read the distance, unleash one perfect cut. In development for Android & iOS.
+- [HOTARU (The Lost House)](https://pixelryu.github.io/hotaru/): A quiet, atmospheric first-person Japanese horror walking simulator set in a lost house. Android & iOS.
+- [Liquid Glow](https://pixelryu.github.io/liquid-glow/): A cozy, minimalist indie sort puzzle from Japan — arrange flowing liquid colors. Android.
+- [Mole Whack (モグラぽかぽか)](https://pixelryu.github.io/mole-whack/): A casual stage-based whack-a-mole tap game across 100 stages — hit the moles, clear the target, advance. Android & iOS.
+
+## Game overviews
+
+- [ISSEN — Game Overview](https://pixelryu.github.io/issen/overview.html)
+- [HOTARU — Game Overview](https://pixelryu.github.io/hotaru/overview.html)
+- [Liquid Glow — Game Overview](https://pixelryu.github.io/liquid-glow/overview.html)
+- [Mole Whack — Game Overview](https://pixelryu.github.io/mole-whack/overview.html)
+
+## Legal
+
+- [ISSEN — Privacy Policy](https://pixelryu.github.io/issen/privacy_policy.html)
+- [ISSEN — Terms of Service](https://pixelryu.github.io/issen/terms_of_service.html)
+- [HOTARU — Privacy Policy](https://pixelryu.github.io/hotaru/privacy_policy.html)
+- [HOTARU — Terms of Service](https://pixelryu.github.io/hotaru/terms_of_service.html)
+- [Liquid Glow — Privacy Policy](https://pixelryu.github.io/liquid-glow/privacy_policy.html)
+- [Liquid Glow — Terms of Service](https://pixelryu.github.io/liquid-glow/terms_of_service.html)
+- [Mole Whack — Privacy Policy](https://pixelryu.github.io/mole-whack/privacy_policy.html)
+- [Mole Whack — Terms of Service](https://pixelryu.github.io/mole-whack/terms_of_service.html)
+
+## About PixelRyu
+
+- Studio: PixelRyu — solo indie game developer, Japan
+- Platforms: Android and iOS
+- Newsletter (English): https://pixelryu.substack.com
+- Newsletter (日本語): https://note.com/pixelryu
+- YouTube: https://www.youtube.com/@PixelRyu-Japan
+- X: https://x.com/PixelRyu10752
