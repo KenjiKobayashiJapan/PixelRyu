@@ -3,13 +3,13 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title data-i18n="title">Liquid Glow — Legal</title>
-<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Legal documents for Liquid Glow by PixelRyu.">
+<title data-i18n="title">Parcel Pals — Pack happiness. Ship smiles.</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Parcel Pals — a cozy parcel-sorting puzzle by PixelRyu. Sort cute parcels into 3 lanes, match shapes to boxes, and ship before the table overflows. In development; coming soon to Android & iOS.">
 <style>
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    background: radial-gradient(ellipse at top, #172244 0%, #080d1f 50%, #02040c 100%);
-    color: #e4ebf5;
+    background: radial-gradient(ellipse at top, #2a2018 0%, #1a130f 50%, #0a0705 100%);
+    color: #f0e6d4;
     margin: 0;
     min-height: 100vh;
     display: flex;
@@ -29,9 +29,9 @@
     right: 24px;
   }
   .lang-switch select {
-    background: rgba(122, 176, 255, 0.06);
-    color: #e4ebf5;
-    border: 1px solid rgba(122, 176, 255, 0.20);
+    background: rgba(109, 208, 191, 0.06);
+    color: #f0e6d4;
+    border: 1px solid rgba(109, 208, 191, 0.22);
     border-radius: 4px;
     padding: 5px 10px;
     font-size: 13px;
@@ -39,93 +39,121 @@
     cursor: pointer;
   }
   .lang-switch select:hover {
-    background: rgba(122, 176, 255, 0.12);
-    border-color: rgba(122, 176, 255, 0.50);
+    background: rgba(109, 208, 191, 0.14);
+    border-color: rgba(109, 208, 191, 0.55);
   }
-  .lang-switch select option { background: #0d1428; color: #e4ebf5; }
-  h1 {
-    font-size: 56px;
-    margin: 0 0 12px;
-    color: #d8e3f5;
-    font-weight: 800;
-    letter-spacing: -0.5px;
+  .lang-switch select option { background: #1a130f; color: #f0e6d4; }
+  .brand-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 28px;
+    display: block;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 28px rgba(255, 174, 192, 0.20), 0 0 0 1px rgba(255, 174, 192, 0.15);
   }
   .tagline {
-    font-size: 16px;
-    color: #6c7d9d;
+    font-size: 14px;
+    color: #a89478;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  h1 {
+    font-size: 48px;
+    margin: 0 0 6px;
+    color: #f0e6d4;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  h1 .accent {
+    color: #6dd0bf;
+  }
+  /* Brand mark: EN by default, JP variant for Japanese users (toggled via <html lang> by setLang). */
+  h1 .brand-ja { display: none; }
+  html[lang="ja"] h1 .brand-en { display: none; }
+  html[lang="ja"] h1 .brand-ja { display: inline; }
+  .subtitle {
+    font-size: 14px;
+    color: #a89478;
     margin-bottom: 32px;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
-  .tester-card {
-    background: rgba(122, 176, 255, 0.06);
-    border: 1px solid rgba(122, 176, 255, 0.30);
+  .dev-card {
+    background: rgba(109, 208, 191, 0.05);
+    border: 1px solid rgba(109, 208, 191, 0.30);
     border-radius: 16px;
     padding: 24px 24px 28px;
     margin: 32px 0 40px;
     text-align: left;
-    box-shadow: 0 0 30px rgba(122, 176, 255, 0.05);
+    box-shadow: 0 0 30px rgba(109, 208, 191, 0.05);
   }
-  .tester-heading {
+  .dev-heading {
     font-size: 13px;
-    color: #7ab0ff;
+    color: #6dd0bf;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0 0 4px;
     font-weight: 700;
     text-align: center;
   }
-  .tester-android-note {
+  .dev-note {
     display: block;
     font-size: 11px;
-    color: #6c7d9d;
+    color: #a89478;
     text-transform: none;
     letter-spacing: 0;
     font-weight: 400;
-    margin-bottom: 16px;
+    margin-top: 6px;
+    margin-bottom: 4px;
     text-align: center;
   }
-  .tester-card p {
-    font-size: 14px;
-    line-height: 1.65;
-    color: #c5d0e6;
-    margin: 12px 0;
-  }
-  .tester-section-label {
-    font-size: 13px;
-    font-weight: 700;
-    color: #8b9bbd;
-    margin: 20px 0 6px;
-  }
-  .tester-step {
-    display: block;
-    background: rgba(122, 176, 255, 0.10);
-    border: 1px solid rgba(122, 176, 255, 0.30);
-    border-radius: 10px;
-    padding: 12px 16px;
-    margin: 10px 0;
-    color: #7ab0ff;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    transition: all 0.2s ease;
-  }
-  .tester-step:hover {
-    background: rgba(122, 176, 255, 0.18);
-    border-color: rgba(122, 176, 255, 0.60);
-    color: #a0c8ff;
-  }
-  .tester-card ul {
-    margin: 6px 0 0;
-    padding-left: 22px;
-    color: #c5d0e6;
+  .dev-card p {
     font-size: 14px;
     line-height: 1.7;
+    color: #d8ccb2;
+    margin: 14px 0 0;
   }
+  .dev-section-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #ffaec0;
+    margin: 20px 0 4px;
+  }
+  /* === Tester card (HIDDEN until Android closed test opens) ===
+     To re-enable when Android tester recruitment starts, remove the
+     `display: none` line from .tester-card below. */
+  .tester-card { display: none; }
+  .tester-card-base {
+    background: rgba(109, 208, 191, 0.05);
+    border: 1px solid rgba(109, 208, 191, 0.30);
+    border-radius: 16px;
+    padding: 24px 24px 28px;
+    margin: 32px 0 40px;
+    text-align: left;
+    box-shadow: 0 0 30px rgba(109, 208, 191, 0.05);
+  }
+  .tester-heading {
+    font-size: 13px; color: #6dd0bf; text-transform: uppercase;
+    letter-spacing: 2px; margin: 0 0 4px; font-weight: 700; text-align: center;
+  }
+  .tester-android-note {
+    display: block; font-size: 11px; color: #a89478; text-transform: none;
+    letter-spacing: 0; font-weight: 400; margin-bottom: 16px; text-align: center;
+  }
+  .tester-card p { font-size: 14px; line-height: 1.65; color: #d8ccb2; margin: 12px 0; }
+  .tester-section-label { font-size: 13px; font-weight: 700; color: #ffaec0; margin: 20px 0 6px; }
+  .tester-step {
+    display: block; background: rgba(109, 208, 191, 0.10); border: 1px solid rgba(109, 208, 191, 0.30);
+    border-radius: 10px; padding: 12px 16px; margin: 10px 0; color: #6dd0bf;
+    text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s ease;
+  }
+  .tester-step:hover { background: rgba(109, 208, 191, 0.18); border-color: rgba(109, 208, 191, 0.60); color: #8fdcce; }
+  .tester-card ul { margin: 6px 0 0; padding-left: 22px; color: #d8ccb2; font-size: 14px; line-height: 1.7; }
   .overview-link {
     display: block;
-    background: #7ab0ff;
-    color: #08122b;
+    background: #6dd0bf;
+    color: #0f1f1c;
     text-decoration: none;
     font-size: 16px;
     font-weight: 700;
@@ -133,39 +161,30 @@
     border-radius: 14px;
     margin: 0 0 24px;
     transition: all 0.2s ease;
-    box-shadow: 0 6px 22px rgba(122, 176, 255, 0.25);
+    box-shadow: 0 6px 22px rgba(109, 208, 191, 0.25);
   }
-  .overview-link:hover { background: #a0c8ff; transform: translateY(-1px); }
-  .promo-video {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 14px;
-    margin: 16px 0 8px;
-    background: #000;
-    box-shadow: 0 6px 22px rgba(122, 176, 255, 0.25);
-  }
+  .overview-link:hover { background: #8fdcce; transform: translateY(-1px); }
   .legal-divider {
-    font-size: 13px;
-    color: #6c7d9d;
+    font-size: 14px;
+    color: #8a7c66;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 8px 0 16px;
   }
   .links { list-style: none; padding: 0; margin: 0; }
   .links li {
-    background: rgba(122, 176, 255, 0.06);
-    border: 1px solid rgba(122, 176, 255, 0.20);
+    background: rgba(109, 208, 191, 0.05);
+    border: 1px solid rgba(109, 208, 191, 0.20);
     border-radius: 14px;
     margin-bottom: 14px;
     transition: all 0.25s ease;
   }
   .links li:hover {
-    background: rgba(122, 176, 255, 0.12);
-    border-color: rgba(122, 176, 255, 0.50);
+    background: rgba(109, 208, 191, 0.12);
+    border-color: rgba(109, 208, 191, 0.50);
   }
   .links a {
-    color: #7ab0ff;
+    color: #6dd0bf;
     text-decoration: none;
     font-size: 18px;
     font-weight: 600;
@@ -175,39 +194,41 @@
   .back {
     display: inline-block;
     margin-top: 48px;
-    color: #6c7d9d;
+    color: #8a7c66;
     text-decoration: none;
     font-size: 14px;
   }
-  .back:hover { color: #aac0e0; }
+  .back:hover { color: #e0a08a; }
   @media (max-width: 600px) {
     .lang-switch { top: 16px; right: 16px; }
-    .tester-card { padding: 20px 18px 22px; }
+    .dev-card { padding: 20px 18px 22px; }
+    h1 { font-size: 40px; }
+    .brand-icon { width: 104px; height: 104px; border-radius: 24px; }
   }
-  .social-heading{font-size:13px;color:#6c7d9d;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social-heading{font-size:13px;color:#a89478;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
   .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
-  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(122,176,255,0.06);border:1px solid rgba(122,176,255,0.20);color:#8b9bbd;transition:all .25s ease;}
-  .social a:hover{background:rgba(122,176,255,0.12);border-color:rgba(122,176,255,0.50);color:#a0c8ff;transform:translateY(-2px);}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(109,208,191,0.06);border:1px solid rgba(109,208,191,0.20);color:#a89478;transition:all .25s ease;}
+  .social a:hover{background:rgba(109,208,191,0.12);border-color:rgba(109,208,191,0.45);color:#6dd0bf;transform:translateY(-2px);}
   .social svg{width:22px;height:22px;fill:currentColor;display:block;}
 </style>
 <!-- SEO/LLMO start (managed) -->
-<link rel="canonical" href="https://pixelryu.github.io/liquid-glow/">
+<link rel="canonical" href="https://pixelryu.github.io/parcel-pals/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="PixelRyu">
 <meta name="publisher" content="PixelRyu">
-<meta name="keywords" content="Liquid Glow, sort puzzle, color sort, water sort, cozy puzzle, PixelRyu, indie game, Android">
-<meta name="theme-color" content="#080d1f">
-<link rel="icon" type="image/png" href="https://pixelryu.github.io/liquid-glow/icon.png">
-<link rel="apple-touch-icon" href="https://pixelryu.github.io/liquid-glow/icon.png">
+<meta name="keywords" content="Parcel Pals, parcel sort, packing puzzle, cozy puzzle, conveyor, shipping, cute, casual, PixelRyu, indie game, Android, iOS">
+<meta name="theme-color" content="#1a130f">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/parcel-pals/icon.png">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/parcel-pals/icon.png">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PixelRyu">
-<meta property="og:title" content="Liquid Glow — Indie Sort Puzzle from Japan">
-<meta property="og:description" content="Liquid Glow — a cozy sort puzzle by PixelRyu. Join the 14-day Android closed testing.">
-<meta property="og:url" content="https://pixelryu.github.io/liquid-glow/">
-<meta property="og:image" content="https://pixelryu.github.io/liquid-glow/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Liquid Glow — Indie Sort Puzzle from Japan">
+<meta property="og:title" content="Parcel Pals — Pack happiness. Ship smiles.">
+<meta property="og:description" content="Parcel Pals — a cozy parcel-sorting puzzle by PixelRyu. Sort cute parcels into 3 lanes, match shapes to boxes, and ship before the table overflows. In development; coming soon to Android &amp; iOS.">
+<meta property="og:url" content="https://pixelryu.github.io/parcel-pals/">
+<meta property="og:image" content="https://pixelryu.github.io/parcel-pals/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="Parcel Pals — Pack happiness. Ship smiles.">
 <meta property="og:locale" content="en_US">
 <meta property="og:locale:alternate" content="ja_JP">
 <meta property="og:locale:alternate" content="zh_CN">
@@ -221,12 +242,12 @@
 <meta property="og:locale:alternate" content="pt_BR">
 <meta property="og:locale:alternate" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Liquid Glow — Indie Sort Puzzle from Japan">
-<meta name="twitter:description" content="Liquid Glow — a cozy sort puzzle by PixelRyu. Join the 14-day Android closed testing.">
-<meta name="twitter:image" content="https://pixelryu.github.io/liquid-glow/og.png">
-<meta name="twitter:image:alt" content="Liquid Glow — Indie Sort Puzzle from Japan">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Liquid Glow","url":"https://pixelryu.github.io/liquid-glow/","image":"https://pixelryu.github.io/liquid-glow/icon.png","description":"Liquid Glow — a cozy sort puzzle by PixelRyu. Join the 14-day Android closed testing.","applicationCategory":"GameApplication","operatingSystem":"Android","author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"sameAs":["https://play.google.com/apps/testing/com.pixelryu.liquidglow"]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/"},{"@type":"ListItem","position":2,"name":"Liquid Glow","item":"https://pixelryu.github.io/liquid-glow/"}]}</script>
+<meta name="twitter:title" content="Parcel Pals — Pack happiness. Ship smiles.">
+<meta name="twitter:description" content="Parcel Pals — a cozy parcel-sorting puzzle by PixelRyu. Sort cute parcels into 3 lanes, match shapes to boxes, and ship before the table overflows. In development; coming soon to Android &amp; iOS.">
+<meta name="twitter:image" content="https://pixelryu.github.io/parcel-pals/og.png">
+<meta name="twitter:image:alt" content="Parcel Pals — Pack happiness. Ship smiles.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Parcel Pals","url":"https://pixelryu.github.io/parcel-pals/","image":"https://pixelryu.github.io/parcel-pals/icon.png","description":"Parcel Pals — a cozy parcel-sorting puzzle by PixelRyu. Sort cute parcels into 3 lanes, match shapes to boxes, and ship before the table overflows. In development; coming soon to Android & iOS.","applicationCategory":"GameApplication","operatingSystem":"Android, iOS","author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/"},{"@type":"ListItem","position":2,"name":"Parcel Pals","item":"https://pixelryu.github.io/parcel-pals/"}]}</script>
 <!-- SEO/LLMO end -->
 </head>
 <body>
@@ -234,23 +255,37 @@
   <div class="lang-switch">
     <select id="lang-select" aria-label="Language"></select>
   </div>
-  <h1>Liquid Glow</h1>
-  <div class="tagline" data-i18n="tagline">Indie Sort Puzzle from Japan</div>
+  <img src="icon.png" alt="Parcel Pals" class="brand-icon">
+  <div class="tagline" data-i18n="tagline">Pack happiness. Ship smiles.</div>
+  <h1><span class="brand-en">Parcel <span class="accent">Pals</span></span><span class="brand-ja">ふんわり<span class="accent">配送便</span></span></h1>
+  <div class="subtitle" data-i18n="subtitle">Cozy Parcel-Sorting Puzzle</div>
 
-  <section class="tester-card" aria-labelledby="tester-heading">
+  <section class="dev-card" aria-labelledby="dev-heading">
+    <div id="dev-heading" class="dev-heading">
+      🎁 <span data-i18n="dev_label">In Development</span>
+      <span class="dev-note" data-i18n="dev_note">Coming soon to Android &amp; iOS</span>
+    </div>
+    <p data-i18n="dev_intro">A new PixelRyu game in the making. Sort cute parcels into 3 lanes, pop each shape into its matching box on the belt, and ship a smile to someone, somewhere.</p>
+
+    <div class="dev-section-label">📦 <span data-i18n="dev_what_label">What it is</span></div>
+    <p data-i18n="dev_what">A cozy parcel-sorting puzzle set in a little gift workshop. Parcels keep tumbling onto your table. Drag each shape into one of three lanes, let the belt deliver matching boxes, and ship perfect packs before the table overflows.</p>
+  </section>
+
+  <!-- HIDDEN until Android closed test opens. See .tester-card { display:none } in CSS. -->
+  <section class="tester-card tester-card-base" aria-labelledby="tester-heading">
     <div id="tester-heading" class="tester-heading">
-      🧪 <span data-i18n="tester_heading">Android Tester Recruitment</span>
+      🎁 <span data-i18n="tester_heading">Android Tester Recruitment</span>
       <span class="tester-android-note">📱 <span data-i18n="tester_android_note">Android only</span></span>
     </div>
     <p data-i18n="tester_intro">Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.</p>
 
-    <div class="tester-section-label">🎨 <span data-i18n="tester_what_label">What it is</span></div>
-    <p data-i18n="tester_what">A cozy sort puzzle where you arrange flowing liquid colors. Minimal UI, satisfying mechanics, perfect for quick breaks.</p>
+    <div class="tester-section-label">📦 <span data-i18n="tester_what_label">What it is</span></div>
+    <p data-i18n="tester_what">A cozy parcel-sorting puzzle. Drag shapes into 3 lanes, match each parcel to its box on the conveyor, and ship perfect packs before the table overflows.</p>
 
     <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">
       🔗 <span data-i18n="tester_step1_label">Step 1 — Join the tester group</span>
     </a>
-    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.liquidglow" target="_blank" rel="noopener">
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.parcelpals" target="_blank" rel="noopener">
       📱 <span data-i18n="tester_step2_label">Step 2 — Opt-in via Play Store</span>
     </a>
 
@@ -258,7 +293,7 @@
     <ul>
       <li data-i18n="tester_ask_keep">Keep installed for the full 14 days</li>
       <li data-i18n="tester_ask_launch">Launch every couple of days (a few times is enough)</li>
-      <li data-i18n="tester_ask_minutes">1–2 minutes of casual play per session works fine</li>
+      <li data-i18n="tester_ask_minutes">A minute or two of play per session is plenty</li>
     </ul>
     <p class="tester-note" data-i18n="tester_note_lead">ℹ️ Tip — both steps below are required:</p>
     <ul class="tester-note-list">
@@ -269,11 +304,7 @@
     </ul>
   </section>
 
-  <a href="overview.html" class="overview-link">🎮 <span data-i18n="link_overview">View Game Overview</span> →</a>
-
-  <video class="promo-video" autoplay loop muted playsinline controls preload="auto">
-    <source src="promotion_H_02.mp4" type="video/mp4">
-  </video>
+  <a href="overview.html" class="overview-link">📦 <span data-i18n="link_overview">View Game Overview</span> →</a>
 
   <div class="legal-divider" data-i18n="legal_divider">Legal Documents</div>
   <ul class="links">
@@ -310,45 +341,52 @@
 
   const i18n = {
     en: {
-      title: "Liquid Glow — Indie Sort Puzzle from Japan",
-      meta_desc: "Liquid Glow — a cozy sort puzzle by PixelRyu. Join the 14-day Android closed testing.",
-      tagline: "Indie Sort Puzzle from Japan",
-      legal_divider: "Legal Documents",
-      link_privacy: "Privacy Policy",
-      link_terms: "Terms of Service",
-      back: "← PixelRyu",
-      link_overview: "View Game Overview",
+      title: "Parcel Pals — Pack happiness. Ship smiles.",
+      meta_desc: "Parcel Pals — a cozy parcel-sorting puzzle by PixelRyu. Sort cute parcels into 3 lanes, match shapes to boxes, and ship before the table overflows. In development; coming soon to Android & iOS.",
+      tagline: "Pack happiness. Ship smiles.",
+      subtitle: "Cozy Parcel-Sorting Puzzle",
+      dev_label: "In Development",
+      dev_note: "Coming soon to Android & iOS",
+      dev_intro: "A new PixelRyu game in the making. Sort cute parcels into 3 lanes, pop each shape into its matching box on the belt, and ship a smile to someone, somewhere.",
+      dev_what_label: "What it is",
+      dev_what: "A cozy parcel-sorting puzzle set in a little gift workshop. Parcels keep tumbling onto your table. Drag each shape into one of three lanes, let the belt deliver matching boxes, and ship perfect packs before the table overflows.",
       tester_heading: "Android Tester Recruitment",
       tester_android_note: "Android only",
       tester_intro: "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
       tester_what_label: "What it is",
-      tester_what: "A cozy sort puzzle where you arrange flowing liquid colors. Minimal UI, satisfying mechanics, perfect for quick breaks.",
+      tester_what: "A cozy parcel-sorting puzzle. Drag shapes into 3 lanes, match each parcel to its box on the conveyor, and ship perfect packs before the table overflows.",
       tester_step1_label: "Step 1 — Join the tester group",
       tester_step2_label: "Step 2 — Opt-in via Play Store",
       tester_ask_label: "What I'm asking for",
       tester_ask_keep: "Keep installed for the full 14 days",
       tester_ask_launch: "Launch every couple of days (a few times is enough)",
-      tester_ask_minutes: "1–2 minutes of casual play per session works fine",
+      tester_ask_minutes: "A minute or two of play per session is plenty",
       tester_note_lead: "ℹ️ Tip — both steps below are required:",
       tester_note_step1: "Step 1 — Join the group: even if you see “no permission to view content”, there’s a “Join group” button on that page — tap it to join.",
       tester_note_step2: "Step 2 — Opt-in, then install & play: after opting in, download the app from the Play Store, open it and play a little. Joining the group alone is not enough.",
       tester_note_account: "Use the same Google account for both steps.",
       tester_note_wait: "If Step 2 shows “App not available”, wait a few hours after joining and try again.",
+      legal_divider: "Legal Documents",
+      link_overview: "View Game Overview",
+      link_privacy: "Privacy Policy",
+      link_terms: "Terms of Service",
+      back: "← PixelRyu"
     },
     ja: {
-      title: "Liquid Glow — 日本のインディーソートパズル",
-      meta_desc: "Liquid Glow — PixelRyu によるほっこり系ソートパズル。14日間の Android クローズドテストにご参加ください。",
-      tagline: "日本のインディーソートパズル",
-      legal_divider: "規約類",
-      link_privacy: "プライバシーポリシー",
-      link_terms: "利用規約",
-      back: "← PixelRyu へ戻る",
-      link_overview: "ゲーム概要を見る",
+      title: "ふんわり配送便 — しあわせを箱詰め。笑顔を出荷。",
+      meta_desc: "ふんわり配送便 — PixelRyu による癒し系の配送仕分けパズル。可愛い小包を3レーンに振り分け、ベルトの箱に形を合わせて、テーブルが溢れる前に出荷。開発中、Android・iOS で近日公開。",
+      tagline: "しあわせを箱詰め。笑顔を出荷。",
+      subtitle: "ほっこり配送仕分けパズル",
+      dev_label: "開発中",
+      dev_note: "Android・iOS で近日公開",
+      dev_intro: "PixelRyu の新作を制作中です。可愛い小包を3レーンに振り分け、ベルトに流れる箱に形を合わせて出荷。あなたの仕分けが、どこかの子の笑顔になります。",
+      dev_what_label: "ゲーム内容",
+      dev_what: "小さなギフト工房を舞台にした、ほっこり癒し系の配送仕分けパズル。テーブルに次々転がり込む小包を3つのレーンへドラッグ。ベルトに流れる箱と形が合えばカチッと収まり、出荷。溢れる前に気持ちよく片付けよう。",
       tester_heading: "Android テスター募集中",
       tester_android_note: "Android 専用",
       tester_intro: "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
       tester_what_label: "ゲーム内容",
-      tester_what: "流れる色とりどりの液体を並べ替える、ほっこり系ソートパズル。シンプルな UI と心地よい操作感で、すきま時間にぴったりです。",
+      tester_what: "ほっこり配送仕分けパズル。3レーンに小包を振り分け、コンベアの箱と形を合わせて、テーブルが溢れる前に出荷しよう。",
       tester_step1_label: "ステップ 1 — テスターグループに参加",
       tester_step2_label: "ステップ 2 — Play ストアでオプトイン",
       tester_ask_label: "お願いしたいこと",
@@ -360,266 +398,331 @@
       tester_note_step2: "ステップ2 — オプトイン後、インストールしてプレイ: オプトインしたら Play ストアからアプリをダウンロードし、起動して少し遊んでください。グループに参加するだけでは完了しません。",
       tester_note_account: "両方のステップは同じ Google アカウントでお使いください。",
       tester_note_wait: "ステップ2が「App not available」のときは、参加から数時間おいて再度お試しください。",
+      legal_divider: "規約類",
+      link_overview: "ゲーム概要を見る",
+      link_privacy: "プライバシーポリシー",
+      link_terms: "利用規約",
+      back: "← PixelRyu へ戻る"
     },
     zh: {
-      title: "Liquid Glow — 来自日本的独立分类益智游戏",
-      meta_desc: "Liquid Glow — PixelRyu 出品的温馨分类益智游戏。欢迎参加为期 14 天的 Android 封闭测试。",
-      tagline: "来自日本的独立分类益智游戏",
-      legal_divider: "法律文件",
-      link_privacy: "隐私政策",
-      link_terms: "服务条款",
-      back: "← 返回 PixelRyu",
-      link_overview: "查看游戏简介",
+      title: "Parcel Pals — 把幸福装进盒子，把笑容送出门",
+      meta_desc: "Parcel Pals — PixelRyu 出品的治愈系包裹分拣益智游戏。把可爱的小包裹分进 3 条传送道，对准传送带上的盒子形状出货，别让桌面爆满。开发中，即将登陆 Android 与 iOS。",
+      tagline: "把幸福装进盒子，把笑容送出门。",
+      subtitle: "治愈系包裹分拣益智游戏",
+      dev_label: "开发中",
+      dev_note: "即将登陆 Android 与 iOS",
+      dev_intro: "PixelRyu 正在制作的新作。把可爱的小包裹分进 3 条传送道，对准传送带上的盒子形状出货，把笑容送到某个孩子身边。",
+      dev_what_label: "游戏简介",
+      dev_what: "以小小礼品工房为舞台的治愈系包裹分拣益智游戏。包裹不断滚到你的桌面上，将每个形状拖到 3 条分拣道之一，让传送带送来对应的盒子收下，桌面爆满前完美出货。",
       tester_heading: "招募 Android 测试者",
       tester_android_note: "仅限 Android",
-      tester_intro: "我是一名独立开发者,正在为期 14 天的封闭测试招募积极的 Android 测试者。",
+      tester_intro: "我是一名独立开发者，正在为期 14 天的封闭测试招募积极的 Android 测试者。",
       tester_what_label: "游戏简介",
-      tester_what: "一款温馨的分类益智游戏,整理流动的彩色液体。极简界面、舒适手感,最适合零碎时间。",
+      tester_what: "治愈系包裹分拣益智游戏。将包裹分进 3 条分拣道，对准传送带上的盒子形状，桌面爆满前完美出货。",
       tester_step1_label: "第一步 — 加入测试者群组",
       tester_step2_label: "第二步 — 通过 Play 商店加入测试",
       tester_ask_label: "我希望你能做到",
       tester_ask_keep: "完整保留 14 天不卸载",
       tester_ask_launch: "每隔几天启动一次（几次即可）",
-      tester_ask_minutes: "每次随意玩 1-2 分钟即可",
+      tester_ask_minutes: "每次玩一两分钟就够了",
       tester_note_lead: "ℹ️ 提示 — 以下两个步骤都必须完成：",
       tester_note_step1: "第一步 — 加入群组：即使显示“无权限查看内容”，该页面上也有“加入群组”按钮，请点击加入。",
       tester_note_step2: "第二步 — 加入测试后下载并试玩：加入测试后，请从 Play 商店下载应用，打开并稍微试玩。仅加入群组还不够。",
       tester_note_account: "两个步骤请使用同一个 Google 账号。",
       tester_note_wait: "如果第二步显示“App not available”，请在加入后等待几小时再试。",
+      legal_divider: "法律文件",
+      link_overview: "查看游戏简介",
+      link_privacy: "隐私政策",
+      link_terms: "服务条款",
+      back: "← 返回 PixelRyu"
     },
     ko: {
-      title: "Liquid Glow — 일본의 인디 정렬 퍼즐",
-      meta_desc: "Liquid Glow — PixelRyu의 아늑한 정렬 퍼즐. 14일간의 Android 비공개 테스트에 참여해 보세요.",
-      tagline: "일본의 인디 정렬 퍼즐",
-      legal_divider: "법적 고지",
-      link_privacy: "개인정보 처리방침",
-      link_terms: "서비스 이용약관",
-      back: "← PixelRyu로 돌아가기",
-      link_overview: "게임 소개 보기",
+      title: "Parcel Pals — 행복을 담아, 미소를 배송.",
+      meta_desc: "Parcel Pals — PixelRyu가 만드는 힐링 소포 분류 퍼즐. 귀여운 소포를 3개 레인으로 분류하고, 컨베이어 박스에 모양을 맞춰 테이블이 넘치기 전에 출하하세요. 개발 중, Android·iOS 출시 예정.",
+      tagline: "행복을 담아, 미소를 배송.",
+      subtitle: "힐링 소포 분류 퍼즐",
+      dev_label: "개발 중",
+      dev_note: "Android·iOS 출시 예정",
+      dev_intro: "PixelRyu의 신작을 제작 중입니다. 귀여운 소포를 3개 레인으로 나누고, 컨베이어의 박스와 모양을 맞춰 어딘가의 아이에게 미소를 배송해요.",
+      dev_what_label: "게임 소개",
+      dev_what: "작은 선물 공방을 배경으로 한 힐링 소포 분류 퍼즐. 끊임없이 테이블로 굴러오는 소포를 3개 레인으로 드래그하고, 컨베이어 박스와 모양을 맞춰 테이블이 넘치기 전에 완벽 출하하세요.",
       tester_heading: "Android 테스터 모집",
       tester_android_note: "Android 전용",
       tester_intro: "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
       tester_what_label: "게임 소개",
-      tester_what: "흘러내리는 색색의 액체를 정리하는 아늑한 정렬 퍼즐. 미니멀한 UI와 만족스러운 조작감으로 짧은 휴식에 안성맞춤.",
+      tester_what: "힐링 소포 분류 퍼즐. 3개 레인으로 소포를 나누고, 컨베이어 박스와 모양을 맞춰 테이블이 넘치기 전에 출하하세요.",
       tester_step1_label: "1단계 — 테스터 그룹 가입",
       tester_step2_label: "2단계 — Play 스토어에서 옵트인",
       tester_ask_label: "부탁드리는 것",
       tester_ask_keep: "14일 동안 설치 상태 유지",
       tester_ask_launch: "며칠에 한 번씩 실행 (몇 번이면 충분합니다)",
-      tester_ask_minutes: "한 번에 1~2분 정도의 가벼운 플레이로 충분",
+      tester_ask_minutes: "한 번에 1~2분 가벼운 플레이면 충분합니다",
       tester_note_lead: "ℹ️ 팁 — 아래 두 단계를 모두 완료해야 합니다:",
       tester_note_step1: "1단계 — 그룹 가입: “콘텐츠를 볼 권한이 없습니다”라고 표시되어도 그 화면에 “그룹 가입” 버튼이 있으니 눌러서 가입하세요.",
       tester_note_step2: "2단계 — 옵트인 후 설치하고 플레이: 옵트인한 뒤 Play 스토어에서 앱을 다운로드해 실행하고 잠깐 플레이하세요. 그룹 가입만으로는 끝나지 않습니다.",
       tester_note_account: "두 단계 모두 같은 Google 계정을 사용하세요.",
       tester_note_wait: "2단계에서 “App not available”이 표시되면 가입 후 몇 시간 기다렸다가 다시 시도하세요.",
+      legal_divider: "법적 고지",
+      link_overview: "게임 소개 보기",
+      link_privacy: "개인정보 처리방침",
+      link_terms: "서비스 이용약관",
+      back: "← PixelRyu로 돌아가기"
     },
     hi: {
-      title: "Liquid Glow — जापान की इंडी सॉर्ट पज़ल",
-      meta_desc: "Liquid Glow — PixelRyu की आरामदायक सॉर्ट पज़ल। 14 दिन के Android क्लोज़्ड टेस्ट में शामिल हों।",
-      tagline: "जापान की इंडी सॉर्ट पज़ल",
-      legal_divider: "क़ानूनी दस्तावेज़",
-      link_privacy: "गोपनीयता नीति",
-      link_terms: "सेवा शर्तें",
-      back: "← PixelRyu पर वापस",
-      link_overview: "गेम अवलोकन देखें",
+      title: "Parcel Pals — खुशियाँ पैक करो, मुस्कान भेजो।",
+      meta_desc: "Parcel Pals — PixelRyu द्वारा एक आरामदायक पार्सल छँटाई पहेली। प्यारे पार्सल को 3 लेन में बाँटें, बेल्ट पर डिब्बों से आकार मिलाएँ, और टेबल भरने से पहले भेज दें। विकासाधीन; Android और iOS पर जल्द।",
+      tagline: "खुशियाँ पैक करो, मुस्कान भेजो।",
+      subtitle: "आरामदायक पार्सल छँटाई पहेली",
+      dev_label: "विकासाधीन",
+      dev_note: "Android और iOS पर जल्द",
+      dev_intro: "PixelRyu का बनता हुआ नया गेम। प्यारे पार्सल को 3 लेन में बाँटें, बेल्ट पर डिब्बों से आकार मिलाएँ, और किसी बच्चे की मुस्कान कहीं भेजें।",
+      dev_what_label: "यह क्या है",
+      dev_what: "एक छोटी-सी गिफ्ट वर्कशॉप में सेट एक आरामदायक पार्सल छँटाई पहेली। टेबल पर पार्सल लगातार गिरते रहते हैं — हर आकार को 3 छँटाई लेन में से एक में खींचें, बेल्ट से मेल खाते डिब्बे को आने दें, और टेबल भरने से पहले परफेक्ट पैक भेजें।",
       tester_heading: "Android टेस्टर्स की तलाश",
       tester_android_note: "केवल Android",
       tester_intro: "सोलो इंडी डेवलपर हूँ, 14 दिन की क्लोज़्ड टेस्टिंग के लिए सक्रिय Android टेस्टर्स ढूँढ रहा हूँ।",
       tester_what_label: "यह क्या है",
-      tester_what: "एक आरामदायक सॉर्ट पज़ल जहाँ आप बहते रंगीन लिक्विड्स को व्यवस्थित करते हैं। मिनिमल UI, संतोषजनक मेकैनिक्स, छोटे ब्रेक्स के लिए परफ़ेक्ट।",
+      tester_what: "आरामदायक पार्सल छँटाई पहेली। पार्सल को 3 लेन में बाँटें, कन्वेयर के डिब्बों से आकार मिलाएँ, और टेबल भरने से पहले परफेक्ट पैक भेजें।",
       tester_step1_label: "चरण 1 — टेस्टर ग्रुप में शामिल हों",
       tester_step2_label: "चरण 2 — Play Store पर ऑप्ट-इन",
       tester_ask_label: "मैं क्या माँग रहा हूँ",
       tester_ask_keep: "पूरे 14 दिन इंस्टॉल रखें",
       tester_ask_launch: "हर कुछ दिन में लॉन्च करें (कुछ बार ही काफ़ी है)",
-      tester_ask_minutes: "प्रति सेशन 1–2 मिनट का आरामसे प्ले ठीक है",
+      tester_ask_minutes: "हर सत्र में एक-दो मिनट का खेल काफ़ी है",
       tester_note_lead: "ℹ️ सुझाव — नीचे दिए दोनों चरण ज़रूरी हैं:",
       tester_note_step1: "चरण 1 — ग्रुप जॉइन करें: भले ही “सामग्री देखने की अनुमति नहीं है” दिखे, उसी पेज पर “ग्रुप जॉइन करें” बटन होता है — उसे दबाकर जॉइन करें।",
       tester_note_step2: "चरण 2 — ऑप्ट-इन करके इंस्टॉल करें और खेलें: ऑप्ट-इन के बाद Play Store से ऐप डाउनलोड करें, उसे खोलें और थोड़ा खेलें। सिर्फ़ ग्रुप जॉइन करना काफ़ी नहीं है।",
       tester_note_account: "दोनों चरणों में एक ही Google खाते का उपयोग करें।",
       tester_note_wait: "अगर चरण 2 में “App not available” दिखे, तो जॉइन करने के कुछ घंटे बाद फिर से कोशिश करें।",
+      legal_divider: "क़ानूनी दस्तावेज़",
+      link_overview: "गेम अवलोकन देखें",
+      link_privacy: "गोपनीयता नीति",
+      link_terms: "सेवा शर्तें",
+      back: "← PixelRyu पर वापस"
     },
     id: {
-      title: "Liquid Glow — Puzzle sortir indie dari Jepang",
-      meta_desc: "Liquid Glow — puzzle sortir yang nyaman dari PixelRyu. Ikuti closed test Android selama 14 hari.",
-      tagline: "Puzzle sortir indie dari Jepang",
-      legal_divider: "Dokumen Hukum",
-      link_privacy: "Kebijakan Privasi",
-      link_terms: "Ketentuan Layanan",
-      back: "← Kembali ke PixelRyu",
-      link_overview: "Lihat Ikhtisar Game",
+      title: "Parcel Pals — Kemas kebahagiaan. Kirim senyuman.",
+      meta_desc: "Parcel Pals — game puzzle penyortiran paket yang menenangkan dari PixelRyu. Sortir paket lucu ke 3 jalur, cocokkan bentuk ke kotak di belt, dan kirim sebelum meja meluap. Dalam pengembangan; segera di Android & iOS.",
+      tagline: "Kemas kebahagiaan. Kirim senyuman.",
+      subtitle: "Puzzle Penyortiran Paket yang Menenangkan",
+      dev_label: "Dalam Pengembangan",
+      dev_note: "Segera hadir di Android & iOS",
+      dev_intro: "Game baru PixelRyu yang sedang dibuat. Sortir paket lucu ke 3 jalur, cocokkan setiap bentuk dengan kotak di belt, dan kirim senyuman untuk seseorang di suatu tempat.",
+      dev_what_label: "Tentang game ini",
+      dev_what: "Puzzle penyortiran paket yang menenangkan, berlatar di workshop hadiah kecil. Paket terus berjatuhan ke meja Anda. Tarik setiap bentuk ke salah satu dari tiga jalur, biarkan belt mengantarkan kotak yang cocok, dan kirim paket sempurna sebelum meja meluap.",
       tester_heading: "Mencari Tester Android",
       tester_android_note: "Hanya Android",
       tester_intro: "Saya developer indie solo, mencari tester Android aktif untuk fase closed test 14 hari.",
       tester_what_label: "Tentang game ini",
-      tester_what: "Puzzle sortir yang nyaman di mana Anda menata cairan warna-warni yang mengalir. UI minimal, mekanika yang memuaskan, pas untuk jeda singkat.",
+      tester_what: "Puzzle penyortiran paket yang menenangkan. Tarik bentuk ke 3 jalur, cocokkan setiap paket dengan kotak di konveyor, dan kirim paket sempurna sebelum meja meluap.",
       tester_step1_label: "Langkah 1 — Bergabung dengan grup tester",
       tester_step2_label: "Langkah 2 — Opt-in via Play Store",
       tester_ask_label: "Yang saya mintakan",
       tester_ask_keep: "Pertahankan terinstal selama 14 hari penuh",
       tester_ask_launch: "Luncurkan setiap beberapa hari (beberapa kali sudah cukup)",
-      tester_ask_minutes: "Bermain santai 1–2 menit per sesi sudah cukup",
+      tester_ask_minutes: "Cukup main satu–dua menit per sesi",
       tester_note_lead: "ℹ️ Tips — kedua langkah berikut wajib dilakukan:",
       tester_note_step1: "Langkah 1 — Gabung grup: meskipun muncul “tidak ada izin untuk melihat konten”, ada tombol “Gabung grup” di halaman itu — tekan untuk bergabung.",
       tester_note_step2: "Langkah 2 — Opt-in lalu pasang & mainkan: setelah opt-in, unduh aplikasi dari Play Store, buka, dan mainkan sebentar. Sekadar bergabung ke grup belum cukup.",
       tester_note_account: "Gunakan akun Google yang sama untuk kedua langkah.",
       tester_note_wait: "Jika Langkah 2 menampilkan “App not available”, tunggu beberapa jam setelah bergabung lalu coba lagi.",
+      legal_divider: "Dokumen Hukum",
+      link_overview: "Lihat Ikhtisar Game",
+      link_privacy: "Kebijakan Privasi",
+      link_terms: "Ketentuan Layanan",
+      back: "← Kembali ke PixelRyu"
     },
     de: {
-      title: "Liquid Glow — Indie-Sortier-Puzzle aus Japan",
-      meta_desc: "Liquid Glow — ein gemütliches Sortier-Puzzle von PixelRyu. Nimm an der 14-tägigen geschlossenen Android-Testphase teil.",
-      tagline: "Indie-Sortier-Puzzle aus Japan",
-      legal_divider: "Rechtsdokumente",
-      link_privacy: "Datenschutzerklärung",
-      link_terms: "Nutzungsbedingungen",
-      back: "← Zurück zu PixelRyu",
-      link_overview: "Spielübersicht ansehen",
+      title: "Parcel Pals — Glück verpacken. Lächeln versenden.",
+      meta_desc: "Parcel Pals — ein gemütliches Paket-Sortier-Puzzle von PixelRyu. Sortiere niedliche Pakete in 3 Bahnen, passe Formen zu Kisten auf dem Band und versende, bevor der Tisch überläuft. In Entwicklung; demnächst für Android & iOS.",
+      tagline: "Glück verpacken. Lächeln versenden.",
+      subtitle: "Gemütliches Paket-Sortier-Puzzle",
+      dev_label: "In Entwicklung",
+      dev_note: "Demnächst für Android & iOS",
+      dev_intro: "Ein neues PixelRyu-Spiel in Arbeit. Sortiere niedliche Pakete in 3 Bahnen, lege jede Form in ihre passende Kiste auf dem Band und versende ein Lächeln zu irgendjemandem da draußen.",
+      dev_what_label: "Worum es geht",
+      dev_what: "Ein gemütliches Paket-Sortier-Puzzle in einer kleinen Geschenkwerkstatt. Pakete kullern ständig auf deinen Tisch. Ziehe jede Form in eine der drei Sortierbahnen, lass das Band passende Kisten liefern und versende perfekte Pakete, bevor der Tisch überläuft.",
       tester_heading: "Android-Tester gesucht",
       tester_android_note: "Nur für Android",
       tester_intro: "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
       tester_what_label: "Worum es geht",
-      tester_what: "Ein gemütliches Sortier-Puzzle, in dem du fließende, bunte Flüssigkeiten ordnest. Minimalistische UI, befriedigende Mechanik — perfekt für kurze Pausen.",
+      tester_what: "Ein gemütliches Paket-Sortier-Puzzle. Ziehe Formen in 3 Bahnen, passe jedes Paket zu seiner Kiste auf dem Förderband und versende perfekte Pakete, bevor der Tisch überläuft.",
       tester_step1_label: "Schritt 1 — Tester-Gruppe beitreten",
       tester_step2_label: "Schritt 2 — Über den Play Store anmelden",
       tester_ask_label: "Worum ich bitte",
       tester_ask_keep: "14 Tage lang installiert lassen",
       tester_ask_launch: "Alle paar Tage starten (ein paar Mal reicht)",
-      tester_ask_minutes: "1–2 Minuten lockeres Spielen pro Sitzung reichen aus",
+      tester_ask_minutes: "Ein bis zwei Minuten Spiel pro Sitzung genügen",
       tester_note_lead: "ℹ️ Tipp — beide Schritte unten sind nötig:",
       tester_note_step1: "Schritt 1 — Der Gruppe beitreten: Auch wenn „keine Berechtigung zum Anzeigen der Inhalte“ erscheint, gibt es auf der Seite einen Button „Gruppe beitreten“ – tippe darauf, um beizutreten.",
       tester_note_step2: "Schritt 2 — Opt-in, dann installieren & spielen: Nach dem Opt-in die App aus dem Play Store herunterladen, öffnen und kurz spielen. Nur der Gruppenbeitritt reicht nicht.",
       tester_note_account: "Verwende für beide Schritte dasselbe Google-Konto.",
       tester_note_wait: "Wenn Schritt 2 „App not available“ anzeigt, warte nach dem Beitritt ein paar Stunden und versuche es erneut.",
+      legal_divider: "Rechtsdokumente",
+      link_overview: "Spielübersicht ansehen",
+      link_privacy: "Datenschutzerklärung",
+      link_terms: "Nutzungsbedingungen",
+      back: "← Zurück zu PixelRyu"
     },
     fr: {
-      title: "Liquid Glow — Puzzle de tri indé venu du Japon",
-      meta_desc: "Liquid Glow — un puzzle de tri cosy de PixelRyu. Rejoignez les 14 jours de test fermé Android.",
-      tagline: "Puzzle de tri indé venu du Japon",
-      legal_divider: "Documents légaux",
-      link_privacy: "Politique de confidentialité",
-      link_terms: "Conditions d'utilisation",
-      back: "← Retour à PixelRyu",
-      link_overview: "Voir l'aperçu du jeu",
+      title: "Parcel Pals — Emballe le bonheur. Expédie des sourires.",
+      meta_desc: "Parcel Pals — un puzzle de tri de colis cosy par PixelRyu. Trie de mignons colis dans 3 voies, fais correspondre les formes aux boîtes du tapis et expédie avant que la table ne déborde. En développement ; bientôt sur Android et iOS.",
+      tagline: "Emballe le bonheur. Expédie des sourires.",
+      subtitle: "Puzzle de tri de colis cosy",
+      dev_label: "En développement",
+      dev_note: "Bientôt sur Android et iOS",
+      dev_intro: "Un nouveau jeu PixelRyu en cours de création. Trie de mignons colis dans 3 voies, fais entrer chaque forme dans sa boîte sur le tapis et envoie un sourire à quelqu'un, quelque part.",
+      dev_what_label: "De quoi il s'agit",
+      dev_what: "Un puzzle de tri de colis cosy dans un petit atelier de cadeaux. Les colis tombent sans cesse sur ta table. Glisse chaque forme dans l'une des trois voies de tri, laisse le tapis livrer les boîtes correspondantes et expédie des paquets parfaits avant que la table ne déborde.",
       tester_heading: "Recherche de testeurs Android",
       tester_android_note: "Android uniquement",
       tester_intro: "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
       tester_what_label: "De quoi il s'agit",
-      tester_what: "Un puzzle de tri cosy où tu organises des liquides colorés en mouvement. UI minimaliste, mécaniques satisfaisantes — parfait pour les courtes pauses.",
+      tester_what: "Un puzzle de tri de colis cosy. Glisse des formes dans 3 voies, fais correspondre chaque colis à sa boîte sur le convoyeur et expédie des paquets parfaits avant que la table ne déborde.",
       tester_step1_label: "Étape 1 — Rejoindre le groupe de testeurs",
       tester_step2_label: "Étape 2 — S'inscrire via le Play Store",
       tester_ask_label: "Ce que je demande",
       tester_ask_keep: "Garder installé pendant les 14 jours complets",
       tester_ask_launch: "Lancer tous les deux jours (quelques fois suffisent)",
-      tester_ask_minutes: "1 à 2 minutes de jeu décontracté par session suffisent",
+      tester_ask_minutes: "Une à deux minutes de jeu par session suffisent",
       tester_note_lead: "ℹ️ Astuce — les deux étapes ci-dessous sont nécessaires :",
       tester_note_step1: "Étape 1 — Rejoindre le groupe : même si « autorisation refusée pour afficher le contenu » s’affiche, un bouton « Rejoindre le groupe » est présent sur la page — appuyez dessus pour rejoindre.",
       tester_note_step2: "Étape 2 — S’inscrire, puis installer et jouer : après l’inscription, téléchargez l’application depuis le Play Store, ouvrez-la et jouez un peu. Rejoindre le groupe ne suffit pas.",
       tester_note_account: "Utilisez le même compte Google pour les deux étapes.",
       tester_note_wait: "Si l’étape 2 affiche « App not available », attendez quelques heures après avoir rejoint, puis réessayez.",
+      legal_divider: "Documents légaux",
+      link_overview: "Voir l'aperçu du jeu",
+      link_privacy: "Politique de confidentialité",
+      link_terms: "Conditions d'utilisation",
+      back: "← Retour à PixelRyu"
     },
     it: {
-      title: "Liquid Glow — Puzzle di smistamento indie dal Giappone",
-      meta_desc: "Liquid Glow — un confortevole puzzle di smistamento di PixelRyu. Partecipa al closed test Android di 14 giorni.",
-      tagline: "Puzzle di smistamento indie dal Giappone",
-      legal_divider: "Documenti legali",
-      link_privacy: "Informativa sulla privacy",
-      link_terms: "Termini di servizio",
-      back: "← Torna a PixelRyu",
-      link_overview: "Vedi la panoramica",
+      title: "Parcel Pals — Impacchetta la felicità. Spedisci sorrisi.",
+      meta_desc: "Parcel Pals — un puzzle di smistamento pacchi rilassante di PixelRyu. Smista pacchi carini in 3 corsie, abbina le forme alle scatole sul nastro e spedisci prima che il tavolo trabocchi. In sviluppo; presto su Android e iOS.",
+      tagline: "Impacchetta la felicità. Spedisci sorrisi.",
+      subtitle: "Puzzle di smistamento pacchi rilassante",
+      dev_label: "In sviluppo",
+      dev_note: "Presto su Android e iOS",
+      dev_intro: "Un nuovo gioco PixelRyu in lavorazione. Smista pacchi carini in 3 corsie, incastra ogni forma nella sua scatola sul nastro e spedisci un sorriso a qualcuno, da qualche parte.",
+      dev_what_label: "Di cosa si tratta",
+      dev_what: "Un puzzle di smistamento pacchi rilassante ambientato in una piccola officina di regali. I pacchi continuano a cadere sul tuo tavolo. Trascina ogni forma in una delle tre corsie di smistamento, lascia che il nastro consegni le scatole corrispondenti e spedisci pacchi perfetti prima che il tavolo trabocchi.",
       tester_heading: "Cercasi tester Android",
       tester_android_note: "Solo Android",
       tester_intro: "Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.",
       tester_what_label: "Di cosa si tratta",
-      tester_what: "Un puzzle di smistamento accogliente in cui sistemi liquidi colorati che scorrono. UI minimale, meccaniche soddisfacenti, perfetto per brevi pause.",
+      tester_what: "Un puzzle di smistamento pacchi rilassante. Trascina forme in 3 corsie, abbina ogni pacco alla sua scatola sul convogliatore e spedisci pacchi perfetti prima che il tavolo trabocchi.",
       tester_step1_label: "Passo 1 — Unisciti al gruppo tester",
       tester_step2_label: "Passo 2 — Opt-in tramite Play Store",
       tester_ask_label: "Cosa chiedo",
       tester_ask_keep: "Tienilo installato per tutti i 14 giorni",
       tester_ask_launch: "Aprilo ogni paio di giorni (poche volte basta)",
-      tester_ask_minutes: "1–2 minuti di gioco rilassato a sessione vanno bene",
+      tester_ask_minutes: "Bastano un paio di minuti di gioco a sessione",
       tester_note_lead: "ℹ️ Suggerimento — servono entrambi i passaggi qui sotto:",
       tester_note_step1: "Passaggio 1 — Iscriviti al gruppo: anche se compare « non hai l’autorizzazione per visualizzare i contenuti », sulla pagina c’è il pulsante « Iscriviti al gruppo » — toccalo per iscriverti.",
       tester_note_step2: "Passaggio 2 — Opt-in, poi installa e gioca: dopo l’opt-in, scarica l’app dal Play Store, aprila e gioca un po’. Iscriversi al gruppo non basta.",
       tester_note_account: "Usa lo stesso account Google per entrambi i passaggi.",
       tester_note_wait: "Se il passaggio 2 mostra « App not available », attendi qualche ora dopo l’iscrizione e riprova.",
+      legal_divider: "Documenti legali",
+      link_overview: "Vedi la panoramica",
+      link_privacy: "Informativa sulla privacy",
+      link_terms: "Termini di servizio",
+      back: "← Torna a PixelRyu"
     },
     es: {
-      title: "Liquid Glow — Puzzle de clasificación indie desde Japón",
-      meta_desc: "Liquid Glow — un acogedor puzzle de clasificación de PixelRyu. Únete a la fase de pruebas cerradas de Android de 14 días.",
-      tagline: "Puzzle de clasificación indie desde Japón",
-      legal_divider: "Documentos legales",
-      link_privacy: "Política de privacidad",
-      link_terms: "Términos del servicio",
-      back: "← Volver a PixelRyu",
-      link_overview: "Ver descripción del juego",
+      title: "Parcel Pals — Empaqueta felicidad. Envía sonrisas.",
+      meta_desc: "Parcel Pals — un puzzle acogedor de clasificación de paquetes de PixelRyu. Clasifica lindos paquetes en 3 carriles, encaja las formas en las cajas de la cinta y envíalos antes de que la mesa se desborde. En desarrollo; próximamente en Android e iOS.",
+      tagline: "Empaqueta felicidad. Envía sonrisas.",
+      subtitle: "Puzzle acogedor de clasificación de paquetes",
+      dev_label: "En desarrollo",
+      dev_note: "Próximamente en Android e iOS",
+      dev_intro: "Un nuevo juego de PixelRyu en desarrollo. Clasifica lindos paquetes en 3 carriles, encaja cada forma en su caja en la cinta y envía una sonrisa a alguien, en algún lugar.",
+      dev_what_label: "De qué se trata",
+      dev_what: "Un puzzle acogedor de clasificación de paquetes en un pequeño taller de regalos. Los paquetes caen sin parar a tu mesa. Arrastra cada forma a uno de los tres carriles, deja que la cinta entregue las cajas correspondientes y envía paquetes perfectos antes de que la mesa se desborde.",
       tester_heading: "Buscamos testers de Android",
       tester_android_note: "Solo Android",
       tester_intro: "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
       tester_what_label: "De qué se trata",
-      tester_what: "Un acogedor puzzle de clasificación donde ordenas líquidos de colores en movimiento. UI minimalista, mecánica satisfactoria — perfecto para descansos breves.",
+      tester_what: "Un puzzle acogedor de clasificación de paquetes. Arrastra formas a 3 carriles, encaja cada paquete con su caja en la cinta y envía paquetes perfectos antes de que la mesa se desborde.",
       tester_step1_label: "Paso 1 — Únete al grupo de testers",
       tester_step2_label: "Paso 2 — Inscríbete vía Play Store",
       tester_ask_label: "Lo que pido",
       tester_ask_keep: "Mantener instalado los 14 días completos",
       tester_ask_launch: "Abrir cada par de días (unas pocas veces basta)",
-      tester_ask_minutes: "1-2 minutos de juego casual por sesión es suficiente",
+      tester_ask_minutes: "Con un par de minutos de juego por sesión basta",
       tester_note_lead: "ℹ️ Consejo — ambos pasos siguientes son necesarios:",
       tester_note_step1: "Paso 1 — Únete al grupo: aunque aparezca «no tienes permiso para ver el contenido», en esa página hay un botón «Unirse al grupo»; tócalo para unirte.",
       tester_note_step2: "Paso 2 — Participa y luego instala y juega: tras participar, descarga la app desde Play Store, ábrela y juega un poco. Unirse al grupo no es suficiente.",
       tester_note_account: "Usa la misma cuenta de Google en ambos pasos.",
       tester_note_wait: "Si el paso 2 muestra «App not available», espera unas horas después de unirte y vuelve a intentarlo.",
+      legal_divider: "Documentos legales",
+      link_overview: "Ver descripción del juego",
+      link_privacy: "Política de privacidad",
+      link_terms: "Términos del servicio",
+      back: "← Volver a PixelRyu"
     },
     pt: {
-      title: "Liquid Glow — Puzzle de classificação indie do Japão",
-      meta_desc: "Liquid Glow — um puzzle de classificação aconchegante da PixelRyu. Junte-se ao teste fechado Android de 14 dias.",
-      tagline: "Puzzle de classificação indie do Japão",
-      legal_divider: "Documentos legais",
-      link_privacy: "Política de privacidade",
-      link_terms: "Termos de serviço",
-      back: "← Voltar para PixelRyu",
-      link_overview: "Ver visão geral do jogo",
+      title: "Parcel Pals — Embale felicidade. Envie sorrisos.",
+      meta_desc: "Parcel Pals — um puzzle aconchegante de separação de pacotes da PixelRyu. Separe pacotes fofos em 3 pistas, combine formas com caixas na esteira e envie antes que a mesa transborde. Em desenvolvimento; em breve para Android e iOS.",
+      tagline: "Embale felicidade. Envie sorrisos.",
+      subtitle: "Puzzle aconchegante de separação de pacotes",
+      dev_label: "Em desenvolvimento",
+      dev_note: "Em breve para Android e iOS",
+      dev_intro: "Um novo jogo da PixelRyu em criação. Separe pacotes fofos em 3 pistas, encaixe cada forma em sua caixa na esteira e envie um sorriso para alguém, em algum lugar.",
+      dev_what_label: "Sobre o jogo",
+      dev_what: "Um puzzle aconchegante de separação de pacotes em uma pequena oficina de presentes. Os pacotes caem sem parar na sua mesa. Arraste cada forma para uma das três pistas de separação, deixe a esteira entregar as caixas correspondentes e envie pacotes perfeitos antes que a mesa transborde.",
       tester_heading: "Procuramos testers de Android",
       tester_android_note: "Apenas Android",
       tester_intro: "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
       tester_what_label: "Sobre o jogo",
-      tester_what: "Um puzzle de classificação aconchegante onde você organiza líquidos coloridos. UI minimalista, mecânica satisfatória — perfeito para pausas curtas.",
+      tester_what: "Um puzzle aconchegante de separação de pacotes. Arraste formas para 3 pistas, combine cada pacote com sua caixa na esteira e envie pacotes perfeitos antes que a mesa transborde.",
       tester_step1_label: "Passo 1 — Entrar no grupo de testers",
       tester_step2_label: "Passo 2 — Adesão via Play Store",
       tester_ask_label: "O que peço",
       tester_ask_keep: "Manter instalado por 14 dias completos",
       tester_ask_launch: "Abra a cada poucos dias (algumas vezes basta)",
-      tester_ask_minutes: "1-2 minutos de jogo casual por sessão é suficiente",
+      tester_ask_minutes: "Um ou dois minutos de jogo por sessão já bastam",
       tester_note_lead: "ℹ️ Dica — as duas etapas abaixo são necessárias:",
       tester_note_step1: "Etapa 1 — Entre no grupo: mesmo que apareça “sem permissão para ver o conteúdo”, há um botão “Participar do grupo” na página — toque para entrar.",
       tester_note_step2: "Etapa 2 — Faça opt-in e depois instale e jogue: após o opt-in, baixe o app na Play Store, abra e jogue um pouco. Só entrar no grupo não basta.",
       tester_note_account: "Use a mesma Conta do Google nas duas etapas.",
       tester_note_wait: "Se a Etapa 2 mostrar “App not available”, aguarde algumas horas após participar e tente novamente.",
+      legal_divider: "Documentos legais",
+      link_overview: "Ver visão geral do jogo",
+      link_privacy: "Política de privacidade",
+      link_terms: "Termos de serviço",
+      back: "← Voltar para PixelRyu"
     },
     ru: {
-      title: "Liquid Glow — Инди-сортировочная головоломка из Японии",
-      meta_desc: "Liquid Glow — уютная сортировочная головоломка от PixelRyu. Присоединяйтесь к 14-дневному закрытому Android-тестированию.",
-      tagline: "Инди-сортировочная головоломка из Японии",
-      legal_divider: "Правовые документы",
-      link_privacy: "Политика конфиденциальности",
-      link_terms: "Условия использования",
-      back: "← Назад к PixelRyu",
-      link_overview: "Посмотреть об игре",
+      title: "Parcel Pals — Упакуй счастье. Отправь улыбку.",
+      meta_desc: "Parcel Pals — уютная головоломка-сортировка посылок от PixelRyu. Сортируй милые посылки по 3 лентам, подбирай формы к коробкам на конвейере и отправляй, пока стол не переполнился. В разработке; скоро на Android и iOS.",
+      tagline: "Упакуй счастье. Отправь улыбку.",
+      subtitle: "Уютная головоломка-сортировка посылок",
+      dev_label: "В разработке",
+      dev_note: "Скоро на Android и iOS",
+      dev_intro: "Новая игра PixelRyu в разработке. Сортируй милые посылки по 3 лентам, опускай каждую форму в подходящую коробку на конвейере и отправляй улыбку кому-то где-то.",
+      dev_what_label: "О чём игра",
+      dev_what: "Уютная головоломка-сортировка посылок в маленькой мастерской подарков. Посылки без устали падают на твой стол. Перетаскивай каждую форму в одну из трёх сортировочных лент, давай конвейеру подавать подходящие коробки и отправляй идеальные посылки, пока стол не переполнился.",
       tester_heading: "Поиск Android-тестеров",
       tester_android_note: "Только для Android",
       tester_intro: "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",
       tester_what_label: "О чём игра",
-      tester_what: "Уютная сортировочная головоломка, где вы упорядочиваете переливающиеся цветные жидкости. Минималистичный интерфейс, приятная механика — идеально для коротких пауз.",
+      tester_what: "Уютная головоломка-сортировка посылок. Перетаскивай формы в 3 ленты, подбирай каждую посылку к её коробке на конвейере и отправляй идеальные посылки, пока стол не переполнился.",
       tester_step1_label: "Шаг 1 — Вступить в группу тестеров",
       tester_step2_label: "Шаг 2 — Подписаться через Play Store",
       tester_ask_label: "О чём я прошу",
       tester_ask_keep: "Не удалять приложение все 14 дней",
       tester_ask_launch: "Запускайте раз в пару дней (нескольких раз достаточно)",
-      tester_ask_minutes: "1–2 минуты неспешной игры за сессию вполне достаточно",
+      tester_ask_minutes: "Достаточно одной–двух минут игры за сессию",
       tester_note_lead: "ℹ️ Совет — нужны оба шага ниже:",
       tester_note_step1: "Шаг 1 — Вступите в группу: даже если показано «нет прав для просмотра содержимого», на странице есть кнопка «Присоединиться к группе» — нажмите её, чтобы вступить.",
       tester_note_step2: "Шаг 2 — Подтвердите участие, затем установите и поиграйте: после подтверждения скачайте приложение из Play Маркета, откройте и немного поиграйте. Одного вступления в группу недостаточно.",
       tester_note_account: "Используйте один и тот же аккаунт Google для обоих шагов.",
       tester_note_wait: "Если на шаге 2 появляется «App not available», подождите несколько часов после вступления и попробуйте снова.",
+      legal_divider: "Правовые документы",
+      link_overview: "Посмотреть об игре",
+      link_privacy: "Политика конфиденциальности",
+      link_terms: "Условия использования",
+      back: "← Назад к PixelRyu"
     }
   };
 
@@ -661,7 +764,8 @@
       opt.textContent = l.flag + ' ' + l.name;
       sel.appendChild(opt);
     }
-    // Persist on init too — guarantees subsequent pages pick up the same language via the shared localStorage key.
+    // Persist on init too — guarantees subsequent pages (privacy/terms/overview)
+    // pick up the same language via the shared localStorage key.
     setLang(detectLang(), true);
     sel.addEventListener('change', e => setLang(e.target.value, true));
   })();

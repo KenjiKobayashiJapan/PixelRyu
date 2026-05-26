@@ -27,7 +27,8 @@
     "issen":       { all: "ISSEN" },
     "hotaru":      { all: "HOTARU" },
     "liquid-glow": { all: "Liquid Glow" },
-    "mole-whack":  { all: "Mole Whack", ja: "モグラぽかぽか" }
+    "mole-whack":  { all: "Mole Whack", ja: "モグラぽかぽか" },
+    "parcel-pals": { all: "Parcel Pals", ja: "ふんわり配送便" }
   };
 
   // Leaf page labels (localized). Privacy/Terms match the legal-page generator

@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">Parcel Pals — Game Overview</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Game overview of Parcel Pals: the cozy gift workshop, how to play, and highlights, with in-development art.">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: radial-gradient(ellipse at top, #2a2018 0%, #1a130f 50%, #0a0705 100%);
+    color: #f0e6d4;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .container {
+    max-width: 620px;
+    width: 100%;
+    padding: 64px 32px 80px;
+    text-align: center;
+    position: relative;
+  }
+  .lang-switch { position: absolute; top: 24px; right: 24px; }
+  .lang-switch select {
+    background: rgba(109, 208, 191, 0.06);
+    color: #f0e6d4;
+    border: 1px solid rgba(109, 208, 191, 0.22);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .lang-switch select:hover { background: rgba(109, 208, 191, 0.14); border-color: rgba(109, 208, 191, 0.55); }
+  .lang-switch select option { background: #1a130f; color: #f0e6d4; }
+  .tagline {
+    font-size: 13px;
+    color: #a89478;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 6px;
+  }
+  h1 {
+    font-size: 44px;
+    margin: 0 0 6px;
+    color: #f0e6d4;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  h1 .accent { color: #6dd0bf; }
+  /* Brand mark: EN by default, JP variant for Japanese users (toggled via <html lang> by setLang). */
+  h1 .brand-ja { display: none; }
+  html[lang="ja"] h1 .brand-en { display: none; }
+  html[lang="ja"] h1 .brand-ja { display: inline; }
+  .page-label {
+    font-size: 13px;
+    color: #a89478;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 12px;
+  }
+  .lead {
+    font-size: 15px;
+    line-height: 1.85;
+    color: #d8ccb2;
+    margin: 14px auto 8px;
+    max-width: 500px;
+  }
+  .dev-banner {
+    font-size: 12px;
+    color: #ffaec0;
+    background: rgba(255, 174, 192, 0.06);
+    border: 1px solid rgba(255, 174, 192, 0.25);
+    border-radius: 10px;
+    padding: 10px 14px;
+    margin: 16px auto 0;
+    max-width: 460px;
+    line-height: 1.5;
+  }
+  .section {
+    background: rgba(109, 208, 191, 0.05);
+    border: 1px solid rgba(109, 208, 191, 0.30);
+    border-radius: 16px;
+    padding: 24px 24px 28px;
+    margin: 28px 0;
+    text-align: left;
+    box-shadow: 0 0 30px rgba(109, 208, 191, 0.05);
+  }
+  .section h2 { font-size: 18px; color: #6dd0bf; margin: 0 0 4px; font-weight: 800; }
+  .section .sub { font-size: 11px; color: #a89478; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  .section p { font-size: 14px; line-height: 1.8; color: #d8ccb2; margin: 12px 0; }
+  .section ol, .section ul { margin: 12px 0 0; padding-left: 22px; font-size: 14px; line-height: 1.85; color: #d8ccb2; }
+  .hero-shot { width: 100%; max-width: 240px; margin: 22px auto 4px; }
+  .hero-shot img {
+    width: 100%;
+    border-radius: 28px;
+    border: 1px solid rgba(255, 174, 192, 0.22);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 174, 192, 0.10);
+    display: block;
+  }
+  .hero-shot figcaption { font-size: 12px; color: #a89478; margin-top: 8px; text-align: center; }
+  .back {
+    display: inline-block;
+    margin-top: 28px;
+    color: #a89478;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .back:hover { color: #6dd0bf; }
+  @media (max-width: 600px) {
+    .container { padding: 48px 18px 64px; }
+    .lang-switch { top: 16px; right: 16px; }
+    .section { padding: 20px 18px 22px; }
+    h1 { font-size: 36px; }
+  }
+  .social-heading{font-size:13px;color:#a89478;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(109,208,191,0.06);border:1px solid rgba(109,208,191,0.20);color:#a89478;transition:all .25s ease;}
+  .social a:hover{background:rgba(109,208,191,0.12);border-color:rgba(109,208,191,0.45);color:#6dd0bf;transform:translateY(-2px);}
+  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+</style>
+<!-- SEO/LLMO start (managed) -->
+<link rel="canonical" href="https://pixelryu.github.io/parcel-pals/overview.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="PixelRyu">
+<meta name="publisher" content="PixelRyu">
+<meta name="keywords" content="Parcel Pals, parcel sort, packing puzzle, cozy puzzle, conveyor, shipping, cute, casual, PixelRyu, indie game, Android, iOS">
+<meta name="theme-color" content="#1a130f">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/parcel-pals/icon.png">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/parcel-pals/icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PixelRyu">
+<meta property="og:title" content="Parcel Pals — Game Overview">
+<meta property="og:description" content="Parcel Pals — a cozy parcel-sorting puzzle by PixelRyu. In development; coming soon to Android &amp; iOS.">
+<meta property="og:url" content="https://pixelryu.github.io/parcel-pals/overview.html">
+<meta property="og:image" content="https://pixelryu.github.io/parcel-pals/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="Parcel Pals — Pack happiness. Ship smiles.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Parcel Pals — Game Overview">
+<meta name="twitter:description" content="Parcel Pals — a cozy parcel-sorting puzzle by PixelRyu. In development; coming soon to Android &amp; iOS.">
+<meta name="twitter:image" content="https://pixelryu.github.io/parcel-pals/og.png">
+<meta name="twitter:image:alt" content="Parcel Pals — Pack happiness. Ship smiles.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Parcel Pals — Game Overview","url":"https://pixelryu.github.io/parcel-pals/overview.html","description":"Parcel Pals — a cozy parcel-sorting puzzle by PixelRyu. In development; coming soon to Android & iOS.","inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"isPartOf":{"@type":"WebSite","name":"PixelRyu","url":"https://pixelryu.github.io/"},"about":{"@type":"VideoGame","name":"Parcel Pals","url":"https://pixelryu.github.io/parcel-pals/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/"},{"@type":"ListItem","position":2,"name":"Parcel Pals","item":"https://pixelryu.github.io/parcel-pals/"},{"@type":"ListItem","position":3,"name":"Game Overview","item":"https://pixelryu.github.io/parcel-pals/overview.html"}]}</script>
+<!-- SEO/LLMO end -->
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch"><select id="lang-select" aria-label="Language"></select></div>
+  <div class="tagline" data-i18n="tagline">Pack happiness. Ship smiles.</div>
+  <h1><span class="brand-en">Parcel <span class="accent">Pals</span></span><span class="brand-ja">ふんわり<span class="accent">配送便</span></span></h1>
+  <div class="page-label" data-i18n="page_label">Game Overview</div>
+  <p class="lead" data-i18n="lead">A cozy parcel-sorting puzzle from a tiny gift workshop. Sort cute parcels into three lanes, match each shape to its box on the belt, and ship a smile to a child somewhere — before your table overflows.</p>
+  <div class="dev-banner" data-i18n="dev_banner">🎁 In development — art and screens shown here are not final.</div>
+
+  <figure class="hero-shot">
+    <img src="icon.png" alt="Parcel Pals key art: a mint bear hugging a gift box">
+    <figcaption data-i18n="cap_key">Key art — in development</figcaption>
+  </figure>
+
+  <section class="section">
+    <h2 data-i18n="world_label">The Workshop</h2>
+    <div class="sub">📦</div>
+    <p data-i18n="world_text">You're a small workshop hand. Toys and gifts roll in from the back room, your three sorting lanes hum quietly, and boxes loop by on a warm wooden belt. Every box that ships is a smile somewhere — that mint bear on the cover is the child waiting to open it.</p>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="howto_label">How to Play</h2>
+    <div class="sub">✋</div>
+    <p data-i18n="howto_text">Drag, match, ship. The belt brings the boxes; you steer the parcels. The table fills if you fall behind — so read what's coming and keep the flow.</p>
+    <ol>
+      <li data-i18n="step1">Drag each parcel from the table into one of three sorting lanes by shape.</li>
+      <li data-i18n="step2">Watch the boxes loop past on the conveyor — each box wants a specific shape.</li>
+      <li data-i18n="step3">When a matching box rolls by the front of a lane, the parcel pops in with a happy click.</li>
+      <li data-i18n="step4">Fill a box, the helper ships it off, a fresh empty box rolls in. Chain ships in a row for combos.</li>
+      <li data-i18n="step5">Keep the table from overflowing — use Slow, Cancel, Return, or Continue when it gets wild.</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="feat_label">Highlights</h2>
+    <div class="sub">✨</div>
+    <ul>
+      <li data-i18n="feat1">Cozy parcel-sorting with three lanes and looping boxes — easy to learn, satisfying to master</li>
+      <li data-i18n="feat2">"Pack happiness, ship smiles" — every perfect ship lands with a soft pop and a tiny celebration</li>
+      <li data-i18n="feat3">Gentle difficulty curve across many stages, with ship-a-quota and survive-the-rush goals</li>
+      <li data-i18n="feat4">Helpful items: Slow, Cancel, Return, Continue, and double-coins after a clear</li>
+      <li data-i18n="feat5">One-handed portrait play, 12 languages, plays offline once installed</li>
+    </ul>
+  </section>
+
+  <a href="./" class="back" data-i18n="back">← Back to Parcel Pals</a>
+  <h2 class="social-heading">Follow</h2>
+  <div class="social">
+    <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note"><svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+    en: {
+      title: "Parcel Pals — Game Overview",
+      meta_desc: "Game overview of Parcel Pals: the cozy gift workshop, how to play, and highlights, with in-development art.",
+      tagline: "Pack happiness. Ship smiles.",
+      page_label: "Game Overview",
+      lead: "A cozy parcel-sorting puzzle from a tiny gift workshop. Sort cute parcels into three lanes, match each shape to its box on the belt, and ship a smile to a child somewhere — before your table overflows.",
+      dev_banner: "🎁 In development — art and screens shown here are not final.",
+      world_label: "The Workshop",
+      world_text: "You're a small workshop hand. Toys and gifts roll in from the back room, your three sorting lanes hum quietly, and boxes loop by on a warm wooden belt. Every box that ships is a smile somewhere — that mint bear on the cover is the child waiting to open it.",
+      howto_label: "How to Play",
+      howto_text: "Drag, match, ship. The belt brings the boxes; you steer the parcels. The table fills if you fall behind — so read what's coming and keep the flow.",
+      step1: "Drag each parcel from the table into one of three sorting lanes by shape.",
+      step2: "Watch the boxes loop past on the conveyor — each box wants a specific shape.",
+      step3: "When a matching box rolls by the front of a lane, the parcel pops in with a happy click.",
+      step4: "Fill a box, the helper ships it off, a fresh empty box rolls in. Chain ships in a row for combos.",
+      step5: "Keep the table from overflowing — use Slow, Cancel, Return, or Continue when it gets wild.",
+      feat_label: "Highlights",
+      feat1: "Cozy parcel-sorting with three lanes and looping boxes — easy to learn, satisfying to master",
+      feat2: "“Pack happiness, ship smiles” — every perfect ship lands with a soft pop and a tiny celebration",
+      feat3: "Gentle difficulty curve across many stages, with ship-a-quota and survive-the-rush goals",
+      feat4: "Helpful items: Slow, Cancel, Return, Continue, and double-coins after a clear",
+      feat5: "One-handed portrait play, 12 languages, plays offline once installed",
+      cap_key: "Key art — in development",
+      back: "← Back to Parcel Pals"
+    },
+    ja: {
+      title: "ふんわり配送便 — ゲーム概要",
+      meta_desc: "ふんわり配送便 のゲーム概要。小さなギフト工房の世界観・遊び方・特徴を、開発中のアートとともに紹介します。",
+      tagline: "しあわせを箱詰め。笑顔を出荷。",
+      page_label: "ゲーム概要",
+      lead: "小さなギフト工房を舞台にした、ほっこり配送仕分けパズル。可愛い小包を3つのレーンに振り分け、ベルトに流れる箱に形を合わせて、テーブルが溢れる前に「どこかの子の笑顔」を出荷しよう。",
+      dev_banner: "🎁 開発中 — 以下のアートや画面は最終版ではありません。",
+      world_label: "工房の世界",
+      world_text: "あなたは小さな工房の作業員。奥の部屋からおもちゃやギフトが転がり込み、3本の仕分けレーンは静かに動き、温かい木のベルトを箱がコトコトとループする。出荷された箱はどこかの「笑顔」になる——表紙のミントのクマは、それを待つ子どもの姿。",
+      howto_label: "遊び方",
+      howto_text: "ドラッグして、形を合わせて、出荷。箱はベルトが運ぶ。あなたは小包を捌(さば)く。遅れればテーブルが溢れる——次に来るものを読み、流れを止めずに。",
+      step1: "テーブル上の小包を、形に合う3つの仕分けレーンのどれかへドラッグ。",
+      step2: "コンベアを流れる箱を見る——箱ごとに収まる「形」が決まっている。",
+      step3: "レーンの先頭の小包と、通りかかった箱の形が一致すると、カチッと気持ちよく収まる。",
+      step4: "箱が満タンになると助手が出荷。新しい空箱が流れてくる。連続出荷でコンボ加点。",
+      step5: "テーブルを溢れさせない——苦しい時はスロー / キャンセル / 返送 / コンティニューで切り抜けよう。",
+      feat_label: "特徴",
+      feat1: "3レーン × ループする箱の仕分け——覚えやすく、極めると気持ちいい",
+      feat2: "「しあわせを箱詰め、笑顔を出荷」——完璧出荷ごとに、ぽんっと小さな祝福",
+      feat3: "ゆるやかな難易度カーブで多数のステージ。「規定数を出荷」「ラッシュを耐える」目標",
+      feat4: "便利アイテム：スロー / キャンセル / 返送 / コンティニュー / クリア後コイン2倍",
+      feat5: "片手・縦画面プレイ、12言語対応、インストール後はオフラインでも遊べる",
+      cap_key: "キーアート — 開発中",
+      back: "← ふんわり配送便 のページへ戻る"
+    },
+    zh: {
+      title: "Parcel Pals — 游戏简介",
+      meta_desc: "Parcel Pals 游戏简介：治愈的礼品工房世界观、玩法与特色，附开发中的美术。",
+      tagline: "把幸福装进盒子，把笑容送出门。",
+      page_label: "游戏简介",
+      lead: "以小小礼品工房为舞台的治愈系包裹分拣益智游戏。把可爱的小包裹分进 3 条传送道，对准传送带上的盒子形状，在桌面爆满前，把「某个孩子的笑容」送出门。",
+      dev_banner: "🎁 开发中 — 以下美术与画面均非最终版本。",
+      world_label: "工房世界",
+      world_text: "你是小工房的助手。玩具与礼品从里间不停滚出，3 条分拣道静静运转，温暖的木质传送带上盒子轻轻循环。每一只送出的盒子，都是某处的一抹笑——封面那只薄荷色小熊，正是等待打开它的孩子。",
+      howto_label: "玩法",
+      howto_text: "拖拽、对形、出货。传送带送来盒子；你掌控包裹。手慢了桌面就会爆满——预读即将到来的形状，保持流畅。",
+      step1: "把桌面上的包裹按形状拖到 3 条分拣道之一。",
+      step2: "盯着传送带循环而来的盒子——每个盒子都对应一个形状。",
+      step3: "当对应形状的盒子经过分拣道前端时，包裹会「咔哒」一声开心地落下。",
+      step4: "盒子装满后，助手会立即出货，新的空盒接着来。连续出货可触发连击。",
+      step5: "别让桌面爆满——撑不住时使用 慢速 / 取消 / 退回 / 续命。",
+      feat_label: "特色",
+      feat1: "3 道 × 循环盒子的分拣体验——简单易学，越玩越上瘾",
+      feat2: "「打包幸福，运出笑容」——每次完美出货都伴随轻盈的小庆祝",
+      feat3: "多关卡的温和难度曲线，含「规定数出货」与「挺过高峰」目标",
+      feat4: "便利道具：慢速 / 取消 / 退回 / 续命 / 通关后金币翻倍",
+      feat5: "单手竖屏游玩，支持 12 种语言，安装后可离线游玩",
+      cap_key: "主视觉 — 开发中",
+      back: "← 返回 Parcel Pals"
+    },
+    ko: {
+      title: "Parcel Pals — 게임 소개",
+      meta_desc: "Parcel Pals 게임 소개: 작은 선물 공방의 세계관, 플레이 방법, 특징을 개발 중인 아트와 함께 안내합니다.",
+      tagline: "행복을 담아, 미소를 배송.",
+      page_label: "게임 소개",
+      lead: "작은 선물 공방을 무대로 한 힐링 소포 분류 퍼즐. 귀여운 소포를 3개 레인으로 나누고, 컨베이어의 박스에 모양을 맞춰 테이블이 넘치기 전에 「어딘가의 아이에게 미소」를 배송해요.",
+      dev_banner: "🎁 개발 중 — 아래 아트와 화면은 최종 버전이 아닙니다.",
+      world_label: "공방의 세계",
+      world_text: "당신은 작은 공방의 일손. 안쪽 방에서 장난감과 선물이 끊임없이 굴러 나오고, 세 개의 분류 레인은 조용히 돌아가며, 따뜻한 나무 컨베이어 위를 박스가 톡톡 순환해요. 출하된 박스는 어딘가의 미소가 됩니다 — 표지 속 민트색 곰은 그것을 기다리는 아이의 모습.",
+      howto_label: "플레이 방법",
+      howto_text: "드래그하고, 모양을 맞추고, 출하. 박스는 컨베이어가 나르고, 당신은 소포를 다룹니다. 늦으면 테이블이 넘쳐요 — 다음에 올 것을 읽고 흐름을 유지하세요.",
+      step1: "테이블 위의 소포를 모양에 맞춰 3개의 분류 레인 중 하나로 드래그합니다.",
+      step2: "컨베이어를 도는 박스를 살펴보세요 — 박스마다 받아들이는 모양이 정해져 있어요.",
+      step3: "레인의 맨 앞 소포와 지나가는 박스의 모양이 맞으면 «찰칵» 기분 좋게 들어갑니다.",
+      step4: "박스가 가득 차면 도우미가 출하하고 새 빈 박스가 들어옵니다. 연속 출하로 콤보 보너스.",
+      step5: "테이블이 넘치지 않게 — 힘들 땐 슬로우 / 취소 / 반송 / 컨티뉴를 사용하세요.",
+      feat_label: "특징",
+      feat1: "3개 레인 × 순환 박스의 분류 — 익히기 쉽고, 다듬을수록 짜릿함",
+      feat2: "「행복을 담아, 미소를 배송」 — 완벽 출하 때마다 작은 축하가 톡 하고 떨어집니다",
+      feat3: "다수 스테이지의 부드러운 난이도 곡선, 「수량 출하」「러시 견디기」 목표",
+      feat4: "편리 아이템: 슬로우 / 취소 / 반송 / 컨티뉴 / 클리어 후 코인 2배",
+      feat5: "한 손·세로 화면 플레이, 12개 언어 지원, 설치 후 오프라인 플레이 가능",
+      cap_key: "키 아트 — 개발 중",
+      back: "← Parcel Pals로 돌아가기"
+    },
+    hi: {
+      title: "Parcel Pals — गेम अवलोकन",
+      meta_desc: "Parcel Pals का गेम अवलोकन: आरामदायक गिफ्ट वर्कशॉप, खेलने का तरीका, और मुख्य बातें — विकासाधीन आर्ट के साथ।",
+      tagline: "खुशियाँ पैक करो, मुस्कान भेजो।",
+      page_label: "गेम अवलोकन",
+      lead: "एक छोटी-सी गिफ्ट वर्कशॉप पर आधारित आरामदायक पार्सल छँटाई पहेली। प्यारे पार्सल को 3 लेन में बाँटें, बेल्ट पर डिब्बों से आकार मिलाएँ, और टेबल भरने से पहले «कहीं किसी बच्चे की मुस्कान» भेजें।",
+      dev_banner: "🎁 विकासाधीन — यहाँ दिखाई गई आर्ट और स्क्रीन अंतिम नहीं हैं।",
+      world_label: "वर्कशॉप की दुनिया",
+      world_text: "आप एक छोटी वर्कशॉप के सहायक हैं। पीछे के कमरे से खिलौने और तोहफ़े लगातार आते रहते हैं, तीन छँटाई लेन धीरे से चलती हैं, और गर्मजोश लकड़ी की बेल्ट पर डिब्बे लूप करते हैं। हर भेजा गया डिब्बा कहीं की एक मुस्कान है — कवर पर वह मिंट रंग का भालू उसी बच्चे की झलक है।",
+      howto_label: "खेलने का तरीका",
+      howto_text: "खींचें, मिलाएँ, भेजें। डिब्बे बेल्ट लाती है; पार्सल आप संभालते हैं। पीछे रहे तो टेबल भर जाएगी — आ रहे आकारों को पढ़ें और प्रवाह बनाए रखें।",
+      step1: "टेबल पर रखे हर पार्सल को आकार के अनुसार 3 छँटाई लेन में से एक में खींचें।",
+      step2: "कन्वेयर पर लूप करते डिब्बों पर ध्यान दें — हर डिब्बे का एक तय आकार होता है।",
+      step3: "लेन के सिरे पर मिलते आकार का डिब्बा गुज़रते ही पार्सल खुशी की «क्लिक» के साथ बैठ जाता है।",
+      step4: "डिब्बा भरते ही सहायक उसे भेज देता है और नया खाली डिब्बा आता है। लगातार भेजने पर कॉम्बो बोनस।",
+      step5: "टेबल को भरने न दें — मुश्किल हो तो स्लो / कैंसल / रिटर्न / कंटिन्यू का उपयोग करें।",
+      feat_label: "मुख्य बातें",
+      feat1: "3 लेन × लूप करते डिब्बों की छँटाई — सीखना आसान, निखारना मज़ेदार",
+      feat2: "«खुशियाँ पैक करो, मुस्कान भेजो» — हर परफेक्ट शिप पर हल्की-सी छोटी सेलिब्रेशन",
+      feat3: "अनेक स्तरों में सहज कठिनाई वक्र, «तय संख्या भेजें» और «रश सहें» लक्ष्य",
+      feat4: "उपयोगी आइटम: स्लो / कैंसल / रिटर्न / कंटिन्यू / क्लियर के बाद कॉइन डबल",
+      feat5: "एक-हाथ पोर्ट्रेट प्ले, 12 भाषाएँ, इंस्टॉल के बाद ऑफ़लाइन भी खेलें",
+      cap_key: "की आर्ट — विकासाधीन",
+      back: "← Parcel Pals पर वापस"
+    },
+    id: {
+      title: "Parcel Pals — Ikhtisar Game",
+      meta_desc: "Ikhtisar game Parcel Pals: workshop hadiah yang menenangkan, cara bermain, dan poin utama, dengan karya seni tahap pengembangan.",
+      tagline: "Kemas kebahagiaan. Kirim senyuman.",
+      page_label: "Ikhtisar Game",
+      lead: "Puzzle penyortiran paket yang menenangkan, berlatar di workshop hadiah kecil. Sortir paket lucu ke 3 jalur, cocokkan setiap bentuk dengan kotak di belt, dan kirim «senyum seorang anak di suatu tempat» sebelum meja meluap.",
+      dev_banner: "🎁 Dalam pengembangan — karya seni dan layar di sini bukan versi final.",
+      world_label: "Dunia Workshop",
+      world_text: "Anda adalah asisten di workshop kecil. Mainan dan hadiah terus berdatangan dari ruang belakang, tiga jalur sortir berdengung pelan, dan kotak-kotak meliuk pada belt kayu yang hangat. Setiap kotak yang dikirim adalah senyuman di suatu tempat — beruang mint di sampul itu adalah anak yang menunggunya.",
+      howto_label: "Cara Bermain",
+      howto_text: "Seret, cocokkan, kirim. Kotak dibawa oleh belt; Anda mengarahkan paket. Jika tertinggal, meja akan penuh — baca apa yang akan datang dan jaga alurnya.",
+      step1: "Seret setiap paket dari meja ke salah satu dari tiga jalur sortir sesuai bentuk.",
+      step2: "Perhatikan kotak yang meliuk di konveyor — setiap kotak menginginkan bentuk tertentu.",
+      step3: "Saat kotak yang cocok melewati ujung jalur, paket masuk dengan «klik» bahagia.",
+      step4: "Setelah kotak penuh, pembantu mengirimnya, kotak kosong baru meliuk masuk. Kirim beruntun untuk kombo.",
+      step5: "Jaga meja agar tidak meluap — gunakan Slow / Cancel / Return / Continue saat genting.",
+      feat_label: "Sorotan",
+      feat1: "Sortir paket di 3 jalur × kotak yang meliuk — mudah dipelajari, memuaskan untuk dikuasai",
+      feat2: "«Kemas kebahagiaan, kirim senyuman» — setiap pengiriman sempurna jatuh dengan pop lembut dan perayaan kecil",
+      feat3: "Kurva kesulitan lembut di banyak level, dengan tujuan «kirim kuota» dan «bertahan rush»",
+      feat4: "Item bantu: Slow / Cancel / Return / Continue / koin dua kali lipat setelah clear",
+      feat5: "Bermain satu tangan vertikal, 12 bahasa, bisa offline setelah dipasang",
+      cap_key: "Karya kunci — dalam pengembangan",
+      back: "← Kembali ke Parcel Pals"
+    },
+    de: {
+      title: "Parcel Pals — Spielübersicht",
+      meta_desc: "Spielübersicht von Parcel Pals: die gemütliche Geschenkwerkstatt, das Spielprinzip und Highlights, mit Artworks aus der Entwicklung.",
+      tagline: "Glück verpacken. Lächeln versenden.",
+      page_label: "Spielübersicht",
+      lead: "Ein gemütliches Paket-Sortier-Puzzle aus einer winzigen Geschenkwerkstatt. Sortiere niedliche Pakete in drei Bahnen, passe jede Form zu ihrer Kiste auf dem Band und versende ein Lächeln zu einem Kind irgendwo — bevor dein Tisch überläuft.",
+      dev_banner: "🎁 In Entwicklung — gezeigte Artworks und Screens sind nicht final.",
+      world_label: "Die Werkstatt",
+      world_text: "Du bist eine kleine Werkstatt-Hilfe. Spielzeug und Geschenke rollen aus dem Hinterzimmer herein, deine drei Sortierbahnen brummen leise, und Kisten kreisen auf einem warmen Holzband. Jede versendete Kiste ist irgendwo ein Lächeln — der Mintbär auf dem Cover ist das Kind, das darauf wartet.",
+      howto_label: "Spielprinzip",
+      howto_text: "Ziehen, passen, versenden. Das Band bringt die Kisten; du steuerst die Pakete. Bleibst du zurück, läuft der Tisch über — lies, was kommt, und halt den Fluss.",
+      step1: "Ziehe jedes Paket vom Tisch in eine der drei Sortierbahnen — nach Form.",
+      step2: "Beobachte die Kisten auf dem Förderband — jede Kiste will eine bestimmte Form.",
+      step3: "Wenn eine passende Kiste vor einer Bahn vorbeirollt, plumpst das Paket mit einem fröhlichen Klick hinein.",
+      step4: "Eine volle Kiste versendet die Helferin sofort, eine frische Leere rollt nach. Versende in Folge für Combos.",
+      step5: "Lass den Tisch nicht überlaufen — nutze Slow / Cancel / Return / Continue, wenn’s eng wird.",
+      feat_label: "Highlights",
+      feat1: "Drei Bahnen × kreisende Kisten — leicht zu lernen, befriedigend zu meistern",
+      feat2: "„Glück verpacken, Lächeln versenden“ — jede perfekte Lieferung landet mit einem sanften Plopp",
+      feat3: "Sanfte Schwierigkeitskurve über viele Stages, mit Versand-Quote- und Rush-Survival-Zielen",
+      feat4: "Helfer-Items: Slow / Cancel / Return / Continue / nach Clear Münzen verdoppeln",
+      feat5: "Einhandbedienung im Hochformat, 12 Sprachen, offline spielbar nach Installation",
+      cap_key: "Key Art — in Entwicklung",
+      back: "← Zurück zu Parcel Pals"
+    },
+    fr: {
+      title: "Parcel Pals — Aperçu du jeu",
+      meta_desc: "Aperçu du jeu Parcel Pals : l'atelier de cadeaux cosy, comment jouer et les points forts, avec des illustrations en cours de développement.",
+      tagline: "Emballe le bonheur. Expédie des sourires.",
+      page_label: "Aperçu du jeu",
+      lead: "Un puzzle de tri de colis cosy issu d'un minuscule atelier de cadeaux. Trie de mignons colis dans trois voies, fais correspondre chaque forme à sa boîte sur le tapis et expédie un sourire à un enfant quelque part — avant que ta table ne déborde.",
+      dev_banner: "🎁 En développement — les illustrations et écrans présentés ne sont pas définitifs.",
+      world_label: "L'atelier",
+      world_text: "Tu es un petit assistant d'atelier. Les jouets et cadeaux roulent depuis l'arrière-boutique, tes trois voies de tri ronronnent doucement, et les boîtes bouclent sur un tapis en bois chaleureux. Chaque boîte expédiée est un sourire quelque part — l'ourson menthe sur la couverture, c'est l'enfant qui l'attend.",
+      howto_label: "Comment jouer",
+      howto_text: "Glisser, faire correspondre, expédier. Le tapis amène les boîtes ; tu pilotes les colis. Si tu prends du retard, la table déborde — lis ce qui arrive et garde le rythme.",
+      step1: "Glisse chaque colis de la table vers l'une des trois voies de tri selon sa forme.",
+      step2: "Surveille les boîtes qui bouclent sur le convoyeur — chaque boîte veut une forme précise.",
+      step3: "Quand une boîte correspondante passe devant une voie, le colis y tombe avec un « clic » joyeux.",
+      step4: "Une boîte pleine, l'assistante l'expédie ; une nouvelle vide arrive. Enchaîne les envois pour des combos.",
+      step5: "Empêche la table de déborder — utilise Slow / Cancel / Return / Continue quand ça devient chaud.",
+      feat_label: "Points forts",
+      feat1: "Trois voies × boîtes qui bouclent — facile à apprendre, satisfaisant à maîtriser",
+      feat2: "« Emballer le bonheur, expédier des sourires » — chaque envoi parfait tombe avec un petit pop",
+      feat3: "Courbe de difficulté douce sur de nombreux niveaux, avec objectifs « quota » et « survie aux rushs »",
+      feat4: "Objets utiles : Slow / Cancel / Return / Continue / pièces doublées après un clear",
+      feat5: "Jeu en portrait à une main, 12 langues, jouable hors ligne une fois installé",
+      cap_key: "Illustration clé — en développement",
+      back: "← Retour à Parcel Pals"
+    },
+    it: {
+      title: "Parcel Pals — Panoramica del gioco",
+      meta_desc: "Panoramica di Parcel Pals: l'accogliente officina dei regali, come si gioca e i punti salienti, con artwork di sviluppo.",
+      tagline: "Impacchetta la felicità. Spedisci sorrisi.",
+      page_label: "Panoramica del gioco",
+      lead: "Un puzzle di smistamento pacchi rilassante in una piccolissima officina di regali. Smista pacchi carini in tre corsie, abbina ogni forma alla sua scatola sul nastro e spedisci un sorriso a un bambino da qualche parte — prima che il tavolo trabocchi.",
+      dev_banner: "🎁 In sviluppo — artwork e schermate qui mostrate non sono definitive.",
+      world_label: "L'officina",
+      world_text: "Sei un piccolo aiutante d'officina. Giocattoli e regali rotolano dal retro, le tre corsie di smistamento ronzano piano e le scatole girano su un caldo nastro di legno. Ogni scatola spedita è un sorriso da qualche parte — l'orsetto menta in copertina è il bambino che la sta aspettando.",
+      howto_label: "Come si gioca",
+      howto_text: "Trascina, abbina, spedisci. Il nastro porta le scatole; tu guidi i pacchi. Se rimani indietro, il tavolo si riempie — leggi ciò che arriva e mantieni il flusso.",
+      step1: "Trascina ogni pacco dal tavolo in una delle tre corsie di smistamento in base alla forma.",
+      step2: "Osserva le scatole che girano sul nastro — ogni scatola vuole una forma specifica.",
+      step3: "Quando una scatola corrispondente passa davanti a una corsia, il pacco ci entra con un «clic» felice.",
+      step4: "Riempita una scatola, l'aiutante la spedisce e una nuova scatola vuota arriva. Spedisci in serie per combo.",
+      step5: "Non far traboccare il tavolo — usa Slow / Cancel / Return / Continue quando si fa intenso.",
+      feat_label: "Punti salienti",
+      feat1: "Tre corsie × scatole che girano — facile da imparare, soddisfacente da padroneggiare",
+      feat2: "«Impacchetta felicità, spedisci sorrisi» — ogni spedizione perfetta arriva con un piccolo pop",
+      feat3: "Curva di difficoltà dolce su molti livelli, con obiettivi «quota di spedizione» e «sopravvivi al rush»",
+      feat4: "Oggetti utili: Slow / Cancel / Return / Continue / monete raddoppiate dopo un clear",
+      feat5: "Gioco a una mano in verticale, 12 lingue, giocabile offline dopo l'installazione",
+      cap_key: "Artwork principale — in sviluppo",
+      back: "← Torna a Parcel Pals"
+    },
+    es: {
+      title: "Parcel Pals — Descripción del juego",
+      meta_desc: "Descripción del juego Parcel Pals: el acogedor taller de regalos, cómo se juega y aspectos destacados, con arte en desarrollo.",
+      tagline: "Empaqueta felicidad. Envía sonrisas.",
+      page_label: "Descripción del juego",
+      lead: "Un puzzle acogedor de clasificación de paquetes en un pequeño taller de regalos. Clasifica lindos paquetes en tres carriles, encaja cada forma en su caja en la cinta y envía una sonrisa a un niño en algún lugar — antes de que la mesa se desborde.",
+      dev_banner: "🎁 En desarrollo — el arte y las pantallas mostradas no son finales.",
+      world_label: "El taller",
+      world_text: "Eres un pequeño ayudante de taller. Juguetes y regalos llegan rodando desde la trastienda, tus tres carriles de clasificación zumban suavemente, y las cajas giran en una cinta de madera cálida. Cada caja enviada es una sonrisa en algún sitio — el osito menta de la portada es el niño que la espera.",
+      howto_label: "Cómo jugar",
+      howto_text: "Arrastra, encaja, envía. La cinta trae las cajas; tú diriges los paquetes. Si te retrasas, la mesa se llena — lee lo que viene y mantén el flujo.",
+      step1: "Arrastra cada paquete de la mesa a uno de los tres carriles según su forma.",
+      step2: "Observa las cajas que giran en la cinta — cada caja quiere una forma concreta.",
+      step3: "Cuando una caja correspondiente pase por delante de un carril, el paquete entra con un «clic» alegre.",
+      step4: "Cuando la caja se llena, la ayudante la envía y una nueva caja vacía llega. Encadena envíos para combos.",
+      step5: "Que la mesa no se desborde — usa Slow / Cancel / Return / Continue cuando se complique.",
+      feat_label: "Aspectos destacados",
+      feat1: "Tres carriles × cajas en bucle — fácil de aprender, satisfactorio de dominar",
+      feat2: "«Empaquetar felicidad, enviar sonrisas» — cada envío perfecto aterriza con un suave pop",
+      feat3: "Curva de dificultad suave en muchos niveles, con objetivos «cuota de envío» y «sobrevive al rush»",
+      feat4: "Objetos útiles: Slow / Cancel / Return / Continue / monedas dobladas tras un clear",
+      feat5: "Juego a una mano en vertical, 12 idiomas, jugable sin conexión tras la instalación",
+      cap_key: "Arte clave — en desarrollo",
+      back: "← Volver a Parcel Pals"
+    },
+    pt: {
+      title: "Parcel Pals — Visão Geral do Jogo",
+      meta_desc: "Visão geral de Parcel Pals: a aconchegante oficina de presentes, como jogar e destaques, com arte em desenvolvimento.",
+      tagline: "Embale felicidade. Envie sorrisos.",
+      page_label: "Visão Geral do Jogo",
+      lead: "Um puzzle aconchegante de separação de pacotes em uma pequena oficina de presentes. Separe pacotes fofos em três pistas, combine cada forma com sua caixa na esteira e envie um sorriso para uma criança em algum lugar — antes que a mesa transborde.",
+      dev_banner: "🎁 Em desenvolvimento — arte e telas aqui exibidas não são finais.",
+      world_label: "A Oficina",
+      world_text: "Você é um pequeno ajudante de oficina. Brinquedos e presentes rolam do fundo, suas três pistas de separação rodam baixinho, e as caixas dão voltas em uma esteira de madeira aconchegante. Cada caixa enviada é um sorriso em algum lugar — o ursinho mint da capa é a criança que a espera.",
+      howto_label: "Como jogar",
+      howto_text: "Arrastar, combinar, enviar. A esteira traz as caixas; você comanda os pacotes. Se atrasar, a mesa enche — leia o que vem e mantenha o ritmo.",
+      step1: "Arraste cada pacote da mesa para uma das três pistas de separação conforme a forma.",
+      step2: "Observe as caixas que circulam na esteira — cada caixa quer uma forma específica.",
+      step3: "Quando uma caixa correspondente passa em frente a uma pista, o pacote entra com um «clique» feliz.",
+      step4: "Caixa cheia, o ajudante envia, uma caixa vazia entra. Envios em sequência geram combos.",
+      step5: "Não deixe a mesa transbordar — use Slow / Cancel / Return / Continue quando apertar.",
+      feat_label: "Destaques",
+      feat1: "Três pistas × caixas em loop — fácil de aprender, satisfatório de dominar",
+      feat2: "«Embale felicidade, envie sorrisos» — cada envio perfeito cai com um suave plop",
+      feat3: "Curva de dificuldade suave em muitos níveis, com metas «cota de envio» e «sobreviva à rush»",
+      feat4: "Itens úteis: Slow / Cancel / Return / Continue / moedas dobradas após clear",
+      feat5: "Jogo com uma mão em retrato, 12 idiomas, joga offline após instalar",
+      cap_key: "Arte principal — em desenvolvimento",
+      back: "← Voltar para Parcel Pals"
+    },
+    ru: {
+      title: "Parcel Pals — Обзор игры",
+      meta_desc: "Обзор Parcel Pals: уютная мастерская подарков, как играть и ключевые моменты, с артом из стадии разработки.",
+      tagline: "Упакуй счастье. Отправь улыбку.",
+      page_label: "Обзор игры",
+      lead: "Уютная головоломка-сортировка посылок из крошечной мастерской подарков. Сортируй милые посылки по трём лентам, подбирай каждую форму к её коробке на конвейере и отправляй улыбку ребёнку где-то — пока стол не переполнился.",
+      dev_banner: "🎁 В разработке — арт и экраны здесь не финальные.",
+      world_label: "Мастерская",
+      world_text: "Ты помощник в маленькой мастерской. Игрушки и подарки выкатываются из задней комнаты, три сортировочные ленты тихо гудят, а коробки кружатся по тёплой деревянной ленте. Каждая отправленная коробка — это улыбка где-то там; мятный медвежонок на обложке — ребёнок, который её ждёт.",
+      howto_label: "Как играть",
+      howto_text: "Тащи, подбирай, отправляй. Конвейер несёт коробки; ты управляешь посылками. Отстал — стол переполнится. Читай, что приближается, и держи поток.",
+      step1: "Перетаскивай каждую посылку со стола в одну из трёх сортировочных лент по форме.",
+      step2: "Следи за коробками на конвейере — каждой коробке нужна определённая форма.",
+      step3: "Когда подходящая коробка проходит перед лентой, посылка падает в неё с радостным «щёлк».",
+      step4: "Полную коробку помощница тут же отправляет, прикатывается новая пустая. Серия отправок даёт комбо.",
+      step5: "Не дай столу переполниться — пользуйся Slow / Cancel / Return / Continue, когда жарко.",
+      feat_label: "Ключевые моменты",
+      feat1: "Три ленты × коробки в петле — легко учиться, приятно совершенствоваться",
+      feat2: "«Упакуй счастье, отправь улыбку» — каждый идеальный отправка ложится мягким «поп»",
+      feat3: "Мягкая кривая сложности на многих уровнях, цели «отправить норму» и «выжить в раше»",
+      feat4: "Полезные предметы: Slow / Cancel / Return / Continue / удвоение монет после прохождения",
+      feat5: "Игра одной рукой в портрете, 12 языков, играется офлайн после установки",
+      cap_key: "Ключевой арт — в разработке",
+      back: "← Назад к Parcel Pals"
+    }
+  };
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
+
+  function detectLang() {
+    try {
+      const stored = localStorage.getItem(LANG_STORAGE_KEY);
+      if (stored && i18n[stored]) return stored;
+    } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang, persist) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(opt);
+    }
+    // Persist on init too — guarantees subsequent pages (privacy/terms/overview)
+    // pick up the same language via the shared localStorage key.
+    setLang(detectLang(), true);
+    sel.addEventListener('change', e => setLang(e.target.value, true));
+  })();
+</script>
+<script src="../breadcrumb.js?v=20260526190959" defer></script>
+</body>
+</html>

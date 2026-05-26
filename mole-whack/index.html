@@ -721,10 +721,11 @@
       opt.textContent = l.flag + ' ' + l.name;
       sel.appendChild(opt);
     }
-    setLang(detectLang());
+    // Persist on init too — guarantees subsequent pages pick up the same language via the shared localStorage key.
+    setLang(detectLang(), true);
     sel.addEventListener('change', e => setLang(e.target.value, true));
   })();
 </script>
-<script src="../breadcrumb.js?v=20260524212121" defer></script>
+<script src="../breadcrumb.js?v=20260526190959" defer></script>
 </body>
 </html>

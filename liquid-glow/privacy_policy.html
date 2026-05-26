@@ -575,11 +575,13 @@
     }
     const y = document.getElementById('year');
     if (y) y.textContent = new Date().getFullYear();
-    setLang(detectLang());
+    // Persist on init too — guarantees that if a user lands directly here,
+    // navigation to other pages (index/overview/etc.) picks up the same language.
+    setLang(detectLang(), true);
     sel.addEventListener('change', e => setLang(e.target.value, true));
   })();
 </script>
-<script src="../breadcrumb.js?v=20260524212121" defer></script>
+<script src="../breadcrumb.js?v=20260526190959" defer></script>
 
 </body>
 </html>
