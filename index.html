@@ -124,14 +124,19 @@
     font-weight: 400;
   }
   .game-card .links a:hover { color: #aac0e0; }
-  .game-card .appstore-badge {
+  .game-card .appstore-badge,
+  .game-card .googleplay-badge {
     display: inline-block;
     margin-top: 16px;
     line-height: 0;
     transition: transform 0.2s ease, opacity 0.2s ease;
+    vertical-align: top;
   }
-  .game-card .appstore-badge:hover { transform: translateY(-2px); opacity: 0.85; }
+  .game-card .appstore-badge:hover,
+  .game-card .googleplay-badge:hover { transform: translateY(-2px); opacity: 0.85; }
   .game-card .appstore-badge svg { display: block; margin: 0 auto; }
+  .game-card .googleplay-badge img { display: block; height: 51px; width: auto; }
+  .game-card .appstore-badge + .googleplay-badge { margin-left: 10px; }
   .social {
     display: flex;
     justify-content: center;
@@ -265,6 +270,9 @@
         <a href="issen/" data-i18n="issen_title">ISSEN — One breath, one stroke, one cut</a>
       </div>
       <div class="desc" data-i18n="issen_desc">A sumi-e timing-action game of the iaido draw — breathe, read the distance, and unleash one perfect cut. In development; coming soon.</div>
+      <a class="googleplay-badge" href="issen/#tester-heading" aria-label="Join ISSEN Android testers">
+        <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+      </a>
       <div class="links">
         <a href="issen/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
         <a href="issen/terms_of_service.html" data-i18n="link_terms">Terms</a>
@@ -286,6 +294,9 @@
           <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
         </svg>
       </a>
+      <a class="googleplay-badge" href="hotaru/#tester-heading" aria-label="Join HOTARU Android testers">
+        <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+      </a>
       <div class="links">
         <a href="hotaru/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
         <a href="hotaru/terms_of_service.html" data-i18n="link_terms">Terms</a>
@@ -297,6 +308,9 @@
         <a href="liquid-glow/">Liquid Glow</a>
       </div>
       <div class="desc" data-i18n="lg_desc">A meditative sort puzzle. Pour glowing liquids between glass tubes and watch them flow through the cosmos.</div>
+      <a class="googleplay-badge" href="liquid-glow/#tester-heading" aria-label="Join Liquid Glow Android testers">
+        <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+      </a>
       <div class="links">
         <a href="liquid-glow/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
         <a href="liquid-glow/terms_of_service.html" data-i18n="link_terms">Terms</a>
@@ -317,6 +331,9 @@
           <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
           <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
         </svg>
+      </a>
+      <a class="googleplay-badge" href="mole-whack/#tester-heading" aria-label="Join Mole Whack Android testers">
+        <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
       </a>
       <div class="links">
         <a href="mole-whack/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
