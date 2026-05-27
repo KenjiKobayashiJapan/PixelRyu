@@ -8,8 +8,8 @@
 <style>
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    background: radial-gradient(ellipse at top, #2a2018 0%, #1a130f 50%, #0a0705 100%);
-    color: #f0e6d4;
+    background: radial-gradient(ellipse at top, #ffd9e5 0%, #ffbed4 50%, #ffa8c5 100%);
+    color: #3a1d2a;
     margin: 0;
     min-height: 100vh;
     display: flex;
@@ -25,20 +25,20 @@
   }
   .lang-switch { position: absolute; top: 24px; right: 24px; }
   .lang-switch select {
-    background: rgba(109, 208, 191, 0.06);
-    color: #f0e6d4;
-    border: 1px solid rgba(109, 208, 191, 0.22);
+    background: rgba(255, 255, 255, 0.40);
+    color: #3a1d2a;
+    border: 1px solid rgba(29, 138, 118, 0.35);
     border-radius: 4px;
     padding: 5px 10px;
     font-size: 13px;
     font-family: inherit;
     cursor: pointer;
   }
-  .lang-switch select:hover { background: rgba(109, 208, 191, 0.14); border-color: rgba(109, 208, 191, 0.55); }
-  .lang-switch select option { background: #1a130f; color: #f0e6d4; }
+  .lang-switch select:hover { background: rgba(255, 255, 255, 0.55); border-color: rgba(29, 138, 118, 0.65); }
+  .lang-switch select option { background: #ffbed4; color: #3a1d2a; }
   .tagline {
     font-size: 13px;
-    color: #a89478;
+    color: #8c5a73;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 6px;
@@ -46,18 +46,18 @@
   h1 {
     font-size: 44px;
     margin: 0 0 6px;
-    color: #f0e6d4;
+    color: #3a1d2a;
     font-weight: 800;
     letter-spacing: 0.5px;
   }
-  h1 .accent { color: #6dd0bf; }
+  h1 .accent { color: #1d8a76; }
   /* Brand mark: EN by default, JP variant for Japanese users (toggled via <html lang> by setLang). */
   h1 .brand-ja { display: none; }
   html[lang="ja"] h1 .brand-en { display: none; }
   html[lang="ja"] h1 .brand-ja { display: inline; }
   .page-label {
     font-size: 13px;
-    color: #a89478;
+    color: #8c5a73;
     text-transform: uppercase;
     letter-spacing: 3px;
     margin-bottom: 12px;
@@ -65,15 +65,15 @@
   .lead {
     font-size: 15px;
     line-height: 1.85;
-    color: #d8ccb2;
+    color: #4a2538;
     margin: 14px auto 8px;
     max-width: 500px;
   }
   .dev-banner {
     font-size: 12px;
-    color: #ffaec0;
-    background: rgba(255, 174, 192, 0.06);
-    border: 1px solid rgba(255, 174, 192, 0.25);
+    color: #c4356f;
+    background: rgba(196, 53, 111, 0.08);
+    border: 1px solid rgba(196, 53, 111, 0.30);
     border-radius: 10px;
     padding: 10px 14px;
     margin: 16px auto 0;
@@ -81,45 +81,45 @@
     line-height: 1.5;
   }
   .section {
-    background: rgba(109, 208, 191, 0.05);
-    border: 1px solid rgba(109, 208, 191, 0.30);
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(29, 138, 118, 0.40);
     border-radius: 16px;
     padding: 24px 24px 28px;
     margin: 28px 0;
     text-align: left;
-    box-shadow: 0 0 30px rgba(109, 208, 191, 0.05);
+    box-shadow: 0 8px 24px rgba(196, 53, 111, 0.12);
   }
-  .section h2 { font-size: 18px; color: #6dd0bf; margin: 0 0 4px; font-weight: 800; }
-  .section .sub { font-size: 11px; color: #a89478; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
-  .section p { font-size: 14px; line-height: 1.8; color: #d8ccb2; margin: 12px 0; }
-  .section ol, .section ul { margin: 12px 0 0; padding-left: 22px; font-size: 14px; line-height: 1.85; color: #d8ccb2; }
+  .section h2 { font-size: 18px; color: #1d8a76; margin: 0 0 4px; font-weight: 800; }
+  .section .sub { font-size: 11px; color: #8c5a73; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  .section p { font-size: 14px; line-height: 1.8; color: #4a2538; margin: 12px 0; }
+  .section ol, .section ul { margin: 12px 0 0; padding-left: 22px; font-size: 14px; line-height: 1.85; color: #4a2538; }
   .hero-shot { width: 100%; max-width: 240px; margin: 22px auto 4px; }
   .hero-shot img {
     width: 100%;
     border-radius: 28px;
-    border: 1px solid rgba(255, 174, 192, 0.22);
-    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(255, 174, 192, 0.10);
+    border: 1px solid rgba(196, 53, 111, 0.25);
+    box-shadow: 0 10px 32px rgba(0, 0, 0, 0.6), 0 0 0 1px rgba(196, 53, 111, 0.12);
     display: block;
   }
-  .hero-shot figcaption { font-size: 12px; color: #a89478; margin-top: 8px; text-align: center; }
+  .hero-shot figcaption { font-size: 12px; color: #8c5a73; margin-top: 8px; text-align: center; }
   .back {
     display: inline-block;
     margin-top: 28px;
-    color: #a89478;
+    color: #8c5a73;
     text-decoration: none;
     font-size: 14px;
   }
-  .back:hover { color: #6dd0bf; }
+  .back:hover { color: #1d8a76; }
   @media (max-width: 600px) {
     .container { padding: 48px 18px 64px; }
     .lang-switch { top: 16px; right: 16px; }
     .section { padding: 20px 18px 22px; }
     h1 { font-size: 36px; }
   }
-  .social-heading{font-size:13px;color:#a89478;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social-heading{font-size:13px;color:#8c5a73;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
   .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
-  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(109,208,191,0.06);border:1px solid rgba(109,208,191,0.20);color:#a89478;transition:all .25s ease;}
-  .social a:hover{background:rgba(109,208,191,0.12);border-color:rgba(109,208,191,0.45);color:#6dd0bf;transform:translateY(-2px);}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(255,255,255,0.40);border:1px solid rgba(29,138,118,0.30);color:#8c5a73;transition:all .25s ease;}
+  .social a:hover{background:rgba(255,255,255,0.55);border-color:rgba(29,138,118,0.55);color:#1d8a76;transform:translateY(-2px);}
   .social svg{width:22px;height:22px;fill:currentColor;display:block;}
 </style>
 <!-- SEO/LLMO start (managed) -->
@@ -128,7 +128,7 @@
 <meta name="author" content="PixelRyu">
 <meta name="publisher" content="PixelRyu">
 <meta name="keywords" content="Parcel Pals, parcel sort, packing puzzle, cozy puzzle, conveyor, shipping, cute, casual, PixelRyu, indie game, Android, iOS">
-<meta name="theme-color" content="#1a130f">
+<meta name="theme-color" content="#ffbed4">
 <link rel="icon" type="image/png" href="https://pixelryu.github.io/parcel-pals/icon.png">
 <link rel="apple-touch-icon" href="https://pixelryu.github.io/parcel-pals/icon.png">
 <meta property="og:type" content="article">

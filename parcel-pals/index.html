@@ -8,8 +8,8 @@
 <style>
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    background: radial-gradient(ellipse at top, #2a2018 0%, #1a130f 50%, #0a0705 100%);
-    color: #f0e6d4;
+    background: radial-gradient(ellipse at top, #ffd9e5 0%, #ffbed4 50%, #ffa8c5 100%);
+    color: #3a1d2a;
     margin: 0;
     min-height: 100vh;
     display: flex;
@@ -29,9 +29,9 @@
     right: 24px;
   }
   .lang-switch select {
-    background: rgba(109, 208, 191, 0.06);
-    color: #f0e6d4;
-    border: 1px solid rgba(109, 208, 191, 0.22);
+    background: rgba(255, 255, 255, 0.40);
+    color: #3a1d2a;
+    border: 1px solid rgba(29, 138, 118, 0.35);
     border-radius: 4px;
     padding: 5px 10px;
     font-size: 13px;
@@ -39,21 +39,21 @@
     cursor: pointer;
   }
   .lang-switch select:hover {
-    background: rgba(109, 208, 191, 0.14);
-    border-color: rgba(109, 208, 191, 0.55);
+    background: rgba(255, 255, 255, 0.55);
+    border-color: rgba(29, 138, 118, 0.65);
   }
-  .lang-switch select option { background: #1a130f; color: #f0e6d4; }
+  .lang-switch select option { background: #ffbed4; color: #3a1d2a; }
   .brand-icon {
     width: 120px;
     height: 120px;
     border-radius: 28px;
     display: block;
     margin: 0 auto 20px;
-    box-shadow: 0 8px 28px rgba(255, 174, 192, 0.20), 0 0 0 1px rgba(255, 174, 192, 0.15);
+    box-shadow: 0 8px 28px rgba(196, 53, 111, 0.22), 0 0 0 1px rgba(196, 53, 111, 0.18);
   }
   .tagline {
     font-size: 14px;
-    color: #a89478;
+    color: #8c5a73;
     margin-bottom: 8px;
     text-transform: uppercase;
     letter-spacing: 3px;
@@ -61,12 +61,12 @@
   h1 {
     font-size: 48px;
     margin: 0 0 6px;
-    color: #f0e6d4;
+    color: #3a1d2a;
     font-weight: 800;
     letter-spacing: 0.5px;
   }
   h1 .accent {
-    color: #6dd0bf;
+    color: #1d8a76;
   }
   /* Brand mark: EN by default, JP variant for Japanese users (toggled via <html lang> by setLang). */
   h1 .brand-ja { display: none; }
@@ -74,23 +74,23 @@
   html[lang="ja"] h1 .brand-ja { display: inline; }
   .subtitle {
     font-size: 14px;
-    color: #a89478;
+    color: #8c5a73;
     margin-bottom: 32px;
     text-transform: uppercase;
     letter-spacing: 2px;
   }
   .dev-card {
-    background: rgba(109, 208, 191, 0.05);
-    border: 1px solid rgba(109, 208, 191, 0.30);
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(29, 138, 118, 0.40);
     border-radius: 16px;
     padding: 24px 24px 28px;
     margin: 32px 0 40px;
     text-align: left;
-    box-shadow: 0 0 30px rgba(109, 208, 191, 0.05);
+    box-shadow: 0 8px 24px rgba(196, 53, 111, 0.12);
   }
   .dev-heading {
     font-size: 13px;
-    color: #6dd0bf;
+    color: #1d8a76;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 0 0 4px;
@@ -100,7 +100,7 @@
   .dev-note {
     display: block;
     font-size: 11px;
-    color: #a89478;
+    color: #8c5a73;
     text-transform: none;
     letter-spacing: 0;
     font-weight: 400;
@@ -111,13 +111,13 @@
   .dev-card p {
     font-size: 14px;
     line-height: 1.7;
-    color: #d8ccb2;
+    color: #4a2538;
     margin: 14px 0 0;
   }
   .dev-section-label {
     font-size: 13px;
     font-weight: 700;
-    color: #ffaec0;
+    color: #c4356f;
     margin: 20px 0 4px;
   }
   /* === Tester card (HIDDEN until Android closed test opens) ===
@@ -125,35 +125,35 @@
      `display: none` line from .tester-card below. */
   .tester-card { display: none; }
   .tester-card-base {
-    background: rgba(109, 208, 191, 0.05);
-    border: 1px solid rgba(109, 208, 191, 0.30);
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(29, 138, 118, 0.40);
     border-radius: 16px;
     padding: 24px 24px 28px;
     margin: 32px 0 40px;
     text-align: left;
-    box-shadow: 0 0 30px rgba(109, 208, 191, 0.05);
+    box-shadow: 0 8px 24px rgba(196, 53, 111, 0.12);
   }
   .tester-heading {
-    font-size: 13px; color: #6dd0bf; text-transform: uppercase;
+    font-size: 13px; color: #1d8a76; text-transform: uppercase;
     letter-spacing: 2px; margin: 0 0 4px; font-weight: 700; text-align: center;
   }
   .tester-android-note {
-    display: block; font-size: 11px; color: #a89478; text-transform: none;
+    display: block; font-size: 11px; color: #8c5a73; text-transform: none;
     letter-spacing: 0; font-weight: 400; margin-bottom: 16px; text-align: center;
   }
-  .tester-card p { font-size: 14px; line-height: 1.65; color: #d8ccb2; margin: 12px 0; }
-  .tester-section-label { font-size: 13px; font-weight: 700; color: #ffaec0; margin: 20px 0 6px; }
+  .tester-card p { font-size: 14px; line-height: 1.65; color: #4a2538; margin: 12px 0; }
+  .tester-section-label { font-size: 13px; font-weight: 700; color: #c4356f; margin: 20px 0 6px; }
   .tester-step {
-    display: block; background: rgba(109, 208, 191, 0.10); border: 1px solid rgba(109, 208, 191, 0.30);
-    border-radius: 10px; padding: 12px 16px; margin: 10px 0; color: #6dd0bf;
+    display: block; background: rgba(29, 138, 118, 0.12); border: 1px solid rgba(29, 138, 118, 0.40);
+    border-radius: 10px; padding: 12px 16px; margin: 10px 0; color: #1d8a76;
     text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s ease;
   }
-  .tester-step:hover { background: rgba(109, 208, 191, 0.18); border-color: rgba(109, 208, 191, 0.60); color: #8fdcce; }
-  .tester-card ul { margin: 6px 0 0; padding-left: 22px; color: #d8ccb2; font-size: 14px; line-height: 1.7; }
+  .tester-step:hover { background: rgba(29, 138, 118, 0.22); border-color: rgba(29, 138, 118, 0.70); color: #2ba88e; }
+  .tester-card ul { margin: 6px 0 0; padding-left: 22px; color: #4a2538; font-size: 14px; line-height: 1.7; }
   .overview-link {
     display: block;
-    background: #6dd0bf;
-    color: #0f1f1c;
+    background: #1d8a76;
+    color: #ffffff;
     text-decoration: none;
     font-size: 16px;
     font-weight: 700;
@@ -161,9 +161,9 @@
     border-radius: 14px;
     margin: 0 0 24px;
     transition: all 0.2s ease;
-    box-shadow: 0 6px 22px rgba(109, 208, 191, 0.25);
+    box-shadow: 0 6px 22px rgba(29, 138, 118, 0.30);
   }
-  .overview-link:hover { background: #8fdcce; transform: translateY(-1px); }
+  .overview-link:hover { background: #2ba88e; transform: translateY(-1px); }
   .promo-video {
     display: block;
     width: 100%;
@@ -171,29 +171,29 @@
     border-radius: 14px;
     margin: 16px 0 8px;
     background: #000;
-    box-shadow: 0 6px 22px rgba(109, 208, 191, 0.25);
+    box-shadow: 0 6px 22px rgba(29, 138, 118, 0.30);
   }
   .legal-divider {
     font-size: 14px;
-    color: #8a7c66;
+    color: #9a7384;
     text-transform: uppercase;
     letter-spacing: 2px;
     margin: 8px 0 16px;
   }
   .links { list-style: none; padding: 0; margin: 0; }
   .links li {
-    background: rgba(109, 208, 191, 0.05);
-    border: 1px solid rgba(109, 208, 191, 0.20);
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(29, 138, 118, 0.30);
     border-radius: 14px;
     margin-bottom: 14px;
     transition: all 0.25s ease;
   }
   .links li:hover {
-    background: rgba(109, 208, 191, 0.12);
-    border-color: rgba(109, 208, 191, 0.50);
+    background: rgba(255, 255, 255, 0.55);
+    border-color: rgba(29, 138, 118, 0.60);
   }
   .links a {
-    color: #6dd0bf;
+    color: #1d8a76;
     text-decoration: none;
     font-size: 18px;
     font-weight: 600;
@@ -203,21 +203,21 @@
   .back {
     display: inline-block;
     margin-top: 48px;
-    color: #8a7c66;
+    color: #9a7384;
     text-decoration: none;
     font-size: 14px;
   }
-  .back:hover { color: #e0a08a; }
+  .back:hover { color: #c4356f; }
   @media (max-width: 600px) {
     .lang-switch { top: 16px; right: 16px; }
     .dev-card { padding: 20px 18px 22px; }
     h1 { font-size: 40px; }
     .brand-icon { width: 104px; height: 104px; border-radius: 24px; }
   }
-  .social-heading{font-size:13px;color:#a89478;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social-heading{font-size:13px;color:#8c5a73;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
   .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
-  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(109,208,191,0.06);border:1px solid rgba(109,208,191,0.20);color:#a89478;transition:all .25s ease;}
-  .social a:hover{background:rgba(109,208,191,0.12);border-color:rgba(109,208,191,0.45);color:#6dd0bf;transform:translateY(-2px);}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(255,255,255,0.40);border:1px solid rgba(29,138,118,0.30);color:#8c5a73;transition:all .25s ease;}
+  .social a:hover{background:rgba(255,255,255,0.55);border-color:rgba(29,138,118,0.55);color:#1d8a76;transform:translateY(-2px);}
   .social svg{width:22px;height:22px;fill:currentColor;display:block;}
 </style>
 <!-- SEO/LLMO start (managed) -->
@@ -226,7 +226,7 @@
 <meta name="author" content="PixelRyu">
 <meta name="publisher" content="PixelRyu">
 <meta name="keywords" content="Parcel Pals, parcel sort, packing puzzle, cozy puzzle, conveyor, shipping, cute, casual, PixelRyu, indie game, Android, iOS">
-<meta name="theme-color" content="#1a130f">
+<meta name="theme-color" content="#ffbed4">
 <link rel="icon" type="image/png" href="https://pixelryu.github.io/parcel-pals/icon.png">
 <link rel="apple-touch-icon" href="https://pixelryu.github.io/parcel-pals/icon.png">
 <meta property="og:type" content="website">
