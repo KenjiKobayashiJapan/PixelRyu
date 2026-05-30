@@ -145,6 +145,20 @@
   .game-card .googleplay-badge { margin-left: 160px; }
   .game-card .appstore-badge + .googleplay-badge { margin-left: 10px; }
   .game-card .googleplay-badge + .roblox-badge { margin-left: 10px; }
+  /* When several badges share a row, lay them out with flex so wrapped rows
+     align to the left edge (no leading margin) — keeps the iPhone/Roblox badges
+     flush on narrow/mobile widths instead of shifting by the inline-block margin. */
+  .game-card .store-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 16px;
+    margin-top: 16px;
+  }
+  .game-card .store-badges .appstore-badge,
+  .game-card .store-badges .googleplay-badge,
+  .game-card .store-badges .roblox-badge { margin-top: 0; margin-left: 0; }
   .social {
     display: flex;
     justify-content: center;
@@ -267,6 +281,7 @@
         <a href="sumlings/" data-i18n="sumlings_title">Sumlings — Place numbers. Hatch wonders.</a>
       </div>
       <div class="desc" data-i18n="sumlings_desc">A cozy number puzzle. Place number eggs into a tiny terrarium so each nest's total matches its target — hatch the Sumlings and fill your collection. Out now on the App Store. Android testers welcome.</div>
+      <div class="store-badges">
       <a class="appstore-badge" href="https://apps.apple.com/app/id6774177494" target="_blank" rel="noopener" aria-label="Download Sumlings on the App Store">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
           <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
@@ -276,11 +291,11 @@
           <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
           <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
         </svg>
-      </a><!-- keep inline-block siblings whitespace-free for pixel-perfect 10px gap
-      --><a class="googleplay-badge" href="sumlings/#tester-heading" aria-label="Join Sumlings Android testers">
+      </a>
+      <a class="googleplay-badge" href="sumlings/#tester-heading" aria-label="Join Sumlings Android testers">
         <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
-      </a><!-- keep inline-block siblings whitespace-free for pixel-perfect 10px gap
-      --><a class="roblox-badge" href="https://www.roblox.com/games/90303076167033/Sumlings" target="_blank" rel="noopener" aria-label="Play Sumlings on Roblox">
+      </a>
+      <a class="roblox-badge" href="https://www.roblox.com/games/90303076167033/Sumlings" target="_blank" rel="noopener" aria-label="Play Sumlings on Roblox">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
           <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
           <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
@@ -293,6 +308,7 @@
           <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
         </svg>
       </a>
+      </div>
       <div class="links">
         <a href="sumlings/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
         <a href="sumlings/terms_of_service.html" data-i18n="link_terms">Terms</a>
