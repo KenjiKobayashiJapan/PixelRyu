@@ -79,47 +79,6 @@
     text-transform: uppercase;
     letter-spacing: 2px;
   }
-  .dev-card {
-    background: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(164, 113, 72, 0.40);
-    border-radius: 16px;
-    padding: 24px 24px 28px;
-    margin: 32px 0 40px;
-    text-align: left;
-    box-shadow: 0 8px 24px rgba(90, 140, 78, 0.12);
-  }
-  .dev-heading {
-    font-size: 13px;
-    color: #a47148;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 0 0 4px;
-    font-weight: 700;
-    text-align: center;
-  }
-  .dev-note {
-    display: block;
-    font-size: 11px;
-    color: #7a8a6e;
-    text-transform: none;
-    letter-spacing: 0;
-    font-weight: 400;
-    margin-top: 6px;
-    margin-bottom: 4px;
-    text-align: center;
-  }
-  .dev-card p {
-    font-size: 14px;
-    line-height: 1.7;
-    color: #3a2e1f;
-    margin: 14px 0 0;
-  }
-  .dev-section-label {
-    font-size: 13px;
-    font-weight: 700;
-    color: #5a8c4e;
-    margin: 20px 0 4px;
-  }
   /* === Tester card === Android クローズドテスト開始 2026-05-29 で公開 */
   .tester-card-base {
     background: rgba(255, 255, 255, 0.45);
@@ -207,7 +166,6 @@
   .back:hover { color: #5a8c4e; }
   @media (max-width: 600px) {
     .lang-switch { top: 16px; right: 16px; }
-    .dev-card { padding: 20px 18px 22px; }
     h1 { font-size: 40px; }
     .brand-icon { width: 104px; height: 104px; border-radius: 24px; }
   }
@@ -276,7 +234,7 @@
   <img src="icon.png" alt="Sumlings" class="brand-icon">
   <div class="tagline" data-i18n="tagline">Place numbers. Hatch wonders.</div>
   <h1><span class="brand-en">Sum<span class="accent">lings</span></span><span class="brand-ja">サム<span class="accent">リング</span></span></h1>
-  <div class="subtitle" data-i18n="subtitle">Cozy Parcel-Sorting Puzzle</div>
+  <div class="subtitle" data-i18n="subtitle">Cozy Number Puzzle</div>
 
   <section class="hero-badges" aria-label="Get the game">
     <a href="https://apps.apple.com/app/id6774177494" target="_blank" rel="noopener" aria-label="Download Sumlings on the App Store">
@@ -384,12 +342,7 @@
       title: "Sumlings — Place numbers. Hatch wonders.",
       meta_desc: "Sumlings — a cozy number puzzle by PixelRyu. Place number eggs into a tiny terrarium, match each nest's total to its target, and hatch the cute Sumlings. In development; coming soon to Android & iOS.",
       tagline: "Place numbers. Hatch wonders.",
-      subtitle: "Cozy Parcel-Sorting Puzzle",
-      dev_label: "In Development",
-      dev_note: "Coming soon to Android & iOS",
-      dev_intro: "A new PixelRyu game in the making. Place number eggs in a tiny terrarium, make each nest's total match its target, and hatch the little Sumlings into your collection.",
-      dev_what_label: "What it is",
-      dev_what: "A cozy number puzzle set in a tiny garden terrarium. Each level gives you a tray of number eggs. Place them so each nest's total matches its target — one egg can help two nests at once. When every nest is satisfied, the Sumlings hatch and your collection grows.",
+      subtitle: "Cozy Number Puzzle",
       tester_heading: "Android Tester Recruitment",
       tester_android_note: "Android only",
       tester_intro: "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
@@ -417,11 +370,6 @@
       meta_desc: "サムリング — PixelRyu によるほっこり数のパズル。数字のたまごを箱庭に置いて、各巣の合計を目標にぴったり合わせると、可愛いサムリングが孵化。図鑑を集めよう。開発中、Android・iOS で近日公開。",
       tagline: "数を置いて、生き物を孵そう。",
       subtitle: "ほっこり数のパズル",
-      dev_label: "開発中",
-      dev_note: "Android・iOS で近日公開",
-      dev_intro: "PixelRyu の新作を制作中です。数字のたまごを箱庭に置いて、各巣の合計を目標にぴったり合わせると、小さなサムリングが孵化します。",
-      dev_what_label: "ゲーム内容",
-      dev_what: "小さな箱庭テラリウムを舞台にした、ほっこり癒し系の数のパズル。各ステージで配られる数字のたまごをマスに置き、それぞれの巣の合計をお題ぴったりに合わせます。1 つのたまごが 2 つの巣を同時に助けることも。すべて揃うとサムリングが孵化し、図鑑が増えていきます。",
       tester_heading: "Android テスター募集中",
       tester_android_note: "Android 専用",
       tester_intro: "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
@@ -449,11 +397,6 @@
       meta_desc: "Sumlings — PixelRyu 出品的治愈系数字益智游戏。把数字蛋放进小小箱庭，让每个巢的合计与目标一致，孵化可爱的 Sumling 并集齐图鉴。开发中，即将登陆 Android 与 iOS。",
       tagline: "把幸福装进盒子，把笑容送出门。",
       subtitle: "治愈系数字益智游戏",
-      dev_label: "开发中",
-      dev_note: "即将登陆 Android 与 iOS",
-      dev_intro: "PixelRyu 正在制作的新作。把数字蛋放进小箱庭，让每个巢的合计与目标一致，孵化小小的 Sumling。",
-      dev_what_label: "游戏简介",
-      dev_what: "以小小箱庭为舞台的治愈系数字益智游戏。每关给你一盘数字蛋，把它们放进格子，让每个巢的合计与目标一致——一个蛋可同时帮助两个巢。全部完成后，Sumling 孵化，图鉴随之扩展。",
       tester_heading: "招募 Android 测试者",
       tester_android_note: "仅限 Android",
       tester_intro: "我是一名独立开发者，正在为期 14 天的封闭测试招募积极的 Android 测试者。",
@@ -481,11 +424,6 @@
       meta_desc: "Sumlings — PixelRyu가 만드는 힐링 숫자 퍼즐. 작은 테라리움에 숫자 알을 놓고 각 둥지의 합을 목표와 맞춰 귀여운 Sumling을 부화시키고 도감을 채우세요. 개발 중, Android·iOS 출시 예정.",
       tagline: "숫자를 놓고 마법을 깨워요.",
       subtitle: "힐링 숫자 퍼즐",
-      dev_label: "개발 중",
-      dev_note: "Android·iOS 출시 예정",
-      dev_intro: "PixelRyu의 신작을 제작 중입니다. 작은 테라리움에 숫자 알을 놓고 각 둥지의 합을 목표와 맞춰 귀여운 Sumling을 부화시키세요.",
-      dev_what_label: "게임 소개",
-      dev_what: "작은 테라리움을 배경으로 한 힐링 숫자 퍼즐. 매 레벨마다 받은 숫자 알을 칸에 놓아 각 둥지의 합을 목표에 맞추세요 — 알 하나가 두 둥지를 동시에 도울 수도 있습니다. 모두 채워지면 Sumling이 부화하고 도감이 늘어납니다.",
       tester_heading: "Android 테스터 모집",
       tester_android_note: "Android 전용",
       tester_intro: "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
@@ -513,11 +451,6 @@
       meta_desc: "Sumlings — PixelRyu द्वारा एक आरामदायक संख्या पहेली। छोटे टेरारियम में अंक के अंडे रखें ताकि हर घोंसले का कुल लक्ष्य से मिले, और प्यारे Sumling को फूटें। विकासाधीन; Android और iOS पर जल्द।",
       tagline: "अंक रखो। जादू जगाओ।",
       subtitle: "आरामदायक संख्या पहेली",
-      dev_label: "विकासाधीन",
-      dev_note: "Android और iOS पर जल्द",
-      dev_intro: "PixelRyu का बनता हुआ नया गेम। छोटे टेरारियम में अंक के अंडे रखें ताकि हर घोंसले का कुल लक्ष्य से मिले, और प्यारे Sumling को फूटें।",
-      dev_what_label: "यह क्या है",
-      dev_what: "एक छोटे-से बगीचे जैसे टेरारियम में सेट एक आरामदायक संख्या पहेली। हर लेवल में आपको अंक के अंडों की ट्रे मिलती है। उन्हें इस तरह रखें कि हर घोंसले का कुल लक्ष्य के बराबर हो — एक अंडा दो घोंसलों की एक साथ मदद कर सकता है। सारे घोंसले पूरे होने पर Sumling फूट जाते हैं और संग्रह बढ़ता है।",
       tester_heading: "Android टेस्टर्स की तलाश",
       tester_android_note: "केवल Android",
       tester_intro: "सोलो इंडी डेवलपर हूँ, 14 दिन की क्लोज़्ड टेस्टिंग के लिए सक्रिय Android टेस्टर्स ढूँढ रहा हूँ।",
@@ -545,11 +478,6 @@
       meta_desc: "Sumlings — teka-teki angka yang menenangkan dari PixelRyu. Letakkan telur angka di terarium kecil sehingga total tiap sarang sesuai targetnya, dan tetaskan Sumling yang lucu. Dalam pengembangan; segera di Android & iOS.",
       tagline: "Letakkan angka. Tetaskan keajaiban.",
       subtitle: "Teka-teki Angka yang Menenangkan",
-      dev_label: "Dalam Pengembangan",
-      dev_note: "Segera hadir di Android & iOS",
-      dev_intro: "Game baru PixelRyu yang sedang dibuat. Letakkan telur angka di terarium kecil sehingga total tiap sarang sesuai targetnya, dan tetaskan Sumling yang lucu.",
-      dev_what_label: "Tentang game ini",
-      dev_what: "Teka-teki angka yang menenangkan berlatar di terarium taman kecil. Tiap level memberi Anda baki telur angka. Letakkan agar total tiap sarang sesuai targetnya — satu telur bisa membantu dua sarang sekaligus. Saat semua sarang lengkap, Sumling menetas dan koleksi Anda bertambah.",
       tester_heading: "Mencari Tester Android",
       tester_android_note: "Hanya Android",
       tester_intro: "Saya developer indie solo, mencari tester Android aktif untuk fase closed test 14 hari.",
@@ -577,11 +505,6 @@
       meta_desc: "Sumlings — ein gemütliches Zahlenrätsel von PixelRyu. Platziere Zahleneier in einem kleinen Terrarium, sodass die Summe jedes Nests dem Ziel entspricht, und schlüpfe die niedlichen Sumlings. In Entwicklung; demnächst für Android & iOS.",
       tagline: "Zahlen platzieren. Wunder erwecken.",
       subtitle: "Gemütliches Zahlenrätsel",
-      dev_label: "In Entwicklung",
-      dev_note: "Demnächst für Android & iOS",
-      dev_intro: "Ein neues PixelRyu-Spiel in Arbeit. Platziere Zahleneier in einem kleinen Terrarium, sodass die Summe jedes Nests dem Ziel entspricht, und schlüpfe die niedlichen Sumlings.",
-      dev_what_label: "Worum es geht",
-      dev_what: "Ein gemütliches Zahlenrätsel in einem kleinen Garten-Terrarium. Jedes Level gibt dir ein Tray mit Zahleneiern. Platziere sie so, dass die Summe jedes Nests dem Ziel entspricht — ein Ei kann zwei Nestern gleichzeitig helfen. Wenn alle Nester voll sind, schlüpfen die Sumlings und deine Sammlung wächst.",
       tester_heading: "Android-Tester gesucht",
       tester_android_note: "Nur für Android",
       tester_intro: "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
@@ -609,11 +532,6 @@
       meta_desc: "Sumlings — un puzzle de chiffres cosy par PixelRyu. Place des œufs numérotés dans un petit terrarium pour que la somme de chaque nid corresponde à sa cible, et fais éclore les mignons Sumlings. En développement ; bientôt sur Android et iOS.",
       tagline: "Place les chiffres. Fais éclore la magie.",
       subtitle: "Puzzle de chiffres cosy",
-      dev_label: "En développement",
-      dev_note: "Bientôt sur Android et iOS",
-      dev_intro: "Un nouveau jeu PixelRyu en cours de création. Place des œufs numérotés dans un petit terrarium pour que la somme de chaque nid corresponde à sa cible, et fais éclore les mignons Sumlings.",
-      dev_what_label: "De quoi il s'agit",
-      dev_what: "Un puzzle de chiffres cosy dans un petit terrarium-jardin. Chaque niveau te donne un plateau d'œufs numérotés. Place-les pour que la somme de chaque nid corresponde à sa cible — un œuf peut aider deux nids à la fois. Quand tous les nids sont satisfaits, les Sumlings éclosent et ta collection s'agrandit.",
       tester_heading: "Recherche de testeurs Android",
       tester_android_note: "Android uniquement",
       tester_intro: "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
@@ -641,11 +559,6 @@
       meta_desc: "Sumlings — un puzzle di numeri rilassante di PixelRyu. Posiziona uova numerate in un piccolo terrario in modo che la somma di ogni nido corrisponda al suo obiettivo, e schiudi i Sumling carini. In sviluppo; presto su Android e iOS.",
       tagline: "Posiziona i numeri. Schiudi meraviglie.",
       subtitle: "Puzzle di numeri rilassante",
-      dev_label: "In sviluppo",
-      dev_note: "Presto su Android e iOS",
-      dev_intro: "Un nuovo gioco PixelRyu in lavorazione. Posiziona uova numerate in un piccolo terrario in modo che la somma di ogni nido corrisponda al suo obiettivo, e schiudi i Sumling carini.",
-      dev_what_label: "Di cosa si tratta",
-      dev_what: "Un puzzle di numeri rilassante ambientato in un piccolo terrario-giardino. Ogni livello ti dà un vassoio di uova numerate. Posizionale in modo che la somma di ogni nido corrisponda al suo obiettivo — un uovo può aiutare due nidi contemporaneamente. Quando tutti i nidi sono completi, i Sumling si schiudono e la tua collezione cresce.",
       tester_heading: "Cercasi tester Android",
       tester_android_note: "Solo Android",
       tester_intro: "Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.",
@@ -673,11 +586,6 @@
       meta_desc: "Sumlings — un puzle de números acogedor de PixelRyu. Coloca huevos numerados en un pequeño terrario para que la suma de cada nido coincida con su meta, y eclosiona los lindos Sumlings. En desarrollo; próximamente en Android e iOS.",
       tagline: "Coloca números. Eclosiona maravillas.",
       subtitle: "Puzle de números acogedor",
-      dev_label: "En desarrollo",
-      dev_note: "Próximamente en Android e iOS",
-      dev_intro: "Un nuevo juego de PixelRyu en desarrollo. Coloca huevos numerados en un pequeño terrario para que la suma de cada nido coincida con su meta, y eclosiona los lindos Sumlings.",
-      dev_what_label: "De qué se trata",
-      dev_what: "Un puzle de números acogedor ambientado en un pequeño terrario-jardín. Cada nivel te da una bandeja de huevos numerados. Colócalos para que la suma de cada nido coincida con su meta — un huevo puede ayudar a dos nidos a la vez. Cuando todos los nidos están listos, los Sumlings eclosionan y tu colección crece.",
       tester_heading: "Buscamos testers de Android",
       tester_android_note: "Solo Android",
       tester_intro: "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
@@ -705,11 +613,6 @@
       meta_desc: "Sumlings — um quebra-cabeça de números aconchegante da PixelRyu. Coloque ovos numerados em um pequeno terrário para que a soma de cada ninho corresponda ao alvo, e choque os fofos Sumlings. Em desenvolvimento; em breve para Android e iOS.",
       tagline: "Coloque números. Choque maravilhas.",
       subtitle: "Quebra-cabeça de números aconchegante",
-      dev_label: "Em desenvolvimento",
-      dev_note: "Em breve para Android e iOS",
-      dev_intro: "Um novo jogo da PixelRyu em criação. Coloque ovos numerados em um pequeno terrário para que a soma de cada ninho corresponda ao alvo, e choque os fofos Sumlings.",
-      dev_what_label: "Sobre o jogo",
-      dev_what: "Um quebra-cabeça de números aconchegante ambientado em um pequeno terrário-jardim. Cada nível dá uma bandeja de ovos numerados. Coloque-os para que a soma de cada ninho corresponda ao alvo — um ovo pode ajudar dois ninhos ao mesmo tempo. Quando todos os ninhos estão prontos, os Sumlings chocam e sua coleção cresce.",
       tester_heading: "Procuramos testers de Android",
       tester_android_note: "Apenas Android",
       tester_intro: "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
@@ -737,11 +640,6 @@
       meta_desc: "Sumlings — уютная числовая головоломка от PixelRyu. Расставляйте числовые яйца в крошечном террариуме так, чтобы сумма каждого гнезда совпадала с целью, и вылупляйте милых Sumling. В разработке; скоро на Android и iOS.",
       tagline: "Расставь числа. Вылупи чудеса.",
       subtitle: "Уютная числовая головоломка",
-      dev_label: "В разработке",
-      dev_note: "Скоро на Android и iOS",
-      dev_intro: "Новая игра PixelRyu в разработке. Расставляйте числовые яйца в крошечном террариуме так, чтобы сумма каждого гнезда совпадала с целью, и вылупляйте милых Sumling.",
-      dev_what_label: "О чём игра",
-      dev_what: "Уютная числовая головоломка в крошечном террариуме-саду. Каждый уровень даёт лоток с числовыми яйцами. Расставьте их так, чтобы сумма каждого гнезда совпадала с целью — одно яйцо может помочь двум гнёздам сразу. Когда все гнёзда заполнены, Sumling вылупляются и коллекция растёт.",
       tester_heading: "Поиск Android-тестеров",
       tester_android_note: "Только для Android",
       tester_intro: "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",
