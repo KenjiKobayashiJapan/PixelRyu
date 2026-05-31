@@ -216,6 +216,18 @@
   .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(255,255,255,0.40);border:1px solid rgba(122,63,44,0.30);color:#7a8a6e;transition:all .25s ease;}
   .social a:hover{background:rgba(255,255,255,0.55);border-color:rgba(122,63,44,0.55);color:#a47148;transform:translateY(-2px);}
   .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+  .hero-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0 8px;
+  }
+  .hero-badges a { display: inline-block; line-height: 0; margin: 0; transition: transform .2s ease, opacity .2s ease; }
+  .hero-badges a:hover { transform: translateY(-2px); opacity: .85; }
+  .hero-badges svg, .hero-badges img { display: block; }
+  .hero-badges img { height: 51px; width: auto; }
 </style>
 <!-- SEO/LLMO start (managed) -->
 <link rel="canonical" href="https://pixelryu.github.io/sumlings/">
@@ -266,15 +278,33 @@
   <h1><span class="brand-en">Sum<span class="accent">lings</span></span><span class="brand-ja">サム<span class="accent">リング</span></span></h1>
   <div class="subtitle" data-i18n="subtitle">Cozy Parcel-Sorting Puzzle</div>
 
-  <section class="dev-card" aria-labelledby="dev-heading">
-    <div id="dev-heading" class="dev-heading">
-      🎁 <span data-i18n="dev_label">In Development</span>
-      <span class="dev-note" data-i18n="dev_note">Coming soon to Android &amp; iOS</span>
-    </div>
-    <p data-i18n="dev_intro">A new PixelRyu game in the making. Place number eggs in a tiny terrarium, make each nest's total match its target, and hatch the little Sumlings into your collection.</p>
-
-    <div class="dev-section-label">📦 <span data-i18n="dev_what_label">What it is</span></div>
-    <p data-i18n="dev_what">A cozy number puzzle set in a tiny garden terrarium. Each level gives you a tray of number eggs. Place them so each nest's total matches its target — one egg can help two nests at once. When every nest is satisfied, the Sumlings hatch and your collection grows.</p>
+  <section class="hero-badges" aria-label="Get the game">
+    <a href="https://apps.apple.com/app/id6774177494" target="_blank" rel="noopener" aria-label="Download Sumlings on the App Store">
+      <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+        <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+          <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+        </svg>
+        <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+        <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+      </svg>
+    </a>
+    <a href="#tester-heading" aria-label="Join Sumlings Android testers">
+      <img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+    </a>
+    <a href="https://www.roblox.com/games/90303076167033/Sumlings" target="_blank" rel="noopener" aria-label="Play Sumlings on Roblox">
+      <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+        <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+          <g transform="rotate(13 13 13)">
+            <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+            <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+          </g>
+        </svg>
+        <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+        <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+      </svg>
+    </a>
   </section>
 
   <!-- HIDDEN until Android closed test opens. See .tester-card { display:none } in CSS. -->
