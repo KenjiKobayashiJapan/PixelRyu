@@ -114,8 +114,8 @@
   <h1>HAYATE<span class="kanji">疾風</span></h1>
   <div class="subtitle" data-i18n="subtitle">3D Katana Speed-Racer</div>
 
-  <video class="promo-video" autoplay loop muted playsinline controls preload="auto">
-    <source src="promotion_H_story.mp4?v=20260601165703" type="video/mp4">
+  <video id="promo" class="promo-video" autoplay loop muted playsinline controls preload="auto">
+    <source src="promotion_H_trailer_en.mp4?v=20260601182255" type="video/mp4">
   </video>
 
   <div class="legal-divider" data-i18n="legal_divider">Legal Documents</div>
@@ -297,6 +297,18 @@
       if (attr) el.setAttribute(attr, dict[key]);
       else el.textContent = dict[key];
     });
+    // プロモ動画は言語連動: 日本語は日本語版トレーラー、それ以外は英語版に切り替える。
+    const promo = document.getElementById('promo');
+    if (promo) {
+      const v = (lang === 'ja')
+        ? 'promotion_H_trailer_ja.mp4?v=20260601182255'
+        : 'promotion_H_trailer_en.mp4?v=20260601182255';
+      const srcEl = promo.querySelector('source');
+      if (srcEl && srcEl.getAttribute('src') !== v) {
+        srcEl.setAttribute('src', v);
+        promo.load();
+      }
+    }
     const sel = document.getElementById('lang-select');
     if (sel) sel.value = lang;
   }
