@@ -208,11 +208,18 @@
     .container { padding: 60px 24px; }
     .lang-switch { top: 16px; right: 16px; }
     .game-icon { width: 48px; height: 48px; border-radius: 11px; }
-    /* The iPhone-slot reserve (150px+gap) makes the badge row wider than a phone
-       screen, which would force a horizontal scroll. On mobile, drop the reserve so
-       all cards' badges sit flush-left (consistent) and nothing overflows. */
-    .game-card .googleplay-badge,
+    /* On mobile, keep each card's store badges on ONE row, scaling them down to fit
+       instead of stacking or overflowing the screen. flex:1 lets them share the row;
+       Google Play gets a little more width (wider logo) so every badge ends up the
+       same height. Caps stop them growing past their natural size on wider phones. */
+    .game-card .store-badges { flex-wrap: nowrap; column-gap: 8px; justify-content: flex-start; }
+    .game-card .store-badges > a { flex: 1 1 0; min-width: 0; }
     .game-card .store-badges.reserve-ios .googleplay-badge { margin-left: 0; }
+    .game-card .store-badges > .appstore-badge,
+    .game-card .store-badges > .roblox-badge { max-width: 150px; }
+    .game-card .store-badges > .googleplay-badge { flex-grow: 1.14; max-width: 172px; }
+    .game-card .store-badges > a > svg,
+    .game-card .store-badges > a > img { width: 100%; height: auto; }
   }
 </style>
 <!-- SEO/LLMO start (managed) -->
@@ -407,6 +414,7 @@
         <a href="issen/" data-i18n="issen_title">ISSEN — One breath, one stroke, one cut</a>
       </div>
       <div class="desc" data-i18n="issen_desc">A sumi-e timing-action game of the iaido draw — breathe, read the distance, and unleash one perfect cut. Out now on the App Store. Android testers welcome.</div>
+      <div class="store-badges">
       <a class="appstore-badge" href="https://apps.apple.com/app/id6772437281" target="_blank" rel="noopener" aria-label="Download ISSEN on the App Store">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
           <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
@@ -416,10 +424,11 @@
           <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
           <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
         </svg>
-      </a><!-- keep inline-block siblings whitespace-free for pixel-perfect 10px gap
-      --><a class="googleplay-badge" href="issen/#tester-heading" aria-label="Join ISSEN Android testers">
+      </a>
+      <a class="googleplay-badge" href="issen/#tester-heading" aria-label="Join ISSEN Android testers">
         <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
       </a>
+      </div>
       <div class="links">
         <a href="issen/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
         <a href="issen/terms_of_service.html" data-i18n="link_terms">Terms</a>
@@ -431,6 +440,7 @@
         <a href="hotaru/" data-i18n="hotaru_title">HOTARU — The Lost House</a>
       </div>
       <div class="desc" data-i18n="hotaru_desc">A beautiful Japanese horror walking simulator. Follow the fireflies, gather them at the andon, hurl them at yokai — and find the back gate before dawn.</div>
+      <div class="store-badges">
       <a class="appstore-badge" href="https://apps.apple.com/app/id6770427114" target="_blank" rel="noopener" aria-label="Download HOTARU on the App Store">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
           <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
@@ -440,10 +450,11 @@
           <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
           <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
         </svg>
-      </a><!-- keep inline-block siblings whitespace-free for pixel-perfect 10px gap
-      --><a class="googleplay-badge" href="hotaru/#tester-heading" aria-label="Join HOTARU Android testers">
+      </a>
+      <a class="googleplay-badge" href="hotaru/#tester-heading" aria-label="Join HOTARU Android testers">
         <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
       </a>
+      </div>
       <div class="links">
         <a href="hotaru/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
         <a href="hotaru/terms_of_service.html" data-i18n="link_terms">Terms</a>
@@ -455,9 +466,11 @@
         <a href="liquid-glow/">Liquid Glow</a>
       </div>
       <div class="desc" data-i18n="lg_desc">A meditative sort puzzle. Pour glowing liquids between glass tubes and watch them flow through the cosmos.</div>
+      <div class="store-badges reserve-ios">
       <a class="googleplay-badge" href="liquid-glow/#tester-heading" aria-label="Join Liquid Glow Android testers">
         <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
       </a>
+      </div>
       <div class="links">
         <a href="liquid-glow/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
         <a href="liquid-glow/terms_of_service.html" data-i18n="link_terms">Terms</a>
@@ -469,6 +482,7 @@
         <a href="mole-whack/" data-i18n="mw_title">モグラぽかぽか — Mole Whack</a>
       </div>
       <div class="desc" data-i18n="mw_desc">A simple 30-second tap action. Whack the moles as they pop up and chase your high score.</div>
+      <div class="store-badges">
       <a class="appstore-badge" href="https://apps.apple.com/app/id6770864132" target="_blank" rel="noopener" aria-label="Download Mole Whack on the App Store">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
           <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
@@ -478,10 +492,11 @@
           <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
           <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
         </svg>
-      </a><!-- keep inline-block siblings whitespace-free for pixel-perfect 10px gap
-      --><a class="googleplay-badge" href="mole-whack/#tester-heading" aria-label="Join Mole Whack Android testers">
+      </a>
+      <a class="googleplay-badge" href="mole-whack/#tester-heading" aria-label="Join Mole Whack Android testers">
         <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
       </a>
+      </div>
       <div class="links">
         <a href="mole-whack/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
         <a href="mole-whack/terms_of_service.html" data-i18n="link_terms">Terms</a>
