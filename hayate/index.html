@@ -64,6 +64,19 @@
   .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(51,217,255,0.06);border:1px solid rgba(51,217,255,0.20);color:#7e8aa6;transition:all .25s ease;}
   .social a:hover{background:rgba(51,217,255,0.12);border-color:rgba(51,217,255,0.45);color:#33d9ff;transform:translateY(-2px);}
   .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+  .hero-badges { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:12px; margin:4px 0 26px; }
+  .hero-badges a { display:inline-block; line-height:0; transition: transform .2s ease, opacity .2s ease; }
+  .hero-badges a:hover { transform: translateY(-2px); opacity:.85; }
+  .hero-badges img { display:block; height:51px; width:auto; }
+  .hero-badges svg { display:block; }
+  .tester-card-base { background: rgba(51,217,255,0.05); border:1px solid rgba(51,217,255,0.22); border-radius:16px; padding:24px 24px 28px; margin:4px 0 34px; text-align:left; box-shadow: 0 8px 24px rgba(51,217,255,0.10); }
+  .tester-heading { font-size:13px; color:#33d9ff; text-transform:uppercase; letter-spacing:2px; margin:0 0 4px; font-weight:700; text-align:center; }
+  .tester-android-note { display:block; font-size:11px; color:#7e8aa6; text-transform:none; letter-spacing:0; font-weight:400; margin-bottom:16px; text-align:center; }
+  .tester-card-base p { font-size:14px; line-height:1.65; color:#c4d2e8; margin:12px 0; }
+  .tester-section-label { font-size:13px; font-weight:700; color:#9fc6ff; margin:20px 0 6px; }
+  .tester-step { display:block; background: rgba(51,217,255,0.10); border:1px solid rgba(51,217,255,0.30); border-radius:10px; padding:12px 16px; margin:10px 0; color:#33d9ff; text-decoration:none; font-weight:600; font-size:14px; transition: all 0.2s ease; }
+  .tester-step:hover { background: rgba(51,217,255,0.20); border-color: rgba(51,217,255,0.60); }
+  .tester-card-base ul { margin:6px 0 0; padding-left:22px; color:#c4d2e8; font-size:14px; line-height:1.7; }
 </style>
 <!-- SEO/LLMO start (managed) -->
 <link rel="canonical" href="https://pixelryu.github.io/hayate/">
@@ -118,6 +131,57 @@
     <source src="promotion_H_trailer_en.mp4?v=20260601182255" type="video/mp4">
   </video>
 
+  <section class="hero-badges" aria-label="Get the game">
+    <a href="#tester-heading" aria-label="Join HAYATE Android testers">
+      <img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+    </a>
+    <a href="https://www.roblox.com/games/128048970536729/HAYATE-Katana-Racer" target="_blank" rel="noopener" aria-label="Play HAYATE on Roblox">
+      <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+        <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+          <g transform="rotate(13 13 13)">
+            <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+            <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+          </g>
+        </svg>
+        <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+        <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+      </svg>
+    </a>
+  </section>
+
+  <section class="tester-card tester-card-base" aria-labelledby="tester-heading">
+    <div id="tester-heading" class="tester-heading">
+      🎁 <span data-i18n="tester_heading">Android Tester Recruitment</span>
+      <span class="tester-android-note">📱 <span data-i18n="tester_android_note">Android only</span></span>
+    </div>
+    <p data-i18n="tester_intro">Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.</p>
+
+    <div class="tester-section-label">📦 <span data-i18n="tester_what_label">What it is</span></div>
+    <p data-i18n="tester_what">A 3D katana speed-racer, and a sequel to ISSEN.</p>
+
+    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">
+      🔗 <span data-i18n="tester_step1_label">Step 1 — Join the tester group</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.hayate" target="_blank" rel="noopener">
+      📱 <span data-i18n="tester_step2_label">Step 2 — Opt-in via Play Store</span>
+    </a>
+
+    <div class="tester-section-label">📌 <span data-i18n="tester_ask_label">What I'm asking for</span></div>
+    <ul>
+      <li data-i18n="tester_ask_keep">Keep installed for the full 14 days</li>
+      <li data-i18n="tester_ask_launch">Launch every couple of days (a few times is enough)</li>
+      <li data-i18n="tester_ask_minutes">A minute or two of play per session is plenty</li>
+    </ul>
+    <p class="tester-note" data-i18n="tester_note_lead">ℹ️ Tip — both steps below are required:</p>
+    <ul class="tester-note-list">
+      <li data-i18n="tester_note_step1">Step 1 — Join the group.</li>
+      <li data-i18n="tester_note_step2">Step 2 — Opt-in, then install &amp; play.</li>
+      <li data-i18n="tester_note_account">Use the same Google account for both steps.</li>
+      <li data-i18n="tester_note_wait">If Step 2 shows “App not available”, wait a few hours and try again.</li>
+    </ul>
+  </section>
+
   <div class="legal-divider" data-i18n="legal_divider">Legal Documents</div>
   <ul class="links">
     <li><a href="privacy_policy.html" data-i18n="link_privacy">Privacy Policy</a></li>
@@ -161,7 +225,23 @@
             "legal_divider": "Legal Documents",
             "link_privacy": "Privacy Policy",
             "link_terms": "Terms of Service",
-            "back": "← PixelRyu"
+            "back": "← PixelRyu",
+            "tester_heading": "Android Tester Recruitment",
+            "tester_android_note": "Android only",
+            "tester_intro": "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
+            "tester_what_label": "What it is",
+            "tester_what": "HAYATE — a 3D katana speed-racer by PixelRyu, and a sequel to ISSEN. Race the highway, space, the deep and the sky; dodge what flies at you, or throw your homing katana to slice it clean.",
+            "tester_step1_label": "Step 1 — Join the tester group",
+            "tester_step2_label": "Step 2 — Opt-in via Play Store",
+            "tester_ask_label": "What I'm asking for",
+            "tester_ask_keep": "Keep installed for the full 14 days",
+            "tester_ask_launch": "Launch every couple of days (a few times is enough)",
+            "tester_ask_minutes": "A minute or two of play per session is plenty",
+            "tester_note_lead": "ℹ️ Tip — both steps below are required:",
+            "tester_note_step1": "Step 1 — Join the group: even if you see “no permission to view content”, there’s a “Join group” button on that page — tap it to join.",
+            "tester_note_step2": "Step 2 — Opt-in, then install & play: after opting in, download the app from the Play Store, open it and play a little. Joining the group alone is not enough.",
+            "tester_note_account": "Use the same Google account for both steps.",
+            "tester_note_wait": "If Step 2 shows “App not available”, wait a few hours after joining and try again."
       },
       "ja": {
             "title": "HAYATE — 刀スピードレーサー",
@@ -171,7 +251,23 @@
             "legal_divider": "規約類",
             "link_privacy": "プライバシーポリシー",
             "link_terms": "利用規約",
-            "back": "← PixelRyu へ戻る"
+            "back": "← PixelRyu へ戻る",
+            "tester_heading": "Android テスター募集中",
+            "tester_android_note": "Android 専用",
+            "tester_intro": "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
+            "tester_what_label": "ゲーム内容",
+            "tester_what": "HAYATE — PixelRyu が贈る 3D 刀スピードレーサー、そして ISSEN の続編。ハイウェイ、宇宙、深海、大空を駆け抜けろ。迫りくる障害をかわすか、追尾する刀を投げて一刀両断に。",
+            "tester_step1_label": "ステップ 1 — テスターグループに参加",
+            "tester_step2_label": "ステップ 2 — Play ストアでオプトイン",
+            "tester_ask_label": "お願いしたいこと",
+            "tester_ask_keep": "14 日間アンインストールせずに保持",
+            "tester_ask_launch": "数日に一度起動 (合計数回で OK)",
+            "tester_ask_minutes": "1 回 1〜2 分の軽いプレイで大丈夫",
+            "tester_note_lead": "ℹ️ ヒント — 下記の両方のステップが必要です:",
+            "tester_note_step1": "ステップ1 — グループに参加: 「閲覧権限がありません」と表示されても、その画面に「グループに参加」ボタンがあるので押して参加してください。",
+            "tester_note_step2": "ステップ2 — オプトイン後、インストールしてプレイ: オプトインしたら Play ストアからアプリをダウンロードし、起動して少し遊んでください。グループに参加するだけでは完了しません。",
+            "tester_note_account": "両方のステップは同じ Google アカウントでお使いください。",
+            "tester_note_wait": "ステップ2が「App not available」のときは、参加から数時間おいて再度お試しください。"
       },
       "zh": {
             "title": "HAYATE — 武士刀竞速",
@@ -181,7 +277,23 @@
             "legal_divider": "法律文件",
             "link_privacy": "隐私政策",
             "link_terms": "服务条款",
-            "back": "← 返回 PixelRyu"
+            "back": "← 返回 PixelRyu",
+            "tester_heading": "招募 Android 测试者",
+            "tester_android_note": "仅限 Android",
+            "tester_intro": "我是一名独立开发者，正在为期 14 天的封闭测试招募积极的 Android 测试者。",
+            "tester_what_label": "游戏简介",
+            "tester_what": "HAYATE——PixelRyu 打造的 3D 武士刀竞速游戏，ISSEN 的续作。驰骋公路、太空、深海与天际；躲开迎面飞来的一切，或掷出你的追踪武士刀将其利落斩断。",
+            "tester_step1_label": "第一步 — 加入测试者群组",
+            "tester_step2_label": "第二步 — 通过 Play 商店加入测试",
+            "tester_ask_label": "我希望你能做到",
+            "tester_ask_keep": "完整保留 14 天不卸载",
+            "tester_ask_launch": "每隔几天启动一次（几次即可）",
+            "tester_ask_minutes": "每次玩一两分钟就够了",
+            "tester_note_lead": "ℹ️ 提示 — 以下两个步骤都必须完成：",
+            "tester_note_step1": "第一步 — 加入群组：即使显示“无权限查看内容”，该页面上也有“加入群组”按钮，请点击加入。",
+            "tester_note_step2": "第二步 — 加入测试后下载并试玩：加入测试后，请从 Play 商店下载应用，打开并稍微试玩。仅加入群组还不够。",
+            "tester_note_account": "两个步骤请使用同一个 Google 账号。",
+            "tester_note_wait": "如果第二步显示“App not available”，请在加入后等待几小时再试。"
       },
       "ko": {
             "title": "HAYATE — 카타나 스피드 레이서",
@@ -191,7 +303,23 @@
             "legal_divider": "법적 고지",
             "link_privacy": "개인정보 처리방침",
             "link_terms": "서비스 이용약관",
-            "back": "← PixelRyu로 돌아가기"
+            "back": "← PixelRyu로 돌아가기",
+            "tester_heading": "Android 테스터 모집",
+            "tester_android_note": "Android 전용",
+            "tester_intro": "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
+            "tester_what_label": "게임 소개",
+            "tester_what": "HAYATE — PixelRyu가 만든 3D 카타나 스피드 레이서이자 ISSEN의 속편. 고속도로, 우주, 심해, 하늘을 질주하며 날아오는 것을 피하거나, 유도 카타나를 던져 깔끔하게 베어내라.",
+            "tester_step1_label": "1단계 — 테스터 그룹 가입",
+            "tester_step2_label": "2단계 — Play 스토어에서 옵트인",
+            "tester_ask_label": "부탁드리는 것",
+            "tester_ask_keep": "14일 동안 설치 상태 유지",
+            "tester_ask_launch": "며칠에 한 번씩 실행 (몇 번이면 충분합니다)",
+            "tester_ask_minutes": "한 번에 1~2분 가벼운 플레이면 충분합니다",
+            "tester_note_lead": "ℹ️ 팁 — 아래 두 단계를 모두 완료해야 합니다:",
+            "tester_note_step1": "1단계 — 그룹 가입: “콘텐츠를 볼 권한이 없습니다”라고 표시되어도 그 화면에 “그룹 가입” 버튼이 있으니 눌러서 가입하세요.",
+            "tester_note_step2": "2단계 — 옵트인 후 설치하고 플레이: 옵트인한 뒤 Play 스토어에서 앱을 다운로드해 실행하고 잠깐 플레이하세요. 그룹 가입만으로는 끝나지 않습니다.",
+            "tester_note_account": "두 단계 모두 같은 Google 계정을 사용하세요.",
+            "tester_note_wait": "2단계에서 “App not available”이 표시되면 가입 후 몇 시간 기다렸다가 다시 시도하세요."
       },
       "hi": {
             "title": "HAYATE — कटाना स्पीड-रेसर",
@@ -201,7 +329,23 @@
             "legal_divider": "क़ानूनी दस्तावेज़",
             "link_privacy": "गोपनीयता नीति",
             "link_terms": "सेवा शर्तें",
-            "back": "← PixelRyu पर वापस"
+            "back": "← PixelRyu पर वापस",
+            "tester_heading": "Android टेस्टर्स की तलाश",
+            "tester_android_note": "केवल Android",
+            "tester_intro": "सोलो इंडी डेवलपर हूँ, 14 दिन की क्लोज़्ड टेस्टिंग के लिए सक्रिय Android टेस्टर्स ढूँढ रहा हूँ।",
+            "tester_what_label": "यह क्या है",
+            "tester_what": "HAYATE — PixelRyu का एक 3D कटाना स्पीड-रेसर, और ISSEN का सीक्वल। हाईवे, अंतरिक्ष, गहराई और आसमान में दौड़ें; आप पर उड़कर आने वाली चीज़ों को चकमा दें, या अपना होमिंग कटाना फेंककर उन्हें सफ़ाई से काट डालें।",
+            "tester_step1_label": "चरण 1 — टेस्टर ग्रुप में शामिल हों",
+            "tester_step2_label": "चरण 2 — Play Store पर ऑप्ट-इन",
+            "tester_ask_label": "मैं क्या माँग रहा हूँ",
+            "tester_ask_keep": "पूरे 14 दिन इंस्टॉल रखें",
+            "tester_ask_launch": "हर कुछ दिन में लॉन्च करें (कुछ बार ही काफ़ी है)",
+            "tester_ask_minutes": "हर सत्र में एक-दो मिनट का खेल काफ़ी है",
+            "tester_note_lead": "ℹ️ सुझाव — नीचे दिए दोनों चरण ज़रूरी हैं:",
+            "tester_note_step1": "चरण 1 — ग्रुप जॉइन करें: भले ही “सामग्री देखने की अनुमति नहीं है” दिखे, उसी पेज पर “ग्रुप जॉइन करें” बटन होता है — उसे दबाकर जॉइन करें।",
+            "tester_note_step2": "चरण 2 — ऑप्ट-इन करके इंस्टॉल करें और खेलें: ऑप्ट-इन के बाद Play Store से ऐप डाउनलोड करें, उसे खोलें और थोड़ा खेलें। सिर्फ़ ग्रुप जॉइन करना काफ़ी नहीं है।",
+            "tester_note_account": "दोनों चरणों में एक ही Google खाते का उपयोग करें।",
+            "tester_note_wait": "अगर चरण 2 में “App not available” दिखे, तो जॉइन करने के कुछ घंटे बाद फिर से कोशिश करें।"
       },
       "id": {
             "title": "HAYATE — Balap Kecepatan Katana",
@@ -211,7 +355,23 @@
             "legal_divider": "Dokumen Hukum",
             "link_privacy": "Kebijakan Privasi",
             "link_terms": "Ketentuan Layanan",
-            "back": "← Kembali ke PixelRyu"
+            "back": "← Kembali ke PixelRyu",
+            "tester_heading": "Mencari Tester Android",
+            "tester_android_note": "Hanya Android",
+            "tester_intro": "Saya developer indie solo, mencari tester Android aktif untuk fase closed test 14 hari.",
+            "tester_what_label": "Tentang game ini",
+            "tester_what": "HAYATE — balap kecepatan katana 3D dari PixelRyu, sekuel dari ISSEN. Balapi jalan tol, luar angkasa, kedalaman laut, dan langit; hindari yang melesat ke arahmu, atau lempar katana pengejarmu untuk menebasnya bersih.",
+            "tester_step1_label": "Langkah 1 — Bergabung dengan grup tester",
+            "tester_step2_label": "Langkah 2 — Opt-in via Play Store",
+            "tester_ask_label": "Yang saya mintakan",
+            "tester_ask_keep": "Pertahankan terinstal selama 14 hari penuh",
+            "tester_ask_launch": "Luncurkan setiap beberapa hari (beberapa kali sudah cukup)",
+            "tester_ask_minutes": "Cukup main satu–dua menit per sesi",
+            "tester_note_lead": "ℹ️ Tips — kedua langkah berikut wajib dilakukan:",
+            "tester_note_step1": "Langkah 1 — Gabung grup: meskipun muncul “tidak ada izin untuk melihat konten”, ada tombol “Gabung grup” di halaman itu — tekan untuk bergabung.",
+            "tester_note_step2": "Langkah 2 — Opt-in lalu pasang & mainkan: setelah opt-in, unduh aplikasi dari Play Store, buka, dan mainkan sebentar. Sekadar bergabung ke grup belum cukup.",
+            "tester_note_account": "Gunakan akun Google yang sama untuk kedua langkah.",
+            "tester_note_wait": "Jika Langkah 2 menampilkan “App not available”, tunggu beberapa jam setelah bergabung lalu coba lagi."
       },
       "de": {
             "title": "HAYATE — Katana-Speed-Racer",
@@ -221,7 +381,23 @@
             "legal_divider": "Rechtsdokumente",
             "link_privacy": "Datenschutzerklärung",
             "link_terms": "Nutzungsbedingungen",
-            "back": "← Zurück zu PixelRyu"
+            "back": "← Zurück zu PixelRyu",
+            "tester_heading": "Android-Tester gesucht",
+            "tester_android_note": "Nur für Android",
+            "tester_intro": "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
+            "tester_what_label": "Worum es geht",
+            "tester_what": "HAYATE — ein 3D-Katana-Speed-Racer von PixelRyu und die Fortsetzung von ISSEN. Rase über den Highway, durchs All, in die Tiefe und in den Himmel; weiche allem aus, was auf dich zufliegt, oder wirf deine zielsuchende Katana und schneide es sauber entzwei.",
+            "tester_step1_label": "Schritt 1 — Tester-Gruppe beitreten",
+            "tester_step2_label": "Schritt 2 — Über den Play Store anmelden",
+            "tester_ask_label": "Worum ich bitte",
+            "tester_ask_keep": "14 Tage lang installiert lassen",
+            "tester_ask_launch": "Alle paar Tage starten (ein paar Mal reicht)",
+            "tester_ask_minutes": "Ein bis zwei Minuten Spiel pro Sitzung genügen",
+            "tester_note_lead": "ℹ️ Tipp — beide Schritte unten sind nötig:",
+            "tester_note_step1": "Schritt 1 — Der Gruppe beitreten: Auch wenn „keine Berechtigung zum Anzeigen der Inhalte“ erscheint, gibt es auf der Seite einen Button „Gruppe beitreten“ – tippe darauf, um beizutreten.",
+            "tester_note_step2": "Schritt 2 — Opt-in, dann installieren & spielen: Nach dem Opt-in die App aus dem Play Store herunterladen, öffnen und kurz spielen. Nur der Gruppenbeitritt reicht nicht.",
+            "tester_note_account": "Verwende für beide Schritte dasselbe Google-Konto.",
+            "tester_note_wait": "Wenn Schritt 2 „App not available“ anzeigt, warte nach dem Beitritt ein paar Stunden und versuche es erneut."
       },
       "fr": {
             "title": "HAYATE — Course de vitesse au katana",
@@ -231,7 +407,23 @@
             "legal_divider": "Documents légaux",
             "link_privacy": "Politique de confidentialité",
             "link_terms": "Conditions d'utilisation",
-            "back": "← Retour à PixelRyu"
+            "back": "← Retour à PixelRyu",
+            "tester_heading": "Recherche de testeurs Android",
+            "tester_android_note": "Android uniquement",
+            "tester_intro": "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
+            "tester_what_label": "De quoi il s'agit",
+            "tester_what": "HAYATE — une course de vitesse au katana en 3D signée PixelRyu, suite d'ISSEN. Fendez l'autoroute, l'espace, les profondeurs et le ciel ; esquivez ce qui fonce sur vous, ou lancez votre katana à tête chercheuse pour le trancher net.",
+            "tester_step1_label": "Étape 1 — Rejoindre le groupe de testeurs",
+            "tester_step2_label": "Étape 2 — S'inscrire via le Play Store",
+            "tester_ask_label": "Ce que je demande",
+            "tester_ask_keep": "Garder installé pendant les 14 jours complets",
+            "tester_ask_launch": "Lancer tous les deux jours (quelques fois suffisent)",
+            "tester_ask_minutes": "Une à deux minutes de jeu par session suffisent",
+            "tester_note_lead": "ℹ️ Astuce — les deux étapes ci-dessous sont nécessaires :",
+            "tester_note_step1": "Étape 1 — Rejoindre le groupe : même si « autorisation refusée pour afficher le contenu » s’affiche, un bouton « Rejoindre le groupe » est présent sur la page — appuyez dessus pour rejoindre.",
+            "tester_note_step2": "Étape 2 — S’inscrire, puis installer et jouer : après l’inscription, téléchargez l’application depuis le Play Store, ouvrez-la et jouez un peu. Rejoindre le groupe ne suffit pas.",
+            "tester_note_account": "Utilisez le même compte Google pour les deux étapes.",
+            "tester_note_wait": "Si l’étape 2 affiche « App not available », attendez quelques heures après avoir rejoint, puis réessayez."
       },
       "it": {
             "title": "HAYATE — Speed-racer con katana",
@@ -241,7 +433,23 @@
             "legal_divider": "Documenti legali",
             "link_privacy": "Informativa sulla privacy",
             "link_terms": "Termini di servizio",
-            "back": "← Torna a PixelRyu"
+            "back": "← Torna a PixelRyu",
+            "tester_heading": "Cercasi tester Android",
+            "tester_android_note": "Solo Android",
+            "tester_intro": "Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.",
+            "tester_what_label": "Di cosa si tratta",
+            "tester_what": "HAYATE — uno speed-racer con katana in 3D di PixelRyu e seguito di ISSEN. Sfreccia tra autostrada, spazio, abissi e cielo; schiva ciò che ti piomba addosso o lancia la tua katana a ricerca per tagliarlo netto.",
+            "tester_step1_label": "Passo 1 — Unisciti al gruppo tester",
+            "tester_step2_label": "Passo 2 — Opt-in tramite Play Store",
+            "tester_ask_label": "Cosa chiedo",
+            "tester_ask_keep": "Tienilo installato per tutti i 14 giorni",
+            "tester_ask_launch": "Aprilo ogni paio di giorni (poche volte basta)",
+            "tester_ask_minutes": "Bastano un paio di minuti di gioco a sessione",
+            "tester_note_lead": "ℹ️ Suggerimento — servono entrambi i passaggi qui sotto:",
+            "tester_note_step1": "Passaggio 1 — Iscriviti al gruppo: anche se compare « non hai l’autorizzazione per visualizzare i contenuti », sulla pagina c’è il pulsante « Iscriviti al gruppo » — toccalo per iscriverti.",
+            "tester_note_step2": "Passaggio 2 — Opt-in, poi installa e gioca: dopo l’opt-in, scarica l’app dal Play Store, aprila e gioca un po’. Iscriversi al gruppo non basta.",
+            "tester_note_account": "Usa lo stesso account Google per entrambi i passaggi.",
+            "tester_note_wait": "Se il passaggio 2 mostra « App not available », attendi qualche ora dopo l’iscrizione e riprova."
       },
       "es": {
             "title": "HAYATE — Carreras de velocidad con katana",
@@ -251,7 +459,23 @@
             "legal_divider": "Documentos legales",
             "link_privacy": "Política de privacidad",
             "link_terms": "Términos del servicio",
-            "back": "← Volver a PixelRyu"
+            "back": "← Volver a PixelRyu",
+            "tester_heading": "Buscamos testers de Android",
+            "tester_android_note": "Solo Android",
+            "tester_intro": "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
+            "tester_what_label": "De qué se trata",
+            "tester_what": "HAYATE: carreras de velocidad con katana en 3D de PixelRyu y secuela de ISSEN. Corre por la autopista, el espacio, las profundidades y el cielo; esquiva lo que vuela hacia ti o lanza tu katana teledirigida para cortarlo limpio.",
+            "tester_step1_label": "Paso 1 — Únete al grupo de testers",
+            "tester_step2_label": "Paso 2 — Inscríbete vía Play Store",
+            "tester_ask_label": "Lo que pido",
+            "tester_ask_keep": "Mantener instalado los 14 días completos",
+            "tester_ask_launch": "Abrir cada par de días (unas pocas veces basta)",
+            "tester_ask_minutes": "Con un par de minutos de juego por sesión basta",
+            "tester_note_lead": "ℹ️ Consejo — ambos pasos siguientes son necesarios:",
+            "tester_note_step1": "Paso 1 — Únete al grupo: aunque aparezca «no tienes permiso para ver el contenido», en esa página hay un botón «Unirse al grupo»; tócalo para unirte.",
+            "tester_note_step2": "Paso 2 — Participa y luego instala y juega: tras participar, descarga la app desde Play Store, ábrela y juega un poco. Unirse al grupo no es suficiente.",
+            "tester_note_account": "Usa la misma cuenta de Google en ambos pasos.",
+            "tester_note_wait": "Si el paso 2 muestra «App not available», espera unas horas después de unirte y vuelve a intentarlo."
       },
       "pt": {
             "title": "HAYATE — Corrida de Velocidade com Katana",
@@ -261,7 +485,23 @@
             "legal_divider": "Documentos legais",
             "link_privacy": "Política de privacidade",
             "link_terms": "Termos de serviço",
-            "back": "← Voltar para PixelRyu"
+            "back": "← Voltar para PixelRyu",
+            "tester_heading": "Procuramos testers de Android",
+            "tester_android_note": "Apenas Android",
+            "tester_intro": "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
+            "tester_what_label": "Sobre o jogo",
+            "tester_what": "HAYATE — uma corrida de velocidade com katana em 3D da PixelRyu, sequência de ISSEN. Acelere pela rodovia, pelo espaço, pelas profundezas e pelo céu; desvie do que voa em sua direção ou arremesse sua katana teleguiada para cortá-lo certeiro.",
+            "tester_step1_label": "Passo 1 — Entrar no grupo de testers",
+            "tester_step2_label": "Passo 2 — Adesão via Play Store",
+            "tester_ask_label": "O que peço",
+            "tester_ask_keep": "Manter instalado por 14 dias completos",
+            "tester_ask_launch": "Abra a cada poucos dias (algumas vezes basta)",
+            "tester_ask_minutes": "Um ou dois minutos de jogo por sessão já bastam",
+            "tester_note_lead": "ℹ️ Dica — as duas etapas abaixo são necessárias:",
+            "tester_note_step1": "Etapa 1 — Entre no grupo: mesmo que apareça “sem permissão para ver o conteúdo”, há um botão “Participar do grupo” na página — toque para entrar.",
+            "tester_note_step2": "Etapa 2 — Faça opt-in e depois instale e jogue: após o opt-in, baixe o app na Play Store, abra e jogue um pouco. Só entrar no grupo não basta.",
+            "tester_note_account": "Use a mesma Conta do Google nas duas etapas.",
+            "tester_note_wait": "Se a Etapa 2 mostrar “App not available”, aguarde algumas horas após participar e tente novamente."
       },
       "ru": {
             "title": "HAYATE — гонщик с катаной",
@@ -271,7 +511,23 @@
             "legal_divider": "Правовые документы",
             "link_privacy": "Политика конфиденциальности",
             "link_terms": "Условия использования",
-            "back": "← Назад к PixelRyu"
+            "back": "← Назад к PixelRyu",
+            "tester_heading": "Поиск Android-тестеров",
+            "tester_android_note": "Только для Android",
+            "tester_intro": "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",
+            "tester_what_label": "О чём игра",
+            "tester_what": "HAYATE — 3D-гонка с катаной от PixelRyu и продолжение ISSEN. Несись по трассе, в космосе, в глубинах и в небе; уворачивайся от летящих преград или метни самонаводящуюся катану и разрежь их начисто.",
+            "tester_step1_label": "Шаг 1 — Вступить в группу тестеров",
+            "tester_step2_label": "Шаг 2 — Подписаться через Play Store",
+            "tester_ask_label": "О чём я прошу",
+            "tester_ask_keep": "Не удалять приложение все 14 дней",
+            "tester_ask_launch": "Запускайте раз в пару дней (нескольких раз достаточно)",
+            "tester_ask_minutes": "Достаточно одной–двух минут игры за сессию",
+            "tester_note_lead": "ℹ️ Совет — нужны оба шага ниже:",
+            "tester_note_step1": "Шаг 1 — Вступите в группу: даже если показано «нет прав для просмотра содержимого», на странице есть кнопка «Присоединиться к группе» — нажмите её, чтобы вступить.",
+            "tester_note_step2": "Шаг 2 — Подтвердите участие, затем установите и поиграйте: после подтверждения скачайте приложение из Play Маркета, откройте и немного поиграйте. Одного вступления в группу недостаточно.",
+            "tester_note_account": "Используйте один и тот же аккаунт Google для обоих шагов.",
+            "tester_note_wait": "Если на шаге 2 появляется «App not available», подождите несколько часов после вступления и попробуйте снова."
       }
 };
 
@@ -324,6 +580,6 @@
     sel.addEventListener('change', e => setLang(e.target.value, true));
   })();
 </script>
-<script src="../breadcrumb.js?v=20260526190959" defer></script>
+<script src="../breadcrumb.js?v=20260602202548" defer></script>
 </body>
 </html>
