@@ -212,7 +212,19 @@
     .container { padding: 60px 24px; }
     .lang-switch { top: 16px; right: 16px; }
     .game-icon { width: 48px; height: 48px; border-radius: 11px; }
-  }
+    /* On mobile, lay the store badges out as a 2-column grid: two badges per row, a
+       third drops to a second row, and a missing App Store badge leaves its column as
+       empty space (the .badge-ghost cell). Columns follow the badges' natural widths
+       (150 : 172) so heights match; the grid never grows past the natural 2-badge width. */
+    .game-card .store-badges {
+      display: grid;
+      grid-template-columns: 150fr 172fr;
+      gap: 10px;
+      max-width: 332px;
+      align-items: center;
+    }
+    .game-card .store-badges > a > svg,
+    .game-card .store-badges > a > img { width: 100%; height: auto; display: block; }
 </style>
 <!-- SEO/LLMO start (managed) -->
 <meta name="google-site-verification" content="iUKE_0v-5jn4aownL7sNymhLvRtdX-7Wreqjs1qWKp0">
