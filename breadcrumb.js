@@ -28,7 +28,9 @@
     "hotaru":      { all: "HOTARU" },
     "liquid-glow": { all: "Liquid Glow" },
     "mole-whack":  { all: "Mole Whack", ja: "モグラぽかぽか" },
-    "parcel-pals": { all: "Parcel Pals", ja: "ふんわり配送便" }
+    "parcel-pals": { all: "Parcel Pals", ja: "ふんわり配送便" },
+    "sumlings":    { all: "Sumlings", ja: "サムリング" },
+    "hayate":      { all: "HAYATE" }
   };
 
   // Leaf page labels (localized). Privacy/Terms match the legal-page generator
