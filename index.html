@@ -164,12 +164,16 @@
   .game-card .store-badges .appstore-badge,
   .game-card .store-badges .googleplay-badge,
   .game-card .store-badges .roblox-badge { margin-top: 0; margin-left: 0; }
-  /* For a card with no App Store build yet (e.g. HAYATE), reserve the iPhone badge's
-     width (150px slot + 10px gap) before the first badge so the Android/Roblox badges
-     line up with the other cards' columns — on desktop AND mobile/portrait, matching
-     the standalone Google Play cards. The margin rides with the badge, so the reserve
-     holds even on narrow widths (no blank wrapped row). */
-  .game-card .store-badges.reserve-ios .googleplay-badge { margin-left: 160px; }
+  /* For a card with no App Store build yet (e.g. HAYATE, Liquid Glow), an invisible,
+     non-interactive placeholder takes up the App Store badge's slot (150px) so the real
+     badges line up with the same columns as the other cards — on desktop and mobile
+     alike, while every badge stays at its natural size. */
+  .game-card .store-badges .badge-ghost {
+    flex: 0 0 150px;
+    height: 51px;
+    visibility: hidden;
+    pointer-events: none;
+  }
   .social {
     display: flex;
     justify-content: center;
@@ -208,18 +212,6 @@
     .container { padding: 60px 24px; }
     .lang-switch { top: 16px; right: 16px; }
     .game-icon { width: 48px; height: 48px; border-radius: 11px; }
-    /* On mobile, keep each card's store badges on ONE row, scaling them down to fit
-       instead of stacking or overflowing the screen. flex:1 lets them share the row;
-       Google Play gets a little more width (wider logo) so every badge ends up the
-       same height. Caps stop them growing past their natural size on wider phones. */
-    .game-card .store-badges { flex-wrap: nowrap; column-gap: 8px; justify-content: flex-start; }
-    .game-card .store-badges > a { flex: 1 1 0; min-width: 0; }
-    .game-card .store-badges.reserve-ios .googleplay-badge { margin-left: 0; }
-    .game-card .store-badges > .appstore-badge,
-    .game-card .store-badges > .roblox-badge { max-width: 150px; }
-    .game-card .store-badges > .googleplay-badge { flex-grow: 1.14; max-width: 172px; }
-    .game-card .store-badges > a > svg,
-    .game-card .store-badges > a > img { width: 100%; height: auto; }
   }
 </style>
 <!-- SEO/LLMO start (managed) -->
@@ -307,7 +299,8 @@
         <a href="hayate/" data-i18n="hayate_title">HAYATE — Ride fast. Slice clean. Finish first.</a>
       </div>
       <div class="desc" data-i18n="hayate_desc">A 3D katana speed-racer and sequel to ISSEN. Dodge what flies at you, or throw your homing katana to slice it clean — across four worlds, forty stages, plus endless runs.</div>
-      <div class="store-badges reserve-ios">
+      <div class="store-badges">
+      <span class="badge-ghost" aria-hidden="true"></span>
       <a class="googleplay-badge" href="hayate/#tester-heading" aria-label="Join HAYATE Android testers">
         <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
       </a>
@@ -466,7 +459,8 @@
         <a href="liquid-glow/">Liquid Glow</a>
       </div>
       <div class="desc" data-i18n="lg_desc">A meditative sort puzzle. Pour glowing liquids between glass tubes and watch them flow through the cosmos.</div>
-      <div class="store-badges reserve-ios">
+      <div class="store-badges">
+      <span class="badge-ghost" aria-hidden="true"></span>
       <a class="googleplay-badge" href="liquid-glow/#tester-heading" aria-label="Join Liquid Glow Android testers">
         <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
       </a>
