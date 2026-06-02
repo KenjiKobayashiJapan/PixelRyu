@@ -6,6 +6,10 @@
 <title data-i18n="title">PixelRyu — Calm cosmic puzzle games</title>
 <meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="PixelRyu makes calm, beautiful puzzle games for mobile.">
 <style>
+  html, body {
+    overflow-x: hidden;       /* no horizontal scroll/swipe on mobile */
+    max-width: 100%;
+  }
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
     background: radial-gradient(ellipse at top, #172244 0%, #080d1f 50%, #02040c 100%);
@@ -17,6 +21,7 @@
     justify-content: center;
   }
   .container {
+    box-sizing: border-box;   /* keep width:100% + padding within the viewport */
     max-width: 720px;
     width: 100%;
     padding: 80px 32px;
@@ -203,6 +208,11 @@
     .container { padding: 60px 24px; }
     .lang-switch { top: 16px; right: 16px; }
     .game-icon { width: 48px; height: 48px; border-radius: 11px; }
+    /* The iPhone-slot reserve (150px+gap) makes the badge row wider than a phone
+       screen, which would force a horizontal scroll. On mobile, drop the reserve so
+       all cards' badges sit flush-left (consistent) and nothing overflows. */
+    .game-card .googleplay-badge,
+    .game-card .store-badges.reserve-ios .googleplay-badge { margin-left: 0; }
   }
 </style>
 <!-- SEO/LLMO start (managed) -->
