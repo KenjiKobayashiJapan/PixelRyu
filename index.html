@@ -159,11 +159,12 @@
   .game-card .store-badges .appstore-badge,
   .game-card .store-badges .googleplay-badge,
   .game-card .store-badges .roblox-badge { margin-top: 0; margin-left: 0; }
-  /* For a card with no App Store build yet (e.g. HAYATE), this empty slot reserves
-     the iPhone badge's width so the Android/Roblox badges line up with the same
-     columns as the other cards. Hidden on mobile, where badges just wrap flush. */
-  .game-card .store-badges .badge-slot { flex: 0 0 150px; height: 51px; }
-  @media (max-width: 600px) { .game-card .store-badges .badge-slot { display: none; } }
+  /* For a card with no App Store build yet (e.g. HAYATE), reserve the iPhone badge's
+     width (150px slot + 10px gap) before the first badge so the Android/Roblox badges
+     line up with the other cards' columns — on desktop AND mobile/portrait, matching
+     the standalone Google Play cards. The margin rides with the badge, so the reserve
+     holds even on narrow widths (no blank wrapped row). */
+  .game-card .store-badges.reserve-ios .googleplay-badge { margin-left: 160px; }
   .social {
     display: flex;
     justify-content: center;
@@ -289,8 +290,7 @@
         <a href="hayate/" data-i18n="hayate_title">HAYATE — Ride fast. Slice clean. Finish first.</a>
       </div>
       <div class="desc" data-i18n="hayate_desc">A 3D katana speed-racer and sequel to ISSEN. Dodge what flies at you, or throw your homing katana to slice it clean — across four worlds, forty stages, plus endless runs.</div>
-      <div class="store-badges">
-      <span class="badge-slot" aria-hidden="true"></span>
+      <div class="store-badges reserve-ios">
       <a class="googleplay-badge" href="hayate/#tester-heading" aria-label="Join HAYATE Android testers">
         <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
       </a>
