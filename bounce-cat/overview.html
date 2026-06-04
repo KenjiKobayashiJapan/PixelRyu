@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5MH53Z8LM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M5MH53Z8LM');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">Bounce Cat — Game Overview</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Game overview of Bounce Cat: the trapped-cat maze, the three kinds of wall, how to play, and highlights — with art from the in-development build.">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: radial-gradient(ellipse at top, #f6faf0 0%, #eaf3e2 52%, #dceac9 100%);
+    color: #3a2e1f;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .container { max-width: 620px; width: 100%; padding: 64px 32px 80px; text-align: center; position: relative; }
+  .lang-switch { position: absolute; top: 24px; right: 24px; }
+  .lang-switch select { background: rgba(255,255,255,0.55); color: #5a8c4e; border: 1px solid rgba(127,176,116,0.45); border-radius: 4px; padding: 5px 10px; font-size: 13px; font-family: inherit; cursor: pointer; }
+  .lang-switch select:hover { background: rgba(255,255,255,0.75); border-color: #e8884a; }
+  .lang-switch select option { background: #eaf3e2; color: #3a2e1f; }
+  .tagline { font-size: 13px; color: #7a8a6e; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 6px; }
+  h1 { font-size: 44px; margin: 0 0 6px; color: #3a2e1f; font-weight: 800; letter-spacing: 0.5px; }
+  h1 .accent { color: #e8884a; }
+  .page-label { font-size: 13px; color: #7a8a6e; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
+  .lead { font-size: 15px; line-height: 1.85; color: #4a4234; margin: 14px auto 8px; max-width: 500px; }
+  .dev-banner { font-size: 12px; color: #c2742f; background: rgba(232,136,74,0.10); border: 1px solid rgba(232,136,74,0.32); border-radius: 10px; padding: 10px 14px; margin: 16px auto 0; max-width: 470px; line-height: 1.5; }
+  .section { background: rgba(255,255,255,0.55); border: 1px solid rgba(127,176,116,0.40); border-radius: 16px; padding: 24px 24px 28px; margin: 28px 0; text-align: left; box-shadow: 0 8px 24px rgba(95,140,80,0.12); }
+  .section h2 { font-size: 18px; color: #c2742f; margin: 0 0 4px; font-weight: 800; }
+  .section .sub { font-size: 11px; color: #7a8a6e; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  .section p { font-size: 14px; line-height: 1.8; color: #4a4234; margin: 12px 0; }
+  .section ol, .section ul { margin: 12px 0 0; padding-left: 22px; font-size: 14px; line-height: 1.85; color: #4a4234; }
+  .hero-shot { width: 100%; max-width: 240px; margin: 22px auto 4px; }
+  .hero-shot img { width: 100%; border-radius: 28px; border: 1px solid rgba(127,176,116,0.30); box-shadow: 0 10px 32px rgba(58,46,31,0.28), 0 0 0 1px rgba(127,176,116,0.16); display: block; }
+  .hero-shot figcaption { font-size: 12px; color: #7a8a6e; margin-top: 8px; text-align: center; }
+  .back { display: inline-block; margin-top: 28px; color: #7a8a6e; text-decoration: none; font-size: 14px; }
+  .back:hover { color: #c2742f; }
+  @media (max-width: 600px) {
+    .container { padding: 48px 18px 64px; }
+    .lang-switch { top: 16px; right: 16px; }
+    .section { padding: 20px 18px 22px; }
+    h1 { font-size: 36px; }
+  }
+  .social-heading{font-size:13px;color:#7a8a6e;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(127,176,116,0.10);border:1px solid rgba(127,176,116,0.25);color:#7a8a6e;transition:all .25s ease;}
+  .social a:hover{background:rgba(127,176,116,0.18);border-color:rgba(127,176,116,0.50);color:#3a6a2e;transform:translateY(-2px);}
+  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+</style>
+<!-- SEO/LLMO start (managed) -->
+<link rel="canonical" href="https://pixelryu.github.io/bounce-cat/overview.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="PixelRyu">
+<meta name="publisher" content="PixelRyu">
+<meta name="keywords" content="Bounce Cat, maze puzzle, bounce, ricochet, yarn, cat, kitten, brittle wall, sliding wall, cozy puzzle, PixelRyu, indie game, Android, iOS, Roblox">
+<meta name="theme-color" content="#eaf3e2">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/bounce-cat/icon.png">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/bounce-cat/icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PixelRyu">
+<meta property="og:title" content="Bounce Cat — Game Overview">
+<meta property="og:description" content="Game overview of Bounce Cat: the trapped-cat maze, the three kinds of wall, how to play, and highlights — with art from the in-development build.">
+<meta property="og:url" content="https://pixelryu.github.io/bounce-cat/overview.html">
+<meta property="og:image" content="https://pixelryu.github.io/bounce-cat/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Bounce Cat — Bank shots. Free the cat.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Bounce Cat — Game Overview">
+<meta name="twitter:description" content="Game overview of Bounce Cat: the trapped-cat maze, the three kinds of wall, how to play, and highlights — with art from the in-development build.">
+<meta name="twitter:image" content="https://pixelryu.github.io/bounce-cat/og.png">
+<meta name="twitter:image:alt" content="Bounce Cat — Bank shots. Free the cat.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Bounce Cat — Game Overview","url":"https://pixelryu.github.io/bounce-cat/overview.html","description":"Game overview of Bounce Cat: the trapped-cat maze, the three kinds of wall, how to play, and highlights — with art from the in-development build.","inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"isPartOf":{"@type":"WebSite","name":"PixelRyu","url":"https://pixelryu.github.io/"},"about":{"@type":"VideoGame","name":"Bounce Cat","url":"https://pixelryu.github.io/bounce-cat/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/"},{"@type":"ListItem","position":2,"name":"Bounce Cat","item":"https://pixelryu.github.io/bounce-cat/"},{"@type":"ListItem","position":3,"name":"Game Overview","item":"https://pixelryu.github.io/bounce-cat/overview.html"}]}</script>
+<!-- SEO/LLMO end -->
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch"><select id="lang-select" aria-label="Language"></select></div>
+  <div class="tagline" data-i18n="tagline">Bank shots. Free the cat.</div>
+  <h1>Bounce <span class="accent">Cat</span></h1>
+  <div class="page-label" data-i18n="page_label">Game Overview</div>
+  <p class="lead" data-i18n="lead">A cozy maze-escape puzzle. A cat is trapped inside a walled maze and you are stuck on the outside — so you fire a ball of yarn from the rim, read the bounce, and reshape the maze until the wandering cat rolls out to freedom.</p>
+  <div class="dev-banner" data-i18n="dev_banner">🪨 Coming soon to iOS, Android &amp; Roblox — screens shown here are from the in-development build.</div>
+
+  <figure class="hero-shot">
+    <img src="icon.png" alt="Bounce Cat key art: an orange cat in a maze beside a glowing ball of yarn">
+    <figcaption data-i18n="cap_key">Key art</figcaption>
+  </figure>
+
+  <section class="section">
+    <h2 data-i18n="maze_label">The Maze</h2>
+    <div class="sub">🐈</div>
+    <p data-i18n="maze_text">A cat is stuck inside a walled maze, and you stand on the outside — you can&#x27;t walk in to carry it out. You never steer the cat, either: it drifts around on the same bounce physics as your yarn, ricocheting off walls and never sitting still. Your job is to change the maze itself until an exit lines up and the cat simply rolls out.</p>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="walls_label">Three Kinds of Wall</h2>
+    <div class="sub">🧱</div>
+    <ul>
+      <li data-i18n="wall1">Solid walls never move — your fixed mirrors for banking shots.</li>
+      <li data-i18n="wall2">Sliding walls shove aside when the yarn hits them — reposition them to carve a new lane.</li>
+      <li data-i18n="wall3">Brittle walls shatter on impact — break them to punch an opening where there was none.</li>
+    </ul>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="howto_label">How to Play</h2>
+    <div class="sub">🧶</div>
+    <p data-i18n="howto_text">Drag from a gate to aim, and a preview line shows where the yarn will bounce. Yarn is limited, so spend each shot where it changes the maze the most.</p>
+    <ol>
+      <li data-i18n="step1">Drag from an open gate on the rim to aim; release to fire a ball of yarn.</li>
+      <li data-i18n="step2">The yarn bounces off walls — angle in, angle out — until it runs out of speed and fades.</li>
+      <li data-i18n="step3">Hit sliding walls to shift them and brittle walls to shatter them, opening a new route.</li>
+      <li data-i18n="step4">Watch the cat&#x27;s wandering loop and time your shots to steer the layout, not the cat.</li>
+      <li data-i18n="step5">Open a clear path to the outside and the cat escapes. Out of yarn first? Retry instantly, no penalty.</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="feat_label">Highlights</h2>
+    <div class="sub">✨</div>
+    <ul>
+      <li data-i18n="feat1">200 hand-built mazes across 10 worlds, growing up to 42×54 tiles of bank-shot puzzles</li>
+      <li data-i18n="feat2">Three wall types — solid, sliding, and brittle — to plan and reshape every maze</li>
+      <li data-i18n="feat3">A cat you free by changing the maze, never by steering it — both ride the same bounce physics</li>
+      <li data-i18n="feat4">Aim preview line, limited yarn, and hold-Fast to skip the wait; Restart tokens you can earn back</li>
+      <li data-i18n="feat5">Five cute cats, a seamless looping soundtrack, 12 languages, portrait or landscape, plays offline</li>
+    </ul>
+  </section>
+
+  <a href="./" class="back" data-i18n="back">← Back to Bounce Cat</a>
+  <h2 class="social-heading">Follow</h2>
+  <div class="social">
+    <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note"><svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+    <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+    "en": {
+        "title": "Bounce Cat — Game Overview",
+        "meta_desc": "Game overview of Bounce Cat: the trapped-cat maze, the three kinds of wall, how to play, and highlights — with art from the in-development build.",
+        "tagline": "Bank shots. Free the cat.",
+        "page_label": "Game Overview",
+        "lead": "A cozy maze-escape puzzle. A cat is trapped inside a walled maze and you are stuck on the outside — so you fire a ball of yarn from the rim, read the bounce, and reshape the maze until the wandering cat rolls out to freedom.",
+        "dev_banner": "🪨 Coming soon to iOS, Android & Roblox — screens shown here are from the in-development build.",
+        "cap_key": "Key art",
+        "maze_label": "The Maze",
+        "maze_text": "A cat is stuck inside a walled maze, and you stand on the outside — you can't walk in to carry it out. You never steer the cat, either: it drifts around on the same bounce physics as your yarn, ricocheting off walls and never sitting still. Your job is to change the maze itself until an exit lines up and the cat simply rolls out.",
+        "walls_label": "Three Kinds of Wall",
+        "wall1": "Solid walls never move — your fixed mirrors for banking shots.",
+        "wall2": "Sliding walls shove aside when the yarn hits them — reposition them to carve a new lane.",
+        "wall3": "Brittle walls shatter on impact — break them to punch an opening where there was none.",
+        "howto_label": "How to Play",
+        "howto_text": "Drag from a gate to aim, and a preview line shows where the yarn will bounce. Yarn is limited, so spend each shot where it changes the maze the most.",
+        "step1": "Drag from an open gate on the rim to aim; release to fire a ball of yarn.",
+        "step2": "The yarn bounces off walls — angle in, angle out — until it runs out of speed and fades.",
+        "step3": "Hit sliding walls to shift them and brittle walls to shatter them, opening a new route.",
+        "step4": "Watch the cat's wandering loop and time your shots to steer the layout, not the cat.",
+        "step5": "Open a clear path to the outside and the cat escapes. Out of yarn first? Retry instantly, no penalty.",
+        "feat_label": "Highlights",
+        "feat1": "200 hand-built mazes across 10 worlds, growing up to 42×54 tiles of bank-shot puzzles",
+        "feat2": "Three wall types — solid, sliding, and brittle — to plan and reshape every maze",
+        "feat3": "A cat you free by changing the maze, never by steering it — both ride the same bounce physics",
+        "feat4": "Aim preview line, limited yarn, and hold-Fast to skip the wait; Restart tokens you can earn back",
+        "feat5": "Five cute cats, a seamless looping soundtrack, 12 languages, portrait or landscape, plays offline",
+        "back": "← Back to Bounce Cat"
+    },
+    "ja": {
+        "title": "Bounce Cat — ゲーム概要",
+        "meta_desc": "Bounce Cat のゲーム概要。閉じ込められた猫の迷路、3種類の壁、遊び方、特徴を、開発中ビルドの画面とともに紹介します。",
+        "tagline": "跳ね返して、猫を助け出そう。",
+        "page_label": "ゲーム概要",
+        "lead": "ほっこり迷路脱出パズル。迷路に閉じ込められた猫を、あなたは外からしか助けられません。外周から毛糸玉を撃ち込み、跳ね返る弾道を読んで、迷路そのものを作り替え、歩き回る猫が自然と外へ転がり出る道を開けましょう。",
+        "dev_banner": "🪨 iOS・Android・Roblox で近日公開 — 以下の画面は開発中ビルドのものです。",
+        "cap_key": "キーアート",
+        "maze_label": "迷路のせかい",
+        "maze_text": "猫は壁に囲まれた迷路の中に閉じ込められ、あなたは外に立っています——中に入って運び出すことはできません。猫も直接は操作できません。猫は毛糸玉と同じ反射のしくみでさまよい、壁に跳ね返りながら止まることなく動き続けます。あなたの仕事は、出口がつながって猫が自然と外へ転がり出るまで、迷路そのものを変えること。",
+        "walls_label": "3種類の壁",
+        "wall1": "不動の壁：動きません。跳ね返しの「鏡」として使います。",
+        "wall2": "可動の壁：毛糸玉が当たるとずれます。動かして新しい道を作りましょう。",
+        "wall3": "もろい壁：当たると壊れます。壊して、なかった通り道を開けましょう。",
+        "howto_label": "遊び方",
+        "howto_text": "入口からドラッグでねらうと、跳ね返りの予想軌道がプレビュー線で表示されます。毛糸玉は有限。迷路が一番変わる場所に1発1発を使いましょう。",
+        "step1": "外周の空いた入口からドラッグしてねらい、離して毛糸玉を発射。",
+        "step2": "毛糸玉は壁で跳ね返り（入射角＝反射角）、勢いを失うと消えます。",
+        "step3": "可動の壁に当ててずらし、もろい壁を壊して、新しい道を開けます。",
+        "step4": "歩き回る猫の動きを読み、猫ではなく「迷路」を操るようにタイミングよく撃ちます。",
+        "step5": "外への道がつながれば猫が脱出＝クリア。毛糸玉が尽きてもペナルティなしで即やり直し。",
+        "feat_label": "特徴",
+        "feat1": "全200ステージ・10ワールド。後半は最大42×54マスの反射パズルへ",
+        "feat2": "3種類の壁（不動・可動・もろい）で、毎ステージ迷路を考えて作り替える",
+        "feat3": "操作せず「迷路を変えて」助ける猫——猫も毛糸玉も同じ反射物理で動く",
+        "feat4": "予想軌道線・有限の毛糸玉・長押しFastで待ち時間スキップ。やり直し回数は取り戻せる",
+        "feat5": "5種類のかわいい猫、つなぎ目のないループBGM、12言語、縦・横対応、オフラインでも遊べる",
+        "back": "← Bounce Cat のページへ戻る"
+    },
+    "zh": {
+        "title": "Bounce Cat — 游戏概览",
+        "meta_desc": "Bounce Cat 游戏概览：被困小猫的迷宫、三种墙壁、玩法与亮点，并配以开发中版本的画面截图。",
+        "tagline": "弹射毛线，救出小猫。",
+        "page_label": "游戏概览",
+        "lead": "一款暖心的迷宫脱出解谜。小猫被困在四面是墙的迷宫里，而你只能在外面——走不进去把它抱出来。于是你从外圈发射毛线球，读准反弹的弹道，一点点改造迷宫本身，直到四处游荡的小猫顺势滚出，重获自由。",
+        "dev_banner": "🐾 即将登陆 iOS、Android 与 Roblox —— 以下画面均来自开发中版本。",
+        "cap_key": "主视觉图",
+        "maze_label": "迷宫世界",
+        "maze_text": "小猫被困在四面是墙的迷宫里，而你站在外面——你没法走进去把它带出来。小猫你也无法直接操控：它会按照和毛线球一样的反弹原理四处漂移，撞墙反弹、片刻不停。你要做的，就是不断改变迷宫本身，直到出口连通、小猫自然而然地滚出去。",
+        "walls_label": "三种墙壁",
+        "wall1": "实心墙：永远不动，是你弹射时固定的「反射镜」。",
+        "wall2": "滑动墙：毛线球撞上去就会被推开——挪动它，开出一条新通道。",
+        "wall3": "易碎墙：一撞即碎——把它打破，在原本没有路的地方开出缺口。",
+        "howto_label": "玩法",
+        "howto_text": "从出口拖动来瞄准，预览线会显示毛线球将如何反弹。毛线球数量有限，把每一发都用在最能改变迷宫的地方。",
+        "step1": "从外圈空着的出口拖动瞄准，松手即可发射一颗毛线球。",
+        "step2": "毛线球会撞墙反弹（入射角＝反射角），直到失去势头慢慢消失。",
+        "step3": "撞滑动墙把它挪开，撞易碎墙把它击碎，开出一条新路线。",
+        "step4": "读懂小猫游荡的轨迹，把握时机出手——你操控的是「迷宫」，而不是小猫。",
+        "step5": "只要打通一条通往外面的路，小猫就会逃出＝过关。毛线球先用光了？没有惩罚，立刻重来。",
+        "feat_label": "亮点",
+        "feat1": "全 200 关手工设计迷宫、横跨 10 个世界，后期最大可达 42×54 格的弹射解谜",
+        "feat2": "三种墙壁——实心、滑动、易碎——让你逐关谋划、重塑迷宫",
+        "feat3": "靠「改变迷宫」而非操控来解救的小猫——小猫和毛线球遵循同一套反弹物理",
+        "feat4": "瞄准预览线、有限的毛线球、长按 Fast 跳过等待；重来（Restart）次数还能赚回来",
+        "feat5": "五只可爱小猫、无缝循环原声、12 种语言、竖屏或横屏、离线也能玩",
+        "back": "← 返回 Bounce Cat 页面"
+    },
+    "ko": {
+        "title": "Bounce Cat — 게임 개요",
+        "meta_desc": "Bounce Cat의 게임 개요. 갇힌 고양이가 있는 미로, 세 가지 벽, 플레이 방법, 특징을 개발 중인 빌드 화면과 함께 소개합니다.",
+        "tagline": "튕겨서, 고양이를 구해 주세요.",
+        "page_label": "게임 개요",
+        "lead": "아늑한 미로 탈출 퍼즐. 고양이는 벽으로 둘러싸인 미로 안에 갇혀 있고, 당신은 바깥에 갇혀 있습니다. 그래서 테두리에서 털실 뭉치를 쏘아 넣고, 튕기는 탄도를 읽어 미로 자체를 바꿔 가며, 돌아다니는 고양이가 자연스럽게 밖으로 굴러 나올 때까지 길을 열어 주세요.",
+        "dev_banner": "🐾 iOS・Android・Roblox에서 곧 출시 — 여기 보이는 화면은 개발 중인 빌드의 모습입니다.",
+        "cap_key": "키 아트",
+        "maze_label": "미로",
+        "maze_text": "고양이는 벽으로 둘러싸인 미로 안에 갇혀 있고, 당신은 바깥에 서 있습니다 — 안으로 걸어 들어가 데리고 나올 수는 없습니다. 고양이를 직접 조종할 수도 없어요. 고양이는 당신의 털실 뭉치와 똑같은 반사 원리로 떠돌며, 벽에 튕기면서 한순간도 멈추지 않고 움직입니다. 당신이 할 일은, 출구가 이어져 고양이가 자연스럽게 밖으로 굴러 나올 때까지 미로 자체를 바꾸는 것입니다.",
+        "walls_label": "세 가지 벽",
+        "wall1": "고정 벽은 절대 움직이지 않습니다 — 튕겨 쏘기 위한 변치 않는 '거울'입니다.",
+        "wall2": "이동 벽은 털실 뭉치가 부딪치면 옆으로 밀려납니다 — 위치를 옮겨 새로운 길을 내 보세요.",
+        "wall3": "약한 벽은 부딪치면 부서집니다 — 부숴서 없던 통로를 뚫어 보세요.",
+        "howto_label": "플레이 방법",
+        "howto_text": "게이트에서 드래그해 조준하면, 털실이 튕기는 예상 궤도가 미리보기 선으로 표시됩니다. 털실 뭉치는 한정되어 있으니, 미로가 가장 크게 바뀌는 곳에 한 발 한 발을 쓰세요.",
+        "step1": "테두리의 열린 게이트에서 드래그해 조준하고, 손을 떼면 털실 뭉치가 발사됩니다.",
+        "step2": "털실은 벽에 튕기며 (입사각＝반사각) 날아가다가, 속도를 잃으면 사라집니다.",
+        "step3": "이동 벽에 맞혀 밀어내고, 약한 벽을 부수어 새로운 길을 엽니다.",
+        "step4": "돌아다니는 고양이의 움직임을 읽고, 고양이가 아니라 '미로'를 조종하듯 타이밍 맞춰 쏘세요.",
+        "step5": "밖으로 향하는 길이 이어지면 고양이가 탈출＝클리어. 털실이 먼저 떨어져도 페널티 없이 바로 다시 도전.",
+        "feat_label": "특징",
+        "feat1": "총 200개 미로・10개 월드. 후반에는 최대 42×54칸의 반사 퍼즐로 확장",
+        "feat2": "세 가지 벽(고정・이동・약한 벽)으로 매 미로를 궁리하며 새로 짜 맞추기",
+        "feat3": "조종이 아니라 '미로를 바꿔서' 구하는 고양이 — 고양이도 털실도 똑같은 반사 물리로 움직입니다",
+        "feat4": "예상 궤도 선, 한정된 털실, 길게 눌러 Fast로 대기 시간 건너뛰기. Restart 횟수는 다시 모을 수 있어요",
+        "feat5": "다섯 마리의 귀여운 고양이, 이음매 없는 루프 BGM, 12개 언어, 세로・가로 모두 지원, 오프라인에서도 플레이 가능",
+        "back": "← Bounce Cat 페이지로 돌아가기"
+    },
+    "hi": {
+        "title": "Bounce Cat — गेम का विवरण",
+        "meta_desc": "Bounce Cat का गेम विवरण: फँसी हुई बिल्ली की भूलभुलैया, तीन तरह की दीवारें, कैसे खेलें, और खास बातें — विकासाधीन बिल्ड की कलाकृति के साथ।",
+        "tagline": "दीवारों से टकराओ, बिल्ली को छुड़ाओ।",
+        "page_label": "गेम का विवरण",
+        "lead": "एक प्यारी-सी भूलभुलैया-से-निकलने वाली पहेली। एक बिल्ली दीवारों वाली भूलभुलैया में फँसी है और आप बाहर ही खड़े रह जाते हैं — इसलिए आप किनारे से ऊन का गोला छोड़ते हैं, टकराव की राह पढ़ते हैं, और भूलभुलैया को तब तक नया रूप देते रहते हैं जब तक घूमती हुई बिल्ली लुढ़ककर आज़ाद न हो जाए।",
+        "dev_banner": "🐾 iOS, Android और Roblox पर जल्द आ रही है — यहाँ दिखाए गए स्क्रीन विकासाधीन बिल्ड के हैं।",
+        "cap_key": "की आर्ट",
+        "maze_label": "भूलभुलैया",
+        "maze_text": "एक बिल्ली दीवारों वाली भूलभुलैया में फँसी है, और आप बाहर खड़े हैं — आप अंदर जाकर उसे उठा नहीं ला सकते। आप बिल्ली को सीधे चला भी नहीं सकते: वह आपके ऊन के गोले की तरह उसी टकराव-भौतिकी पर इधर-उधर भटकती है, दीवारों से टकराकर लौटती है और कभी एक जगह नहीं रुकती। आपका काम है खुद भूलभुलैया को बदलना, जब तक कोई रास्ता न खुल जाए और बिल्ली सहज ही लुढ़ककर बाहर न आ जाए।",
+        "walls_label": "तीन तरह की दीवारें",
+        "wall1": "ठोस दीवारें कभी नहीं हिलतीं — टकराव वाले शॉट के लिए ये आपके पक्के आईने हैं।",
+        "wall2": "खिसकने वाली दीवारें ऊन के टकराने पर एक ओर सरक जाती हैं — इन्हें सरकाकर नया रास्ता बनाओ।",
+        "wall3": "नाज़ुक दीवारें टकराते ही चूर-चूर हो जाती हैं — इन्हें तोड़कर वहाँ रास्ता बनाओ जहाँ पहले कोई न था।",
+        "howto_label": "कैसे खेलें",
+        "howto_text": "एक गेट से खींचकर निशाना लगाओ, और एक प्रीव्यू रेखा दिखाती है कि ऊन कहाँ टकराकर जाएगा। ऊन सीमित है, इसलिए हर शॉट वहाँ लगाओ जहाँ भूलभुलैया सबसे ज़्यादा बदले।",
+        "step1": "किनारे पर बने खुले गेट से खींचकर निशाना लगाओ; छोड़ते ही ऊन का गोला छूट जाता है।",
+        "step2": "ऊन दीवारों से टकराकर लौटता है — जिस कोण से टकराए, उसी कोण से मुड़े — और गति खत्म होते ही मद्धम होकर गायब हो जाता है।",
+        "step3": "खिसकने वाली दीवारों पर मारकर उन्हें सरकाओ और नाज़ुक दीवारों को तोड़ो, जिससे नया रास्ता खुले।",
+        "step4": "बिल्ली के घूमने के फेरे को पढ़ो और अपने शॉट का समय ऐसे तय करो कि तुम बिल्ली को नहीं, भूलभुलैया की बनावट को चलाओ।",
+        "step5": "बाहर की ओर साफ़ रास्ता खोलो और बिल्ली निकल भागती है। ऊन पहले ही खत्म हो गई? बिना किसी दंड के तुरंत फिर से कोशिश करो।",
+        "feat_label": "खास बातें",
+        "feat1": "10 दुनियाओं में हाथ से बनी 200 भूलभुलैया, जो टकराव-शॉट पहेलियों के रूप में बढ़कर 42×54 खानों तक पहुँचती हैं",
+        "feat2": "तीन तरह की दीवारें — ठोस, खिसकने वाली और नाज़ुक — हर भूलभुलैया को सोच-समझकर नया रूप देने के लिए",
+        "feat3": "ऐसी बिल्ली जिसे आप भूलभुलैया बदलकर छुड़ाते हैं, कभी चलाकर नहीं — दोनों उसी टकराव-भौतिकी पर चलते हैं",
+        "feat4": "निशाने की प्रीव्यू रेखा, सीमित ऊन, और इंतज़ार छोड़ने के लिए दबाकर रखने वाला Fast; Restart टोकन जिन्हें आप फिर से कमा सकते हैं",
+        "feat5": "पाँच प्यारी बिल्लियाँ, लगातार लूप होता साउंडट्रैक, 12 भाषाएँ, पोर्ट्रेट या लैंडस्केप, ऑफ़लाइन भी खेलें",
+        "back": "← Bounce Cat पर वापस जाएँ"
+    },
+    "id": {
+        "title": "Bounce Cat — Ringkasan Game",
+        "meta_desc": "Ringkasan game Bounce Cat: labirin tempat si kucing terjebak, tiga jenis dinding, cara bermain, dan sorotan fitur — lengkap dengan ilustrasi dari build yang masih dalam pengembangan.",
+        "tagline": "Pantulkan benang. Bebaskan si kucing.",
+        "page_label": "Ringkasan Game",
+        "lead": "Puzzle kabur-dari-labirin yang menghangatkan hati. Seekor kucing terjebak di dalam labirin berdinding sementara kamu terkurung di luar — jadi kamu menembakkan bola benang dari tepi, membaca pantulannya, lalu membentuk ulang labirin sampai si kucing yang berkeliaran menggelinding keluar menuju kebebasan.",
+        "dev_banner": "🐾 Segera hadir di iOS, Android & Roblox — gambar di sini berasal dari build yang masih dalam pengembangan.",
+        "cap_key": "Key art",
+        "maze_label": "Labirin",
+        "maze_text": "Seekor kucing terjebak di dalam labirin berdinding, dan kamu berdiri di luar — kamu tidak bisa masuk untuk membawanya keluar. Kamu juga tidak pernah mengendalikan si kucing: ia berkeliaran mengikuti fisika pantulan yang sama dengan benangmu, memantul dari dinding ke dinding dan tak pernah diam. Tugasmu adalah mengubah labirin itu sendiri sampai sebuah jalan keluar terbentuk dan si kucing menggelinding keluar dengan sendirinya.",
+        "walls_label": "Tiga Jenis Dinding",
+        "wall1": "Dinding kokoh tak pernah bergerak — cermin tetapmu untuk memantulkan tembakan.",
+        "wall2": "Dinding geser akan terdorong ke samping saat benang mengenainya — pindahkan untuk membuka jalur baru.",
+        "wall3": "Dinding rapuh hancur saat terkena — pecahkan untuk membuat celah di tempat yang tadinya tertutup.",
+        "howto_label": "Cara Bermain",
+        "howto_text": "Seret dari sebuah gerbang untuk membidik, lalu garis pratinjau menunjukkan ke mana benang akan memantul. Benang terbatas, jadi gunakan setiap tembakan di tempat yang paling banyak mengubah labirin.",
+        "step1": "Seret dari gerbang terbuka di tepi untuk membidik; lepaskan untuk menembakkan bola benang.",
+        "step2": "Benang memantul dari dinding — sudut masuk sama dengan sudut keluar — sampai kehabisan kecepatan dan memudar.",
+        "step3": "Kenai dinding geser untuk menggesernya dan dinding rapuh untuk menghancurkannya, membuka rute baru.",
+        "step4": "Amati pola berkeliaran si kucing dan atur waktu tembakanmu untuk mengarahkan tata letaknya, bukan si kucing.",
+        "step5": "Bukalah jalan bebas menuju luar dan si kucing pun kabur. Kehabisan benang lebih dulu? Ulangi seketika, tanpa penalti.",
+        "feat_label": "Sorotan",
+        "feat1": "200 labirin rancangan tangan di 10 dunia, berkembang hingga 42×54 petak puzzle pantulan",
+        "feat2": "Tiga jenis dinding — kokoh, geser, dan rapuh — untuk merencanakan dan membentuk ulang setiap labirin",
+        "feat3": "Kucing yang kamu bebaskan dengan mengubah labirin, bukan dengan mengarahkannya — keduanya mengikuti fisika pantulan yang sama",
+        "feat4": "Garis pratinjau bidikan, benang terbatas, dan tahan Fast untuk melewati penantian; token Restart yang bisa kamu peroleh kembali",
+        "feat5": "Lima kucing menggemaskan, musik latar berputar mulus, 12 bahasa, mode potret atau lanskap, bisa dimainkan offline",
+        "back": "← Kembali ke Bounce Cat"
+    },
+    "de": {
+        "title": "Bounce Cat — Spielübersicht",
+        "meta_desc": "Spielübersicht von Bounce Cat: das Labyrinth mit der eingesperrten Katze, die drei Wandarten, die Spielweise und die Highlights — mit Artwork aus dem Build in Entwicklung.",
+        "tagline": "Bandenschüsse. Befreie die Katze.",
+        "page_label": "Spielübersicht",
+        "lead": "Ein gemütliches Labyrinth-Ausbruchspuzzle. Eine Katze ist in einem ummauerten Labyrinth gefangen, und du steckst draußen fest — also schießt du ein Wollknäuel vom Rand hinein, liest den Abpraller und formst das Labyrinth so lange um, bis die umherwandernde Katze ganz von selbst in die Freiheit rollt.",
+        "dev_banner": "🐾 Demnächst für iOS, Android & Roblox — die hier gezeigten Bildschirme stammen aus dem Build in Entwicklung.",
+        "cap_key": "Key-Art",
+        "maze_label": "Das Labyrinth",
+        "maze_text": "Eine Katze steckt in einem ummauerten Labyrinth fest, und du stehst draußen — du kannst nicht hineingehen und sie hinaustragen. Steuern kannst du die Katze auch nicht: Sie treibt nach derselben Abpraller-Physik wie dein Wollknäuel umher, prallt von den Wänden ab und bleibt nie stehen. Deine Aufgabe ist es, das Labyrinth selbst zu verändern, bis sich ein Ausgang auftut und die Katze einfach hinausrollt.",
+        "walls_label": "Drei Wandarten",
+        "wall1": "Feste Wände bewegen sich nie — deine festen Spiegel für Bandenschüsse.",
+        "wall2": "Schiebewände werden zur Seite geschoben, wenn das Wollknäuel sie trifft — verschiebe sie, um eine neue Bahn freizulegen.",
+        "wall3": "Brüchige Wände zerbersten beim Aufprall — zerschlage sie, um dort eine Öffnung zu schaffen, wo vorher keine war.",
+        "howto_label": "So wird gespielt",
+        "howto_text": "Ziehe von einem Tor aus, um zu zielen — eine Vorschaulinie zeigt dir, wo das Wollknäuel abprallt. Wolle ist begrenzt, also setze jeden Schuss dort ein, wo er das Labyrinth am meisten verändert.",
+        "step1": "Ziehe von einem offenen Tor am Rand, um zu zielen; lass los, um ein Wollknäuel abzuschießen.",
+        "step2": "Das Wollknäuel prallt von den Wänden ab — Einfallswinkel = Ausfallswinkel — bis ihm die Geschwindigkeit ausgeht und es verblasst.",
+        "step3": "Triff Schiebewände, um sie zu verschieben, und brüchige Wände, um sie zu zerschmettern, und öffne so einen neuen Weg.",
+        "step4": "Beobachte die Wanderschleife der Katze und setze deine Schüsse zeitlich so, dass du das Layout steuerst — nicht die Katze.",
+        "step5": "Öffne einen freien Weg nach draußen, und die Katze entkommt. Vorher keine Wolle mehr? Sofort neu versuchen, ganz ohne Strafe.",
+        "feat_label": "Highlights",
+        "feat1": "200 von Hand gebaute Labyrinthe in 10 Welten, die auf bis zu 42×54 Felder voller Bandenschuss-Rätsel anwachsen",
+        "feat2": "Drei Wandarten — fest, verschiebbar und brüchig — zum Planen und Umformen jedes Labyrinths",
+        "feat3": "Eine Katze, die du befreist, indem du das Labyrinth veränderst, niemals indem du sie steuerst — beide folgen derselben Abpraller-Physik",
+        "feat4": "Ziel-Vorschaulinie, begrenzte Wolle und Fast-Halten, um die Wartezeit zu überspringen; Restart-Marken, die du dir zurückverdienen kannst",
+        "feat5": "Fünf süße Katzen, ein nahtlos schleifender Soundtrack, 12 Sprachen, Hoch- oder Querformat, auch offline spielbar",
+        "back": "← Zurück zu Bounce Cat"
+    },
+    "fr": {
+        "title": "Bounce Cat — Présentation du jeu",
+        "meta_desc": "Présentation de Bounce Cat : le labyrinthe du chat prisonnier, les trois types de murs, comment jouer et les points forts — avec des visuels de la version en cours de développement.",
+        "tagline": "Des ricochets bien placés. Libère le chat.",
+        "page_label": "Présentation du jeu",
+        "lead": "Un puzzle cosy d'évasion dans un labyrinthe. Un chat est prisonnier d'un labyrinthe entouré de murs, et tu es coincé à l'extérieur — alors tu tires une pelote de laine depuis le bord, tu lis les ricochets et tu remodèles le labyrinthe jusqu'à ce que le chat, en se baladant, roule jusqu'à la liberté.",
+        "dev_banner": "🐾 Bientôt disponible sur iOS, Android et Roblox — les écrans présentés ici proviennent de la version en cours de développement.",
+        "cap_key": "Illustration principale",
+        "maze_label": "Le labyrinthe",
+        "maze_text": "Un chat est coincé dans un labyrinthe entouré de murs, et tu te tiens à l'extérieur — impossible d'entrer pour aller le chercher. Tu ne diriges pas le chat non plus : il se balade selon la même physique de ricochets que ta laine, rebondit sur les murs et ne reste jamais en place. Ton rôle est de transformer le labyrinthe lui-même jusqu'à ce qu'une sortie s'aligne et que le chat en sorte tout simplement en roulant.",
+        "walls_label": "Trois types de murs",
+        "wall1": "Les murs solides ne bougent jamais — tes miroirs fixes pour bien placer tes ricochets.",
+        "wall2": "Les murs coulissants s'écartent quand la laine les heurte — repositionne-les pour ouvrir un nouveau passage.",
+        "wall3": "Les murs fragiles se brisent à l'impact — casse-les pour percer une ouverture là où il n'y en avait pas.",
+        "howto_label": "Comment jouer",
+        "howto_text": "Fais glisser depuis une porte pour viser, et une ligne d'aperçu te montre où la laine va ricocher. La laine est limitée, alors place chaque tir là où il transforme le plus le labyrinthe.",
+        "step1": "Fais glisser depuis une porte ouverte sur le bord pour viser ; relâche pour tirer une pelote de laine.",
+        "step2": "La laine ricoche sur les murs — angle d'entrée, angle de sortie — jusqu'à perdre son élan et s'estomper.",
+        "step3": "Touche les murs coulissants pour les déplacer et les murs fragiles pour les briser, ouvrant ainsi un nouveau chemin.",
+        "step4": "Observe la boucle de déplacement du chat et synchronise tes tirs pour piloter le décor, et non le chat.",
+        "step5": "Ouvre un chemin dégagé vers l'extérieur et le chat s'échappe. Plus de laine avant ? Recommence aussitôt, sans pénalité.",
+        "feat_label": "Points forts",
+        "feat1": "200 labyrinthes conçus à la main sur 10 mondes, jusqu'à 42×54 cases de casse-tête à ricochets",
+        "feat2": "Trois types de murs — solides, coulissants et fragiles — pour planifier et remodeler chaque labyrinthe",
+        "feat3": "Un chat que tu libères en transformant le labyrinthe, jamais en le dirigeant — tous deux suivent la même physique de ricochets",
+        "feat4": "Ligne d'aperçu de visée, laine limitée et appui prolongé sur Fast pour passer l'attente ; jetons Restart que tu peux regagner",
+        "feat5": "Cinq chats trop mignons, une bande-son en boucle sans coupure, 12 langues, mode portrait ou paysage, jouable hors ligne",
+        "back": "← Retour à Bounce Cat"
+    },
+    "it": {
+        "title": "Bounce Cat — Panoramica del gioco",
+        "meta_desc": "Panoramica di Bounce Cat: il labirinto con il gatto intrappolato, i tre tipi di muro, come si gioca e i punti di forza — con le immagini della build in sviluppo.",
+        "tagline": "Tiri di sponda. Libera il gatto.",
+        "page_label": "Panoramica del gioco",
+        "lead": "Un accogliente puzzle di fuga dal labirinto. Un gatto è intrappolato dentro un labirinto di muri e tu sei bloccato fuori — così spari un gomitolo di lana dal bordo, leggi i rimbalzi e rimodelli il labirinto finché il gatto che vaga non rotola fuori, libero.",
+        "dev_banner": "🐾 Presto su iOS, Android e Roblox — le immagini qui mostrate provengono dalla build in sviluppo.",
+        "cap_key": "Key art",
+        "maze_label": "Il labirinto",
+        "maze_text": "Un gatto è bloccato dentro un labirinto di muri e tu te ne stai fuori — non puoi entrare a portarlo via. E nemmeno puoi guidare il gatto: si muove a zonzo con la stessa fisica dei rimbalzi del tuo gomitolo, rimbalzando sui muri senza mai stare fermo. Il tuo compito è cambiare il labirinto stesso, finché un'uscita si allinea e il gatto rotola via da solo.",
+        "walls_label": "Tre tipi di muro",
+        "wall1": "I muri solidi non si muovono mai — i tuoi specchi fissi per i tiri di sponda.",
+        "wall2": "I muri scorrevoli si spostano di lato quando il gomitolo li colpisce — riposizionali per aprire un nuovo passaggio.",
+        "wall3": "I muri fragili si frantumano all'urto — rompili per aprire un varco dove non ce n'era.",
+        "howto_label": "Come si gioca",
+        "howto_text": "Trascina da un varco per mirare e una linea di anteprima mostra dove rimbalzerà il gomitolo. La lana è limitata, quindi usa ogni tiro dove cambia di più il labirinto.",
+        "step1": "Trascina da un varco aperto sul bordo per mirare; rilascia per sparare un gomitolo di lana.",
+        "step2": "Il gomitolo rimbalza sui muri — angolo d'incidenza = angolo di riflessione — finché perde slancio e svanisce.",
+        "step3": "Colpisci i muri scorrevoli per spostarli e quelli fragili per frantumarli, aprendo un nuovo percorso.",
+        "step4": "Osserva il giro del gatto che vaga e cronometra i tiri per guidare il tracciato, non il gatto.",
+        "step5": "Apri un passaggio libero verso l'esterno e il gatto scappa. Finita la lana prima? Riprova all'istante, senza penalità.",
+        "feat_label": "Punti di forza",
+        "feat1": "200 labirinti creati a mano in 10 mondi, fino a 42×54 caselle di puzzle a tiri di sponda",
+        "feat2": "Tre tipi di muro — solidi, scorrevoli e fragili — per pianificare e rimodellare ogni labirinto",
+        "feat3": "Un gatto che liberi cambiando il labirinto, mai guidandolo — entrambi seguono la stessa fisica dei rimbalzi",
+        "feat4": "Linea di anteprima della mira, lana limitata e Fast da tenere premuto per saltare l'attesa; gettoni Restart che puoi riguadagnare",
+        "feat5": "Cinque gattini adorabili, una colonna sonora in loop senza stacchi, 12 lingue, verticale o orizzontale, si gioca offline",
+        "back": "← Torna a Bounce Cat"
+    },
+    "es": {
+        "title": "Bounce Cat — Descripción del juego",
+        "meta_desc": "Descripción del juego Bounce Cat: el laberinto del gato atrapado, los tres tipos de muro, cómo se juega y lo más destacado, con ilustraciones de la versión en desarrollo.",
+        "tagline": "Tiros con rebote. Libera al gato.",
+        "page_label": "Descripción del juego",
+        "lead": "Un acogedor puzle de escape de laberintos. Un gato está atrapado dentro de un laberinto amurallado y tú estás fuera, sin poder entrar a por él. Así que disparas un ovillo de lana desde el borde, lees el rebote y reformas el laberinto hasta que el gato, que deambula sin parar, sale rodando hacia la libertad.",
+        "dev_banner": "🐾 Próximamente en iOS, Android y Roblox — las pantallas que aquí se muestran son de la versión en desarrollo.",
+        "cap_key": "Ilustración principal",
+        "maze_label": "El laberinto",
+        "maze_text": "Un gato está atrapado dentro de un laberinto amurallado y tú estás fuera: no puedes entrar a sacarlo en brazos. Tampoco controlas al gato directamente: deambula con la misma física de rebote que tu lana, rebotando en los muros sin quedarse nunca quieto. Tu tarea es cambiar el propio laberinto hasta que se abra una salida y el gato simplemente salga rodando.",
+        "walls_label": "Tres tipos de muro",
+        "wall1": "Los muros sólidos nunca se mueven: son tus espejos fijos para encadenar rebotes.",
+        "wall2": "Los muros deslizantes se apartan cuando la lana los golpea: reubícalos para abrir un nuevo carril.",
+        "wall3": "Los muros frágiles se hacen añicos al impacto: rómpelos para abrir un hueco donde no lo había.",
+        "howto_label": "Cómo se juega",
+        "howto_text": "Arrastra desde una compuerta para apuntar y una línea de previsualización te muestra por dónde rebotará la lana. La lana es limitada, así que invierte cada tiro donde más cambie el laberinto.",
+        "step1": "Arrastra desde una compuerta abierta del borde para apuntar; suelta para disparar un ovillo de lana.",
+        "step2": "La lana rebota en los muros —ángulo de entrada igual a ángulo de salida— hasta que pierde velocidad y se desvanece.",
+        "step3": "Golpea los muros deslizantes para desplazarlos y los frágiles para romperlos, abriendo una nueva ruta.",
+        "step4": "Observa el recorrido errante del gato y calcula tus tiros para dirigir el trazado, no al gato.",
+        "step5": "Abre un camino despejado hacia el exterior y el gato escapa. ¿Te quedaste sin lana antes? Reintenta al instante, sin penalización.",
+        "feat_label": "Lo más destacado",
+        "feat1": "200 laberintos hechos a mano en 10 mundos, que crecen hasta 42×54 casillas de puzles de rebote",
+        "feat2": "Tres tipos de muro —sólido, deslizante y frágil— para planificar y reformar cada laberinto",
+        "feat3": "Un gato al que liberas cambiando el laberinto, nunca dirigiéndolo: ambos comparten la misma física de rebote",
+        "feat4": "Línea de previsualización de puntería, lana limitada y mantén pulsado Fast para saltarte la espera; fichas de Restart que puedes recuperar",
+        "feat5": "Cinco gatos adorables, una banda sonora en bucle sin cortes, 12 idiomas, vertical u horizontal, y se juega sin conexión",
+        "back": "← Volver a Bounce Cat"
+    },
+    "pt": {
+        "title": "Bounce Cat — Visão geral do jogo",
+        "meta_desc": "Visão geral de Bounce Cat: o labirinto do gatinho preso, os três tipos de parede, como jogar e os destaques — com arte da versão em desenvolvimento.",
+        "tagline": "Mire na parede. Liberte o gatinho.",
+        "page_label": "Visão geral do jogo",
+        "lead": "Um aconchegante quebra-cabeça de fuga em labirinto. Um gatinho está preso dentro de um labirinto cercado por paredes e você fica do lado de fora — então você atira um novelo de lã da borda, lê o ricochete e remodela o labirinto até que o gatinho, que vagueia sem parar, role para fora rumo à liberdade.",
+        "dev_banner": "🐾 Em breve no iOS, Android e Roblox — as telas mostradas aqui são da versão em desenvolvimento.",
+        "cap_key": "Arte principal",
+        "maze_label": "O labirinto",
+        "maze_text": "Um gatinho está preso dentro de um labirinto cercado por paredes, e você está do lado de fora — não dá para entrar e carregá-lo até a saída. Você também nunca conduz o gatinho: ele vagueia pela mesma física de ricochete do seu novelo de lã, batendo nas paredes e sem nunca ficar parado. Sua missão é mudar o próprio labirinto até que uma saída se alinhe e o gatinho simplesmente role para fora.",
+        "walls_label": "Três tipos de parede",
+        "wall1": "As paredes sólidas nunca se movem — seus espelhos fixos para mirar os ricochetes.",
+        "wall2": "As paredes deslizantes são empurradas para o lado quando o novelo as atinge — reposicione-as para abrir uma nova passagem.",
+        "wall3": "As paredes frágeis se estilhaçam no impacto — quebre-as para abrir uma passagem onde não havia nenhuma.",
+        "howto_label": "Como jogar",
+        "howto_text": "Arraste a partir de um portão para mirar, e uma linha de prévia mostra onde o novelo vai ricochetear. O novelo de lã é limitado, então gaste cada tiro onde ele mais muda o labirinto.",
+        "step1": "Arraste a partir de um portão aberto na borda para mirar; solte para disparar um novelo de lã.",
+        "step2": "O novelo ricocheteia nas paredes — ângulo de entrada igual ao de saída — até perder velocidade e desaparecer.",
+        "step3": "Acerte as paredes deslizantes para movê-las e as paredes frágeis para estilhaçá-las, abrindo uma nova rota.",
+        "step4": "Observe o trajeto do gatinho e cronometre os tiros para conduzir o cenário, não o gatinho.",
+        "step5": "Abra um caminho livre até o lado de fora e o gatinho escapa. Ficou sem novelo antes? Tente de novo na hora, sem penalidade.",
+        "feat_label": "Destaques",
+        "feat1": "200 labirintos feitos à mão em 10 mundos, chegando a 42×54 blocos de quebra-cabeças de ricochete",
+        "feat2": "Três tipos de parede — sólida, deslizante e frágil — para planejar e remodelar cada labirinto",
+        "feat3": "Um gatinho que você liberta mudando o labirinto, nunca o conduzindo — os dois seguem a mesma física de ricochete",
+        "feat4": "Linha de prévia da mira, novelo limitado e segurar Fast para pular a espera; fichas de Restart que você pode reconquistar",
+        "feat5": "Cinco gatinhos fofos, trilha sonora em loop contínuo, 12 idiomas, modo retrato ou paisagem, joga offline",
+        "back": "← Voltar para Bounce Cat"
+    },
+    "ru": {
+        "title": "Bounce Cat — Обзор игры",
+        "meta_desc": "Обзор игры Bounce Cat: лабиринт с запертым котом, три вида стен, как играть и ключевые особенности — с артами из версии в разработке.",
+        "tagline": "Бей рикошетом. Освободи кота.",
+        "page_label": "Обзор игры",
+        "lead": "Уютная головоломка о побеге из лабиринта. Кот заперт внутри стен лабиринта, а ты застрял снаружи — поэтому ты запускаешь клубок пряжи с края, читаешь рикошет и перестраиваешь лабиринт, пока бродящий кот сам не выкатится на свободу.",
+        "dev_banner": "🐾 Скоро в iOS, Android и Roblox — показанные здесь экраны взяты из версии в разработке.",
+        "cap_key": "Ключевой арт",
+        "maze_label": "Лабиринт",
+        "maze_text": "Кот заперт внутри стен лабиринта, а ты стоишь снаружи — ты не можешь войти и вынести его. Управлять котом тоже нельзя: он бродит по той же физике отскоков, что и твоя пряжа, отскакивает от стен и ни секунды не сидит на месте. Твоя задача — менять сам лабиринт, пока не сложится выход и кот просто не выкатится наружу.",
+        "walls_label": "Три вида стен",
+        "wall1": "Прочные стены никогда не двигаются — твои постоянные «зеркала» для рикошетов.",
+        "wall2": "Подвижные стены сдвигаются в сторону, когда пряжа в них попадает, — передвинь их и проложи новый коридор.",
+        "wall3": "Хрупкие стены разбиваются от удара — разбей их и пробей проход там, где его не было.",
+        "howto_label": "Как играть",
+        "howto_text": "Тяни от ворот, чтобы прицелиться, — линия предпросмотра покажет, куда отскочит пряжа. Пряжи ограниченное количество, поэтому трать каждый выстрел там, где он сильнее всего меняет лабиринт.",
+        "step1": "Тяни от открытых ворот на краю, чтобы прицелиться; отпусти, чтобы запустить клубок пряжи.",
+        "step2": "Пряжа отскакивает от стен (угол падения = угол отражения), пока не теряет скорость и не исчезает.",
+        "step3": "Бей по подвижным стенам, чтобы сдвинуть их, и по хрупким, чтобы разбить, открывая новый путь.",
+        "step4": "Следи за маршрутом блуждающего кота и подбирай момент так, чтобы управлять лабиринтом, а не котом.",
+        "step5": "Открой свободный путь наружу — и кот сбежит. Пряжа кончилась раньше? Перезапуск мгновенно, без штрафа.",
+        "feat_label": "Ключевые особенности",
+        "feat1": "200 вручную собранных лабиринтов в 10 мирах, разрастающихся до 42×54 клеток головоломок с рикошетами",
+        "feat2": "Три вида стен — прочные, подвижные и хрупкие — чтобы продумывать и перестраивать каждый лабиринт",
+        "feat3": "Кота освобождаешь, меняя лабиринт, а не управляя им — оба подчиняются одной и той же физике отскоков",
+        "feat4": "Линия предпросмотра прицела, ограниченная пряжа и удержание Fast, чтобы пропустить ожидание; жетоны Restart можно вернуть",
+        "feat5": "Пять милых котов, бесшовно зацикленный саундтрек, 12 языков, портретный или альбомный режим, играет офлайн",
+        "back": "← Назад к Bounce Cat"
+    }
+};
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
+
+  function detectLang() {
+    try {
+      const stored = localStorage.getItem(LANG_STORAGE_KEY);
+      if (stored && i18n[stored]) return stored;
+    } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang, persist) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(opt);
+    }
+    setLang(detectLang(), true);
+    sel.addEventListener('change', e => setLang(e.target.value, true));
+  })();
+</script>
+<script src="../breadcrumb.js?v=20260602202548" defer></script>
+</body>
+</html>

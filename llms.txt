@@ -1,18 +1,26 @@
 # PixelRyu
 
-> PixelRyu is a solo Japanese indie game studio making small, polished, fully multilingual (12-language) mobile games for Android and iOS.
+> PixelRyu is a solo Japanese indie game studio making small, polished, fully multilingual (12-language) games for Android, iOS, and Roblox.
 
 PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This site is a multilingual portfolio (en, ja, zh, ko, hi, id, de, fr, it, es, pt, ru) with a page per game, plus a privacy policy and terms of service for each game. Language is selected client-side; English is the default content.
 
 ## Games
 
-- [ISSEN (一閃)](https://pixelryu.github.io/issen/): A sumi-e (ink-wash) timing-action game built on the iaido draw — breathe, read the distance, unleash one perfect cut. In development for Android & iOS.
-- [HOTARU (The Lost House)](https://pixelryu.github.io/hotaru/): A quiet, atmospheric first-person Japanese horror walking simulator set in a lost house. Android & iOS.
+- [Bounce Cat](https://pixelryu.github.io/bounce-cat/): A cozy maze-escape puzzle — a cat is trapped inside a walled maze you can't enter, so you fire a ball of yarn from the rim, ride the ricochet, and shift or shatter walls until the wandering cat rolls out to freedom. 200 mazes across 10 worlds. Coming soon to iOS, Android & Roblox.
+- [HAYATE](https://pixelryu.github.io/hayate/): A 3D katana speed-racer and sequel to ISSEN — dodge what flies at you, or throw a homing katana to slice it clean, across four worlds, forty stages, plus endless runs. iOS, Android & Roblox.
+- [Sumlings](https://pixelryu.github.io/sumlings/): A cozy number puzzle — place number eggs into a tiny terrarium so each nest's total matches its target, hatching Sumlings to fill a collection. iOS, Android & Roblox.
+- [Parcel Pals](https://pixelryu.github.io/parcel-pals/): A cozy parcel-sorting puzzle — sort cute parcels into three lanes and match shapes to boxes on the belt before the table overflows. iOS, Android & Roblox.
+- [ISSEN (一閃)](https://pixelryu.github.io/issen/): A sumi-e (ink-wash) timing-action game built on the iaido draw — breathe, read the distance, unleash one perfect cut. iOS, Android & Roblox.
+- [HOTARU (The Lost House)](https://pixelryu.github.io/hotaru/): A quiet, atmospheric first-person Japanese horror walking simulator set in a lost house. iOS, Android & Roblox.
 - [Liquid Glow](https://pixelryu.github.io/liquid-glow/): A cozy, minimalist indie sort puzzle from Japan — arrange flowing liquid colors. Android.
 - [Mole Whack (モグラぽかぽか)](https://pixelryu.github.io/mole-whack/): A casual stage-based whack-a-mole tap game across 100 stages — hit the moles, clear the target, advance. Android & iOS.
 
 ## Game overviews
 
+- [Bounce Cat — Game Overview](https://pixelryu.github.io/bounce-cat/overview.html)
+- [HAYATE — Game Overview](https://pixelryu.github.io/hayate/overview.html)
+- [Sumlings — Game Overview](https://pixelryu.github.io/sumlings/overview.html)
+- [Parcel Pals — Game Overview](https://pixelryu.github.io/parcel-pals/overview.html)
 - [ISSEN — Game Overview](https://pixelryu.github.io/issen/overview.html)
 - [HOTARU — Game Overview](https://pixelryu.github.io/hotaru/overview.html)
 - [Liquid Glow — Game Overview](https://pixelryu.github.io/liquid-glow/overview.html)
@@ -20,6 +28,14 @@ PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This sit
 
 ## Legal
 
+- [Bounce Cat — Privacy Policy](https://pixelryu.github.io/bounce-cat/privacy_policy.html)
+- [Bounce Cat — Terms of Service](https://pixelryu.github.io/bounce-cat/terms_of_service.html)
+- [HAYATE — Privacy Policy](https://pixelryu.github.io/hayate/privacy_policy.html)
+- [HAYATE — Terms of Service](https://pixelryu.github.io/hayate/terms_of_service.html)
+- [Sumlings — Privacy Policy](https://pixelryu.github.io/sumlings/privacy_policy.html)
+- [Sumlings — Terms of Service](https://pixelryu.github.io/sumlings/terms_of_service.html)
+- [Parcel Pals — Privacy Policy](https://pixelryu.github.io/parcel-pals/privacy_policy.html)
+- [Parcel Pals — Terms of Service](https://pixelryu.github.io/parcel-pals/terms_of_service.html)
 - [ISSEN — Privacy Policy](https://pixelryu.github.io/issen/privacy_policy.html)
 - [ISSEN — Terms of Service](https://pixelryu.github.io/issen/terms_of_service.html)
 - [HOTARU — Privacy Policy](https://pixelryu.github.io/hotaru/privacy_policy.html)
@@ -32,7 +48,7 @@ PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This sit
 ## About PixelRyu
 
 - Studio: PixelRyu — solo indie game developer, Japan
-- Platforms: Android and iOS
+- Platforms: Android, iOS, and Roblox
 - Newsletter (English): https://pixelryu.substack.com
 - Newsletter (日本語): https://note.com/pixelryu
 - YouTube: https://www.youtube.com/@PixelRyu-Japan

@@ -183,6 +183,24 @@
     visibility: hidden;
     pointer-events: none;
   }
+  /* Coming-soon banner: a greyed, non-interactive store badge with a red "COMING SOON"
+     stamp laid diagonally over it. Per-cell (.soon-cell) so a card can mix live and
+     coming-soon banners; the stamp is a sibling of the badge so the badge's grayscale
+     filter doesn't desaturate the red. */
+  .game-card .store-badges .soon-cell { position: relative; display: inline-block; line-height: 0; }
+  .game-card .store-badges .soon-cell .appstore-badge,
+  .game-card .store-badges .soon-cell .googleplay-badge,
+  .game-card .store-badges .soon-cell .roblox-badge { display: inline-block; line-height: 0; filter: grayscale(1); opacity: .5; pointer-events: none; }
+  .game-card .store-badges .soon-cell .soon-stamp {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(-12deg);
+    font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap;
+    color: #e11d1d; text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 1px 2px rgba(0,0,0,0.35);
+    pointer-events: none;
+  }
+  /* On mobile the row becomes a 2-col grid sized for anchor badges; let the coming-soon
+     cell (a span, not an anchor) and its badge graphic fill the column the same way. */
+  .game-card .store-badges > .soon-cell { display: block; }
   .social {
     display: flex;
     justify-content: center;
@@ -241,7 +259,7 @@
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="PixelRyu">
 <meta name="publisher" content="PixelRyu">
-<meta name="keywords" content="PixelRyu, indie games, mobile games, Japan, Android, iOS, Sumlings, Parcel Pals, ISSEN, HOTARU, Liquid Glow, Mole Whack">
+<meta name="keywords" content="PixelRyu, indie games, mobile games, Japan, Android, iOS, Roblox, Bounce Cat, Sumlings, Parcel Pals, ISSEN, HOTARU, Liquid Glow, Mole Whack">
 <meta name="theme-color" content="#080d1f">
 <link rel="icon" type="image/png" href="https://pixelryu.github.io/icon.png">
 <link rel="apple-touch-icon" href="https://pixelryu.github.io/icon.png">
@@ -314,6 +332,39 @@
 
   <h2 data-i18n="games_heading">Games</h2>
   <ul class="game-list">
+    <li class="game-card">
+      <div class="game-head">
+        <img class="game-icon" src="bounce-cat/icon.png" alt="">
+        <a href="bounce-cat/" data-i18n="bc_title">Bounce Cat — Bank shots. Free the cat.</a>
+      </div>
+      <div class="desc" data-i18n="bc_desc">A cozy maze-escape puzzle. Fire yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out — 200 mazes across 10 worlds. Coming soon to iOS, Android, and Roblox.</div>
+      <div class="store-badges has-soon" aria-label="Coming soon to the App Store, Google Play and Roblox">
+      <span class="soon-cell"><span class="appstore-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+        </svg></span><span class="soon-stamp">COMING SOON</span></span>
+      <span class="soon-cell"><span class="googleplay-badge"><img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Google Play" height="51"></span><span class="soon-stamp">COMING SOON</span></span>
+      <span class="soon-cell"><span class="roblox-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg></span><span class="soon-stamp">COMING SOON</span></span>
+      </div>
+      <div class="links">
+        <a href="bounce-cat/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
+        <a href="bounce-cat/terms_of_service.html" data-i18n="link_terms">Terms</a>
+      </div>
+    </li>
     <li class="game-card">
       <div class="game-head">
         <img class="game-icon" src="hayate/icon.png" alt="">
@@ -476,7 +527,7 @@
         <a href="hotaru/" data-i18n="hotaru_title">HOTARU — The Lost House</a>
       </div>
       <div class="desc" data-i18n="hotaru_desc">A beautiful Japanese horror walking simulator. Follow the fireflies, gather them at the andon, hurl them at yokai — and find the back gate before dawn.</div>
-      <div class="store-badges">
+      <div class="store-badges has-soon">
       <a class="appstore-badge" href="https://apps.apple.com/app/id6770427114" target="_blank" rel="noopener" aria-label="Download HOTARU on the App Store">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
           <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
@@ -490,6 +541,17 @@
       <a class="googleplay-badge" href="hotaru/#tester-heading" aria-label="Join HOTARU Android testers">
         <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
       </a>
+      <span class="soon-cell"><span class="roblox-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg></span><span class="soon-stamp">COMING SOON</span></span>
       </div>
       <div class="links">
         <a href="hotaru/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
@@ -502,11 +564,29 @@
         <a href="liquid-glow/">Liquid Glow</a>
       </div>
       <div class="desc" data-i18n="lg_desc">A meditative sort puzzle. Pour glowing liquids between glass tubes and watch them flow through the cosmos.</div>
-      <div class="store-badges">
-      <span class="badge-ghost" aria-hidden="true"></span>
+      <div class="store-badges has-soon">
+      <span class="soon-cell"><span class="appstore-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+        </svg></span><span class="soon-stamp">COMING SOON</span></span>
       <a class="googleplay-badge" href="liquid-glow/#tester-heading" aria-label="Join Liquid Glow Android testers">
         <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
       </a>
+      <span class="soon-cell"><span class="roblox-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg></span><span class="soon-stamp">COMING SOON</span></span>
       </div>
       <div class="links">
         <a href="liquid-glow/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
@@ -519,7 +599,7 @@
         <a href="mole-whack/" data-i18n="mw_title">モグラぽかぽか — Mole Whack</a>
       </div>
       <div class="desc" data-i18n="mw_desc">A simple 30-second tap action. Whack the moles as they pop up and chase your high score.</div>
-      <div class="store-badges">
+      <div class="store-badges has-soon">
       <a class="appstore-badge" href="https://apps.apple.com/app/id6770864132" target="_blank" rel="noopener" aria-label="Download Mole Whack on the App Store">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
           <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
@@ -533,6 +613,17 @@
       <a class="googleplay-badge" href="mole-whack/#tester-heading" aria-label="Join Mole Whack Android testers">
         <img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
       </a>
+      <span class="soon-cell"><span class="roblox-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg></span><span class="soon-stamp">COMING SOON</span></span>
       </div>
       <div class="links">
         <a href="mole-whack/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
@@ -563,6 +654,9 @@
 
   const i18n = {
     en: {
+      bc_title: "Bounce Cat — Bank shots. Free the cat.",
+      bc_desc: "A cozy maze-escape puzzle. Fire yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out — 200 mazes across 10 worlds. Coming soon to iOS, Android, and Roblox.",
+      bc_soon: "Coming soon",
       title: "PixelRyu — Calm cosmic puzzle games",
       meta_desc: "PixelRyu makes calm, beautiful puzzle games for mobile.",
       tagline: "Calm cosmic puzzle games",
@@ -585,6 +679,9 @@
       sumlings_desc: "A cozy number puzzle. Place number eggs into a tiny terrarium so each nest's total matches its target — hatch the Sumlings and fill your collection. Out now on the App Store. Android testers welcome."
     },
     ja: {
+      bc_title: "Bounce Cat — 跳ね返して、猫を助け出そう。",
+      bc_desc: "ほっこり迷路脱出パズル。迷路の外から毛糸玉を撃ち込み、跳ね返る弾道で壁をずらしたり壊したりして、閉じ込められた猫の逃げ道を開けよう。全200ステージ・10ワールド。iOS・Android・Roblox で近日公開。",
+      bc_soon: "近日公開",
       title: "PixelRyu — 静かな宇宙のパズルゲーム",
       meta_desc: "PixelRyu はモバイル向けに、静かで美しいパズルゲームを作っています。",
       tagline: "静かな宇宙のパズルゲーム",
@@ -607,6 +704,9 @@
       sumlings_desc: "ほっこり数のパズル。数字のたまごを箱庭に置いて、各巣の合計をぴったり合わせるとサムリングが孵化。図鑑を集めよう。App Store にて配信中。Android テスター募集中。"
     },
     zh: {
+      bc_title: "Bounce Cat — 弹射毛线，救出小猫。",
+      bc_desc: "一款暖心的迷宫脱出解谜。从迷宫外发射毛线，借助反弹，推开或击碎墙壁，让被困的小猫自己找到逃生之路——全 200 关、横跨 10 个世界。即将登陆 iOS、Android 与 Roblox。",
+      bc_soon: "即将上线",
       title: "PixelRyu — 宁静的宇宙益智游戏",
       meta_desc: "PixelRyu 为移动设备制作宁静而美丽的益智游戏。",
       tagline: "宁静的宇宙益智游戏",
@@ -629,6 +729,9 @@
       sumlings_desc: "治愈系数字益智游戏。把数字蛋放进小箱庭，让每个巢的合计与目标一致——孵化 Sumling，集齐图鉴。App Store 现已上线。招募 Android 测试员。"
     },
     ko: {
+      bc_title: "Bounce Cat — 튕겨서, 고양이를 구해 주세요.",
+      bc_desc: "아늑한 미로 탈출 퍼즐. 미로 밖에서 털실 뭉치를 쏘아 넣고, 튕기는 탄도로 벽을 밀거나 부수면서, 갇힌 고양이가 스스로 빠져나갈 길을 열어 주세요 — 총 200개 미로・10개 월드. iOS・Android・Roblox에서 곧 출시.",
+      bc_soon: "곧 출시",
       title: "PixelRyu — 고요한 우주 퍼즐 게임",
       meta_desc: "PixelRyu는 모바일을 위한 고요하고 아름다운 퍼즐 게임을 만듭니다.",
       tagline: "고요한 우주 퍼즐 게임",
@@ -651,6 +754,9 @@
       sumlings_desc: "힐링 숫자 퍼즐. 작은 정원에 숫자 알을 놓아 각 둥지의 합을 목표와 맞추고 Sumling을 부화시켜 도감을 채우세요. App Store에서 출시 중. Android 테스터 모집 중."
     },
     hi: {
+      bc_title: "Bounce Cat — दीवारों से टकराओ, बिल्ली को छुड़ाओ।",
+      bc_desc: "एक प्यारी-सी भूलभुलैया-से-निकलने वाली पहेली। भूलभुलैया के बाहर से ऊन छोड़ो, टकराकर लौटती राह पढ़ो, और दीवारों को खिसकाओ या तोड़ो ताकि फँसी हुई बिल्ली खुद अपना रास्ता ढूँढ़ ले — 10 दुनियाओं में 200 भूलभुलैया। iOS, Android और Roblox पर जल्द आ रही है।",
+      bc_soon: "जल्द आ रही है",
       title: "PixelRyu — शांत ब्रह्मांडीय पज़ल गेम्स",
       meta_desc: "PixelRyu मोबाइल के लिए शांत, सुंदर पज़ल गेम्स बनाता है।",
       tagline: "शांत ब्रह्मांडीय पज़ल गेम्स",
@@ -673,6 +779,9 @@
       sumlings_desc: "एक हल्की-फुल्की संख्या पहेली। छोटे टेरारियम में अंक के अंडे रखें ताकि हर घोंसले का कुल लक्ष्य से मिले — Sumling को फूटें और संग्रह भरें। App Store पर अब उपलब्ध। Android परीक्षक आमंत्रित।"
     },
     id: {
+      bc_title: "Bounce Cat — Pantulkan benang. Bebaskan si kucing.",
+      bc_desc: "Puzzle kabur-dari-labirin yang menghangatkan hati. Tembakkan benang dari luar labirin, baca lintasan pantulannya, lalu geser atau hancurkan dinding agar si kucing yang terjebak menemukan jalan keluarnya sendiri — 200 labirin di 10 dunia. Segera hadir di iOS, Android, dan Roblox.",
+      bc_soon: "Segera hadir",
       title: "PixelRyu — Game puzzle kosmik yang tenang",
       meta_desc: "PixelRyu membuat game puzzle yang tenang dan indah untuk mobile.",
       tagline: "Game puzzle kosmik yang tenang",
@@ -695,6 +804,9 @@
       sumlings_desc: "Teka-teki angka yang nyaman. Letakkan telur angka di terarium kecil sehingga total tiap sarang sesuai targetnya — tetaskan Sumling dan lengkapi koleksi Anda. Sudah tersedia di App Store. Tester Android dipersilakan."
     },
     de: {
+      bc_title: "Bounce Cat — Bandenschüsse. Befreie die Katze.",
+      bc_desc: "Ein gemütliches Labyrinth-Ausbruchspuzzle. Schieße Wolle von außerhalb des Labyrinths hinein, reite auf den Abprallern und verschiebe oder zerschmettere Wände, damit die eingesperrte Katze ihren eigenen Weg ins Freie findet — 200 Labyrinthe in 10 Welten. Demnächst für iOS, Android und Roblox.",
+      bc_soon: "Demnächst",
       title: "PixelRyu — Ruhige kosmische Puzzlespiele",
       meta_desc: "PixelRyu entwickelt ruhige, schöne Puzzlespiele für mobile Geräte.",
       tagline: "Ruhige kosmische Puzzlespiele",
@@ -717,6 +829,9 @@
       sumlings_desc: "Ein gemütliches Zahlenrätsel. Platziere Zahleneier in einem kleinen Terrarium, sodass die Summe jedes Nests dem Ziel entspricht — schlüpfe die Sumlings und fülle deine Sammlung. Jetzt im App Store. Android-Tester gesucht."
     },
     fr: {
+      bc_title: "Bounce Cat — Des ricochets bien placés. Libère le chat.",
+      bc_desc: "Un puzzle cosy d'évasion dans un labyrinthe. Tire de la laine depuis l'extérieur du labyrinthe, anticipe les ricochets, puis déplace ou brise les murs pour que le chat prisonnier trouve sa propre sortie — 200 labyrinthes sur 10 mondes. Bientôt disponible sur iOS, Android et Roblox.",
+      bc_soon: "Bientôt disponible",
       title: "PixelRyu — Jeux de réflexion cosmiques apaisants",
       meta_desc: "PixelRyu crée de beaux jeux de réflexion apaisants pour mobile.",
       tagline: "Jeux de réflexion cosmiques apaisants",
@@ -739,6 +854,9 @@
       sumlings_desc: "Un puzzle de chiffres cosy. Place des œufs numérotés dans un petit terrarium pour que la somme de chaque nid corresponde à sa cible — fais éclore les Sumlings et remplis ta collection. Disponible sur l'App Store. Testeurs Android bienvenus."
     },
     it: {
+      bc_title: "Bounce Cat — Tiri di sponda. Libera il gatto.",
+      bc_desc: "Un accogliente puzzle di fuga dal labirinto. Spara la lana dall'esterno del labirinto, segui i rimbalzi e sposta o frantuma i muri perché il gatto intrappolato trovi da solo la via d'uscita — 200 labirinti in 10 mondi. Presto su iOS, Android e Roblox.",
+      bc_soon: "Disponibile a breve",
       title: "PixelRyu — Giochi puzzle cosmici e tranquilli",
       meta_desc: "PixelRyu crea bei giochi puzzle tranquilli per mobile.",
       tagline: "Giochi puzzle cosmici e tranquilli",
@@ -761,6 +879,9 @@
       sumlings_desc: "Un puzzle di numeri rilassante. Posiziona uova numerate in un piccolo terrario in modo che la somma di ogni nido corrisponda al suo obiettivo — schiudi i Sumling e completa la collezione. Disponibile su App Store. Cercasi tester Android."
     },
     es: {
+      bc_title: "Bounce Cat — Tiros con rebote. Libera al gato.",
+      bc_desc: "Un acogedor puzle de escape de laberintos. Dispara lana desde fuera del laberinto, sigue el rebote y desplaza o rompe muros para que el gato atrapado encuentre su propia salida: 200 laberintos en 10 mundos. Próximamente en iOS, Android y Roblox.",
+      bc_soon: "Próximamente",
       title: "PixelRyu — Juegos de puzzle cósmicos y serenos",
       meta_desc: "PixelRyu crea hermosos juegos de puzzle serenos para móvil.",
       tagline: "Juegos de puzzle cósmicos y serenos",
@@ -783,6 +904,9 @@
       sumlings_desc: "Un puzle de números relajante. Coloca huevos numerados en un pequeño terrario para que la suma de cada nido coincida con su meta — eclosiona los Sumlings y completa tu colección. Ya disponible en App Store. Se buscan testers de Android."
     },
     pt: {
+      bc_title: "Bounce Cat — Mire na parede. Liberte o gatinho.",
+      bc_desc: "Um aconchegante quebra-cabeça de fuga em labirinto. Atire um novelo de lã de fora do labirinto, acompanhe os ricochetes e mova ou estilhace paredes para que o gatinho preso encontre o próprio caminho de saída — 200 labirintos em 10 mundos. Em breve no iOS, Android e Roblox.",
+      bc_soon: "Em breve",
       title: "PixelRyu — Jogos de puzzle cósmicos e tranquilos",
       meta_desc: "A PixelRyu cria belos jogos de puzzle tranquilos para celular.",
       tagline: "Jogos de puzzle cósmicos e tranquilos",
@@ -805,6 +929,9 @@
       sumlings_desc: "Um quebra-cabeça de números aconchegante. Coloque ovos numerados em um pequeno terrário para que a soma de cada ninho corresponda ao alvo — choque os Sumlings e complete sua coleção. Já disponível na App Store. Testadores Android bem-vindos."
     },
     ru: {
+      bc_title: "Bounce Cat — Бей рикошетом. Освободи кота.",
+      bc_desc: "Уютная головоломка о побеге из лабиринта. Запускай пряжу снаружи лабиринта, читай рикошет и сдвигай или разбивай стены, чтобы запертый кот сам нашёл выход — 200 лабиринтов в 10 мирах. Скоро в iOS, Android и Roblox.",
+      bc_soon: "Скоро выходит",
       title: "PixelRyu — Спокойные космические головоломки",
       meta_desc: "PixelRyu создаёт спокойные и красивые мобильные головоломки.",
       tagline: "Спокойные космические головоломки",

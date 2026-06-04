@@ -30,7 +30,8 @@
     "mole-whack":  { all: "Mole Whack", ja: "モグラぽかぽか" },
     "parcel-pals": { all: "Parcel Pals", ja: "ふんわり配送便" },
     "sumlings":    { all: "Sumlings", ja: "サムリング" },
-    "hayate":      { all: "HAYATE" }
+    "hayate":      { all: "HAYATE" },
+    "bounce-cat":  { all: "Bounce Cat" }
   };
 
   // Leaf page labels (localized). Privacy/Terms match the legal-page generator
