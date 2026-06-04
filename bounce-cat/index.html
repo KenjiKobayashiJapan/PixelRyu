@@ -142,7 +142,7 @@
 
   <a href="overview.html" class="overview-link">🧶 <span data-i18n="link_overview">View Game Overview</span> →</a>
 
-  <video class="promo-video" autoplay loop muted playsinline controls preload="auto">
+  <video id="promo" class="promo-video" autoplay loop muted playsinline controls preload="auto">
     <source src="promotion_H_story.mp4" type="video/mp4">
   </video>
 
@@ -365,6 +365,16 @@
       if (attr) el.setAttribute(attr, dict[key]);
       else el.textContent = dict[key];
     });
+    // プロモ動画は言語連動: 日本語は日本語字幕版、それ以外は英語字幕版に切り替える。
+    const promo = document.getElementById('promo');
+    if (promo) {
+      const v = (lang === 'ja') ? 'promotion_H_story_ja.mp4' : 'promotion_H_story.mp4';
+      const srcEl = promo.querySelector('source');
+      if (srcEl && srcEl.getAttribute('src') !== v) {
+        srcEl.setAttribute('src', v);
+        promo.load();
+      }
+    }
     const sel = document.getElementById('lang-select');
     if (sel) sel.value = lang;
   }
