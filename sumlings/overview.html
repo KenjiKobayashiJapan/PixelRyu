@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5MH53Z8LM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M5MH53Z8LM');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">Sumlings — Game Overview</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Game overview of Sumlings: the cozy terrarium, how to play, and what makes it shine — a number puzzle where you place number eggs, match each nest's total, and hatch wonders.">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: radial-gradient(ellipse at top, #cfe8d3 0%, #b8e0bf 50%, #9fcfa6 100%);
+    color: #2d4a25;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .container { max-width: 620px; width: 100%; padding: 64px 32px 80px; text-align: center; position: relative; }
+  .lang-switch { position: absolute; top: 24px; right: 24px; }
+  .lang-switch select { background: rgba(255,255,255,0.40); color: #2d4a25; border: 1px solid rgba(164,113,72,0.35); border-radius: 4px; padding: 5px 10px; font-size: 13px; font-family: inherit; cursor: pointer; }
+  .lang-switch select:hover { background: rgba(255,255,255,0.55); border-color: rgba(164,113,72,0.65); }
+  .lang-switch select option { background: #b8e0bf; color: #2d4a25; }
+  .tagline { font-size: 13px; color: #7a8a6e; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 6px; }
+  h1 { font-size: 44px; margin: 0 0 6px; color: #2d4a25; font-weight: 800; letter-spacing: 0.5px; }
+  h1 .accent { color: #a47148; }
+  h1 .brand-ja { display: none; }
+  html[lang="ja"] h1 .brand-en { display: none; }
+  html[lang="ja"] h1 .brand-ja { display: inline; }
+  .page-label { font-size: 13px; color: #7a8a6e; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
+  .lead { font-size: 15px; line-height: 1.85; color: #3a2e1f; margin: 14px auto 8px; max-width: 500px; }
+  .section { background: rgba(255,255,255,0.45); border: 1px solid rgba(164,113,72,0.40); border-radius: 16px; padding: 24px 24px 28px; margin: 28px 0; text-align: left; box-shadow: 0 8px 24px rgba(90,140,78,0.12); }
+  .section h2 { font-size: 18px; color: #a47148; margin: 0 0 4px; font-weight: 800; }
+  .section .sub { font-size: 14px; color: #7a8a6e; letter-spacing: 2px; margin-bottom: 14px; }
+  .section p { font-size: 14px; line-height: 1.8; color: #3a2e1f; margin: 12px 0; }
+  .section ol, .section ul { margin: 12px 0 0; padding-left: 22px; font-size: 14px; line-height: 1.85; color: #3a2e1f; }
+  .hero-shot { width: 100%; max-width: 200px; margin: 22px auto 4px; }
+  .hero-shot img { width: 100%; border-radius: 28px; border: 1px solid rgba(164,113,72,0.30); box-shadow: 0 10px 32px rgba(0,0,0,0.35), 0 0 0 1px rgba(164,113,72,0.12); display: block; }
+  .hero-shot figcaption { font-size: 12px; color: #7a8a6e; margin-top: 8px; text-align: center; }
+  .back { display: inline-block; margin-top: 28px; color: #7a8a6e; text-decoration: none; font-size: 14px; }
+  .back:hover { color: #a47148; }
+  @media (max-width: 600px) { .container { padding: 48px 18px 64px; } .lang-switch { top: 16px; right: 16px; } .section { padding: 20px 18px 22px; } h1 { font-size: 36px; } }
+  .social-heading{font-size:13px;color:#7a8a6e;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(255,255,255,0.40);border:1px solid rgba(122,63,44,0.30);color:#7a8a6e;transition:all .25s ease;}
+  .social a:hover{background:rgba(255,255,255,0.55);border-color:rgba(122,63,44,0.55);color:#a47148;transform:translateY(-2px);}
+  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+</style>
+<!-- SEO/LLMO start (managed) -->
+<link rel="canonical" href="https://pixelryu.github.io/sumlings/overview.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="PixelRyu">
+<meta name="publisher" content="PixelRyu">
+<meta name="keywords" content="Sumlings, number puzzle, math puzzle, cozy puzzle, terrarium, hatching, collection, cute, casual, PixelRyu, indie game, Android, iOS">
+<meta name="theme-color" content="#b8e0bf">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/sumlings/icon.png">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/sumlings/icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PixelRyu">
+<meta property="og:title" content="Sumlings — Game Overview">
+<meta property="og:description" content="Game overview of Sumlings: the cozy terrarium, how to play, and what makes it shine — a number puzzle where you place number eggs, match each nest's total, and hatch wonders.">
+<meta property="og:url" content="https://pixelryu.github.io/sumlings/overview.html">
+<meta property="og:image" content="https://pixelryu.github.io/sumlings/icon.png">
+<meta property="og:image:width" content="192">
+<meta property="og:image:height" content="192">
+<meta property="og:image:alt" content="Sumlings — Game Overview">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sumlings — Game Overview">
+<meta name="twitter:description" content="Game overview of Sumlings: the cozy terrarium, how to play, and what makes it shine — a number puzzle where you place number eggs, match each nest's total, and hatch wonders.">
+<meta name="twitter:image" content="https://pixelryu.github.io/sumlings/icon.png">
+<meta name="twitter:image:alt" content="Sumlings — Game Overview">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Sumlings — Game Overview","url":"https://pixelryu.github.io/sumlings/overview.html","description":"Game overview of Sumlings: the cozy terrarium, how to play, and what makes it shine — a number puzzle where you place number eggs, match each nest's total, and hatch wonders.","inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"isPartOf":{"@type":"WebSite","name":"PixelRyu","url":"https://pixelryu.github.io/"},"about":{"@type":"VideoGame","name":"Sumlings","url":"https://pixelryu.github.io/sumlings/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/"},{"@type":"ListItem","position":2,"name":"Sumlings","item":"https://pixelryu.github.io/sumlings/"},{"@type":"ListItem","position":3,"name":"Game Overview","item":"https://pixelryu.github.io/sumlings/overview.html"}]}</script>
+<!-- SEO/LLMO end -->
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch"><select id="lang-select" aria-label="Language"></select></div>
+  <div class="tagline" data-i18n="tagline">Place numbers. Hatch wonders.</div>
+  <h1><span class="brand-en">Sum<span class="accent">lings</span></span><span class="brand-ja">サム<span class="accent">リング</span></span></h1>
+  <div class="page-label" data-i18n="page_label">Game Overview</div>
+  <p class="lead" data-i18n="lead">A cozy number puzzle set in a tiny terrarium. Place number eggs into the nests, make each nest's total match its target exactly, and watch the eggs hatch into curious little Sumlings — collect them all as your terrarium fills with life.</p>
+
+  <figure class="hero-shot">
+    <img src="icon.png" alt="Sumlings app icon — a cozy number puzzle">
+    <figcaption data-i18n="cap_key">Key art</figcaption>
+  </figure>
+
+  <section class="section">
+    <h2 data-i18n="world_label">The Terrarium</h2>
+    <div class="sub">🌱</div>
+    <p data-i18n="world_text">Your world is a small glass terrarium dotted with nests. Numbered eggs wait to be placed, each nest shows the total it's hoping for, and every puzzle you solve hatches a new Sumling — a gentle, wondrous creature of numbers — into your growing collection.</p>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="howto_label">How to Play</h2>
+    <div class="sub">🥚</div>
+    <p data-i18n="howto_text">Place, add, hatch. Read each nest's target, drop in the right number eggs, and make the sums line up — no timer, no rush, just a quiet little puzzle.</p>
+    <ol>
+      <li data-i18n="step1">Each nest shows a target total it wants to reach.</li>
+      <li data-i18n="step2">Drag number eggs from your tray into the nests.</li>
+      <li data-i18n="step3">Make every nest's total match its target exactly — no more, no less.</li>
+      <li data-i18n="step4">Solve the board and the eggs hatch into Sumlings for your collection.</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="feat_label">Highlights</h2>
+    <div class="sub">✨</div>
+    <ul>
+      <li data-i18n="feat1">Cozy, timer-free number puzzles — think at your own pace</li>
+      <li data-i18n="feat2">Place number eggs and balance each nest's total to its target</li>
+      <li data-i18n="feat3">Hatch a whole collection of cute Sumlings, one puzzle at a time</li>
+      <li data-i18n="feat4">A long, gentle difficulty curve across many handcrafted levels</li>
+      <li data-i18n="feat5">One-handed play, 12 languages, plays offline once installed</li>
+    </ul>
+  </section>
+
+  <a href="./" class="back" data-i18n="back">← Back to Sumlings</a>
+  <h2 class="social-heading">Follow</h2>
+  <div class="social">
+    <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note"><svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+    <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+      "en": {
+            "title": "Sumlings — Game Overview",
+            "meta_desc": "Game overview of Sumlings: the cozy terrarium, how to play, and what makes it shine — a number puzzle where you place number eggs, match each nest's total, and hatch wonders.",
+            "tagline": "Place numbers. Hatch wonders.",
+            "lead": "A cozy number puzzle set in a tiny terrarium. Place number eggs into the nests, make each nest's total match its target exactly, and watch the eggs hatch into curious little Sumlings — collect them all as your terrarium fills with life.",
+            "world_label": "The Terrarium",
+            "world_text": "Your world is a small glass terrarium dotted with nests. Numbered eggs wait to be placed, each nest shows the total it's hoping for, and every puzzle you solve hatches a new Sumling — a gentle, wondrous creature of numbers — into your growing collection.",
+            "howto_text": "Place, add, hatch. Read each nest's target, drop in the right number eggs, and make the sums line up — no timer, no rush, just a quiet little puzzle.",
+            "step1": "Each nest shows a target total it wants to reach.",
+            "step2": "Drag number eggs from your tray into the nests.",
+            "step3": "Make every nest's total match its target exactly — no more, no less.",
+            "step4": "Solve the board and the eggs hatch into Sumlings for your collection.",
+            "feat1": "Cozy, timer-free number puzzles — think at your own pace",
+            "feat2": "Place number eggs and balance each nest's total to its target",
+            "feat3": "Hatch a whole collection of cute Sumlings, one puzzle at a time",
+            "feat4": "A long, gentle difficulty curve across many handcrafted levels",
+            "feat5": "One-handed play, 12 languages, plays offline once installed",
+            "back": "← Back to Sumlings",
+            "page_label": "Game Overview",
+            "howto_label": "How to Play",
+            "feat_label": "Highlights",
+            "cap_key": "Key art"
+      },
+      "ja": {
+            "title": "サムリング — ゲーム概要",
+            "meta_desc": "サムリングのゲーム概要。箱庭の世界・遊び方・特徴を紹介。数字のたまごを置いて巣の合計を合わせ、生き物を孵すほっこり数のパズル。",
+            "tagline": "数を置いて、生き物を孵そう。",
+            "lead": "小さな箱庭(テラリウム)を舞台にした、ほっこり数のパズル。数字のたまごを巣に置き、各巣の合計を目標にぴったり合わせると、たまごから不思議で可愛い「サムリング」が孵化。図鑑を埋めながら、箱庭をいきものでいっぱいにしよう。",
+            "world_label": "箱庭の世界",
+            "world_text": "舞台は、いくつもの巣が点在する小さなガラスの箱庭。置かれるのを待つ数字のたまご、巣ごとに示される目標の合計——パズルを解くたびに、数からうまれた不思議でやさしい生き物「サムリング」が孵り、コレクションに加わっていく。",
+            "howto_text": "置いて、足して、孵す。各巣の目標を読み、ぴったりの数字のたまごを入れて、合計を合わせるだけ。時間制限なし、急かされない、静かな小さなパズル。",
+            "step1": "各巣には、目指すべき合計（目標）が示される。",
+            "step2": "手元のトレイから数字のたまごを巣へドラッグ。",
+            "step3": "すべての巣の合計を、目標ぴったりに——多くても少なくてもダメ。",
+            "step4": "盤面を解くと、たまごが孵ってサムリングがコレクションに加わる。",
+            "feat1": "時間制限なしのほっこり数パズル——自分のペースで考えられる",
+            "feat2": "数字のたまごを置き、各巣の合計を目標に合わせる",
+            "feat3": "1問ずつ、可愛いサムリングの図鑑を集めていく",
+            "feat4": "手作りの多数のレベルを貫く、ゆるやかで長い難易度カーブ",
+            "feat5": "片手プレイ、12言語対応、インストール後はオフラインでも遊べる",
+            "back": "← サムリングのページへ戻る",
+            "page_label": "ゲーム概要",
+            "howto_label": "遊び方",
+            "feat_label": "特徴",
+            "cap_key": "キーアート"
+      },
+      "zh": {
+            "title": "Sumlings — 游戏简介",
+            "meta_desc": "Sumlings 的游戏简介：治愈的箱庭世界、玩法与亮点——把数字蛋放进巢里，让每个巢的合计与目标一致，孵化奇妙生物的治愈系数字益智游戏。",
+            "tagline": "摆放数字，孵化奇迹。",
+            "lead": "以小小箱庭为舞台的治愈系数字益智游戏。把数字蛋放进巢里，让每个巢的合计恰好等于目标，蛋便会孵出好奇的小 Sumling——集齐图鉴，让你的箱庭充满生机。",
+            "world_label": "箱庭世界",
+            "world_text": "你的世界是一座点缀着许多巢的小小玻璃箱庭。数字蛋等待着被摆放，每个巢都标着它期望的合计——你每解开一道谜题，就有一只由数字而生、温柔奇妙的 Sumling 孵化，加入你不断壮大的收藏。",
+            "howto_text": "摆放、相加、孵化。读懂每个巢的目标，放进合适的数字蛋，让合计对上——没有计时，不必着急，只是一道安静的小谜题。",
+            "step1": "每个巢都会标出它想要达到的合计（目标）。",
+            "step2": "把数字蛋从托盘拖进巢里。",
+            "step3": "让每个巢的合计恰好等于目标——不多也不少。",
+            "step4": "解开棋盘，蛋就会孵成 Sumling，加入你的收藏。",
+            "feat1": "治愈、无计时的数字谜题——按自己的节奏思考",
+            "feat2": "摆放数字蛋，让每个巢的合计与目标相平衡",
+            "feat3": "一题一只，孵出一整套可爱的 Sumling 图鉴",
+            "feat4": "贯穿众多手工关卡的、温和而漫长的难度曲线",
+            "feat5": "单手游玩，支持 12 种语言，安装后可离线游玩",
+            "back": "← 返回 Sumlings",
+            "page_label": "游戏简介",
+            "howto_label": "玩法",
+            "feat_label": "特色",
+            "cap_key": "主视觉"
+      },
+      "ko": {
+            "title": "Sumlings — 게임 소개",
+            "meta_desc": "Sumlings의 게임 소개: 아늑한 테라리움, 플레이 방법, 그리고 매력 — 숫자 알을 놓아 각 둥지의 합을 맞추고 신기한 생물을 부화시키는 힐링 숫자 퍼즐.",
+            "tagline": "숫자를 놓고 마법을 깨워요.",
+            "lead": "작은 테라리움을 무대로 한 힐링 숫자 퍼즐. 둥지에 숫자 알을 놓고 각 둥지의 합을 목표와 정확히 맞추면, 알에서 호기심 많은 귀여운 Sumling이 부화해요 — 도감을 채우며 테라리움을 생명으로 가득 채우세요.",
+            "world_label": "테라리움",
+            "world_text": "당신의 세계는 여러 둥지가 점점이 놓인 작은 유리 테라리움. 놓이기를 기다리는 숫자 알, 둥지마다 바라는 합이 적혀 있고 — 퍼즐을 하나 풀 때마다 숫자에서 태어난 부드럽고 신기한 생물 Sumling이 부화해 점점 늘어나는 컬렉션에 더해집니다.",
+            "howto_text": "놓고, 더하고, 부화시켜요. 각 둥지의 목표를 읽고 알맞은 숫자 알을 넣어 합을 맞추기만 하면 — 타이머도, 서두름도 없는 조용하고 작은 퍼즐.",
+            "step1": "각 둥지에는 도달해야 할 합(목표)이 표시됩니다.",
+            "step2": "트레이에서 숫자 알을 둥지로 드래그하세요.",
+            "step3": "모든 둥지의 합을 목표와 정확히 맞추세요 — 더도 덜도 안 돼요.",
+            "step4": "보드를 풀면 알이 Sumling으로 부화해 컬렉션에 더해집니다.",
+            "feat1": "타이머 없는 아늑한 숫자 퍼즐 — 내 페이스대로 생각해요",
+            "feat2": "숫자 알을 놓아 각 둥지의 합을 목표에 맞춰 균형 잡기",
+            "feat3": "한 퍼즐에 하나씩, 귀여운 Sumling 도감을 통째로 모으기",
+            "feat4": "손수 만든 많은 레벨을 관통하는 길고 부드러운 난이도 곡선",
+            "feat5": "한 손 플레이, 12개 언어, 설치 후 오프라인 플레이 가능",
+            "back": "← Sumlings로 돌아가기",
+            "page_label": "게임 소개",
+            "howto_label": "플레이 방법",
+            "feat_label": "특징",
+            "cap_key": "키 아트"
+      },
+      "hi": {
+            "title": "Sumlings — गेम अवलोकन",
+            "meta_desc": "Sumlings का गेम अवलोकन: आरामदायक टेरारियम, खेलने का तरीका और इसकी ख़ासियतें — एक संख्या पहेली जिसमें अंक के अंडे रखकर हर घोंसले का कुल मिलाएँ और अजूबे फूटें।",
+            "tagline": "अंक रखो। जादू जगाओ।",
+            "lead": "एक छोटे टेरारियम पर आधारित आरामदायक संख्या पहेली। घोंसलों में अंक के अंडे रखें, हर घोंसले का कुल उसके लक्ष्य से बिल्कुल मिलाएँ, और देखें कैसे अंडों से जिज्ञासु नन्हे Sumling फूटते हैं — सबको इकट्ठा करें और अपना टेरारियम जीवन से भर दें।",
+            "world_label": "टेरारियम",
+            "world_text": "आपकी दुनिया घोंसलों से सजा एक छोटा-सा काँच का टेरारियम है। अंक के अंडे रखे जाने का इंतज़ार करते हैं, हर घोंसला अपना चाहा हुआ कुल दिखाता है — और हर सुलझी पहेली के साथ अंकों से बना एक कोमल, अजूबा Sumling फूटकर आपके बढ़ते संग्रह में जुड़ जाता है।",
+            "howto_text": "रखें, जोड़ें, फूटें। हर घोंसले का लक्ष्य पढ़ें, सही अंक के अंडे डालें, और कुल को मिलाएँ — कोई टाइमर नहीं, कोई जल्दी नहीं, बस एक शांत-सी छोटी पहेली।",
+            "step1": "हर घोंसला वह कुल (लक्ष्य) दिखाता है जिस तक पहुँचना है।",
+            "step2": "अपनी ट्रे से अंक के अंडे घोंसलों में खींचें।",
+            "step3": "हर घोंसले का कुल लक्ष्य से बिल्कुल मिलाएँ — न ज़्यादा, न कम।",
+            "step4": "बोर्ड सुलझाएँ और अंडे Sumling बनकर आपके संग्रह में फूट पड़ते हैं।",
+            "feat1": "आरामदायक, बिना टाइमर वाली संख्या पहेलियाँ — अपनी रफ़्तार से सोचें",
+            "feat2": "अंक के अंडे रखें और हर घोंसले का कुल उसके लक्ष्य से संतुलित करें",
+            "feat3": "एक-एक पहेली सुलझाकर प्यारे Sumling का पूरा संग्रह हैच करें",
+            "feat4": "हाथ से बनाए अनेक स्तरों में फैला लंबा, सहज कठिनाई वक्र",
+            "feat5": "एक-हाथ खेल, 12 भाषाएँ, इंस्टॉल के बाद ऑफ़लाइन भी खेलें",
+            "back": "← Sumlings पर वापस",
+            "page_label": "गेम अवलोकन",
+            "howto_label": "कैसे खेलें",
+            "feat_label": "ख़ासियतें",
+            "cap_key": "की-आर्ट"
+      },
+      "id": {
+            "title": "Sumlings — Ikhtisar Game",
+            "meta_desc": "Ikhtisar game Sumlings: terarium yang menenangkan, cara bermain, dan keunggulannya — teka-teki angka tempat kamu meletakkan telur angka, mencocokkan total tiap sarang, dan menetaskan keajaiban.",
+            "tagline": "Letakkan angka. Tetaskan keajaiban.",
+            "lead": "Teka-teki angka yang menenangkan berlatar di terarium kecil. Letakkan telur angka ke dalam sarang, buat total tiap sarang persis sama dengan targetnya, dan saksikan telur menetas menjadi Sumling kecil yang menggemaskan — kumpulkan semuanya hingga terariummu penuh kehidupan.",
+            "world_label": "Terarium",
+            "world_text": "Duniamu adalah terarium kaca kecil bertaburan sarang. Telur-telur berangka menunggu untuk diletakkan, tiap sarang menampilkan total yang diharapkannya — dan setiap teka-teki yang kamu pecahkan menetaskan Sumling baru, makhluk angka yang lembut dan ajaib, ke koleksimu yang terus bertambah.",
+            "howto_text": "Letakkan, jumlahkan, tetaskan. Baca target tiap sarang, masukkan telur angka yang tepat, dan buat totalnya pas — tanpa timer, tanpa terburu-buru, hanya teka-teki kecil yang tenang.",
+            "step1": "Tiap sarang menampilkan total target yang ingin dicapainya.",
+            "step2": "Seret telur angka dari nampanmu ke dalam sarang.",
+            "step3": "Buat total tiap sarang persis sama dengan targetnya — tidak lebih, tidak kurang.",
+            "step4": "Pecahkan papan dan telur menetas menjadi Sumling untuk koleksimu.",
+            "feat1": "Teka-teki angka menenangkan tanpa timer — berpikir sesuai temponya sendiri",
+            "feat2": "Letakkan telur angka dan seimbangkan total tiap sarang ke targetnya",
+            "feat3": "Tetaskan satu koleksi penuh Sumling lucu, satu teka-teki demi satu",
+            "feat4": "Kurva kesulitan yang panjang dan lembut di banyak level buatan tangan",
+            "feat5": "Bermain satu tangan, 12 bahasa, bisa dimainkan offline setelah dipasang",
+            "back": "← Kembali ke Sumlings",
+            "page_label": "Ikhtisar Game",
+            "howto_label": "Cara Bermain",
+            "feat_label": "Sorotan",
+            "cap_key": "Key art"
+      },
+      "de": {
+            "title": "Sumlings — Spielübersicht",
+            "meta_desc": "Spielübersicht zu Sumlings: das gemütliche Terrarium, das Spielprinzip und was es ausmacht — ein Zahlenrätsel, in dem du Zahleneier platzierst, die Summe jedes Nests triffst und Wunder schlüpfen lässt.",
+            "tagline": "Zahlen platzieren. Wunder erwecken.",
+            "lead": "Ein gemütliches Zahlenrätsel in einem winzigen Terrarium. Platziere Zahleneier in die Nester, bring die Summe jedes Nests genau auf sein Ziel, und sieh zu, wie die Eier zu neugierigen kleinen Sumlings schlüpfen — sammle sie alle, während dein Terrarium voller Leben wird.",
+            "world_label": "Das Terrarium",
+            "world_text": "Deine Welt ist ein kleines Glas-Terrarium voller Nester. Nummerierte Eier warten darauf, platziert zu werden, jedes Nest zeigt die erhoffte Summe — und jedes gelöste Rätsel lässt ein neues Sumling schlüpfen, ein sanftes, wundersames Wesen aus Zahlen, hinein in deine wachsende Sammlung.",
+            "howto_text": "Platzieren, addieren, schlüpfen lassen. Lies das Ziel jedes Nests, lege die richtigen Zahleneier ein und bring die Summen in Einklang — kein Timer, keine Hektik, nur ein ruhiges kleines Rätsel.",
+            "step1": "Jedes Nest zeigt eine Zielsumme, die es erreichen möchte.",
+            "step2": "Zieh Zahleneier aus deinem Tablett in die Nester.",
+            "step3": "Bring die Summe jedes Nests genau auf sein Ziel — nicht mehr, nicht weniger.",
+            "step4": "Löse das Brett, und die Eier schlüpfen zu Sumlings für deine Sammlung.",
+            "feat1": "Gemütliche Zahlenrätsel ohne Timer — denke in deinem eigenen Tempo",
+            "feat2": "Platziere Zahleneier und bring die Summe jedes Nests aufs Ziel",
+            "feat3": "Lass eine ganze Sammlung niedlicher Sumlings schlüpfen, ein Rätsel nach dem anderen",
+            "feat4": "Eine lange, sanfte Schwierigkeitskurve über viele handgemachte Level",
+            "feat5": "Einhandbedienung, 12 Sprachen, offline spielbar nach der Installation",
+            "back": "← Zurück zu Sumlings",
+            "page_label": "Spielübersicht",
+            "howto_label": "So wird gespielt",
+            "feat_label": "Highlights",
+            "cap_key": "Key Art"
+      },
+      "fr": {
+            "title": "Sumlings — Aperçu du jeu",
+            "meta_desc": "Aperçu du jeu Sumlings : le terrarium cosy, comment jouer et ses atouts — un puzzle de chiffres où l'on place des œufs numérotés, fait correspondre la somme de chaque nid et fait éclore des merveilles.",
+            "tagline": "Place les chiffres. Fais éclore la magie.",
+            "lead": "Un puzzle de chiffres cosy dans un petit terrarium. Place des œufs numérotés dans les nids, fais correspondre exactement la somme de chaque nid à sa cible, et regarde les œufs éclore en petits Sumlings curieux — collectionne-les tous tandis que ton terrarium se remplit de vie.",
+            "world_label": "Le terrarium",
+            "world_text": "Ton monde est un petit terrarium de verre parsemé de nids. Des œufs numérotés attendent d'être placés, chaque nid affiche la somme qu'il espère — et chaque puzzle résolu fait éclore un nouveau Sumling, douce et merveilleuse créature de chiffres, dans ta collection grandissante.",
+            "howto_text": "Placer, additionner, faire éclore. Lis la cible de chaque nid, dépose les bons œufs numérotés et fais coïncider les sommes — pas de chrono, pas de précipitation, juste un petit puzzle paisible.",
+            "step1": "Chaque nid affiche une somme cible à atteindre.",
+            "step2": "Fais glisser les œufs numérotés de ton plateau vers les nids.",
+            "step3": "Fais correspondre exactement la somme de chaque nid à sa cible — ni plus, ni moins.",
+            "step4": "Résous le plateau et les œufs éclosent en Sumlings pour ta collection.",
+            "feat1": "Des puzzles de chiffres cosy sans chrono — réfléchis à ton rythme",
+            "feat2": "Place des œufs numérotés et équilibre la somme de chaque nid sur sa cible",
+            "feat3": "Fais éclore toute une collection de mignons Sumlings, un puzzle à la fois",
+            "feat4": "Une longue et douce courbe de difficulté sur de nombreux niveaux faits main",
+            "feat5": "Jeu à une main, 12 langues, jouable hors ligne une fois installé",
+            "back": "← Retour à Sumlings",
+            "page_label": "Aperçu du jeu",
+            "howto_label": "Comment jouer",
+            "feat_label": "Points forts",
+            "cap_key": "Illustration clé"
+      },
+      "it": {
+            "title": "Sumlings — Panoramica del gioco",
+            "meta_desc": "Panoramica di Sumlings: l'accogliente terrario, come si gioca e i suoi punti di forza — un puzzle di numeri in cui posizioni uova numerate, fai combaciare la somma di ogni nido e schiudi meraviglie.",
+            "tagline": "Posiziona i numeri. Schiudi meraviglie.",
+            "lead": "Un puzzle di numeri rilassante in un piccolo terrario. Posiziona uova numerate nei nidi, fai combaciare esattamente la somma di ogni nido con il suo obiettivo e guarda le uova schiudersi in piccoli Sumling curiosi — collezionali tutti mentre il tuo terrario si riempie di vita.",
+            "world_label": "Il terrario",
+            "world_text": "Il tuo mondo è un piccolo terrario di vetro costellato di nidi. Uova numerate attendono di essere posizionate, ogni nido mostra la somma che spera di raggiungere — e ogni puzzle risolto schiude un nuovo Sumling, dolce e meravigliosa creatura di numeri, nella tua collezione in crescita.",
+            "howto_text": "Posiziona, somma, schiudi. Leggi l'obiettivo di ogni nido, inserisci le uova numerate giuste e fai combaciare le somme — niente timer, niente fretta, solo un piccolo puzzle tranquillo.",
+            "step1": "Ogni nido mostra una somma obiettivo da raggiungere.",
+            "step2": "Trascina le uova numerate dal tuo vassoio nei nidi.",
+            "step3": "Fai combaciare esattamente la somma di ogni nido con il suo obiettivo — né più né meno.",
+            "step4": "Risolvi il tabellone e le uova si schiudono in Sumling per la tua collezione.",
+            "feat1": "Puzzle di numeri rilassanti e senza timer — pensa al tuo ritmo",
+            "feat2": "Posiziona uova numerate e bilancia la somma di ogni nido sul suo obiettivo",
+            "feat3": "Schiudi un'intera collezione di simpatici Sumling, un puzzle alla volta",
+            "feat4": "Una curva di difficoltà lunga e dolce su tanti livelli fatti a mano",
+            "feat5": "Gioco a una mano, 12 lingue, giocabile offline dopo l'installazione",
+            "back": "← Torna a Sumlings",
+            "page_label": "Panoramica del gioco",
+            "howto_label": "Come si gioca",
+            "feat_label": "Punti salienti",
+            "cap_key": "Key art"
+      },
+      "es": {
+            "title": "Sumlings — Descripción del juego",
+            "meta_desc": "Descripción del juego Sumlings: el acogedor terrario, cómo se juega y lo que lo hace destacar — un puzle de números en el que colocas huevos numerados, igualas la suma de cada nido y eclosionas maravillas.",
+            "tagline": "Coloca números. Eclosiona maravillas.",
+            "lead": "Un puzle de números acogedor en un pequeño terrario. Coloca huevos numerados en los nidos, haz que la suma de cada nido coincida exactamente con su meta, y mira cómo los huevos eclosionan en pequeños Sumlings curiosos — colecciónalos todos mientras tu terrario se llena de vida.",
+            "world_label": "El terrario",
+            "world_text": "Tu mundo es un pequeño terrario de cristal salpicado de nidos. Los huevos numerados esperan a ser colocados, cada nido muestra la suma que desea — y cada puzle resuelto eclosiona un nuevo Sumling, una criatura de números tierna y maravillosa, en tu creciente colección.",
+            "howto_text": "Coloca, suma, eclosiona. Lee la meta de cada nido, deja caer los huevos numerados correctos y haz que las sumas cuadren — sin cronómetro, sin prisa, solo un pequeño puzle tranquilo.",
+            "step1": "Cada nido muestra una suma meta que quiere alcanzar.",
+            "step2": "Arrastra los huevos numerados de tu bandeja a los nidos.",
+            "step3": "Haz que la suma de cada nido coincida exactamente con su meta — ni más, ni menos.",
+            "step4": "Resuelve el tablero y los huevos eclosionan en Sumlings para tu colección.",
+            "feat1": "Puzles de números acogedores y sin cronómetro — piensa a tu ritmo",
+            "feat2": "Coloca huevos numerados y equilibra la suma de cada nido a su meta",
+            "feat3": "Eclosiona toda una colección de lindos Sumlings, un puzle a la vez",
+            "feat4": "Una curva de dificultad larga y suave a lo largo de muchos niveles hechos a mano",
+            "feat5": "Juego a una mano, 12 idiomas, jugable sin conexión tras la instalación",
+            "back": "← Volver a Sumlings",
+            "page_label": "Descripción del juego",
+            "howto_label": "Cómo se juega",
+            "feat_label": "Lo más destacado",
+            "cap_key": "Arte clave"
+      },
+      "pt": {
+            "title": "Sumlings — Visão geral do jogo",
+            "meta_desc": "Visão geral de Sumlings: o terrário aconchegante, como jogar e o que o faz brilhar — um quebra-cabeça de números em que você coloca ovos numerados, iguala a soma de cada ninho e choca maravilhas.",
+            "tagline": "Coloque números. Choque maravilhas.",
+            "lead": "Um quebra-cabeça de números aconchegante em um pequeno terrário. Coloque ovos numerados nos ninhos, faça a soma de cada ninho corresponder exatamente ao seu alvo e veja os ovos chocarem em pequenos Sumlings curiosos — colecione todos enquanto seu terrário se enche de vida.",
+            "world_label": "O terrário",
+            "world_text": "Seu mundo é um pequeno terrário de vidro pontilhado de ninhos. Ovos numerados esperam para ser colocados, cada ninho mostra a soma que deseja — e cada quebra-cabeça resolvido choca um novo Sumling, uma criatura de números gentil e maravilhosa, para a sua coleção crescente.",
+            "howto_text": "Coloque, some, choque. Leia o alvo de cada ninho, coloque os ovos numerados certos e faça as somas baterem — sem cronômetro, sem pressa, apenas um pequeno quebra-cabeça tranquilo.",
+            "step1": "Cada ninho mostra uma soma-alvo que deseja atingir.",
+            "step2": "Arraste os ovos numerados da sua bandeja para os ninhos.",
+            "step3": "Faça a soma de cada ninho corresponder exatamente ao alvo — nem mais, nem menos.",
+            "step4": "Resolva o tabuleiro e os ovos chocam em Sumlings para a sua coleção.",
+            "feat1": "Quebra-cabeças de números aconchegantes e sem cronômetro — pense no seu ritmo",
+            "feat2": "Coloque ovos numerados e equilibre a soma de cada ninho ao seu alvo",
+            "feat3": "Choque uma coleção inteira de fofos Sumlings, um quebra-cabeça por vez",
+            "feat4": "Uma curva de dificuldade longa e suave em muitos níveis feitos à mão",
+            "feat5": "Jogo com uma mão, 12 idiomas, jogável offline após instalar",
+            "back": "← Voltar para Sumlings",
+            "page_label": "Visão geral do jogo",
+            "howto_label": "Como jogar",
+            "feat_label": "Destaques",
+            "cap_key": "Arte principal"
+      },
+      "ru": {
+            "title": "Sumlings — Об игре",
+            "meta_desc": "Об игре Sumlings: уютный террариум, как играть и в чём её прелесть — числовая головоломка, где вы расставляете числовые яйца, подбираете сумму каждого гнезда и вылупляете чудеса.",
+            "tagline": "Расставь числа. Вылупи чудеса.",
+            "lead": "Уютная числовая головоломка в крошечном террариуме. Расставляйте числовые яйца по гнёздам, добивайтесь, чтобы сумма каждого гнезда точно совпала с целью, и смотрите, как из яиц вылупляются любопытные малыши-Sumling — собирайте их всех, пока ваш террариум наполняется жизнью.",
+            "world_label": "Террариум",
+            "world_text": "Ваш мир — маленький стеклянный террариум, усеянный гнёздами. Числовые яйца ждут, когда их расставят, каждое гнездо показывает желаемую сумму — и каждая решённая головоломка вылупляет нового Sumling, нежное и чудесное существо из чисел, в вашу растущую коллекцию.",
+            "howto_text": "Ставь, складывай, вылупляй. Прочти цель каждого гнезда, положи нужные числовые яйца и сведи суммы — без таймера, без спешки, просто тихая маленькая головоломка.",
+            "step1": "Каждое гнездо показывает целевую сумму, которую нужно набрать.",
+            "step2": "Перетаскивайте числовые яйца с лотка в гнёзда.",
+            "step3": "Сделайте сумму каждого гнезда точно равной цели — не больше и не меньше.",
+            "step4": "Решите поле — и яйца вылупятся в Sumling для вашей коллекции.",
+            "feat1": "Уютные числовые головоломки без таймера — думайте в своём темпе",
+            "feat2": "Расставляйте числовые яйца и подгоняйте сумму каждого гнезда под цель",
+            "feat3": "Вылупляйте целую коллекцию милых Sumling, по одной головоломке за раз",
+            "feat4": "Длинная и плавная кривая сложности на множестве рукотворных уровней",
+            "feat5": "Игра одной рукой, 12 языков, играется офлайн после установки",
+            "back": "← Назад к Sumlings",
+            "page_label": "Обзор игры",
+            "howto_label": "Как играть",
+            "feat_label": "Ключевые моменты",
+            "cap_key": "Ключевой арт"
+      }
+};
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
+
+  function detectLang() {
+    try { const stored = localStorage.getItem(LANG_STORAGE_KEY); if (stored && i18n[stored]) return stored; } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang, persist) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code; opt.textContent = l.flag + ' ' + l.name; sel.appendChild(opt);
+    }
+    // Persist on init too — keeps the chosen language across privacy/terms/overview via the shared key.
+    setLang(detectLang(), true);
+    sel.addEventListener('change', e => setLang(e.target.value, true));
+  })();
+</script>
+<script src="../breadcrumb.js?v=20260602202548" defer></script>
+</body>
+</html>
