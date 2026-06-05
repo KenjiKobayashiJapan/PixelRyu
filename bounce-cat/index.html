@@ -13,7 +13,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n="title">Bounce Cat — Bank shots. Free the cat.</title>
-<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Bounce Cat — a cozy maze-escape puzzle by PixelRyu. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out. 200 mazes across 10 worlds. Coming soon to iOS, Android, and Roblox.">
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Bounce Cat — a cozy maze-escape puzzle by PixelRyu. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out. 200 mazes across 10 worlds. Coming soon to iOS and Roblox. Android testers welcome.">
 <style>
   body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
@@ -45,7 +45,18 @@
   .hero-badges.soon .soon-stamp { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) rotate(-12deg); font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; color: #e11d1d; text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 1px 2px rgba(0,0,0,0.35); pointer-events: none; }
   .hero-badges img { display: block; height: 51px; width: auto; }
   .hero-badges svg { display: block; }
+  .hero-badges a { display: inline-block; line-height: 0; transition: transform .2s ease, opacity .2s ease; }
+  .hero-badges a:hover { transform: translateY(-2px); opacity: .85; }
   .soon-note { font-size: 13px; color: #7a8a6e; margin: 2px 0 28px; }
+  /* === Tester card === Android クローズドテスト開始 2026-06-05 で公開 */
+  .tester-card-base { background: rgba(255,255,255,0.55); border: 1px solid rgba(232,136,74,0.40); border-radius: 16px; padding: 24px 24px 28px; margin: 4px 0 28px; text-align: left; box-shadow: 0 8px 24px rgba(95,140,80,0.12); }
+  .tester-heading { font-size: 13px; color: #c2742f; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 4px; font-weight: 700; text-align: center; }
+  .tester-android-note { display: block; font-size: 11px; color: #7a8a6e; text-transform: none; letter-spacing: 0; font-weight: 400; margin-bottom: 16px; text-align: center; }
+  .tester-card-base p { font-size: 14px; line-height: 1.65; color: #3a2e1f; margin: 12px 0; }
+  .tester-section-label { font-size: 13px; font-weight: 700; color: #5a8c4e; margin: 20px 0 6px; }
+  .tester-step { display: block; background: rgba(232,136,74,0.12); border: 1px solid rgba(232,136,74,0.40); border-radius: 10px; padding: 12px 16px; margin: 10px 0; color: #c2742f; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s ease; }
+  .tester-step:hover { background: rgba(232,136,74,0.22); border-color: rgba(232,136,74,0.70); color: #d9762f; }
+  .tester-card-base ul { margin: 6px 0 0; padding-left: 22px; color: #3a2e1f; font-size: 14px; line-height: 1.7; }
   .overview-link { display: block; background: #e8884a; color: #ffffff; text-decoration: none; font-size: 16px; font-weight: 700; padding: 18px 22px; border-radius: 14px; margin: 0 0 28px; transition: all 0.2s ease; box-shadow: 0 6px 22px rgba(232,136,74,0.30); }
   .overview-link:hover { background: #d9762f; transform: translateY(-1px); }
   .promo-video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; margin: 0 0 24px; background: #000; box-shadow: 0 6px 22px rgba(95,140,80,0.22); }
@@ -79,7 +90,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PixelRyu">
 <meta property="og:title" content="Bounce Cat — Bank shots. Free the cat.">
-<meta property="og:description" content="Bounce Cat — a cozy maze-escape puzzle by PixelRyu. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out. 200 mazes across 10 worlds. Coming soon to iOS, Android, and Roblox.">
+<meta property="og:description" content="Bounce Cat — a cozy maze-escape puzzle by PixelRyu. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out. 200 mazes across 10 worlds. Coming soon to iOS and Roblox. Android testers welcome.">
 <meta property="og:url" content="https://pixelryu.github.io/bounce-cat/">
 <meta property="og:image" content="https://pixelryu.github.io/bounce-cat/og.png">
 <meta property="og:image:width" content="1200">
@@ -99,10 +110,10 @@
 <meta property="og:locale:alternate" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Bounce Cat — Bank shots. Free the cat.">
-<meta name="twitter:description" content="Bounce Cat — a cozy maze-escape puzzle by PixelRyu. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out. 200 mazes across 10 worlds. Coming soon to iOS, Android, and Roblox.">
+<meta name="twitter:description" content="Bounce Cat — a cozy maze-escape puzzle by PixelRyu. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out. 200 mazes across 10 worlds. Coming soon to iOS and Roblox. Android testers welcome.">
 <meta name="twitter:image" content="https://pixelryu.github.io/bounce-cat/og.png">
 <meta name="twitter:image:alt" content="Bounce Cat — Bank shots. Free the cat.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Bounce Cat","url":"https://pixelryu.github.io/bounce-cat/","image":"https://pixelryu.github.io/bounce-cat/icon.png","description":"Bounce Cat — a cozy maze-escape puzzle by PixelRyu. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out. 200 mazes across 10 worlds. Coming soon to iOS, Android, and Roblox.","applicationCategory":"GameApplication","operatingSystem":"iOS, Android, Roblox","author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Bounce Cat","url":"https://pixelryu.github.io/bounce-cat/","image":"https://pixelryu.github.io/bounce-cat/icon.png","description":"Bounce Cat — a cozy maze-escape puzzle by PixelRyu. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out. 200 mazes across 10 worlds. Coming soon to iOS and Roblox. Android testers welcome.","applicationCategory":"GameApplication","operatingSystem":"iOS, Android, Roblox","author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"sameAs":["https://play.google.com/apps/testing/com.pixelryu.bouncecat"],"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/"},{"@type":"ListItem","position":2,"name":"Bounce Cat","item":"https://pixelryu.github.io/bounce-cat/"}]}</script>
 <!-- SEO/LLMO end -->
 </head>
@@ -116,7 +127,7 @@
   <h1>Bounce <span class="accent">Cat</span></h1>
   <div class="subtitle" data-i18n="subtitle">Cozy Bounce-Maze Puzzle</div>
 
-  <section class="hero-badges soon" aria-label="Coming soon to the App Store, Google Play and Roblox">
+  <section class="hero-badges soon" aria-label="Android testers welcome on Google Play; App Store and Roblox coming soon">
     <span class="soon-cell"><span class="appstore-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
           <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
           <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
@@ -125,7 +136,7 @@
           <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
           <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
         </svg></span><span class="soon-stamp">COMING SOON</span></span>
-    <span class="soon-cell"><span class="googleplay-badge"><img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Google Play" height="51"></span><span class="soon-stamp">COMING SOON</span></span>
+    <a href="#tester-heading" aria-label="Join Bounce Cat Android testers"><img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51"></a>
     <span class="soon-cell"><span class="roblox-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
           <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
           <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
@@ -138,7 +149,39 @@
           <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
         </svg></span><span class="soon-stamp">COMING SOON</span></span>
   </section>
-  <p class="soon-note" data-i18n="coming_soon_note">Coming soon to the App Store, Google Play, and Roblox.</p>
+  <p class="soon-note" data-i18n="coming_soon_note">Coming soon to the App Store and Roblox.</p>
+
+  <section class="tester-card tester-card-base" aria-labelledby="tester-heading">
+    <div id="tester-heading" class="tester-heading">
+      🎁 <span data-i18n="tester_heading">Android Tester Recruitment</span>
+      <span class="tester-android-note">📱 <span data-i18n="tester_android_note">Android only</span></span>
+    </div>
+    <p data-i18n="tester_intro">Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.</p>
+
+    <div class="tester-section-label">📦 <span data-i18n="tester_what_label">What it is</span></div>
+    <p data-i18n="tester_what">A cozy maze-escape puzzle. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out — 200 mazes across 10 worlds.</p>
+
+    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">
+      🔗 <span data-i18n="tester_step1_label">Step 1 — Join the tester group</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.bouncecat" target="_blank" rel="noopener">
+      📱 <span data-i18n="tester_step2_label">Step 2 — Opt-in via Play Store</span>
+    </a>
+
+    <div class="tester-section-label">📌 <span data-i18n="tester_ask_label">What I'm asking for</span></div>
+    <ul>
+      <li data-i18n="tester_ask_keep">Keep installed for the full 14 days</li>
+      <li data-i18n="tester_ask_launch">Launch every couple of days (a few times is enough)</li>
+      <li data-i18n="tester_ask_minutes">A minute or two of play per session is plenty</li>
+    </ul>
+    <p class="tester-note" data-i18n="tester_note_lead">ℹ️ Tip — both steps below are required:</p>
+    <ul class="tester-note-list">
+      <li data-i18n="tester_note_step1">Step 1 — Join the group: even if you see “no permission to view content”, there’s a “Join group” button on that page — tap it to join.</li>
+      <li data-i18n="tester_note_step2">Step 2 — Opt-in, then install &amp; play: after opting in, download the app from the Play Store, open it and play a little. Joining the group alone is not enough.</li>
+      <li data-i18n="tester_note_account">Use the same Google account for both steps.</li>
+      <li data-i18n="tester_note_wait">If Step 2 shows “App not available”, wait a few hours after joining and try again.</li>
+    </ul>
+  </section>
 
   <a href="overview.html" class="overview-link">🧶 <span data-i18n="link_overview">View Game Overview</span> →</a>
 
@@ -183,11 +226,27 @@
   const i18n = {
     "en": {
         "title": "Bounce Cat — Bank shots. Free the cat.",
-        "meta_desc": "Bounce Cat — a cozy maze-escape puzzle by PixelRyu. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out. 200 mazes across 10 worlds. Coming soon to iOS, Android, and Roblox.",
+        "meta_desc": "Bounce Cat — a cozy maze-escape puzzle by PixelRyu. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out. 200 mazes across 10 worlds. Coming soon to iOS and Roblox. Android testers welcome.",
         "tagline": "Bank shots. Free the cat.",
         "subtitle": "Cozy Bounce-Maze Puzzle",
         "coming_soon": "Coming soon",
-        "coming_soon_note": "Coming soon to the App Store, Google Play, and Roblox.",
+        "coming_soon_note": "Coming soon to the App Store and Roblox.",
+        "tester_heading": "Android Tester Recruitment",
+        "tester_android_note": "Android only",
+        "tester_intro": "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
+        "tester_what_label": "What it is",
+        "tester_what": "A cozy maze-escape puzzle. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out — 200 mazes across 10 worlds.",
+        "tester_step1_label": "Step 1 — Join the tester group",
+        "tester_step2_label": "Step 2 — Opt-in via Play Store",
+        "tester_ask_label": "What I'm asking for",
+        "tester_ask_keep": "Keep installed for the full 14 days",
+        "tester_ask_launch": "Launch every couple of days (a few times is enough)",
+        "tester_ask_minutes": "A minute or two of play per session is plenty",
+        "tester_note_lead": "ℹ️ Tip — both steps below are required:",
+        "tester_note_step1": "Step 1 — Join the group: even if you see “no permission to view content”, there’s a “Join group” button on that page — tap it to join.",
+        "tester_note_step2": "Step 2 — Opt-in, then install & play: after opting in, download the app from the Play Store, open it and play a little. Joining the group alone is not enough.",
+        "tester_note_account": "Use the same Google account for both steps.",
+        "tester_note_wait": "If Step 2 shows “App not available”, wait a few hours after joining and try again.",
         "link_overview": "View Game Overview",
         "legal_divider": "Legal Documents",
         "link_privacy": "Privacy Policy",
@@ -196,11 +255,27 @@
     },
     "ja": {
         "title": "Bounce Cat — 跳ね返して、猫を助け出そう。",
-        "meta_desc": "Bounce Cat — PixelRyu による、ほっこり迷路脱出パズル。迷路の外から毛糸玉を撃ち込み、跳ね返る弾道を読んで、壁をずらしたり壊したりして、閉じ込められた猫の逃げ道を開けよう。全200ステージ・10ワールド。iOS・Android・Roblox で近日公開。",
+        "meta_desc": "Bounce Cat — PixelRyu による、ほっこり迷路脱出パズル。迷路の外から毛糸玉を撃ち込み、跳ね返る弾道を読んで、壁をずらしたり壊したりして、閉じ込められた猫の逃げ道を開けよう。全200ステージ・10ワールド。iOS・Roblox で近日公開。Android テスター募集中。",
         "tagline": "跳ね返して、猫を助け出そう。",
         "subtitle": "ほっこり迷路脱出パズル",
         "coming_soon": "近日公開",
-        "coming_soon_note": "App Store・Google Play・Roblox で近日公開。",
+        "coming_soon_note": "App Store・Roblox で近日公開。",
+        "tester_heading": "Android テスター募集中",
+        "tester_android_note": "Android 専用",
+        "tester_intro": "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
+        "tester_what_label": "ゲーム内容",
+        "tester_what": "ほっこり迷路脱出パズル。迷路の外から毛糸玉を撃ち込み、跳ね返る弾道を読んで壁をずらしたり壊したりして、閉じ込められた猫の逃げ道を開けます。全200ステージ・10ワールド。",
+        "tester_step1_label": "ステップ 1 — テスターグループに参加",
+        "tester_step2_label": "ステップ 2 — Play ストアでオプトイン",
+        "tester_ask_label": "お願いしたいこと",
+        "tester_ask_keep": "14 日間アンインストールせずに保持",
+        "tester_ask_launch": "数日に一度起動 (合計数回で OK)",
+        "tester_ask_minutes": "1 回 1〜2 分の軽いプレイで大丈夫",
+        "tester_note_lead": "ℹ️ ヒント — 下記の両方のステップが必要です:",
+        "tester_note_step1": "ステップ1 — グループに参加: 「閲覧権限がありません」と表示されても、その画面に「グループに参加」ボタンがあるので押して参加してください。",
+        "tester_note_step2": "ステップ2 — オプトイン後、インストールしてプレイ: オプトインしたら Play ストアからアプリをダウンロードし、起動して少し遊んでください。グループに参加するだけでは完了しません。",
+        "tester_note_account": "両方のステップは同じ Google アカウントでお使いください。",
+        "tester_note_wait": "ステップ2が「App not available」のときは、参加から数時間おいて再度お試しください。",
         "link_overview": "ゲーム概要を見る",
         "legal_divider": "規約類",
         "link_privacy": "プライバシーポリシー",
@@ -209,11 +284,27 @@
     },
     "zh": {
         "title": "Bounce Cat — 弹射毛线，救出小猫。",
-        "meta_desc": "Bounce Cat — PixelRyu 出品的暖心迷宫脱出解谜。从迷宫外发射毛线球，借力反弹，推开或击碎墙壁，让被困的小猫自己找到逃生之路。全 200 关、横跨 10 个世界。即将登陆 iOS、Android 与 Roblox。",
+        "meta_desc": "Bounce Cat — PixelRyu 出品的暖心迷宫脱出解谜。从迷宫外发射毛线球，借力反弹，推开或击碎墙壁，让被困的小猫自己找到逃生之路。全 200 关、横跨 10 个世界。即将登陆 iOS 与 Roblox。招募 Android 测试员。",
         "tagline": "弹射毛线，救出小猫。",
         "subtitle": "暖心弹射迷宫解谜",
         "coming_soon": "即将上线",
-        "coming_soon_note": "即将登陆 App Store、Google Play 与 Roblox。",
+        "coming_soon_note": "即将登陆 App Store 与 Roblox。",
+        "tester_heading": "招募 Android 测试者",
+        "tester_android_note": "仅限 Android",
+        "tester_intro": "我是一名独立开发者，正在为期 14 天的封闭测试招募积极的 Android 测试者。",
+        "tester_what_label": "游戏简介",
+        "tester_what": "治愈系迷宫脱出解谜。从迷宫外发射毛线球，借力反弹，推开或击碎墙壁，让被困的小猫自己找到逃生之路——全 200 关、横跨 10 个世界。",
+        "tester_step1_label": "第一步 — 加入测试者群组",
+        "tester_step2_label": "第二步 — 通过 Play 商店加入测试",
+        "tester_ask_label": "我希望你能做到",
+        "tester_ask_keep": "完整保留 14 天不卸载",
+        "tester_ask_launch": "每隔几天启动一次（几次即可）",
+        "tester_ask_minutes": "每次玩一两分钟就够了",
+        "tester_note_lead": "ℹ️ 提示 — 以下两个步骤都必须完成：",
+        "tester_note_step1": "第一步 — 加入群组：即使显示“无权限查看内容”，该页面上也有“加入群组”按钮，请点击加入。",
+        "tester_note_step2": "第二步 — 加入测试后下载并试玩：加入测试后，请从 Play 商店下载应用，打开并稍微试玩。仅加入群组还不够。",
+        "tester_note_account": "两个步骤请使用同一个 Google 账号。",
+        "tester_note_wait": "如果第二步显示“App not available”，请在加入后等待几小时再试。",
         "link_overview": "查看游戏概览",
         "legal_divider": "条款文件",
         "link_privacy": "隐私政策",
@@ -222,11 +313,27 @@
     },
     "ko": {
         "title": "Bounce Cat — 튕겨서, 고양이를 구해 주세요.",
-        "meta_desc": "Bounce Cat — PixelRyu가 만든 아늑한 미로 탈출 퍼즐. 미로 밖에서 털실 뭉치를 쏘아 넣고, 튕기는 탄도를 읽어 벽을 밀거나 부수면서, 갇힌 고양이가 스스로 빠져나갈 길을 열어 주세요. 총 200개 미로・10개 월드. iOS・Android・Roblox에서 곧 출시.",
+        "meta_desc": "Bounce Cat — PixelRyu가 만든 아늑한 미로 탈출 퍼즐. 미로 밖에서 털실 뭉치를 쏘아 넣고, 튕기는 탄도를 읽어 벽을 밀거나 부수면서, 갇힌 고양이가 스스로 빠져나갈 길을 열어 주세요. 총 200개 미로・10개 월드. iOS・Roblox에서 곧 출시. Android 테스터 모집 중.",
         "tagline": "튕겨서, 고양이를 구해 주세요.",
         "subtitle": "아늑한 미로 탈출 퍼즐",
         "coming_soon": "곧 출시",
-        "coming_soon_note": "App Store・Google Play・Roblox에서 곧 출시.",
+        "coming_soon_note": "App Store・Roblox에서 곧 출시.",
+        "tester_heading": "Android 테스터 모집",
+        "tester_android_note": "Android 전용",
+        "tester_intro": "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
+        "tester_what_label": "게임 소개",
+        "tester_what": "아늑한 미로 탈출 퍼즐. 미로 밖에서 털실 뭉치를 쏘아 넣고 튕기는 탄도를 읽어 벽을 밀거나 부수면서, 갇힌 고양이가 스스로 빠져나갈 길을 열어 줍니다 — 총 200개 미로・10개 월드.",
+        "tester_step1_label": "1단계 — 테스터 그룹 가입",
+        "tester_step2_label": "2단계 — Play 스토어에서 옵트인",
+        "tester_ask_label": "부탁드리는 것",
+        "tester_ask_keep": "14일 동안 설치 상태 유지",
+        "tester_ask_launch": "며칠에 한 번씩 실행 (몇 번이면 충분합니다)",
+        "tester_ask_minutes": "한 번에 1~2분 가벼운 플레이면 충분합니다",
+        "tester_note_lead": "ℹ️ 팁 — 아래 두 단계를 모두 완료해야 합니다:",
+        "tester_note_step1": "1단계 — 그룹 가입: “콘텐츠를 볼 권한이 없습니다”라고 표시되어도 그 화면에 “그룹 가입” 버튼이 있으니 눌러서 가입하세요.",
+        "tester_note_step2": "2단계 — 옵트인 후 설치하고 플레이: 옵트인한 뒤 Play 스토어에서 앱을 다운로드해 실행하고 잠깐 플레이하세요. 그룹 가입만으로는 끝나지 않습니다.",
+        "tester_note_account": "두 단계 모두 같은 Google 계정을 사용하세요.",
+        "tester_note_wait": "2단계에서 “App not available”이 표시되면 가입 후 몇 시간 기다렸다가 다시 시도하세요.",
         "link_overview": "게임 개요 보기",
         "legal_divider": "약관 안내",
         "link_privacy": "개인정보 처리방침",
@@ -235,11 +342,27 @@
     },
     "hi": {
         "title": "Bounce Cat — दीवारों से टकराओ, बिल्ली को छुड़ाओ।",
-        "meta_desc": "Bounce Cat — PixelRyu की एक प्यारी-सी भूलभुलैया-से-निकलने वाली पहेली। भूलभुलैया के बाहर से ऊन का गोला छोड़ो, टकराकर लौटती गेंद की राह पढ़ो, और दीवारों को खिसकाओ या तोड़ो ताकि फँसी हुई बिल्ली खुद अपना रास्ता ढूँढ़ ले। 10 दुनियाओं में 200 भूलभुलैया। iOS, Android और Roblox पर जल्द आ रही है।",
+        "meta_desc": "Bounce Cat — PixelRyu की एक प्यारी-सी भूलभुलैया-से-निकलने वाली पहेली। भूलभुलैया के बाहर से ऊन का गोला छोड़ो, टकराकर लौटती गेंद की राह पढ़ो, और दीवारों को खिसकाओ या तोड़ो ताकि फँसी हुई बिल्ली खुद अपना रास्ता ढूँढ़ ले। 10 दुनियाओं में 200 भूलभुलैया। iOS और Roblox पर जल्द आ रही है। Android परीक्षक आमंत्रित।",
         "tagline": "दीवारों से टकराओ, बिल्ली को छुड़ाओ।",
         "subtitle": "प्यारी-सी बाउंस-भूलभुलैया पहेली",
         "coming_soon": "जल्द आ रही है",
-        "coming_soon_note": "App Store, Google Play और Roblox पर जल्द आ रही है।",
+        "coming_soon_note": "App Store और Roblox पर जल्द आ रही है।",
+        "tester_heading": "Android टेस्टर्स की तलाश",
+        "tester_android_note": "केवल Android",
+        "tester_intro": "सोलो इंडी डेवलपर हूँ, 14 दिन की क्लोज़्ड टेस्टिंग के लिए सक्रिय Android टेस्टर्स ढूँढ रहा हूँ।",
+        "tester_what_label": "यह क्या है",
+        "tester_what": "एक आरामदायक भूलभुलैया-से-निकलने वाली पहेली। भूलभुलैया के बाहर से ऊन का गोला छोड़ें, टकराकर लौटती राह पढ़ें, और दीवारों को खिसकाएँ या तोड़ें ताकि फँसी हुई बिल्ली खुद अपना रास्ता ढूँढ़ ले — 10 दुनियाओं में 200 भूलभुलैया।",
+        "tester_step1_label": "चरण 1 — टेस्टर ग्रुप में शामिल हों",
+        "tester_step2_label": "चरण 2 — Play Store पर ऑप्ट-इन",
+        "tester_ask_label": "मैं क्या माँग रहा हूँ",
+        "tester_ask_keep": "पूरे 14 दिन इंस्टॉल रखें",
+        "tester_ask_launch": "हर कुछ दिन में लॉन्च करें (कुछ बार ही काफ़ी है)",
+        "tester_ask_minutes": "हर सत्र में एक-दो मिनट का खेल काफ़ी है",
+        "tester_note_lead": "ℹ️ सुझाव — नीचे दिए दोनों चरण ज़रूरी हैं:",
+        "tester_note_step1": "चरण 1 — ग्रुप जॉइन करें: भले ही “सामग्री देखने की अनुमति नहीं है” दिखे, उसी पेज पर “ग्रुप जॉइन करें” बटन होता है — उसे दबाकर जॉइन करें।",
+        "tester_note_step2": "चरण 2 — ऑप्ट-इन करके इंस्टॉल करें और खेलें: ऑप्ट-इन के बाद Play Store से ऐप डाउनलोड करें, उसे खोलें और थोड़ा खेलें। सिर्फ़ ग्रुप जॉइन करना काफ़ी नहीं है।",
+        "tester_note_account": "दोनों चरणों में एक ही Google खाते का उपयोग करें।",
+        "tester_note_wait": "अगर चरण 2 में “App not available” दिखे, तो जॉइन करने के कुछ घंटे बाद फिर से कोशिश करें।",
         "link_overview": "गेम का विवरण देखें",
         "legal_divider": "कानूनी दस्तावेज़",
         "link_privacy": "गोपनीयता नीति",
@@ -248,11 +371,27 @@
     },
     "id": {
         "title": "Bounce Cat — Pantulkan benang. Bebaskan si kucing.",
-        "meta_desc": "Bounce Cat — puzzle kabur-dari-labirin yang menghangatkan hati dari PixelRyu. Tembakkan bola benang dari luar labirin, baca lintasan pantulannya, lalu geser atau hancurkan dinding agar si kucing yang terjebak menemukan jalan keluarnya sendiri. 200 labirin di 10 dunia. Segera hadir di iOS, Android, dan Roblox.",
+        "meta_desc": "Bounce Cat — puzzle kabur-dari-labirin yang menghangatkan hati dari PixelRyu. Tembakkan bola benang dari luar labirin, baca lintasan pantulannya, lalu geser atau hancurkan dinding agar si kucing yang terjebak menemukan jalan keluarnya sendiri. 200 labirin di 10 dunia. Segera hadir di iOS dan Roblox. Tester Android dipersilakan.",
         "tagline": "Pantulkan benang. Bebaskan si kucing.",
         "subtitle": "Puzzle Labirin-Pantulan yang Hangat",
         "coming_soon": "Segera hadir",
-        "coming_soon_note": "Segera hadir di App Store, Google Play, dan Roblox.",
+        "coming_soon_note": "Segera hadir di App Store dan Roblox.",
+        "tester_heading": "Mencari Tester Android",
+        "tester_android_note": "Hanya Android",
+        "tester_intro": "Saya developer indie solo, mencari tester Android aktif untuk fase closed test 14 hari.",
+        "tester_what_label": "Tentang game ini",
+        "tester_what": "Puzzle kabur-dari-labirin yang menenangkan. Tembakkan bola benang dari luar labirin, baca lintasan pantulannya, lalu geser atau hancurkan dinding agar si kucing yang terjebak menemukan jalan keluarnya sendiri — 200 labirin di 10 dunia.",
+        "tester_step1_label": "Langkah 1 — Bergabung dengan grup tester",
+        "tester_step2_label": "Langkah 2 — Opt-in via Play Store",
+        "tester_ask_label": "Yang saya mintakan",
+        "tester_ask_keep": "Pertahankan terinstal selama 14 hari penuh",
+        "tester_ask_launch": "Luncurkan setiap beberapa hari (beberapa kali sudah cukup)",
+        "tester_ask_minutes": "Cukup main satu–dua menit per sesi",
+        "tester_note_lead": "ℹ️ Tips — kedua langkah berikut wajib dilakukan:",
+        "tester_note_step1": "Langkah 1 — Gabung grup: meskipun muncul “tidak ada izin untuk melihat konten”, ada tombol “Gabung grup” di halaman itu — tekan untuk bergabung.",
+        "tester_note_step2": "Langkah 2 — Opt-in lalu pasang & mainkan: setelah opt-in, unduh aplikasi dari Play Store, buka, dan mainkan sebentar. Sekadar bergabung ke grup belum cukup.",
+        "tester_note_account": "Gunakan akun Google yang sama untuk kedua langkah.",
+        "tester_note_wait": "Jika Langkah 2 menampilkan “App not available”, tunggu beberapa jam setelah bergabung lalu coba lagi.",
         "link_overview": "Lihat Ringkasan Game",
         "legal_divider": "Dokumen Hukum",
         "link_privacy": "Kebijakan Privasi",
@@ -261,11 +400,27 @@
     },
     "de": {
         "title": "Bounce Cat — Bandenschüsse. Befreie die Katze.",
-        "meta_desc": "Bounce Cat — ein gemütliches Labyrinth-Ausbruchspuzzle von PixelRyu. Schieße ein Wollknäuel von außerhalb des Labyrinths hinein, reite auf den Abprallern und verschiebe oder zerschmettere Wände, damit die eingesperrte Katze ihren eigenen Weg ins Freie findet. 200 Labyrinthe in 10 Welten. Demnächst für iOS, Android und Roblox.",
+        "meta_desc": "Bounce Cat — ein gemütliches Labyrinth-Ausbruchspuzzle von PixelRyu. Schieße ein Wollknäuel von außerhalb des Labyrinths hinein, reite auf den Abprallern und verschiebe oder zerschmettere Wände, damit die eingesperrte Katze ihren eigenen Weg ins Freie findet. 200 Labyrinthe in 10 Welten. Demnächst für iOS und Roblox. Android-Tester gesucht.",
         "tagline": "Bandenschüsse. Befreie die Katze.",
         "subtitle": "Gemütliches Bounce-Labyrinth-Puzzle",
         "coming_soon": "Demnächst",
-        "coming_soon_note": "Demnächst im App Store, bei Google Play und auf Roblox.",
+        "coming_soon_note": "Demnächst im App Store und auf Roblox.",
+        "tester_heading": "Android-Tester gesucht",
+        "tester_android_note": "Nur für Android",
+        "tester_intro": "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
+        "tester_what_label": "Worum es geht",
+        "tester_what": "Ein gemütliches Labyrinth-Ausbruchspuzzle. Schieße ein Wollknäuel von außerhalb des Labyrinths hinein, reite auf den Abprallern und verschiebe oder zerschmettere Wände, damit die eingesperrte Katze ihren eigenen Weg ins Freie findet — 200 Labyrinthe in 10 Welten.",
+        "tester_step1_label": "Schritt 1 — Tester-Gruppe beitreten",
+        "tester_step2_label": "Schritt 2 — Über den Play Store anmelden",
+        "tester_ask_label": "Worum ich bitte",
+        "tester_ask_keep": "14 Tage lang installiert lassen",
+        "tester_ask_launch": "Alle paar Tage starten (ein paar Mal reicht)",
+        "tester_ask_minutes": "Ein bis zwei Minuten Spiel pro Sitzung genügen",
+        "tester_note_lead": "ℹ️ Tipp — beide Schritte unten sind nötig:",
+        "tester_note_step1": "Schritt 1 — Der Gruppe beitreten: Auch wenn „keine Berechtigung zum Anzeigen der Inhalte“ erscheint, gibt es auf der Seite einen Button „Gruppe beitreten“ – tippe darauf, um beizutreten.",
+        "tester_note_step2": "Schritt 2 — Opt-in, dann installieren & spielen: Nach dem Opt-in die App aus dem Play Store herunterladen, öffnen und kurz spielen. Nur der Gruppenbeitritt reicht nicht.",
+        "tester_note_account": "Verwende für beide Schritte dasselbe Google-Konto.",
+        "tester_note_wait": "Wenn Schritt 2 „App not available“ anzeigt, warte nach dem Beitritt ein paar Stunden und versuche es erneut.",
         "link_overview": "Spielübersicht ansehen",
         "legal_divider": "Rechtliche Dokumente",
         "link_privacy": "Datenschutzerklärung",
@@ -274,11 +429,27 @@
     },
     "fr": {
         "title": "Bounce Cat — Des ricochets bien placés. Libère le chat.",
-        "meta_desc": "Bounce Cat — un puzzle cosy d'évasion dans un labyrinthe, signé PixelRyu. Tire une pelote de laine depuis l'extérieur du labyrinthe, anticipe les ricochets, puis déplace ou brise les murs pour que le chat prisonnier trouve sa propre sortie. 200 labyrinthes répartis sur 10 mondes. Bientôt disponible sur iOS, Android et Roblox.",
+        "meta_desc": "Bounce Cat — un puzzle cosy d'évasion dans un labyrinthe, signé PixelRyu. Tire une pelote de laine depuis l'extérieur du labyrinthe, anticipe les ricochets, puis déplace ou brise les murs pour que le chat prisonnier trouve sa propre sortie. 200 labyrinthes répartis sur 10 mondes. Bientôt disponible sur iOS et Roblox. Testeurs Android bienvenus.",
         "tagline": "Des ricochets bien placés. Libère le chat.",
         "subtitle": "Puzzle cosy de labyrinthe à ricochets",
         "coming_soon": "Bientôt disponible",
-        "coming_soon_note": "Bientôt disponible sur l'App Store, Google Play et Roblox.",
+        "coming_soon_note": "Bientôt disponible sur l'App Store et Roblox.",
+        "tester_heading": "Recherche de testeurs Android",
+        "tester_android_note": "Android uniquement",
+        "tester_intro": "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
+        "tester_what_label": "De quoi il s'agit",
+        "tester_what": "Un puzzle cosy d'évasion dans un labyrinthe. Tire une pelote de laine depuis l'extérieur du labyrinthe, anticipe les ricochets, puis déplace ou brise les murs pour que le chat prisonnier trouve sa propre sortie — 200 labyrinthes sur 10 mondes.",
+        "tester_step1_label": "Étape 1 — Rejoindre le groupe de testeurs",
+        "tester_step2_label": "Étape 2 — S'inscrire via le Play Store",
+        "tester_ask_label": "Ce que je demande",
+        "tester_ask_keep": "Garder installé pendant les 14 jours complets",
+        "tester_ask_launch": "Lancer tous les deux jours (quelques fois suffisent)",
+        "tester_ask_minutes": "Une à deux minutes de jeu par session suffisent",
+        "tester_note_lead": "ℹ️ Astuce — les deux étapes ci-dessous sont nécessaires :",
+        "tester_note_step1": "Étape 1 — Rejoindre le groupe : même si « autorisation refusée pour afficher le contenu » s’affiche, un bouton « Rejoindre le groupe » est présent sur la page — appuyez dessus pour rejoindre.",
+        "tester_note_step2": "Étape 2 — S’inscrire, puis installer et jouer : après l’inscription, téléchargez l’application depuis le Play Store, ouvrez-la et jouez un peu. Rejoindre le groupe ne suffit pas.",
+        "tester_note_account": "Utilisez le même compte Google pour les deux étapes.",
+        "tester_note_wait": "Si l’étape 2 affiche « App not available », attendez quelques heures après avoir rejoint, puis réessayez.",
         "link_overview": "Voir la présentation du jeu",
         "legal_divider": "Documents légaux",
         "link_privacy": "Politique de confidentialité",
@@ -287,11 +458,27 @@
     },
     "it": {
         "title": "Bounce Cat — Tiri di sponda. Libera il gatto.",
-        "meta_desc": "Bounce Cat — un accogliente puzzle di fuga dal labirinto firmato PixelRyu. Spara un gomitolo di lana dall'esterno del labirinto, segui i rimbalzi e sposta o frantuma i muri perché il gatto intrappolato trovi da solo la via d'uscita. 200 labirinti in 10 mondi. Presto su iOS, Android e Roblox.",
+        "meta_desc": "Bounce Cat — un accogliente puzzle di fuga dal labirinto firmato PixelRyu. Spara un gomitolo di lana dall'esterno del labirinto, segui i rimbalzi e sposta o frantuma i muri perché il gatto intrappolato trovi da solo la via d'uscita. 200 labirinti in 10 mondi. Presto su iOS e Roblox. Cercasi tester Android.",
         "tagline": "Tiri di sponda. Libera il gatto.",
         "subtitle": "Accogliente puzzle a labirinto e rimbalzi",
         "coming_soon": "Disponibile a breve",
-        "coming_soon_note": "Presto su App Store, Google Play e Roblox.",
+        "coming_soon_note": "Presto su App Store e Roblox.",
+        "tester_heading": "Cercasi tester Android",
+        "tester_android_note": "Solo Android",
+        "tester_intro": "Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.",
+        "tester_what_label": "Di cosa si tratta",
+        "tester_what": "Un accogliente puzzle di fuga dal labirinto. Spara un gomitolo di lana dall'esterno del labirinto, segui i rimbalzi e sposta o frantuma i muri perché il gatto intrappolato trovi da solo la via d'uscita — 200 labirinti in 10 mondi.",
+        "tester_step1_label": "Passo 1 — Unisciti al gruppo tester",
+        "tester_step2_label": "Passo 2 — Opt-in tramite Play Store",
+        "tester_ask_label": "Cosa chiedo",
+        "tester_ask_keep": "Tienilo installato per tutti i 14 giorni",
+        "tester_ask_launch": "Aprilo ogni paio di giorni (poche volte basta)",
+        "tester_ask_minutes": "Bastano un paio di minuti di gioco a sessione",
+        "tester_note_lead": "ℹ️ Suggerimento — servono entrambi i passaggi qui sotto:",
+        "tester_note_step1": "Passaggio 1 — Iscriviti al gruppo: anche se compare « non hai l’autorizzazione per visualizzare i contenuti », sulla pagina c’è il pulsante « Iscriviti al gruppo » — toccalo per iscriverti.",
+        "tester_note_step2": "Passaggio 2 — Opt-in, poi installa e gioca: dopo l’opt-in, scarica l’app dal Play Store, aprila e gioca un po’. Iscriversi al gruppo non basta.",
+        "tester_note_account": "Usa lo stesso account Google per entrambi i passaggi.",
+        "tester_note_wait": "Se il passaggio 2 mostra « App not available », attendi qualche ora dopo l’iscrizione e riprova.",
         "link_overview": "Scopri la panoramica del gioco",
         "legal_divider": "Documenti legali",
         "link_privacy": "Informativa sulla privacy",
@@ -300,11 +487,27 @@
     },
     "es": {
         "title": "Bounce Cat — Tiros con rebote. Libera al gato.",
-        "meta_desc": "Bounce Cat — un acogedor puzle de escape de laberintos de PixelRyu. Dispara un ovillo de lana desde fuera del laberinto, sigue el rebote y desplaza o rompe muros para que el gato atrapado encuentre su propia salida. 200 laberintos en 10 mundos. Próximamente en iOS, Android y Roblox.",
+        "meta_desc": "Bounce Cat — un acogedor puzle de escape de laberintos de PixelRyu. Dispara un ovillo de lana desde fuera del laberinto, sigue el rebote y desplaza o rompe muros para que el gato atrapado encuentre su propia salida. 200 laberintos en 10 mundos. Próximamente en iOS y Roblox. Se buscan testers de Android.",
         "tagline": "Tiros con rebote. Libera al gato.",
         "subtitle": "Acogedor puzle de laberintos con rebote",
         "coming_soon": "Próximamente",
-        "coming_soon_note": "Próximamente en App Store, Google Play y Roblox.",
+        "coming_soon_note": "Próximamente en App Store y Roblox.",
+        "tester_heading": "Buscamos testers de Android",
+        "tester_android_note": "Solo Android",
+        "tester_intro": "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
+        "tester_what_label": "De qué se trata",
+        "tester_what": "Un acogedor puzle de escape de laberintos. Dispara un ovillo de lana desde fuera del laberinto, sigue el rebote y desplaza o rompe muros para que el gato atrapado encuentre su propia salida — 200 laberintos en 10 mundos.",
+        "tester_step1_label": "Paso 1 — Únete al grupo de testers",
+        "tester_step2_label": "Paso 2 — Inscríbete vía Play Store",
+        "tester_ask_label": "Lo que pido",
+        "tester_ask_keep": "Mantener instalado los 14 días completos",
+        "tester_ask_launch": "Abrir cada par de días (unas pocas veces basta)",
+        "tester_ask_minutes": "Con un par de minutos de juego por sesión basta",
+        "tester_note_lead": "ℹ️ Consejo — ambos pasos siguientes son necesarios:",
+        "tester_note_step1": "Paso 1 — Únete al grupo: aunque aparezca «no tienes permiso para ver el contenido», en esa página hay un botón «Unirse al grupo»; tócalo para unirte.",
+        "tester_note_step2": "Paso 2 — Participa y luego instala y juega: tras participar, descarga la app desde Play Store, ábrela y juega un poco. Unirse al grupo no es suficiente.",
+        "tester_note_account": "Usa la misma cuenta de Google en ambos pasos.",
+        "tester_note_wait": "Si el paso 2 muestra «App not available», espera unas horas después de unirte y vuelve a intentarlo.",
         "link_overview": "Ver descripción del juego",
         "legal_divider": "Documentos legales",
         "link_privacy": "Política de privacidad",
@@ -313,11 +516,27 @@
     },
     "pt": {
         "title": "Bounce Cat — Mire na parede. Liberte o gatinho.",
-        "meta_desc": "Bounce Cat — um aconchegante quebra-cabeça de fuga em labirinto, da PixelRyu. Atire um novelo de lã de fora do labirinto, acompanhe os ricochetes e mova ou estilhace paredes para que o gatinho preso encontre o próprio caminho de saída. 200 labirintos em 10 mundos. Em breve no iOS, Android e Roblox.",
+        "meta_desc": "Bounce Cat — um aconchegante quebra-cabeça de fuga em labirinto, da PixelRyu. Atire um novelo de lã de fora do labirinto, acompanhe os ricochetes e mova ou estilhace paredes para que o gatinho preso encontre o próprio caminho de saída. 200 labirintos em 10 mundos. Em breve no iOS e no Roblox. Testadores Android bem-vindos.",
         "tagline": "Mire na parede. Liberte o gatinho.",
         "subtitle": "Aconchegante quebra-cabeça de ricochete em labirinto",
         "coming_soon": "Em breve",
-        "coming_soon_note": "Em breve na App Store, Google Play e Roblox.",
+        "coming_soon_note": "Em breve na App Store e no Roblox.",
+        "tester_heading": "Procuramos testers de Android",
+        "tester_android_note": "Apenas Android",
+        "tester_intro": "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
+        "tester_what_label": "Sobre o jogo",
+        "tester_what": "Um aconchegante quebra-cabeça de fuga em labirinto. Atire um novelo de lã de fora do labirinto, acompanhe os ricochetes e mova ou estilhace paredes para que o gatinho preso encontre o próprio caminho de saída — 200 labirintos em 10 mundos.",
+        "tester_step1_label": "Passo 1 — Entrar no grupo de testers",
+        "tester_step2_label": "Passo 2 — Adesão via Play Store",
+        "tester_ask_label": "O que peço",
+        "tester_ask_keep": "Manter instalado por 14 dias completos",
+        "tester_ask_launch": "Abra a cada poucos dias (algumas vezes basta)",
+        "tester_ask_minutes": "Um ou dois minutos de jogo por sessão já bastam",
+        "tester_note_lead": "ℹ️ Dica — as duas etapas abaixo são necessárias:",
+        "tester_note_step1": "Etapa 1 — Entre no grupo: mesmo que apareça “sem permissão para ver o conteúdo”, há um botão “Participar do grupo” na página — toque para entrar.",
+        "tester_note_step2": "Etapa 2 — Faça opt-in e depois instale e jogue: após o opt-in, baixe o app na Play Store, abra e jogue um pouco. Só entrar no grupo não basta.",
+        "tester_note_account": "Use a mesma Conta do Google nas duas etapas.",
+        "tester_note_wait": "Se a Etapa 2 mostrar “App not available”, aguarde algumas horas após participar e tente novamente.",
         "link_overview": "Ver visão geral do jogo",
         "legal_divider": "Documentos legais",
         "link_privacy": "Política de Privacidade",
@@ -326,11 +545,27 @@
     },
     "ru": {
         "title": "Bounce Cat — Бей рикошетом. Освободи кота.",
-        "meta_desc": "Bounce Cat — уютная головоломка о побеге из лабиринта от PixelRyu. Запускай клубок пряжи снаружи лабиринта, читай рикошет и сдвигай или разбивай стены, чтобы запертый кот сам нашёл выход. 200 лабиринтов в 10 мирах. Скоро в App Store, Google Play и Roblox.",
+        "meta_desc": "Bounce Cat — уютная головоломка о побеге из лабиринта от PixelRyu. Запускай клубок пряжи снаружи лабиринта, читай рикошет и сдвигай или разбивай стены, чтобы запертый кот сам нашёл выход. 200 лабиринтов в 10 мирах. Скоро в App Store и Roblox. Приглашаются тестировщики Android.",
         "tagline": "Бей рикошетом. Освободи кота.",
         "subtitle": "Уютная головоломка с рикошетами",
         "coming_soon": "Скоро выходит",
-        "coming_soon_note": "Скоро в App Store, Google Play и Roblox.",
+        "coming_soon_note": "Скоро в App Store и Roblox.",
+        "tester_heading": "Поиск Android-тестеров",
+        "tester_android_note": "Только для Android",
+        "tester_intro": "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",
+        "tester_what_label": "О чём игра",
+        "tester_what": "Уютная головоломка о побеге из лабиринта. Запускай клубок пряжи снаружи лабиринта, читай рикошет и сдвигай или разбивай стены, чтобы запертый кот сам нашёл выход — 200 лабиринтов в 10 мирах.",
+        "tester_step1_label": "Шаг 1 — Вступить в группу тестеров",
+        "tester_step2_label": "Шаг 2 — Подписаться через Play Store",
+        "tester_ask_label": "О чём я прошу",
+        "tester_ask_keep": "Не удалять приложение все 14 дней",
+        "tester_ask_launch": "Запускайте раз в пару дней (нескольких раз достаточно)",
+        "tester_ask_minutes": "Достаточно одной–двух минут игры за сессию",
+        "tester_note_lead": "ℹ️ Совет — нужны оба шага ниже:",
+        "tester_note_step1": "Шаг 1 — Вступите в группу: даже если показано «нет прав для просмотра содержимого», на странице есть кнопка «Присоединиться к группе» — нажмите её, чтобы вступить.",
+        "tester_note_step2": "Шаг 2 — Подтвердите участие, затем установите и поиграйте: после подтверждения скачайте приложение из Play Маркета, откройте и немного поиграйте. Одного вступления в группу недостаточно.",
+        "tester_note_account": "Используйте один и тот же аккаунт Google для обоих шагов.",
+        "tester_note_wait": "Если на шаге 2 появляется «App not available», подождите несколько часов после вступления и попробуйте снова.",
         "link_overview": "Смотреть обзор игры",
         "legal_divider": "Документы",
         "link_privacy": "Политика конфиденциальности",
