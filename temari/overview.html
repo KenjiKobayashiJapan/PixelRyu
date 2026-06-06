@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5MH53Z8LM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M5MH53Z8LM');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">TEMARI — Game Overview</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Game overview of TEMARI: the first-person hagoita paddle, the paper-balloon corridor, power-ups and the pheasant helper, how to play, and highlights — with art from the in-development build.">
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; background: radial-gradient(ellipse at top, #1d1d36 0%, #15152b 54%, #0c0c1d 100%); color: #ece6d6; margin: 0; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; }
+  .container { max-width: 660px; width: 100%; padding: 64px 32px 80px; text-align: center; position: relative; }
+  .lang-switch { position: absolute; top: 24px; right: 24px; }
+  .lang-switch select { background: rgba(255,255,255,0.06); color: #d8b98c; border: 1px solid rgba(255,158,77,0.40); border-radius: 4px; padding: 5px 10px; font-size: 13px; font-family: inherit; cursor: pointer; }
+  .lang-switch select option { background: #15152b; color: #ece6d6; }
+  .tagline { font-size: 13px; color: #b6ad94; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 6px; }
+  h1 { font-size: 44px; margin: 0 0 6px; color: #f4eede; font-weight: 800; letter-spacing: 0.5px; }
+  h1 .accent { color: #ff9e4d; }
+  h1 .jp { font-size: 24px; color: #d8b98c; font-weight: 700; margin-left: 10px; }
+  .page-label { font-size: 13px; color: #9a93b0; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
+  .lead { font-size: 15px; line-height: 1.85; color: #d6d0c0; margin: 14px auto 8px; max-width: 540px; }
+  .dev-banner { font-size: 12px; color: #ffb066; background: rgba(255,158,77,0.10); border: 1px solid rgba(255,158,77,0.32); border-radius: 10px; padding: 10px 14px; margin: 16px auto 0; max-width: 500px; line-height: 1.5; }
+  .wide-shot { width: 100%; margin: 26px auto 4px; }
+  .wide-shot img { width: 100%; border-radius: 16px; border: 1px solid rgba(255,158,77,0.22); box-shadow: 0 10px 32px rgba(0,0,0,0.45); display: block; }
+  .wide-shot figcaption { font-size: 12px; color: #9a93b0; margin-top: 8px; text-align: center; }
+  .section { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,158,77,0.22); border-radius: 16px; padding: 24px 24px 28px; margin: 28px 0; text-align: left; }
+  .section h2 { font-size: 18px; color: #d8b98c; margin: 0 0 4px; font-weight: 800; }
+  .section .sub { font-size: 11px; color: #9a93b0; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  .section p { font-size: 14px; line-height: 1.8; color: #d6d0c0; margin: 12px 0; }
+  .section ol, .section ul { margin: 12px 0 0; padding-left: 22px; font-size: 14px; line-height: 1.85; color: #d6d0c0; }
+  .back { display: inline-block; margin-top: 28px; color: #9a93b0; text-decoration: none; font-size: 14px; }
+  .back:hover { color: #ff9e4d; }
+  @media (max-width: 600px) { .container { padding: 48px 18px 64px; } .lang-switch { top: 16px; right: 16px; } .section { padding: 20px 18px 22px; } h1 { font-size: 36px; } h1 .jp { font-size: 20px; } }
+  .social-heading{font-size:13px;color:#9a93b0;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(255,158,77,0.08);border:1px solid rgba(255,158,77,0.22);color:#b6ad94;transition:all .25s ease;}
+  .social a:hover{background:rgba(255,158,77,0.16);border-color:rgba(255,158,77,0.50);color:#ff9e4d;transform:translateY(-2px);}
+  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+</style>
+<!-- SEO/LLMO start (managed) -->
+<link rel="canonical" href="https://pixelryu.github.io/temari/overview.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="PixelRyu">
+<meta name="publisher" content="PixelRyu">
+<meta name="keywords" content="TEMARI, temari, hagoita, hanetsuki, paper balloon, kamifusen, first-person breakout, paddle, Japanese, cozy, PixelRyu, indie game, iOS, Android, Roblox">
+<meta name="theme-color" content="#15152b">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/temari/icon.png">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/temari/icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PixelRyu">
+<meta property="og:title" content="TEMARI — Game Overview">
+<meta property="og:description" content="Game overview of TEMARI: the first-person hagoita paddle, the paper-balloon corridor, power-ups and the pheasant helper, how to play, and highlights — with art from the in-development build.">
+<meta property="og:url" content="https://pixelryu.github.io/temari/overview.html">
+<meta property="og:image" content="https://pixelryu.github.io/temari/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TEMARI — Bat the temari. Pop the paper balloons.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TEMARI — Game Overview">
+<meta name="twitter:description" content="Game overview of TEMARI: the first-person hagoita paddle, the paper-balloon corridor, power-ups and the pheasant helper, how to play, and highlights — with art from the in-development build.">
+<meta name="twitter:image" content="https://pixelryu.github.io/temari/og.png">
+<meta name="twitter:image:alt" content="TEMARI — Bat the temari. Pop the paper balloons.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"TEMARI — Game Overview","url":"https://pixelryu.github.io/temari/overview.html","description":"Game overview of TEMARI: the first-person hagoita paddle, the paper-balloon corridor, power-ups and the pheasant helper, how to play, and highlights — with art from the in-development build.","inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"isPartOf":{"@type":"WebSite","name":"PixelRyu","url":"https://pixelryu.github.io/"},"about":{"@type":"VideoGame","name":"TEMARI","url":"https://pixelryu.github.io/temari/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/"},{"@type":"ListItem","position":2,"name":"TEMARI","item":"https://pixelryu.github.io/temari/"},{"@type":"ListItem","position":3,"name":"Game Overview","item":"https://pixelryu.github.io/temari/overview.html"}]}</script>
+<!-- SEO/LLMO end -->
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch"><select id="lang-select" aria-label="Language"></select></div>
+  <div class="tagline" data-i18n="tagline">Bat the temari. Pop the balloons.</div>
+  <h1><span class="accent">TEMARI</span><span class="jp">手まり</span></h1>
+  <div class="page-label" data-i18n="page_label">Game Overview</div>
+  <p class="lead" data-i18n="lead">A first-person paddle breakout set in a cozy Japanese night. You hold a hagoita (battledore) at the mouth of a lantern-lit corridor; keep the temari thread-ball alive in an endless rally and pop every paper balloon down the hall.</p>
+  <div class="dev-banner" data-i18n="dev_banner">🎋 Coming soon to iOS, Android & Roblox — screens shown here are from the in-development build.</div>
+
+  <figure class="wide-shot">
+    <img src="key_hero.jpg?v=20260607080510" alt="TEMARI key art: a girl with a hagoita facing a lantern-lit corridor of paper balloons">
+    <figcaption data-i18n="cap_hero">Key art — the lantern-lit corridor</figcaption>
+  </figure>
+
+  <section class="section">
+    <h2 data-i18n="loop_label">The Game</h2>
+    <div class="sub">🏮</div>
+    <p data-i18n="loop_text">Tap to send the temari deep down the corridor. It ricochets off the floor, ceiling and walls, popping paper balloons as it goes, then comes back toward you — slide your hagoita with a fingertip and bat it back at a fresh angle. Drop it and you lose a life; keep the rally alive and one shot can clear a whole cluster.</p>
+  </section>
+
+  <figure class="wide-shot">
+    <img src="key_multiball.jpg?v=20260607080510" alt="A swarm of split temari streaking down the corridor toward the balloons">
+    <figcaption data-i18n="cap_multi">Split — one temari becomes many</figcaption>
+  </figure>
+
+  <section class="section">
+    <h2 data-i18n="power_label">Power-ups & the Pheasant</h2>
+    <div class="sub">🎏</div>
+    <p data-i18n="power_text">Balloons drop helpers you catch with the hagoita: Split multiplies the temari into a swarm, Focus slows time to a calm crawl, the Pheasant swoops in to burst balloons for you, Wide stretches your paddle, and Life grants one more temari. From the second world on, ninja balloons hurl shuriken — slide aside to dodge, then pop them to stop the attack.</p>
+  </section>
+
+  <figure class="wide-shot">
+    <img src="key_pheasant.jpg?v=20260607080510" alt="A green pheasant swooping across the corridor, bursting a row of paper balloons">
+    <figcaption data-i18n="cap_pheasant">The pheasant helper bursts a row of balloons</figcaption>
+  </figure>
+
+  <section class="section">
+    <h2 data-i18n="howto_label">How to Play</h2>
+    <div class="sub">🪶</div>
+    <ol>
+      <li data-i18n="step1">Slide your finger to move the hagoita; the temari follows your aim.</li>
+      <li data-i18n="step2">Tap to launch, and bat the returning temari back to keep the rally going.</li>
+      <li data-i18n="step3">Pop every paper balloon to clear the stage — catch power-ups and dodge shuriken along the way.</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="feat_label">Highlights</h2>
+    <div class="sub">✨</div>
+    <ul>
+      <li data-i18n="feat1">First-person paddle breakout inspired by hanetsuki, in a calm Japanese night</li>
+      <li data-i18n="feat2">200 stages across 8 worlds — dusk, morning, autumn, deep night, bamboo, gold, sakura and ink</li>
+      <li data-i18n="feat3">Five power-ups (Split, Focus, Pheasant, Wide, Life) and shuriken-throwing ninja balloons</li>
+      <li data-i18n="feat4">Fingertip paddle control, a lives-and-rally loop, sound & haptics toggles, 12 languages</li>
+      <li data-i18n="feat5">Portrait or landscape, a cozy looping soundtrack, plays offline</li>
+    </ul>
+  </section>
+
+  <a href="./" class="back" data-i18n="back">← Back to TEMARI</a>
+  <h2 class="social-heading">Follow</h2>
+  <div class="social">
+    <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note"><svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+    <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+        "en": {
+                "title": "TEMARI — Game Overview",
+                "meta_desc": "Game overview of TEMARI: the first-person hagoita paddle, the paper-balloon corridor, power-ups and the pheasant helper, how to play, and highlights — with art from the in-development build.",
+                "tagline": "Bat the temari. Pop the balloons.",
+                "page_label": "Game Overview",
+                "lead": "A first-person paddle breakout set in a cozy Japanese night. You hold a hagoita (battledore) at the mouth of a lantern-lit corridor; keep the temari thread-ball alive in an endless rally and pop every paper balloon down the hall.",
+                "dev_banner": "🎋 Coming soon to iOS, Android & Roblox — screens shown here are from the in-development build.",
+                "cap_hero": "Key art — the lantern-lit corridor",
+                "loop_label": "The Game",
+                "loop_text": "Tap to send the temari deep down the corridor. It ricochets off the floor, ceiling and walls, popping paper balloons as it goes, then comes back toward you — slide your hagoita with a fingertip and bat it back at a fresh angle. Drop it and you lose a life; keep the rally alive and one shot can clear a whole cluster.",
+                "cap_multi": "Split — one temari becomes many",
+                "power_label": "Power-ups & the Pheasant",
+                "power_text": "Balloons drop helpers you catch with the hagoita: Split multiplies the temari into a swarm, Focus slows time to a calm crawl, the Pheasant swoops in to burst balloons for you, Wide stretches your paddle, and Life grants one more temari. From the second world on, ninja balloons hurl shuriken — slide aside to dodge, then pop them to stop the attack.",
+                "cap_pheasant": "The pheasant helper bursts a row of balloons",
+                "howto_label": "How to Play",
+                "step1": "Slide your finger to move the hagoita; the temari follows your aim.",
+                "step2": "Tap to launch, and bat the returning temari back to keep the rally going.",
+                "step3": "Pop every paper balloon to clear the stage — catch power-ups and dodge shuriken along the way.",
+                "feat_label": "Highlights",
+                "feat1": "First-person paddle breakout inspired by hanetsuki, in a calm Japanese night",
+                "feat2": "200 stages across 8 worlds — dusk, morning, autumn, deep night, bamboo, gold, sakura and ink",
+                "feat3": "Five power-ups (Split, Focus, Pheasant, Wide, Life) and shuriken-throwing ninja balloons",
+                "feat4": "Fingertip paddle control, a lives-and-rally loop, sound & haptics toggles, 12 languages",
+                "feat5": "Portrait or landscape, a cozy looping soundtrack, plays offline",
+                "back": "← Back to TEMARI"
+        },
+        "ja": {
+                "title": "TEMARI — ゲーム概要",
+                "meta_desc": "TEMARI のゲーム概要。一人称の羽子板、紙風船のコリドー、アイテムと雉の助っ人、遊び方、特徴を、開発中ビルドの画面とともに紹介します。",
+                "tagline": "羽子板で手まりを打ち、紙風船を割る。",
+                "page_label": "ゲーム概要",
+                "lead": "和の静かな夜を舞台にした一人称パドル・ブロック崩し。行灯の灯るコリドーの入口で羽子板を構え、手まりを途切れさせずに打ち返し続けて、廊下の奥に並ぶ紙風船を割り尽くします。",
+                "dev_banner": "🎋 iOS・Android・Roblox で近日公開 — 以下の画面は開発中ビルドのものです。",
+                "cap_hero": "キーアート — 行灯の灯るコリドー",
+                "loop_label": "ゲームのせかい",
+                "loop_text": "タップで手まりをコリドーの奥へ打ち出します。床・天井・壁で跳ね返りながら紙風船を割り、やがて手前へ戻ってくる——指先で羽子板を滑らせ、新しい角度で打ち返しましょう。取りこぼすと残機が減り、ラリーを長く続けるほど1打で多くの紙風船を割れます。",
+                "cap_multi": "分裂 — ひとつの手まりが、たくさんに",
+                "power_label": "アイテムと雉",
+                "power_text": "紙風船からは羽子板で取れる助っ人が落ちます。分裂(SPLIT)は手まりを群れに、集中(FOCUS)は時をゆるめ、雉(PHEASANT)は飛んできて紙風船を割り、拡大(WIDE)は羽子板を広げ、命(LIFE)は手まりを1つ追加。2つ目の舞台からは忍びの紙風船が手裏剣を投げてきます——横に滑ってかわし、割って攻撃を止めましょう。",
+                "cap_pheasant": "雉の助っ人が紙風船を一列に割る",
+                "howto_label": "遊び方",
+                "step1": "指を滑らせて羽子板を動かす。手まりはねらいに合わせて来ます。",
+                "step2": "タップで打ち出し、戻ってくる手まりを打ち返してラリーを続けます。",
+                "step3": "紙風船をすべて割ればステージクリア——途中でアイテムを取り、手裏剣をかわしましょう。",
+                "feat_label": "特徴",
+                "feat1": "羽根突きに着想した、和の静かな夜の一人称パドル・ブロック崩し",
+                "feat2": "8つの世界・全200ステージ——黄昏・朝・紅葉・夜・若竹・黄金・桜・墨",
+                "feat3": "5種のアイテム（分裂・集中・雉・拡大・命）と、手裏剣を投げる忍びの紙風船",
+                "feat4": "指先のパドル操作、残機＆ラリーのループ、サウンド／感触トグル、12言語",
+                "feat5": "縦・横対応、ほっこりループのBGM、オフラインでも遊べる",
+                "back": "← TEMARI へ戻る"
+        },
+        "zh": {
+                "title": "TEMARI — 游戏概览",
+                "meta_desc": "TEMARI 游戏概览：第一人称羽子板、纸气球长廊、道具与雉鸡帮手、玩法与亮点，并配以开发中版本的画面。",
+                "tagline": "击回手鞠，击破纸气球。",
+                "page_label": "游戏概览",
+                "lead": "以宁静和风之夜为舞台的第一人称拍板打砖块。你在灯笼长廊的入口握着羽子板，让手鞠在不断对打中保持不落，击破长廊深处一排排的纸气球。",
+                "dev_banner": "🎋 即将登陆 iOS、Android 与 Roblox —— 以下画面均来自开发中版本。",
+                "cap_hero": "主视觉图 —— 灯笼长廊",
+                "loop_label": "游戏世界",
+                "loop_text": "点击把手鞠打向长廊深处。它在地板、天花板和墙壁间反弹，一路击破纸气球，随后朝你飞回——用指尖滑动羽子板，以新的角度把它击回。漏接就会失去一条命；把对打延续得越久，一击就能清掉一整片。",
+                "cap_multi": "分裂 —— 一颗手鞠化作许多",
+                "power_label": "道具与雉鸡",
+                "power_text": "纸气球会掉落可用羽子板接住的帮手：分裂(SPLIT)让手鞠化作一群，专注(FOCUS)让时间放慢，雉鸡(PHEASANT)飞来替你击破气球，加宽(WIDE)拉长你的拍板，生命(LIFE)再添一颗手鞠。从第二个世界起，忍者纸气球会投掷手里剑——横向滑动躲避，再把它击破以停止攻击。",
+                "cap_pheasant": "雉鸡帮手把一排纸气球一并击破",
+                "howto_label": "玩法",
+                "step1": "滑动手指移动羽子板；手鞠会跟随你的瞄准。",
+                "step2": "点击发射，并把飞回的手鞠击回，让对打延续。",
+                "step3": "击破所有纸气球即可过关——途中接住道具、躲开手里剑。",
+                "feat_label": "亮点",
+                "feat1": "取材自羽子板（羽根突き）的第一人称拍板打砖块，置身宁静和风之夜",
+                "feat2": "8 个世界、全 200 关——黄昏、清晨、红叶、深夜、嫩竹、金、樱与墨",
+                "feat3": "五种道具（分裂、专注、雉鸡、加宽、生命）与投掷手里剑的忍者纸气球",
+                "feat4": "指尖拍板操作、生命与对打循环、声音／触感开关、12 种语言",
+                "feat5": "竖屏或横屏、暖心循环原声、离线也能玩",
+                "back": "← 返回 TEMARI"
+        },
+        "ko": {
+                "title": "TEMARI — 게임 개요",
+                "meta_desc": "TEMARI 게임 개요. 1인칭 하고이타, 종이 풍선 복도, 파워업과 꿩 도우미, 플레이 방법, 특징을 개발 중인 빌드 화면과 함께 소개합니다.",
+                "tagline": "데마리를 받아쳐 종이 풍선을 터뜨리세요.",
+                "page_label": "게임 개요",
+                "lead": "고요한 일본의 밤을 무대로 한 1인칭 패들 벽돌깨기. 등불이 밝힌 복도 입구에서 하고이타를 들고, 데마리를 끊임없는 랠리로 살려두며 복도 안쪽의 종이 풍선을 모두 터뜨립니다.",
+                "dev_banner": "🎋 iOS・Android・Roblox에서 곧 출시 — 여기 보이는 화면은 개발 중인 빌드의 모습입니다.",
+                "cap_hero": "키 아트 — 등불이 밝힌 복도",
+                "loop_label": "게임 세계",
+                "loop_text": "탭하면 데마리가 복도 안쪽으로 날아갑니다. 바닥·천장·벽에 튕기며 종이 풍선을 터뜨리고, 이윽고 당신 쪽으로 돌아옵니다 — 손끝으로 하고이타를 밀어 새로운 각도로 받아치세요. 놓치면 목숨이 줄고, 랠리를 오래 이어갈수록 한 번에 한 무리를 정리할 수 있습니다.",
+                "cap_multi": "분열 — 하나의 데마리가 여럿으로",
+                "power_label": "파워업과 꿩",
+                "power_text": "풍선에서는 하고이타로 받는 도우미가 떨어집니다. 분열(SPLIT)은 데마리를 무리로, 집중(FOCUS)은 시간을 느리게, 꿩(PHEASANT)은 날아와 풍선을 터뜨려 주고, 와이드(WIDE)는 패들을 넓히며, 라이프(LIFE)는 데마리를 하나 더 줍니다. 두 번째 월드부터는 닌자 풍선이 수리검을 던집니다 — 옆으로 밀어 피한 뒤 터뜨려 공격을 멈추세요.",
+                "cap_pheasant": "꿩 도우미가 한 줄의 풍선을 터뜨립니다",
+                "howto_label": "플레이 방법",
+                "step1": "손가락을 밀어 하고이타를 움직이세요. 데마리가 조준을 따라옵니다.",
+                "step2": "탭으로 발사하고, 돌아오는 데마리를 받아쳐 랠리를 이어가세요.",
+                "step3": "모든 종이 풍선을 터뜨리면 스테이지 클리어 — 도중에 파워업을 줍고 수리검을 피하세요.",
+                "feat_label": "특징",
+                "feat1": "하네츠키에서 착안한, 고요한 일본의 밤의 1인칭 패들 벽돌깨기",
+                "feat2": "8개 월드·총 200 스테이지 — 황혼·아침·단풍·깊은 밤·대나무·황금·벚꽃·먹",
+                "feat3": "다섯 가지 파워업(분열·집중·꿩·와이드·라이프)과 수리검을 던지는 닌자 풍선",
+                "feat4": "손끝 패들 조작, 목숨과 랠리 루프, 소리·햅틱 토글, 12개 언어",
+                "feat5": "세로·가로 지원, 아늑한 루프 사운드트랙, 오프라인 플레이 가능",
+                "back": "← TEMARI로 돌아가기"
+        },
+        "hi": {
+                "title": "TEMARI — गेम का विवरण",
+                "meta_desc": "TEMARI का गेम विवरण: फर्स्ट-पर्सन हागोइता, कागज़ के गुब्बारों का गलियारा, पावर-अप और तीतर सहायक, कैसे खेलें, और खास बातें — विकासाधीन बिल्ड की कलाकृति के साथ।",
+                "tagline": "टेमारी मारें, गुब्बारे फोड़ें।",
+                "page_label": "गेम का विवरण",
+                "lead": "एक शांत जापानी रात पर आधारित फर्स्ट-पर्सन पैडल ब्रेकआउट। आप लालटेन से रोशन गलियारे के मुहाने पर हागोइता थामे रहते हैं; टेमारी को लगातार रैली में ज़िंदा रखकर गलियारे की गहराई के सारे कागज़ के गुब्बारे फोड़ें।",
+                "dev_banner": "🎋 iOS, Android और Roblox पर जल्द आ रही है — यहाँ दिखाए गए स्क्रीन विकासाधीन बिल्ड के हैं।",
+                "cap_hero": "की आर्ट — लालटेन से रोशन गलियारा",
+                "loop_label": "खेल की दुनिया",
+                "loop_text": "टैप करके टेमारी को गलियारे की गहराई में भेजें। यह फर्श, छत और दीवारों से टकराते हुए कागज़ के गुब्बारे फोड़ता है, फिर आपकी ओर लौटता है — उँगली से हागोइता सरकाएँ और नए कोण से मार लौटाएँ। चूक गए तो एक जान जाती है; रैली जितनी देर चले, एक ही शॉट में पूरा झुंड साफ़ हो सकता है।",
+                "cap_multi": "स्प्लिट — एक टेमारी से कई",
+                "power_label": "पावर-अप और तीतर",
+                "power_text": "गुब्बारों से ऐसे सहायक गिरते हैं जिन्हें हागोइता से पकड़ें: स्प्लिट टेमारी को झुंड बना देता है, फोकस समय को धीमा कर देता है, तीतर उड़कर आपके लिए गुब्बारे फोड़ता है, वाइड आपके पैडल को चौड़ा करता है, और लाइफ एक और टेमारी देता है। दूसरी दुनिया से निंजा गुब्बारे शूरिकेन फेंकते हैं — बगल में सरककर बचें, फिर उन्हें फोड़कर हमला रोकें।",
+                "cap_pheasant": "तीतर सहायक गुब्बारों की एक पूरी कतार फोड़ देता है",
+                "howto_label": "कैसे खेलें",
+                "step1": "उँगली सरकाकर हागोइता घुमाएँ; टेमारी आपके निशाने के साथ आता है।",
+                "step2": "टैप करके छोड़ें, और लौटते टेमारी को मारकर रैली जारी रखें।",
+                "step3": "हर कागज़ का गुब्बारा फोड़कर चरण पूरा करें — रास्ते में पावर-अप पकड़ें और शूरिकेन से बचें।",
+                "feat_label": "खास बातें",
+                "feat1": "हानेत्सुकी से प्रेरित, शांत जापानी रात का फर्स्ट-पर्सन पैडल ब्रेकआउट",
+                "feat2": "8 दुनियाओं में 200 चरण — गोधूलि, सुबह, पतझड़, गहरी रात, बाँस, स्वर्ण, साकुरा और स्याही",
+                "feat3": "पाँच पावर-अप (स्प्लिट, फोकस, तीतर, वाइड, लाइफ) और शूरिकेन फेंकते निंजा गुब्बारे",
+                "feat4": "उँगली से पैडल नियंत्रण, जान-और-रैली लूप, ध्वनि व हैप्टिक्स टॉगल, 12 भाषाएँ",
+                "feat5": "पोर्ट्रेट या लैंडस्केप, प्यारा लूप साउंडट्रैक, ऑफ़लाइन भी खेलें",
+                "back": "← TEMARI पर वापस जाएँ"
+        },
+        "id": {
+                "title": "TEMARI — Ringkasan Game",
+                "meta_desc": "Ringkasan game TEMARI: paddle hagoita orang-pertama, koridor balon kertas, power-up dan burung pegar pembantu, cara bermain, dan sorotan — dengan ilustrasi dari build dalam pengembangan.",
+                "tagline": "Pukul temari. Pecahkan balon.",
+                "page_label": "Ringkasan Game",
+                "lead": "Breakout paddle orang-pertama berlatar malam Jepang yang menenangkan. Kamu memegang hagoita di mulut koridor berlampion; jaga temari tetap hidup dalam reli tanpa henti dan pecahkan setiap balon kertas di sepanjang lorong.",
+                "dev_banner": "🎋 Segera hadir di iOS, Android & Roblox — gambar di sini berasal dari build yang masih dalam pengembangan.",
+                "cap_hero": "Key art — koridor berlampion",
+                "loop_label": "Dunia Permainan",
+                "loop_text": "Ketuk untuk mengirim temari jauh ke dalam koridor. Ia memantul dari lantai, langit-langit, dan dinding sambil memecahkan balon kertas, lalu kembali ke arahmu — geser hagoita dengan ujung jari dan pukul balik dengan sudut baru. Lengah sedikit, nyawa berkurang; makin lama reli bertahan, satu pukulan bisa membersihkan satu gerombolan.",
+                "cap_multi": "Split — satu temari jadi banyak",
+                "power_label": "Power-up & Burung Pegar",
+                "power_text": "Balon menjatuhkan pembantu yang kamu tangkap dengan hagoita: Split menggandakan temari jadi segerombolan, Focus memperlambat waktu, burung Pegar menukik memecahkan balon untukmu, Wide melebarkan paddle, dan Life menambah satu temari. Mulai dunia kedua, balon ninja melempar shuriken — geser ke samping untuk mengelak, lalu pecahkan untuk menghentikan serangan.",
+                "cap_pheasant": "Burung pegar pembantu memecahkan sederet balon",
+                "howto_label": "Cara Bermain",
+                "step1": "Geser jarimu untuk menggerakkan hagoita; temari mengikuti arah bidikmu.",
+                "step2": "Ketuk untuk meluncurkan, dan pukul balik temari yang kembali agar reli terus berlanjut.",
+                "step3": "Pecahkan setiap balon kertas untuk menuntaskan tahap — tangkap power-up dan elak shuriken di sepanjang jalan.",
+                "feat_label": "Sorotan",
+                "feat1": "Breakout paddle orang-pertama terinspirasi hanetsuki, dalam malam Jepang yang tenang",
+                "feat2": "200 tahap di 8 dunia — senja, pagi, musim gugur, malam pekat, bambu, emas, sakura, dan tinta",
+                "feat3": "Lima power-up (Split, Focus, Pegar, Wide, Life) dan balon ninja pelempar shuriken",
+                "feat4": "Kontrol paddle ujung jari, loop nyawa-dan-reli, sakelar suara & haptik, 12 bahasa",
+                "feat5": "Mode potret atau lanskap, musik latar berputar nyaman, bisa dimainkan offline",
+                "back": "← Kembali ke TEMARI"
+        },
+        "de": {
+                "title": "TEMARI — Spielübersicht",
+                "meta_desc": "Spielübersicht von TEMARI: das Ego-Hagoita, der Papierballon-Korridor, Power-ups und der Fasan-Helfer, die Spielweise und die Highlights — mit Artwork aus dem Build in Entwicklung.",
+                "tagline": "Schlag das Temari. Lass es platzen.",
+                "page_label": "Spielübersicht",
+                "lead": "Ein Ego-Paddle-Breakout in einer gemütlichen japanischen Nacht. Du hältst ein Hagoita am Eingang eines laternenbeleuchteten Korridors; halte das Temari in einem endlosen Ballwechsel am Leben und lass jeden Papierballon im Gang platzen.",
+                "dev_banner": "🎋 Demnächst für iOS, Android & Roblox — die hier gezeigten Bildschirme stammen aus dem Build in Entwicklung.",
+                "cap_hero": "Key-Art — der laternenbeleuchtete Korridor",
+                "loop_label": "Die Spielwelt",
+                "loop_text": "Tippe, um das Temari tief in den Korridor zu schlagen. Es prallt von Boden, Decke und Wänden ab, lässt dabei Papierballons platzen und kommt dann zu dir zurück — schiebe dein Hagoita mit der Fingerspitze und schlage es in neuem Winkel zurück. Verfehlst du es, kostet das ein Leben; je länger der Ballwechsel hält, desto mehr räumt ein Schlag auf einmal weg.",
+                "cap_multi": "Split — aus einem Temari werden viele",
+                "power_label": "Power-ups & der Fasan",
+                "power_text": "Ballons lassen Helfer fallen, die du mit dem Hagoita fängst: Split vervielfacht das Temari zu einem Schwarm, Focus verlangsamt die Zeit, der Fasan schwingt herein und lässt Ballons für dich platzen, Wide verbreitert dein Paddle und Life schenkt ein weiteres Temari. Ab der zweiten Welt schleudern Ninja-Ballons Shuriken — weiche zur Seite aus und lass sie dann platzen, um den Angriff zu stoppen.",
+                "cap_pheasant": "Der Fasan-Helfer lässt eine ganze Reihe Ballons platzen",
+                "howto_label": "So wird gespielt",
+                "step1": "Schiebe deinen Finger, um das Hagoita zu bewegen; das Temari folgt deinem Zielen.",
+                "step2": "Tippe zum Abschlagen und schlage das zurückkehrende Temari zurück, um den Ballwechsel zu halten.",
+                "step3": "Lass jeden Papierballon platzen, um die Stufe zu schaffen — fange unterwegs Power-ups und weiche Shuriken aus.",
+                "feat_label": "Highlights",
+                "feat1": "Ego-Paddle-Breakout, inspiriert von Hanetsuki, in einer ruhigen japanischen Nacht",
+                "feat2": "200 Stufen in 8 Welten — Dämmerung, Morgen, Herbst, tiefe Nacht, Bambus, Gold, Sakura und Tusche",
+                "feat3": "Fünf Power-ups (Split, Focus, Fasan, Wide, Life) und Shuriken werfende Ninja-Ballons",
+                "feat4": "Paddle-Steuerung per Fingerspitze, Leben-und-Ballwechsel-Schleife, Ton- & Haptik-Schalter, 12 Sprachen",
+                "feat5": "Hoch- oder Querformat, ein gemütlich schleifender Soundtrack, auch offline spielbar",
+                "back": "← Zurück zu TEMARI"
+        },
+        "fr": {
+                "title": "TEMARI — Présentation du jeu",
+                "meta_desc": "Présentation de TEMARI : le hagoita en vue subjective, le couloir des ballons en papier, les bonus et le faisan assistant, comment jouer et les points forts — avec des visuels de la version en cours de développement.",
+                "tagline": "Renvoie le temari. Fais-le éclater.",
+                "page_label": "Présentation du jeu",
+                "lead": "Un casse-briques à la raquette en vue subjective dans une douce nuit japonaise. Tu tiens un hagoita à l'entrée d'un couloir éclairé aux lanternes ; garde le temari en jeu dans un échange sans fin et fais éclater chaque ballon en papier au fond du couloir.",
+                "dev_banner": "🎋 Bientôt disponible sur iOS, Android et Roblox — les écrans présentés ici proviennent de la version en cours de développement.",
+                "cap_hero": "Illustration principale — le couloir aux lanternes",
+                "loop_label": "Le monde du jeu",
+                "loop_text": "Touche pour envoyer le temari au fond du couloir. Il ricoche sur le sol, le plafond et les murs en faisant éclater les ballons en papier, puis revient vers toi — fais glisser ton hagoita du bout du doigt et renvoie-le sous un nouvel angle. Si tu le rates, tu perds une vie ; plus l'échange dure, plus un seul tir peut nettoyer toute une grappe.",
+                "cap_multi": "Split — un temari en devient plusieurs",
+                "power_label": "Bonus & le faisan",
+                "power_text": "Les ballons lâchent des aides que tu attrapes avec le hagoita : Split multiplie le temari en une nuée, Focus ralentit le temps, le faisan plonge et fait éclater des ballons à ta place, Wide élargit ta raquette et Life ajoute un temari. Dès le deuxième monde, des ballons ninja lancent des shuriken — esquive sur le côté, puis fais-les éclater pour stopper l'attaque.",
+                "cap_pheasant": "Le faisan assistant fait éclater toute une rangée de ballons",
+                "howto_label": "Comment jouer",
+                "step1": "Fais glisser ton doigt pour déplacer le hagoita ; le temari suit ta visée.",
+                "step2": "Touche pour lancer, et renvoie le temari qui revient pour faire durer l'échange.",
+                "step3": "Fais éclater chaque ballon en papier pour terminer le niveau — attrape les bonus et esquive les shuriken en chemin.",
+                "feat_label": "Points forts",
+                "feat1": "Casse-briques à la raquette en vue subjective inspiré du hanetsuki, dans une nuit japonaise paisible",
+                "feat2": "200 niveaux sur 8 mondes — crépuscule, matin, automne, nuit profonde, bambou, or, sakura et encre",
+                "feat3": "Cinq bonus (Split, Focus, Faisan, Wide, Life) et des ballons ninja lanceurs de shuriken",
+                "feat4": "Contrôle de la raquette au doigt, boucle de vies et d'échanges, options son et vibrations, 12 langues",
+                "feat5": "Mode portrait ou paysage, une bande-son en boucle douce, jouable hors ligne",
+                "back": "← Retour à TEMARI"
+        },
+        "it": {
+                "title": "TEMARI — Panoramica del gioco",
+                "meta_desc": "Panoramica di TEMARI: l'hagoita in prima persona, il corridoio dei palloncini di carta, i potenziamenti e il fagiano aiutante, come si gioca e i punti di forza — con immagini della build in sviluppo.",
+                "tagline": "Colpisci il temari. Fallo scoppiare.",
+                "page_label": "Panoramica del gioco",
+                "lead": "Un breakout con racchetta in prima persona in una tranquilla notte giapponese. Impugni un hagoita all'imbocco di un corridoio illuminato dalle lanterne; tieni il temari in gioco in uno scambio infinito e fai scoppiare ogni palloncino di carta lungo il corridoio.",
+                "dev_banner": "🎋 Presto su iOS, Android e Roblox — le immagini qui mostrate provengono dalla build in sviluppo.",
+                "cap_hero": "Key art — il corridoio illuminato dalle lanterne",
+                "loop_label": "Il mondo di gioco",
+                "loop_text": "Tocca per mandare il temari in fondo al corridoio. Rimbalza su pavimento, soffitto e pareti facendo scoppiare i palloncini di carta, poi torna verso di te — fai scorrere l'hagoita con un dito e ricolpiscilo con una nuova angolazione. Se lo manchi perdi una vita; più lo scambio dura, più un solo tiro può ripulire un intero grappolo.",
+                "cap_multi": "Split — un temari ne diventa molti",
+                "power_label": "Potenziamenti & il fagiano",
+                "power_text": "I palloncini rilasciano aiuti che afferri con l'hagoita: Split moltiplica il temari in uno sciame, Focus rallenta il tempo, il fagiano si tuffa e fa scoppiare i palloncini per te, Wide allarga la racchetta e Life regala un altro temari. Dal secondo mondo, i palloncini ninja lanciano shuriken — scivola di lato per schivare, poi falli scoppiare per fermare l'attacco.",
+                "cap_pheasant": "Il fagiano aiutante fa scoppiare un'intera fila di palloncini",
+                "howto_label": "Come si gioca",
+                "step1": "Fai scorrere il dito per muovere l'hagoita; il temari segue la tua mira.",
+                "step2": "Tocca per lanciare e ricolpisci il temari di ritorno per tenere vivo lo scambio.",
+                "step3": "Fai scoppiare ogni palloncino di carta per superare il livello — raccogli i potenziamenti e schiva gli shuriken lungo il percorso.",
+                "feat_label": "Punti di forza",
+                "feat1": "Breakout con racchetta in prima persona ispirato all'hanetsuki, in una quieta notte giapponese",
+                "feat2": "200 livelli in 8 mondi — crepuscolo, mattino, autunno, notte fonda, bambù, oro, sakura e inchiostro",
+                "feat3": "Cinque potenziamenti (Split, Focus, Fagiano, Wide, Life) e palloncini ninja che lanciano shuriken",
+                "feat4": "Controllo della racchetta col dito, ciclo di vite e scambi, interruttori audio e vibrazione, 12 lingue",
+                "feat5": "Verticale o orizzontale, una colonna sonora in loop avvolgente, si gioca offline",
+                "back": "← Torna a TEMARI"
+        },
+        "es": {
+                "title": "TEMARI — Descripción del juego",
+                "meta_desc": "Descripción del juego TEMARI: el hagoita en primera persona, el pasillo de globos de papel, las mejoras y el faisán ayudante, cómo se juega y lo más destacado, con ilustraciones de la versión en desarrollo.",
+                "tagline": "Golpea el temari. Reviéntalo.",
+                "page_label": "Descripción del juego",
+                "lead": "Un breakout de pala en primera persona en una acogedora noche japonesa. Sostienes un hagoita a la entrada de un pasillo iluminado por farolillos; mantén el temari vivo en un peloteo sin fin y revienta cada globo de papel al fondo del pasillo.",
+                "dev_banner": "🎋 Próximamente en iOS, Android y Roblox — las pantallas que aquí se muestran son de la versión en desarrollo.",
+                "cap_hero": "Ilustración principal — el pasillo de los farolillos",
+                "loop_label": "El mundo del juego",
+                "loop_text": "Toca para mandar el temari al fondo del pasillo. Rebota en el suelo, el techo y las paredes reventando globos de papel y luego regresa hacia ti — desliza tu hagoita con la punta del dedo y devuélvelo con un ángulo nuevo. Si lo fallas, pierdes una vida; cuanto más dure el peloteo, más puede limpiar un solo golpe.",
+                "cap_multi": "Split — un temari se vuelve muchos",
+                "power_label": "Mejoras y el faisán",
+                "power_text": "Los globos sueltan ayudas que atrapas con el hagoita: Split multiplica el temari en un enjambre, Focus ralentiza el tiempo, el faisán baja en picado y revienta globos por ti, Wide ensancha tu pala y Life añade otro temari. Desde el segundo mundo, los globos ninja lanzan shuriken — deslízate a un lado para esquivar y luego reviéntalos para detener el ataque.",
+                "cap_pheasant": "El faisán ayudante revienta toda una fila de globos",
+                "howto_label": "Cómo se juega",
+                "step1": "Desliza el dedo para mover el hagoita; el temari sigue tu puntería.",
+                "step2": "Toca para lanzar y devuelve el temari que regresa para mantener el peloteo.",
+                "step3": "Revienta cada globo de papel para superar el nivel — atrapa mejoras y esquiva shuriken por el camino.",
+                "feat_label": "Lo más destacado",
+                "feat1": "Breakout de pala en primera persona inspirado en el hanetsuki, en una noche japonesa serena",
+                "feat2": "200 niveles en 8 mundos — crepúsculo, mañana, otoño, noche profunda, bambú, oro, sakura y tinta",
+                "feat3": "Cinco mejoras (Split, Focus, Faisán, Wide, Life) y globos ninja que lanzan shuriken",
+                "feat4": "Control de la pala con el dedo, ciclo de vidas y peloteos, interruptores de sonido y vibración, 12 idiomas",
+                "feat5": "Vertical u horizontal, una banda sonora en bucle acogedora, se juega sin conexión",
+                "back": "← Volver a TEMARI"
+        },
+        "pt": {
+                "title": "TEMARI — Visão geral do jogo",
+                "meta_desc": "Visão geral de TEMARI: o hagoita em primeira pessoa, o corredor de balões de papel, os power-ups e o faisão ajudante, como jogar e os destaques — com arte da versão em desenvolvimento.",
+                "tagline": "Rebata o temari. Estoure-o.",
+                "page_label": "Visão geral do jogo",
+                "lead": "Um breakout de raquete em primeira pessoa numa aconchegante noite japonesa. Você segura um hagoita na entrada de um corredor iluminado por lanternas; mantenha o temari vivo num peloteio sem fim e estoure cada balão de papel ao longo do corredor.",
+                "dev_banner": "🎋 Em breve no iOS, Android e Roblox — as telas mostradas aqui são da versão em desenvolvimento.",
+                "cap_hero": "Arte principal — o corredor das lanternas",
+                "loop_label": "O mundo do jogo",
+                "loop_text": "Toque para mandar o temari para o fundo do corredor. Ele ricocheteia no chão, no teto e nas paredes estourando balões de papel e depois volta na sua direção — deslize o hagoita com a ponta do dedo e rebata num novo ângulo. Se errar, perde uma vida; quanto mais o peloteio dura, mais um único golpe pode limpar de uma vez.",
+                "cap_multi": "Split — um temari vira muitos",
+                "power_label": "Power-ups & o faisão",
+                "power_text": "Os balões soltam ajudantes que você pega com o hagoita: Split multiplica o temari num enxame, Focus desacelera o tempo, o faisão mergulha e estoura balões por você, Wide alarga a sua raquete e Life dá mais um temari. A partir do segundo mundo, balões ninja arremessam shuriken — deslize para o lado para desviar e depois estoure-os para parar o ataque.",
+                "cap_pheasant": "O faisão ajudante estoura uma fileira inteira de balões",
+                "howto_label": "Como jogar",
+                "step1": "Deslize o dedo para mover o hagoita; o temari segue a sua mira.",
+                "step2": "Toque para lançar e rebata o temari que volta para manter o peloteio.",
+                "step3": "Estoure cada balão de papel para concluir a fase — pegue power-ups e desvie dos shuriken pelo caminho.",
+                "feat_label": "Destaques",
+                "feat1": "Breakout de raquete em primeira pessoa inspirado no hanetsuki, numa noite japonesa serena",
+                "feat2": "200 fases em 8 mundos — crepúsculo, manhã, outono, noite profunda, bambu, ouro, sakura e tinta",
+                "feat3": "Cinco power-ups (Split, Focus, Faisão, Wide, Life) e balões ninja que arremessam shuriken",
+                "feat4": "Controle da raquete com o dedo, ciclo de vidas e peloteios, botões de som e vibração, 12 idiomas",
+                "feat5": "Modo retrato ou paisagem, uma trilha sonora em loop aconchegante, joga offline",
+                "back": "← Voltar para TEMARI"
+        },
+        "ru": {
+                "title": "TEMARI — Обзор игры",
+                "meta_desc": "Обзор игры TEMARI: ракетка хагоита от первого лица, коридор бумажных шариков, усиления и помощник-фазан, как играть и ключевые особенности — с артами из версии в разработке.",
+                "tagline": "Отбивай тэмари. Лопай шарики.",
+                "page_label": "Обзор игры",
+                "lead": "Аркада-арканоид от первого лица в уютной японской ночи. Ты держишь хагоита у входа в освещённый фонарями коридор; удерживай тэмари в бесконечном розыгрыше и лопай каждый бумажный шарик в глубине коридора.",
+                "dev_banner": "🎋 Скоро на iOS, Android и Roblox — показанные здесь экраны взяты из версии в разработке.",
+                "cap_hero": "Ключевой арт — освещённый фонарями коридор",
+                "loop_label": "Мир игры",
+                "loop_text": "Коснись, чтобы запустить тэмари вглубь коридора. Он отскакивает от пола, потолка и стен, лопая бумажные шарики, а затем летит обратно к тебе — двигай хагоита кончиком пальца и отбивай его под новым углом. Промахнёшься — теряешь жизнь; чем дольше длится розыгрыш, тем больше можно снести одним ударом.",
+                "cap_multi": "Сплит — один тэмари превращается во множество",
+                "power_label": "Усиления и фазан",
+                "power_text": "Из шариков выпадают помощники, которые ловишь хагоитой: Сплит множит тэмари в рой, Focus замедляет время, фазан налетает и лопает шарики за тебя, Wide расширяет ракетку, а Life добавляет ещё один тэмари. Со второго мира шарики-ниндзя метают сюрикены — уйди в сторону, чтобы увернуться, затем лопни их, чтобы прекратить атаку.",
+                "cap_pheasant": "Помощник-фазан лопает целый ряд шариков",
+                "howto_label": "Как играть",
+                "step1": "Веди пальцем, чтобы двигать хагоиту; тэмари следует за прицелом.",
+                "step2": "Коснись для запуска и отбивай возвращающийся тэмари, чтобы продолжать розыгрыш.",
+                "step3": "Лопни каждый бумажный шарик, чтобы пройти уровень — лови усиления и уворачивайся от сюрикенов по пути.",
+                "feat_label": "Ключевые особенности",
+                "feat1": "Аркада-арканоид от первого лица по мотивам ханэцуки, в тихой японской ночи",
+                "feat2": "200 уровней в 8 мирах — сумерки, утро, осень, глубокая ночь, бамбук, золото, сакура и тушь",
+                "feat3": "Пять усилений (Сплит, Focus, Фазан, Wide, Life) и шарики-ниндзя, метающие сюрикены",
+                "feat4": "Управление ракеткой пальцем, цикл жизней и розыгрышей, переключатели звука и вибрации, 12 языков",
+                "feat5": "Портретный или альбомный режим, уютный зацикленный саундтрек, играет офлайн",
+                "back": "← Назад к TEMARI"
+        }
+};
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
+  function detectLang() {
+    try { const stored = localStorage.getItem(LANG_STORAGE_KEY); if (stored && i18n[stored]) return stored; } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+  function setLang(lang, persist) {
+    const dict = i18n[lang]; if (!dict) return;
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n'); if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]); else el.textContent = dict[key];
+    });
+    const sel = document.getElementById('lang-select'); if (sel) sel.value = lang;
+  }
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) { const opt = document.createElement('option'); opt.value = l.code; opt.textContent = l.flag + ' ' + l.name; sel.appendChild(opt); }
+    setLang(detectLang(), true);
+    sel.addEventListener('change', e => setLang(e.target.value, true));
+  })();
+</script>
+<script src="../breadcrumb.js?v=20260607080510" defer></script>
+</body>
+</html>

@@ -31,7 +31,8 @@
     "parcel-pals": { all: "Parcel Pals", ja: "ふんわり配送便" },
     "sumlings":    { all: "Sumlings", ja: "サムリング" },
     "hayate":      { all: "HAYATE" },
-    "bounce-cat":  { all: "Bounce Cat" }
+    "bounce-cat":  { all: "Bounce Cat" },
+    "temari":      { all: "TEMARI" }
   };
 
   // Leaf page labels (localized). Privacy/Terms match the legal-page generator

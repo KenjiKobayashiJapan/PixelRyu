@@ -6,6 +6,7 @@ PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This sit
 
 ## Games
 
+- [TEMARI](https://pixelryu.github.io/temari/): A first-person paddle breakout in a cozy Japanese night — move your hagoita (battledore) with a fingertip, keep the temari thread-ball in an endless rally, and pop every paper balloon down the lantern-lit corridor, with split balls, focus slow-motion, a pheasant helper and more. 8 worlds, 200 stages. Coming soon to iOS, Android & Roblox.
 - [Bounce Cat](https://pixelryu.github.io/bounce-cat/): A cozy maze-escape puzzle — a cat is trapped inside a walled maze you can't enter, so you fire a ball of yarn from the rim, ride the ricochet, and shift or shatter walls until the wandering cat rolls out to freedom. 200 mazes across 10 worlds. Coming soon to iOS, Android & Roblox.
 - [HAYATE](https://pixelryu.github.io/hayate/): A 3D katana speed-racer and sequel to ISSEN — dodge what flies at you, or throw a homing katana to slice it clean, across four worlds, forty stages, plus endless runs. iOS, Android & Roblox.
 - [Sumlings](https://pixelryu.github.io/sumlings/): A cozy number puzzle — place number eggs into a tiny terrarium so each nest's total matches its target, hatching Sumlings to fill a collection. iOS, Android & Roblox.
@@ -17,6 +18,7 @@ PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This sit
 
 ## Game overviews
 
+- [TEMARI — Game Overview](https://pixelryu.github.io/temari/overview.html)
 - [Bounce Cat — Game Overview](https://pixelryu.github.io/bounce-cat/overview.html)
 - [HAYATE — Game Overview](https://pixelryu.github.io/hayate/overview.html)
 - [Sumlings — Game Overview](https://pixelryu.github.io/sumlings/overview.html)
@@ -28,6 +30,8 @@ PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This sit
 
 ## Legal
 
+- [TEMARI — Privacy Policy](https://pixelryu.github.io/temari/privacy_policy.html)
+- [TEMARI — Terms of Service](https://pixelryu.github.io/temari/terms_of_service.html)
 - [Bounce Cat — Privacy Policy](https://pixelryu.github.io/bounce-cat/privacy_policy.html)
 - [Bounce Cat — Terms of Service](https://pixelryu.github.io/bounce-cat/terms_of_service.html)
 - [HAYATE — Privacy Policy](https://pixelryu.github.io/hayate/privacy_policy.html)
