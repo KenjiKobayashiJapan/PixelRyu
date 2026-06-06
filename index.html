@@ -104,6 +104,19 @@
     border-color: rgba(122, 176, 255, 0.50);
     transform: translateY(-2px);
   }
+  .game-card { cursor: pointer; }
+  /* press feedback when clicking anywhere on the card */
+  .game-card:active { transform: scale(0.978); }
+  .game-card.tapped { animation: cardTap 0.22s ease; }
+  @keyframes cardTap {
+    0%   { transform: scale(1); }
+    35%  { transform: scale(0.955); }
+    100% { transform: scale(1); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .game-card.tapped { animation: none; }
+    .game-card:active { transform: none; }
+  }
   .game-head {
     display: flex;
     align-items: center;
@@ -999,6 +1012,35 @@
     }
     setLang(detectLang());
     sel.addEventListener('change', e => setLang(e.target.value, true));
+  })();
+</script>
+<script>
+  // Whole game card is clickable -> opens the game page (same target as the title link).
+  // Nested links (store badges, Privacy, Terms, the title) keep their own behavior.
+  (function () {
+    var list = document.querySelector('.game-list');
+    if (!list) return;
+    list.addEventListener('click', function (e) {
+      var card = e.target.closest('.game-card');
+      if (!card) return;
+      if (e.target.closest('a, button')) return;            // real links/buttons act normally
+      var sel = window.getSelection && window.getSelection();
+      if (sel && String(sel).length) return;                // don't hijack a text selection
+      var link = card.querySelector('.game-head a[href]');
+      if (!link) return;
+      var href = link.getAttribute('href');
+      if (!href) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey) { window.open(href, '_blank'); return; } // new tab
+      // brief press bounce, then navigate
+      card.classList.remove('tapped');
+      void card.offsetWidth;                                 // reflow so the animation can replay
+      card.classList.add('tapped');
+      card.addEventListener('animationend', function done() {
+        card.classList.remove('tapped');
+        card.removeEventListener('animationend', done);
+      });
+      setTimeout(function () { window.location.href = href; }, 150);
+    });
   })();
 </script>
 </body>
