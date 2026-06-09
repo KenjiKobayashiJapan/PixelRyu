@@ -130,6 +130,57 @@
     display: block;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
   }
+  /* Title column: a serial number ("0001") in front of the name, with a genre tag below.
+     On desktop the number sits inline before the title; on mobile it drops to its own
+     centered line above the title (see the max-width:600px block). */
+  .game-title { display: flex; flex-direction: column; gap: 8px; min-width: 0; flex: 1 1 auto; }
+  .game-name-row { display: block; }
+  .game-no {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    color: #7d90b8;
+    margin-right: 12px;
+  }
+  .genre-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .genre-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-start;
+    padding: 3px 11px 3px 9px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    line-height: 1;
+    border: 1px solid transparent;
+  }
+  .genre-tag .genre-ic { width: 14px; height: 14px; display: block; fill: currentColor; flex: 0 0 auto; }
+  .genre-puzzle { color: #67c9d8; background: rgba(103,201,216,0.12); border-color: rgba(103,201,216,0.34); }
+  .genre-action { color: #eaa63f; background: rgba(234,166,63,0.13); border-color: rgba(234,166,63,0.34); }
+  /* Genre filter bar: pill buttons that show only the cards of the chosen genre. */
+  .genre-filter { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 2px 0 26px; }
+  .filter-btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 7px 15px; border-radius: 999px;
+    font-family: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0.3px;
+    cursor: pointer; transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+    background: rgba(122,176,255,0.06); border: 1px solid rgba(122,176,255,0.22); color: #a8b5d0;
+  }
+  .filter-btn:hover { transform: translateY(-1px); }
+  .filter-btn .filter-ic { width: 15px; height: 15px; display: block; fill: currentColor; flex: 0 0 auto; }
+  .filter-count { font-size: 11px; font-weight: 700; opacity: .6; font-variant-numeric: tabular-nums; }
+  .filter-all    { color: #9fb6e6; }
+  .filter-puzzle { color: #67c9d8; background: rgba(103,201,216,0.10); border-color: rgba(103,201,216,0.30); }
+  .filter-action { color: #eaa63f; background: rgba(234,166,63,0.10); border-color: rgba(234,166,63,0.30); }
+  .filter-btn.is-active { color: #0b1020; }
+  .filter-btn.is-active .filter-count { opacity: .75; }
+  .filter-all.is-active    { background: #7ab0ff; border-color: #7ab0ff; }
+  .filter-puzzle.is-active { background: #67c9d8; border-color: #67c9d8; }
+  .filter-action.is-active { background: #eaa63f; border-color: #eaa63f; }
+  @media (prefers-reduced-motion: reduce) { .filter-btn:hover { transform: none; } }
   .game-card a {
     color: #7ab0ff;
     text-decoration: none;
@@ -252,6 +303,11 @@
     .container { padding: 60px 24px; }
     .lang-switch { top: 16px; right: 16px; }
     .game-icon { width: 48px; height: 48px; border-radius: 11px; }
+    /* On mobile the serial number drops onto its own line, centered above the title. */
+    .game-name-row .game-no { display: block; text-align: center; margin: 0 0 4px; font-size: 16px; letter-spacing: 2px; }
+    /* Compact the filter pills a touch so they wrap comfortably on narrow phones. */
+    .genre-filter { gap: 8px; }
+    .filter-btn { padding: 6px 13px; font-size: 12.5px; }
     /* On mobile, lay the store badges out as a 2-column grid: two badges per row, a
        third drops to a second row, and a missing App Store badge leaves its column as
        empty space (the .badge-ghost cell). Columns follow the badges' natural widths
@@ -265,6 +321,7 @@
     }
     .game-card .store-badges > a > svg,
     .game-card .store-badges > a > img { width: 100%; height: auto; display: block; }
+  }
 </style>
 <!-- SEO/LLMO start (managed) -->
 <meta name="google-site-verification" content="iUKE_0v-5jn4aownL7sNymhLvRtdX-7Wreqjs1qWKp0">
@@ -344,11 +401,64 @@
   <div class="tagline" data-i18n="tagline">Stillness and motion — cosmic puzzle &amp; action games</div>
 
   <h2 data-i18n="games_heading">Games</h2>
+  <div class="genre-filter" role="group" aria-label="Filter games by genre">
+    <button type="button" class="filter-btn filter-all is-active" data-filter="all" aria-pressed="true">
+      <svg class="filter-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h7v7H3zm11 0h7v7h-7zm0 11h7v7h-7zM3 14h7v7H3z"/></svg>
+      <span data-i18n="filter_all">All</span><span class="filter-count" data-count="all"></span>
+    </button>
+    <button type="button" class="filter-btn filter-puzzle" data-filter="puzzle" aria-pressed="false">
+      <svg class="filter-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg>
+      <span data-i18n="genre_puzzle">Puzzle</span><span class="filter-count" data-count="puzzle"></span>
+    </button>
+    <button type="button" class="filter-btn filter-action" data-filter="action" aria-pressed="false">
+      <svg class="filter-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+      <span data-i18n="genre_action">Action</span><span class="filter-count" data-count="action"></span>
+    </button>
+  </div>
   <ul class="game-list">
     <li class="game-card">
       <div class="game-head">
+        <img class="game-icon" src="tatami/icon.png" alt="">
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0010</span><a href="tatami/" data-i18n="tatami_title">TATAMI — Lay the tatami. Earn your reward.</a></span>
+          <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Puzzle</span></span>
+        </div>
+      </div>
+      <div class="desc" data-i18n="tatami_desc">A cozy block puzzle where you lay tatami mats in a quiet Japanese room. Drag a mat onto the floor and complete a full row or column to finish that line. A samurai then carries the finished mats to the tatami magistrate, and delivering earns koban that buy extra lives. A light Haste gauge keeps you moving. With a lucky-laying bonus. 48 stages. Free, made by PixelRyu. Coming soon to the App Store, Google Play and Roblox.</div>
+      <div class="store-badges has-soon" aria-label="Coming soon to the App Store, Google Play and Roblox">
+      <span class="soon-cell"><span class="appstore-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+        </svg></span><span class="soon-stamp">COMING SOON</span></span>
+      <span class="soon-cell"><span class="googleplay-badge"><img src="GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (coming soon)" height="51"></span><span class="soon-stamp">COMING SOON</span></span>
+      <span class="soon-cell"><span class="roblox-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg></span><span class="soon-stamp">COMING SOON</span></span>
+      </div>
+      <div class="links">
+        <a href="tatami/privacy_policy.html" data-i18n="link_privacy">Privacy</a>
+        <a href="tatami/terms_of_service.html" data-i18n="link_terms">Terms</a>
+      </div>
+    </li>
+    <li class="game-card">
+      <div class="game-head">
         <img class="game-icon" src="temari/icon.png" alt="">
-        <a href="temari/" data-i18n="temari_title">TEMARI — Bat the temari. Pop the paper balloons.</a>
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0009</span><a href="temari/" data-i18n="temari_title">TEMARI — Bat the temari. Pop the paper balloons.</a></span>
+          <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Action</span></span>
+        </div>
       </div>
       <div class="desc" data-i18n="temari_desc">A first-person paddle breakout in a cozy Japanese night. Move your hagoita with a fingertip, keep the temari in an endless rally, and pop every paper balloon down the corridor — with split, focus, a pheasant helper and more. 8 worlds, 200 stages. Coming soon to the App Store.</div>
       <div class="store-badges has-soon" aria-label="Play on Roblox now; Android testers welcome on Google Play; App Store coming soon">
@@ -385,7 +495,13 @@
     <li class="game-card">
       <div class="game-head">
         <img class="game-icon" src="bounce-cat/icon.png" alt="">
-        <a href="bounce-cat/" data-i18n="bc_title">Bounce Cat — Bank shots. Free the cat.</a>
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0008</span><a href="bounce-cat/" data-i18n="bc_title">Bounce Cat — Bank shots. Free the cat.</a></span>
+          <span class="genre-tags">
+            <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Puzzle</span></span>
+            <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Action</span></span>
+          </span>
+        </div>
       </div>
       <div class="desc" data-i18n="bc_desc">A cozy maze-escape puzzle. Fire yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out — 200 mazes across 10 worlds. Out now on Roblox — coming soon to iOS. Android testers welcome.</div>
       <div class="store-badges has-soon" aria-label="Play on Roblox now; Android testers welcome on Google Play; App Store coming soon">
@@ -422,7 +538,10 @@
     <li class="game-card">
       <div class="game-head">
         <img class="game-icon" src="hayate/icon.png" alt="">
-        <a href="hayate/" data-i18n="hayate_title">HAYATE — Ride fast. Slice clean. Finish first.</a>
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0007</span><a href="hayate/" data-i18n="hayate_title">HAYATE — Ride fast. Slice clean. Finish first.</a></span>
+          <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Action</span></span>
+        </div>
       </div>
       <div class="desc" data-i18n="hayate_desc">A 3D katana speed-racer and sequel to ISSEN. Dodge what flies at you, or throw your homing katana to slice it clean — across four worlds, forty stages, plus endless runs. Out now on the App Store. Android testers welcome.</div>
       <div class="store-badges">
@@ -461,7 +580,10 @@
     <li class="game-card">
       <div class="game-head">
         <img class="game-icon" src="sumlings/icon.png" alt="">
-        <a href="sumlings/" data-i18n="sumlings_title">Sumlings — Place numbers. Hatch wonders.</a>
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0006</span><a href="sumlings/" data-i18n="sumlings_title">Sumlings — Place numbers. Hatch wonders.</a></span>
+          <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Puzzle</span></span>
+        </div>
       </div>
       <div class="desc" data-i18n="sumlings_desc">A cozy number puzzle. Place number eggs into a tiny terrarium so each nest's total matches its target — hatch the Sumlings and fill your collection. Out now on the App Store. Android testers welcome.</div>
       <div class="store-badges">
@@ -500,7 +622,10 @@
     <li class="game-card">
       <div class="game-head">
         <img class="game-icon" src="parcel-pals/icon.png" alt="">
-        <a href="parcel-pals/" data-i18n="pp_title">Parcel Pals — Pack happiness. Ship smiles.</a>
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0005</span><a href="parcel-pals/" data-i18n="pp_title">Parcel Pals — Pack happiness. Ship smiles.</a></span>
+          <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Puzzle</span></span>
+        </div>
       </div>
       <div class="desc" data-i18n="pp_desc">A cozy parcel-sorting puzzle. Sort cute parcels into 3 lanes, match shapes to boxes on the belt, and ship before the table overflows. Android testers welcome.</div>
       <div class="store-badges">
@@ -539,7 +664,10 @@
     <li class="game-card">
       <div class="game-head">
         <img class="game-icon" src="issen/icon.png?v=20260523122249" alt="">
-        <a href="issen/" data-i18n="issen_title">ISSEN — One breath, one stroke, one cut</a>
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0004</span><a href="issen/" data-i18n="issen_title">ISSEN — One breath, one stroke, one cut</a></span>
+          <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Action</span></span>
+        </div>
       </div>
       <div class="desc" data-i18n="issen_desc">A sumi-e timing-action game of the iaido draw — breathe, read the distance, and unleash one perfect cut. Out now on the App Store. Android testers welcome.</div>
       <div class="store-badges">
@@ -578,7 +706,10 @@
     <li class="game-card">
       <div class="game-head">
         <img class="game-icon" src="hotaru/icon.png" alt="">
-        <a href="hotaru/" data-i18n="hotaru_title">HOTARU — The Lost House</a>
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0003</span><a href="hotaru/" data-i18n="hotaru_title">HOTARU — The Lost House</a></span>
+          <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Action</span></span>
+        </div>
       </div>
       <div class="desc" data-i18n="hotaru_desc">A beautiful Japanese horror walking simulator. Follow the fireflies, gather them at the andon, hurl them at yokai — and find the back gate before dawn.</div>
       <div class="store-badges has-soon">
@@ -615,7 +746,10 @@
     <li class="game-card">
       <div class="game-head">
         <img class="game-icon" src="liquid-glow/icon.png" alt="">
-        <a href="liquid-glow/">Liquid Glow</a>
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0002</span><a href="liquid-glow/">Liquid Glow</a></span>
+          <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Puzzle</span></span>
+        </div>
       </div>
       <div class="desc" data-i18n="lg_desc">A meditative sort puzzle. Pour glowing liquids between glass tubes and watch them flow through the cosmos.</div>
       <div class="store-badges has-soon">
@@ -650,7 +784,10 @@
     <li class="game-card">
       <div class="game-head">
         <img class="game-icon" src="mole-whack/icon.png?v=20260521172609" alt="">
-        <a href="mole-whack/" data-i18n="mw_title">モグラぽかぽか — Mole Whack</a>
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0001</span><a href="mole-whack/" data-i18n="mw_title">モグラぽかぽか — Mole Whack</a></span>
+          <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Action</span></span>
+        </div>
       </div>
       <div class="desc" data-i18n="mw_desc">A simple 30-second tap action. Whack the moles as they pop up and chase your high score.</div>
       <div class="store-badges has-soon">
@@ -708,6 +845,8 @@
 
   const i18n = {
     en: {
+      tatami_title: "TATAMI — Lay the tatami. Earn your reward.",
+      tatami_desc: "A cozy block puzzle where you lay tatami mats in a quiet Japanese room. Drag a mat onto the floor and complete a full row or column to finish that line. A samurai then carries the finished mats to the tatami magistrate, and delivering earns koban that buy extra lives. A light Haste gauge keeps you moving. With a lucky-laying bonus. 48 stages. Free, made by PixelRyu. Coming soon to the App Store, Google Play and Roblox.",
       temari_title: "TEMARI — Bat the temari. Pop the paper balloons.",
       temari_desc: "A first-person paddle breakout in a cozy Japanese night. Move your hagoita with a fingertip, keep the temari in an endless rally, and pop every paper balloon down the corridor — with split, focus, a pheasant helper and more. 8 worlds, 200 stages. Coming soon to the App Store.",
       bc_title: "Bounce Cat — Bank shots. Free the cat.",
@@ -717,6 +856,9 @@
       meta_desc: "PixelRyu makes calm, beautiful puzzle and action games for mobile — where stillness meets motion.",
       tagline: "Stillness and motion — cosmic puzzle & action games",
       games_heading: "Games",
+      filter_all: "All",
+      genre_puzzle: "Puzzle",
+      genre_action: "Action",
       hayate_title: "HAYATE — Ride fast. Slice clean. Finish first.",
       hayate_desc: "A 3D katana speed-racer and sequel to ISSEN. Dodge what flies at you, or throw your homing katana to slice it clean — across four worlds, forty stages, plus endless runs. Out now on the App Store. Android testers welcome.",
       follow_heading: "Follow",
@@ -735,6 +877,8 @@
       sumlings_desc: "A cozy number puzzle. Place number eggs into a tiny terrarium so each nest's total matches its target — hatch the Sumlings and fill your collection. Out now on the App Store. Android testers welcome."
     },
     ja: {
+      tatami_title: "TATAMI — 畳を敷いて、褒美をもらう。",
+      tatami_desc: "静かな和室に畳を敷いていく、ほっとするブロックパズル。畳を床にドラッグして、行か列が満杯になるとそのラインが完成します。すると侍が敷き上がった畳をかついで畳奉行のもとへ運び、納めると小判がもらえ、貯まった小判で残機が増えます。軽い「おいそぎ」ゲージがほどよいテンポを生みます。縁起の敷き方ボーナスも。全48面。基本無料、PixelRyu 制作。 App Store・Google Play・Roblox で近日公開。",
       temari_title: "TEMARI — 羽子板で手まりを打ち、紙風船を割る。",
       temari_desc: "和の静かな夜を舞台にした一人称パドル・ブロック崩し。指先で羽子板を動かし、手まりを途切れさせずに打ち返し、コリドーの奥の紙風船を割り尽くそう。分裂・集中・雉の助っ人などの遊びも。全8ワールド・200ステージ。App Store で近日公開。",
       bc_title: "Bounce Cat — 跳ね返して、猫を助け出そう。",
@@ -744,6 +888,9 @@
       meta_desc: "PixelRyu はモバイル向けに、静かで美しいパズルとアクションのゲームを作っています。静と動が出会う、ひとつの宇宙。",
       tagline: "静と動の宇宙 — パズル＆アクション",
       games_heading: "ゲーム",
+      filter_all: "すべて",
+      genre_puzzle: "パズル",
+      genre_action: "アクション",
       hayate_title: "HAYATE — 疾走せよ。斬り抜けろ。誰よりも先にゴールへ。",
       hayate_desc: "ISSEN の続編となる 3D 刀スピードレーサー。迫りくる障害をかわすか、追尾する刀を投げて一刀両断に。4 つの舞台・40 ステージ、さらにエンドレスラン付き。App Store にて配信中。Android テスター募集中。",
       follow_heading: "フォロー",
@@ -762,6 +909,8 @@
       sumlings_desc: "ほっこり数のパズル。数字のたまごを箱庭に置いて、各巣の合計をぴったり合わせるとサムリングが孵化。図鑑を集めよう。App Store にて配信中。Android テスター募集中。"
     },
     zh: {
+      tatami_title: "TATAMI — 铺好畳席，领取赏赐。",
+      tatami_desc: "在宁静的和室里铺畳的方块拼图，让人放松。把畳席拖到地板上，填满一整行或一整列即可完成该行。随后武士会扛起铺好的畳席送到官老爷那里，呈交后可获得金币，攒下的金币能换取额外的命。轻巧的「赶工」槽让节奏保持流畅。还有吉利的铺法奖励。共 48 关。基础免费，PixelRyu 制作。 即将登陆 App Store、Google Play 与 Roblox。",
       temari_title: "TEMARI — 用羽子板击回手鞠，击破纸气球。",
       temari_desc: "以宁静和风之夜为舞台的第一人称拍板打砖块。用指尖移动羽子板，让手鞠不断对打不落，击破长廊深处的纸气球。还有分裂、专注慢动作、雉鸡帮手等玩法。共 8 个世界、200 关。即将登陆 App Store。",
       bc_title: "Bounce Cat — 弹射毛线，救出小猫。",
@@ -771,6 +920,9 @@
       meta_desc: "PixelRyu 为移动设备制作宁静而美丽的益智与动作游戏——静与动，交汇于一片宇宙。",
       tagline: "静与动的宇宙 — 益智与动作游戏",
       games_heading: "游戏",
+      filter_all: "全部",
+      genre_puzzle: "益智",
+      genre_action: "动作",
       hayate_title: "HAYATE — 极速飞驰，利落斩落，率先冲线。",
       hayate_desc: "一款 3D 武士刀竞速游戏，ISSEN 的续作。躲开迎面飞来的一切，或掷出你的追踪武士刀将其利落斩断——横跨四大世界、四十个关卡，外加无尽模式。App Store 现已上线。招募 Android 测试员。",
       follow_heading: "关注",
@@ -789,6 +941,8 @@
       sumlings_desc: "治愈系数字益智游戏。把数字蛋放进小箱庭，让每个巢的合计与目标一致——孵化 Sumling，集齐图鉴。App Store 现已上线。招募 Android 测试员。"
     },
     ko: {
+      tatami_title: "TATAMI — 다다미를 깔고, 보상을 받으세요.",
+      tatami_desc: "고요한 일본식 방에 다다미를 까는 아늑한 블록 퍼즐. 다다미를 바닥으로 끌어다 한 행이나 한 열을 가득 채우면 그 줄이 완성됩니다. 그러면 사무라이가 다 깔린 다다미를 들고 다다미 관리님에게 가져가고, 바치면 금화를 받아 목숨을 추가로 살 수 있습니다. 가벼운 「서두름」 게이지가 적당한 흐름을 유지해 줍니다. 길한 깔기 보너스도. 총 48 스테이지. 기본 무료, PixelRyu 제작. App Store·Google Play·Roblox에서 곧 출시.",
       temari_title: "TEMARI — 하고이타로 데마리를 받아쳐 종이 풍선을 터뜨리세요.",
       temari_desc: "고요한 일본의 밤을 무대로 한 1인칭 패들 벽돌깨기. 손끝으로 하고이타를 움직여 데마리를 끊임없는 랠리로 살려두고, 복도 안쪽의 종이 풍선을 모두 터뜨리세요. 분열·집중 슬로모션·꿩 도우미 등 다양한 재미도. 8개 월드·200 스테이지. iOS·Android·Roblox에 곧 출시.",
       bc_title: "Bounce Cat — 튕겨서, 고양이를 구해 주세요.",
@@ -798,6 +952,9 @@
       meta_desc: "PixelRyu는 모바일을 위한 고요하고 아름다운 퍼즐과 액션 게임을 만듭니다 — 고요함과 움직임이 만나는 곳.",
       tagline: "고요함과 움직임의 우주 — 퍼즐 & 액션",
       games_heading: "게임",
+      filter_all: "전체",
+      genre_puzzle: "퍼즐",
+      genre_action: "액션",
       hayate_title: "HAYATE — 질주하라. 깔끔하게 베어라. 1등으로 골인하라.",
       hayate_desc: "3D 카타나 스피드 레이서이자 ISSEN의 속편. 날아오는 것을 피하거나 유도 카타나를 던져 깔끔하게 베어내라 — 네 개의 세계, 마흔 개의 스테이지, 그리고 엔드리스 주행까지. App Store에서 출시 중. Android 테스터 모집 중.",
       follow_heading: "팔로우",
@@ -816,6 +973,8 @@
       sumlings_desc: "힐링 숫자 퍼즐. 작은 정원에 숫자 알을 놓아 각 둥지의 합을 목표와 맞추고 Sumling을 부화시켜 도감을 채우세요. App Store에서 출시 중. Android 테스터 모집 중."
     },
     hi: {
+      tatami_title: "TATAMI — तातामी बिछाएँ, इनाम पाएँ।",
+      tatami_desc: "एक शांत जापानी कमरे में तातामी बिछाने वाला आरामदेह ब्लॉक पज़ल। चटाई को फर्श पर खींचें और किसी पूरी पंक्ति या स्तंभ को भरकर वह लाइन पूरी करें। फिर एक समुराई बिछ चुकी चटाइयाँ तातामी अधिकारी तक पहुँचाता है, और सौंपने पर सोने के सिक्के मिलते हैं जिनसे अतिरिक्त जीवन खरीदे जा सकते हैं। एक हल्का «जल्दी» गेज आपकी गति बनाए रखता है। साथ में शुभ बिछाने का बोनस। कुल 48 चरण। मुफ़्त, PixelRyu द्वारा। App Store, Google Play और Roblox पर जल्द आ रही है।",
       temari_title: "TEMARI — हागोइता से टेमारी मारें, कागज़ के गुब्बारे फोड़ें।",
       temari_desc: "एक शांत जापानी रात पर आधारित फर्स्ट-पर्सन पैडल ब्रेकआउट। उँगली से हागोइता घुमाएँ, टेमारी को लगातार रैली में ज़िंदा रखें, और गलियारे की गहराई के कागज़ के गुब्बारे फोड़ें। स्प्लिट, फोकस स्लो-मोशन, तीतर सहायक और बहुत कुछ। 8 दुनिया, 200 चरण। App Store पर जल्द आ रही है।",
       bc_title: "Bounce Cat — दीवारों से टकराओ, बिल्ली को छुड़ाओ।",
@@ -825,6 +984,9 @@
       meta_desc: "PixelRyu मोबाइल के लिए शांत, सुंदर पज़ल और एक्शन गेम्स बनाता है — जहाँ ठहराव और गति मिलते हैं।",
       tagline: "ठहराव और गति का ब्रह्मांड — पज़ल और एक्शन",
       games_heading: "गेम्स",
+      filter_all: "सभी",
+      genre_puzzle: "पज़ल",
+      genre_action: "एक्शन",
       hayate_title: "HAYATE — तेज़ दौड़ो। सफ़ाई से काटो। पहले पहुँचो।",
       hayate_desc: "एक 3D कटाना स्पीड-रेसर और ISSEN का सीक्वल। आप पर उड़कर आने वाली चीज़ों को चकमा दें, या अपना होमिंग कटाना फेंककर उन्हें सफ़ाई से काट डालें — चार दुनियाओं, चालीस स्टेज, साथ ही एंडलेस रन में। App Store पर अब उपलब्ध। Android परीक्षक आमंत्रित।",
       follow_heading: "फ़ॉलो करें",
@@ -843,6 +1005,8 @@
       sumlings_desc: "एक हल्की-फुल्की संख्या पहेली। छोटे टेरारियम में अंक के अंडे रखें ताकि हर घोंसले का कुल लक्ष्य से मिले — Sumling को फूटें और संग्रह भरें। App Store पर अब उपलब्ध। Android परीक्षक आमंत्रित।"
     },
     id: {
+      tatami_title: "TATAMI — Pasang tatami. Raih hadiahmu.",
+      tatami_desc: "Puzzle blok yang menenangkan: kamu memasang tikar tatami di ruangan Jepang yang sunyi. Seret tikar ke lantai dan penuhi satu baris atau kolom penuh untuk menyelesaikan baris itu. Lalu seorang samurai memanggul tikar yang sudah terpasang dan membawanya ke petugas tatami, dan menyerahkannya menghasilkan koin emas yang bisa membeli nyawa tambahan. Pengukur «Cepat» yang ringan menjaga temponya. Plus bonus pemasangan bertuah. 48 tahap. Gratis, oleh PixelRyu. Segera hadir di App Store, Google Play & Roblox.",
       temari_title: "TEMARI — Pukul temari dengan hagoita, pecahkan balon kertas.",
       temari_desc: "Breakout paddle orang-pertama berlatar malam Jepang yang menenangkan. Gerakkan hagoita dengan ujung jari, jaga temari dalam reli tanpa henti, dan pecahkan setiap balon kertas di sepanjang koridor. Ada split, focus gerak lambat, burung pegar pembantu, dan lainnya. 8 dunia, 200 tahap. Segera hadir di App Store.",
       bc_title: "Bounce Cat — Pantulkan benang. Bebaskan si kucing.",
@@ -852,6 +1016,9 @@
       meta_desc: "PixelRyu membuat game puzzle dan aksi yang tenang dan indah untuk mobile — tempat ketenangan bertemu gerak.",
       tagline: "Ketenangan dan gerak dalam satu kosmos — puzzle & aksi",
       games_heading: "Game",
+      filter_all: "Semua",
+      genre_puzzle: "Puzzle",
+      genre_action: "Aksi",
       hayate_title: "HAYATE — Melaju cepat. Tebas bersih. Finis pertama.",
       hayate_desc: "Balap kecepatan katana 3D dan sekuel dari ISSEN. Hindari yang melesat ke arahmu, atau lempar katana pengejarmu untuk menebasnya bersih — di empat dunia, empat puluh stage, ditambah mode endless. Sudah tersedia di App Store. Tester Android dipersilakan.",
       follow_heading: "Ikuti",
@@ -870,6 +1037,8 @@
       sumlings_desc: "Teka-teki angka yang nyaman. Letakkan telur angka di terarium kecil sehingga total tiap sarang sesuai targetnya — tetaskan Sumling dan lengkapi koleksi Anda. Sudah tersedia di App Store. Tester Android dipersilakan."
     },
     de: {
+      tatami_title: "TATAMI — Leg das Tatami. Hol dir deine Belohnung.",
+      tatami_desc: "Ein gemütliches Block-Puzzle, bei dem du in einem stillen japanischen Zimmer Tatami-Matten auslegst. Ziehe eine Matte auf den Boden und fülle eine ganze Reihe oder Spalte, um diese Linie fertigzustellen. Dann schultert ein Samurai die fertig gelegten Matten und trägt sie zum Aufseher; das Abliefern bringt Goldmünzen, mit denen du zusätzliche Leben kaufst. Eine leichte Eile-Anzeige hält dich in Bewegung. Mit einem glücksverheißenden Lege-Bonus. 48 Level. Kostenlos, von PixelRyu. Demnächst im App Store, bei Google Play & auf Roblox.",
       temari_title: "TEMARI — Schlag das Temari, lass die Papierballons platzen.",
       temari_desc: "Ein Ego-Paddle-Breakout in einer gemütlichen japanischen Nacht. Bewege dein Hagoita mit der Fingerspitze, halte das Temari in endlosem Ballwechsel und lass jeden Papierballon im Korridor platzen — mit Split, Focus-Zeitlupe, einem Fasan-Helfer und mehr. 8 Welten, 200 Level. Demnächst im App Store.",
       bc_title: "Bounce Cat — Bandenschüsse. Befreie die Katze.",
@@ -879,6 +1048,9 @@
       meta_desc: "PixelRyu entwickelt ruhige, schöne Puzzle- und Actionspiele für mobile Geräte — wo Stille auf Bewegung trifft.",
       tagline: "Stille und Bewegung — kosmische Puzzle- & Actionspiele",
       games_heading: "Spiele",
+      filter_all: "Alle",
+      genre_puzzle: "Puzzle",
+      genre_action: "Action",
       hayate_title: "HAYATE — Schnell fahren. Sauber schneiden. Als Erster ins Ziel.",
       hayate_desc: "Ein 3D-Katana-Speed-Racer und die Fortsetzung von ISSEN. Weiche allem aus, was auf dich zufliegt, oder wirf deine zielsuchende Katana und schneide es sauber entzwei — über vier Welten, vierzig Stages, plus endlose Läufe. Jetzt im App Store. Android-Tester gesucht.",
       follow_heading: "Folgen",
@@ -897,6 +1069,8 @@
       sumlings_desc: "Ein gemütliches Zahlenrätsel. Platziere Zahleneier in einem kleinen Terrarium, sodass die Summe jedes Nests dem Ziel entspricht — schlüpfe die Sumlings und fülle deine Sammlung. Jetzt im App Store. Android-Tester gesucht."
     },
     fr: {
+      tatami_title: "TATAMI — Pose le tatami. Gagne ta récompense.",
+      tatami_desc: "Un puzzle de blocs apaisant où tu poses des tatamis dans une pièce japonaise paisible. Fais glisser une natte sur le sol et remplis une ligne ou une colonne complète pour terminer cette ligne. Un samouraï emporte alors les nattes posées jusqu'au magistrat, et la livraison rapporte des koban qui achètent des vies supplémentaires. Une légère jauge de Hâte t'aide à garder le rythme. Avec un bonus de pose porte-bonheur. 48 niveaux. Gratuit, par PixelRyu. Bientôt sur l'App Store, Google Play et Roblox.",
       temari_title: "TEMARI — Renvoie le temari, fais éclater les ballons en papier.",
       temari_desc: "Un casse-briques à la raquette en vue subjective dans une douce nuit japonaise. Déplace ton hagoita du bout du doigt, garde le temari en jeu sans fin et fais éclater chaque ballon en papier du couloir — avec split, ralenti focus, un faisan assistant et plus. 8 mondes, 200 niveaux. Bientôt disponible sur l'App Store.",
       bc_title: "Bounce Cat — Des ricochets bien placés. Libère le chat.",
@@ -906,6 +1080,9 @@
       meta_desc: "PixelRyu crée de beaux jeux de réflexion et d'action apaisants pour mobile — là où le calme rencontre le mouvement.",
       tagline: "Calme et mouvement — jeux de réflexion & d'action cosmiques",
       games_heading: "Jeux",
+      filter_all: "Tout",
+      genre_puzzle: "Réflexion",
+      genre_action: "Action",
       hayate_title: "HAYATE — Roulez vite. Tranchez net. Finissez premier.",
       hayate_desc: "Une course de vitesse au katana en 3D, suite d'ISSEN. Esquivez ce qui fonce sur vous, ou lancez votre katana à tête chercheuse pour le trancher net — à travers quatre mondes, quarante niveaux, plus des parties en mode infini. Disponible sur l'App Store. Testeurs Android bienvenus.",
       follow_heading: "Suivre",
@@ -924,6 +1101,8 @@
       sumlings_desc: "Un puzzle de chiffres cosy. Place des œufs numérotés dans un petit terrarium pour que la somme de chaque nid corresponde à sa cible — fais éclore les Sumlings et remplis ta collection. Disponible sur l'App Store. Testeurs Android bienvenus."
     },
     it: {
+      tatami_title: "TATAMI — Posa il tatami. Guadagna la tua ricompensa.",
+      tatami_desc: "Un rilassante puzzle a blocchi in cui posi le stuoie di tatami in una quieta stanza giapponese. Trascina una stuoia sul pavimento e completa un'intera riga o colonna per terminare quella linea. Poi un samurai si carica in spalla le stuoie posate e le porta al magistrato, e consegnarle frutta monete d'oro con cui acquistare vite extra. Una leggera barra di Fretta ti tiene in movimento. Con un bonus di posa di buon auspicio. 48 livelli. Gratis, di PixelRyu. Presto su App Store, Google Play e Roblox.",
       temari_title: "TEMARI — Colpisci il temari, fai scoppiare i palloncini di carta.",
       temari_desc: "Un breakout con racchetta in prima persona in una tranquilla notte giapponese. Muovi il tuo hagoita con un dito, tieni il temari in gioco senza sosta e fai scoppiare ogni palloncino di carta del corridoio — con split, focus al rallentatore, un fagiano aiutante e altro. 8 mondi, 200 livelli. Presto su App Store.",
       bc_title: "Bounce Cat — Tiri di sponda. Libera il gatto.",
@@ -933,6 +1112,9 @@
       meta_desc: "PixelRyu crea bei giochi puzzle e d'azione tranquilli per mobile — dove la quiete incontra il movimento.",
       tagline: "Quiete e movimento — giochi puzzle e d'azione cosmici",
       games_heading: "Giochi",
+      filter_all: "Tutti",
+      genre_puzzle: "Puzzle",
+      genre_action: "Azione",
       hayate_title: "HAYATE — Corri veloce. Taglia netto. Arriva primo.",
       hayate_desc: "Uno speed-racer con katana in 3D e seguito di ISSEN. Schiva ciò che ti piomba addosso o lancia la tua katana a ricerca per tagliarlo netto, tra quattro mondi, quaranta livelli e corse senza fine. Disponibile su App Store. Cercasi tester Android.",
       follow_heading: "Segui",
@@ -951,6 +1133,8 @@
       sumlings_desc: "Un puzzle di numeri rilassante. Posiziona uova numerate in un piccolo terrario in modo che la somma di ogni nido corrisponda al suo obiettivo — schiudi i Sumling e completa la collezione. Disponibile su App Store. Cercasi tester Android."
     },
     es: {
+      tatami_title: "TATAMI — Coloca el tatami. Gana tu recompensa.",
+      tatami_desc: "Un relajante puzle de bloques en el que colocas esteras de tatami en una tranquila sala japonesa. Arrastra una estera al suelo y completa una fila o columna entera para terminar esa línea. Luego un samurái carga al hombro las esteras colocadas y las lleva al oficial, y entregarlas otorga monedas de oro que compran vidas extra. Un ligero medidor de Prisa te mantiene en movimiento. Con un bonus de colocación de buena fortuna. 48 niveles. Gratis, de PixelRyu. Próximamente en App Store, Google Play y Roblox.",
       temari_title: "TEMARI — Golpea el temari, revienta los globos de papel.",
       temari_desc: "Un breakout de pala en primera persona en una acogedora noche japonesa. Mueve tu hagoita con la punta del dedo, mantén el temari en un peloteo sin fin y revienta cada globo de papel del pasillo — con split, cámara lenta focus, un faisán ayudante y más. 8 mundos, 200 niveles. Próximamente en App Store.",
       bc_title: "Bounce Cat — Tiros con rebote. Libera al gato.",
@@ -960,6 +1144,9 @@
       meta_desc: "PixelRyu crea hermosos juegos de puzzle y acción serenos para móvil — donde la calma se encuentra con el movimiento.",
       tagline: "Calma y movimiento — juegos de puzzle y acción cósmicos",
       games_heading: "Juegos",
+      filter_all: "Todos",
+      genre_puzzle: "Puzzle",
+      genre_action: "Acción",
       hayate_title: "HAYATE — Corre veloz. Corta limpio. Llega primero.",
       hayate_desc: "Carreras de velocidad con katana en 3D y secuela de ISSEN. Esquiva lo que vuela hacia ti o lanza tu katana teledirigida para cortarlo limpio: a lo largo de cuatro mundos, cuarenta niveles y carreras sin fin. Ya disponible en App Store. Se buscan testers de Android.",
       follow_heading: "Seguir",
@@ -978,6 +1165,8 @@
       sumlings_desc: "Un puzle de números relajante. Coloca huevos numerados en un pequeño terrario para que la suma de cada nido coincida con su meta — eclosiona los Sumlings y completa tu colección. Ya disponible en App Store. Se buscan testers de Android."
     },
     pt: {
+      tatami_title: "TATAMI — Assente o tatame. Ganhe sua recompensa.",
+      tatami_desc: "Um relaxante puzzle de blocos em que você assenta esteiras de tatame numa tranquila sala japonesa. Arraste uma esteira para o piso e preencha uma linha ou coluna inteira para concluir essa linha. Em seguida, um samurai carrega no ombro as esteiras assentadas e as leva ao magistrado, e entregá-las rende moedas de ouro que compram vidas extras. Um leve medidor de Pressa mantém o ritmo. Com um bônus de assentamento auspicioso. 48 fases. Grátis, da PixelRyu. Em breve na App Store, no Google Play e no Roblox.",
       temari_title: "TEMARI — Rebata o temari, estoure os balões de papel.",
       temari_desc: "Um breakout de raquete em primeira pessoa numa aconchegante noite japonesa. Mova o seu hagoita com a ponta do dedo, mantenha o temari num peloteio sem fim e estoure cada balão de papel do corredor — com split, câmera lenta focus, um faisão ajudante e mais. 8 mundos, 200 fases. Em breve na App Store.",
       bc_title: "Bounce Cat — Mire na parede. Liberte o gatinho.",
@@ -987,6 +1176,9 @@
       meta_desc: "A PixelRyu cria belos jogos de puzzle e ação tranquilos para celular — onde a quietude encontra o movimento.",
       tagline: "Quietude e movimento — jogos de puzzle e ação cósmicos",
       games_heading: "Jogos",
+      filter_all: "Todos",
+      genre_puzzle: "Puzzle",
+      genre_action: "Ação",
       hayate_title: "HAYATE — Pilote rápido. Corte certeiro. Termine em primeiro.",
       hayate_desc: "Uma corrida de velocidade com katana em 3D e sequência de ISSEN. Desvie do que voa em sua direção ou arremesse sua katana teleguiada para cortá-lo certeiro — por quatro mundos, quarenta fases, mais corridas infinitas. Já disponível na App Store. Testadores Android bem-vindos.",
       follow_heading: "Seguir",
@@ -1005,6 +1197,8 @@
       sumlings_desc: "Um quebra-cabeça de números aconchegante. Coloque ovos numerados em um pequeno terrário para que a soma de cada ninho corresponda ao alvo — choque os Sumlings e complete sua coleção. Já disponível na App Store. Testadores Android bem-vindos."
     },
     ru: {
+      tatami_title: "TATAMI — Стели татами. Получи награду.",
+      tatami_desc: "Уютная блочная головоломка, в которой вы укладываете маты татами в тихой японской комнате. Перетащите мат на пол и заполните целый ряд или столбец, чтобы завершить эту линию. Затем самурай взваливает уложенные маты на плечо и несёт их чиновнику, а сдача приносит золотые монеты, на которые покупаются дополнительные жизни. Лёгкая шкала Спешки задаёт темп. С бонусом за благоприятную укладку. 48 уровней. Бесплатно, от PixelRyu. Скоро в App Store, Google Play и Roblox.",
       temari_title: "TEMARI — Отбивай тэмари, лопай бумажные шарики.",
       temari_desc: "Аркада-арканоид от первого лица в уютной японской ночи. Двигай ракетку хагоита кончиком пальца, удерживай тэмари в бесконечном розыгрыше и лопай каждый бумажный шарик в коридоре — со сплитом, замедлением focus, помощником-фазаном и не только. 8 миров, 200 уровней. Скоро в App Store.",
       bc_title: "Bounce Cat — Бей рикошетом. Освободи кота.",
@@ -1014,6 +1208,9 @@
       meta_desc: "PixelRyu создаёт спокойные и красивые головоломки и экшен-игры для мобильных — там, где покой встречает движение.",
       tagline: "Покой и движение — космические головоломки и экшен",
       games_heading: "Игры",
+      filter_all: "Все",
+      genre_puzzle: "Головоломка",
+      genre_action: "Экшен",
       hayate_title: "HAYATE — Мчись быстро. Руби чисто. Финишируй первым.",
       hayate_desc: "3D-гонка с катаной и продолжение ISSEN. Уворачивайся от летящих преград или метни самонаводящуюся катану и разрежь их начисто — четыре мира, сорок этапов и бесконечные забеги. Уже в App Store. Приглашаются тестировщики Android.",
       follow_heading: "Подписаться",
@@ -1101,6 +1298,49 @@
         card.removeEventListener('animationend', done);
       });
       setTimeout(function () { window.location.href = href; }, 150);
+    });
+  })();
+</script>
+<script>
+  // Genre filter: each card's genre is read from its on-card genre tag (single source of
+  // truth), so adding/retagging a card needs no extra wiring here. Clicking a pill shows
+  // only that genre; "All" shows everything. Counts are filled in once on load.
+  (function () {
+    var bar = document.querySelector('.genre-filter');
+    var list = document.querySelector('.game-list');
+    if (!bar || !list) return;
+    var cards = Array.prototype.slice.call(list.querySelectorAll('.game-card'));
+    cards.forEach(function (card) {
+      var gs = [];
+      card.querySelectorAll('.genre-tag').forEach(function (tag) {
+        tag.classList.forEach(function (cl) {
+          if (cl.indexOf('genre-') === 0 && cl !== 'genre-tag' && gs.indexOf(cl.slice(6)) < 0) gs.push(cl.slice(6));
+        });
+      });
+      card.dataset.genres = gs.join(' ');
+    });
+    var counts = { all: cards.length };
+    cards.forEach(function (c) {
+      c.dataset.genres.split(' ').forEach(function (g) { if (g) counts[g] = (counts[g] || 0) + 1; });
+    });
+    bar.querySelectorAll('.filter-count').forEach(function (el) {
+      var k = el.getAttribute('data-count');
+      el.textContent = counts[k] != null ? counts[k] : 0;
+    });
+    var btns = Array.prototype.slice.call(bar.querySelectorAll('.filter-btn'));
+    function apply(filter) {
+      cards.forEach(function (c) {
+        c.style.display = (filter === 'all' || c.dataset.genres.split(' ').indexOf(filter) >= 0) ? '' : 'none';
+      });
+      btns.forEach(function (b) {
+        var on = b.getAttribute('data-filter') === filter;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+    }
+    bar.addEventListener('click', function (e) {
+      var btn = e.target.closest('.filter-btn');
+      if (btn) apply(btn.getAttribute('data-filter'));
     });
   })();
 </script>
