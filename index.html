@@ -303,8 +303,11 @@
     .container { padding: 60px 24px; }
     .lang-switch { top: 16px; right: 16px; }
     .game-icon { width: 48px; height: 48px; border-radius: 11px; }
-    /* On mobile the serial number drops onto its own line, centered above the title. */
-    .game-name-row .game-no { display: block; text-align: center; margin: 0 0 4px; font-size: 16px; letter-spacing: 2px; }
+    /* On mobile the serial number drops onto its own line, centered across the WHOLE
+       card (not just the title column). The number lives in the title column, which is
+       offset from the card's left edge by the icon (48px) + head gap (16px) = 64px, so
+       pull it left by 64px and widen it by 64px to span the full card content width. */
+    .game-name-row .game-no { display: block; text-align: center; margin: 0 0 4px -64px; width: calc(100% + 64px); font-size: 16px; letter-spacing: 2px; }
     /* Compact the filter pills a touch so they wrap comfortably on narrow phones. */
     .genre-filter { gap: 8px; }
     .filter-btn { padding: 6px 13px; font-size: 12.5px; }
