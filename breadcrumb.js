@@ -32,7 +32,8 @@
     "sumlings":    { all: "Sumlings", ja: "サムリング" },
     "hayate":      { all: "HAYATE" },
     "bounce-cat":  { all: "Bounce Cat" },
-    "temari":      { all: "TEMARI" }
+    "temari":      { all: "TEMARI" },
+    "tatami":      { all: "TATAMI" }
   };
 
   // Leaf page labels (localized). Privacy/Terms match the legal-page generator
