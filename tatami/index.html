@@ -71,6 +71,17 @@
   .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(211,74,49,0.08);border:1px solid rgba(211,74,49,0.22);color:#9a7a4e;transition:all .25s ease;}
   .social a:hover{background:rgba(211,74,49,0.16);border-color:rgba(211,74,49,0.50);color:#d34a31;transform:translateY(-2px);}
   .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+  /* live badge links + Android tester card (TATAMI vermillion palette) */
+  .hero-badges a { display: inline-block; line-height: 0; transition: transform .2s ease, opacity .2s ease; }
+  .hero-badges a:hover { transform: translateY(-2px); opacity: .85; }
+  .tester-card-base { background: rgba(255,255,255,0.55); border: 1px solid rgba(211,74,49,0.35); border-radius: 16px; padding: 24px 24px 28px; margin: 4px 0 28px; text-align: left; box-shadow: 0 8px 24px rgba(120,70,40,0.14); }
+  .tester-heading { font-size: 13px; color: #c2542f; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 4px; font-weight: 700; text-align: center; }
+  .tester-android-note { display: block; font-size: 11px; color: #8a7355; text-transform: none; letter-spacing: 0; font-weight: 400; margin-bottom: 16px; text-align: center; }
+  .tester-card-base p { font-size: 14px; line-height: 1.65; color: #4a3b29; margin: 12px 0; }
+  .tester-section-label { font-size: 13px; font-weight: 700; color: #8a5a32; margin: 20px 0 6px; }
+  .tester-step { display: block; background: rgba(211,74,49,0.10); border: 1px solid rgba(211,74,49,0.35); border-radius: 10px; padding: 12px 16px; margin: 10px 0; color: #c2542f; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s ease; }
+  .tester-step:hover { background: rgba(211,74,49,0.20); border-color: rgba(211,74,49,0.65); color: #d34a31; }
+  .tester-card-base ul { margin: 6px 0 0; padding-left: 22px; color: #4a3b29; font-size: 14px; line-height: 1.7; }
 </style>
 <!-- SEO/LLMO start (managed) -->
 <link rel="canonical" href="https://pixelryu.github.io/tatami/">
@@ -107,7 +118,7 @@
 <meta name="twitter:description" content="TATAMI: Lay the Floor — a cozy tatami-laying block puzzle in a quiet Japanese room by PixelRyu. Lay mats, complete a line, and a samurai delivers them to the magistrate for koban that buy extra lives. A light Haste gauge, lucky-laying bonus, 48 stages, free. Coming soon to the App Store, Google Play and Roblox.">
 <meta name="twitter:image" content="https://pixelryu.github.io/tatami/og.png">
 <meta name="twitter:image:alt" content="TATAMI: Lay the Floor — lay tatami in a quiet Japanese room">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"TATAMI: Lay the Floor","url":"https://pixelryu.github.io/tatami/","image":"https://pixelryu.github.io/tatami/og.png","description":"TATAMI: Lay the Floor — a cozy tatami-laying block puzzle in a quiet Japanese room by PixelRyu. Drag a mat and complete a full row or column to finish that line. A samurai carries the finished mats to the tatami magistrate, and delivering earns koban that buy extra lives. A light Haste gauge keeps you moving, with a lucky-laying bonus. 48 stages, free. Coming soon to the App Store, Google Play and Roblox.","applicationCategory":"GameApplication","operatingSystem":"iOS, Android, Roblox","author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"TATAMI: Lay the Floor","url":"https://pixelryu.github.io/tatami/","image":"https://pixelryu.github.io/tatami/og.png","description":"TATAMI: Lay the Floor — a cozy tatami-laying block puzzle in a quiet Japanese room by PixelRyu. Drag a mat and complete a full row or column to finish that line. A samurai carries the finished mats to the tatami magistrate, and delivering earns koban that buy extra lives. A light Haste gauge keeps you moving, with a lucky-laying bonus. 48 stages, free. Coming soon to the App Store, Google Play and Roblox.","applicationCategory":"GameApplication","operatingSystem":"iOS, Android, Roblox","sameAs":["https://play.google.com/apps/testing/com.pixelryu.tatami"],"author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/"},{"@type":"ListItem","position":2,"name":"TATAMI: Lay the Floor","item":"https://pixelryu.github.io/tatami/"}]}</script>
 <!-- SEO/LLMO end -->
 </head>
@@ -121,7 +132,7 @@
   <h1><span class="accent">TATAMI</span><span class="jp">畳</span></h1>
   <div class="subtitle" data-i18n="subtitle">Cozy Tatami Room Puzzle</div>
 
-  <section class="hero-badges soon" aria-label="Coming soon to the App Store, Google Play and Roblox">
+  <section class="hero-badges soon" aria-label="Android testers welcome on Google Play; App Store and Roblox coming soon">
     <span class="soon-cell"><span class="appstore-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
           <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
           <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
@@ -130,14 +141,7 @@
           <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
           <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
         </svg></span><span class="soon-stamp">COMING SOON</span></span>
-    <span class="soon-cell"><span class="googleplay-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
-          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
-          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
-            <path fill="#000" d="M5 3 L5 21 L19 12 Z"/>
-          </svg>
-          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">GET IT ON</text>
-          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="15" font-weight="500">Google Play</text>
-        </svg></span><span class="soon-stamp">COMING SOON</span></span>
+    <a href="#tester-heading" aria-label="Join TATAMI Android testers"><img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51"></a>
     <span class="soon-cell"><span class="roblox-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
           <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
           <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
@@ -150,7 +154,43 @@
           <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
         </svg></span><span class="soon-stamp">COMING SOON</span></span>
   </section>
-  <p class="soon-note" data-i18n="coming_soon_note">Coming soon to the App Store, Google Play and Roblox.</p>
+  <p class="soon-note" data-i18n="coming_soon_note">Coming soon to the App Store and Roblox.</p>
+
+  <section class="tester-card tester-card-base" aria-labelledby="tester-heading">
+    <div id="tester-heading" class="tester-heading">
+      🎁 <span data-i18n="tester_heading">Android Tester Recruitment</span>
+      <span class="tester-android-note">📱 <span data-i18n="tester_android_note">Android only</span></span>
+    </div>
+    <p data-i18n="tester_intro">Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.</p>
+
+    <div class="tester-section-label">📦 <span data-i18n="tester_what_label">What it is</span></div>
+    <p data-i18n="tester_what">A cozy block puzzle where you lay tatami mats in a quiet Japanese room. Drag a mat onto the floor and complete a full row or column to finish that line. A samurai then carries the finished mats to the tatami magistrate, and delivering earns koban that buy extra lives. A light Haste gauge keeps you moving. With a lucky-laying bonus. 48 stages. Free, made by PixelRyu.</p>
+
+    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">
+      🔗 <span data-i18n="tester_step1_label">Step 1 — Join the tester group</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.tatami" target="_blank" rel="noopener">
+      📱 <span data-i18n="tester_step2_label">Step 2 — Opt-in via Play Store</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/store/apps/details?id=com.pixelryu.tatami" target="_blank" rel="noopener">
+      ⬇️ <span data-i18n="tester_step3_label">Step 3 — Download &amp; play the app</span>
+    </a>
+
+    <div class="tester-section-label">📌 <span data-i18n="tester_ask_label">What I'm asking for</span></div>
+    <ul>
+      <li data-i18n="tester_ask_keep">Keep installed for the full 14 days</li>
+      <li data-i18n="tester_ask_launch">Launch every couple of days (a few times is enough)</li>
+      <li data-i18n="tester_ask_minutes">A minute or two of play per session is plenty</li>
+    </ul>
+    <p class="tester-note" data-i18n="tester_note_lead">ℹ️ Tip — all three steps below are required:</p>
+    <ul class="tester-note-list">
+      <li data-i18n="tester_note_step1">Step 1 — Join the group: even if you see “no permission to view content”, there’s a “Join group” button on that page — tap it to join.</li>
+      <li data-i18n="tester_note_step2">Step 2 — Become a tester (opt-in): on the opt-in page, tap to join the test. Becoming a tester alone does not install the app.</li>
+      <li data-i18n="tester_note_step3">Step 3 — Download &amp; play: open the download page, install the app, launch it and play a little — without this, your testing doesn’t count.</li>
+      <li data-i18n="tester_note_account">Use the same Google account for all steps.</li>
+      <li data-i18n="tester_note_wait">If Step 2 or 3 shows “App not available”, wait a few hours after joining and try again.</li>
+    </ul>
+  </section>
 
   <a href="overview.html" class="overview-link">🎍 <span data-i18n="link_overview">View Game Overview</span> →</a>
 
@@ -203,7 +243,25 @@
         "meta_desc": "TATAMI: Lay the Floor — a cozy tatami-laying block puzzle in a quiet Japanese room by PixelRyu. Drag a mat and complete a full row or column to finish that line. A samurai carries the finished mats to the tatami magistrate, and delivering earns koban that buy extra lives. A light Haste gauge keeps you moving, with a lucky-laying bonus. 48 stages, free. Coming soon to the App Store, Google Play and Roblox.",
         "tagline": "Lay the tatami. Earn your reward.",
         "subtitle": "Cozy Tatami Room Puzzle",
-        "coming_soon_note": "Coming soon to the App Store, Google Play and Roblox.",
+        "coming_soon_note": "Coming soon to the App Store and Roblox.",
+        "tester_heading": "Android Tester Recruitment",
+        "tester_android_note": "Android only",
+        "tester_intro": "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
+        "tester_what_label": "What it is",
+        "tester_step1_label": "Step 1 — Join the tester group",
+        "tester_step2_label": "Step 2 — Opt-in via Play Store",
+        "tester_step3_label": "Step 3 — Download & play the app",
+        "tester_ask_label": "What I'm asking for",
+        "tester_ask_keep": "Keep installed for the full 14 days",
+        "tester_ask_launch": "Launch every couple of days (a few times is enough)",
+        "tester_ask_minutes": "A minute or two of play per session is plenty",
+        "tester_note_lead": "ℹ️ Tip — all three steps below are required:",
+        "tester_note_step1": "Step 1 — Join the group: even if you see “no permission to view content”, there’s a “Join group” button on that page — tap it to join.",
+        "tester_note_step2": "Step 2 — Become a tester (opt-in): on the opt-in page, tap to join the test. Becoming a tester alone does not install the app.",
+        "tester_note_step3": "Step 3 — Download & play: open the download page, install the app, launch it and play a little — without this, your testing doesn’t count.",
+        "tester_note_account": "Use the same Google account for all steps.",
+        "tester_note_wait": "If Step 2 or 3 shows “App not available”, wait a few hours after joining and try again.",
+        "tester_what": "A cozy block puzzle where you lay tatami mats in a quiet Japanese room. Drag a mat onto the floor and complete a full row or column to finish that line. A samurai then carries the finished mats to the tatami magistrate, and delivering earns koban that buy extra lives. A light Haste gauge keeps you moving. With a lucky-laying bonus. 48 stages. Free, made by PixelRyu.",
         "what_label": "What it is",
         "what": "A cozy block puzzle where you lay tatami mats in a quiet Japanese room. Drag a mat onto the floor and complete a full row or column to finish that line. A samurai then carries the finished mats to the tatami magistrate, and delivering earns koban that buy extra lives. A light Haste gauge keeps you moving. With a lucky-laying bonus. 48 stages. Free, made by PixelRyu.",
         "link_overview": "View Game Overview",
@@ -217,7 +275,25 @@
         "meta_desc": "TATAMI 座敷パズル — PixelRyu による、静かな和室に畳を敷くブロックパズル。畳をドラッグして行か列を満杯にするとそのラインが仕上がり、侍が敷き上がった畳をかついで畳奉行のもとへ運んで納めると小判がもらえ、貯めると残機が増えます。軽い「おいそぎ」ゲージと縁起の敷き方ボーナス、全48面、基本無料。App Store・Google Play・Roblox で近日公開。",
         "tagline": "畳を敷いて、褒美をもらう。",
         "subtitle": "和の畳ならべパズル",
-        "coming_soon_note": "App Store・Google Play・Roblox で近日公開。",
+        "coming_soon_note": "App Store・Roblox で近日公開。",
+        "tester_heading": "Android テスター募集中",
+        "tester_android_note": "Android 専用",
+        "tester_intro": "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
+        "tester_what_label": "ゲーム内容",
+        "tester_step1_label": "ステップ 1 — テスターグループに参加",
+        "tester_step2_label": "ステップ 2 — Play ストアでオプトイン",
+        "tester_step3_label": "ステップ 3 — アプリをダウンロードしてプレイ",
+        "tester_ask_label": "お願いしたいこと",
+        "tester_ask_keep": "14 日間アンインストールせずに保持",
+        "tester_ask_launch": "数日に一度起動 (合計数回で OK)",
+        "tester_ask_minutes": "1 回 1〜2 分の軽いプレイで大丈夫",
+        "tester_note_lead": "ℹ️ ヒント — 下記の3つのステップすべてが必要です:",
+        "tester_note_step1": "ステップ1 — グループに参加: 「閲覧権限がありません」と表示されても、その画面に「グループに参加」ボタンがあるので押して参加してください。",
+        "tester_note_step2": "ステップ2 — テスターになる（オプトイン）: オプトイン画面でテストに参加してください。テスターになっただけではアプリはインストールされません。",
+        "tester_note_step3": "ステップ3 — ダウンロードしてプレイ: ダウンロードページを開いてアプリをインストールし、起動して少し遊んでください。これをしないとテストにカウントされません。",
+        "tester_note_account": "すべてのステップで同じ Google アカウントをお使いください。",
+        "tester_note_wait": "ステップ2または3で「App not available」と表示されるときは、参加から数時間おいて再度お試しください。",
+        "tester_what": "静かな和室に畳を敷いていくブロックパズル。畳を床にドラッグして、行か列を満杯にするとそのラインが仕上がります。すると侍が敷き上がった畳をかついで畳奉行のもとへ運び、納めると小判がもらえ、貯めた小判で残機が増えます。軽い「おいそぎ」ゲージがほどよく急かします。縁起の敷き方ボーナスも。全48面。基本無料、PixelRyu 制作。",
         "what_label": "ゲーム内容",
         "what": "静かな和室に畳を敷いていくブロックパズル。畳を床にドラッグして、行か列を満杯にするとそのラインが仕上がります。すると侍が敷き上がった畳をかついで畳奉行のもとへ運び、納めると小判がもらえ、貯めた小判で残機が増えます。軽い「おいそぎ」ゲージがほどよく急かします。縁起の敷き方ボーナスも。全48面。基本無料、PixelRyu 制作。",
         "link_overview": "ゲーム概要を見る",
@@ -231,7 +307,25 @@
         "meta_desc": "TATAMI: Lay the Floor — PixelRyu 出品，在宁静和室里铺畳的方块拼图。拖动畳席填满一行或一列即可完成该行，武士会把铺好的畳席送往官老爷处，呈交得金币，攒金币换命。轻巧的「赶工」槽搭配吉利的铺法奖励，48 关、基础免费。即将登陆 App Store、Google Play 与 Roblox。",
         "tagline": "铺好畳席，领取赏赐。",
         "subtitle": "和风铺畳拼图",
-        "coming_soon_note": "即将登陆 App Store、Google Play 与 Roblox。",
+        "coming_soon_note": "即将登陆 App Store 与 Roblox。",
+        "tester_heading": "招募 Android 测试者",
+        "tester_android_note": "仅限 Android",
+        "tester_intro": "我是一名独立开发者，正在为期 14 天的封闭测试招募积极的 Android 测试者。",
+        "tester_what_label": "游戏简介",
+        "tester_step1_label": "第一步 — 加入测试者群组",
+        "tester_step2_label": "第二步 — 通过 Play 商店加入测试",
+        "tester_step3_label": "第三步 — 下载并试玩应用",
+        "tester_ask_label": "我希望你能做到",
+        "tester_ask_keep": "完整保留 14 天不卸载",
+        "tester_ask_launch": "每隔几天启动一次（几次即可）",
+        "tester_ask_minutes": "每次玩一两分钟就够了",
+        "tester_note_lead": "ℹ️ 提示 — 以下三个步骤都必须完成：",
+        "tester_note_step1": "第一步 — 加入群组：即使显示“无权限查看内容”，该页面上也有“加入群组”按钮，请点击加入。",
+        "tester_note_step2": "第二步 — 成为测试者（加入测试）：在加入测试页面点击加入测试。仅成为测试者并不会安装应用。",
+        "tester_note_step3": "第三步 — 下载并试玩：打开下载页面安装应用，然后启动应用并稍微试玩。否则你的测试不会被计入。",
+        "tester_note_account": "所有步骤请使用同一个 Google 账号。",
+        "tester_note_wait": "如果第二步或第三步显示“App not available”，请在加入后等待几小时再试。",
+        "tester_what": "在宁静的和室里铺畳的方块拼图。把畳席拖到地板上，填满一整行或一整列就完成那一行。随后武士会扛起铺好的畳席送往官老爷处，呈交即可获得金币，攒下金币就能多换一条命。轻巧的「赶工」槽让你保持节奏。还有吉利的铺法奖励。共 48 关。基础免费，PixelRyu 制作。",
         "what_label": "游戏简介",
         "what": "在宁静的和室里铺畳的方块拼图。把畳席拖到地板上，填满一整行或一整列就完成那一行。随后武士会扛起铺好的畳席送往官老爷处，呈交即可获得金币，攒下金币就能多换一条命。轻巧的「赶工」槽让你保持节奏。还有吉利的铺法奖励。共 48 关。基础免费，PixelRyu 制作。",
         "link_overview": "查看游戏概览",
@@ -245,7 +339,25 @@
         "meta_desc": "TATAMI: Lay the Floor — PixelRyu가 만든, 고요한 일본식 방에 다다미를 까는 블록 퍼즐. 다다미를 끌어다 한 행이나 한 열을 채우면 그 줄이 완성되고, 사무라이가 다다미 관리님에게 가져가 바치면 금화를 받아 목숨을 늘립니다. 가벼운 「서두름」 게이지와 길한 깔기 보너스, 48 스테이지, 기본 무료. App Store·Google Play·Roblox에서 곧 출시.",
         "tagline": "다다미를 깔고, 상을 받으세요.",
         "subtitle": "일본식 다다미 깔기 퍼즐",
-        "coming_soon_note": "App Store·Google Play·Roblox에서 곧 출시.",
+        "coming_soon_note": "App Store·Roblox에서 곧 출시.",
+        "tester_heading": "Android 테스터 모집",
+        "tester_android_note": "Android 전용",
+        "tester_intro": "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
+        "tester_what_label": "게임 소개",
+        "tester_step1_label": "1단계 — 테스터 그룹 가입",
+        "tester_step2_label": "2단계 — Play 스토어에서 옵트인",
+        "tester_step3_label": "3단계 — 앱 다운로드 후 플레이",
+        "tester_ask_label": "부탁드리는 것",
+        "tester_ask_keep": "14일 동안 설치 상태 유지",
+        "tester_ask_launch": "며칠에 한 번씩 실행 (몇 번이면 충분합니다)",
+        "tester_ask_minutes": "한 번에 1~2분 가벼운 플레이면 충분합니다",
+        "tester_note_lead": "ℹ️ 팁 — 아래 세 단계를 모두 완료해야 합니다:",
+        "tester_note_step1": "1단계 — 그룹 가입: “콘텐츠를 볼 권한이 없습니다”라고 표시되어도 그 화면에 “그룹 가입” 버튼이 있으니 눌러서 가입하세요.",
+        "tester_note_step2": "2단계 — 테스터 되기(옵트인): 옵트인 화면에서 테스트에 참여하세요. 테스터가 되는 것만으로는 앱이 설치되지 않습니다.",
+        "tester_note_step3": "3단계 — 다운로드 후 플레이: 다운로드 페이지를 열어 앱을 설치하고, 실행해 잠깐 플레이하세요. 그렇지 않으면 테스트로 집계되지 않습니다.",
+        "tester_note_account": "모든 단계에서 같은 Google 계정을 사용하세요.",
+        "tester_note_wait": "2단계 또는 3단계에서 “App not available”이 표시되면 가입 후 몇 시간 기다렸다가 다시 시도하세요.",
+        "tester_what": "고요한 일본식 방에 다다미를 까는 블록 퍼즐. 다다미를 바닥으로 끌어다 한 행이나 한 열을 가득 채우면 그 줄이 완성됩니다. 그러면 사무라이가 깔린 다다미를 메고 다다미 관리님에게 가져가고, 바치면 금화를 받으며, 모은 금화로 목숨을 늘릴 수 있습니다. 가벼운 「서두름」 게이지가 박자를 유지해 줍니다. 길한 깔기 보너스도. 총 48 스테이지. 기본 무료, PixelRyu 제작.",
         "what_label": "게임 소개",
         "what": "고요한 일본식 방에 다다미를 까는 블록 퍼즐. 다다미를 바닥으로 끌어다 한 행이나 한 열을 가득 채우면 그 줄이 완성됩니다. 그러면 사무라이가 깔린 다다미를 메고 다다미 관리님에게 가져가고, 바치면 금화를 받으며, 모은 금화로 목숨을 늘릴 수 있습니다. 가벼운 「서두름」 게이지가 박자를 유지해 줍니다. 길한 깔기 보너스도. 총 48 스테이지. 기본 무료, PixelRyu 제작.",
         "link_overview": "게임 개요 보기",
@@ -259,7 +371,25 @@
         "meta_desc": "TATAMI: Lay the Floor — PixelRyu का, एक शांत जापानी कमरे में तातामी बिछाने वाला ब्लॉक पज़ल। चटाई खींचकर किसी पंक्ति या स्तंभ को भरें और वह लाइन पूरी करें; एक सामुराई उसे तातामी अधिकारी तक ले जाता है और सौंपने पर सोने के सिक्के मिलते हैं, जिनसे अतिरिक्त जीवन मिलते हैं। हल्का «जल्दी» गेज और शुभ-बिछाने का बोनस, 48 चरण, मुफ़्त। App Store, Google Play और Roblox पर जल्द।",
         "tagline": "तातामी बिछाएँ, अपना इनाम पाएँ।",
         "subtitle": "जापानी तातामी बिछाने वाला पज़ल",
-        "coming_soon_note": "App Store, Google Play और Roblox पर जल्द आ रही है।",
+        "coming_soon_note": "App Store और Roblox पर जल्द आ रही है।",
+        "tester_heading": "Android टेस्टर्स की तलाश",
+        "tester_android_note": "केवल Android",
+        "tester_intro": "सोलो इंडी डेवलपर हूँ, 14 दिन की क्लोज़्ड टेस्टिंग के लिए सक्रिय Android टेस्टर्स ढूँढ रहा हूँ।",
+        "tester_what_label": "यह क्या है",
+        "tester_step1_label": "चरण 1 — टेस्टर ग्रुप में शामिल हों",
+        "tester_step2_label": "चरण 2 — Play Store पर ऑप्ट-इन",
+        "tester_step3_label": "चरण 3 — ऐप डाउनलोड करके खेलें",
+        "tester_ask_label": "मैं क्या माँग रहा हूँ",
+        "tester_ask_keep": "पूरे 14 दिन इंस्टॉल रखें",
+        "tester_ask_launch": "हर कुछ दिन में लॉन्च करें (कुछ बार ही काफ़ी है)",
+        "tester_ask_minutes": "हर सत्र में एक-दो मिनट का खेल काफ़ी है",
+        "tester_note_lead": "ℹ️ सुझाव — नीचे दिए तीनों चरण ज़रूरी हैं:",
+        "tester_note_step1": "चरण 1 — ग्रुप जॉइन करें: भले ही “सामग्री देखने की अनुमति नहीं है” दिखे, उसी पेज पर “ग्रुप जॉइन करें” बटन होता है — उसे दबाकर जॉइन करें।",
+        "tester_note_step2": "चरण 2 — टेस्टर बनें (ऑप्ट-इन): ऑप्ट-इन पेज पर टेस्ट में शामिल होने के लिए टैप करें। सिर्फ़ टेस्टर बनने से ऐप इंस्टॉल नहीं होती।",
+        "tester_note_step3": "चरण 3 — डाउनलोड करके खेलें: डाउनलोड पेज खोलकर ऐप इंस्टॉल करें, उसे खोलें और थोड़ा खेलें — इसके बिना आपकी टेस्टिंग नहीं गिनी जाती।",
+        "tester_note_account": "सभी चरणों में एक ही Google खाते का उपयोग करें।",
+        "tester_note_wait": "अगर चरण 2 या 3 में “App not available” दिखे, तो जॉइन करने के कुछ घंटे बाद फिर से कोशिश करें।",
+        "tester_what": "एक शांत जापानी कमरे में तातामी बिछाने वाला आरामदेह ब्लॉक पज़ल। चटाई को फर्श पर खींचें और किसी पूरी पंक्ति या स्तंभ को भरकर वह लाइन पूरी करें। फिर एक सामुराई बिछी हुई चटाइयों को कंधे पर उठाकर तातामी अधिकारी तक ले जाता है, और सौंपने पर सोने के सिक्के मिलते हैं, जिन्हें जमा करके आप अतिरिक्त जीवन पा सकते हैं। एक हल्का «जल्दी» गेज आपको गति में बनाए रखता है। साथ में शुभ-बिछाने का बोनस। कुल 48 चरण। मुफ़्त, PixelRyu द्वारा।",
         "what_label": "यह क्या है",
         "what": "एक शांत जापानी कमरे में तातामी बिछाने वाला आरामदेह ब्लॉक पज़ल। चटाई को फर्श पर खींचें और किसी पूरी पंक्ति या स्तंभ को भरकर वह लाइन पूरी करें। फिर एक सामुराई बिछी हुई चटाइयों को कंधे पर उठाकर तातामी अधिकारी तक ले जाता है, और सौंपने पर सोने के सिक्के मिलते हैं, जिन्हें जमा करके आप अतिरिक्त जीवन पा सकते हैं। एक हल्का «जल्दी» गेज आपको गति में बनाए रखता है। साथ में शुभ-बिछाने का बोनस। कुल 48 चरण। मुफ़्त, PixelRyu द्वारा।",
         "link_overview": "गेम का विवरण देखें",
@@ -273,7 +403,25 @@
         "meta_desc": "TATAMI: Lay the Floor — puzzle blok memasang tatami di ruangan Jepang yang tenang, dari PixelRyu. Seret tikar dan penuhi satu baris atau kolom untuk menyelesaikan baris itu; seorang samurai membawanya ke petugas tatami, dan menyerahkannya menghasilkan koin emas untuk menambah nyawa. Pengukur «Cepat» yang ringan dan bonus pemasangan bertuah, 48 tahap, gratis. Segera di App Store, Google Play & Roblox.",
         "tagline": "Pasang tatami. Raih ganjaranmu.",
         "subtitle": "Puzzle Memasang Tatami ala Jepang",
-        "coming_soon_note": "Segera hadir di App Store, Google Play & Roblox.",
+        "coming_soon_note": "Segera hadir di App Store & Roblox.",
+        "tester_heading": "Mencari Tester Android",
+        "tester_android_note": "Hanya Android",
+        "tester_intro": "Saya developer indie solo, mencari tester Android aktif untuk fase closed test 14 hari.",
+        "tester_what_label": "Tentang game ini",
+        "tester_step1_label": "Langkah 1 — Bergabung dengan grup tester",
+        "tester_step2_label": "Langkah 2 — Opt-in via Play Store",
+        "tester_step3_label": "Langkah 3 — Unduh & mainkan aplikasi",
+        "tester_ask_label": "Yang saya mintakan",
+        "tester_ask_keep": "Pertahankan terinstal selama 14 hari penuh",
+        "tester_ask_launch": "Luncurkan setiap beberapa hari (beberapa kali sudah cukup)",
+        "tester_ask_minutes": "Cukup main satu–dua menit per sesi",
+        "tester_note_lead": "ℹ️ Tips — ketiga langkah berikut wajib dilakukan:",
+        "tester_note_step1": "Langkah 1 — Gabung grup: meskipun muncul “tidak ada izin untuk melihat konten”, ada tombol “Gabung grup” di halaman itu — tekan untuk bergabung.",
+        "tester_note_step2": "Langkah 2 — Jadi tester (opt-in): di halaman opt-in, ketuk untuk bergabung ke pengujian. Menjadi tester saja tidak memasang aplikasi.",
+        "tester_note_step3": "Langkah 3 — Unduh & mainkan: buka halaman unduhan, pasang aplikasinya, buka, dan mainkan sebentar — tanpa ini, pengujianmu tidak terhitung.",
+        "tester_note_account": "Gunakan akun Google yang sama untuk semua langkah.",
+        "tester_note_wait": "Jika Langkah 2 atau 3 menampilkan “App not available”, tunggu beberapa jam setelah bergabung lalu coba lagi.",
+        "tester_what": "Puzzle blok yang menenangkan: kamu memasang tikar tatami di ruangan Jepang yang sunyi. Seret tikar ke lantai dan penuhi satu baris atau kolom penuh untuk menyelesaikan baris itu. Lalu seorang samurai memanggul tikar yang sudah terpasang ke petugas tatami, dan menyerahkannya menghasilkan koin emas yang bisa ditukar jadi nyawa tambahan. Sebuah pengukur «Cepat» yang ringan menjaga ritmemu. Plus bonus pemasangan bertuah. 48 tahap. Gratis, oleh PixelRyu.",
         "what_label": "Tentang game ini",
         "what": "Puzzle blok yang menenangkan: kamu memasang tikar tatami di ruangan Jepang yang sunyi. Seret tikar ke lantai dan penuhi satu baris atau kolom penuh untuk menyelesaikan baris itu. Lalu seorang samurai memanggul tikar yang sudah terpasang ke petugas tatami, dan menyerahkannya menghasilkan koin emas yang bisa ditukar jadi nyawa tambahan. Sebuah pengukur «Cepat» yang ringan menjaga ritmemu. Plus bonus pemasangan bertuah. 48 tahap. Gratis, oleh PixelRyu.",
         "link_overview": "Lihat Ringkasan Game",
@@ -287,7 +435,25 @@
         "meta_desc": "TATAMI: Lay the Floor — ein gemütliches Block-Puzzle, bei dem du Tatami-Matten in einem stillen japanischen Zimmer auslegst, von PixelRyu. Ziehe Matten und fülle eine Reihe oder Spalte, um die Linie fertigzustellen; ein Samurai trägt sie zum Aufseher, und das Abliefern bringt Goldmünzen für zusätzliche Leben. Eine leichte «Eile»-Anzeige und ein glücksverheißender Lege-Bonus, 48 Level, kostenlos. Demnächst im App Store, bei Google Play & auf Roblox.",
         "tagline": "Leg das Tatami. Hol dir deinen Lohn.",
         "subtitle": "Gemütliches japanisches Tatami-Puzzle",
-        "coming_soon_note": "Demnächst im App Store, bei Google Play & auf Roblox.",
+        "coming_soon_note": "Demnächst im App Store & auf Roblox.",
+        "tester_heading": "Android-Tester gesucht",
+        "tester_android_note": "Nur für Android",
+        "tester_intro": "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
+        "tester_what_label": "Worum es geht",
+        "tester_step1_label": "Schritt 1 — Tester-Gruppe beitreten",
+        "tester_step2_label": "Schritt 2 — Über den Play Store anmelden",
+        "tester_step3_label": "Schritt 3 — App herunterladen & spielen",
+        "tester_ask_label": "Worum ich bitte",
+        "tester_ask_keep": "14 Tage lang installiert lassen",
+        "tester_ask_launch": "Alle paar Tage starten (ein paar Mal reicht)",
+        "tester_ask_minutes": "Ein bis zwei Minuten Spiel pro Sitzung genügen",
+        "tester_note_lead": "ℹ️ Tipp — alle drei Schritte unten sind nötig:",
+        "tester_note_step1": "Schritt 1 — Der Gruppe beitreten: Auch wenn „keine Berechtigung zum Anzeigen der Inhalte“ erscheint, gibt es auf der Seite einen Button „Gruppe beitreten“ – tippe darauf, um beizutreten.",
+        "tester_note_step2": "Schritt 2 — Tester werden (Opt-in): Tippe auf der Opt-in-Seite, um an der Testphase teilzunehmen. Nur Tester zu werden installiert die App noch nicht.",
+        "tester_note_step3": "Schritt 3 — Herunterladen & spielen: Öffne die Download-Seite, installiere die App, öffne sie und spiele kurz – ohne das zählt deine Teilnahme nicht.",
+        "tester_note_account": "Verwende für alle Schritte dasselbe Google-Konto.",
+        "tester_note_wait": "Wenn Schritt 2 oder 3 „App not available“ anzeigt, warte nach dem Beitritt ein paar Stunden und versuche es erneut.",
+        "tester_what": "Ein gemütliches Block-Puzzle, bei dem du in einem stillen japanischen Zimmer Tatami-Matten auslegst. Ziehe eine Matte auf den Boden und fülle eine ganze Reihe oder Spalte, um diese Linie fertigzustellen. Dann schultert ein Samurai die fertig verlegten Matten und trägt sie zum Aufseher; das Abliefern bringt Goldmünzen, mit denen du zusätzliche Leben kaufst. Eine leichte «Eile»-Anzeige hält dich in Bewegung. Mit einem glücksverheißenden Lege-Bonus. 48 Level. Kostenlos, von PixelRyu.",
         "what_label": "Worum es geht",
         "what": "Ein gemütliches Block-Puzzle, bei dem du in einem stillen japanischen Zimmer Tatami-Matten auslegst. Ziehe eine Matte auf den Boden und fülle eine ganze Reihe oder Spalte, um diese Linie fertigzustellen. Dann schultert ein Samurai die fertig verlegten Matten und trägt sie zum Aufseher; das Abliefern bringt Goldmünzen, mit denen du zusätzliche Leben kaufst. Eine leichte «Eile»-Anzeige hält dich in Bewegung. Mit einem glücksverheißenden Lege-Bonus. 48 Level. Kostenlos, von PixelRyu.",
         "link_overview": "Spielübersicht ansehen",
@@ -301,7 +467,25 @@
         "meta_desc": "TATAMI: Lay the Floor — un puzzle de blocs apaisant où tu poses des tatamis dans une pièce japonaise tranquille, signé PixelRyu. Fais glisser les nattes et remplis une ligne ou une colonne pour terminer la ligne ; un samouraï les porte au magistrat, et les livrer rapporte des koban échangeables contre des vies. Une légère jauge de «Hâte» et un bonus de pose porte-bonheur, 48 niveaux, gratuit. Bientôt sur l'App Store, Google Play et Roblox.",
         "tagline": "Pose le tatami. Reçois ta récompense.",
         "subtitle": "Puzzle japonais de pose de tatamis",
-        "coming_soon_note": "Bientôt sur l'App Store, Google Play et Roblox.",
+        "coming_soon_note": "Bientôt sur l'App Store et Roblox.",
+        "tester_heading": "Recherche de testeurs Android",
+        "tester_android_note": "Android uniquement",
+        "tester_intro": "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
+        "tester_what_label": "De quoi il s'agit",
+        "tester_step1_label": "Étape 1 — Rejoindre le groupe de testeurs",
+        "tester_step2_label": "Étape 2 — S'inscrire via le Play Store",
+        "tester_step3_label": "Étape 3 — Télécharger et jouer",
+        "tester_ask_label": "Ce que je demande",
+        "tester_ask_keep": "Garder installé pendant les 14 jours complets",
+        "tester_ask_launch": "Lancer tous les deux jours (quelques fois suffisent)",
+        "tester_ask_minutes": "Une à deux minutes de jeu par session suffisent",
+        "tester_note_lead": "ℹ️ Astuce — les trois étapes ci-dessous sont nécessaires :",
+        "tester_note_step1": "Étape 1 — Rejoindre le groupe : même si « autorisation refusée pour afficher le contenu » s’affiche, un bouton « Rejoindre le groupe » est présent sur la page — appuyez dessus pour rejoindre.",
+        "tester_note_step2": "Étape 2 — Devenir testeur (inscription) : sur la page d’inscription, appuyez pour rejoindre le test. S’inscrire seul n’installe pas l’application.",
+        "tester_note_step3": "Étape 3 — Télécharger et jouer : ouvrez la page de téléchargement, installez l’application, ouvrez-la et jouez un peu — sans cela, votre participation ne compte pas.",
+        "tester_note_account": "Utilisez le même compte Google pour toutes les étapes.",
+        "tester_note_wait": "Si l’étape 2 ou 3 affiche « App not available », attendez quelques heures après avoir rejoint, puis réessayez.",
+        "tester_what": "Un puzzle de blocs apaisant où tu poses des tatamis dans une pièce japonaise tranquille. Fais glisser une natte sur le sol et remplis une ligne ou une colonne complète pour terminer cette ligne. Un samouraï charge alors les nattes posées sur son épaule et les porte au magistrat ; les livrer rapporte des koban qui s'échangent contre des vies supplémentaires. Une légère jauge de «Hâte» te garde en mouvement. Avec un bonus de pose porte-bonheur. 48 niveaux. Gratuit, par PixelRyu.",
         "what_label": "De quoi il s'agit",
         "what": "Un puzzle de blocs apaisant où tu poses des tatamis dans une pièce japonaise tranquille. Fais glisser une natte sur le sol et remplis une ligne ou une colonne complète pour terminer cette ligne. Un samouraï charge alors les nattes posées sur son épaule et les porte au magistrat ; les livrer rapporte des koban qui s'échangent contre des vies supplémentaires. Une légère jauge de «Hâte» te garde en mouvement. Avec un bonus de pose porte-bonheur. 48 niveaux. Gratuit, par PixelRyu.",
         "link_overview": "Voir la présentation du jeu",
@@ -315,7 +499,25 @@
         "meta_desc": "TATAMI: Lay the Floor — un rilassante puzzle a blocchi in cui posi i tatami in una tranquilla stanza giapponese, firmato PixelRyu. Trascina le stuoie e riempi una riga o una colonna per completare la linea; un samurai le porta al magistrato e consegnarle frutta monete d'oro per vite extra. Un leggero indicatore di «Fretta» e un bonus di posa di buon auspicio, 48 livelli, gratis. Presto su App Store, Google Play e Roblox.",
         "tagline": "Posa il tatami. Ottieni la tua ricompensa.",
         "subtitle": "Puzzle giapponese di posa dei tatami",
-        "coming_soon_note": "Presto su App Store, Google Play e Roblox.",
+        "coming_soon_note": "Presto su App Store e Roblox.",
+        "tester_heading": "Cercasi tester Android",
+        "tester_android_note": "Solo Android",
+        "tester_intro": "Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.",
+        "tester_what_label": "Di cosa si tratta",
+        "tester_step1_label": "Passo 1 — Unisciti al gruppo tester",
+        "tester_step2_label": "Passo 2 — Opt-in tramite Play Store",
+        "tester_step3_label": "Passo 3 — Scarica e gioca all’app",
+        "tester_ask_label": "Cosa chiedo",
+        "tester_ask_keep": "Tienilo installato per tutti i 14 giorni",
+        "tester_ask_launch": "Aprilo ogni paio di giorni (poche volte basta)",
+        "tester_ask_minutes": "Bastano un paio di minuti di gioco a sessione",
+        "tester_note_lead": "ℹ️ Suggerimento — servono tutti e tre i passaggi qui sotto:",
+        "tester_note_step1": "Passaggio 1 — Iscriviti al gruppo: anche se compare « non hai l’autorizzazione per visualizzare i contenuti », sulla pagina c’è il pulsante « Iscriviti al gruppo » — toccalo per iscriverti.",
+        "tester_note_step2": "Passaggio 2 — Diventa tester (opt-in): nella pagina di opt-in, tocca per partecipare al test. Diventare tester da solo non installa l’app.",
+        "tester_note_step3": "Passaggio 3 — Scarica e gioca: apri la pagina di download, installa l’app, aprila e gioca un po’ — senza questo, il tuo test non viene conteggiato.",
+        "tester_note_account": "Usa lo stesso account Google per tutti i passaggi.",
+        "tester_note_wait": "Se il passaggio 2 o 3 mostra « App not available », attendi qualche ora dopo l’iscrizione e riprova.",
+        "tester_what": "Un rilassante puzzle a blocchi in cui posi le stuoie di tatami in una quieta stanza giapponese. Trascina una stuoia sul pavimento e riempi un'intera riga o colonna per completare quella linea. Poi un samurai carica in spalla le stuoie posate e le porta al magistrato; consegnarle frutta monete d'oro con cui acquisti vite extra. Un leggero indicatore di «Fretta» ti tiene in movimento. Con un bonus di posa di buon auspicio. 48 livelli. Gratis, di PixelRyu.",
         "what_label": "Di cosa si tratta",
         "what": "Un rilassante puzzle a blocchi in cui posi le stuoie di tatami in una quieta stanza giapponese. Trascina una stuoia sul pavimento e riempi un'intera riga o colonna per completare quella linea. Poi un samurai carica in spalla le stuoie posate e le porta al magistrato; consegnarle frutta monete d'oro con cui acquisti vite extra. Un leggero indicatore di «Fretta» ti tiene in movimento. Con un bonus di posa di buon auspicio. 48 livelli. Gratis, di PixelRyu.",
         "link_overview": "Scopri la panoramica del gioco",
@@ -329,7 +531,25 @@
         "meta_desc": "TATAMI: Lay the Floor — un relajante puzle de bloques en el que colocas tatami en una tranquila sala japonesa, de PixelRyu. Arrastra las esteras y completa una fila o columna para terminar la línea; un samurái las lleva al oficial y entregarlas otorga monedas de oro para vidas extra. Un ligero medidor de «Prisa» y un bonus de colocación de buena fortuna, 48 niveles, gratis. Próximamente en App Store, Google Play y Roblox.",
         "tagline": "Coloca el tatami. Gana tu recompensa.",
         "subtitle": "Puzle japonés de colocar tatami",
-        "coming_soon_note": "Próximamente en App Store, Google Play y Roblox.",
+        "coming_soon_note": "Próximamente en App Store y Roblox.",
+        "tester_heading": "Buscamos testers de Android",
+        "tester_android_note": "Solo Android",
+        "tester_intro": "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
+        "tester_what_label": "De qué se trata",
+        "tester_step1_label": "Paso 1 — Únete al grupo de testers",
+        "tester_step2_label": "Paso 2 — Inscríbete vía Play Store",
+        "tester_step3_label": "Paso 3 — Descarga y juega la app",
+        "tester_ask_label": "Lo que pido",
+        "tester_ask_keep": "Mantener instalado los 14 días completos",
+        "tester_ask_launch": "Abrir cada par de días (unas pocas veces basta)",
+        "tester_ask_minutes": "Con un par de minutos de juego por sesión basta",
+        "tester_note_lead": "ℹ️ Consejo — los tres pasos siguientes son necesarios:",
+        "tester_note_step1": "Paso 1 — Únete al grupo: aunque aparezca «no tienes permiso para ver el contenido», en esa página hay un botón «Unirse al grupo»; tócalo para unirte.",
+        "tester_note_step2": "Paso 2 — Hazte tester (participa): en la página de participación, toca para unirte a la prueba. Solo participar no instala la app.",
+        "tester_note_step3": "Paso 3 — Descarga y juega: abre la página de descarga, instala la app, ábrela y juega un poco; sin esto, tu prueba no cuenta.",
+        "tester_note_account": "Usa la misma cuenta de Google en todos los pasos.",
+        "tester_note_wait": "Si el paso 2 o 3 muestra «App not available», espera unas horas después de unirte y vuelve a intentarlo.",
+        "tester_what": "Un relajante puzle de bloques en el que colocas esteras de tatami en una tranquila sala japonesa. Arrastra una estera al suelo y completa una fila o columna entera para terminar esa línea. Entonces un samurái se echa al hombro las esteras colocadas y las lleva al oficial; entregarlas otorga monedas de oro que canjeas por vidas extra. Un ligero medidor de «Prisa» te mantiene en movimiento. Con un bonus de colocación de buena fortuna. 48 niveles. Gratis, de PixelRyu.",
         "what_label": "De qué se trata",
         "what": "Un relajante puzle de bloques en el que colocas esteras de tatami en una tranquila sala japonesa. Arrastra una estera al suelo y completa una fila o columna entera para terminar esa línea. Entonces un samurái se echa al hombro las esteras colocadas y las lleva al oficial; entregarlas otorga monedas de oro que canjeas por vidas extra. Un ligero medidor de «Prisa» te mantiene en movimiento. Con un bonus de colocación de buena fortuna. 48 niveles. Gratis, de PixelRyu.",
         "link_overview": "Ver la descripción del juego",
@@ -343,7 +563,25 @@
         "meta_desc": "TATAMI: Lay the Floor — um relaxante puzzle de blocos em que você assenta tatames numa tranquila sala japonesa, da PixelRyu. Arraste as esteiras e preencha uma linha ou coluna para concluir a linha; um samurai os leva ao magistrado e entregá-los rende moedas de ouro para vidas extras. Um leve medidor de «Pressa» e um bônus de assentamento auspicioso, 48 fases, grátis. Em breve na App Store, no Google Play e no Roblox.",
         "tagline": "Assente o tatame. Receba sua recompensa.",
         "subtitle": "Puzzle japonês de assentar tatames",
-        "coming_soon_note": "Em breve na App Store, no Google Play e no Roblox.",
+        "coming_soon_note": "Em breve na App Store e no Roblox.",
+        "tester_heading": "Procuramos testers de Android",
+        "tester_android_note": "Apenas Android",
+        "tester_intro": "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
+        "tester_what_label": "Sobre o jogo",
+        "tester_step1_label": "Passo 1 — Entrar no grupo de testers",
+        "tester_step2_label": "Passo 2 — Adesão via Play Store",
+        "tester_step3_label": "Passo 3 — Baixe e jogue o app",
+        "tester_ask_label": "O que peço",
+        "tester_ask_keep": "Manter instalado por 14 dias completos",
+        "tester_ask_launch": "Abra a cada poucos dias (algumas vezes basta)",
+        "tester_ask_minutes": "Um ou dois minutos de jogo por sessão já bastam",
+        "tester_note_lead": "ℹ️ Dica — as três etapas abaixo são necessárias:",
+        "tester_note_step1": "Etapa 1 — Entre no grupo: mesmo que apareça “sem permissão para ver o conteúdo”, há um botão “Participar do grupo” na página — toque para entrar.",
+        "tester_note_step2": "Etapa 2 — Torne-se tester (opt-in): na página de opt-in, toque para entrar no teste. Apenas virar tester não instala o app.",
+        "tester_note_step3": "Etapa 3 — Baixe e jogue: abra a página de download, instale o app, abra e jogue um pouco — sem isso, seu teste não conta.",
+        "tester_note_account": "Use a mesma Conta do Google em todas as etapas.",
+        "tester_note_wait": "Se a Etapa 2 ou 3 mostrar “App not available”, aguarde algumas horas após participar e tente novamente.",
+        "tester_what": "Um relaxante puzzle de blocos em que você assenta esteiras de tatame numa tranquila sala japonesa. Arraste uma esteira para o piso e preencha uma linha ou coluna inteira para concluir aquela linha. Então um samurai põe os tatames assentados nos ombros e os leva ao magistrado; entregá-los rende moedas de ouro que compram vidas extras. Um leve medidor de «Pressa» mantém você em ritmo. Com um bônus de assentamento auspicioso. 48 fases. Grátis, da PixelRyu.",
         "what_label": "Sobre o jogo",
         "what": "Um relaxante puzzle de blocos em que você assenta esteiras de tatame numa tranquila sala japonesa. Arraste uma esteira para o piso e preencha uma linha ou coluna inteira para concluir aquela linha. Então um samurai põe os tatames assentados nos ombros e os leva ao magistrado; entregá-los rende moedas de ouro que compram vidas extras. Um leve medidor de «Pressa» mantém você em ritmo. Com um bônus de assentamento auspicioso. 48 fases. Grátis, da PixelRyu.",
         "link_overview": "Ver a visão geral do jogo",
@@ -357,7 +595,25 @@
         "meta_desc": "TATAMI: Lay the Floor — уютная блочная головоломка, в которой вы укладываете татами в тихой японской комнате, от PixelRyu. Перетаскивайте маты и заполняйте ряд или столбец, чтобы завершить линию; самурай несёт их чиновнику, и за сдачу вы получаете золотые монеты на дополнительные жизни. Лёгкая шкала «Спешки» и бонус за благоприятную укладку, 48 уровней, бесплатно. Скоро в App Store, Google Play и Roblox.",
         "tagline": "Стели татами. Получай награду.",
         "subtitle": "Японская головоломка про укладку татами",
-        "coming_soon_note": "Скоро в App Store, Google Play и Roblox.",
+        "coming_soon_note": "Скоро в App Store и Roblox.",
+        "tester_heading": "Поиск Android-тестеров",
+        "tester_android_note": "Только для Android",
+        "tester_intro": "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",
+        "tester_what_label": "О чём игра",
+        "tester_step1_label": "Шаг 1 — Вступить в группу тестеров",
+        "tester_step2_label": "Шаг 2 — Подписаться через Play Store",
+        "tester_step3_label": "Шаг 3 — Скачать и поиграть",
+        "tester_ask_label": "О чём я прошу",
+        "tester_ask_keep": "Не удалять приложение все 14 дней",
+        "tester_ask_launch": "Запускайте раз в пару дней (нескольких раз достаточно)",
+        "tester_ask_minutes": "Достаточно одной–двух минут игры за сессию",
+        "tester_note_lead": "ℹ️ Совет — нужны все три шага ниже:",
+        "tester_note_step1": "Шаг 1 — Вступите в группу: даже если показано «нет прав для просмотра содержимого», на странице есть кнопка «Присоединиться к группе» — нажмите её, чтобы вступить.",
+        "tester_note_step2": "Шаг 2 — Станьте тестером (подтвердите участие): на странице подтверждения нажмите, чтобы присоединиться к тесту. Само подтверждение участия не устанавливает приложение.",
+        "tester_note_step3": "Шаг 3 — Скачайте и поиграйте: откройте страницу загрузки, установите приложение, откройте его и немного поиграйте — без этого ваше участие не засчитывается.",
+        "tester_note_account": "Используйте один и тот же аккаунт Google для всех шагов.",
+        "tester_note_wait": "Если на шаге 2 или 3 появляется «App not available», подождите несколько часов после вступления и попробуйте снова.",
+        "tester_what": "Уютная блочная головоломка, в которой вы укладываете маты татами в тихой японской комнате. Перетащите мат на пол и заполните целый ряд или столбец, чтобы завершить эту линию. Затем самурай взваливает уложенные маты на плечо и несёт их чиновнику; за сдачу вы получаете золотые монеты, на которые покупаете дополнительные жизни. Лёгкая шкала «Спешки» держит вас в темпе. С бонусом за благоприятную укладку. 48 уровней. Бесплатно, от PixelRyu.",
         "what_label": "Что это",
         "what": "Уютная блочная головоломка, в которой вы укладываете маты татами в тихой японской комнате. Перетащите мат на пол и заполните целый ряд или столбец, чтобы завершить эту линию. Затем самурай взваливает уложенные маты на плечо и несёт их чиновнику; за сдачу вы получаете золотые монеты, на которые покупаете дополнительные жизни. Лёгкая шкала «Спешки» держит вас в темпе. С бонусом за благоприятную укладку. 48 уровней. Бесплатно, от PixelRyu.",
         "link_overview": "Открыть обзор игры",
