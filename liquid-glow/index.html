@@ -210,6 +210,13 @@
   .hero-badges a:hover { transform: translateY(-2px); opacity: .85; }
   .hero-badges svg, .hero-badges img { display: block; }
   .hero-badges img { height: 51px; width: auto; }
+  .newver-banner{display:block;background:rgba(122,176,255,0.10);border:1px solid rgba(122,176,255,0.35);border-radius:12px;padding:14px 18px;margin:4px 0 22px;color:#a0c8ff;text-decoration:none;font-size:14px;font-weight:600;transition:all .2s ease;text-align:center;}
+  .newver-banner:hover{background:rgba(122,176,255,0.18);border-color:rgba(122,176,255,0.60);}
+  .video-heading{font-size:13px;color:#6c7d9d;text-transform:uppercase;letter-spacing:2px;margin:8px 0 14px;}
+  .video-pair{display:flex;flex-direction:column;gap:20px;align-items:center;margin:4px 0 8px;}
+  .video-col{width:100%;}
+  .video-col .video-label{font-size:12px;color:#8b9bbd;margin:0 0 8px;font-weight:600;}
+  .video-pair .promo-video{margin:0;}
 </style>
 <!-- SEO/LLMO start (managed) -->
 <link rel="canonical" href="https://pixelryu.github.io/liquid-glow/">
@@ -315,9 +322,23 @@
 
   <a href="overview.html" class="overview-link">🎮 <span data-i18n="link_overview">View Game Overview</span> →</a>
 
-  <video class="promo-video" autoplay loop muted playsinline controls preload="auto">
-    <source src="promotion_H_02.mp4" type="video/mp4">
-  </video>
+  <a href="../liquid-glow-cosmic/" class="newver-banner" data-i18n="newver_cta">✨ New version on iPhone &amp; Roblox — a cosmic constellation puzzle →</a>
+
+  <div class="video-heading" data-i18n="video_heading">See it in motion</div>
+  <div class="video-pair">
+    <div class="video-col">
+      <div class="video-label" data-i18n="video_classic_label">Classic — on Google Play (Android)</div>
+      <video class="promo-video" autoplay loop muted playsinline controls preload="auto">
+        <source src="promotion_H_02.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-col">
+      <div class="video-label" data-i18n="video_new_label">New version — iPhone &amp; Roblox</div>
+      <video class="promo-video" loop muted playsinline controls preload="metadata">
+        <source src="promotion_H_new.mp4?v=20260610104059" type="video/mp4">
+      </video>
+    </div>
+  </div>
 
   <div class="legal-divider" data-i18n="legal_divider">Legal Documents</div>
   <ul class="links">
@@ -355,6 +376,10 @@
 
   const i18n = {
     en: {
+      video_heading: "See it in motion",
+      video_classic_label: "Classic — on Google Play (Android)",
+      video_new_label: "New version — iPhone & Roblox",
+      newver_cta: "✨ New version on iPhone & Roblox — a cosmic constellation puzzle →",
       title: "Liquid Glow — Indie Sort Puzzle from Japan",
       meta_desc: "Liquid Glow — a cozy sort puzzle by PixelRyu. Join the 14-day Android closed testing.",
       tagline: "Indie Sort Puzzle from Japan",
@@ -383,6 +408,10 @@
       tester_note_wait: "If Step 2 or 3 shows “App not available”, wait a few hours after joining and try again.",
     },
     ja: {
+      video_heading: "動画で見る",
+      video_classic_label: "クラシック版 — Google Play（Android）",
+      video_new_label: "新バージョン — iPhone & Roblox",
+      newver_cta: "✨ iPhone & Roblox の新バージョン — 宇宙の星座パズル →",
       title: "Liquid Glow — 日本のインディーソートパズル",
       meta_desc: "Liquid Glow — PixelRyu によるほっこり系ソートパズル。14日間の Android クローズドテストにご参加ください。",
       tagline: "日本のインディーソートパズル",
@@ -411,6 +440,10 @@
       tester_note_wait: "ステップ2または3で「App not available」と表示されるときは、参加から数時間おいて再度お試しください。",
     },
     zh: {
+      video_heading: "动态演示",
+      video_classic_label: "经典版 — Google Play（Android）",
+      video_new_label: "全新版本 — iPhone 与 Roblox",
+      newver_cta: "✨ iPhone 与 Roblox 上的新版本 — 宇宙星座益智 →",
       title: "Liquid Glow — 来自日本的独立分类益智游戏",
       meta_desc: "Liquid Glow — PixelRyu 出品的温馨分类益智游戏。欢迎参加为期 14 天的 Android 封闭测试。",
       tagline: "来自日本的独立分类益智游戏",
@@ -439,6 +472,10 @@
       tester_note_wait: "如果第二步或第三步显示“App not available”，请在加入后等待几小时再试。",
     },
     ko: {
+      video_heading: "움직이는 모습 보기",
+      video_classic_label: "클래식 — Google Play (Android)",
+      video_new_label: "새 버전 — iPhone & Roblox",
+      newver_cta: "✨ iPhone & Roblox의 새 버전 — 우주 별자리 퍼즐 →",
       title: "Liquid Glow — 일본의 인디 정렬 퍼즐",
       meta_desc: "Liquid Glow — PixelRyu의 아늑한 정렬 퍼즐. 14일간의 Android 비공개 테스트에 참여해 보세요.",
       tagline: "일본의 인디 정렬 퍼즐",
@@ -467,6 +504,10 @@
       tester_note_wait: "2단계 또는 3단계에서 “App not available”이 표시되면 가입 후 몇 시간 기다렸다가 다시 시도하세요.",
     },
     hi: {
+      video_heading: "इसे गति में देखें",
+      video_classic_label: "क्लासिक — Google Play (Android) पर",
+      video_new_label: "नया संस्करण — iPhone और Roblox",
+      newver_cta: "✨ iPhone और Roblox पर नया वर्शन — एक कॉस्मिक नक्षत्र पज़ल →",
       title: "Liquid Glow — जापान की इंडी सॉर्ट पज़ल",
       meta_desc: "Liquid Glow — PixelRyu की आरामदायक सॉर्ट पज़ल। 14 दिन के Android क्लोज़्ड टेस्ट में शामिल हों।",
       tagline: "जापान की इंडी सॉर्ट पज़ल",
@@ -495,6 +536,10 @@
       tester_note_wait: "अगर चरण 2 या 3 में “App not available” दिखे, तो जॉइन करने के कुछ घंटे बाद फिर से कोशिश करें।",
     },
     id: {
+      video_heading: "Lihat dalam gerakan",
+      video_classic_label: "Klasik — di Google Play (Android)",
+      video_new_label: "Versi baru — iPhone & Roblox",
+      newver_cta: "✨ Versi baru di iPhone & Roblox — puzzle rasi bintang kosmik →",
       title: "Liquid Glow — Puzzle sortir indie dari Jepang",
       meta_desc: "Liquid Glow — puzzle sortir yang nyaman dari PixelRyu. Ikuti closed test Android selama 14 hari.",
       tagline: "Puzzle sortir indie dari Jepang",
@@ -523,6 +568,10 @@
       tester_note_wait: "Jika Langkah 2 atau 3 menampilkan “App not available”, tunggu beberapa jam setelah bergabung lalu coba lagi.",
     },
     de: {
+      video_heading: "In Bewegung erleben",
+      video_classic_label: "Klassiker — auf Google Play (Android)",
+      video_new_label: "Neue Version — iPhone & Roblox",
+      newver_cta: "✨ Neue Version für iPhone & Roblox — ein kosmisches Sternbild-Puzzle →",
       title: "Liquid Glow — Indie-Sortier-Puzzle aus Japan",
       meta_desc: "Liquid Glow — ein gemütliches Sortier-Puzzle von PixelRyu. Nimm an der 14-tägigen geschlossenen Android-Testphase teil.",
       tagline: "Indie-Sortier-Puzzle aus Japan",
@@ -551,6 +600,10 @@
       tester_note_wait: "Wenn Schritt 2 oder 3 „App not available“ anzeigt, warte nach dem Beitritt ein paar Stunden und versuche es erneut.",
     },
     fr: {
+      video_heading: "À voir en mouvement",
+      video_classic_label: "Classique — sur Google Play (Android)",
+      video_new_label: "Nouvelle version — iPhone & Roblox",
+      newver_cta: "✨ Nouvelle version sur iPhone & Roblox — un puzzle de constellation cosmique →",
       title: "Liquid Glow — Puzzle de tri indé venu du Japon",
       meta_desc: "Liquid Glow — un puzzle de tri cosy de PixelRyu. Rejoignez les 14 jours de test fermé Android.",
       tagline: "Puzzle de tri indé venu du Japon",
@@ -579,6 +632,10 @@
       tester_note_wait: "Si l’étape 2 ou 3 affiche « App not available », attendez quelques heures après avoir rejoint, puis réessayez.",
     },
     it: {
+      video_heading: "Guardalo in movimento",
+      video_classic_label: "Classico — su Google Play (Android)",
+      video_new_label: "Nuova versione — iPhone e Roblox",
+      newver_cta: "✨ Nuova versione su iPhone & Roblox — un puzzle di costellazioni cosmiche →",
       title: "Liquid Glow — Puzzle di smistamento indie dal Giappone",
       meta_desc: "Liquid Glow — un confortevole puzzle di smistamento di PixelRyu. Partecipa al closed test Android di 14 giorni.",
       tagline: "Puzzle di smistamento indie dal Giappone",
@@ -607,6 +664,10 @@
       tester_note_wait: "Se il passaggio 2 o 3 mostra « App not available », attendi qualche ora dopo l’iscrizione e riprova.",
     },
     es: {
+      video_heading: "Míralo en movimiento",
+      video_classic_label: "Clásico — en Google Play (Android)",
+      video_new_label: "Nueva versión — iPhone y Roblox",
+      newver_cta: "✨ Nueva versión en iPhone & Roblox — un puzzle de constelaciones cósmico →",
       title: "Liquid Glow — Puzzle de clasificación indie desde Japón",
       meta_desc: "Liquid Glow — un acogedor puzzle de clasificación de PixelRyu. Únete a la fase de pruebas cerradas de Android de 14 días.",
       tagline: "Puzzle de clasificación indie desde Japón",
@@ -635,6 +696,10 @@
       tester_note_wait: "Si el paso 2 o 3 muestra «App not available», espera unas horas después de unirte y vuelve a intentarlo.",
     },
     pt: {
+      video_heading: "Veja em movimento",
+      video_classic_label: "Clássico — no Google Play (Android)",
+      video_new_label: "Nova versão — iPhone e Roblox",
+      newver_cta: "✨ Nova versão no iPhone & Roblox — um puzzle de constelação cósmica →",
       title: "Liquid Glow — Puzzle de classificação indie do Japão",
       meta_desc: "Liquid Glow — um puzzle de classificação aconchegante da PixelRyu. Junte-se ao teste fechado Android de 14 dias.",
       tagline: "Puzzle de classificação indie do Japão",
@@ -663,6 +728,10 @@
       tester_note_wait: "Se a Etapa 2 ou 3 mostrar “App not available”, aguarde algumas horas após participar e tente novamente.",
     },
     ru: {
+      video_heading: "Посмотрите в движении",
+      video_classic_label: "Классика — в Google Play (Android)",
+      video_new_label: "Новая версия — iPhone и Roblox",
+      newver_cta: "✨ Новая версия на iPhone & Roblox — космическая головоломка-созвездие →",
       title: "Liquid Glow — Инди-сортировочная головоломка из Японии",
       meta_desc: "Liquid Glow — уютная сортировочная головоломка от PixelRyu. Присоединяйтесь к 14-дневному закрытому Android-тестированию.",
       tagline: "Инди-сортировочная головоломка из Японии",

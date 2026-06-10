@@ -27,6 +27,7 @@
     "issen":       { all: "ISSEN" },
     "hotaru":      { all: "HOTARU" },
     "liquid-glow": { all: "Liquid Glow" },
+    "liquid-glow-cosmic": { all: "Liquid Glow" },
     "mole-whack":  { all: "Mole Whack", ja: "モグラぽかぽか" },
     "parcel-pals": { all: "Parcel Pals", ja: "ふんわり配送便" },
     "sumlings":    { all: "Sumlings", ja: "サムリング" },

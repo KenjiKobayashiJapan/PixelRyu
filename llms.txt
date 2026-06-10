@@ -13,7 +13,8 @@ PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This sit
 - [Parcel Pals](https://pixelryu.github.io/parcel-pals/): A cozy parcel-sorting puzzle — sort cute parcels into three lanes and match shapes to boxes on the belt before the table overflows. iOS, Android & Roblox.
 - [ISSEN (一閃)](https://pixelryu.github.io/issen/): A sumi-e (ink-wash) timing-action game built on the iaido draw — breathe, read the distance, unleash one perfect cut. iOS, Android & Roblox.
 - [HOTARU (The Lost House)](https://pixelryu.github.io/hotaru/): A quiet, atmospheric first-person Japanese horror walking simulator set in a lost house. iOS, Android & Roblox.
-- [Liquid Glow](https://pixelryu.github.io/liquid-glow/): A cozy, minimalist indie sort puzzle from Japan — arrange flowing liquid colors. Android.
+- [Liquid Glow](https://pixelryu.github.io/liquid-glow-cosmic/): A calm, luminous color-matching puzzle in deep space — tap a glowing star, then a connected star, to slide its light along the constellation so each star's ring matches its color. Now on Roblox; coming soon to iOS (iPhone).
+- [Liquid Glow (classic sort puzzle)](https://pixelryu.github.io/liquid-glow/): The original cozy, minimalist sort puzzle from Japan — arrange flowing liquid colors. Android.
 - [Mole Whack (モグラぽかぽか)](https://pixelryu.github.io/mole-whack/): A casual stage-based whack-a-mole tap game across 100 stages — hit the moles, clear the target, advance. Android & iOS.
 
 ## Game overviews
@@ -25,7 +26,8 @@ PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This sit
 - [Parcel Pals — Game Overview](https://pixelryu.github.io/parcel-pals/overview.html)
 - [ISSEN — Game Overview](https://pixelryu.github.io/issen/overview.html)
 - [HOTARU — Game Overview](https://pixelryu.github.io/hotaru/overview.html)
-- [Liquid Glow — Game Overview](https://pixelryu.github.io/liquid-glow/overview.html)
+- [Liquid Glow — Game Overview](https://pixelryu.github.io/liquid-glow-cosmic/overview.html)
+- [Liquid Glow (classic) — Game Overview](https://pixelryu.github.io/liquid-glow/overview.html)
 - [Mole Whack — Game Overview](https://pixelryu.github.io/mole-whack/overview.html)
 
 ## Legal
@@ -44,8 +46,10 @@ PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This sit
 - [ISSEN — Terms of Service](https://pixelryu.github.io/issen/terms_of_service.html)
 - [HOTARU — Privacy Policy](https://pixelryu.github.io/hotaru/privacy_policy.html)
 - [HOTARU — Terms of Service](https://pixelryu.github.io/hotaru/terms_of_service.html)
-- [Liquid Glow — Privacy Policy](https://pixelryu.github.io/liquid-glow/privacy_policy.html)
-- [Liquid Glow — Terms of Service](https://pixelryu.github.io/liquid-glow/terms_of_service.html)
+- [Liquid Glow — Privacy Policy](https://pixelryu.github.io/liquid-glow-cosmic/privacy_policy.html)
+- [Liquid Glow — Terms of Service](https://pixelryu.github.io/liquid-glow-cosmic/terms_of_service.html)
+- [Liquid Glow (classic) — Privacy Policy](https://pixelryu.github.io/liquid-glow/privacy_policy.html)
+- [Liquid Glow (classic) — Terms of Service](https://pixelryu.github.io/liquid-glow/terms_of_service.html)
 - [Mole Whack — Privacy Policy](https://pixelryu.github.io/mole-whack/privacy_policy.html)
 - [Mole Whack — Terms of Service](https://pixelryu.github.io/mole-whack/terms_of_service.html)
 
