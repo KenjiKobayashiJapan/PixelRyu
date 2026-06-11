@@ -25,7 +25,7 @@ This file is the expanded, self-contained companion to /llms.txt. It inlines the
 - Page: https://pixelryu.github.io/temari/
 - Platforms (declared): iOS, Android, Roblox
 - Price: Free
-- About: TEMARI — a first-person paddle breakout in a cozy Japanese night by PixelRyu. Move your hagoita with a fingertip, keep the temari thread-ball in an endless rally, and pop every paper balloon down the lantern-lit corridor — with split, focus, a pheasant helper and more. 8 worlds, 200 stages. Coming soon to the App Store.
+- About: TEMARI — a first-person paddle breakout in a cozy Japanese night by PixelRyu. Move your hagoita with a fingertip, keep the temari thread-ball in an endless rally, and pop every paper balloon down the lantern-lit corridor — with split, focus, a pheasant helper and more. 8 worlds, 200 stages. Out now on the App Store.
 - Roblox: https://www.roblox.com/games/84976260376006/TEMARI-Hanetsuki-Paddle
 - Google Play (Android closed test): https://play.google.com/apps/testing/com.pixelryu.temari
 
@@ -41,7 +41,7 @@ This file is the expanded, self-contained companion to /llms.txt. It inlines the
 - Page: https://pixelryu.github.io/bounce-cat/
 - Platforms (declared): iOS, Android, Roblox
 - Price: Free
-- About: Bounce Cat — a cozy maze-escape puzzle by PixelRyu. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out. 200 mazes across 10 worlds. Out now on Roblox — coming soon to iOS. Android testers welcome.
+- About: Bounce Cat — a cozy maze-escape puzzle by PixelRyu. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out. 200 mazes across 10 worlds. Out now on Roblox and the App Store. Android testers welcome.
 - Roblox: https://www.roblox.com/games/107578490712285/Bounce-Cat-Rescue-the-Cat
 - Google Play (Android closed test): https://play.google.com/apps/testing/com.pixelryu.bouncecat
 
