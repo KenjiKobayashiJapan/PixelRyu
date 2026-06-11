@@ -59,13 +59,13 @@ This file is the expanded, self-contained companion to /llms.txt. It inlines the
 - Page: https://pixelryu.github.io/sumlings/
 - Platforms (declared): Android, iOS
 - Price: Free
-- About: Sumlings — a cozy number puzzle by PixelRyu. Place number eggs into a tiny terrarium, match each nest's total to its target, and hatch the cute Sumlings. In development; coming soon to Android & iOS.
+- About: Sumlings — a cozy number puzzle by PixelRyu. Place number eggs into a tiny terrarium, match each nest's total to its target, and hatch the cute Sumlings. Out now on the App Store and Roblox; Android closed testing open.
 
 ### Parcel Pals
 - Page: https://pixelryu.github.io/parcel-pals/
 - Platforms (declared): Android, iOS
 - Price: Free
-- About: Parcel Pals — a cozy parcel-sorting puzzle by PixelRyu. Sort cute parcels into 3 lanes, match shapes to boxes, and ship before the table overflows. In development; coming soon to Android & iOS.
+- About: Parcel Pals — a cozy parcel-sorting puzzle by PixelRyu. Sort cute parcels into 3 lanes, match shapes to boxes, and ship before the table overflows. Out now on Roblox; Android closed testing open — coming soon to iOS.
 
 ### ISSEN (一閃)
 - Also known as: 一閃
