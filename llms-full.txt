@@ -25,7 +25,7 @@ This file is the expanded, self-contained companion to /llms.txt. It inlines the
 - Page: https://pixelryu.github.io/temari/
 - Platforms (declared): iOS, Android, Roblox
 - Price: Free
-- About: TEMARI — a first-person paddle breakout in a cozy Japanese night by PixelRyu. Move your hagoita with a fingertip, keep the temari thread-ball in an endless rally, and pop every paper balloon down the lantern-lit corridor — with split, focus, a pheasant helper and more. 8 worlds, 200 stages. Out now on the App Store.
+- About: TEMARI — a first-person paddle breakout in a cozy Japanese night by PixelRyu. Move your hagoita with a fingertip, keep the temari thread-ball in an endless rally, and pop every paper balloon down the lantern-lit corridor — with split, focus, a pheasant helper and more. 8 worlds, 200 stages. Out now on the App Store and Roblox. Android testers welcome.
 - App Store (iOS): https://apps.apple.com/app/id6777618068
 - Google Play (Android): https://play.google.com/store/apps/details?id=com.pixelryu.temari
 - Roblox: https://www.roblox.com/games/84976260376006/TEMARI-Hanetsuki-Paddle
