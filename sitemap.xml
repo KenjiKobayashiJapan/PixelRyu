@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
   <url>
     <loc>https://pixelryu.github.io/</loc>
     <lastmod>2026-06-11</lastmod>
@@ -11,6 +13,29 @@
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/temari/og.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/temari/icon.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/temari/key_hero.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/temari/key_multiball.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/temari/key_pheasant.jpg</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://pixelryu.github.io/temari/og.png</video:thumbnail_loc>
+      <video:title>TEMARI — Official Trailer</video:title>
+      <video:description>Official trailer for TEMARI by PixelRyu — a first-person paddle breakout in a cozy Japanese night. Move your hagoita with a fingertip, keep the temari in an endless rally, and pop every paper balloon down the lantern-lit corridor.</video:description>
+      <video:content_loc>https://pixelryu.github.io/temari/promotion_H_story.mp4?v=20260609111617</video:content_loc>
+      <video:publication_date>2026-06-09T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://pixelryu.github.io/temari/overview.html</loc>
@@ -35,6 +60,20 @@
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/tatami/og.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/tatami/icon.png</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://pixelryu.github.io/tatami/og.png</video:thumbnail_loc>
+      <video:title>TATAMI: Lay the Floor — Official Trailer</video:title>
+      <video:description>Official trailer for TATAMI: Lay the Floor — a cozy tatami-laying block puzzle in a quiet Japanese room by PixelRyu. Complete a full row or column to finish the line; a samurai delivers the mats to the tatami magistrate for koban. 48 stages, free.</video:description>
+      <video:content_loc>https://pixelryu.github.io/tatami/promotion_H_story.mp4?v=20260609105526</video:content_loc>
+      <video:publication_date>2026-06-09T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://pixelryu.github.io/tatami/overview.html</loc>
@@ -59,6 +98,20 @@
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/issen/og.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/issen/icon.png</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://pixelryu.github.io/issen/og.png</video:thumbnail_loc>
+      <video:title>ISSEN — Official Trailer</video:title>
+      <video:description>ISSEN — a sumi-e timing-action game of the iaido draw by PixelRyu.</video:description>
+      <video:content_loc>https://pixelryu.github.io/issen/promotion_H_story_full.mp4?v=20260525112132</video:content_loc>
+      <video:publication_date>2026-05-25T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://pixelryu.github.io/issen/overview.html</loc>
@@ -83,6 +136,35 @@
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/hotaru/og.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/hotaru/icon.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/hotaru/screenshots/firefly.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/hotaru/screenshots/hide.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/hotaru/screenshots/safezone.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/hotaru/screenshots/story.jpg</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/hotaru/screenshots/yokai.jpg</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://pixelryu.github.io/hotaru/og.png</video:thumbnail_loc>
+      <video:title>HOTARU — The Lost House: Official Trailer</video:title>
+      <video:description>HOTARU — a quiet Japanese horror walking simulator by PixelRyu.</video:description>
+      <video:content_loc>https://pixelryu.github.io/hotaru/promotion_H_01.mp4?v=20260523212743</video:content_loc>
+      <video:publication_date>2026-05-23T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://pixelryu.github.io/hotaru/overview.html</loc>
@@ -107,6 +189,40 @@
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/liquid-glow/og.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/liquid-glow/icon.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/liquid-glow/screenshots/bonus.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/liquid-glow/screenshots/hero.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/liquid-glow/screenshots/pour.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/liquid-glow/screenshots/select.png</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://pixelryu.github.io/liquid-glow/og.png</video:thumbnail_loc>
+      <video:title>Liquid Glow — Classic Version Trailer (Android)</video:title>
+      <video:description>Liquid Glow — a cozy sort puzzle by PixelRyu. Classic version on Google Play (Android).</video:description>
+      <video:content_loc>https://pixelryu.github.io/liquid-glow/promotion_H_02.mp4?v=20260524172016</video:content_loc>
+      <video:publication_date>2026-05-24T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://pixelryu.github.io/liquid-glow/og.png</video:thumbnail_loc>
+      <video:title>Liquid Glow — New Version Trailer (iPhone &amp; Roblox)</video:title>
+      <video:description>Liquid Glow — a cozy sort puzzle by PixelRyu. New version on iPhone &amp; Roblox.</video:description>
+      <video:content_loc>https://pixelryu.github.io/liquid-glow/promotion_H_new.mp4?v=20260610104059</video:content_loc>
+      <video:publication_date>2026-06-10T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow/overview.html</loc>
@@ -131,6 +247,37 @@
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/liquid-glow-cosmic/og.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/liquid-glow-cosmic/icon.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/liquid-glow-cosmic/screenshots/hero.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/liquid-glow-cosmic/screenshots/match.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/liquid-glow-cosmic/screenshots/play.png</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://pixelryu.github.io/liquid-glow-cosmic/og.png</video:thumbnail_loc>
+      <video:title>Liquid Glow — Official Trailer (New Version, iPhone &amp; Roblox)</video:title>
+      <video:description>Liquid Glow by PixelRyu — a calm, luminous color-matching puzzle in deep space. Slide glowing light along the constellation so every ring matches its color.</video:description>
+      <video:content_loc>https://pixelryu.github.io/liquid-glow-cosmic/promotion_H_story.mp4?v=20260610104059</video:content_loc>
+      <video:publication_date>2026-06-10T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+    <video:video>
+      <video:thumbnail_loc>https://pixelryu.github.io/liquid-glow-cosmic/og.png</video:thumbnail_loc>
+      <video:title>Liquid Glow — Classic Sort Puzzle Trailer (Google Play, Android)</video:title>
+      <video:description>The classic Liquid Glow sort puzzle by PixelRyu, available on Google Play (Android).</video:description>
+      <video:content_loc>https://pixelryu.github.io/liquid-glow-cosmic/promotion_H_classic.mp4?v=20260610104059</video:content_loc>
+      <video:publication_date>2026-06-10T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow-cosmic/overview.html</loc>
@@ -155,6 +302,23 @@
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/mole-whack/og.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/mole-whack/icon.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/mole-whack/screenshots/gameplay.png</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://pixelryu.github.io/mole-whack/og.png</video:thumbnail_loc>
+      <video:title>Mole Whack — Official Trailer</video:title>
+      <video:description>Mole Whack — a casual stage-based tap game by PixelRyu. Hit the moles, clear the target, advance through 100 stages.</video:description>
+      <video:content_loc>https://pixelryu.github.io/mole-whack/promotion_H_compilation.mp4?v=20260523112820</video:content_loc>
+      <video:publication_date>2026-05-23T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://pixelryu.github.io/mole-whack/overview.html</loc>
@@ -179,6 +343,20 @@
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/bounce-cat/og.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/bounce-cat/icon.png</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://pixelryu.github.io/bounce-cat/og.png</video:thumbnail_loc>
+      <video:title>Bounce Cat — Official Trailer</video:title>
+      <video:description>Bounce Cat — a cozy maze-escape puzzle by PixelRyu. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out. 200 mazes across 10 worlds.</video:description>
+      <video:content_loc>https://pixelryu.github.io/bounce-cat/promotion_H_story.mp4?v=20260605080057</video:content_loc>
+      <video:publication_date>2026-06-05T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://pixelryu.github.io/bounce-cat/overview.html</loc>
@@ -203,6 +381,20 @@
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/hayate/og.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/hayate/icon.png</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://pixelryu.github.io/hayate/og.png</video:thumbnail_loc>
+      <video:title>HAYATE — Official Trailer</video:title>
+      <video:description>Official trailer for HAYATE — a 3D katana speed-racer by PixelRyu, and a sequel to ISSEN. Race the highway, space, the deep and the sky; dodge what flies at you, or throw your homing katana to slice it clean.</video:description>
+      <video:content_loc>https://pixelryu.github.io/hayate/promotion_H_trailer_en.mp4?v=20260601182255</video:content_loc>
+      <video:publication_date>2026-06-01T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://pixelryu.github.io/hayate/overview.html</loc>
@@ -227,6 +419,20 @@
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/sumlings/og.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/sumlings/icon.png</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://pixelryu.github.io/sumlings/og.png</video:thumbnail_loc>
+      <video:title>Sumlings — Official Trailer</video:title>
+      <video:description>Sumlings — a cozy number puzzle by PixelRyu. Place number eggs into a tiny terrarium, match each nest's total to its target, and hatch the cute Sumlings.</video:description>
+      <video:content_loc>https://pixelryu.github.io/sumlings/promotion_H_story.mp4?v=20260528133150</video:content_loc>
+      <video:publication_date>2026-05-28T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://pixelryu.github.io/sumlings/overview.html</loc>
@@ -251,6 +457,20 @@
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/parcel-pals/og.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/parcel-pals/icon.png</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://pixelryu.github.io/parcel-pals/og.png</video:thumbnail_loc>
+      <video:title>Parcel Pals — Official Trailer</video:title>
+      <video:description>Parcel Pals — a cozy parcel-sorting puzzle by PixelRyu. Sort cute parcels into 3 lanes, match shapes to boxes, and ship before the table overflows.</video:description>
+      <video:content_loc>https://pixelryu.github.io/parcel-pals/promotion_H_story.mp4?v=20260527093605</video:content_loc>
+      <video:publication_date>2026-05-27T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
   </url>
   <url>
     <loc>https://pixelryu.github.io/parcel-pals/overview.html</loc>

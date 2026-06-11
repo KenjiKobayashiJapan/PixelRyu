@@ -169,6 +169,15 @@ for d in app_dirs:
     if os_set != set(plats):
         warns.append("[operatingSystem] %s: %r != live platforms %r" % (rel(p), vg.get("operatingSystem"), ", ".join(plats)))
 
+# (11) sitemap image/video media must point to files that actually exist (else 404s
+#      in the sitemap, which Search Console flags). Catches renamed/deleted assets.
+sm = read(os.path.join(ROOT, "sitemap.xml"))
+for tag in ("image:loc", "video:thumbnail_loc", "video:content_loc"):
+    for m in re.finditer(r"<%s>([^<]+)</%s>" % (tag, tag), sm):
+        local = m.group(1).replace("https://pixelryu.github.io/", "").split("?")[0]
+        if not os.path.exists(os.path.join(ROOT, local)):
+            errors.append("[sitemap-media] %s references missing file: %s" % (tag, m.group(1)))
+
 if warns:
     print("\n".join("WARN  " + w for w in sorted(set(warns))))
 if errors:
