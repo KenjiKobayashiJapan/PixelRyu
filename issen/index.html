@@ -192,6 +192,19 @@
 </style>
 <!-- SEO/LLMO start (managed) -->
 <link rel="canonical" href="https://pixelryu.github.io/issen/">
+<link rel="alternate" hreflang="en" href="https://pixelryu.github.io/issen/">
+<link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/issen/ja/">
+<link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/issen/zh/">
+<link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/issen/ko/">
+<link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/issen/hi/">
+<link rel="alternate" hreflang="id" href="https://pixelryu.github.io/issen/id/">
+<link rel="alternate" hreflang="de" href="https://pixelryu.github.io/issen/de/">
+<link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/issen/fr/">
+<link rel="alternate" hreflang="it" href="https://pixelryu.github.io/issen/it/">
+<link rel="alternate" hreflang="es" href="https://pixelryu.github.io/issen/es/">
+<link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/issen/pt/">
+<link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/issen/ru/">
+<link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/issen/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="PixelRyu">
 <meta name="publisher" content="PixelRyu">
@@ -935,7 +948,7 @@
     }
     // Persist on init too — guarantees subsequent pages pick up the same language via the shared localStorage key.
     setLang(detectLang(), true);
-    sel.addEventListener('change', e => setLang(e.target.value, true));
+    sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/issen/' : 'https://pixelryu.github.io/issen/' + v + '/';});
   })();
 </script>
 <script src="../breadcrumb.js?v=20260602202548" defer></script>

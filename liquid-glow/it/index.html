@@ -1,0 +1,1027 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5MH53Z8LM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M5MH53Z8LM');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">Liquid Glow — Puzzle di smistamento indie dal Giappone</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Liquid Glow — un confortevole puzzle di smistamento di PixelRyu. Partecipa al closed test Android di 14 giorni.">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: radial-gradient(ellipse at top, #172244 0%, #080d1f 50%, #02040c 100%);
+    color: #e4ebf5;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    max-width: 580px;
+    width: 100%;
+    padding: 80px 32px;
+    text-align: center;
+    position: relative;
+  }
+  .lang-switch {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
+  .lang-switch select {
+    background: rgba(122, 176, 255, 0.06);
+    color: #e4ebf5;
+    border: 1px solid rgba(122, 176, 255, 0.20);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .lang-switch select:hover {
+    background: rgba(122, 176, 255, 0.12);
+    border-color: rgba(122, 176, 255, 0.50);
+  }
+  .lang-switch select option { background: #0d1428; color: #e4ebf5; }
+  h1 {
+    font-size: 56px;
+    margin: 0 0 12px;
+    color: #d8e3f5;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .tagline {
+    font-size: 16px;
+    color: #6c7d9d;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  .tester-card {
+    background: rgba(122, 176, 255, 0.06);
+    border: 1px solid rgba(122, 176, 255, 0.30);
+    border-radius: 16px;
+    padding: 24px 24px 28px;
+    margin: 32px 0 40px;
+    text-align: left;
+    box-shadow: 0 0 30px rgba(122, 176, 255, 0.05);
+  }
+  .tester-heading {
+    font-size: 13px;
+    color: #7ab0ff;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 4px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .tester-android-note {
+    display: block;
+    font-size: 11px;
+    color: #6c7d9d;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .tester-card p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #c5d0e6;
+    margin: 12px 0;
+  }
+  .tester-section-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #8b9bbd;
+    margin: 20px 0 6px;
+  }
+  .tester-step {
+    display: block;
+    background: rgba(122, 176, 255, 0.10);
+    border: 1px solid rgba(122, 176, 255, 0.30);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    color: #7ab0ff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  .tester-step:hover {
+    background: rgba(122, 176, 255, 0.18);
+    border-color: rgba(122, 176, 255, 0.60);
+    color: #a0c8ff;
+  }
+  .tester-card ul {
+    margin: 6px 0 0;
+    padding-left: 22px;
+    color: #c5d0e6;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .overview-link {
+    display: block;
+    background: #7ab0ff;
+    color: #08122b;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 18px 22px;
+    border-radius: 14px;
+    margin: 0 0 24px;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 22px rgba(122, 176, 255, 0.25);
+  }
+  .overview-link:hover { background: #a0c8ff; transform: translateY(-1px); }
+  .promo-video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    margin: 16px 0 8px;
+    background: #000;
+    box-shadow: 0 6px 22px rgba(122, 176, 255, 0.25);
+  }
+  .legal-divider {
+    font-size: 13px;
+    color: #6c7d9d;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 8px 0 16px;
+  }
+  .links { list-style: none; padding: 0; margin: 0; }
+  .links li {
+    background: rgba(122, 176, 255, 0.06);
+    border: 1px solid rgba(122, 176, 255, 0.20);
+    border-radius: 14px;
+    margin-bottom: 14px;
+    transition: all 0.25s ease;
+  }
+  .links li:hover {
+    background: rgba(122, 176, 255, 0.12);
+    border-color: rgba(122, 176, 255, 0.50);
+  }
+  .links a {
+    color: #7ab0ff;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    padding: 22px 24px;
+  }
+  .back {
+    display: inline-block;
+    margin-top: 48px;
+    color: #6c7d9d;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .back:hover { color: #aac0e0; }
+  @media (max-width: 600px) {
+    .lang-switch { top: 16px; right: 16px; }
+    .tester-card { padding: 20px 18px 22px; }
+  }
+  .social-heading{font-size:13px;color:#6c7d9d;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(122,176,255,0.06);border:1px solid rgba(122,176,255,0.20);color:#8b9bbd;transition:all .25s ease;}
+  .social a:hover{background:rgba(122,176,255,0.12);border-color:rgba(122,176,255,0.50);color:#a0c8ff;transform:translateY(-2px);}
+  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+  .hero-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0 8px;
+  }
+  .hero-badges a { display: inline-block; line-height: 0; margin: 0; transition: transform .2s ease, opacity .2s ease; }
+  .hero-badges a:hover { transform: translateY(-2px); opacity: .85; }
+  .hero-badges svg, .hero-badges img { display: block; }
+  .hero-badges img { height: 51px; width: auto; }
+  .newver-banner{display:block;background:rgba(122,176,255,0.10);border:1px solid rgba(122,176,255,0.35);border-radius:12px;padding:14px 18px;margin:4px 0 22px;color:#a0c8ff;text-decoration:none;font-size:14px;font-weight:600;transition:all .2s ease;text-align:center;}
+  .newver-banner:hover{background:rgba(122,176,255,0.18);border-color:rgba(122,176,255,0.60);}
+  .video-heading{font-size:13px;color:#6c7d9d;text-transform:uppercase;letter-spacing:2px;margin:8px 0 14px;}
+  .video-pair{display:flex;flex-direction:column;gap:20px;align-items:center;margin:4px 0 8px;}
+  .video-col{width:100%;}
+  .video-col .video-label{font-size:12px;color:#8b9bbd;margin:0 0 8px;font-weight:600;}
+  .video-pair .promo-video{margin:0;}
+</style>
+<!-- SEO/LLMO start (managed) -->
+<link rel="canonical" href="https://pixelryu.github.io/liquid-glow/it/">
+<link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow/">
+<link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/liquid-glow/ja/">
+<link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/liquid-glow/zh/">
+<link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/liquid-glow/ko/">
+<link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/liquid-glow/hi/">
+<link rel="alternate" hreflang="id" href="https://pixelryu.github.io/liquid-glow/id/">
+<link rel="alternate" hreflang="de" href="https://pixelryu.github.io/liquid-glow/de/">
+<link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/liquid-glow/fr/">
+<link rel="alternate" hreflang="it" href="https://pixelryu.github.io/liquid-glow/it/">
+<link rel="alternate" hreflang="es" href="https://pixelryu.github.io/liquid-glow/es/">
+<link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/liquid-glow/pt/">
+<link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/liquid-glow/ru/">
+<link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/liquid-glow/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="PixelRyu">
+<meta name="publisher" content="PixelRyu">
+<meta name="keywords" content="Liquid Glow, sort puzzle, color sort, water sort, cozy puzzle, PixelRyu, indie game, Android">
+<meta name="theme-color" content="#080d1f">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/liquid-glow/icon.png">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/liquid-glow/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PixelRyu">
+<meta property="og:title" content="Liquid Glow — Puzzle di smistamento indie dal Giappone">
+<meta property="og:description" content="Liquid Glow — un confortevole puzzle di smistamento di PixelRyu. Partecipa al closed test Android di 14 giorni.">
+<meta property="og:url" content="https://pixelryu.github.io/liquid-glow/it/">
+<meta property="og:image" content="https://pixelryu.github.io/liquid-glow/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Liquid Glow — Puzzle di smistamento indie dal Giappone">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Liquid Glow — Puzzle di smistamento indie dal Giappone">
+<meta name="twitter:description" content="Liquid Glow — un confortevole puzzle di smistamento di PixelRyu. Partecipa al closed test Android di 14 giorni.">
+<meta name="twitter:image" content="https://pixelryu.github.io/liquid-glow/og.png">
+<meta name="twitter:image:alt" content="Liquid Glow — Puzzle di smistamento indie dal Giappone">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Liquid Glow","genre":"Puzzle, Casual","url":"https://pixelryu.github.io/liquid-glow/it/","image":"https://pixelryu.github.io/liquid-glow/icon.png","description":"Liquid Glow — un confortevole puzzle di smistamento di PixelRyu. Partecipa al closed test Android di 14 giorni.","applicationCategory":"GameApplication","operatingSystem":"Android, Roblox","author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"sameAs":["https://play.google.com/store/apps/details?id=com.pixelryu.liquidglow","https://www.roblox.com/games/121416912707355/Liquid-Glow-Sort-Puzzle"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/it/"},{"@type":"ListItem","position":2,"name":"Liquid Glow","item":"https://pixelryu.github.io/liquid-glow/it/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Che tipo di gioco è Liquid Glow?","acceptedAnswer":{"@type":"Answer","text":"Liquid Glow è un accogliente puzzle di smistamento indie dal Giappone, creato da PixelRyu — sistemi liquidi colorati che scorrono, con UI minimale e meccaniche soddisfacenti."}},{"@type":"Question","name":"Liquid Glow è gratuito?","acceptedAnswer":{"@type":"Answer","text":"Sì — Liquid Glow è gratuito."}},{"@type":"Question","name":"Dove si può giocare adesso?","acceptedAnswer":{"@type":"Answer","text":"Liquid Glow è disponibile ora su Roblox, e i giocatori Android possono partecipare al closed test di 14 giorni tramite Google Play."}},{"@type":"Question","name":"Esiste una nuova versione?","acceptedAnswer":{"@type":"Answer","text":"Sì — una nuova versione con un puzzle di costellazioni cosmiche è disponibile su iPhone e Roblox."}},{"@type":"Question","name":"Quali lingue sono supportate?","acceptedAnswer":{"@type":"Answer","text":"Il gioco e questo sito supportano 12 lingue: inglese, giapponese, cinese, coreano, hindi, indonesiano, tedesco, francese, italiano, spagnolo, portoghese e russo."}}]}</script>
+<script type="application/ld+json">[{"@context":"https://schema.org","@type":"VideoObject","name":"Liquid Glow — Classic Version Trailer (Android)","description":"Liquid Glow — a cozy sort puzzle by PixelRyu. Classic version on Google Play (Android).","thumbnailUrl":"https://pixelryu.github.io/liquid-glow/og.png","uploadDate":"2026-05-24","contentUrl":"https://pixelryu.github.io/liquid-glow/promotion_H_02.mp4?v=20260524172016"},{"@context":"https://schema.org","@type":"VideoObject","name":"Liquid Glow — New Version Trailer (iPhone & Roblox)","description":"Liquid Glow — a cozy sort puzzle by PixelRyu. New version on iPhone & Roblox.","thumbnailUrl":"https://pixelryu.github.io/liquid-glow/og.png","uploadDate":"2026-06-10","contentUrl":"https://pixelryu.github.io/liquid-glow/promotion_H_new.mp4?v=20260610104059"}]</script>
+<!-- SEO/LLMO end -->
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch">
+    <select id="lang-select" aria-label="Language"></select>
+  </div>
+  <h1>Liquid Glow</h1>
+  <div class="tagline" data-i18n="tagline">Puzzle di smistamento indie dal Giappone</div>
+
+  <section class="hero-badges" aria-label="Play on Roblox now; Android testers welcome on Google Play">
+    <a href="#tester-heading" aria-label="Join Liquid Glow Android testers">
+      <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+    </a>
+    <a href="https://www.roblox.com/games/121416912707355/Liquid-Glow-Sort-Puzzle" target="_blank" rel="noopener" aria-label="Play Liquid Glow on Roblox">
+      <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+        <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+          <g transform="rotate(13 13 13)">
+            <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+            <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+          </g>
+        </svg>
+        <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+        <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+      </svg>
+    </a>
+  </section>
+
+  <section class="tester-card" aria-labelledby="tester-heading">
+    <div id="tester-heading" class="tester-heading">
+      🧪 <span data-i18n="tester_heading">Cercasi tester Android</span>
+      <span class="tester-android-note">📱 <span data-i18n="tester_android_note">Solo Android</span></span>
+    </div>
+    <p data-i18n="tester_intro">Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.</p>
+
+    <div class="tester-section-label">🎨 <span data-i18n="tester_what_label">Di cosa si tratta</span></div>
+    <p data-i18n="tester_what">Un puzzle di smistamento accogliente in cui sistemi liquidi colorati che scorrono. UI minimale, meccaniche soddisfacenti, perfetto per brevi pause.</p>
+
+    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">
+      🔗 <span data-i18n="tester_step1_label">Passo 1 — Unisciti al gruppo tester</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.liquidglow" target="_blank" rel="noopener">
+      📱 <span data-i18n="tester_step2_label">Passo 2 — Opt-in tramite Play Store</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/store/apps/details?id=com.pixelryu.liquidglow" target="_blank" rel="noopener">
+      ⬇️ <span data-i18n="tester_step3_label">Passo 3 — Scarica e gioca all’app</span>
+    </a>
+
+    <div class="tester-section-label">📌 <span data-i18n="tester_ask_label">Cosa chiedo</span></div>
+    <ul>
+      <li data-i18n="tester_ask_keep">Tienilo installato per tutti i 14 giorni</li>
+      <li data-i18n="tester_ask_launch">Aprilo ogni paio di giorni (poche volte basta)</li>
+      <li data-i18n="tester_ask_minutes">1–2 minuti di gioco rilassato a sessione vanno bene</li>
+    </ul>
+    <p class="tester-note" data-i18n="tester_note_lead">ℹ️ Suggerimento — servono tutti e tre i passaggi qui sotto:</p>
+    <ul class="tester-note-list">
+      <li data-i18n="tester_note_step1">Passaggio 1 — Iscriviti al gruppo: anche se compare « non hai l’autorizzazione per visualizzare i contenuti », sulla pagina c’è il pulsante « Iscriviti al gruppo » — toccalo per iscriverti.</li>
+      <li data-i18n="tester_note_step2">Passaggio 2 — Diventa tester (opt-in): nella pagina di opt-in, tocca per partecipare al test. Diventare tester da solo non installa l’app.</li>
+      <li data-i18n="tester_note_step3">Passaggio 3 — Scarica e gioca: apri la pagina di download, installa l’app, aprila e gioca un po’ — senza questo, il tuo test non viene conteggiato.</li>
+      <li data-i18n="tester_note_account">Usa lo stesso account Google per tutti i passaggi.</li>
+      <li data-i18n="tester_note_wait">Se il passaggio 2 o 3 mostra « App not available », attendi qualche ora dopo l’iscrizione e riprova.</li>
+    </ul>
+  </section>
+
+  <a href="https://pixelryu.github.io/liquid-glow/overview.html" class="overview-link">🎮 <span data-i18n="link_overview">Vedi la panoramica</span> →</a>
+
+  <a href="https://pixelryu.github.io/liquid-glow-cosmic/it/" class="newver-banner" data-i18n="newver_cta">✨ Nuova versione su iPhone &amp; Roblox — un puzzle di costellazioni cosmiche →</a>
+
+  <div class="video-heading" data-i18n="video_heading">Guardalo in movimento</div>
+  <div class="video-pair">
+    <div class="video-col">
+      <div class="video-label" data-i18n="video_classic_label">Classico — su Google Play (Android)</div>
+      <video class="promo-video" autoplay loop muted playsinline controls preload="auto">
+        <source src="https://pixelryu.github.io/liquid-glow/promotion_H_02.mp4?v=20260524172016" type="video/mp4">
+      </video>
+    </div>
+    <div class="video-col">
+      <div class="video-label" data-i18n="video_new_label">Nuova versione — iPhone e Roblox</div>
+      <video class="promo-video" loop muted playsinline controls preload="metadata">
+        <source src="https://pixelryu.github.io/liquid-glow/promotion_H_new.mp4?v=20260610104059" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <div class="legal-divider" data-i18n="legal_divider">Documenti legali</div>
+  <ul class="links">
+    <li><a href="https://pixelryu.github.io/liquid-glow/privacy_policy.html" data-i18n="link_privacy">Informativa sulla privacy</a></li>
+    <li><a href="https://pixelryu.github.io/liquid-glow/terms_of_service.html" data-i18n="link_terms">Termini di servizio</a></li>
+  </ul>
+  <h2 class="social-heading" data-i18n="faq_heading">FAQ</h2>
+  <section class="tester-card" id="faq" style="text-align:left;">
+    <p><strong data-i18n="faq_q1">Che tipo di gioco è Liquid Glow?</strong></p>
+    <p data-i18n="faq_a1">Liquid Glow è un accogliente puzzle di smistamento indie dal Giappone, creato da PixelRyu — sistemi liquidi colorati che scorrono, con UI minimale e meccaniche soddisfacenti.</p>
+    <p><strong data-i18n="faq_q2">Liquid Glow è gratuito?</strong></p>
+    <p data-i18n="faq_a2">Sì — Liquid Glow è gratuito.</p>
+    <p><strong data-i18n="faq_q3">Dove si può giocare adesso?</strong></p>
+    <p data-i18n="faq_a3">Liquid Glow è disponibile ora su Roblox, e i giocatori Android possono partecipare al closed test di 14 giorni tramite Google Play.</p>
+    <p><strong data-i18n="faq_q4">Esiste una nuova versione?</strong></p>
+    <p data-i18n="faq_a4">Sì — una nuova versione con un puzzle di costellazioni cosmiche è disponibile su iPhone e Roblox.</p>
+    <p><strong data-i18n="faq_q5">Quali lingue sono supportate?</strong></p>
+    <p data-i18n="faq_a5">Il gioco e questo sito supportano 12 lingue: inglese, giapponese, cinese, coreano, hindi, indonesiano, tedesco, francese, italiano, spagnolo, portoghese e russo.</p>
+  </section>
+
+  <h2 class="social-heading" data-i18n="more_games_heading">Altri giochi di PixelRyu</h2>
+  <ul class="links">
+    <li><a href="https://pixelryu.github.io/liquid-glow-cosmic/it/"><span data-i18n="mg_1">Liquid Glow — la nuova versione cosmica di abbinamento colori</span></a></li>
+    <li><a href="https://pixelryu.github.io/sumlings/it/"><span data-i18n="mg_2">Sumlings — accogliente puzzle di numeri</span></a></li>
+    <li><a href="https://pixelryu.github.io/parcel-pals/it/"><span data-i18n="mg_3">Parcel Pals — accogliente puzzle di smistamento pacchi</span></a></li>
+  </ul>
+
+  <a href="https://pixelryu.github.io/it/" class="back" data-i18n="back">← Torna a PixelRyu</a>
+  <h2 class="social-heading">Follow</h2>
+  <div class="social">
+    <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note"><svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+    <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+    en: {
+      video_heading: "See it in motion",
+      video_classic_label: "Classic — on Google Play (Android)",
+      video_new_label: "New version — iPhone & Roblox",
+      newver_cta: "✨ New version on iPhone & Roblox — a cosmic constellation puzzle →",
+      title: "Liquid Glow — Indie Sort Puzzle from Japan",
+      meta_desc: "Liquid Glow — a cozy sort puzzle by PixelRyu. Join the 14-day Android closed testing.",
+      tagline: "Indie Sort Puzzle from Japan",
+      legal_divider: "Legal Documents",
+      link_privacy: "Privacy Policy",
+      link_terms: "Terms of Service",
+      back: "← PixelRyu",
+      link_overview: "View Game Overview",
+      tester_heading: "Android Tester Recruitment",
+      tester_android_note: "Android only",
+      tester_intro: "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
+      tester_what_label: "What it is",
+      tester_what: "A cozy sort puzzle where you arrange flowing liquid colors. Minimal UI, satisfying mechanics, perfect for quick breaks.",
+      tester_step1_label: "Step 1 — Join the tester group",
+      tester_step2_label: "Step 2 — Opt-in via Play Store",
+      tester_step3_label: "Step 3 — Download & play the app",
+      tester_ask_label: "What I'm asking for",
+      tester_ask_keep: "Keep installed for the full 14 days",
+      tester_ask_launch: "Launch every couple of days (a few times is enough)",
+      tester_ask_minutes: "1–2 minutes of casual play per session works fine",
+      tester_note_lead: "ℹ️ Tip — all three steps below are required:",
+      tester_note_step1: "Step 1 — Join the group: even if you see “no permission to view content”, there’s a “Join group” button on that page — tap it to join.",
+      tester_note_step2: "Step 2 — Become a tester (opt-in): on the opt-in page, tap to join the test. Becoming a tester alone does not install the app.",
+      tester_note_step3: "Step 3 — Download & play: open the download page, install the app, launch it and play a little — without this, your testing doesn’t count.",
+      tester_note_account: "Use the same Google account for all steps.",
+      tester_note_wait: "If Step 2 or 3 shows “App not available”, wait a few hours after joining and try again.",
+      faq_heading: "FAQ",
+      faq_q1: "What kind of game is Liquid Glow?",
+      faq_a1: "Liquid Glow is a cozy indie sort puzzle from Japan by PixelRyu — you arrange flowing liquid colors with minimal UI and satisfying mechanics.",
+      faq_q2: "Is Liquid Glow free to play?",
+      faq_a2: "Yes — Liquid Glow is free to play.",
+      faq_q3: "Where can I play Liquid Glow right now?",
+      faq_a3: "Liquid Glow is out now on Roblox, and Android players can join the 14-day closed testing via Google Play.",
+      faq_q4: "Is there a new version of Liquid Glow?",
+      faq_a4: "Yes — a new version with a cosmic constellation puzzle is available on iPhone and Roblox.",
+      faq_q5: "What languages does Liquid Glow support?",
+      faq_a5: "The game and this site support 12 languages: English, Japanese, Chinese, Korean, Hindi, Indonesian, German, French, Italian, Spanish, Portuguese, and Russian.",
+      more_games_heading: "More games by PixelRyu",
+      mg_1: "Liquid Glow — the new cosmic color-matching version",
+      mg_2: "Sumlings — cozy number puzzle",
+      mg_3: "Parcel Pals — cozy parcel-sorting puzzle",
+    },
+    ja: {
+      video_heading: "動画で見る",
+      video_classic_label: "クラシック版 — Google Play（Android）",
+      video_new_label: "新バージョン — iPhone & Roblox",
+      newver_cta: "✨ iPhone & Roblox の新バージョン — 宇宙の星座パズル →",
+      title: "Liquid Glow — 日本のインディーソートパズル",
+      meta_desc: "Liquid Glow — PixelRyu によるほっこり系ソートパズル。14日間の Android クローズドテストにご参加ください。",
+      tagline: "日本のインディーソートパズル",
+      legal_divider: "規約類",
+      link_privacy: "プライバシーポリシー",
+      link_terms: "利用規約",
+      back: "← PixelRyu へ戻る",
+      link_overview: "ゲーム概要を見る",
+      tester_heading: "Android テスター募集中",
+      tester_android_note: "Android 専用",
+      tester_intro: "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
+      tester_what_label: "ゲーム内容",
+      tester_what: "流れる色とりどりの液体を並べ替える、ほっこり系ソートパズル。シンプルな UI と心地よい操作感で、すきま時間にぴったりです。",
+      tester_step1_label: "ステップ 1 — テスターグループに参加",
+      tester_step2_label: "ステップ 2 — Play ストアでオプトイン",
+      tester_step3_label: "ステップ 3 — アプリをダウンロードしてプレイ",
+      tester_ask_label: "お願いしたいこと",
+      tester_ask_keep: "14 日間アンインストールせずに保持",
+      tester_ask_launch: "数日に一度起動 (合計数回で OK)",
+      tester_ask_minutes: "1 回 1〜2 分の軽いプレイで大丈夫",
+      tester_note_lead: "ℹ️ ヒント — 下記の3つのステップすべてが必要です:",
+      tester_note_step1: "ステップ1 — グループに参加: 「閲覧権限がありません」と表示されても、その画面に「グループに参加」ボタンがあるので押して参加してください。",
+      tester_note_step2: "ステップ2 — テスターになる（オプトイン）: オプトイン画面でテストに参加してください。テスターになっただけではアプリはインストールされません。",
+      tester_note_step3: "ステップ3 — ダウンロードしてプレイ: ダウンロードページを開いてアプリをインストールし、起動して少し遊んでください。これをしないとテストにカウントされません。",
+      tester_note_account: "すべてのステップで同じ Google アカウントをお使いください。",
+      tester_note_wait: "ステップ2または3で「App not available」と表示されるときは、参加から数時間おいて再度お試しください。",
+      faq_heading: "よくある質問",
+      faq_q1: "Liquid Glow はどんなゲーム？",
+      faq_a1: "Liquid Glow は PixelRyu が日本から届けるほっこり系インディーソートパズル。流れる色とりどりの液体を並べ替える、シンプルな UI と心地よい操作感のゲームです。",
+      faq_q2: "Liquid Glow は無料？",
+      faq_a2: "はい — Liquid Glow は無料で遊べます。",
+      faq_q3: "今どこで遊べる？",
+      faq_a3: "Roblox で配信中です。Android では Google Play 経由で 14 日間のクローズドテストに参加できます。",
+      faq_q4: "新バージョンはある？",
+      faq_a4: "はい — 宇宙の星座パズルの新バージョンが iPhone と Roblox で遊べます。",
+      faq_q5: "対応言語は？",
+      faq_a5: "ゲームと本サイトは英語・日本語・中国語・韓国語・ヒンディー語・インドネシア語・ドイツ語・フランス語・イタリア語・スペイン語・ポルトガル語・ロシア語の 12 言語に対応しています。",
+      more_games_heading: "PixelRyu のほかのゲーム",
+      mg_1: "Liquid Glow — 宇宙の色合わせ新バージョン",
+      mg_2: "Sumlings — ほっこり数字パズル",
+      mg_3: "Parcel Pals — ほっこり荷物仕分けパズル",
+    },
+    zh: {
+      video_heading: "动态演示",
+      video_classic_label: "经典版 — Google Play（Android）",
+      video_new_label: "全新版本 — iPhone 与 Roblox",
+      newver_cta: "✨ iPhone 与 Roblox 上的新版本 — 宇宙星座益智 →",
+      title: "Liquid Glow — 来自日本的独立分类益智游戏",
+      meta_desc: "Liquid Glow — PixelRyu 出品的温馨分类益智游戏。欢迎参加为期 14 天的 Android 封闭测试。",
+      tagline: "来自日本的独立分类益智游戏",
+      legal_divider: "法律文件",
+      link_privacy: "隐私政策",
+      link_terms: "服务条款",
+      back: "← 返回 PixelRyu",
+      link_overview: "查看游戏简介",
+      tester_heading: "招募 Android 测试者",
+      tester_android_note: "仅限 Android",
+      tester_intro: "我是一名独立开发者,正在为期 14 天的封闭测试招募积极的 Android 测试者。",
+      tester_what_label: "游戏简介",
+      tester_what: "一款温馨的分类益智游戏,整理流动的彩色液体。极简界面、舒适手感,最适合零碎时间。",
+      tester_step1_label: "第一步 — 加入测试者群组",
+      tester_step2_label: "第二步 — 通过 Play 商店加入测试",
+      tester_step3_label: "第三步 — 下载并试玩应用",
+      tester_ask_label: "我希望你能做到",
+      tester_ask_keep: "完整保留 14 天不卸载",
+      tester_ask_launch: "每隔几天启动一次（几次即可）",
+      tester_ask_minutes: "每次随意玩 1-2 分钟即可",
+      tester_note_lead: "ℹ️ 提示 — 以下三个步骤都必须完成：",
+      tester_note_step1: "第一步 — 加入群组：即使显示“无权限查看内容”，该页面上也有“加入群组”按钮，请点击加入。",
+      tester_note_step2: "第二步 — 成为测试者（加入测试）：在加入测试页面点击加入测试。仅成为测试者并不会安装应用。",
+      tester_note_step3: "第三步 — 下载并试玩：打开下载页面安装应用，然后启动应用并稍微试玩。否则你的测试不会被计入。",
+      tester_note_account: "所有步骤请使用同一个 Google 账号。",
+      tester_note_wait: "如果第二步或第三步显示“App not available”，请在加入后等待几小时再试。",
+      faq_heading: "常见问题",
+      faq_q1: "Liquid Glow 是什么类型的游戏？",
+      faq_a1: "Liquid Glow 是 PixelRyu 出品、来自日本的温馨独立分类益智游戏——整理流动的彩色液体，界面极简、手感舒适。",
+      faq_q2: "Liquid Glow 免费吗？",
+      faq_a2: "是的——Liquid Glow 可以免费游玩。",
+      faq_q3: "现在可以在哪里玩？",
+      faq_a3: "现已在 Roblox 上线；Android 玩家可通过 Google Play 参加为期 14 天的封闭测试。",
+      faq_q4: "有新版本吗？",
+      faq_a4: "有——宇宙星座益智的新版本已在 iPhone 和 Roblox 上推出。",
+      faq_q5: "支持哪些语言？",
+      faq_a5: "游戏和本网站支持 12 种语言：英语、日语、中文、韩语、印地语、印尼语、德语、法语、意大利语、西班牙语、葡萄牙语和俄语。",
+      more_games_heading: "PixelRyu 的更多游戏",
+      mg_1: "Liquid Glow — 全新宇宙配色版本",
+      mg_2: "Sumlings — 温馨数字益智游戏",
+      mg_3: "Parcel Pals — 温馨包裹分拣益智游戏",
+    },
+    ko: {
+      video_heading: "움직이는 모습 보기",
+      video_classic_label: "클래식 — Google Play (Android)",
+      video_new_label: "새 버전 — iPhone & Roblox",
+      newver_cta: "✨ iPhone & Roblox의 새 버전 — 우주 별자리 퍼즐 →",
+      title: "Liquid Glow — 일본의 인디 정렬 퍼즐",
+      meta_desc: "Liquid Glow — PixelRyu의 아늑한 정렬 퍼즐. 14일간의 Android 비공개 테스트에 참여해 보세요.",
+      tagline: "일본의 인디 정렬 퍼즐",
+      legal_divider: "법적 고지",
+      link_privacy: "개인정보 처리방침",
+      link_terms: "서비스 이용약관",
+      back: "← PixelRyu로 돌아가기",
+      link_overview: "게임 소개 보기",
+      tester_heading: "Android 테스터 모집",
+      tester_android_note: "Android 전용",
+      tester_intro: "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
+      tester_what_label: "게임 소개",
+      tester_what: "흘러내리는 색색의 액체를 정리하는 아늑한 정렬 퍼즐. 미니멀한 UI와 만족스러운 조작감으로 짧은 휴식에 안성맞춤.",
+      tester_step1_label: "1단계 — 테스터 그룹 가입",
+      tester_step2_label: "2단계 — Play 스토어에서 옵트인",
+      tester_step3_label: "3단계 — 앱 다운로드 후 플레이",
+      tester_ask_label: "부탁드리는 것",
+      tester_ask_keep: "14일 동안 설치 상태 유지",
+      tester_ask_launch: "며칠에 한 번씩 실행 (몇 번이면 충분합니다)",
+      tester_ask_minutes: "한 번에 1~2분 정도의 가벼운 플레이로 충분",
+      tester_note_lead: "ℹ️ 팁 — 아래 세 단계를 모두 완료해야 합니다:",
+      tester_note_step1: "1단계 — 그룹 가입: “콘텐츠를 볼 권한이 없습니다”라고 표시되어도 그 화면에 “그룹 가입” 버튼이 있으니 눌러서 가입하세요.",
+      tester_note_step2: "2단계 — 테스터 되기(옵트인): 옵트인 화면에서 테스트에 참여하세요. 테스터가 되는 것만으로는 앱이 설치되지 않습니다.",
+      tester_note_step3: "3단계 — 다운로드 후 플레이: 다운로드 페이지를 열어 앱을 설치하고, 실행해 잠깐 플레이하세요. 그렇지 않으면 테스트로 집계되지 않습니다.",
+      tester_note_account: "모든 단계에서 같은 Google 계정을 사용하세요.",
+      tester_note_wait: "2단계 또는 3단계에서 “App not available”이 표시되면 가입 후 몇 시간 기다렸다가 다시 시도하세요.",
+      faq_heading: "자주 묻는 질문",
+      faq_q1: "Liquid Glow는 어떤 게임인가요?",
+      faq_a1: "Liquid Glow는 PixelRyu가 만든 일본의 아늑한 인디 정렬 퍼즐로, 흘러내리는 색색의 액체를 정리합니다. 미니멀한 UI와 만족스러운 조작감이 특징입니다.",
+      faq_q2: "Liquid Glow는 무료인가요?",
+      faq_a2: "네 — Liquid Glow는 무료로 플레이할 수 있습니다.",
+      faq_q3: "지금 어디서 플레이할 수 있나요?",
+      faq_a3: "Roblox에서 지금 플레이할 수 있으며, Android에서는 Google Play를 통해 14일간의 비공개 테스트에 참여할 수 있습니다.",
+      faq_q4: "새 버전이 있나요?",
+      faq_a4: "네 — 우주 별자리 퍼즐의 새 버전을 iPhone과 Roblox에서 즐길 수 있습니다.",
+      faq_q5: "지원 언어는 무엇인가요?",
+      faq_a5: "게임과 이 사이트는 영어, 일본어, 중국어, 한국어, 힌디어, 인도네시아어, 독일어, 프랑스어, 이탈리아어, 스페인어, 포르투갈어, 러시아어의 12개 언어를 지원합니다.",
+      more_games_heading: "PixelRyu의 다른 게임",
+      mg_1: "Liquid Glow — 새로운 우주 색 맞추기 버전",
+      mg_2: "Sumlings — 아늑한 숫자 퍼즐",
+      mg_3: "Parcel Pals — 아늑한 소포 분류 퍼즐",
+    },
+    hi: {
+      video_heading: "इसे गति में देखें",
+      video_classic_label: "क्लासिक — Google Play (Android) पर",
+      video_new_label: "नया संस्करण — iPhone और Roblox",
+      newver_cta: "✨ iPhone और Roblox पर नया वर्शन — एक कॉस्मिक नक्षत्र पज़ल →",
+      title: "Liquid Glow — जापान की इंडी सॉर्ट पज़ल",
+      meta_desc: "Liquid Glow — PixelRyu की आरामदायक सॉर्ट पज़ल। 14 दिन के Android क्लोज़्ड टेस्ट में शामिल हों।",
+      tagline: "जापान की इंडी सॉर्ट पज़ल",
+      legal_divider: "क़ानूनी दस्तावेज़",
+      link_privacy: "गोपनीयता नीति",
+      link_terms: "सेवा शर्तें",
+      back: "← PixelRyu पर वापस",
+      link_overview: "गेम अवलोकन देखें",
+      tester_heading: "Android टेस्टर्स की तलाश",
+      tester_android_note: "केवल Android",
+      tester_intro: "सोलो इंडी डेवलपर हूँ, 14 दिन की क्लोज़्ड टेस्टिंग के लिए सक्रिय Android टेस्टर्स ढूँढ रहा हूँ।",
+      tester_what_label: "यह क्या है",
+      tester_what: "एक आरामदायक सॉर्ट पज़ल जहाँ आप बहते रंगीन लिक्विड्स को व्यवस्थित करते हैं। मिनिमल UI, संतोषजनक मेकैनिक्स, छोटे ब्रेक्स के लिए परफ़ेक्ट।",
+      tester_step1_label: "चरण 1 — टेस्टर ग्रुप में शामिल हों",
+      tester_step2_label: "चरण 2 — Play Store पर ऑप्ट-इन",
+      tester_step3_label: "चरण 3 — ऐप डाउनलोड करके खेलें",
+      tester_ask_label: "मैं क्या माँग रहा हूँ",
+      tester_ask_keep: "पूरे 14 दिन इंस्टॉल रखें",
+      tester_ask_launch: "हर कुछ दिन में लॉन्च करें (कुछ बार ही काफ़ी है)",
+      tester_ask_minutes: "प्रति सेशन 1–2 मिनट का आरामसे प्ले ठीक है",
+      tester_note_lead: "ℹ️ सुझाव — नीचे दिए तीनों चरण ज़रूरी हैं:",
+      tester_note_step1: "चरण 1 — ग्रुप जॉइन करें: भले ही “सामग्री देखने की अनुमति नहीं है” दिखे, उसी पेज पर “ग्रुप जॉइन करें” बटन होता है — उसे दबाकर जॉइन करें।",
+      tester_note_step2: "चरण 2 — टेस्टर बनें (ऑप्ट-इन): ऑप्ट-इन पेज पर टेस्ट में शामिल होने के लिए टैप करें। सिर्फ़ टेस्टर बनने से ऐप इंस्टॉल नहीं होती।",
+      tester_note_step3: "चरण 3 — डाउनलोड करके खेलें: डाउनलोड पेज खोलकर ऐप इंस्टॉल करें, उसे खोलें और थोड़ा खेलें — इसके बिना आपकी टेस्टिंग नहीं गिनी जाती।",
+      tester_note_account: "सभी चरणों में एक ही Google खाते का उपयोग करें।",
+      tester_note_wait: "अगर चरण 2 या 3 में “App not available” दिखे, तो जॉइन करने के कुछ घंटे बाद फिर से कोशिश करें।",
+      faq_heading: "अक्सर पूछे जाने वाले सवाल",
+      faq_q1: "Liquid Glow किस तरह का गेम है?",
+      faq_a1: "Liquid Glow PixelRyu की जापान से आई आरामदायक इंडी सॉर्ट पज़ल है — आप बहते रंगीन लिक्विड्स को व्यवस्थित करते हैं, मिनिमल UI और संतोषजनक मेकैनिक्स के साथ।",
+      faq_q2: "क्या Liquid Glow मुफ़्त है?",
+      faq_a2: "हाँ — Liquid Glow खेलने के लिए मुफ़्त है।",
+      faq_q3: "अभी इसे कहाँ खेल सकते हैं?",
+      faq_a3: "Liquid Glow अभी Roblox पर उपलब्ध है, और Android खिलाड़ी Google Play के ज़रिए 14 दिन के क्लोज़्ड टेस्ट में शामिल हो सकते हैं।",
+      faq_q4: "क्या कोई नया संस्करण है?",
+      faq_a4: "हाँ — कॉस्मिक नक्षत्र पज़ल वाला नया संस्करण iPhone और Roblox पर उपलब्ध है।",
+      faq_q5: "कौन-कौन सी भाषाएँ समर्थित हैं?",
+      faq_a5: "गेम और यह साइट 12 भाषाओं का समर्थन करती है: अंग्रेज़ी, जापानी, चीनी, कोरियाई, हिन्दी, इंडोनेशियाई, जर्मन, फ़्रेंच, इतालवी, स्पैनिश, पुर्तगाली और रूसी।",
+      more_games_heading: "PixelRyu के और गेम",
+      mg_1: "Liquid Glow — नया कॉस्मिक रंग-मिलान संस्करण",
+      mg_2: "Sumlings — आरामदायक नंबर पज़ल",
+      mg_3: "Parcel Pals — आरामदायक पार्सल-छँटाई पज़ल",
+    },
+    id: {
+      video_heading: "Lihat dalam gerakan",
+      video_classic_label: "Klasik — di Google Play (Android)",
+      video_new_label: "Versi baru — iPhone & Roblox",
+      newver_cta: "✨ Versi baru di iPhone & Roblox — puzzle rasi bintang kosmik →",
+      title: "Liquid Glow — Puzzle sortir indie dari Jepang",
+      meta_desc: "Liquid Glow — puzzle sortir yang nyaman dari PixelRyu. Ikuti closed test Android selama 14 hari.",
+      tagline: "Puzzle sortir indie dari Jepang",
+      legal_divider: "Dokumen Hukum",
+      link_privacy: "Kebijakan Privasi",
+      link_terms: "Ketentuan Layanan",
+      back: "← Kembali ke PixelRyu",
+      link_overview: "Lihat Ikhtisar Game",
+      tester_heading: "Mencari Tester Android",
+      tester_android_note: "Hanya Android",
+      tester_intro: "Saya developer indie solo, mencari tester Android aktif untuk fase closed test 14 hari.",
+      tester_what_label: "Tentang game ini",
+      tester_what: "Puzzle sortir yang nyaman di mana Anda menata cairan warna-warni yang mengalir. UI minimal, mekanika yang memuaskan, pas untuk jeda singkat.",
+      tester_step1_label: "Langkah 1 — Bergabung dengan grup tester",
+      tester_step2_label: "Langkah 2 — Opt-in via Play Store",
+      tester_step3_label: "Langkah 3 — Unduh & mainkan aplikasi",
+      tester_ask_label: "Yang saya mintakan",
+      tester_ask_keep: "Pertahankan terinstal selama 14 hari penuh",
+      tester_ask_launch: "Luncurkan setiap beberapa hari (beberapa kali sudah cukup)",
+      tester_ask_minutes: "Bermain santai 1–2 menit per sesi sudah cukup",
+      tester_note_lead: "ℹ️ Tips — ketiga langkah berikut wajib dilakukan:",
+      tester_note_step1: "Langkah 1 — Gabung grup: meskipun muncul “tidak ada izin untuk melihat konten”, ada tombol “Gabung grup” di halaman itu — tekan untuk bergabung.",
+      tester_note_step2: "Langkah 2 — Jadi tester (opt-in): di halaman opt-in, ketuk untuk bergabung ke pengujian. Menjadi tester saja tidak memasang aplikasi.",
+      tester_note_step3: "Langkah 3 — Unduh & mainkan: buka halaman unduhan, pasang aplikasinya, buka, dan mainkan sebentar — tanpa ini, pengujianmu tidak terhitung.",
+      tester_note_account: "Gunakan akun Google yang sama untuk semua langkah.",
+      tester_note_wait: "Jika Langkah 2 atau 3 menampilkan “App not available”, tunggu beberapa jam setelah bergabung lalu coba lagi.",
+      faq_heading: "Pertanyaan Umum",
+      faq_q1: "Liquid Glow itu game seperti apa?",
+      faq_a1: "Liquid Glow adalah puzzle sortir indie yang nyaman dari Jepang oleh PixelRyu — Anda menata cairan warna-warni yang mengalir dengan UI minimal dan mekanika yang memuaskan.",
+      faq_q2: "Apakah Liquid Glow gratis?",
+      faq_a2: "Ya — Liquid Glow gratis dimainkan.",
+      faq_q3: "Di mana bisa memainkannya sekarang?",
+      faq_a3: "Liquid Glow sudah tersedia di Roblox, dan pemain Android dapat ikut closed test 14 hari via Google Play.",
+      faq_q4: "Apakah ada versi baru?",
+      faq_a4: "Ya — versi baru dengan puzzle rasi bintang kosmik tersedia di iPhone dan Roblox.",
+      faq_q5: "Bahasa apa saja yang didukung?",
+      faq_a5: "Game dan situs ini mendukung 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia.",
+      more_games_heading: "Game lain dari PixelRyu",
+      mg_1: "Liquid Glow — versi baru pencocokan warna kosmik",
+      mg_2: "Sumlings — puzzle angka yang nyaman",
+      mg_3: "Parcel Pals — puzzle sortir paket yang nyaman",
+    },
+    de: {
+      video_heading: "In Bewegung erleben",
+      video_classic_label: "Klassiker — auf Google Play (Android)",
+      video_new_label: "Neue Version — iPhone & Roblox",
+      newver_cta: "✨ Neue Version für iPhone & Roblox — ein kosmisches Sternbild-Puzzle →",
+      title: "Liquid Glow — Indie-Sortier-Puzzle aus Japan",
+      meta_desc: "Liquid Glow — ein gemütliches Sortier-Puzzle von PixelRyu. Nimm an der 14-tägigen geschlossenen Android-Testphase teil.",
+      tagline: "Indie-Sortier-Puzzle aus Japan",
+      legal_divider: "Rechtsdokumente",
+      link_privacy: "Datenschutzerklärung",
+      link_terms: "Nutzungsbedingungen",
+      back: "← Zurück zu PixelRyu",
+      link_overview: "Spielübersicht ansehen",
+      tester_heading: "Android-Tester gesucht",
+      tester_android_note: "Nur für Android",
+      tester_intro: "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
+      tester_what_label: "Worum es geht",
+      tester_what: "Ein gemütliches Sortier-Puzzle, in dem du fließende, bunte Flüssigkeiten ordnest. Minimalistische UI, befriedigende Mechanik — perfekt für kurze Pausen.",
+      tester_step1_label: "Schritt 1 — Tester-Gruppe beitreten",
+      tester_step2_label: "Schritt 2 — Über den Play Store anmelden",
+      tester_step3_label: "Schritt 3 — App herunterladen & spielen",
+      tester_ask_label: "Worum ich bitte",
+      tester_ask_keep: "14 Tage lang installiert lassen",
+      tester_ask_launch: "Alle paar Tage starten (ein paar Mal reicht)",
+      tester_ask_minutes: "1–2 Minuten lockeres Spielen pro Sitzung reichen aus",
+      tester_note_lead: "ℹ️ Tipp — alle drei Schritte unten sind nötig:",
+      tester_note_step1: "Schritt 1 — Der Gruppe beitreten: Auch wenn „keine Berechtigung zum Anzeigen der Inhalte“ erscheint, gibt es auf der Seite einen Button „Gruppe beitreten“ – tippe darauf, um beizutreten.",
+      tester_note_step2: "Schritt 2 — Tester werden (Opt-in): Tippe auf der Opt-in-Seite, um an der Testphase teilzunehmen. Nur Tester zu werden installiert die App noch nicht.",
+      tester_note_step3: "Schritt 3 — Herunterladen & spielen: Öffne die Download-Seite, installiere die App, öffne sie und spiele kurz – ohne das zählt deine Teilnahme nicht.",
+      tester_note_account: "Verwende für alle Schritte dasselbe Google-Konto.",
+      tester_note_wait: "Wenn Schritt 2 oder 3 „App not available“ anzeigt, warte nach dem Beitritt ein paar Stunden und versuche es erneut.",
+      faq_heading: "FAQ",
+      faq_q1: "Was für ein Spiel ist Liquid Glow?",
+      faq_a1: "Liquid Glow ist ein gemütliches Indie-Sortier-Puzzle aus Japan von PixelRyu — du ordnest fließende, bunte Flüssigkeiten, mit minimalistischer UI und befriedigender Mechanik.",
+      faq_q2: "Ist Liquid Glow kostenlos?",
+      faq_a2: "Ja — Liquid Glow ist kostenlos spielbar.",
+      faq_q3: "Wo kann ich Liquid Glow jetzt spielen?",
+      faq_a3: "Liquid Glow ist jetzt auf Roblox verfügbar, und Android-Spieler können über Google Play an der 14-tägigen geschlossenen Testphase teilnehmen.",
+      faq_q4: "Gibt es eine neue Version?",
+      faq_a4: "Ja — eine neue Version mit einem kosmischen Sternbild-Puzzle ist für iPhone und Roblox verfügbar.",
+      faq_q5: "Welche Sprachen werden unterstützt?",
+      faq_a5: "Das Spiel und diese Seite unterstützen 12 Sprachen: Englisch, Japanisch, Chinesisch, Koreanisch, Hindi, Indonesisch, Deutsch, Französisch, Italienisch, Spanisch, Portugiesisch und Russisch.",
+      more_games_heading: "Weitere Spiele von PixelRyu",
+      mg_1: "Liquid Glow — die neue kosmische Farb-Matching-Version",
+      mg_2: "Sumlings — gemütliches Zahlenpuzzle",
+      mg_3: "Parcel Pals — gemütliches Paketsortier-Puzzle",
+    },
+    fr: {
+      video_heading: "À voir en mouvement",
+      video_classic_label: "Classique — sur Google Play (Android)",
+      video_new_label: "Nouvelle version — iPhone & Roblox",
+      newver_cta: "✨ Nouvelle version sur iPhone & Roblox — un puzzle de constellation cosmique →",
+      title: "Liquid Glow — Puzzle de tri indé venu du Japon",
+      meta_desc: "Liquid Glow — un puzzle de tri cosy de PixelRyu. Rejoignez les 14 jours de test fermé Android.",
+      tagline: "Puzzle de tri indé venu du Japon",
+      legal_divider: "Documents légaux",
+      link_privacy: "Politique de confidentialité",
+      link_terms: "Conditions d'utilisation",
+      back: "← Retour à PixelRyu",
+      link_overview: "Voir l'aperçu du jeu",
+      tester_heading: "Recherche de testeurs Android",
+      tester_android_note: "Android uniquement",
+      tester_intro: "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
+      tester_what_label: "De quoi il s'agit",
+      tester_what: "Un puzzle de tri cosy où tu organises des liquides colorés en mouvement. UI minimaliste, mécaniques satisfaisantes — parfait pour les courtes pauses.",
+      tester_step1_label: "Étape 1 — Rejoindre le groupe de testeurs",
+      tester_step2_label: "Étape 2 — S'inscrire via le Play Store",
+      tester_step3_label: "Étape 3 — Télécharger et jouer",
+      tester_ask_label: "Ce que je demande",
+      tester_ask_keep: "Garder installé pendant les 14 jours complets",
+      tester_ask_launch: "Lancer tous les deux jours (quelques fois suffisent)",
+      tester_ask_minutes: "1 à 2 minutes de jeu décontracté par session suffisent",
+      tester_note_lead: "ℹ️ Astuce — les trois étapes ci-dessous sont nécessaires :",
+      tester_note_step1: "Étape 1 — Rejoindre le groupe : même si « autorisation refusée pour afficher le contenu » s’affiche, un bouton « Rejoindre le groupe » est présent sur la page — appuyez dessus pour rejoindre.",
+      tester_note_step2: "Étape 2 — Devenir testeur (inscription) : sur la page d’inscription, appuyez pour rejoindre le test. S’inscrire seul n’installe pas l’application.",
+      tester_note_step3: "Étape 3 — Télécharger et jouer : ouvrez la page de téléchargement, installez l’application, ouvrez-la et jouez un peu — sans cela, votre participation ne compte pas.",
+      tester_note_account: "Utilisez le même compte Google pour toutes les étapes.",
+      tester_note_wait: "Si l’étape 2 ou 3 affiche « App not available », attendez quelques heures après avoir rejoint, puis réessayez.",
+      faq_heading: "FAQ",
+      faq_q1: "Quel genre de jeu est Liquid Glow ?",
+      faq_a1: "Liquid Glow est un puzzle de tri indé et cosy venu du Japon, créé par PixelRyu — vous organisez des liquides colorés en mouvement, avec une UI minimaliste et des mécaniques satisfaisantes.",
+      faq_q2: "Liquid Glow est-il gratuit ?",
+      faq_a2: "Oui — Liquid Glow est gratuit.",
+      faq_q3: "Où peut-on y jouer dès maintenant ?",
+      faq_a3: "Liquid Glow est disponible dès maintenant sur Roblox, et les joueurs Android peuvent rejoindre les 14 jours de test fermé via Google Play.",
+      faq_q4: "Existe-t-il une nouvelle version ?",
+      faq_a4: "Oui — une nouvelle version avec un puzzle de constellation cosmique est disponible sur iPhone et Roblox.",
+      faq_q5: "Quelles langues sont prises en charge ?",
+      faq_a5: "Le jeu et ce site prennent en charge 12 langues : anglais, japonais, chinois, coréen, hindi, indonésien, allemand, français, italien, espagnol, portugais et russe.",
+      more_games_heading: "Plus de jeux par PixelRyu",
+      mg_1: "Liquid Glow — la nouvelle version cosmique d’association de couleurs",
+      mg_2: "Sumlings — puzzle de chiffres cosy",
+      mg_3: "Parcel Pals — puzzle cosy de tri de colis",
+    },
+    it: {
+      video_heading: "Guardalo in movimento",
+      video_classic_label: "Classico — su Google Play (Android)",
+      video_new_label: "Nuova versione — iPhone e Roblox",
+      newver_cta: "✨ Nuova versione su iPhone & Roblox — un puzzle di costellazioni cosmiche →",
+      title: "Liquid Glow — Puzzle di smistamento indie dal Giappone",
+      meta_desc: "Liquid Glow — un confortevole puzzle di smistamento di PixelRyu. Partecipa al closed test Android di 14 giorni.",
+      tagline: "Puzzle di smistamento indie dal Giappone",
+      legal_divider: "Documenti legali",
+      link_privacy: "Informativa sulla privacy",
+      link_terms: "Termini di servizio",
+      back: "← Torna a PixelRyu",
+      link_overview: "Vedi la panoramica",
+      tester_heading: "Cercasi tester Android",
+      tester_android_note: "Solo Android",
+      tester_intro: "Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.",
+      tester_what_label: "Di cosa si tratta",
+      tester_what: "Un puzzle di smistamento accogliente in cui sistemi liquidi colorati che scorrono. UI minimale, meccaniche soddisfacenti, perfetto per brevi pause.",
+      tester_step1_label: "Passo 1 — Unisciti al gruppo tester",
+      tester_step2_label: "Passo 2 — Opt-in tramite Play Store",
+      tester_step3_label: "Passo 3 — Scarica e gioca all’app",
+      tester_ask_label: "Cosa chiedo",
+      tester_ask_keep: "Tienilo installato per tutti i 14 giorni",
+      tester_ask_launch: "Aprilo ogni paio di giorni (poche volte basta)",
+      tester_ask_minutes: "1–2 minuti di gioco rilassato a sessione vanno bene",
+      tester_note_lead: "ℹ️ Suggerimento — servono tutti e tre i passaggi qui sotto:",
+      tester_note_step1: "Passaggio 1 — Iscriviti al gruppo: anche se compare « non hai l’autorizzazione per visualizzare i contenuti », sulla pagina c’è il pulsante « Iscriviti al gruppo » — toccalo per iscriverti.",
+      tester_note_step2: "Passaggio 2 — Diventa tester (opt-in): nella pagina di opt-in, tocca per partecipare al test. Diventare tester da solo non installa l’app.",
+      tester_note_step3: "Passaggio 3 — Scarica e gioca: apri la pagina di download, installa l’app, aprila e gioca un po’ — senza questo, il tuo test non viene conteggiato.",
+      tester_note_account: "Usa lo stesso account Google per tutti i passaggi.",
+      tester_note_wait: "Se il passaggio 2 o 3 mostra « App not available », attendi qualche ora dopo l’iscrizione e riprova.",
+      faq_heading: "FAQ",
+      faq_q1: "Che tipo di gioco è Liquid Glow?",
+      faq_a1: "Liquid Glow è un accogliente puzzle di smistamento indie dal Giappone, creato da PixelRyu — sistemi liquidi colorati che scorrono, con UI minimale e meccaniche soddisfacenti.",
+      faq_q2: "Liquid Glow è gratuito?",
+      faq_a2: "Sì — Liquid Glow è gratuito.",
+      faq_q3: "Dove si può giocare adesso?",
+      faq_a3: "Liquid Glow è disponibile ora su Roblox, e i giocatori Android possono partecipare al closed test di 14 giorni tramite Google Play.",
+      faq_q4: "Esiste una nuova versione?",
+      faq_a4: "Sì — una nuova versione con un puzzle di costellazioni cosmiche è disponibile su iPhone e Roblox.",
+      faq_q5: "Quali lingue sono supportate?",
+      faq_a5: "Il gioco e questo sito supportano 12 lingue: inglese, giapponese, cinese, coreano, hindi, indonesiano, tedesco, francese, italiano, spagnolo, portoghese e russo.",
+      more_games_heading: "Altri giochi di PixelRyu",
+      mg_1: "Liquid Glow — la nuova versione cosmica di abbinamento colori",
+      mg_2: "Sumlings — accogliente puzzle di numeri",
+      mg_3: "Parcel Pals — accogliente puzzle di smistamento pacchi",
+    },
+    es: {
+      video_heading: "Míralo en movimiento",
+      video_classic_label: "Clásico — en Google Play (Android)",
+      video_new_label: "Nueva versión — iPhone y Roblox",
+      newver_cta: "✨ Nueva versión en iPhone & Roblox — un puzzle de constelaciones cósmico →",
+      title: "Liquid Glow — Puzzle de clasificación indie desde Japón",
+      meta_desc: "Liquid Glow — un acogedor puzzle de clasificación de PixelRyu. Únete a la fase de pruebas cerradas de Android de 14 días.",
+      tagline: "Puzzle de clasificación indie desde Japón",
+      legal_divider: "Documentos legales",
+      link_privacy: "Política de privacidad",
+      link_terms: "Términos del servicio",
+      back: "← Volver a PixelRyu",
+      link_overview: "Ver descripción del juego",
+      tester_heading: "Buscamos testers de Android",
+      tester_android_note: "Solo Android",
+      tester_intro: "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
+      tester_what_label: "De qué se trata",
+      tester_what: "Un acogedor puzzle de clasificación donde ordenas líquidos de colores en movimiento. UI minimalista, mecánica satisfactoria — perfecto para descansos breves.",
+      tester_step1_label: "Paso 1 — Únete al grupo de testers",
+      tester_step2_label: "Paso 2 — Inscríbete vía Play Store",
+      tester_step3_label: "Paso 3 — Descarga y juega la app",
+      tester_ask_label: "Lo que pido",
+      tester_ask_keep: "Mantener instalado los 14 días completos",
+      tester_ask_launch: "Abrir cada par de días (unas pocas veces basta)",
+      tester_ask_minutes: "1-2 minutos de juego casual por sesión es suficiente",
+      tester_note_lead: "ℹ️ Consejo — los tres pasos siguientes son necesarios:",
+      tester_note_step1: "Paso 1 — Únete al grupo: aunque aparezca «no tienes permiso para ver el contenido», en esa página hay un botón «Unirse al grupo»; tócalo para unirte.",
+      tester_note_step2: "Paso 2 — Hazte tester (participa): en la página de participación, toca para unirte a la prueba. Solo participar no instala la app.",
+      tester_note_step3: "Paso 3 — Descarga y juega: abre la página de descarga, instala la app, ábrela y juega un poco; sin esto, tu prueba no cuenta.",
+      tester_note_account: "Usa la misma cuenta de Google en todos los pasos.",
+      tester_note_wait: "Si el paso 2 o 3 muestra «App not available», espera unas horas después de unirte y vuelve a intentarlo.",
+      faq_heading: "Preguntas frecuentes",
+      faq_q1: "¿Qué tipo de juego es Liquid Glow?",
+      faq_a1: "Liquid Glow es un acogedor puzzle de clasificación indie desde Japón, creado por PixelRyu — ordenas líquidos de colores en movimiento, con UI minimalista y mecánica satisfactoria.",
+      faq_q2: "¿Liquid Glow es gratis?",
+      faq_a2: "Sí — Liquid Glow es gratis.",
+      faq_q3: "¿Dónde se puede jugar ahora mismo?",
+      faq_a3: "Liquid Glow ya está disponible en Roblox, y los jugadores de Android pueden unirse a la fase de pruebas cerradas de 14 días vía Google Play.",
+      faq_q4: "¿Hay una nueva versión?",
+      faq_a4: "Sí — una nueva versión con un puzzle de constelaciones cósmico está disponible en iPhone y Roblox.",
+      faq_q5: "¿Qué idiomas admite?",
+      faq_a5: "El juego y este sitio admiten 12 idiomas: inglés, japonés, chino, coreano, hindi, indonesio, alemán, francés, italiano, español, portugués y ruso.",
+      more_games_heading: "Más juegos de PixelRyu",
+      mg_1: "Liquid Glow — la nueva versión cósmica de combinar colores",
+      mg_2: "Sumlings — acogedor puzzle de números",
+      mg_3: "Parcel Pals — acogedor puzzle de clasificación de paquetes",
+    },
+    pt: {
+      video_heading: "Veja em movimento",
+      video_classic_label: "Clássico — no Google Play (Android)",
+      video_new_label: "Nova versão — iPhone e Roblox",
+      newver_cta: "✨ Nova versão no iPhone & Roblox — um puzzle de constelação cósmica →",
+      title: "Liquid Glow — Puzzle de classificação indie do Japão",
+      meta_desc: "Liquid Glow — um puzzle de classificação aconchegante da PixelRyu. Junte-se ao teste fechado Android de 14 dias.",
+      tagline: "Puzzle de classificação indie do Japão",
+      legal_divider: "Documentos legais",
+      link_privacy: "Política de privacidade",
+      link_terms: "Termos de serviço",
+      back: "← Voltar para PixelRyu",
+      link_overview: "Ver visão geral do jogo",
+      tester_heading: "Procuramos testers de Android",
+      tester_android_note: "Apenas Android",
+      tester_intro: "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
+      tester_what_label: "Sobre o jogo",
+      tester_what: "Um puzzle de classificação aconchegante onde você organiza líquidos coloridos. UI minimalista, mecânica satisfatória — perfeito para pausas curtas.",
+      tester_step1_label: "Passo 1 — Entrar no grupo de testers",
+      tester_step2_label: "Passo 2 — Adesão via Play Store",
+      tester_step3_label: "Passo 3 — Baixe e jogue o app",
+      tester_ask_label: "O que peço",
+      tester_ask_keep: "Manter instalado por 14 dias completos",
+      tester_ask_launch: "Abra a cada poucos dias (algumas vezes basta)",
+      tester_ask_minutes: "1-2 minutos de jogo casual por sessão é suficiente",
+      tester_note_lead: "ℹ️ Dica — as três etapas abaixo são necessárias:",
+      tester_note_step1: "Etapa 1 — Entre no grupo: mesmo que apareça “sem permissão para ver o conteúdo”, há um botão “Participar do grupo” na página — toque para entrar.",
+      tester_note_step2: "Etapa 2 — Torne-se tester (opt-in): na página de opt-in, toque para entrar no teste. Apenas virar tester não instala o app.",
+      tester_note_step3: "Etapa 3 — Baixe e jogue: abra a página de download, instale o app, abra e jogue um pouco — sem isso, seu teste não conta.",
+      tester_note_account: "Use a mesma Conta do Google em todas as etapas.",
+      tester_note_wait: "Se a Etapa 2 ou 3 mostrar “App not available”, aguarde algumas horas após participar e tente novamente.",
+      faq_heading: "Perguntas frequentes",
+      faq_q1: "Que tipo de jogo é Liquid Glow?",
+      faq_a1: "Liquid Glow é um aconchegante puzzle de classificação indie do Japão, criado pela PixelRyu — você organiza líquidos coloridos que fluem, com UI minimalista e mecânica satisfatória.",
+      faq_q2: "Liquid Glow é gratuito?",
+      faq_a2: "Sim — Liquid Glow é gratuito para jogar.",
+      faq_q3: "Onde dá para jogar agora?",
+      faq_a3: "Liquid Glow já está disponível no Roblox, e jogadores de Android podem participar do teste fechado de 14 dias via Google Play.",
+      faq_q4: "Existe uma nova versão?",
+      faq_a4: "Sim — uma nova versão com um puzzle de constelação cósmica está disponível no iPhone e no Roblox.",
+      faq_q5: "Quais idiomas são suportados?",
+      faq_a5: "O jogo e este site suportam 12 idiomas: inglês, japonês, chinês, coreano, híndi, indonésio, alemão, francês, italiano, espanhol, português e russo.",
+      more_games_heading: "Mais jogos da PixelRyu",
+      mg_1: "Liquid Glow — a nova versão cósmica de combinar cores",
+      mg_2: "Sumlings — aconchegante puzzle de números",
+      mg_3: "Parcel Pals — aconchegante puzzle de separação de encomendas",
+    },
+    ru: {
+      video_heading: "Посмотрите в движении",
+      video_classic_label: "Классика — в Google Play (Android)",
+      video_new_label: "Новая версия — iPhone и Roblox",
+      newver_cta: "✨ Новая версия на iPhone & Roblox — космическая головоломка-созвездие →",
+      title: "Liquid Glow — Инди-сортировочная головоломка из Японии",
+      meta_desc: "Liquid Glow — уютная сортировочная головоломка от PixelRyu. Присоединяйтесь к 14-дневному закрытому Android-тестированию.",
+      tagline: "Инди-сортировочная головоломка из Японии",
+      legal_divider: "Правовые документы",
+      link_privacy: "Политика конфиденциальности",
+      link_terms: "Условия использования",
+      back: "← Назад к PixelRyu",
+      link_overview: "Посмотреть об игре",
+      tester_heading: "Поиск Android-тестеров",
+      tester_android_note: "Только для Android",
+      tester_intro: "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",
+      tester_what_label: "О чём игра",
+      tester_what: "Уютная сортировочная головоломка, где вы упорядочиваете переливающиеся цветные жидкости. Минималистичный интерфейс, приятная механика — идеально для коротких пауз.",
+      tester_step1_label: "Шаг 1 — Вступить в группу тестеров",
+      tester_step2_label: "Шаг 2 — Подписаться через Play Store",
+      tester_step3_label: "Шаг 3 — Скачать и поиграть",
+      tester_ask_label: "О чём я прошу",
+      tester_ask_keep: "Не удалять приложение все 14 дней",
+      tester_ask_launch: "Запускайте раз в пару дней (нескольких раз достаточно)",
+      tester_ask_minutes: "1–2 минуты неспешной игры за сессию вполне достаточно",
+      tester_note_lead: "ℹ️ Совет — нужны все три шага ниже:",
+      tester_note_step1: "Шаг 1 — Вступите в группу: даже если показано «нет прав для просмотра содержимого», на странице есть кнопка «Присоединиться к группе» — нажмите её, чтобы вступить.",
+      tester_note_step2: "Шаг 2 — Станьте тестером (подтвердите участие): на странице подтверждения нажмите, чтобы присоединиться к тесту. Само подтверждение участия не устанавливает приложение.",
+      tester_note_step3: "Шаг 3 — Скачайте и поиграйте: откройте страницу загрузки, установите приложение, откройте его и немного поиграйте — без этого ваше участие не засчитывается.",
+      tester_note_account: "Используйте один и тот же аккаунт Google для всех шагов.",
+      tester_note_wait: "Если на шаге 2 или 3 появляется «App not available», подождите несколько часов после вступления и попробуйте снова.",
+      faq_heading: "Частые вопросы",
+      faq_q1: "Что за игра Liquid Glow?",
+      faq_a1: "Liquid Glow — уютная инди-сортировочная головоломка из Японии от PixelRyu: вы упорядочиваете переливающиеся цветные жидкости, минималистичный интерфейс и приятная механика.",
+      faq_q2: "Liquid Glow бесплатна?",
+      faq_a2: "Да — в Liquid Glow можно играть бесплатно.",
+      faq_q3: "Где можно поиграть прямо сейчас?",
+      faq_a3: "Liquid Glow уже доступна на Roblox, а игроки на Android могут присоединиться к 14-дневному закрытому тестированию через Google Play.",
+      faq_q4: "Есть ли новая версия?",
+      faq_a4: "Да — новая версия с космической головоломкой-созвездием доступна на iPhone и Roblox.",
+      faq_q5: "Какие языки поддерживаются?",
+      faq_a5: "Игра и этот сайт поддерживают 12 языков: английский, японский, китайский, корейский, хинди, индонезийский, немецкий, французский, итальянский, испанский, португальский и русский.",
+      more_games_heading: "Другие игры PixelRyu",
+      mg_1: "Liquid Glow — новая космическая версия с подбором цветов",
+      mg_2: "Sumlings — уютная числовая головоломка",
+      mg_3: "Parcel Pals — уютная головоломка о сортировке посылок",
+    }
+  };
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
+
+  function detectLang() {
+    try {
+      const stored = localStorage.getItem(LANG_STORAGE_KEY);
+      if (stored && i18n[stored]) return stored;
+    } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang, persist) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(opt);
+    }
+    // Persist on init too — guarantees subsequent pages pick up the same language via the shared localStorage key.
+    setLang('it', true);
+    sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/liquid-glow/' : 'https://pixelryu.github.io/liquid-glow/' + v + '/';});
+  })();
+</script>
+<script src="https://pixelryu.github.io/breadcrumb.js?v=20260602202548" defer></script>
+</body>
+</html>

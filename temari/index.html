@@ -87,6 +87,19 @@
 </style>
 <!-- SEO/LLMO start (managed) -->
 <link rel="canonical" href="https://pixelryu.github.io/temari/">
+<link rel="alternate" hreflang="en" href="https://pixelryu.github.io/temari/">
+<link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/temari/ja/">
+<link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/temari/zh/">
+<link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/temari/ko/">
+<link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/temari/hi/">
+<link rel="alternate" hreflang="id" href="https://pixelryu.github.io/temari/id/">
+<link rel="alternate" hreflang="de" href="https://pixelryu.github.io/temari/de/">
+<link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/temari/fr/">
+<link rel="alternate" hreflang="it" href="https://pixelryu.github.io/temari/it/">
+<link rel="alternate" hreflang="es" href="https://pixelryu.github.io/temari/es/">
+<link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/temari/pt/">
+<link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/temari/ru/">
+<link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/temari/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="PixelRyu">
 <meta name="publisher" content="PixelRyu">
@@ -867,7 +880,7 @@
     }
     sel.value = lang;
     applyLang(lang);
-    sel.addEventListener('change', e=>applyLang(e.target.value));
+    sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/temari/' : 'https://pixelryu.github.io/temari/' + v + '/';});
   })();
 </script>
 <script src="../breadcrumb.js?v=20260607083231" defer></script>

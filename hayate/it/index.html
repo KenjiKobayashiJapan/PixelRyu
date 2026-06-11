@@ -1,0 +1,876 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5MH53Z8LM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M5MH53Z8LM');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">HAYATE — Speed-racer con katana</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="HAYATE — uno speed-racer con katana in 3D di PixelRyu e seguito di ISSEN. Sfreccia tra autostrada, spazio, abissi e cielo; schiva ciò che ti piomba addosso o lancia la tua katana a ricerca per tagliarlo netto.">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: radial-gradient(ellipse at top, #12203a 0%, #0a1020 50%, #02040c 100%);
+    color: #dbe6f5;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    max-width: 580px;
+    width: 100%;
+    padding: 80px 32px;
+    text-align: center;
+    position: relative;
+  }
+  .lang-switch { position: absolute; top: 24px; right: 24px; }
+  .lang-switch select {
+    background: rgba(51, 217, 255, 0.06);
+    color: #dbe6f5;
+    border: 1px solid rgba(51, 217, 255, 0.20);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .lang-switch select:hover { background: rgba(51, 217, 255, 0.12); border-color: rgba(51, 217, 255, 0.50); }
+  .lang-switch select option { background: #0a1020; color: #dbe6f5; }
+  .brand-icon {
+    width: 116px; height: 116px; border-radius: 26px; display: block; margin: 0 auto 22px;
+    box-shadow: 0 8px 30px rgba(51, 217, 255, 0.18), 0 0 0 1px rgba(51, 217, 255, 0.18);
+  }
+  .tagline { font-size: 14px; color: #7e8aa6; margin-bottom: 10px; text-transform: uppercase; letter-spacing: 2px; }
+  h1 { font-size: 58px; margin: 0; color: #f3f8ff; font-weight: 800; letter-spacing: 4px; }
+  h1 .kanji { display: block; font-size: 0.40em; letter-spacing: 0.34em; color: #33d9ff; font-weight: 700; margin-top: 8px; padding-left: 0.34em; }
+  .subtitle { font-size: 14px; color: #7e8aa6; margin: 14px 0 32px; text-transform: uppercase; letter-spacing: 2px; }
+  .promo-video {
+    display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; margin: 8px 0 28px;
+    background: #000; box-shadow: 0 6px 24px rgba(51, 217, 255, 0.20);
+  }
+  .overview-link {
+    display: block;
+    background: #33d9ff;
+    color: #04121a;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 18px 22px;
+    border-radius: 14px;
+    margin: 4px 0 24px;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 22px rgba(51, 217, 255, 0.30);
+  }
+  .overview-link:hover { background: #5fe1ff; transform: translateY(-1px); }
+  .legal-divider { font-size: 14px; color: #6c7d9d; text-transform: uppercase; letter-spacing: 2px; margin: 8px 0 16px; }
+  .links { list-style: none; padding: 0; margin: 0; }
+  .links li {
+    background: rgba(51, 217, 255, 0.05); border: 1px solid rgba(51, 217, 255, 0.20);
+    border-radius: 14px; margin-bottom: 14px; transition: all 0.25s ease;
+  }
+  .links li:hover { background: rgba(51, 217, 255, 0.12); border-color: rgba(51, 217, 255, 0.50); }
+  .links a { color: #33d9ff; text-decoration: none; font-size: 18px; font-weight: 600; display: block; padding: 22px 24px; }
+  .back { display: inline-block; margin-top: 48px; color: #6c7d9d; text-decoration: none; font-size: 14px; }
+  .back:hover { color: #9fc6ff; }
+  @media (max-width: 600px) { .lang-switch { top: 16px; right: 16px; } h1 { font-size: 48px; } .brand-icon { width: 104px; height: 104px; border-radius: 24px; } }
+  .social-heading{font-size:13px;color:#7e8aa6;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(51,217,255,0.06);border:1px solid rgba(51,217,255,0.20);color:#7e8aa6;transition:all .25s ease;}
+  .social a:hover{background:rgba(51,217,255,0.12);border-color:rgba(51,217,255,0.45);color:#33d9ff;transform:translateY(-2px);}
+  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+  .hero-badges { display:flex; justify-content:center; align-items:center; flex-wrap:wrap; gap:12px; margin:4px 0 26px; }
+  .hero-badges a { display:inline-block; line-height:0; transition: transform .2s ease, opacity .2s ease; }
+  .hero-badges a:hover { transform: translateY(-2px); opacity:.85; }
+  .hero-badges img { display:block; height:51px; width:auto; }
+  .hero-badges svg { display:block; }
+  .tester-card-base { background: rgba(51,217,255,0.05); border:1px solid rgba(51,217,255,0.22); border-radius:16px; padding:24px 24px 28px; margin:4px 0 34px; text-align:left; box-shadow: 0 8px 24px rgba(51,217,255,0.10); }
+  .tester-heading { font-size:13px; color:#33d9ff; text-transform:uppercase; letter-spacing:2px; margin:0 0 4px; font-weight:700; text-align:center; }
+  .tester-android-note { display:block; font-size:11px; color:#7e8aa6; text-transform:none; letter-spacing:0; font-weight:400; margin-bottom:16px; text-align:center; }
+  .tester-card-base p { font-size:14px; line-height:1.65; color:#c4d2e8; margin:12px 0; }
+  .tester-section-label { font-size:13px; font-weight:700; color:#9fc6ff; margin:20px 0 6px; }
+  .tester-step { display:block; background: rgba(51,217,255,0.10); border:1px solid rgba(51,217,255,0.30); border-radius:10px; padding:12px 16px; margin:10px 0; color:#33d9ff; text-decoration:none; font-weight:600; font-size:14px; transition: all 0.2s ease; }
+  .tester-step:hover { background: rgba(51,217,255,0.20); border-color: rgba(51,217,255,0.60); }
+  .tester-card-base ul { margin:6px 0 0; padding-left:22px; color:#c4d2e8; font-size:14px; line-height:1.7; }
+</style>
+<!-- SEO/LLMO start (managed) -->
+<link rel="canonical" href="https://pixelryu.github.io/hayate/it/">
+<link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hayate/">
+<link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/hayate/ja/">
+<link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/hayate/zh/">
+<link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/hayate/ko/">
+<link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/hayate/hi/">
+<link rel="alternate" hreflang="id" href="https://pixelryu.github.io/hayate/id/">
+<link rel="alternate" hreflang="de" href="https://pixelryu.github.io/hayate/de/">
+<link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/hayate/fr/">
+<link rel="alternate" hreflang="it" href="https://pixelryu.github.io/hayate/it/">
+<link rel="alternate" hreflang="es" href="https://pixelryu.github.io/hayate/es/">
+<link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/hayate/pt/">
+<link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/hayate/ru/">
+<link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/hayate/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="PixelRyu">
+<meta name="publisher" content="PixelRyu">
+<meta name="keywords" content="HAYATE, katana, samurai, speed racer, slash, dodge, neon, cyberpunk, 3D, arcade, ISSEN, PixelRyu, indie game, Android, iOS">
+<meta name="theme-color" content="#0a1020">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/hayate/icon.png">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/hayate/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PixelRyu">
+<meta property="og:title" content="HAYATE — Speed-racer con katana">
+<meta property="og:description" content="HAYATE — uno speed-racer con katana in 3D di PixelRyu e seguito di ISSEN. Sfreccia tra autostrada, spazio, abissi e cielo; schiva ciò che ti piomba addosso o lancia la tua katana a ricerca per tagliarlo netto.">
+<meta property="og:url" content="https://pixelryu.github.io/hayate/it/">
+<meta property="og:image" content="https://pixelryu.github.io/hayate/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="HAYATE — Speed-racer con katana">
+<meta property="og:locale" content="it_IT">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="HAYATE — Speed-racer con katana">
+<meta name="twitter:description" content="HAYATE — uno speed-racer con katana in 3D di PixelRyu e seguito di ISSEN. Sfreccia tra autostrada, spazio, abissi e cielo; schiva ciò che ti piomba addosso o lancia la tua katana a ricerca per tagliarlo netto.">
+<meta name="twitter:image" content="https://pixelryu.github.io/hayate/og.png">
+<meta name="twitter:image:alt" content="HAYATE — Speed-racer con katana">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"HAYATE","genre":"Racing, Action","alternateName":"疾風","url":"https://pixelryu.github.io/hayate/it/","image":"https://pixelryu.github.io/hayate/icon.png","description":"HAYATE — uno speed-racer con katana in 3D di PixelRyu e seguito di ISSEN. Sfreccia tra autostrada, spazio, abissi e cielo; schiva ciò che ti piomba addosso o lancia la tua katana a ricerca per tagliarlo netto.","applicationCategory":"GameApplication","operatingSystem":"iOS, Android, Roblox","author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"sameAs":["https://apps.apple.com/app/id6775771603","https://play.google.com/store/apps/details?id=com.pixelryu.hayate","https://www.roblox.com/games/128048970536729/HAYATE-Katana-Racer"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/it/"},{"@type":"ListItem","position":2,"name":"HAYATE","item":"https://pixelryu.github.io/hayate/it/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Che tipo di gioco è HAYATE?","acceptedAnswer":{"@type":"Answer","text":"HAYATE è un gioco d'azione speed-racing con katana in 3D di PixelRyu e il seguito di ISSEN. Sfreccia ad alta velocità, schiva ciò che ti piomba addosso o lancia la tua katana a ricerca per tagliarlo netto."}},{"@type":"Question","name":"HAYATE è gratuito?","acceptedAnswer":{"@type":"Answer","text":"Sì — HAYATE è gratuito."}},{"@type":"Question","name":"Dove si può giocare a HAYATE adesso?","acceptedAnswer":{"@type":"Answer","text":"HAYATE è disponibile su App Store e su Roblox. Su Android è in una fase di closed test di 14 giorni — puoi unirti come tester tramite Google Play."}},{"@type":"Question","name":"Quali scenari si attraversano in HAYATE?","acceptedAnswer":{"@type":"Answer","text":"Sfrecci tra autostrada, spazio, abissi e cielo, schivando o tagliando ciò che ti piomba addosso."}},{"@type":"Question","name":"Quali lingue supporta HAYATE?","acceptedAnswer":{"@type":"Answer","text":"Il gioco e questo sito supportano 12 lingue: inglese, giapponese, cinese, coreano, hindi, indonesiano, tedesco, francese, italiano, spagnolo, portoghese e russo."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"HAYATE — Official Trailer","description":"Official trailer for HAYATE — a 3D katana speed-racer by PixelRyu, and a sequel to ISSEN. Race the highway, space, the deep and the sky; dodge what flies at you, or throw your homing katana to slice it clean.","thumbnailUrl":"https://pixelryu.github.io/hayate/og.png","uploadDate":"2026-06-01","contentUrl":"https://pixelryu.github.io/hayate/promotion_H_trailer_en.mp4?v=20260601182255"}</script>
+<!-- SEO/LLMO end -->
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch">
+    <select id="lang-select" aria-label="Language"></select>
+  </div>
+  <img src="https://pixelryu.github.io/hayate/icon.png" alt="HAYATE" class="brand-icon">
+  <div class="tagline" data-i18n="tagline">Corri veloce. Taglia netto. Arriva primo.</div>
+  <h1>HAYATE<span class="kanji">疾風</span></h1>
+  <div class="subtitle" data-i18n="subtitle">Speed-racer con katana in 3D</div>
+
+  <video id="promo" class="promo-video" autoplay loop muted playsinline controls preload="auto">
+    <source src="https://pixelryu.github.io/hayate/promotion_H_trailer_en.mp4?v=20260601182255" type="video/mp4">
+  </video>
+
+  <section class="hero-badges" aria-label="Get the game">
+    <a href="https://apps.apple.com/app/id6775771603" target="_blank" rel="noopener" aria-label="Download HAYATE on the App Store">
+      <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+        <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+          <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+        </svg>
+        <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+        <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+      </svg>
+    </a>
+    <a href="#tester-heading" aria-label="Join HAYATE Android testers">
+      <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+    </a>
+    <a href="https://www.roblox.com/games/128048970536729/HAYATE-Katana-Racer" target="_blank" rel="noopener" aria-label="Play HAYATE on Roblox">
+      <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+        <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+          <g transform="rotate(13 13 13)">
+            <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+            <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+          </g>
+        </svg>
+        <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+        <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+      </svg>
+    </a>
+  </section>
+
+  <section class="tester-card tester-card-base" aria-labelledby="tester-heading">
+    <div id="tester-heading" class="tester-heading">
+      🎁 <span data-i18n="tester_heading">Cercasi tester Android</span>
+      <span class="tester-android-note">📱 <span data-i18n="tester_android_note">Solo Android</span></span>
+    </div>
+    <p data-i18n="tester_intro">Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.</p>
+
+    <div class="tester-section-label">📦 <span data-i18n="tester_what_label">Di cosa si tratta</span></div>
+    <p data-i18n="tester_what">HAYATE — uno speed-racer con katana in 3D di PixelRyu e seguito di ISSEN. Sfreccia tra autostrada, spazio, abissi e cielo; schiva ciò che ti piomba addosso o lancia la tua katana a ricerca per tagliarlo netto.</p>
+
+    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">
+      🔗 <span data-i18n="tester_step1_label">Passo 1 — Unisciti al gruppo tester</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.hayate" target="_blank" rel="noopener">
+      📱 <span data-i18n="tester_step2_label">Passo 2 — Opt-in tramite Play Store</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/store/apps/details?id=com.pixelryu.hayate" target="_blank" rel="noopener">
+      ⬇️ <span data-i18n="tester_step3_label">Passo 3 — Scarica e gioca all’app</span>
+    </a>
+
+    <div class="tester-section-label">📌 <span data-i18n="tester_ask_label">Cosa chiedo</span></div>
+    <ul>
+      <li data-i18n="tester_ask_keep">Tienilo installato per tutti i 14 giorni</li>
+      <li data-i18n="tester_ask_launch">Aprilo ogni paio di giorni (poche volte basta)</li>
+      <li data-i18n="tester_ask_minutes">Bastano un paio di minuti di gioco a sessione</li>
+    </ul>
+    <p class="tester-note" data-i18n="tester_note_lead">ℹ️ Suggerimento — servono tutti e tre i passaggi qui sotto:</p>
+    <ul class="tester-note-list">
+      <li data-i18n="tester_note_step1">Passaggio 1 — Iscriviti al gruppo: anche se compare « non hai l’autorizzazione per visualizzare i contenuti », sulla pagina c’è il pulsante « Iscriviti al gruppo » — toccalo per iscriverti.</li>
+      <li data-i18n="tester_note_step2">Passaggio 2 — Diventa tester (opt-in): nella pagina di opt-in, tocca per partecipare al test. Diventare tester da solo non installa l’app.</li>
+      <li data-i18n="tester_note_step3">Passaggio 3 — Scarica e gioca: apri la pagina di download, installa l’app, aprila e gioca un po’ — senza questo, il tuo test non viene conteggiato.</li>
+      <li data-i18n="tester_note_account">Usa lo stesso account Google per tutti i passaggi.</li>
+      <li data-i18n="tester_note_wait">Se il passaggio 2 o 3 mostra « App not available », attendi qualche ora dopo l’iscrizione e riprova.</li>
+    </ul>
+  </section>
+
+  <a href="https://pixelryu.github.io/hayate/overview.html" class="overview-link">🗡️ <span data-i18n="link_overview">Vedi la panoramica</span> →</a>
+
+  <div class="legal-divider" data-i18n="legal_divider">Documenti legali</div>
+  <ul class="links">
+    <li><a href="https://pixelryu.github.io/hayate/privacy_policy.html" data-i18n="link_privacy">Informativa sulla privacy</a></li>
+    <li><a href="https://pixelryu.github.io/hayate/terms_of_service.html" data-i18n="link_terms">Termini di servizio</a></li>
+  </ul>
+  <h2 class="social-heading" data-i18n="faq_heading">FAQ</h2>
+  <section class="tester-card tester-card-base" id="faq" style="text-align:left;">
+    <p><strong data-i18n="faq_q1">Che tipo di gioco è HAYATE?</strong></p>
+    <p data-i18n="faq_a1">HAYATE è un gioco d'azione speed-racing con katana in 3D di PixelRyu e il seguito di ISSEN. Sfreccia ad alta velocità, schiva ciò che ti piomba addosso o lancia la tua katana a ricerca per tagliarlo netto.</p>
+    <p><strong data-i18n="faq_q2">HAYATE è gratuito?</strong></p>
+    <p data-i18n="faq_a2">Sì — HAYATE è gratuito.</p>
+    <p><strong data-i18n="faq_q3">Dove si può giocare a HAYATE adesso?</strong></p>
+    <p data-i18n="faq_a3">HAYATE è disponibile su App Store e su Roblox. Su Android è in una fase di closed test di 14 giorni — puoi unirti come tester tramite Google Play.</p>
+    <p><strong data-i18n="faq_q4">Quali scenari si attraversano in HAYATE?</strong></p>
+    <p data-i18n="faq_a4">Sfrecci tra autostrada, spazio, abissi e cielo, schivando o tagliando ciò che ti piomba addosso.</p>
+    <p><strong data-i18n="faq_q5">Quali lingue supporta HAYATE?</strong></p>
+    <p data-i18n="faq_a5">Il gioco e questo sito supportano 12 lingue: inglese, giapponese, cinese, coreano, hindi, indonesiano, tedesco, francese, italiano, spagnolo, portoghese e russo.</p>
+  </section>
+  <h2 class="social-heading" data-i18n="more_games_heading">Altri giochi di PixelRyu</h2>
+  <ul class="links">
+    <li><a href="https://pixelryu.github.io/issen/it/"><span data-i18n="mg_1">ISSEN — azione di tempismo iaido samurai</span></a></li>
+    <li><a href="https://pixelryu.github.io/temari/it/"><span data-i18n="mg_2">TEMARI — breakout con paddle in prima persona</span></a></li>
+    <li><a href="https://pixelryu.github.io/hotaru/it/"><span data-i18n="mg_3">HOTARU — walking sim horror giapponese</span></a></li>
+  </ul>
+  <a href="https://pixelryu.github.io/it/" class="back" data-i18n="back">← Torna a PixelRyu</a>
+  <h2 class="social-heading">Follow</h2>
+  <div class="social">
+    <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note"><svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+    <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+      "en": {
+            "title": "HAYATE — Katana Speed-Racer",
+            "meta_desc": "HAYATE — a 3D katana speed-racer by PixelRyu, and a sequel to ISSEN. Race the highway, space, the deep and the sky; dodge what flies at you, or throw your homing katana to slice it clean.",
+            "tagline": "Ride fast. Slice clean. Finish first.",
+            "subtitle": "3D Katana Speed-Racer",
+            "legal_divider": "Legal Documents",
+            "link_overview": "View Game Overview",
+            "link_privacy": "Privacy Policy",
+            "link_terms": "Terms of Service",
+            "back": "← PixelRyu",
+            "tester_heading": "Android Tester Recruitment",
+            "tester_android_note": "Android only",
+            "tester_intro": "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
+            "tester_what_label": "What it is",
+            "tester_what": "HAYATE — a 3D katana speed-racer by PixelRyu, and a sequel to ISSEN. Race the highway, space, the deep and the sky; dodge what flies at you, or throw your homing katana to slice it clean.",
+            "tester_step1_label": "Step 1 — Join the tester group",
+            "tester_step2_label": "Step 2 — Opt-in via Play Store",
+            "tester_step3_label": "Step 3 — Download & play the app",
+            "tester_ask_label": "What I'm asking for",
+            "tester_ask_keep": "Keep installed for the full 14 days",
+            "tester_ask_launch": "Launch every couple of days (a few times is enough)",
+            "tester_ask_minutes": "A minute or two of play per session is plenty",
+            "tester_note_lead": "ℹ️ Tip — all three steps below are required:",
+            "tester_note_step1": "Step 1 — Join the group: even if you see “no permission to view content”, there’s a “Join group” button on that page — tap it to join.",
+            "tester_note_step2": "Step 2 — Become a tester (opt-in): on the opt-in page, tap to join the test. Becoming a tester alone does not install the app.",
+            "tester_note_step3": "Step 3 — Download & play: open the download page, install the app, launch it and play a little — without this, your testing doesn’t count.",
+            "tester_note_account": "Use the same Google account for all steps.",
+            "tester_note_wait": "If Step 2 or 3 shows “App not available”, wait a few hours after joining and try again.",
+            "faq_heading": "FAQ",
+            "faq_q1": "What kind of game is HAYATE?",
+            "faq_a1": "HAYATE is a 3D katana speed-racing action game by PixelRyu, and a sequel to ISSEN. You ride at high speed and dodge what flies at you, or throw your homing katana to slice it clean.",
+            "faq_q2": "Is HAYATE free to play?",
+            "faq_a2": "Yes — HAYATE is free to play.",
+            "faq_q3": "Where can I play HAYATE right now?",
+            "faq_a3": "HAYATE is available on the App Store and on Roblox. On Android it is in a 14-day closed testing phase — you can join as a tester via Google Play.",
+            "faq_q4": "What stages do you race through in HAYATE?",
+            "faq_a4": "You race the highway, space, the deep and the sky, dodging or slicing whatever flies at you.",
+            "faq_q5": "What languages does HAYATE support?",
+            "faq_a5": "The game and this site support 12 languages: English, Japanese, Chinese, Korean, Hindi, Indonesian, German, French, Italian, Spanish, Portuguese, and Russian.",
+            "more_games_heading": "More games by PixelRyu",
+            "mg_1": "ISSEN — samurai iaido timing action",
+            "mg_2": "TEMARI — first-person paddle breakout",
+            "mg_3": "HOTARU — Japanese horror walking sim"
+      },
+      "ja": {
+            "title": "HAYATE — 刀スピードレーサー",
+            "meta_desc": "HAYATE — PixelRyu が贈る 3D 刀スピードレーサー、そして ISSEN の続編。ハイウェイ、宇宙、深海、大空を駆け抜けろ。迫りくる障害をかわすか、追尾する刀を投げて一刀両断に。",
+            "tagline": "疾走せよ。斬り抜けろ。誰よりも先にゴールへ。",
+            "subtitle": "3D 刀スピードレーサー",
+            "legal_divider": "規約類",
+            "link_overview": "ゲーム概要を見る",
+            "link_privacy": "プライバシーポリシー",
+            "link_terms": "利用規約",
+            "back": "← PixelRyu へ戻る",
+            "tester_heading": "Android テスター募集中",
+            "tester_android_note": "Android 専用",
+            "tester_intro": "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
+            "tester_what_label": "ゲーム内容",
+            "tester_what": "HAYATE — PixelRyu が贈る 3D 刀スピードレーサー、そして ISSEN の続編。ハイウェイ、宇宙、深海、大空を駆け抜けろ。迫りくる障害をかわすか、追尾する刀を投げて一刀両断に。",
+            "tester_step1_label": "ステップ 1 — テスターグループに参加",
+            "tester_step2_label": "ステップ 2 — Play ストアでオプトイン",
+            "tester_step3_label": "ステップ 3 — アプリをダウンロードしてプレイ",
+            "tester_ask_label": "お願いしたいこと",
+            "tester_ask_keep": "14 日間アンインストールせずに保持",
+            "tester_ask_launch": "数日に一度起動 (合計数回で OK)",
+            "tester_ask_minutes": "1 回 1〜2 分の軽いプレイで大丈夫",
+            "tester_note_lead": "ℹ️ ヒント — 下記の3つのステップすべてが必要です:",
+            "tester_note_step1": "ステップ1 — グループに参加: 「閲覧権限がありません」と表示されても、その画面に「グループに参加」ボタンがあるので押して参加してください。",
+            "tester_note_step2": "ステップ2 — テスターになる（オプトイン）: オプトイン画面でテストに参加してください。テスターになっただけではアプリはインストールされません。",
+            "tester_note_step3": "ステップ3 — ダウンロードしてプレイ: ダウンロードページを開いてアプリをインストールし、起動して少し遊んでください。これをしないとテストにカウントされません。",
+            "tester_note_account": "すべてのステップで同じ Google アカウントをお使いください。",
+            "tester_note_wait": "ステップ2または3で「App not available」と表示されるときは、参加から数時間おいて再度お試しください。",
+            "faq_heading": "よくある質問",
+            "faq_q1": "HAYATE はどんなゲームですか？",
+            "faq_a1": "HAYATE は PixelRyu が贈る 3D 刀スピードレーサーのアクションゲームで、ISSEN の続編です。高速で駆け抜けながら、迫りくる障害をかわすか、追尾する刀を投げて一刀両断にします。",
+            "faq_q2": "HAYATE は無料でプレイできますか？",
+            "faq_a2": "はい。HAYATE は無料でプレイできます。",
+            "faq_q3": "HAYATE は今どこでプレイできますか？",
+            "faq_a3": "App Store と Roblox で配信中です。Android は 14 日間のクローズドテスト中で、Google Play からテスターとして参加できます。",
+            "faq_q4": "HAYATE ではどんなステージを走りますか？",
+            "faq_a4": "ハイウェイ、宇宙、深海、大空を駆け抜け、迫りくるものをかわすか斬り捨てます。",
+            "faq_q5": "HAYATE は何語に対応していますか？",
+            "faq_a5": "ゲームとこのサイトは 12 言語に対応しています: 英語、日本語、中国語、韓国語、ヒンディー語、インドネシア語、ドイツ語、フランス語、イタリア語、スペイン語、ポルトガル語、ロシア語。",
+            "more_games_heading": "PixelRyu のほかのゲーム",
+            "mg_1": "ISSEN — 侍の居合タイミングアクション",
+            "mg_2": "TEMARI — 一人称パドルブロック崩し",
+            "mg_3": "HOTARU — 和風ホラーウォーキングシム"
+      },
+      "zh": {
+            "title": "HAYATE — 武士刀竞速",
+            "meta_desc": "HAYATE——PixelRyu 打造的 3D 武士刀竞速游戏，ISSEN 的续作。驰骋公路、太空、深海与天际；躲开迎面飞来的一切，或掷出你的追踪武士刀将其利落斩断。",
+            "tagline": "极速飞驰，利落斩落，率先冲线。",
+            "subtitle": "3D 武士刀竞速",
+            "legal_divider": "法律文件",
+            "link_overview": "查看游戏简介",
+            "link_privacy": "隐私政策",
+            "link_terms": "服务条款",
+            "back": "← 返回 PixelRyu",
+            "tester_heading": "招募 Android 测试者",
+            "tester_android_note": "仅限 Android",
+            "tester_intro": "我是一名独立开发者，正在为期 14 天的封闭测试招募积极的 Android 测试者。",
+            "tester_what_label": "游戏简介",
+            "tester_what": "HAYATE——PixelRyu 打造的 3D 武士刀竞速游戏，ISSEN 的续作。驰骋公路、太空、深海与天际；躲开迎面飞来的一切，或掷出你的追踪武士刀将其利落斩断。",
+            "tester_step1_label": "第一步 — 加入测试者群组",
+            "tester_step2_label": "第二步 — 通过 Play 商店加入测试",
+            "tester_step3_label": "第三步 — 下载并试玩应用",
+            "tester_ask_label": "我希望你能做到",
+            "tester_ask_keep": "完整保留 14 天不卸载",
+            "tester_ask_launch": "每隔几天启动一次（几次即可）",
+            "tester_ask_minutes": "每次玩一两分钟就够了",
+            "tester_note_lead": "ℹ️ 提示 — 以下三个步骤都必须完成：",
+            "tester_note_step1": "第一步 — 加入群组：即使显示“无权限查看内容”，该页面上也有“加入群组”按钮，请点击加入。",
+            "tester_note_step2": "第二步 — 成为测试者（加入测试）：在加入测试页面点击加入测试。仅成为测试者并不会安装应用。",
+            "tester_note_step3": "第三步 — 下载并试玩：打开下载页面安装应用，然后启动应用并稍微试玩。否则你的测试不会被计入。",
+            "tester_note_account": "所有步骤请使用同一个 Google 账号。",
+            "tester_note_wait": "如果第二步或第三步显示“App not available”，请在加入后等待几小时再试。",
+            "faq_heading": "常见问题",
+            "faq_q1": "HAYATE 是什么类型的游戏？",
+            "faq_a1": "HAYATE 是 PixelRyu 打造的 3D 武士刀竞速动作游戏，也是 ISSEN 的续作。高速驰骋之中，躲开迎面飞来的一切，或掷出追踪武士刀将其利落斩断。",
+            "faq_q2": "HAYATE 是免费的吗？",
+            "faq_a2": "是的，HAYATE 可以免费游玩。",
+            "faq_q3": "现在可以在哪里玩 HAYATE？",
+            "faq_a3": "HAYATE 已在 App Store 和 Roblox 上线。Android 版正处于为期 14 天的封闭测试阶段，可通过 Google Play 加入测试。",
+            "faq_q4": "在 HAYATE 中会驰骋哪些场景？",
+            "faq_a4": "你将驰骋公路、太空、深海与天际，躲开或斩断迎面飞来的一切。",
+            "faq_q5": "HAYATE 支持哪些语言？",
+            "faq_a5": "游戏和本网站支持 12 种语言：英语、日语、中文、韩语、印地语、印尼语、德语、法语、意大利语、西班牙语、葡萄牙语和俄语。",
+            "more_games_heading": "PixelRyu 的更多游戏",
+            "mg_1": "ISSEN — 武士居合时机动作",
+            "mg_2": "TEMARI — 第一人称球拍打砖块",
+            "mg_3": "HOTARU — 日式恐怖步行模拟"
+      },
+      "ko": {
+            "title": "HAYATE — 카타나 스피드 레이서",
+            "meta_desc": "HAYATE — PixelRyu가 만든 3D 카타나 스피드 레이서이자 ISSEN의 속편. 고속도로, 우주, 심해, 하늘을 질주하며 날아오는 것을 피하거나, 유도 카타나를 던져 깔끔하게 베어내라.",
+            "tagline": "질주하라. 깔끔하게 베어라. 1등으로 골인하라.",
+            "subtitle": "3D 카타나 스피드 레이서",
+            "legal_divider": "법적 고지",
+            "link_overview": "게임 소개 보기",
+            "link_privacy": "개인정보 처리방침",
+            "link_terms": "서비스 이용약관",
+            "back": "← PixelRyu로 돌아가기",
+            "tester_heading": "Android 테스터 모집",
+            "tester_android_note": "Android 전용",
+            "tester_intro": "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
+            "tester_what_label": "게임 소개",
+            "tester_what": "HAYATE — PixelRyu가 만든 3D 카타나 스피드 레이서이자 ISSEN의 속편. 고속도로, 우주, 심해, 하늘을 질주하며 날아오는 것을 피하거나, 유도 카타나를 던져 깔끔하게 베어내라.",
+            "tester_step1_label": "1단계 — 테스터 그룹 가입",
+            "tester_step2_label": "2단계 — Play 스토어에서 옵트인",
+            "tester_step3_label": "3단계 — 앱 다운로드 후 플레이",
+            "tester_ask_label": "부탁드리는 것",
+            "tester_ask_keep": "14일 동안 설치 상태 유지",
+            "tester_ask_launch": "며칠에 한 번씩 실행 (몇 번이면 충분합니다)",
+            "tester_ask_minutes": "한 번에 1~2분 가벼운 플레이면 충분합니다",
+            "tester_note_lead": "ℹ️ 팁 — 아래 세 단계를 모두 완료해야 합니다:",
+            "tester_note_step1": "1단계 — 그룹 가입: “콘텐츠를 볼 권한이 없습니다”라고 표시되어도 그 화면에 “그룹 가입” 버튼이 있으니 눌러서 가입하세요.",
+            "tester_note_step2": "2단계 — 테스터 되기(옵트인): 옵트인 화면에서 테스트에 참여하세요. 테스터가 되는 것만으로는 앱이 설치되지 않습니다.",
+            "tester_note_step3": "3단계 — 다운로드 후 플레이: 다운로드 페이지를 열어 앱을 설치하고, 실행해 잠깐 플레이하세요. 그렇지 않으면 테스트로 집계되지 않습니다.",
+            "tester_note_account": "모든 단계에서 같은 Google 계정을 사용하세요.",
+            "tester_note_wait": "2단계 또는 3단계에서 “App not available”이 표시되면 가입 후 몇 시간 기다렸다가 다시 시도하세요.",
+            "faq_heading": "자주 묻는 질문",
+            "faq_q1": "HAYATE는 어떤 게임인가요?",
+            "faq_a1": "HAYATE는 PixelRyu가 만든 3D 카타나 스피드 레이싱 액션 게임이자 ISSEN의 속편입니다. 고속으로 질주하며 날아오는 것을 피하거나 유도 카타나를 던져 깔끔하게 베어냅니다.",
+            "faq_q2": "HAYATE는 무료인가요?",
+            "faq_a2": "네, HAYATE는 무료로 플레이할 수 있습니다.",
+            "faq_q3": "지금 어디에서 HAYATE를 플레이할 수 있나요?",
+            "faq_a3": "App Store와 Roblox에서 플레이할 수 있습니다. Android는 14일간의 비공개 테스트 중이며 Google Play를 통해 테스터로 참여할 수 있습니다.",
+            "faq_q4": "HAYATE에서는 어떤 스테이지를 달리나요?",
+            "faq_a4": "고속도로, 우주, 심해, 하늘을 질주하며 날아오는 것을 피하거나 베어냅니다.",
+            "faq_q5": "HAYATE는 어떤 언어를 지원하나요?",
+            "faq_a5": "게임과 이 사이트는 영어, 일본어, 중국어, 한국어, 힌디어, 인도네시아어, 독일어, 프랑스어, 이탈리아어, 스페인어, 포르투갈어, 러시아어 등 12개 언어를 지원합니다.",
+            "more_games_heading": "PixelRyu의 다른 게임",
+            "mg_1": "ISSEN — 사무라이 이아이 타이밍 액션",
+            "mg_2": "TEMARI — 1인칭 패들 벽돌깨기",
+            "mg_3": "HOTARU — 일본풍 호러 워킹 심"
+      },
+      "hi": {
+            "title": "HAYATE — कटाना स्पीड-रेसर",
+            "meta_desc": "HAYATE — PixelRyu का एक 3D कटाना स्पीड-रेसर, और ISSEN का सीक्वल। हाईवे, अंतरिक्ष, गहराई और आसमान में दौड़ें; आप पर उड़कर आने वाली चीज़ों को चकमा दें, या अपना होमिंग कटाना फेंककर उन्हें सफ़ाई से काट डालें।",
+            "tagline": "तेज़ दौड़ो। सफ़ाई से काटो। पहले पहुँचो।",
+            "subtitle": "3D कटाना स्पीड-रेसर",
+            "legal_divider": "क़ानूनी दस्तावेज़",
+            "link_overview": "गेम अवलोकन देखें",
+            "link_privacy": "गोपनीयता नीति",
+            "link_terms": "सेवा शर्तें",
+            "back": "← PixelRyu पर वापस",
+            "tester_heading": "Android टेस्टर्स की तलाश",
+            "tester_android_note": "केवल Android",
+            "tester_intro": "सोलो इंडी डेवलपर हूँ, 14 दिन की क्लोज़्ड टेस्टिंग के लिए सक्रिय Android टेस्टर्स ढूँढ रहा हूँ।",
+            "tester_what_label": "यह क्या है",
+            "tester_what": "HAYATE — PixelRyu का एक 3D कटाना स्पीड-रेसर, और ISSEN का सीक्वल। हाईवे, अंतरिक्ष, गहराई और आसमान में दौड़ें; आप पर उड़कर आने वाली चीज़ों को चकमा दें, या अपना होमिंग कटाना फेंककर उन्हें सफ़ाई से काट डालें।",
+            "tester_step1_label": "चरण 1 — टेस्टर ग्रुप में शामिल हों",
+            "tester_step2_label": "चरण 2 — Play Store पर ऑप्ट-इन",
+            "tester_step3_label": "चरण 3 — ऐप डाउनलोड करके खेलें",
+            "tester_ask_label": "मैं क्या माँग रहा हूँ",
+            "tester_ask_keep": "पूरे 14 दिन इंस्टॉल रखें",
+            "tester_ask_launch": "हर कुछ दिन में लॉन्च करें (कुछ बार ही काफ़ी है)",
+            "tester_ask_minutes": "हर सत्र में एक-दो मिनट का खेल काफ़ी है",
+            "tester_note_lead": "ℹ️ सुझाव — नीचे दिए तीनों चरण ज़रूरी हैं:",
+            "tester_note_step1": "चरण 1 — ग्रुप जॉइन करें: भले ही “सामग्री देखने की अनुमति नहीं है” दिखे, उसी पेज पर “ग्रुप जॉइन करें” बटन होता है — उसे दबाकर जॉइन करें।",
+            "tester_note_step2": "चरण 2 — टेस्टर बनें (ऑप्ट-इन): ऑप्ट-इन पेज पर टेस्ट में शामिल होने के लिए टैप करें। सिर्फ़ टेस्टर बनने से ऐप इंस्टॉल नहीं होती।",
+            "tester_note_step3": "चरण 3 — डाउनलोड करके खेलें: डाउनलोड पेज खोलकर ऐप इंस्टॉल करें, उसे खोलें और थोड़ा खेलें — इसके बिना आपकी टेस्टिंग नहीं गिनी जाती।",
+            "tester_note_account": "सभी चरणों में एक ही Google खाते का उपयोग करें।",
+            "tester_note_wait": "अगर चरण 2 या 3 में “App not available” दिखे, तो जॉइन करने के कुछ घंटे बाद फिर से कोशिश करें।",
+            "faq_heading": "अक्सर पूछे जाने वाले सवाल",
+            "faq_q1": "HAYATE किस तरह का गेम है?",
+            "faq_a1": "HAYATE PixelRyu का 3D कटाना स्पीड-रेसिंग एक्शन गेम है और ISSEN का सीक्वल। तेज़ रफ़्तार में दौड़ते हुए आप पर उड़कर आने वाली चीज़ों को चकमा दें या होमिंग कटाना फेंककर उन्हें सफ़ाई से काट डालें।",
+            "faq_q2": "क्या HAYATE मुफ़्त है?",
+            "faq_a2": "हाँ — HAYATE खेलने के लिए मुफ़्त है।",
+            "faq_q3": "अभी HAYATE कहाँ खेल सकते हैं?",
+            "faq_a3": "HAYATE App Store और Roblox पर उपलब्ध है। Android पर यह 14 दिन की क्लोज़्ड टेस्टिंग में है — Google Play के ज़रिए टेस्टर बनकर शामिल हो सकते हैं।",
+            "faq_q4": "HAYATE में किन स्टेज पर दौड़ते हैं?",
+            "faq_a4": "आप हाईवे, अंतरिक्ष, गहराई और आसमान में दौड़ते हैं, और उड़कर आने वाली चीज़ों को चकमा देते या काट डालते हैं।",
+            "faq_q5": "HAYATE कौन-कौन सी भाषाएँ सपोर्ट करता है?",
+            "faq_a5": "गेम और यह साइट 12 भाषाओं में उपलब्ध हैं: अंग्रेज़ी, जापानी, चीनी, कोरियाई, हिन्दी, इंडोनेशियाई, जर्मन, फ़्रेंच, इतालवी, स्पैनिश, पुर्तगाली और रूसी।",
+            "more_games_heading": "PixelRyu के और गेम",
+            "mg_1": "ISSEN — समुराई इआइदो टाइमिंग एक्शन",
+            "mg_2": "TEMARI — फ़र्स्ट-पर्सन पैडल ब्रेकआउट",
+            "mg_3": "HOTARU — जापानी हॉरर वॉकिंग सिम"
+      },
+      "id": {
+            "title": "HAYATE — Balap Kecepatan Katana",
+            "meta_desc": "HAYATE — balap kecepatan katana 3D dari PixelRyu, sekuel dari ISSEN. Balapi jalan tol, luar angkasa, kedalaman laut, dan langit; hindari yang melesat ke arahmu, atau lempar katana pengejarmu untuk menebasnya bersih.",
+            "tagline": "Melaju cepat. Tebas bersih. Finis pertama.",
+            "subtitle": "Balap Kecepatan Katana 3D",
+            "legal_divider": "Dokumen Hukum",
+            "link_overview": "Lihat Ikhtisar Game",
+            "link_privacy": "Kebijakan Privasi",
+            "link_terms": "Ketentuan Layanan",
+            "back": "← Kembali ke PixelRyu",
+            "tester_heading": "Mencari Tester Android",
+            "tester_android_note": "Hanya Android",
+            "tester_intro": "Saya developer indie solo, mencari tester Android aktif untuk fase closed test 14 hari.",
+            "tester_what_label": "Tentang game ini",
+            "tester_what": "HAYATE — balap kecepatan katana 3D dari PixelRyu, sekuel dari ISSEN. Balapi jalan tol, luar angkasa, kedalaman laut, dan langit; hindari yang melesat ke arahmu, atau lempar katana pengejarmu untuk menebasnya bersih.",
+            "tester_step1_label": "Langkah 1 — Bergabung dengan grup tester",
+            "tester_step2_label": "Langkah 2 — Opt-in via Play Store",
+            "tester_step3_label": "Langkah 3 — Unduh & mainkan aplikasi",
+            "tester_ask_label": "Yang saya mintakan",
+            "tester_ask_keep": "Pertahankan terinstal selama 14 hari penuh",
+            "tester_ask_launch": "Luncurkan setiap beberapa hari (beberapa kali sudah cukup)",
+            "tester_ask_minutes": "Cukup main satu–dua menit per sesi",
+            "tester_note_lead": "ℹ️ Tips — ketiga langkah berikut wajib dilakukan:",
+            "tester_note_step1": "Langkah 1 — Gabung grup: meskipun muncul “tidak ada izin untuk melihat konten”, ada tombol “Gabung grup” di halaman itu — tekan untuk bergabung.",
+            "tester_note_step2": "Langkah 2 — Jadi tester (opt-in): di halaman opt-in, ketuk untuk bergabung ke pengujian. Menjadi tester saja tidak memasang aplikasi.",
+            "tester_note_step3": "Langkah 3 — Unduh & mainkan: buka halaman unduhan, pasang aplikasinya, buka, dan mainkan sebentar — tanpa ini, pengujianmu tidak terhitung.",
+            "tester_note_account": "Gunakan akun Google yang sama untuk semua langkah.",
+            "tester_note_wait": "Jika Langkah 2 atau 3 menampilkan “App not available”, tunggu beberapa jam setelah bergabung lalu coba lagi.",
+            "faq_heading": "Tanya Jawab",
+            "faq_q1": "Game seperti apa HAYATE itu?",
+            "faq_a1": "HAYATE adalah game aksi balap kecepatan katana 3D dari PixelRyu, sekuel dari ISSEN. Melaju kencang, hindari yang melesat ke arahmu, atau lempar katana pengejarmu untuk menebasnya bersih.",
+            "faq_q2": "Apakah HAYATE gratis?",
+            "faq_a2": "Ya — HAYATE gratis dimainkan.",
+            "faq_q3": "Di mana HAYATE bisa dimainkan sekarang?",
+            "faq_a3": "HAYATE tersedia di App Store dan Roblox. Di Android, game ini sedang dalam fase closed test 14 hari — kamu bisa bergabung sebagai tester via Google Play.",
+            "faq_q4": "Stage apa saja yang dibalapi di HAYATE?",
+            "faq_a4": "Kamu membalapi jalan tol, luar angkasa, kedalaman laut, dan langit, sambil menghindari atau menebas apa pun yang melesat ke arahmu.",
+            "faq_q5": "Bahasa apa saja yang didukung HAYATE?",
+            "faq_a5": "Game dan situs ini mendukung 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia.",
+            "more_games_heading": "Game lain dari PixelRyu",
+            "mg_1": "ISSEN — aksi timing iaido samurai",
+            "mg_2": "TEMARI — paddle breakout orang pertama",
+            "mg_3": "HOTARU — walking sim horor Jepang"
+      },
+      "de": {
+            "title": "HAYATE — Katana-Speed-Racer",
+            "meta_desc": "HAYATE — ein 3D-Katana-Speed-Racer von PixelRyu und die Fortsetzung von ISSEN. Rase über den Highway, durchs All, in die Tiefe und in den Himmel; weiche allem aus, was auf dich zufliegt, oder wirf deine zielsuchende Katana und schneide es sauber entzwei.",
+            "tagline": "Schnell fahren. Sauber schneiden. Als Erster ins Ziel.",
+            "subtitle": "3D-Katana-Speed-Racer",
+            "legal_divider": "Rechtsdokumente",
+            "link_overview": "Spielübersicht ansehen",
+            "link_privacy": "Datenschutzerklärung",
+            "link_terms": "Nutzungsbedingungen",
+            "back": "← Zurück zu PixelRyu",
+            "tester_heading": "Android-Tester gesucht",
+            "tester_android_note": "Nur für Android",
+            "tester_intro": "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
+            "tester_what_label": "Worum es geht",
+            "tester_what": "HAYATE — ein 3D-Katana-Speed-Racer von PixelRyu und die Fortsetzung von ISSEN. Rase über den Highway, durchs All, in die Tiefe und in den Himmel; weiche allem aus, was auf dich zufliegt, oder wirf deine zielsuchende Katana und schneide es sauber entzwei.",
+            "tester_step1_label": "Schritt 1 — Tester-Gruppe beitreten",
+            "tester_step2_label": "Schritt 2 — Über den Play Store anmelden",
+            "tester_step3_label": "Schritt 3 — App herunterladen & spielen",
+            "tester_ask_label": "Worum ich bitte",
+            "tester_ask_keep": "14 Tage lang installiert lassen",
+            "tester_ask_launch": "Alle paar Tage starten (ein paar Mal reicht)",
+            "tester_ask_minutes": "Ein bis zwei Minuten Spiel pro Sitzung genügen",
+            "tester_note_lead": "ℹ️ Tipp — alle drei Schritte unten sind nötig:",
+            "tester_note_step1": "Schritt 1 — Der Gruppe beitreten: Auch wenn „keine Berechtigung zum Anzeigen der Inhalte“ erscheint, gibt es auf der Seite einen Button „Gruppe beitreten“ – tippe darauf, um beizutreten.",
+            "tester_note_step2": "Schritt 2 — Tester werden (Opt-in): Tippe auf der Opt-in-Seite, um an der Testphase teilzunehmen. Nur Tester zu werden installiert die App noch nicht.",
+            "tester_note_step3": "Schritt 3 — Herunterladen & spielen: Öffne die Download-Seite, installiere die App, öffne sie und spiele kurz – ohne das zählt deine Teilnahme nicht.",
+            "tester_note_account": "Verwende für alle Schritte dasselbe Google-Konto.",
+            "tester_note_wait": "Wenn Schritt 2 oder 3 „App not available“ anzeigt, warte nach dem Beitritt ein paar Stunden und versuche es erneut.",
+            "faq_heading": "FAQ",
+            "faq_q1": "Was für ein Spiel ist HAYATE?",
+            "faq_a1": "HAYATE ist ein 3D-Katana-Speed-Racing-Actionspiel von PixelRyu und die Fortsetzung von ISSEN. Rase mit hoher Geschwindigkeit, weiche allem aus, was auf dich zufliegt, oder wirf deine zielsuchende Katana und schneide es sauber entzwei.",
+            "faq_q2": "Ist HAYATE kostenlos?",
+            "faq_a2": "Ja — HAYATE ist kostenlos spielbar.",
+            "faq_q3": "Wo kann ich HAYATE jetzt spielen?",
+            "faq_a3": "HAYATE ist im App Store und auf Roblox verfügbar. Auf Android läuft eine 14-tägige geschlossene Testphase — über Google Play kannst du als Tester teilnehmen.",
+            "faq_q4": "Durch welche Stages rast man in HAYATE?",
+            "faq_a4": "Du rast über den Highway, durchs All, in die Tiefe und in den Himmel und weichst allem aus, was auf dich zufliegt, oder schneidest es entzwei.",
+            "faq_q5": "Welche Sprachen unterstützt HAYATE?",
+            "faq_a5": "Das Spiel und diese Seite unterstützen 12 Sprachen: Englisch, Japanisch, Chinesisch, Koreanisch, Hindi, Indonesisch, Deutsch, Französisch, Italienisch, Spanisch, Portugiesisch und Russisch.",
+            "more_games_heading": "Weitere Spiele von PixelRyu",
+            "mg_1": "ISSEN — Samurai-Iaido-Timing-Action",
+            "mg_2": "TEMARI — Paddle-Breakout in der Ego-Perspektive",
+            "mg_3": "HOTARU — japanischer Horror-Walking-Sim"
+      },
+      "fr": {
+            "title": "HAYATE — Course de vitesse au katana",
+            "meta_desc": "HAYATE — une course de vitesse au katana en 3D signée PixelRyu, suite d'ISSEN. Fendez l'autoroute, l'espace, les profondeurs et le ciel ; esquivez ce qui fonce sur vous, ou lancez votre katana à tête chercheuse pour le trancher net.",
+            "tagline": "Roulez vite. Tranchez net. Finissez premier.",
+            "subtitle": "Course de vitesse au katana en 3D",
+            "legal_divider": "Documents légaux",
+            "link_overview": "Voir l'aperçu du jeu",
+            "link_privacy": "Politique de confidentialité",
+            "link_terms": "Conditions d'utilisation",
+            "back": "← Retour à PixelRyu",
+            "tester_heading": "Recherche de testeurs Android",
+            "tester_android_note": "Android uniquement",
+            "tester_intro": "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
+            "tester_what_label": "De quoi il s'agit",
+            "tester_what": "HAYATE — une course de vitesse au katana en 3D signée PixelRyu, suite d'ISSEN. Fendez l'autoroute, l'espace, les profondeurs et le ciel ; esquivez ce qui fonce sur vous, ou lancez votre katana à tête chercheuse pour le trancher net.",
+            "tester_step1_label": "Étape 1 — Rejoindre le groupe de testeurs",
+            "tester_step2_label": "Étape 2 — S'inscrire via le Play Store",
+            "tester_step3_label": "Étape 3 — Télécharger et jouer",
+            "tester_ask_label": "Ce que je demande",
+            "tester_ask_keep": "Garder installé pendant les 14 jours complets",
+            "tester_ask_launch": "Lancer tous les deux jours (quelques fois suffisent)",
+            "tester_ask_minutes": "Une à deux minutes de jeu par session suffisent",
+            "tester_note_lead": "ℹ️ Astuce — les trois étapes ci-dessous sont nécessaires :",
+            "tester_note_step1": "Étape 1 — Rejoindre le groupe : même si « autorisation refusée pour afficher le contenu » s’affiche, un bouton « Rejoindre le groupe » est présent sur la page — appuyez dessus pour rejoindre.",
+            "tester_note_step2": "Étape 2 — Devenir testeur (inscription) : sur la page d’inscription, appuyez pour rejoindre le test. S’inscrire seul n’installe pas l’application.",
+            "tester_note_step3": "Étape 3 — Télécharger et jouer : ouvrez la page de téléchargement, installez l’application, ouvrez-la et jouez un peu — sans cela, votre participation ne compte pas.",
+            "tester_note_account": "Utilisez le même compte Google pour toutes les étapes.",
+            "tester_note_wait": "Si l’étape 2 ou 3 affiche « App not available », attendez quelques heures après avoir rejoint, puis réessayez.",
+            "faq_heading": "FAQ",
+            "faq_q1": "Quel genre de jeu est HAYATE ?",
+            "faq_a1": "HAYATE est un jeu d'action de course de vitesse au katana en 3D signé PixelRyu, et la suite d'ISSEN. Foncez à toute vitesse, esquivez ce qui fonce sur vous, ou lancez votre katana à tête chercheuse pour le trancher net.",
+            "faq_q2": "HAYATE est-il gratuit ?",
+            "faq_a2": "Oui — HAYATE est gratuit.",
+            "faq_q3": "Où peut-on jouer à HAYATE en ce moment ?",
+            "faq_a3": "HAYATE est disponible sur l'App Store et sur Roblox. Sur Android, le jeu est en phase de test fermé de 14 jours — vous pouvez rejoindre les testeurs via Google Play.",
+            "faq_q4": "Quels décors traverse-t-on dans HAYATE ?",
+            "faq_a4": "Vous fendez l'autoroute, l'espace, les profondeurs et le ciel, en esquivant ou en tranchant ce qui fonce sur vous.",
+            "faq_q5": "Quelles langues HAYATE prend-il en charge ?",
+            "faq_a5": "Le jeu et ce site sont disponibles en 12 langues : anglais, japonais, chinois, coréen, hindi, indonésien, allemand, français, italien, espagnol, portugais et russe.",
+            "more_games_heading": "Plus de jeux par PixelRyu",
+            "mg_1": "ISSEN — action de timing iaido samouraï",
+            "mg_2": "TEMARI — casse-briques à raquette à la première personne",
+            "mg_3": "HOTARU — walking sim d'horreur japonaise"
+      },
+      "it": {
+            "title": "HAYATE — Speed-racer con katana",
+            "meta_desc": "HAYATE — uno speed-racer con katana in 3D di PixelRyu e seguito di ISSEN. Sfreccia tra autostrada, spazio, abissi e cielo; schiva ciò che ti piomba addosso o lancia la tua katana a ricerca per tagliarlo netto.",
+            "tagline": "Corri veloce. Taglia netto. Arriva primo.",
+            "subtitle": "Speed-racer con katana in 3D",
+            "legal_divider": "Documenti legali",
+            "link_overview": "Vedi la panoramica",
+            "link_privacy": "Informativa sulla privacy",
+            "link_terms": "Termini di servizio",
+            "back": "← Torna a PixelRyu",
+            "tester_heading": "Cercasi tester Android",
+            "tester_android_note": "Solo Android",
+            "tester_intro": "Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.",
+            "tester_what_label": "Di cosa si tratta",
+            "tester_what": "HAYATE — uno speed-racer con katana in 3D di PixelRyu e seguito di ISSEN. Sfreccia tra autostrada, spazio, abissi e cielo; schiva ciò che ti piomba addosso o lancia la tua katana a ricerca per tagliarlo netto.",
+            "tester_step1_label": "Passo 1 — Unisciti al gruppo tester",
+            "tester_step2_label": "Passo 2 — Opt-in tramite Play Store",
+            "tester_step3_label": "Passo 3 — Scarica e gioca all’app",
+            "tester_ask_label": "Cosa chiedo",
+            "tester_ask_keep": "Tienilo installato per tutti i 14 giorni",
+            "tester_ask_launch": "Aprilo ogni paio di giorni (poche volte basta)",
+            "tester_ask_minutes": "Bastano un paio di minuti di gioco a sessione",
+            "tester_note_lead": "ℹ️ Suggerimento — servono tutti e tre i passaggi qui sotto:",
+            "tester_note_step1": "Passaggio 1 — Iscriviti al gruppo: anche se compare « non hai l’autorizzazione per visualizzare i contenuti », sulla pagina c’è il pulsante « Iscriviti al gruppo » — toccalo per iscriverti.",
+            "tester_note_step2": "Passaggio 2 — Diventa tester (opt-in): nella pagina di opt-in, tocca per partecipare al test. Diventare tester da solo non installa l’app.",
+            "tester_note_step3": "Passaggio 3 — Scarica e gioca: apri la pagina di download, installa l’app, aprila e gioca un po’ — senza questo, il tuo test non viene conteggiato.",
+            "tester_note_account": "Usa lo stesso account Google per tutti i passaggi.",
+            "tester_note_wait": "Se il passaggio 2 o 3 mostra « App not available », attendi qualche ora dopo l’iscrizione e riprova.",
+            "faq_heading": "FAQ",
+            "faq_q1": "Che tipo di gioco è HAYATE?",
+            "faq_a1": "HAYATE è un gioco d'azione speed-racing con katana in 3D di PixelRyu e il seguito di ISSEN. Sfreccia ad alta velocità, schiva ciò che ti piomba addosso o lancia la tua katana a ricerca per tagliarlo netto.",
+            "faq_q2": "HAYATE è gratuito?",
+            "faq_a2": "Sì — HAYATE è gratuito.",
+            "faq_q3": "Dove si può giocare a HAYATE adesso?",
+            "faq_a3": "HAYATE è disponibile su App Store e su Roblox. Su Android è in una fase di closed test di 14 giorni — puoi unirti come tester tramite Google Play.",
+            "faq_q4": "Quali scenari si attraversano in HAYATE?",
+            "faq_a4": "Sfrecci tra autostrada, spazio, abissi e cielo, schivando o tagliando ciò che ti piomba addosso.",
+            "faq_q5": "Quali lingue supporta HAYATE?",
+            "faq_a5": "Il gioco e questo sito supportano 12 lingue: inglese, giapponese, cinese, coreano, hindi, indonesiano, tedesco, francese, italiano, spagnolo, portoghese e russo.",
+            "more_games_heading": "Altri giochi di PixelRyu",
+            "mg_1": "ISSEN — azione di tempismo iaido samurai",
+            "mg_2": "TEMARI — breakout con paddle in prima persona",
+            "mg_3": "HOTARU — walking sim horror giapponese"
+      },
+      "es": {
+            "title": "HAYATE — Carreras de velocidad con katana",
+            "meta_desc": "HAYATE: carreras de velocidad con katana en 3D de PixelRyu y secuela de ISSEN. Corre por la autopista, el espacio, las profundidades y el cielo; esquiva lo que vuela hacia ti o lanza tu katana teledirigida para cortarlo limpio.",
+            "tagline": "Corre veloz. Corta limpio. Llega primero.",
+            "subtitle": "Carreras de velocidad con katana en 3D",
+            "legal_divider": "Documentos legales",
+            "link_overview": "Ver descripción del juego",
+            "link_privacy": "Política de privacidad",
+            "link_terms": "Términos del servicio",
+            "back": "← Volver a PixelRyu",
+            "tester_heading": "Buscamos testers de Android",
+            "tester_android_note": "Solo Android",
+            "tester_intro": "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
+            "tester_what_label": "De qué se trata",
+            "tester_what": "HAYATE: carreras de velocidad con katana en 3D de PixelRyu y secuela de ISSEN. Corre por la autopista, el espacio, las profundidades y el cielo; esquiva lo que vuela hacia ti o lanza tu katana teledirigida para cortarlo limpio.",
+            "tester_step1_label": "Paso 1 — Únete al grupo de testers",
+            "tester_step2_label": "Paso 2 — Inscríbete vía Play Store",
+            "tester_step3_label": "Paso 3 — Descarga y juega la app",
+            "tester_ask_label": "Lo que pido",
+            "tester_ask_keep": "Mantener instalado los 14 días completos",
+            "tester_ask_launch": "Abrir cada par de días (unas pocas veces basta)",
+            "tester_ask_minutes": "Con un par de minutos de juego por sesión basta",
+            "tester_note_lead": "ℹ️ Consejo — los tres pasos siguientes son necesarios:",
+            "tester_note_step1": "Paso 1 — Únete al grupo: aunque aparezca «no tienes permiso para ver el contenido», en esa página hay un botón «Unirse al grupo»; tócalo para unirte.",
+            "tester_note_step2": "Paso 2 — Hazte tester (participa): en la página de participación, toca para unirte a la prueba. Solo participar no instala la app.",
+            "tester_note_step3": "Paso 3 — Descarga y juega: abre la página de descarga, instala la app, ábrela y juega un poco; sin esto, tu prueba no cuenta.",
+            "tester_note_account": "Usa la misma cuenta de Google en todos los pasos.",
+            "tester_note_wait": "Si el paso 2 o 3 muestra «App not available», espera unas horas después de unirte y vuelve a intentarlo.",
+            "faq_heading": "Preguntas frecuentes",
+            "faq_q1": "¿Qué tipo de juego es HAYATE?",
+            "faq_a1": "HAYATE es un juego de acción de carreras de velocidad con katana en 3D de PixelRyu y la secuela de ISSEN. Corre a toda velocidad, esquiva lo que vuela hacia ti o lanza tu katana teledirigida para cortarlo limpio.",
+            "faq_q2": "¿HAYATE es gratis?",
+            "faq_a2": "Sí — HAYATE es gratuito.",
+            "faq_q3": "¿Dónde se puede jugar a HAYATE ahora mismo?",
+            "faq_a3": "HAYATE está disponible en el App Store y en Roblox. En Android está en una fase de pruebas cerradas de 14 días — puedes unirte como tester a través de Google Play.",
+            "faq_q4": "¿Qué escenarios se recorren en HAYATE?",
+            "faq_a4": "Corres por la autopista, el espacio, las profundidades y el cielo, esquivando o cortando lo que vuela hacia ti.",
+            "faq_q5": "¿Qué idiomas admite HAYATE?",
+            "faq_a5": "El juego y este sitio admiten 12 idiomas: inglés, japonés, chino, coreano, hindi, indonesio, alemán, francés, italiano, español, portugués y ruso.",
+            "more_games_heading": "Más juegos de PixelRyu",
+            "mg_1": "ISSEN — acción de precisión iaido samurái",
+            "mg_2": "TEMARI — breakout con pala en primera persona",
+            "mg_3": "HOTARU — walking sim de terror japonés"
+      },
+      "pt": {
+            "title": "HAYATE — Corrida de Velocidade com Katana",
+            "meta_desc": "HAYATE — uma corrida de velocidade com katana em 3D da PixelRyu, sequência de ISSEN. Acelere pela rodovia, pelo espaço, pelas profundezas e pelo céu; desvie do que voa em sua direção ou arremesse sua katana teleguiada para cortá-lo certeiro.",
+            "tagline": "Pilote rápido. Corte certeiro. Termine em primeiro.",
+            "subtitle": "Corrida de Velocidade com Katana em 3D",
+            "legal_divider": "Documentos legais",
+            "link_overview": "Ver visão geral do jogo",
+            "link_privacy": "Política de privacidade",
+            "link_terms": "Termos de serviço",
+            "back": "← Voltar para PixelRyu",
+            "tester_heading": "Procuramos testers de Android",
+            "tester_android_note": "Apenas Android",
+            "tester_intro": "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
+            "tester_what_label": "Sobre o jogo",
+            "tester_what": "HAYATE — uma corrida de velocidade com katana em 3D da PixelRyu, sequência de ISSEN. Acelere pela rodovia, pelo espaço, pelas profundezas e pelo céu; desvie do que voa em sua direção ou arremesse sua katana teleguiada para cortá-lo certeiro.",
+            "tester_step1_label": "Passo 1 — Entrar no grupo de testers",
+            "tester_step2_label": "Passo 2 — Adesão via Play Store",
+            "tester_step3_label": "Passo 3 — Baixe e jogue o app",
+            "tester_ask_label": "O que peço",
+            "tester_ask_keep": "Manter instalado por 14 dias completos",
+            "tester_ask_launch": "Abra a cada poucos dias (algumas vezes basta)",
+            "tester_ask_minutes": "Um ou dois minutos de jogo por sessão já bastam",
+            "tester_note_lead": "ℹ️ Dica — as três etapas abaixo são necessárias:",
+            "tester_note_step1": "Etapa 1 — Entre no grupo: mesmo que apareça “sem permissão para ver o conteúdo”, há um botão “Participar do grupo” na página — toque para entrar.",
+            "tester_note_step2": "Etapa 2 — Torne-se tester (opt-in): na página de opt-in, toque para entrar no teste. Apenas virar tester não instala o app.",
+            "tester_note_step3": "Etapa 3 — Baixe e jogue: abra a página de download, instale o app, abra e jogue um pouco — sem isso, seu teste não conta.",
+            "tester_note_account": "Use a mesma Conta do Google em todas as etapas.",
+            "tester_note_wait": "Se a Etapa 2 ou 3 mostrar “App not available”, aguarde algumas horas após participar e tente novamente.",
+            "faq_heading": "Perguntas frequentes",
+            "faq_q1": "Que tipo de jogo é HAYATE?",
+            "faq_a1": "HAYATE é um jogo de ação de corrida de velocidade com katana em 3D da PixelRyu e a sequência de ISSEN. Acelere em alta velocidade, desvie do que voa em sua direção ou arremesse sua katana teleguiada para cortá-lo certeiro.",
+            "faq_q2": "HAYATE é gratuito?",
+            "faq_a2": "Sim — HAYATE é gratuito para jogar.",
+            "faq_q3": "Onde posso jogar HAYATE agora?",
+            "faq_a3": "HAYATE está disponível na App Store e no Roblox. No Android, está em uma fase de teste fechado de 14 dias — você pode participar como tester pelo Google Play.",
+            "faq_q4": "Quais cenários você percorre em HAYATE?",
+            "faq_a4": "Você acelera pela rodovia, pelo espaço, pelas profundezas e pelo céu, desviando ou cortando o que voa em sua direção.",
+            "faq_q5": "Quais idiomas HAYATE suporta?",
+            "faq_a5": "O jogo e este site suportam 12 idiomas: inglês, japonês, chinês, coreano, hindi, indonésio, alemão, francês, italiano, espanhol, português e russo.",
+            "more_games_heading": "Mais jogos da PixelRyu",
+            "mg_1": "ISSEN — ação de timing iaido samurai",
+            "mg_2": "TEMARI — breakout de raquete em primeira pessoa",
+            "mg_3": "HOTARU — walking sim de terror japonês"
+      },
+      "ru": {
+            "title": "HAYATE — гонщик с катаной",
+            "meta_desc": "HAYATE — 3D-гонка с катаной от PixelRyu и продолжение ISSEN. Несись по трассе, в космосе, в глубинах и в небе; уворачивайся от летящих преград или метни самонаводящуюся катану и разрежь их начисто.",
+            "tagline": "Мчись быстро. Руби чисто. Финишируй первым.",
+            "subtitle": "3D-гонщик с катаной",
+            "legal_divider": "Правовые документы",
+            "link_overview": "Посмотреть об игре",
+            "link_privacy": "Политика конфиденциальности",
+            "link_terms": "Условия использования",
+            "back": "← Назад к PixelRyu",
+            "tester_heading": "Поиск Android-тестеров",
+            "tester_android_note": "Только для Android",
+            "tester_intro": "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",
+            "tester_what_label": "О чём игра",
+            "tester_what": "HAYATE — 3D-гонка с катаной от PixelRyu и продолжение ISSEN. Несись по трассе, в космосе, в глубинах и в небе; уворачивайся от летящих преград или метни самонаводящуюся катану и разрежь их начисто.",
+            "tester_step1_label": "Шаг 1 — Вступить в группу тестеров",
+            "tester_step2_label": "Шаг 2 — Подписаться через Play Store",
+            "tester_step3_label": "Шаг 3 — Скачать и поиграть",
+            "tester_ask_label": "О чём я прошу",
+            "tester_ask_keep": "Не удалять приложение все 14 дней",
+            "tester_ask_launch": "Запускайте раз в пару дней (нескольких раз достаточно)",
+            "tester_ask_minutes": "Достаточно одной–двух минут игры за сессию",
+            "tester_note_lead": "ℹ️ Совет — нужны все три шага ниже:",
+            "tester_note_step1": "Шаг 1 — Вступите в группу: даже если показано «нет прав для просмотра содержимого», на странице есть кнопка «Присоединиться к группе» — нажмите её, чтобы вступить.",
+            "tester_note_step2": "Шаг 2 — Станьте тестером (подтвердите участие): на странице подтверждения нажмите, чтобы присоединиться к тесту. Само подтверждение участия не устанавливает приложение.",
+            "tester_note_step3": "Шаг 3 — Скачайте и поиграйте: откройте страницу загрузки, установите приложение, откройте его и немного поиграйте — без этого ваше участие не засчитывается.",
+            "tester_note_account": "Используйте один и тот же аккаунт Google для всех шагов.",
+            "tester_note_wait": "Если на шаге 2 или 3 появляется «App not available», подождите несколько часов после вступления и попробуйте снова.",
+            "faq_heading": "Частые вопросы",
+            "faq_q1": "Что за игра HAYATE?",
+            "faq_a1": "HAYATE — 3D-экшен-гонка с катаной от PixelRyu и продолжение ISSEN. Несись на скорости, уворачивайся от летящих преград или метни самонаводящуюся катану и разрежь их начисто.",
+            "faq_q2": "HAYATE бесплатна?",
+            "faq_a2": "Да — в HAYATE можно играть бесплатно.",
+            "faq_q3": "Где можно играть в HAYATE прямо сейчас?",
+            "faq_a3": "HAYATE доступна в App Store и на Roblox. На Android идёт 14-дневное закрытое тестирование — присоединиться как тестер можно через Google Play.",
+            "faq_q4": "По каким локациям проходят гонки в HAYATE?",
+            "faq_a4": "Ты несёшься по трассе, в космосе, в глубинах и в небе, уворачиваясь от летящих преград или разрезая их.",
+            "faq_q5": "Какие языки поддерживает HAYATE?",
+            "faq_a5": "Игра и этот сайт поддерживают 12 языков: английский, японский, китайский, корейский, хинди, индонезийский, немецкий, французский, итальянский, испанский, португальский и русский.",
+            "more_games_heading": "Другие игры PixelRyu",
+            "mg_1": "ISSEN — самурайский иайдо-экшен на тайминг",
+            "mg_2": "TEMARI — арканоид с ракеткой от первого лица",
+            "mg_3": "HOTARU — японский хоррор-симулятор ходьбы"
+      }
+};
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
+
+  function detectLang() {
+    try { const stored = localStorage.getItem(LANG_STORAGE_KEY); if (stored && i18n[stored]) return stored; } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang, persist) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    // プロモ動画は言語連動: 日本語は日本語版トレーラー、それ以外は英語版に切り替える。
+    const promo = document.getElementById('promo');
+    if (promo) {
+      const v = (lang === 'ja')
+        ? 'https://pixelryu.github.io/hayate/promotion_H_trailer_ja.mp4?v=20260601182255'
+        : 'https://pixelryu.github.io/hayate/promotion_H_trailer_en.mp4?v=20260601182255';
+      const srcEl = promo.querySelector('source');
+      if (srcEl && srcEl.getAttribute('src') !== v) {
+        srcEl.setAttribute('src', v);
+        promo.load();
+      }
+    }
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code; opt.textContent = l.flag + ' ' + l.name; sel.appendChild(opt);
+    }
+    setLang('it', true);
+    sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/hayate/' : 'https://pixelryu.github.io/hayate/' + v + '/';});
+  })();
+</script>
+<script src="https://pixelryu.github.io/breadcrumb.js?v=20260602202548" defer></script>
+</body>
+</html>

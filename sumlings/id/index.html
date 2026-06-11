@@ -1,0 +1,969 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5MH53Z8LM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M5MH53Z8LM');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">Sumlings — Letakkan angka. Tetaskan keajaiban.</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Sumlings — teka-teki angka yang menenangkan dari PixelRyu. Letakkan telur angka di terarium kecil sehingga total tiap sarang sesuai targetnya, dan tetaskan Sumling yang lucu. Sudah tersedia di App Store dan Roblox; closed test Android sedang dibuka.">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: radial-gradient(ellipse at top, #cfe8d3 0%, #b8e0bf 50%, #9fcfa6 100%);
+    color: #2d4a25;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    max-width: 580px;
+    width: 100%;
+    padding: 80px 32px;
+    text-align: center;
+    position: relative;
+  }
+  .lang-switch {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
+  .lang-switch select {
+    background: rgba(255, 255, 255, 0.40);
+    color: #2d4a25;
+    border: 1px solid rgba(164, 113, 72, 0.35);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .lang-switch select:hover {
+    background: rgba(255, 255, 255, 0.55);
+    border-color: rgba(164, 113, 72, 0.65);
+  }
+  .lang-switch select option { background: #b8e0bf; color: #2d4a25; }
+  .brand-icon {
+    width: 120px;
+    height: 120px;
+    border-radius: 28px;
+    display: block;
+    margin: 0 auto 20px;
+    box-shadow: 0 8px 28px rgba(90, 140, 78, 0.22), 0 0 0 1px rgba(90, 140, 78, 0.18);
+  }
+  .tagline {
+    font-size: 14px;
+    color: #7a8a6e;
+    margin-bottom: 8px;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+  }
+  h1 {
+    font-size: 48px;
+    margin: 0 0 6px;
+    color: #2d4a25;
+    font-weight: 800;
+    letter-spacing: 0.5px;
+  }
+  h1 .accent {
+    color: #a47148;
+  }
+  /* Brand mark: EN by default, JP variant for Japanese users (toggled via <html lang> by setLang). */
+  h1 .brand-ja { display: none; }
+  html[lang="ja"] h1 .brand-en { display: none; }
+  html[lang="ja"] h1 .brand-ja { display: inline; }
+  .subtitle {
+    font-size: 14px;
+    color: #7a8a6e;
+    margin-bottom: 32px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+  }
+  /* === Tester card === Android クローズドテスト開始 2026-05-29 で公開 */
+  .tester-card-base {
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(164, 113, 72, 0.40);
+    border-radius: 16px;
+    padding: 24px 24px 28px;
+    margin: 32px 0 40px;
+    text-align: left;
+    box-shadow: 0 8px 24px rgba(90, 140, 78, 0.12);
+  }
+  .tester-heading {
+    font-size: 13px; color: #a47148; text-transform: uppercase;
+    letter-spacing: 2px; margin: 0 0 4px; font-weight: 700; text-align: center;
+  }
+  .tester-android-note {
+    display: block; font-size: 11px; color: #7a8a6e; text-transform: none;
+    letter-spacing: 0; font-weight: 400; margin-bottom: 16px; text-align: center;
+  }
+  .tester-card p { font-size: 14px; line-height: 1.65; color: #3a2e1f; margin: 12px 0; }
+  .tester-section-label { font-size: 13px; font-weight: 700; color: #5a8c4e; margin: 20px 0 6px; }
+  .tester-step {
+    display: block; background: rgba(164, 113, 72, 0.15); border: 1px solid rgba(164, 113, 72, 0.40);
+    border-radius: 10px; padding: 12px 16px; margin: 10px 0; color: #a47148;
+    text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s ease;
+  }
+  .tester-step:hover { background: rgba(164, 113, 72, 0.25); border-color: rgba(164, 113, 72, 0.70); color: #9a5841; }
+  .tester-card ul { margin: 6px 0 0; padding-left: 22px; color: #3a2e1f; font-size: 14px; line-height: 1.7; }
+  .overview-link {
+    display: block;
+    background: #a47148;
+    color: #ffffff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 18px 22px;
+    border-radius: 14px;
+    margin: 0 0 24px;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 22px rgba(164, 113, 72, 0.30);
+  }
+  .overview-link:hover { background: #9a5841; transform: translateY(-1px); }
+  .promo-video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    margin: 16px 0 8px;
+    background: #000;
+    box-shadow: 0 6px 22px rgba(164, 113, 72, 0.30);
+  }
+  .legal-divider {
+    font-size: 14px;
+    color: #9a7384;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 8px 0 16px;
+  }
+  .links { list-style: none; padding: 0; margin: 0; }
+  .links li {
+    background: rgba(255, 255, 255, 0.45);
+    border: 1px solid rgba(164, 113, 72, 0.30);
+    border-radius: 14px;
+    margin-bottom: 14px;
+    transition: all 0.25s ease;
+  }
+  .links li:hover {
+    background: rgba(255, 255, 255, 0.55);
+    border-color: rgba(164, 113, 72, 0.60);
+  }
+  .links a {
+    color: #a47148;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    display: block;
+    padding: 22px 24px;
+  }
+  .back {
+    display: inline-block;
+    margin-top: 48px;
+    color: #9a7384;
+    text-decoration: none;
+    font-size: 14px;
+  }
+  .back:hover { color: #5a8c4e; }
+  @media (max-width: 600px) {
+    .lang-switch { top: 16px; right: 16px; }
+    h1 { font-size: 40px; }
+    .brand-icon { width: 104px; height: 104px; border-radius: 24px; }
+  }
+  .social-heading{font-size:13px;color:#7a8a6e;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(255,255,255,0.40);border:1px solid rgba(122,63,44,0.30);color:#7a8a6e;transition:all .25s ease;}
+  .social a:hover{background:rgba(255,255,255,0.55);border-color:rgba(122,63,44,0.55);color:#a47148;transform:translateY(-2px);}
+  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+  .hero-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0 8px;
+  }
+  .hero-badges a { display: inline-block; line-height: 0; margin: 0; transition: transform .2s ease, opacity .2s ease; }
+  .hero-badges a:hover { transform: translateY(-2px); opacity: .85; }
+  .hero-badges svg, .hero-badges img { display: block; }
+  .hero-badges img { height: 51px; width: auto; }
+</style>
+<!-- SEO/LLMO start (managed) -->
+<link rel="canonical" href="https://pixelryu.github.io/sumlings/id/">
+<link rel="alternate" hreflang="en" href="https://pixelryu.github.io/sumlings/">
+<link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/sumlings/ja/">
+<link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/sumlings/zh/">
+<link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/sumlings/ko/">
+<link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/sumlings/hi/">
+<link rel="alternate" hreflang="id" href="https://pixelryu.github.io/sumlings/id/">
+<link rel="alternate" hreflang="de" href="https://pixelryu.github.io/sumlings/de/">
+<link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/sumlings/fr/">
+<link rel="alternate" hreflang="it" href="https://pixelryu.github.io/sumlings/it/">
+<link rel="alternate" hreflang="es" href="https://pixelryu.github.io/sumlings/es/">
+<link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/sumlings/pt/">
+<link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/sumlings/ru/">
+<link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/sumlings/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="PixelRyu">
+<meta name="publisher" content="PixelRyu">
+<meta name="keywords" content="Sumlings, number puzzle, math puzzle, cozy puzzle, terrarium, hatching, collection, cute, casual, PixelRyu, indie game, Android, iOS">
+<meta name="theme-color" content="#b8e0bf">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/sumlings/icon.png">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/sumlings/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PixelRyu">
+<meta property="og:title" content="Sumlings — Letakkan angka. Tetaskan keajaiban.">
+<meta property="og:description" content="Sumlings — teka-teki angka yang menenangkan dari PixelRyu. Letakkan telur angka di terarium kecil sehingga total tiap sarang sesuai targetnya, dan tetaskan Sumling yang lucu. Sudah tersedia di App Store dan Roblox; closed test Android sedang dibuka.">
+<meta property="og:url" content="https://pixelryu.github.io/sumlings/id/">
+<meta property="og:image" content="https://pixelryu.github.io/sumlings/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="Sumlings — Letakkan angka. Tetaskan keajaiban.">
+<meta property="og:locale" content="id_ID">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Sumlings — Letakkan angka. Tetaskan keajaiban.">
+<meta name="twitter:description" content="Sumlings — teka-teki angka yang menenangkan dari PixelRyu. Letakkan telur angka di terarium kecil sehingga total tiap sarang sesuai targetnya, dan tetaskan Sumling yang lucu. Sudah tersedia di App Store dan Roblox; closed test Android sedang dibuka.">
+<meta name="twitter:image" content="https://pixelryu.github.io/sumlings/og.png">
+<meta name="twitter:image:alt" content="Sumlings — Letakkan angka. Tetaskan keajaiban.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Sumlings","genre":"Puzzle, Casual","url":"https://pixelryu.github.io/sumlings/id/","image":"https://pixelryu.github.io/sumlings/icon.png","description":"Sumlings — teka-teki angka yang menenangkan dari PixelRyu. Letakkan telur angka di terarium kecil sehingga total tiap sarang sesuai targetnya, dan tetaskan Sumling yang lucu. Sudah tersedia di App Store dan Roblox; closed test Android sedang dibuka.","applicationCategory":"GameApplication","operatingSystem":"iOS, Android, Roblox","author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://apps.apple.com/app/id6774177494","https://play.google.com/store/apps/details?id=com.pixelryu.sumlings","https://www.roblox.com/games/90303076167033/Sumlings"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/id/"},{"@type":"ListItem","position":2,"name":"Sumlings","item":"https://pixelryu.github.io/sumlings/id/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Game seperti apa Sumlings itu?","acceptedAnswer":{"@type":"Answer","text":"Sumlings adalah teka-teki angka kasual yang menenangkan dari PixelRyu. Letakkan telur angka di terarium kecil dan tetaskan Sumling yang lucu."}},{"@type":"Question","name":"Apakah Sumlings gratis?","acceptedAnswer":{"@type":"Answer","text":"Ya, Sumlings gratis dimainkan."}},{"@type":"Question","name":"Di mana saya bisa memainkan Sumlings sekarang?","acceptedAnswer":{"@type":"Answer","text":"Kamu bisa mengunduh Sumlings di App Store dan memainkannya sekarang di Roblox. Di Android, game ini sedang dalam fase closed test 14 hari dan perekrutan tester dibuka via Google Play."}},{"@type":"Question","name":"Bagaimana cara memainkan Sumlings?","acceptedAnswer":{"@type":"Answer","text":"Letakkan telur angka di terarium dan cocokkan total tiap sarang dengan targetnya. Saat totalnya cocok, Sumling yang lucu menetas dan koleksimu bertambah."}},{"@type":"Question","name":"Bahasa apa saja yang didukung Sumlings?","acceptedAnswer":{"@type":"Answer","text":"Game dan situs ini mendukung 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Sumlings — Official Trailer","description":"Sumlings — a cozy number puzzle by PixelRyu. Place number eggs into a tiny terrarium, match each nest's total to its target, and hatch the cute Sumlings.","thumbnailUrl":"https://pixelryu.github.io/sumlings/og.png","uploadDate":"2026-05-28","contentUrl":"https://pixelryu.github.io/sumlings/promotion_H_story.mp4?v=20260528133150"}</script>
+<!-- SEO/LLMO end -->
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch">
+    <select id="lang-select" aria-label="Language"></select>
+  </div>
+  <img src="https://pixelryu.github.io/sumlings/icon.png" alt="Sumlings" class="brand-icon">
+  <div class="tagline" data-i18n="tagline">Letakkan angka. Tetaskan keajaiban.</div>
+  <h1><span class="brand-en">Sum<span class="accent">lings</span></span><span class="brand-ja">サム<span class="accent">リング</span></span></h1>
+  <div class="subtitle" data-i18n="subtitle">Teka-teki Angka yang Menenangkan</div>
+
+  <section class="hero-badges" aria-label="Get the game">
+    <a href="https://apps.apple.com/app/id6774177494" target="_blank" rel="noopener" aria-label="Download Sumlings on the App Store">
+      <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+        <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+          <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+        </svg>
+        <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+        <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+      </svg>
+    </a>
+    <a href="#tester-heading" aria-label="Join Sumlings Android testers">
+      <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+    </a>
+    <a href="https://www.roblox.com/games/90303076167033/Sumlings" target="_blank" rel="noopener" aria-label="Play Sumlings on Roblox">
+      <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+        <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+          <g transform="rotate(13 13 13)">
+            <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+            <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+          </g>
+        </svg>
+        <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+        <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+      </svg>
+    </a>
+  </section>
+
+  <!-- HIDDEN until Android closed test opens. See .tester-card { display:none } in CSS. -->
+  <section class="tester-card tester-card-base" aria-labelledby="tester-heading">
+    <div id="tester-heading" class="tester-heading">
+      🎁 <span data-i18n="tester_heading">Mencari Tester Android</span>
+      <span class="tester-android-note">📱 <span data-i18n="tester_android_note">Hanya Android</span></span>
+    </div>
+    <p data-i18n="tester_intro">Saya developer indie solo, mencari tester Android aktif untuk fase closed test 14 hari.</p>
+
+    <div class="tester-section-label">📦 <span data-i18n="tester_what_label">Tentang game ini</span></div>
+    <p data-i18n="tester_what">Teka-teki angka yang menenangkan. Letakkan telur angka di terarium, cocokkan total tiap sarang dengan targetnya, dan tetaskan Sumling.</p>
+
+    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">
+      🔗 <span data-i18n="tester_step1_label">Langkah 1 — Bergabung dengan grup tester</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.sumlings" target="_blank" rel="noopener">
+      📱 <span data-i18n="tester_step2_label">Langkah 2 — Opt-in via Play Store</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/store/apps/details?id=com.pixelryu.sumlings" target="_blank" rel="noopener">
+      ⬇️ <span data-i18n="tester_step3_label">Langkah 3 — Unduh &amp; mainkan aplikasi</span>
+    </a>
+
+    <div class="tester-section-label">📌 <span data-i18n="tester_ask_label">Yang saya mintakan</span></div>
+    <ul>
+      <li data-i18n="tester_ask_keep">Pertahankan terinstal selama 14 hari penuh</li>
+      <li data-i18n="tester_ask_launch">Luncurkan setiap beberapa hari (beberapa kali sudah cukup)</li>
+      <li data-i18n="tester_ask_minutes">Cukup main satu–dua menit per sesi</li>
+    </ul>
+    <p class="tester-note" data-i18n="tester_note_lead">ℹ️ Tips — ketiga langkah berikut wajib dilakukan:</p>
+    <ul class="tester-note-list">
+      <li data-i18n="tester_note_step1">Langkah 1 — Gabung grup: meskipun muncul “tidak ada izin untuk melihat konten”, ada tombol “Gabung grup” di halaman itu — tekan untuk bergabung.</li>
+      <li data-i18n="tester_note_step2">Langkah 2 — Jadi tester (opt-in): di halaman opt-in, ketuk untuk bergabung ke pengujian. Menjadi tester saja tidak memasang aplikasi.</li>
+      <li data-i18n="tester_note_step3">Langkah 3 — Unduh &amp; mainkan: buka halaman unduhan, pasang aplikasinya, buka, dan mainkan sebentar — tanpa ini, pengujianmu tidak terhitung.</li>
+      <li data-i18n="tester_note_account">Gunakan akun Google yang sama untuk semua langkah.</li>
+      <li data-i18n="tester_note_wait">Jika Langkah 2 atau 3 menampilkan “App not available”, tunggu beberapa jam setelah bergabung lalu coba lagi.</li>
+    </ul>
+  </section>
+
+  <a href="https://pixelryu.github.io/sumlings/overview.html" class="overview-link">📦 <span data-i18n="link_overview">Lihat Ikhtisar Game</span> →</a>
+
+  <video class="promo-video" autoplay loop muted playsinline controls preload="auto">
+    <source src="https://pixelryu.github.io/sumlings/promotion_H_story.mp4?v=20260528133150" type="video/mp4">
+  </video>
+
+  <div class="legal-divider" data-i18n="legal_divider">Dokumen Hukum</div>
+  <ul class="links">
+    <li><a href="https://pixelryu.github.io/sumlings/privacy_policy.html" data-i18n="link_privacy">Kebijakan Privasi</a></li>
+    <li><a href="https://pixelryu.github.io/sumlings/terms_of_service.html" data-i18n="link_terms">Ketentuan Layanan</a></li>
+  </ul>
+  <h2 class="social-heading" data-i18n="faq_heading">Pertanyaan Umum</h2>
+  <section class="tester-card tester-card-base" id="faq" style="text-align:left;">
+    <p><strong data-i18n="faq_q1">Game seperti apa Sumlings itu?</strong></p>
+    <p data-i18n="faq_a1">Sumlings adalah teka-teki angka kasual yang menenangkan dari PixelRyu. Letakkan telur angka di terarium kecil dan tetaskan Sumling yang lucu.</p>
+    <p><strong data-i18n="faq_q2">Apakah Sumlings gratis?</strong></p>
+    <p data-i18n="faq_a2">Ya, Sumlings gratis dimainkan.</p>
+    <p><strong data-i18n="faq_q3">Di mana saya bisa memainkan Sumlings sekarang?</strong></p>
+    <p data-i18n="faq_a3">Kamu bisa mengunduh Sumlings di App Store dan memainkannya sekarang di Roblox. Di Android, game ini sedang dalam fase closed test 14 hari dan perekrutan tester dibuka via Google Play.</p>
+    <p><strong data-i18n="faq_q4">Bagaimana cara memainkan Sumlings?</strong></p>
+    <p data-i18n="faq_a4">Letakkan telur angka di terarium dan cocokkan total tiap sarang dengan targetnya. Saat totalnya cocok, Sumling yang lucu menetas dan koleksimu bertambah.</p>
+    <p><strong data-i18n="faq_q5">Bahasa apa saja yang didukung Sumlings?</strong></p>
+    <p data-i18n="faq_a5">Game dan situs ini mendukung 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia.</p>
+  </section>
+
+  <h2 class="social-heading" data-i18n="more_games_heading">Game lain dari PixelRyu</h2>
+  <ul class="links">
+    <li><a href="https://pixelryu.github.io/parcel-pals/id/"><span data-i18n="mg_1">Parcel Pals — teka-teki menyortir paket yang menenangkan</span></a></li>
+    <li><a href="https://pixelryu.github.io/tatami/id/"><span data-i18n="mg_2">TATAMI: Lay the Floor — teka-teki balok tatami yang menenangkan</span></a></li>
+    <li><a href="https://pixelryu.github.io/bounce-cat/id/"><span data-i18n="mg_3">Bounce Cat — teka-teki kabur dari labirin yang menenangkan</span></a></li>
+  </ul>
+
+  <a href="https://pixelryu.github.io/id/" class="back" data-i18n="back">← Kembali ke PixelRyu</a>
+  <h2 class="social-heading">Follow</h2>
+  <div class="social">
+    <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note"><svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+    <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+    en: {
+      title: "Sumlings — Cozy Number Puzzle: Place Numbers, Hatch Wonders",
+      meta_desc: "Sumlings — a cozy number puzzle by PixelRyu. Place number eggs into a tiny terrarium, match each nest's total to its target, and hatch the cute Sumlings. Out now on the App Store and Roblox; Android closed testing open.",
+      tagline: "Place numbers. Hatch wonders.",
+      subtitle: "Cozy Number Puzzle",
+      tester_heading: "Android Tester Recruitment",
+      tester_android_note: "Android only",
+      tester_intro: "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
+      tester_what_label: "What it is",
+      tester_what: "A cozy number puzzle. Place number eggs in the terrarium, match each nest's total to its target, hatch the Sumlings and grow your collection.",
+      tester_step1_label: "Step 1 — Join the tester group",
+      tester_step2_label: "Step 2 — Opt-in via Play Store",
+      tester_step3_label: "Step 3 — Download & play the app",
+      tester_ask_label: "What I'm asking for",
+      tester_ask_keep: "Keep installed for the full 14 days",
+      tester_ask_launch: "Launch every couple of days (a few times is enough)",
+      tester_ask_minutes: "A minute or two of play per session is plenty",
+      tester_note_lead: "ℹ️ Tip — all three steps below are required:",
+      tester_note_step1: "Step 1 — Join the group: even if you see “no permission to view content”, there’s a “Join group” button on that page — tap it to join.",
+      tester_note_step2: "Step 2 — Become a tester (opt-in): on the opt-in page, tap to join the test. Becoming a tester alone does not install the app.",
+      tester_note_step3: "Step 3 — Download & play: open the download page, install the app, launch it and play a little — without this, your testing doesn’t count.",
+      tester_note_account: "Use the same Google account for all steps.",
+      tester_note_wait: "If Step 2 or 3 shows “App not available”, wait a few hours after joining and try again.",
+      legal_divider: "Legal Documents",
+      link_overview: "View Game Overview",
+      link_privacy: "Privacy Policy",
+      link_terms: "Terms of Service",
+      back: "← PixelRyu",
+      faq_heading: "FAQ",
+      faq_q1: "What kind of game is Sumlings?",
+      faq_a1: "Sumlings is a cozy casual number puzzle by PixelRyu. You place number eggs into a tiny terrarium and hatch the cute Sumlings.",
+      faq_q2: "Is Sumlings free to play?",
+      faq_a2: "Yes, Sumlings is free to play.",
+      faq_q3: "Where can I play Sumlings right now?",
+      faq_a3: "You can download Sumlings on the App Store and play it now on Roblox. On Android it is in a 14-day closed testing phase, and tester recruitment is open via Google Play.",
+      faq_q4: "How do you play Sumlings?",
+      faq_a4: "Place number eggs in the terrarium and match each nest's total to its target. When a nest matches, a cute Sumling hatches and grows your collection.",
+      faq_q5: "Which languages does Sumlings support?",
+      faq_a5: "The game and this site support 12 languages: English, Japanese, Chinese, Korean, Hindi, Indonesian, German, French, Italian, Spanish, Portuguese, and Russian.",
+      more_games_heading: "More games by PixelRyu",
+      mg_1: "Parcel Pals — cozy parcel-sorting puzzle",
+      mg_2: "TATAMI: Lay the Floor — cozy tatami block puzzle",
+      mg_3: "Bounce Cat — cozy maze-escape puzzle"
+    },
+    ja: {
+      title: "サムリング — 数を置いて、生き物を孵そう。",
+      meta_desc: "サムリング — PixelRyu によるほっこり数のパズル。数字のたまごを箱庭に置いて、各巣の合計を目標にぴったり合わせると、可愛いサムリングが孵化。図鑑を集めよう。App Store と Roblox で配信中。Android はクローズドテスト受付中。",
+      tagline: "数を置いて、生き物を孵そう。",
+      subtitle: "ほっこり数のパズル",
+      tester_heading: "Android テスター募集中",
+      tester_android_note: "Android 専用",
+      tester_intro: "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
+      tester_what_label: "ゲーム内容",
+      tester_what: "ほっこり数のパズル。数字のたまごを箱庭に置いて、各巣の合計を目標にぴったり合わせると、サムリングが孵化します。",
+      tester_step1_label: "ステップ 1 — テスターグループに参加",
+      tester_step2_label: "ステップ 2 — Play ストアでオプトイン",
+      tester_step3_label: "ステップ 3 — アプリをダウンロードしてプレイ",
+      tester_ask_label: "お願いしたいこと",
+      tester_ask_keep: "14 日間アンインストールせずに保持",
+      tester_ask_launch: "数日に一度起動 (合計数回で OK)",
+      tester_ask_minutes: "1 回 1〜2 分の軽いプレイで大丈夫",
+      tester_note_lead: "ℹ️ ヒント — 下記の3つのステップすべてが必要です:",
+      tester_note_step1: "ステップ1 — グループに参加: 「閲覧権限がありません」と表示されても、その画面に「グループに参加」ボタンがあるので押して参加してください。",
+      tester_note_step2: "ステップ2 — テスターになる（オプトイン）: オプトイン画面でテストに参加してください。テスターになっただけではアプリはインストールされません。",
+      tester_note_step3: "ステップ3 — ダウンロードしてプレイ: ダウンロードページを開いてアプリをインストールし、起動して少し遊んでください。これをしないとテストにカウントされません。",
+      tester_note_account: "すべてのステップで同じ Google アカウントをお使いください。",
+      tester_note_wait: "ステップ2または3で「App not available」と表示されるときは、参加から数時間おいて再度お試しください。",
+      legal_divider: "規約類",
+      link_overview: "ゲーム概要を見る",
+      link_privacy: "プライバシーポリシー",
+      link_terms: "利用規約",
+      back: "← PixelRyu へ戻る",
+      faq_heading: "よくある質問",
+      faq_q1: "サムリングはどんなゲームですか？",
+      faq_a1: "サムリングは PixelRyu によるほっこり系カジュアルな数のパズルです。数字のたまごを小さな箱庭に置いて、可愛いサムリングを孵化させます。",
+      faq_q2: "サムリングは無料で遊べますか？",
+      faq_a2: "はい、サムリングは無料でプレイできます。",
+      faq_q3: "今どこでプレイできますか？",
+      faq_a3: "App Store でダウンロードでき、Roblox でも今すぐ遊べます。Android は現在 14 日間のクローズドテスト中で、Google Play 経由でテスターを募集しています。",
+      faq_q4: "サムリングの遊び方は？",
+      faq_a4: "数字のたまごを箱庭に置いて、各巣の合計を目標にぴったり合わせます。合計が合うと可愛いサムリングが孵化し、コレクションが増えていきます。",
+      faq_q5: "対応している言語は？",
+      faq_a5: "ゲームと本サイトは英語・日本語・中国語・韓国語・ヒンディー語・インドネシア語・ドイツ語・フランス語・イタリア語・スペイン語・ポルトガル語・ロシア語の 12 言語に対応しています。",
+      more_games_heading: "PixelRyu のほかのゲーム",
+      mg_1: "Parcel Pals — ほっこり荷物仕分けパズル",
+      mg_2: "TATAMI: Lay the Floor — ほっこり畳ブロックパズル",
+      mg_3: "Bounce Cat — ほっこり迷路脱出パズル"
+    },
+    zh: {
+      title: "Sumlings — 摆放数字，孵化奇迹。",
+      meta_desc: "Sumlings — PixelRyu 出品的治愈系数字益智游戏。把数字蛋放进小小箱庭，让每个巢的合计与目标一致，孵化可爱的 Sumling 并集齐图鉴。现已在 App Store 和 Roblox 上线；Android 封闭测试开放中。",
+      tagline: "摆放数字，孵化奇迹。",
+      subtitle: "治愈系数字益智游戏",
+      tester_heading: "招募 Android 测试者",
+      tester_android_note: "仅限 Android",
+      tester_intro: "我是一名独立开发者，正在为期 14 天的封闭测试招募积极的 Android 测试者。",
+      tester_what_label: "游戏简介",
+      tester_what: "治愈系数字益智游戏。把数字蛋放进箱庭，让每个巢的合计与目标一致，孵化 Sumling 并集齐图鉴。",
+      tester_step1_label: "第一步 — 加入测试者群组",
+      tester_step2_label: "第二步 — 通过 Play 商店加入测试",
+      tester_step3_label: "第三步 — 下载并试玩应用",
+      tester_ask_label: "我希望你能做到",
+      tester_ask_keep: "完整保留 14 天不卸载",
+      tester_ask_launch: "每隔几天启动一次（几次即可）",
+      tester_ask_minutes: "每次玩一两分钟就够了",
+      tester_note_lead: "ℹ️ 提示 — 以下三个步骤都必须完成：",
+      tester_note_step1: "第一步 — 加入群组：即使显示“无权限查看内容”，该页面上也有“加入群组”按钮，请点击加入。",
+      tester_note_step2: "第二步 — 成为测试者（加入测试）：在加入测试页面点击加入测试。仅成为测试者并不会安装应用。",
+      tester_note_step3: "第三步 — 下载并试玩：打开下载页面安装应用，然后启动应用并稍微试玩。否则你的测试不会被计入。",
+      tester_note_account: "所有步骤请使用同一个 Google 账号。",
+      tester_note_wait: "如果第二步或第三步显示“App not available”，请在加入后等待几小时再试。",
+      legal_divider: "法律文件",
+      link_overview: "查看游戏简介",
+      link_privacy: "隐私政策",
+      link_terms: "服务条款",
+      back: "← 返回 PixelRyu",
+      faq_heading: "常见问题",
+      faq_q1: "Sumlings 是什么类型的游戏？",
+      faq_a1: "Sumlings 是 PixelRyu 出品的治愈系休闲数字益智游戏。把数字蛋放进小小箱庭，孵化可爱的 Sumling。",
+      faq_q2: "Sumlings 是免费的吗？",
+      faq_a2: "是的，Sumlings 可以免费游玩。",
+      faq_q3: "现在可以在哪里玩 Sumlings？",
+      faq_a3: "你可以在 App Store 下载 Sumlings，也可以立即在 Roblox 上游玩。Android 版正处于 14 天封闭测试阶段，正在通过 Google Play 招募测试者。",
+      faq_q4: "Sumlings 怎么玩？",
+      faq_a4: "把数字蛋放进箱庭，让每个巢的合计与目标一致。合计达成后，可爱的 Sumling 就会孵化并加入你的收藏。",
+      faq_q5: "Sumlings 支持哪些语言？",
+      faq_a5: "游戏与本网站支持 12 种语言：英语、日语、中文、韩语、印地语、印尼语、德语、法语、意大利语、西班牙语、葡萄牙语和俄语。",
+      more_games_heading: "PixelRyu 的更多游戏",
+      mg_1: "Parcel Pals — 治愈系包裹分拣益智游戏",
+      mg_2: "TATAMI: Lay the Floor — 治愈系榻榻米方块益智游戏",
+      mg_3: "Bounce Cat — 治愈系迷宫逃脱益智游戏"
+    },
+    ko: {
+      title: "Sumlings — 숫자를 놓고 마법을 깨워요.",
+      meta_desc: "Sumlings — PixelRyu가 만드는 힐링 숫자 퍼즐. 작은 테라리움에 숫자 알을 놓고 각 둥지의 합을 목표와 맞춰 귀여운 Sumling을 부화시키고 도감을 채우세요. App Store와 Roblox에서 출시; Android 비공개 테스트 진행 중.",
+      tagline: "숫자를 놓고 마법을 깨워요.",
+      subtitle: "힐링 숫자 퍼즐",
+      tester_heading: "Android 테스터 모집",
+      tester_android_note: "Android 전용",
+      tester_intro: "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
+      tester_what_label: "게임 소개",
+      tester_what: "힐링 숫자 퍼즐. 작은 테라리움에 숫자 알을 놓고 각 둥지의 합을 목표와 맞춰 Sumling을 부화시키세요.",
+      tester_step1_label: "1단계 — 테스터 그룹 가입",
+      tester_step2_label: "2단계 — Play 스토어에서 옵트인",
+      tester_step3_label: "3단계 — 앱 다운로드 후 플레이",
+      tester_ask_label: "부탁드리는 것",
+      tester_ask_keep: "14일 동안 설치 상태 유지",
+      tester_ask_launch: "며칠에 한 번씩 실행 (몇 번이면 충분합니다)",
+      tester_ask_minutes: "한 번에 1~2분 가벼운 플레이면 충분합니다",
+      tester_note_lead: "ℹ️ 팁 — 아래 세 단계를 모두 완료해야 합니다:",
+      tester_note_step1: "1단계 — 그룹 가입: “콘텐츠를 볼 권한이 없습니다”라고 표시되어도 그 화면에 “그룹 가입” 버튼이 있으니 눌러서 가입하세요.",
+      tester_note_step2: "2단계 — 테스터 되기(옵트인): 옵트인 화면에서 테스트에 참여하세요. 테스터가 되는 것만으로는 앱이 설치되지 않습니다.",
+      tester_note_step3: "3단계 — 다운로드 후 플레이: 다운로드 페이지를 열어 앱을 설치하고, 실행해 잠깐 플레이하세요. 그렇지 않으면 테스트로 집계되지 않습니다.",
+      tester_note_account: "모든 단계에서 같은 Google 계정을 사용하세요.",
+      tester_note_wait: "2단계 또는 3단계에서 “App not available”이 표시되면 가입 후 몇 시간 기다렸다가 다시 시도하세요.",
+      legal_divider: "법적 고지",
+      link_overview: "게임 소개 보기",
+      link_privacy: "개인정보 처리방침",
+      link_terms: "서비스 이용약관",
+      back: "← PixelRyu로 돌아가기",
+      faq_heading: "자주 묻는 질문",
+      faq_q1: "Sumlings는 어떤 게임인가요?",
+      faq_a1: "Sumlings는 PixelRyu가 만든 힐링 캐주얼 숫자 퍼즐입니다. 작은 테라리움에 숫자 알을 놓아 귀여운 Sumling을 부화시킵니다.",
+      faq_q2: "Sumlings는 무료인가요?",
+      faq_a2: "네, Sumlings는 무료로 플레이할 수 있습니다.",
+      faq_q3: "지금 어디에서 플레이할 수 있나요?",
+      faq_a3: "App Store에서 다운로드할 수 있고 Roblox에서도 바로 플레이할 수 있습니다. Android는 현재 14일간의 비공개 테스트 중이며 Google Play를 통해 테스터를 모집하고 있습니다.",
+      faq_q4: "Sumlings는 어떻게 플레이하나요?",
+      faq_a4: "테라리움에 숫자 알을 놓고 각 둥지의 합을 목표와 맞추세요. 합이 맞으면 귀여운 Sumling이 부화해 컬렉션이 늘어납니다.",
+      faq_q5: "어떤 언어를 지원하나요?",
+      faq_a5: "게임과 이 사이트는 영어, 일본어, 중국어, 한국어, 힌디어, 인도네시아어, 독일어, 프랑스어, 이탈리아어, 스페인어, 포르투갈어, 러시아어의 12개 언어를 지원합니다.",
+      more_games_heading: "PixelRyu의 다른 게임",
+      mg_1: "Parcel Pals — 힐링 소포 분류 퍼즐",
+      mg_2: "TATAMI: Lay the Floor — 힐링 다다미 블록 퍼즐",
+      mg_3: "Bounce Cat — 힐링 미로 탈출 퍼즐"
+    },
+    hi: {
+      title: "Sumlings — अंक रखो। जादू जगाओ।",
+      meta_desc: "Sumlings — PixelRyu द्वारा एक आरामदायक संख्या पहेली। छोटे टेरारियम में अंक के अंडे रखें ताकि हर घोंसले का कुल लक्ष्य से मिले, और प्यारे Sumling को फूटें। App Store और Roblox पर अभी उपलब्ध; Android क्लोज़्ड टेस्टिंग खुली है।",
+      tagline: "अंक रखो। जादू जगाओ।",
+      subtitle: "आरामदायक संख्या पहेली",
+      tester_heading: "Android टेस्टर्स की तलाश",
+      tester_android_note: "केवल Android",
+      tester_intro: "सोलो इंडी डेवलपर हूँ, 14 दिन की क्लोज़्ड टेस्टिंग के लिए सक्रिय Android टेस्टर्स ढूँढ रहा हूँ।",
+      tester_what_label: "यह क्या है",
+      tester_what: "आरामदायक संख्या पहेली। टेरारियम में अंक के अंडे रखें, हर घोंसले का कुल लक्ष्य से मिलाएँ, Sumling को फूटें।",
+      tester_step1_label: "चरण 1 — टेस्टर ग्रुप में शामिल हों",
+      tester_step2_label: "चरण 2 — Play Store पर ऑप्ट-इन",
+      tester_step3_label: "चरण 3 — ऐप डाउनलोड करके खेलें",
+      tester_ask_label: "मैं क्या माँग रहा हूँ",
+      tester_ask_keep: "पूरे 14 दिन इंस्टॉल रखें",
+      tester_ask_launch: "हर कुछ दिन में लॉन्च करें (कुछ बार ही काफ़ी है)",
+      tester_ask_minutes: "हर सत्र में एक-दो मिनट का खेल काफ़ी है",
+      tester_note_lead: "ℹ️ सुझाव — नीचे दिए तीनों चरण ज़रूरी हैं:",
+      tester_note_step1: "चरण 1 — ग्रुप जॉइन करें: भले ही “सामग्री देखने की अनुमति नहीं है” दिखे, उसी पेज पर “ग्रुप जॉइन करें” बटन होता है — उसे दबाकर जॉइन करें।",
+      tester_note_step2: "चरण 2 — टेस्टर बनें (ऑप्ट-इन): ऑप्ट-इन पेज पर टेस्ट में शामिल होने के लिए टैप करें। सिर्फ़ टेस्टर बनने से ऐप इंस्टॉल नहीं होती।",
+      tester_note_step3: "चरण 3 — डाउनलोड करके खेलें: डाउनलोड पेज खोलकर ऐप इंस्टॉल करें, उसे खोलें और थोड़ा खेलें — इसके बिना आपकी टेस्टिंग नहीं गिनी जाती।",
+      tester_note_account: "सभी चरणों में एक ही Google खाते का उपयोग करें।",
+      tester_note_wait: "अगर चरण 2 या 3 में “App not available” दिखे, तो जॉइन करने के कुछ घंटे बाद फिर से कोशिश करें।",
+      legal_divider: "क़ानूनी दस्तावेज़",
+      link_overview: "गेम अवलोकन देखें",
+      link_privacy: "गोपनीयता नीति",
+      link_terms: "सेवा शर्तें",
+      back: "← PixelRyu पर वापस",
+      faq_heading: "अक्सर पूछे जाने वाले सवाल",
+      faq_q1: "Sumlings किस तरह का गेम है?",
+      faq_a1: "Sumlings PixelRyu की एक आरामदायक कैज़ुअल संख्या पहेली है, जिसमें आप छोटे टेरारियम में अंक के अंडे रखते हैं और प्यारे Sumling फूटते हैं।",
+      faq_q2: "क्या Sumlings मुफ़्त है?",
+      faq_a2: "हाँ, Sumlings मुफ़्त में खेला जा सकता है।",
+      faq_q3: "अभी Sumlings कहाँ खेल सकते हैं?",
+      faq_a3: "आप Sumlings को App Store से डाउनलोड कर सकते हैं और Roblox पर अभी खेल सकते हैं। Android पर यह 14 दिन की क्लोज़्ड टेस्टिंग में है और Google Play के ज़रिए टेस्टर भर्ती चल रही है।",
+      faq_q4: "Sumlings कैसे खेलते हैं?",
+      faq_a4: "टेरारियम में अंक के अंडे रखें और हर घोंसले का कुल उसके लक्ष्य से मिलाएँ। कुल मिलते ही प्यारा Sumling फूटता है और आपका संग्रह बढ़ता है।",
+      faq_q5: "Sumlings किन भाषाओं को सपोर्ट करता है?",
+      faq_a5: "गेम और यह साइट 12 भाषाओं का समर्थन करती है: अंग्रेज़ी, जापानी, चीनी, कोरियाई, हिंदी, इंडोनेशियाई, जर्मन, फ़्रेंच, इतालवी, स्पेनिश, पुर्तगाली और रूसी।",
+      more_games_heading: "PixelRyu के और गेम",
+      mg_1: "Parcel Pals — आरामदायक पार्सल छाँटने वाली पहेली",
+      mg_2: "TATAMI: Lay the Floor — आरामदायक तातामी ब्लॉक पहेली",
+      mg_3: "Bounce Cat — आरामदायक भूलभुलैया से बचने की पहेली"
+    },
+    id: {
+      title: "Sumlings — Letakkan angka. Tetaskan keajaiban.",
+      meta_desc: "Sumlings — teka-teki angka yang menenangkan dari PixelRyu. Letakkan telur angka di terarium kecil sehingga total tiap sarang sesuai targetnya, dan tetaskan Sumling yang lucu. Sudah tersedia di App Store dan Roblox; closed test Android sedang dibuka.",
+      tagline: "Letakkan angka. Tetaskan keajaiban.",
+      subtitle: "Teka-teki Angka yang Menenangkan",
+      tester_heading: "Mencari Tester Android",
+      tester_android_note: "Hanya Android",
+      tester_intro: "Saya developer indie solo, mencari tester Android aktif untuk fase closed test 14 hari.",
+      tester_what_label: "Tentang game ini",
+      tester_what: "Teka-teki angka yang menenangkan. Letakkan telur angka di terarium, cocokkan total tiap sarang dengan targetnya, dan tetaskan Sumling.",
+      tester_step1_label: "Langkah 1 — Bergabung dengan grup tester",
+      tester_step2_label: "Langkah 2 — Opt-in via Play Store",
+      tester_step3_label: "Langkah 3 — Unduh & mainkan aplikasi",
+      tester_ask_label: "Yang saya mintakan",
+      tester_ask_keep: "Pertahankan terinstal selama 14 hari penuh",
+      tester_ask_launch: "Luncurkan setiap beberapa hari (beberapa kali sudah cukup)",
+      tester_ask_minutes: "Cukup main satu–dua menit per sesi",
+      tester_note_lead: "ℹ️ Tips — ketiga langkah berikut wajib dilakukan:",
+      tester_note_step1: "Langkah 1 — Gabung grup: meskipun muncul “tidak ada izin untuk melihat konten”, ada tombol “Gabung grup” di halaman itu — tekan untuk bergabung.",
+      tester_note_step2: "Langkah 2 — Jadi tester (opt-in): di halaman opt-in, ketuk untuk bergabung ke pengujian. Menjadi tester saja tidak memasang aplikasi.",
+      tester_note_step3: "Langkah 3 — Unduh & mainkan: buka halaman unduhan, pasang aplikasinya, buka, dan mainkan sebentar — tanpa ini, pengujianmu tidak terhitung.",
+      tester_note_account: "Gunakan akun Google yang sama untuk semua langkah.",
+      tester_note_wait: "Jika Langkah 2 atau 3 menampilkan “App not available”, tunggu beberapa jam setelah bergabung lalu coba lagi.",
+      legal_divider: "Dokumen Hukum",
+      link_overview: "Lihat Ikhtisar Game",
+      link_privacy: "Kebijakan Privasi",
+      link_terms: "Ketentuan Layanan",
+      back: "← Kembali ke PixelRyu",
+      faq_heading: "Pertanyaan Umum",
+      faq_q1: "Game seperti apa Sumlings itu?",
+      faq_a1: "Sumlings adalah teka-teki angka kasual yang menenangkan dari PixelRyu. Letakkan telur angka di terarium kecil dan tetaskan Sumling yang lucu.",
+      faq_q2: "Apakah Sumlings gratis?",
+      faq_a2: "Ya, Sumlings gratis dimainkan.",
+      faq_q3: "Di mana saya bisa memainkan Sumlings sekarang?",
+      faq_a3: "Kamu bisa mengunduh Sumlings di App Store dan memainkannya sekarang di Roblox. Di Android, game ini sedang dalam fase closed test 14 hari dan perekrutan tester dibuka via Google Play.",
+      faq_q4: "Bagaimana cara memainkan Sumlings?",
+      faq_a4: "Letakkan telur angka di terarium dan cocokkan total tiap sarang dengan targetnya. Saat totalnya cocok, Sumling yang lucu menetas dan koleksimu bertambah.",
+      faq_q5: "Bahasa apa saja yang didukung Sumlings?",
+      faq_a5: "Game dan situs ini mendukung 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia.",
+      more_games_heading: "Game lain dari PixelRyu",
+      mg_1: "Parcel Pals — teka-teki menyortir paket yang menenangkan",
+      mg_2: "TATAMI: Lay the Floor — teka-teki balok tatami yang menenangkan",
+      mg_3: "Bounce Cat — teka-teki kabur dari labirin yang menenangkan"
+    },
+    de: {
+      title: "Sumlings — Zahlen platzieren. Wunder erwecken.",
+      meta_desc: "Sumlings — ein gemütliches Zahlenrätsel von PixelRyu. Platziere Zahleneier in einem kleinen Terrarium, sodass die Summe jedes Nests dem Ziel entspricht, und schlüpfe die niedlichen Sumlings. Jetzt im App Store und auf Roblox verfügbar; geschlossene Android-Testphase läuft.",
+      tagline: "Zahlen platzieren. Wunder erwecken.",
+      subtitle: "Gemütliches Zahlenrätsel",
+      tester_heading: "Android-Tester gesucht",
+      tester_android_note: "Nur für Android",
+      tester_intro: "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
+      tester_what_label: "Worum es geht",
+      tester_what: "Ein gemütliches Zahlenrätsel. Platziere Zahleneier in das Terrarium, passe die Summe jedes Nests an sein Ziel an und schlüpfe die Sumlings.",
+      tester_step1_label: "Schritt 1 — Tester-Gruppe beitreten",
+      tester_step2_label: "Schritt 2 — Über den Play Store anmelden",
+      tester_step3_label: "Schritt 3 — App herunterladen & spielen",
+      tester_ask_label: "Worum ich bitte",
+      tester_ask_keep: "14 Tage lang installiert lassen",
+      tester_ask_launch: "Alle paar Tage starten (ein paar Mal reicht)",
+      tester_ask_minutes: "Ein bis zwei Minuten Spiel pro Sitzung genügen",
+      tester_note_lead: "ℹ️ Tipp — alle drei Schritte unten sind nötig:",
+      tester_note_step1: "Schritt 1 — Der Gruppe beitreten: Auch wenn „keine Berechtigung zum Anzeigen der Inhalte“ erscheint, gibt es auf der Seite einen Button „Gruppe beitreten“ – tippe darauf, um beizutreten.",
+      tester_note_step2: "Schritt 2 — Tester werden (Opt-in): Tippe auf der Opt-in-Seite, um an der Testphase teilzunehmen. Nur Tester zu werden installiert die App noch nicht.",
+      tester_note_step3: "Schritt 3 — Herunterladen & spielen: Öffne die Download-Seite, installiere die App, öffne sie und spiele kurz – ohne das zählt deine Teilnahme nicht.",
+      tester_note_account: "Verwende für alle Schritte dasselbe Google-Konto.",
+      tester_note_wait: "Wenn Schritt 2 oder 3 „App not available“ anzeigt, warte nach dem Beitritt ein paar Stunden und versuche es erneut.",
+      legal_divider: "Rechtsdokumente",
+      link_overview: "Spielübersicht ansehen",
+      link_privacy: "Datenschutzerklärung",
+      link_terms: "Nutzungsbedingungen",
+      back: "← Zurück zu PixelRyu",
+      faq_heading: "Häufige Fragen",
+      faq_q1: "Was für ein Spiel ist Sumlings?",
+      faq_a1: "Sumlings ist ein gemütliches, lässiges Zahlenrätsel von PixelRyu. Du platzierst Zahleneier in einem kleinen Terrarium und schlüpfst die niedlichen Sumlings.",
+      faq_q2: "Ist Sumlings kostenlos?",
+      faq_a2: "Ja, Sumlings ist kostenlos spielbar.",
+      faq_q3: "Wo kann ich Sumlings jetzt spielen?",
+      faq_a3: "Du kannst Sumlings im App Store herunterladen und jetzt auf Roblox spielen. Auf Android läuft eine 14-tägige geschlossene Testphase, Tester werden über Google Play gesucht.",
+      faq_q4: "Wie spielt man Sumlings?",
+      faq_a4: "Platziere Zahleneier im Terrarium und passe die Summe jedes Nests an sein Ziel an. Stimmt die Summe, schlüpft ein niedliches Sumling und deine Sammlung wächst.",
+      faq_q5: "Welche Sprachen unterstützt Sumlings?",
+      faq_a5: "Das Spiel und diese Seite unterstützen 12 Sprachen: Englisch, Japanisch, Chinesisch, Koreanisch, Hindi, Indonesisch, Deutsch, Französisch, Italienisch, Spanisch, Portugiesisch und Russisch.",
+      more_games_heading: "Weitere Spiele von PixelRyu",
+      mg_1: "Parcel Pals — gemütliches Paketsortier-Puzzle",
+      mg_2: "TATAMI: Lay the Floor — gemütliches Tatami-Blockpuzzle",
+      mg_3: "Bounce Cat — gemütliches Labyrinth-Flucht-Puzzle"
+    },
+    fr: {
+      title: "Sumlings — Place les chiffres. Fais éclore la magie.",
+      meta_desc: "Sumlings — un puzzle de chiffres cosy par PixelRyu. Place des œufs numérotés dans un petit terrarium pour que la somme de chaque nid corresponde à sa cible, et fais éclore les mignons Sumlings. Disponible dès maintenant sur l'App Store et Roblox ; test fermé Android ouvert.",
+      tagline: "Place les chiffres. Fais éclore la magie.",
+      subtitle: "Puzzle de chiffres cosy",
+      tester_heading: "Recherche de testeurs Android",
+      tester_android_note: "Android uniquement",
+      tester_intro: "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
+      tester_what_label: "De quoi il s'agit",
+      tester_what: "Un puzzle de chiffres cosy. Place des œufs numérotés dans le terrarium, fais correspondre la somme de chaque nid à sa cible et fais éclore les Sumlings.",
+      tester_step1_label: "Étape 1 — Rejoindre le groupe de testeurs",
+      tester_step2_label: "Étape 2 — S'inscrire via le Play Store",
+      tester_step3_label: "Étape 3 — Télécharger et jouer",
+      tester_ask_label: "Ce que je demande",
+      tester_ask_keep: "Garder installé pendant les 14 jours complets",
+      tester_ask_launch: "Lancer tous les deux jours (quelques fois suffisent)",
+      tester_ask_minutes: "Une à deux minutes de jeu par session suffisent",
+      tester_note_lead: "ℹ️ Astuce — les trois étapes ci-dessous sont nécessaires :",
+      tester_note_step1: "Étape 1 — Rejoindre le groupe : même si « autorisation refusée pour afficher le contenu » s’affiche, un bouton « Rejoindre le groupe » est présent sur la page — appuyez dessus pour rejoindre.",
+      tester_note_step2: "Étape 2 — Devenir testeur (inscription) : sur la page d’inscription, appuyez pour rejoindre le test. S’inscrire seul n’installe pas l’application.",
+      tester_note_step3: "Étape 3 — Télécharger et jouer : ouvrez la page de téléchargement, installez l’application, ouvrez-la et jouez un peu — sans cela, votre participation ne compte pas.",
+      tester_note_account: "Utilisez le même compte Google pour toutes les étapes.",
+      tester_note_wait: "Si l’étape 2 ou 3 affiche « App not available », attendez quelques heures après avoir rejoint, puis réessayez.",
+      legal_divider: "Documents légaux",
+      link_overview: "Voir l'aperçu du jeu",
+      link_privacy: "Politique de confidentialité",
+      link_terms: "Conditions d'utilisation",
+      back: "← Retour à PixelRyu",
+      faq_heading: "FAQ",
+      faq_q1: "Quel genre de jeu est Sumlings ?",
+      faq_a1: "Sumlings est un puzzle de chiffres cosy et casual par PixelRyu. Place des œufs numérotés dans un petit terrarium et fais éclore les mignons Sumlings.",
+      faq_q2: "Sumlings est-il gratuit ?",
+      faq_a2: "Oui, Sumlings est jouable gratuitement.",
+      faq_q3: "Où peut-on jouer à Sumlings dès maintenant ?",
+      faq_a3: "Tu peux télécharger Sumlings sur l'App Store et y jouer dès maintenant sur Roblox. Sur Android, le jeu est en phase de test fermé de 14 jours et le recrutement de testeurs est ouvert via le Play Store.",
+      faq_q4: "Comment joue-t-on à Sumlings ?",
+      faq_a4: "Place des œufs numérotés dans le terrarium et fais correspondre la somme de chaque nid à sa cible. Quand la somme est atteinte, un mignon Sumling éclot et ta collection grandit.",
+      faq_q5: "Quelles langues Sumlings prend-il en charge ?",
+      faq_a5: "Le jeu et ce site prennent en charge 12 langues : anglais, japonais, chinois, coréen, hindi, indonésien, allemand, français, italien, espagnol, portugais et russe.",
+      more_games_heading: "Plus de jeux par PixelRyu",
+      mg_1: "Parcel Pals — puzzle cosy de tri de colis",
+      mg_2: "TATAMI: Lay the Floor — puzzle cosy de blocs tatami",
+      mg_3: "Bounce Cat — puzzle cosy d'évasion de labyrinthe"
+    },
+    it: {
+      title: "Sumlings — Posiziona i numeri. Schiudi meraviglie.",
+      meta_desc: "Sumlings — un puzzle di numeri rilassante di PixelRyu. Posiziona uova numerate in un piccolo terrario in modo che la somma di ogni nido corrisponda al suo obiettivo, e schiudi i Sumling carini. Disponibile ora su App Store e Roblox; closed test Android aperto.",
+      tagline: "Posiziona i numeri. Schiudi meraviglie.",
+      subtitle: "Puzzle di numeri rilassante",
+      tester_heading: "Cercasi tester Android",
+      tester_android_note: "Solo Android",
+      tester_intro: "Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.",
+      tester_what_label: "Di cosa si tratta",
+      tester_what: "Un puzzle di numeri rilassante. Posiziona uova numerate nel terrario, abbina la somma di ogni nido al suo obiettivo e schiudi i Sumling.",
+      tester_step1_label: "Passo 1 — Unisciti al gruppo tester",
+      tester_step2_label: "Passo 2 — Opt-in tramite Play Store",
+      tester_step3_label: "Passo 3 — Scarica e gioca all’app",
+      tester_ask_label: "Cosa chiedo",
+      tester_ask_keep: "Tienilo installato per tutti i 14 giorni",
+      tester_ask_launch: "Aprilo ogni paio di giorni (poche volte basta)",
+      tester_ask_minutes: "Bastano un paio di minuti di gioco a sessione",
+      tester_note_lead: "ℹ️ Suggerimento — servono tutti e tre i passaggi qui sotto:",
+      tester_note_step1: "Passaggio 1 — Iscriviti al gruppo: anche se compare « non hai l’autorizzazione per visualizzare i contenuti », sulla pagina c’è il pulsante « Iscriviti al gruppo » — toccalo per iscriverti.",
+      tester_note_step2: "Passaggio 2 — Diventa tester (opt-in): nella pagina di opt-in, tocca per partecipare al test. Diventare tester da solo non installa l’app.",
+      tester_note_step3: "Passaggio 3 — Scarica e gioca: apri la pagina di download, installa l’app, aprila e gioca un po’ — senza questo, il tuo test non viene conteggiato.",
+      tester_note_account: "Usa lo stesso account Google per tutti i passaggi.",
+      tester_note_wait: "Se il passaggio 2 o 3 mostra « App not available », attendi qualche ora dopo l’iscrizione e riprova.",
+      legal_divider: "Documenti legali",
+      link_overview: "Vedi la panoramica",
+      link_privacy: "Informativa sulla privacy",
+      link_terms: "Termini di servizio",
+      back: "← Torna a PixelRyu",
+      faq_heading: "Domande frequenti",
+      faq_q1: "Che tipo di gioco è Sumlings?",
+      faq_a1: "Sumlings è un puzzle di numeri casual e rilassante di PixelRyu. Posiziona uova numerate in un piccolo terrario e schiudi i Sumling carini.",
+      faq_q2: "Sumlings è gratuito?",
+      faq_a2: "Sì, Sumlings è giocabile gratuitamente.",
+      faq_q3: "Dove posso giocare a Sumlings adesso?",
+      faq_a3: "Puoi scaricare Sumlings dall'App Store e giocarci subito su Roblox. Su Android è in corso una fase di closed test di 14 giorni e il reclutamento dei tester è aperto tramite il Play Store.",
+      faq_q4: "Come si gioca a Sumlings?",
+      faq_a4: "Posiziona uova numerate nel terrario e abbina la somma di ogni nido al suo obiettivo. Quando la somma corrisponde, un Sumling carino si schiude e la tua collezione cresce.",
+      faq_q5: "Quali lingue supporta Sumlings?",
+      faq_a5: "Il gioco e questo sito supportano 12 lingue: inglese, giapponese, cinese, coreano, hindi, indonesiano, tedesco, francese, italiano, spagnolo, portoghese e russo.",
+      more_games_heading: "Altri giochi di PixelRyu",
+      mg_1: "Parcel Pals — rilassante puzzle di smistamento pacchi",
+      mg_2: "TATAMI: Lay the Floor — rilassante puzzle di blocchi tatami",
+      mg_3: "Bounce Cat — rilassante puzzle di fuga dal labirinto"
+    },
+    es: {
+      title: "Sumlings — Coloca números. Eclosiona maravillas.",
+      meta_desc: "Sumlings — un puzle de números acogedor de PixelRyu. Coloca huevos numerados en un pequeño terrario para que la suma de cada nido coincida con su meta, y eclosiona los lindos Sumlings. Ya disponible en el App Store y Roblox; pruebas cerradas de Android abiertas.",
+      tagline: "Coloca números. Eclosiona maravillas.",
+      subtitle: "Puzle de números acogedor",
+      tester_heading: "Buscamos testers de Android",
+      tester_android_note: "Solo Android",
+      tester_intro: "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
+      tester_what_label: "De qué se trata",
+      tester_what: "Un puzle de números acogedor. Coloca huevos numerados en el terrario, haz que la suma de cada nido coincida con su meta y eclosiona los Sumlings.",
+      tester_step1_label: "Paso 1 — Únete al grupo de testers",
+      tester_step2_label: "Paso 2 — Inscríbete vía Play Store",
+      tester_step3_label: "Paso 3 — Descarga y juega la app",
+      tester_ask_label: "Lo que pido",
+      tester_ask_keep: "Mantener instalado los 14 días completos",
+      tester_ask_launch: "Abrir cada par de días (unas pocas veces basta)",
+      tester_ask_minutes: "Con un par de minutos de juego por sesión basta",
+      tester_note_lead: "ℹ️ Consejo — los tres pasos siguientes son necesarios:",
+      tester_note_step1: "Paso 1 — Únete al grupo: aunque aparezca «no tienes permiso para ver el contenido», en esa página hay un botón «Unirse al grupo»; tócalo para unirte.",
+      tester_note_step2: "Paso 2 — Hazte tester (participa): en la página de participación, toca para unirte a la prueba. Solo participar no instala la app.",
+      tester_note_step3: "Paso 3 — Descarga y juega: abre la página de descarga, instala la app, ábrela y juega un poco; sin esto, tu prueba no cuenta.",
+      tester_note_account: "Usa la misma cuenta de Google en todos los pasos.",
+      tester_note_wait: "Si el paso 2 o 3 muestra «App not available», espera unas horas después de unirte y vuelve a intentarlo.",
+      legal_divider: "Documentos legales",
+      link_overview: "Ver descripción del juego",
+      link_privacy: "Política de privacidad",
+      link_terms: "Términos del servicio",
+      back: "← Volver a PixelRyu",
+      faq_heading: "Preguntas frecuentes",
+      faq_q1: "¿Qué tipo de juego es Sumlings?",
+      faq_a1: "Sumlings es un puzle de números casual y acogedor de PixelRyu. Coloca huevos numerados en un pequeño terrario y eclosiona los lindos Sumlings.",
+      faq_q2: "¿Sumlings es gratis?",
+      faq_a2: "Sí, Sumlings se puede jugar gratis.",
+      faq_q3: "¿Dónde puedo jugar a Sumlings ahora mismo?",
+      faq_a3: "Puedes descargar Sumlings en el App Store y jugarlo ya en Roblox. En Android está en una fase de pruebas cerradas de 14 días y el reclutamiento de testers está abierto vía Play Store.",
+      faq_q4: "¿Cómo se juega a Sumlings?",
+      faq_a4: "Coloca huevos numerados en el terrario y haz que la suma de cada nido coincida con su meta. Cuando la suma coincide, un lindo Sumling eclosiona y tu colección crece.",
+      faq_q5: "¿Qué idiomas admite Sumlings?",
+      faq_a5: "El juego y este sitio admiten 12 idiomas: inglés, japonés, chino, coreano, hindi, indonesio, alemán, francés, italiano, español, portugués y ruso.",
+      more_games_heading: "Más juegos de PixelRyu",
+      mg_1: "Parcel Pals — acogedor puzle de clasificar paquetes",
+      mg_2: "TATAMI: Lay the Floor — acogedor puzle de bloques tatami",
+      mg_3: "Bounce Cat — acogedor puzle de escapar del laberinto"
+    },
+    pt: {
+      title: "Sumlings — Coloque números. Choque maravilhas.",
+      meta_desc: "Sumlings — um quebra-cabeça de números aconchegante da PixelRyu. Coloque ovos numerados em um pequeno terrário para que a soma de cada ninho corresponda ao alvo, e choque os fofos Sumlings. Já disponível na App Store e no Roblox; teste fechado de Android aberto.",
+      tagline: "Coloque números. Choque maravilhas.",
+      subtitle: "Quebra-cabeça de números aconchegante",
+      tester_heading: "Procuramos testers de Android",
+      tester_android_note: "Apenas Android",
+      tester_intro: "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
+      tester_what_label: "Sobre o jogo",
+      tester_what: "Um quebra-cabeça de números aconchegante. Coloque ovos numerados no terrário, faça a soma de cada ninho corresponder ao alvo e choque os Sumlings.",
+      tester_step1_label: "Passo 1 — Entrar no grupo de testers",
+      tester_step2_label: "Passo 2 — Adesão via Play Store",
+      tester_step3_label: "Passo 3 — Baixe e jogue o app",
+      tester_ask_label: "O que peço",
+      tester_ask_keep: "Manter instalado por 14 dias completos",
+      tester_ask_launch: "Abra a cada poucos dias (algumas vezes basta)",
+      tester_ask_minutes: "Um ou dois minutos de jogo por sessão já bastam",
+      tester_note_lead: "ℹ️ Dica — as três etapas abaixo são necessárias:",
+      tester_note_step1: "Etapa 1 — Entre no grupo: mesmo que apareça “sem permissão para ver o conteúdo”, há um botão “Participar do grupo” na página — toque para entrar.",
+      tester_note_step2: "Etapa 2 — Torne-se tester (opt-in): na página de opt-in, toque para entrar no teste. Apenas virar tester não instala o app.",
+      tester_note_step3: "Etapa 3 — Baixe e jogue: abra a página de download, instale o app, abra e jogue um pouco — sem isso, seu teste não conta.",
+      tester_note_account: "Use a mesma Conta do Google em todas as etapas.",
+      tester_note_wait: "Se a Etapa 2 ou 3 mostrar “App not available”, aguarde algumas horas após participar e tente novamente.",
+      legal_divider: "Documentos legais",
+      link_overview: "Ver visão geral do jogo",
+      link_privacy: "Política de privacidade",
+      link_terms: "Termos de serviço",
+      back: "← Voltar para PixelRyu",
+      faq_heading: "Perguntas frequentes",
+      faq_q1: "Que tipo de jogo é Sumlings?",
+      faq_a1: "Sumlings é um quebra-cabeça de números casual e aconchegante da PixelRyu. Coloque ovos numerados em um pequeno terrário e choque os fofos Sumlings.",
+      faq_q2: "Sumlings é gratuito?",
+      faq_a2: "Sim, Sumlings é gratuito para jogar.",
+      faq_q3: "Onde posso jogar Sumlings agora?",
+      faq_a3: "Você pode baixar Sumlings na App Store e jogá-lo agora no Roblox. No Android, o jogo está em uma fase de teste fechado de 14 dias e o recrutamento de testers está aberto via Play Store.",
+      faq_q4: "Como se joga Sumlings?",
+      faq_a4: "Coloque ovos numerados no terrário e faça a soma de cada ninho corresponder ao alvo. Quando a soma bate, um fofo Sumling choca e sua coleção cresce.",
+      faq_q5: "Quais idiomas Sumlings suporta?",
+      faq_a5: "O jogo e este site suportam 12 idiomas: inglês, japonês, chinês, coreano, híndi, indonésio, alemão, francês, italiano, espanhol, português e russo.",
+      more_games_heading: "Mais jogos da PixelRyu",
+      mg_1: "Parcel Pals — quebra-cabeça aconchegante de separar encomendas",
+      mg_2: "TATAMI: Lay the Floor — quebra-cabeça aconchegante de blocos tatami",
+      mg_3: "Bounce Cat — quebra-cabeça aconchegante de fuga do labirinto"
+    },
+    ru: {
+      title: "Sumlings — Расставь числа. Вылупи чудеса.",
+      meta_desc: "Sumlings — уютная числовая головоломка от PixelRyu. Расставляйте числовые яйца в крошечном террариуме так, чтобы сумма каждого гнезда совпадала с целью, и вылупляйте милых Sumling. Уже доступно в App Store и на Roblox; открыто закрытое тестирование Android.",
+      tagline: "Расставь числа. Вылупи чудеса.",
+      subtitle: "Уютная числовая головоломка",
+      tester_heading: "Поиск Android-тестеров",
+      tester_android_note: "Только для Android",
+      tester_intro: "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",
+      tester_what_label: "О чём игра",
+      tester_what: "Уютная числовая головоломка. Расставляйте числовые яйца в террариуме, подбирайте сумму каждого гнезда под цель и вылупляйте Sumling, пополняя коллекцию.",
+      tester_step1_label: "Шаг 1 — Вступить в группу тестеров",
+      tester_step2_label: "Шаг 2 — Подписаться через Play Store",
+      tester_step3_label: "Шаг 3 — Скачать и поиграть",
+      tester_ask_label: "О чём я прошу",
+      tester_ask_keep: "Не удалять приложение все 14 дней",
+      tester_ask_launch: "Запускайте раз в пару дней (нескольких раз достаточно)",
+      tester_ask_minutes: "Достаточно одной–двух минут игры за сессию",
+      tester_note_lead: "ℹ️ Совет — нужны все три шага ниже:",
+      tester_note_step1: "Шаг 1 — Вступите в группу: даже если показано «нет прав для просмотра содержимого», на странице есть кнопка «Присоединиться к группе» — нажмите её, чтобы вступить.",
+      tester_note_step2: "Шаг 2 — Станьте тестером (подтвердите участие): на странице подтверждения нажмите, чтобы присоединиться к тесту. Само подтверждение участия не устанавливает приложение.",
+      tester_note_step3: "Шаг 3 — Скачайте и поиграйте: откройте страницу загрузки, установите приложение, откройте его и немного поиграйте — без этого ваше участие не засчитывается.",
+      tester_note_account: "Используйте один и тот же аккаунт Google для всех шагов.",
+      tester_note_wait: "Если на шаге 2 или 3 появляется «App not available», подождите несколько часов после вступления и попробуйте снова.",
+      legal_divider: "Правовые документы",
+      link_overview: "Посмотреть об игре",
+      link_privacy: "Политика конфиденциальности",
+      link_terms: "Условия использования",
+      back: "← Назад к PixelRyu",
+      faq_heading: "Частые вопросы",
+      faq_q1: "Что за игра Sumlings?",
+      faq_a1: "Sumlings — уютная казуальная числовая головоломка от PixelRyu. Расставляйте числовые яйца в крошечном террариуме и вылупляйте милых Sumling.",
+      faq_q2: "Sumlings бесплатна?",
+      faq_a2: "Да, в Sumlings можно играть бесплатно.",
+      faq_q3: "Где можно поиграть в Sumlings прямо сейчас?",
+      faq_a3: "Вы можете скачать Sumlings в App Store и уже сейчас играть на Roblox. На Android идёт 14-дневное закрытое тестирование, набор тестеров открыт через Google Play.",
+      faq_q4: "Как играть в Sumlings?",
+      faq_a4: "Расставляйте числовые яйца в террариуме и подбирайте сумму каждого гнезда под цель. Когда сумма совпадает, вылупляется милый Sumling и коллекция растёт.",
+      faq_q5: "Какие языки поддерживает Sumlings?",
+      faq_a5: "Игра и этот сайт поддерживают 12 языков: английский, японский, китайский, корейский, хинди, индонезийский, немецкий, французский, итальянский, испанский, португальский и русский.",
+      more_games_heading: "Другие игры PixelRyu",
+      mg_1: "Parcel Pals — уютная головоломка с сортировкой посылок",
+      mg_2: "TATAMI: Lay the Floor — уютная головоломка с блоками татами",
+      mg_3: "Bounce Cat — уютная головоломка с побегом из лабиринта"
+    }
+  };
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
+
+  function detectLang() {
+    try {
+      const stored = localStorage.getItem(LANG_STORAGE_KEY);
+      if (stored && i18n[stored]) return stored;
+    } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang, persist) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(opt);
+    }
+    // Persist on init too — guarantees subsequent pages (privacy/terms/overview)
+    // pick up the same language via the shared localStorage key.
+    setLang('id', true);
+    sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/sumlings/' : 'https://pixelryu.github.io/sumlings/' + v + '/';});
+  })();
+</script>
+<script src="https://pixelryu.github.io/breadcrumb.js?v=20260602202548" defer></script>
+</body>
+</html>

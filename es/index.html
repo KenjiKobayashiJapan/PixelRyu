@@ -1,0 +1,1379 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5MH53Z8LM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M5MH53Z8LM');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">PixelRyu — Juegos de puzzle y acción cósmicos</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="PixelRyu crea hermosos juegos de puzzle y acción serenos para móvil y Roblox — donde la calma se encuentra con el movimiento.">
+<style>
+  html, body {
+    overflow-x: hidden;       /* no horizontal scroll/swipe on mobile */
+    max-width: 100%;
+  }
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: radial-gradient(ellipse at top, #172244 0%, #080d1f 50%, #02040c 100%);
+    color: #e4ebf5;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    box-sizing: border-box;   /* keep width:100% + padding within the viewport */
+    max-width: 720px;
+    width: 100%;
+    padding: 80px 32px;
+    text-align: center;
+    position: relative;
+  }
+  .lang-switch {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
+  .lang-switch select {
+    background: rgba(122, 176, 255, 0.06);
+    color: #e4ebf5;
+    border: 1px solid rgba(122, 176, 255, 0.20);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .lang-switch select:hover {
+    background: rgba(122, 176, 255, 0.12);
+    border-color: rgba(122, 176, 255, 0.50);
+  }
+  .lang-switch select option { background: #0d1428; color: #e4ebf5; }
+  .logo-wrap { margin-bottom: 24px; }
+  .brand-icon {
+    width: 132px;
+    height: 132px;
+    display: block;
+    margin: 22px auto 0;
+    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
+  }
+  h1 {
+    font-size: 72px;
+    margin: 0;
+    background: linear-gradient(90deg, #5ea1ff 0%, #ff6bc4 60%, #ffd455 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    font-weight: 800;
+    letter-spacing: -1px;
+  }
+  .tagline {
+    font-size: 20px;
+    color: #8b9bbd;
+    margin-bottom: 64px;
+  }
+  h2 {
+    font-size: 14px;
+    color: #6c7d9d;
+    margin: 64px 0 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+  }
+  .game-list { list-style: none; padding: 0; margin: 0; }
+  .game-card {
+    background: rgba(122, 176, 255, 0.06);
+    border: 1px solid rgba(122, 176, 255, 0.20);
+    border-radius: 18px;
+    padding: 28px 32px;
+    margin-bottom: 16px;
+    text-align: left;
+    transition: all 0.25s ease;
+  }
+  .game-card:hover {
+    background: rgba(122, 176, 255, 0.12);
+    border-color: rgba(122, 176, 255, 0.50);
+    transform: translateY(-2px);
+  }
+  .game-card { cursor: pointer; }
+  /* press feedback when clicking anywhere on the card */
+  .game-card:active { transform: scale(0.978); }
+  .game-card.tapped { animation: cardTap 0.22s ease; }
+  @keyframes cardTap {
+    0%   { transform: scale(1); }
+    35%  { transform: scale(0.955); }
+    100% { transform: scale(1); }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .game-card.tapped { animation: none; }
+    .game-card:active { transform: none; }
+  }
+  .game-head {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+  }
+  .game-icon {
+    width: 56px;
+    height: 56px;
+    border-radius: 13px;
+    flex-shrink: 0;
+    display: block;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  }
+  /* Title column: a serial number ("0001") in front of the name, with a genre tag below.
+     On desktop the number sits inline before the title; on mobile it drops to its own
+     centered line above the title (see the max-width:600px block). */
+  .game-title { display: flex; flex-direction: column; gap: 8px; min-width: 0; flex: 1 1 auto; }
+  .game-name-row { display: block; }
+  .game-no {
+    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
+    font-weight: 700;
+    font-size: 20px;
+    letter-spacing: 1.5px;
+    color: #7d90b8;
+    margin-right: 12px;
+  }
+  .genre-tags { display: flex; flex-wrap: wrap; gap: 6px; }
+  .genre-tag {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    align-self: flex-start;
+    padding: 3px 11px 3px 9px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.3px;
+    line-height: 1;
+    border: 1px solid transparent;
+  }
+  .genre-tag .genre-ic { width: 14px; height: 14px; display: block; fill: currentColor; flex: 0 0 auto; }
+  .genre-puzzle { color: #67c9d8; background: rgba(103,201,216,0.12); border-color: rgba(103,201,216,0.34); }
+  .genre-action { color: #eaa63f; background: rgba(234,166,63,0.13); border-color: rgba(234,166,63,0.34); }
+  /* Genre filter bar: pill buttons that show only the cards of the chosen genre. */
+  .genre-filter { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 2px 0 26px; }
+  .filter-btn {
+    display: inline-flex; align-items: center; gap: 7px;
+    padding: 7px 15px; border-radius: 999px;
+    font-family: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0.3px;
+    cursor: pointer; transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
+    background: rgba(122,176,255,0.06); border: 1px solid rgba(122,176,255,0.22); color: #a8b5d0;
+  }
+  .filter-btn:hover { transform: translateY(-1px); }
+  .filter-btn .filter-ic { width: 15px; height: 15px; display: block; fill: currentColor; flex: 0 0 auto; }
+  .filter-count { font-size: 11px; font-weight: 700; opacity: .6; font-variant-numeric: tabular-nums; }
+  .filter-all    { color: #9fb6e6; }
+  .filter-puzzle { color: #67c9d8; background: rgba(103,201,216,0.10); border-color: rgba(103,201,216,0.30); }
+  .filter-action { color: #eaa63f; background: rgba(234,166,63,0.10); border-color: rgba(234,166,63,0.30); }
+  .filter-btn.is-active { color: #0b1020; }
+  .filter-btn.is-active .filter-count { opacity: .75; }
+  .filter-all.is-active    { background: #7ab0ff; border-color: #7ab0ff; }
+  .filter-puzzle.is-active { background: #67c9d8; border-color: #67c9d8; }
+  .filter-action.is-active { background: #eaa63f; border-color: #eaa63f; }
+  @media (prefers-reduced-motion: reduce) { .filter-btn:hover { transform: none; } }
+  .game-card a {
+    color: #7ab0ff;
+    text-decoration: none;
+    font-size: 26px;
+    font-weight: 700;
+  }
+  .game-card a:hover { color: #a0c8ff; }
+  .game-card .desc { color: #a8b5d0; margin-top: 10px; font-size: 15px; line-height: 1.6; }
+  .game-card .links {
+    margin-top: 14px;
+    font-size: 13px;
+    color: #6c7d9d;
+  }
+  .game-card .links a {
+    font-size: 13px;
+    color: #6c7d9d;
+    text-decoration: underline;
+    margin-right: 14px;
+    font-weight: 400;
+  }
+  .game-card .links a:hover { color: #aac0e0; }
+  .game-card .appstore-badge,
+  .game-card .roblox-badge,
+  .game-card .googleplay-badge {
+    display: inline-block;
+    margin-top: 16px;
+    line-height: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+    vertical-align: top;
+  }
+  .game-card .appstore-badge:hover,
+  .game-card .roblox-badge:hover,
+  .game-card .googleplay-badge:hover { transform: translateY(-2px); opacity: 0.85; }
+  .game-card .appstore-badge svg,
+  .game-card .roblox-badge svg { display: block; margin: 0 auto; }
+  .game-card .googleplay-badge img { display: block; height: 51px; width: auto; }
+  /* Standalone Google Play badge reserves the iPhone badge's slot (150px) + gap (10px)
+     so the Google Play badge sits at the same horizontal position whether or not
+     an App Store badge is present. */
+  .game-card .googleplay-badge { margin-left: 160px; }
+  .game-card .appstore-badge + .googleplay-badge { margin-left: 10px; }
+  .game-card .googleplay-badge + .roblox-badge { margin-left: 10px; }
+  /* When several badges share a row, lay them out with flex so wrapped rows
+     align to the left edge (no leading margin) — keeps the iPhone/Roblox badges
+     flush on narrow/mobile widths instead of shifting by the inline-block margin. */
+  .game-card .store-badges {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    column-gap: 10px;
+    row-gap: 16px;
+    margin-top: 16px;
+  }
+  .game-card .store-badges .appstore-badge,
+  .game-card .store-badges .googleplay-badge,
+  .game-card .store-badges .roblox-badge { margin-top: 0; margin-left: 0; }
+  /* For a card with no App Store build yet (e.g. HAYATE, Liquid Glow), an invisible,
+     non-interactive placeholder takes up the App Store badge's slot (150px) so the real
+     badges line up with the same columns as the other cards — on desktop and mobile
+     alike, while every badge stays at its natural size. */
+  .game-card .store-badges .badge-ghost {
+    flex: 0 0 150px;
+    height: 51px;
+    visibility: hidden;
+    pointer-events: none;
+  }
+  /* Coming-soon banner: a greyed, non-interactive store badge with a red "COMING SOON"
+     stamp laid diagonally over it. Per-cell (.soon-cell) so a card can mix live and
+     coming-soon banners; the stamp is a sibling of the badge so the badge's grayscale
+     filter doesn't desaturate the red. */
+  .game-card .store-badges .soon-cell { position: relative; display: inline-block; line-height: 0; }
+  .game-card .store-badges .soon-cell .appstore-badge,
+  .game-card .store-badges .soon-cell .googleplay-badge,
+  .game-card .store-badges .soon-cell .roblox-badge { display: inline-block; line-height: 0; filter: grayscale(1); opacity: .5; pointer-events: none; }
+  .game-card .store-badges .soon-cell .soon-stamp {
+    position: absolute; top: 50%; left: 50%;
+    transform: translate(-50%, -50%) rotate(-12deg);
+    font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap;
+    color: #e11d1d; text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 1px 2px rgba(0,0,0,0.35);
+    pointer-events: none;
+  }
+  /* On mobile the row becomes a 2-col grid sized for anchor badges; let the coming-soon
+     cell (a span, not an anchor) and its badge graphic fill the column the same way. */
+  .game-card .store-badges > .soon-cell { display: block; }
+  .social {
+    display: flex;
+    justify-content: center;
+    gap: 14px;
+    margin-top: 20px;
+    flex-wrap: wrap;
+  }
+  .social a {
+    width: 46px;
+    height: 46px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: rgba(122, 176, 255, 0.06);
+    border: 1px solid rgba(122, 176, 255, 0.20);
+    color: #8b9bbd;
+    transition: all 0.25s ease;
+  }
+  .social a:hover {
+    background: rgba(122, 176, 255, 0.12);
+    border-color: rgba(122, 176, 255, 0.50);
+    color: #a0c8ff;
+    transform: translateY(-2px);
+  }
+  .social svg { width: 22px; height: 22px; fill: currentColor; display: block; }
+  .social-header { margin-top: 28px; margin-bottom: 4px; }
+  .footer {
+    color: #4a5878;
+    font-size: 13px;
+    margin-top: 96px;
+  }
+  @media (max-width: 600px) {
+    h1 { font-size: 56px; }
+    .brand-icon { width: 104px; height: 104px; }
+    .container { padding: 60px 24px; }
+    .lang-switch { top: 16px; right: 16px; }
+    .game-icon { width: 48px; height: 48px; border-radius: 11px; }
+    /* On mobile the serial number drops onto its own line, centered across the WHOLE
+       card (not just the title column). The number lives in the title column, which is
+       offset from the card's left edge by the icon (48px) + head gap (16px) = 64px, so
+       pull it left by 64px and widen it by 64px to span the full card content width. */
+    .game-name-row .game-no { display: block; text-align: center; margin: 0 0 4px -64px; width: calc(100% + 64px); font-size: 16px; letter-spacing: 2px; }
+    /* Compact the filter pills a touch so they wrap comfortably on narrow phones. */
+    .genre-filter { gap: 8px; }
+    .filter-btn { padding: 6px 13px; font-size: 12.5px; }
+    /* On mobile, lay the store badges out as a 2-column grid: two badges per row, a
+       third drops to a second row, and a missing App Store badge leaves its column as
+       empty space (the .badge-ghost cell). Columns follow the badges' natural widths
+       (150 : 172) so heights match; the grid never grows past the natural 2-badge width. */
+    .game-card .store-badges {
+      display: grid;
+      grid-template-columns: 150fr 172fr;
+      gap: 10px;
+      max-width: 332px;
+      align-items: center;
+    }
+    .game-card .store-badges > a > svg,
+    .game-card .store-badges > a > img { width: 100%; height: auto; display: block; }
+  }
+</style>
+<!-- SEO/LLMO start (managed) -->
+<meta name="google-site-verification" content="iUKE_0v-5jn4aownL7sNymhLvRtdX-7Wreqjs1qWKp0">
+<link rel="canonical" href="https://pixelryu.github.io/es/">
+<link rel="alternate" hreflang="en" href="https://pixelryu.github.io/">
+<link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/ja/">
+<link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/zh/">
+<link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/ko/">
+<link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/hi/">
+<link rel="alternate" hreflang="id" href="https://pixelryu.github.io/id/">
+<link rel="alternate" hreflang="de" href="https://pixelryu.github.io/de/">
+<link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/fr/">
+<link rel="alternate" hreflang="it" href="https://pixelryu.github.io/it/">
+<link rel="alternate" hreflang="es" href="https://pixelryu.github.io/es/">
+<link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/pt/">
+<link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/ru/">
+<link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="PixelRyu">
+<meta name="publisher" content="PixelRyu">
+<meta name="keywords" content="PixelRyu, indie games, mobile games, puzzle games, action games, puzzle and action games, Japan, Android, iOS, Roblox, Bounce Cat, Sumlings, Parcel Pals, ISSEN, HOTARU, Liquid Glow, Mole Whack">
+<meta name="theme-color" content="#080d1f">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/icon.png">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PixelRyu">
+<meta property="og:title" content="PixelRyu — Juegos de puzzle y acción cósmicos">
+<meta property="og:description" content="PixelRyu crea hermosos juegos de puzzle y acción serenos para móvil y Roblox — donde la calma se encuentra con el movimiento.">
+<meta property="og:url" content="https://pixelryu.github.io/es/">
+<meta property="og:image" content="https://pixelryu.github.io/og.png?v=20260606192649">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="PixelRyu — Juegos de puzzle y acción cósmicos">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="PixelRyu — Juegos de puzzle y acción cósmicos">
+<meta name="twitter:description" content="PixelRyu crea hermosos juegos de puzzle y acción serenos para móvil y Roblox — donde la calma se encuentra con el movimiento.">
+<meta name="twitter:image" content="https://pixelryu.github.io/og.png?v=20260606192649">
+<meta name="twitter:image:alt" content="PixelRyu — Juegos de puzzle y acción cósmicos">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/","logo":"https://pixelryu.github.io/icon.png","description":"PixelRyu is a solo indie game studio from Japan making small, polished, fully multilingual games for Android, iOS, and Roblox.","foundingLocation":{"@type":"Country","name":"Japan"},"sameAs":["https://substack.com/@pixelryu","https://note.com/pixelryu","https://www.youtube.com/@PixelRyu-Japan","https://x.com/PixelRyu10752","https://www.instagram.com/pixelryu/","https://www.facebook.com/PixelRyuJapan","https://www.tiktok.com/@pixelryu_japan","https://www.threads.com/@pixelryu"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"PixelRyu","url":"https://pixelryu.github.io/","inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Games by PixelRyu","itemListOrder":"https://schema.org/ItemListOrderDescending","numberOfItems":10,"itemListElement":[{"@type":"ListItem","position":1,"name":"TATAMI: Lay the Floor","url":"https://pixelryu.github.io/tatami/"},{"@type":"ListItem","position":2,"name":"TEMARI","url":"https://pixelryu.github.io/temari/"},{"@type":"ListItem","position":3,"name":"Bounce Cat","url":"https://pixelryu.github.io/bounce-cat/"},{"@type":"ListItem","position":4,"name":"HAYATE","url":"https://pixelryu.github.io/hayate/"},{"@type":"ListItem","position":5,"name":"Sumlings","url":"https://pixelryu.github.io/sumlings/"},{"@type":"ListItem","position":6,"name":"Parcel Pals","url":"https://pixelryu.github.io/parcel-pals/"},{"@type":"ListItem","position":7,"name":"ISSEN","url":"https://pixelryu.github.io/issen/"},{"@type":"ListItem","position":8,"name":"HOTARU","url":"https://pixelryu.github.io/hotaru/"},{"@type":"ListItem","position":9,"name":"Liquid Glow","url":"https://pixelryu.github.io/liquid-glow-cosmic/"},{"@type":"ListItem","position":10,"name":"Mole Whack","url":"https://pixelryu.github.io/mole-whack/"}]}</script>
+<!-- SEO/LLMO end -->
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch">
+    <select id="lang-select" aria-label="Language"></select>
+  </div>
+  <div class="logo-wrap">
+    <h1>PixelRyu</h1>
+    <div class="social social-header">
+      <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
+      </a>
+      <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note">
+        <svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg>
+      </a>
+      <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
+      </a>
+      <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+      </a>
+      <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
+      </a>
+      <a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
+      </a>
+      <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
+      </a>
+      <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads">
+        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg>
+      </a>
+    </div>
+    <img src="https://pixelryu.github.io/icon.png?v=20260521130557" alt="PixelRyu" class="brand-icon">
+  </div>
+  <div class="tagline" data-i18n="tagline">Calma y movimiento — juegos de puzzle y acción cósmicos</div>
+
+  <h2 data-i18n="games_heading">Juegos</h2>
+  <div class="genre-filter" role="group" aria-label="Filter games by genre">
+    <button type="button" class="filter-btn filter-all is-active" data-filter="all" aria-pressed="true">
+      <svg class="filter-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M3 3h7v7H3zm11 0h7v7h-7zm0 11h7v7h-7zM3 14h7v7H3z"/></svg>
+      <span data-i18n="filter_all">Todos</span><span class="filter-count" data-count="all"></span>
+    </button>
+    <button type="button" class="filter-btn filter-puzzle" data-filter="puzzle" aria-pressed="false">
+      <svg class="filter-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg>
+      <span data-i18n="genre_puzzle">Puzzle</span><span class="filter-count" data-count="puzzle"></span>
+    </button>
+    <button type="button" class="filter-btn filter-action" data-filter="action" aria-pressed="false">
+      <svg class="filter-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>
+      <span data-i18n="genre_action">Acción</span><span class="filter-count" data-count="action"></span>
+    </button>
+  </div>
+  <ul class="game-list">
+    <li class="game-card">
+      <div class="game-head">
+        <img class="game-icon" src="https://pixelryu.github.io/tatami/icon.png" alt="">
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0010</span><a href="https://pixelryu.github.io/tatami/es/" data-i18n="tatami_title">TATAMI — Coloca el tatami. Gana tu recompensa.</a></span>
+          <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Puzzle</span></span>
+        </div>
+      </div>
+      <div class="desc" data-i18n="tatami_desc">Un relajante puzle de bloques en el que colocas esteras de tatami en una tranquila sala japonesa. Arrastra una estera al suelo y completa una fila o columna entera para terminar esa línea. Luego un samurái carga al hombro las esteras colocadas y las lleva al oficial, y entregarlas otorga monedas de oro que compran vidas extra. Un ligero medidor de Prisa te mantiene en movimiento. Con un bonus de colocación de buena fortuna. 48 niveles. Gratis, de PixelRyu. Próximamente en App Store.</div>
+      <div class="store-badges has-soon" aria-label="Play on Roblox now; Android testers welcome on Google Play; App Store coming soon">
+      <span class="soon-cell"><span class="appstore-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+        </svg></span><span class="soon-stamp">COMING SOON</span></span>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/tatami/#tester-heading" aria-label="Join TATAMI Android testers">
+        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+      </a>
+      <a class="roblox-badge" href="https://www.roblox.com/games/134915507341779/TATAMI-Lay-the-Floor" target="_blank" rel="noopener" aria-label="Play TATAMI on Roblox">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg>
+      </a>
+      </div>
+      <div class="links">
+        <a href="https://pixelryu.github.io/tatami/privacy_policy.html" data-i18n="link_privacy">Privacidad</a>
+        <a href="https://pixelryu.github.io/tatami/terms_of_service.html" data-i18n="link_terms">Términos</a>
+      </div>
+    </li>
+    <li class="game-card">
+      <div class="game-head">
+        <img class="game-icon" src="https://pixelryu.github.io/temari/icon.png" alt="">
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0009</span><a href="https://pixelryu.github.io/temari/es/" data-i18n="temari_title">TEMARI — Golpea el temari, revienta los globos de papel.</a></span>
+          <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Acción</span></span>
+        </div>
+      </div>
+      <div class="desc" data-i18n="temari_desc">Un breakout de pala en primera persona en una acogedora noche japonesa. Mueve tu hagoita con la punta del dedo, mantén el temari en un peloteo sin fin y revienta cada globo de papel del pasillo — con split, cámara lenta focus, un faisán ayudante y más. 8 mundos, 200 niveles. Ya disponible en App Store.</div>
+      <div class="store-badges">
+      <a class="appstore-badge" href="https://apps.apple.com/app/id6777618068" target="_blank" rel="noopener" aria-label="Download TEMARI on the App Store">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+        </svg>
+      </a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/temari/#tester-heading" aria-label="Join TEMARI Android testers">
+        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+      </a>
+      <a class="roblox-badge" href="https://www.roblox.com/games/84976260376006/TEMARI-Hanetsuki-Paddle" target="_blank" rel="noopener" aria-label="Play TEMARI on Roblox">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg>
+      </a>
+      </div>
+      <div class="links">
+        <a href="https://pixelryu.github.io/temari/privacy_policy.html" data-i18n="link_privacy">Privacidad</a>
+        <a href="https://pixelryu.github.io/temari/terms_of_service.html" data-i18n="link_terms">Términos</a>
+      </div>
+    </li>
+    <li class="game-card">
+      <div class="game-head">
+        <img class="game-icon" src="https://pixelryu.github.io/bounce-cat/icon.png" alt="">
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0008</span><a href="https://pixelryu.github.io/bounce-cat/es/" data-i18n="bc_title">Bounce Cat — Tiros con rebote. Libera al gato.</a></span>
+          <span class="genre-tags">
+            <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Puzzle</span></span>
+            <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Acción</span></span>
+          </span>
+        </div>
+      </div>
+      <div class="desc" data-i18n="bc_desc">Un acogedor puzle de escape de laberintos. Dispara lana desde fuera del laberinto, sigue el rebote y desplaza o rompe muros para que el gato atrapado encuentre su propia salida: 200 laberintos en 10 mundos. Ya disponible en Roblox y App Store. Se buscan testers de Android.</div>
+      <div class="store-badges">
+      <a class="appstore-badge" href="https://apps.apple.com/app/id6776876260" target="_blank" rel="noopener" aria-label="Download Bounce Cat on the App Store">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+        </svg>
+      </a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/bounce-cat/#tester-heading" aria-label="Join Bounce Cat Android testers">
+        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+      </a>
+      <a class="roblox-badge" href="https://www.roblox.com/games/107578490712285/Bounce-Cat-Rescue-the-Cat" target="_blank" rel="noopener" aria-label="Play Bounce Cat on Roblox">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg>
+      </a>
+      </div>
+      <div class="links">
+        <a href="https://pixelryu.github.io/bounce-cat/privacy_policy.html" data-i18n="link_privacy">Privacidad</a>
+        <a href="https://pixelryu.github.io/bounce-cat/terms_of_service.html" data-i18n="link_terms">Términos</a>
+      </div>
+    </li>
+    <li class="game-card">
+      <div class="game-head">
+        <img class="game-icon" src="https://pixelryu.github.io/hayate/icon.png" alt="">
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0007</span><a href="https://pixelryu.github.io/hayate/es/" data-i18n="hayate_title">HAYATE — Corre veloz. Corta limpio. Llega primero.</a></span>
+          <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Acción</span></span>
+        </div>
+      </div>
+      <div class="desc" data-i18n="hayate_desc">Carreras de velocidad con katana en 3D y secuela de ISSEN. Esquiva lo que vuela hacia ti o lanza tu katana teledirigida para cortarlo limpio: a lo largo de cuatro mundos, cuarenta niveles y carreras sin fin. Ya disponible en App Store. Se buscan testers de Android.</div>
+      <div class="store-badges">
+      <a class="appstore-badge" href="https://apps.apple.com/app/id6775771603" target="_blank" rel="noopener" aria-label="Download HAYATE on the App Store">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+        </svg>
+      </a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/hayate/#tester-heading" aria-label="Join HAYATE Android testers">
+        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+      </a>
+      <a class="roblox-badge" href="https://www.roblox.com/games/128048970536729/HAYATE-Katana-Racer" target="_blank" rel="noopener" aria-label="Play HAYATE on Roblox">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg>
+      </a>
+      </div>
+      <div class="links">
+        <a href="https://pixelryu.github.io/hayate/privacy_policy.html" data-i18n="link_privacy">Privacidad</a>
+        <a href="https://pixelryu.github.io/hayate/terms_of_service.html" data-i18n="link_terms">Términos</a>
+      </div>
+    </li>
+    <li class="game-card">
+      <div class="game-head">
+        <img class="game-icon" src="https://pixelryu.github.io/sumlings/icon.png" alt="">
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0006</span><a href="https://pixelryu.github.io/sumlings/es/" data-i18n="sumlings_title">Sumlings — Coloca números. Eclosiona maravillas.</a></span>
+          <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Puzzle</span></span>
+        </div>
+      </div>
+      <div class="desc" data-i18n="sumlings_desc">Un puzle de números relajante. Coloca huevos numerados en un pequeño terrario para que la suma de cada nido coincida con su meta — eclosiona los Sumlings y completa tu colección. Ya disponible en App Store. Se buscan testers de Android.</div>
+      <div class="store-badges">
+      <a class="appstore-badge" href="https://apps.apple.com/app/id6774177494" target="_blank" rel="noopener" aria-label="Download Sumlings on the App Store">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+        </svg>
+      </a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/sumlings/#tester-heading" aria-label="Join Sumlings Android testers">
+        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+      </a>
+      <a class="roblox-badge" href="https://www.roblox.com/games/90303076167033/Sumlings" target="_blank" rel="noopener" aria-label="Play Sumlings on Roblox">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg>
+      </a>
+      </div>
+      <div class="links">
+        <a href="https://pixelryu.github.io/sumlings/privacy_policy.html" data-i18n="link_privacy">Privacidad</a>
+        <a href="https://pixelryu.github.io/sumlings/terms_of_service.html" data-i18n="link_terms">Términos</a>
+      </div>
+    </li>
+    <li class="game-card">
+      <div class="game-head">
+        <img class="game-icon" src="https://pixelryu.github.io/parcel-pals/icon.png" alt="">
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0005</span><a href="https://pixelryu.github.io/parcel-pals/es/" data-i18n="pp_title">Parcel Pals — Empaqueta felicidad. Envía sonrisas.</a></span>
+          <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Puzzle</span></span>
+        </div>
+      </div>
+      <div class="desc" data-i18n="pp_desc">Un puzzle acogedor de clasificación de paquetes. Clasifica lindos paquetes en 3 carriles, encaja las formas en las cajas de la cinta y envíalos antes de que la mesa se desborde. Se buscan testers de Android.</div>
+      <div class="store-badges">
+      <a class="appstore-badge" href="https://apps.apple.com/app/id6772976470" target="_blank" rel="noopener" aria-label="Download Parcel Pals on the App Store">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+        </svg>
+      </a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/parcel-pals/#tester-heading" aria-label="Join Parcel Pals Android testers">
+        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+      </a>
+      <a class="roblox-badge" href="https://www.roblox.com/games/114439228304487/Parcel-Pals" target="_blank" rel="noopener" aria-label="Play Parcel Pals on Roblox">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg>
+      </a>
+      </div>
+      <div class="links">
+        <a href="https://pixelryu.github.io/parcel-pals/privacy_policy.html" data-i18n="link_privacy">Privacidad</a>
+        <a href="https://pixelryu.github.io/parcel-pals/terms_of_service.html" data-i18n="link_terms">Términos</a>
+      </div>
+    </li>
+    <li class="game-card">
+      <div class="game-head">
+        <img class="game-icon" src="https://pixelryu.github.io/issen/icon.png?v=20260523122249" alt="">
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0004</span><a href="https://pixelryu.github.io/issen/es/" data-i18n="issen_title">ISSEN — Un aliento, un corte</a></span>
+          <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Acción</span></span>
+        </div>
+      </div>
+      <div class="desc" data-i18n="issen_desc">Un juego de acción de precisión sumi-e sobre el desenvaine del iaido — respira, mide la distancia y libera un corte perfecto. Ya disponible en App Store. Se buscan testers de Android.</div>
+      <div class="store-badges">
+      <a class="appstore-badge" href="https://apps.apple.com/app/id6772437281" target="_blank" rel="noopener" aria-label="Download ISSEN on the App Store">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+        </svg>
+      </a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/issen/#tester-heading" aria-label="Join ISSEN Android testers">
+        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+      </a>
+      <a class="roblox-badge" href="https://www.roblox.com/games/96726954641087/ISSEN-Samurai-Slash" target="_blank" rel="noopener" aria-label="Play ISSEN on Roblox">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg>
+      </a>
+      </div>
+      <div class="links">
+        <a href="https://pixelryu.github.io/issen/privacy_policy.html" data-i18n="link_privacy">Privacidad</a>
+        <a href="https://pixelryu.github.io/issen/terms_of_service.html" data-i18n="link_terms">Términos</a>
+      </div>
+    </li>
+    <li class="game-card">
+      <div class="game-head">
+        <img class="game-icon" src="https://pixelryu.github.io/hotaru/icon.png" alt="">
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0003</span><a href="https://pixelryu.github.io/hotaru/es/" data-i18n="hotaru_title">HOTARU — La Casa Perdida</a></span>
+          <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Acción</span></span>
+        </div>
+      </div>
+      <div class="desc" data-i18n="hotaru_desc">Un hermoso simulador de caminata de terror japonés. Sigue a las luciérnagas, reúnelas en el andon, arrójalas a los yokai — y encuentra la puerta trasera antes del amanecer.</div>
+      <div class="store-badges">
+      <a class="appstore-badge" href="https://apps.apple.com/app/id6770427114" target="_blank" rel="noopener" aria-label="Download HOTARU on the App Store">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+        </svg>
+      </a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/hotaru/#tester-heading" aria-label="Join HOTARU Android testers">
+        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+      </a>
+      <a class="roblox-badge" href="https://www.roblox.com/games/112246983745989/HOTARU-Lost-Manor" target="_blank" rel="noopener" aria-label="Play HOTARU on Roblox">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg>
+      </a>
+      </div>
+      <div class="links">
+        <a href="https://pixelryu.github.io/hotaru/privacy_policy.html" data-i18n="link_privacy">Privacidad</a>
+        <a href="https://pixelryu.github.io/hotaru/terms_of_service.html" data-i18n="link_terms">Términos</a>
+      </div>
+    </li>
+    <li class="game-card">
+      <div class="game-head">
+        <img class="game-icon" src="https://pixelryu.github.io/liquid-glow-cosmic/icon.png?v=20260610104059" alt="">
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0002</span><a href="https://pixelryu.github.io/liquid-glow-cosmic/es/">Liquid Glow</a></span>
+          <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Puzzle</span></span>
+        </div>
+      </div>
+      <div class="desc" data-i18n="lg_desc">Un sereno y luminoso rompecabezas de colores en el espacio profundo. Toca una estrella brillante y luego una estrella conectada para deslizar su luz por la constelación hasta que cada anillo coincida con su color. Ya en Roblox, muy pronto en iPhone — el clásico rompecabezas de ordenar está en Android.</div>
+      <div class="store-badges has-soon" aria-label="Play on Roblox now; Android testers welcome on Google Play; App Store coming soon">
+      <a class="soon-cell" href="https://pixelryu.github.io/liquid-glow-cosmic/es/" aria-label="Liquid Glow for iPhone — coming soon to the App Store (see details)"><span class="appstore-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+        </svg></span><span class="soon-stamp">COMING SOON</span></a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/liquid-glow/#tester-heading" aria-label="Join Liquid Glow Android testers">
+        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+      </a>
+      <a class="roblox-badge" href="https://pixelryu.github.io/liquid-glow-cosmic/es/" aria-label="Liquid Glow — new constellation version (iPhone & Roblox)">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg>
+      </a>
+      </div>
+      <div class="links">
+        <a href="https://pixelryu.github.io/liquid-glow-cosmic/privacy_policy.html" data-i18n="link_privacy">Privacidad</a>
+        <a href="https://pixelryu.github.io/liquid-glow-cosmic/terms_of_service.html" data-i18n="link_terms">Términos</a>
+      </div>
+    </li>
+    <li class="game-card">
+      <div class="game-head">
+        <img class="game-icon" src="https://pixelryu.github.io/mole-whack/icon.png?v=20260521172609" alt="">
+        <div class="game-title">
+          <span class="game-name-row"><span class="game-no">0001</span><a href="https://pixelryu.github.io/mole-whack/es/" data-i18n="mw_title">Mole Whack</a></span>
+          <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Acción</span></span>
+        </div>
+      </div>
+      <div class="desc" data-i18n="mw_desc">Una sencilla acción de toque de 30 segundos. Golpea los topos cuando salgan y persigue tu mejor puntuación.</div>
+      <div class="store-badges has-soon">
+      <a class="appstore-badge" href="https://apps.apple.com/app/id6770864132" target="_blank" rel="noopener" aria-label="Download Mole Whack on the App Store">
+        <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+        </svg>
+      </a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/mole-whack/#tester-heading" aria-label="Join Mole Whack Android testers">
+        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+      </a>
+      <span class="soon-cell"><span class="roblox-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg></span><span class="soon-stamp">COMING SOON</span></span>
+      </div>
+      <div class="links">
+        <a href="https://pixelryu.github.io/mole-whack/privacy_policy.html" data-i18n="link_privacy">Privacidad</a>
+        <a href="https://pixelryu.github.io/mole-whack/terms_of_service.html" data-i18n="link_terms">Términos</a>
+      </div>
+    </li>
+  </ul>
+
+  <div class="footer">© <span id="year"></span> PixelRyu</div>
+</div>
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+    en: {
+      tatami_title: "TATAMI — Lay the tatami. Earn your reward.",
+      tatami_desc: "A cozy block puzzle where you lay tatami mats in a quiet Japanese room. Drag a mat onto the floor and complete a full row or column to finish that line. A samurai then carries the finished mats to the tatami magistrate, and delivering earns koban that buy extra lives. A light Haste gauge keeps you moving. With a lucky-laying bonus. 48 stages. Free, made by PixelRyu. Coming soon to the App Store.",
+      temari_title: "TEMARI — Bat the temari. Pop the paper balloons.",
+      temari_desc: "A first-person paddle breakout in a cozy Japanese night. Move your hagoita with a fingertip, keep the temari in an endless rally, and pop every paper balloon down the corridor — with split, focus, a pheasant helper and more. 8 worlds, 200 stages. Out now on the App Store.",
+      bc_title: "Bounce Cat — Bank shots. Free the cat.",
+      bc_desc: "A cozy maze-escape puzzle. Fire yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out — 200 mazes across 10 worlds. Out now on Roblox and the App Store. Android testers welcome.",
+      bc_soon: "Coming soon",
+      title: "PixelRyu — Cosmic puzzle & action games",
+      meta_desc: "PixelRyu makes calm, beautiful puzzle and action games for mobile and Roblox — where stillness meets motion.",
+      tagline: "Stillness and motion — cosmic puzzle & action games",
+      games_heading: "Games",
+      filter_all: "All",
+      genre_puzzle: "Puzzle",
+      genre_action: "Action",
+      hayate_title: "HAYATE — Ride fast. Slice clean. Finish first.",
+      hayate_desc: "A 3D katana speed-racer and sequel to ISSEN. Dodge what flies at you, or throw your homing katana to slice it clean — across four worlds, forty stages, plus endless runs. Out now on the App Store. Android testers welcome.",
+      follow_heading: "Follow",
+      hotaru_title: "HOTARU — The Lost House",
+      hotaru_desc: "A beautiful Japanese horror walking simulator. Follow the fireflies, gather them at the andon, hurl them at yokai — and find the back gate before dawn.",
+      lg_desc: "A calm, luminous color-matching puzzle in deep space. Tap a glowing star, then a connected star, to slide its light along the constellation until every ring matches its color. Now on Roblox, coming soon to iPhone — the classic sort puzzle is on Android.",
+      link_privacy: "Privacy",
+      link_terms: "Terms",
+      mw_title: "Mole Whack",
+      mw_desc: "A simple 30-second tap action. Whack the moles as they pop up and chase your high score.",
+      issen_title: "ISSEN — One breath, one stroke, one cut",
+      issen_desc: "A sumi-e timing-action game of the iaido draw — breathe, read the distance, and unleash one perfect cut. Out now on the App Store. Android testers welcome.",
+      pp_title: "Parcel Pals — Pack happiness. Ship smiles.",
+      pp_desc: "A cozy parcel-sorting puzzle. Sort cute parcels into 3 lanes, match shapes to boxes on the belt, and ship before the table overflows. Android testers welcome.",
+      sumlings_title: "Sumlings — Place numbers. Hatch wonders.",
+      sumlings_desc: "A cozy number puzzle. Place number eggs into a tiny terrarium so each nest's total matches its target — hatch the Sumlings and fill your collection. Out now on the App Store. Android testers welcome."
+    },
+    ja: {
+      tatami_title: "TATAMI — 畳を敷いて、褒美をもらう。",
+      tatami_desc: "静かな和室に畳を敷いていく、ほっとするブロックパズル。畳を床にドラッグして、行か列が満杯になるとそのラインが完成します。すると侍が敷き上がった畳をかついで畳奉行のもとへ運び、納めると小判がもらえ、貯まった小判で残機が増えます。軽い「おいそぎ」ゲージがほどよいテンポを生みます。縁起の敷き方ボーナスも。全48面。基本無料、PixelRyu 制作。 App Store で近日公開。",
+      temari_title: "TEMARI — 羽子板で手まりを打ち、紙風船を割る。",
+      temari_desc: "和の静かな夜を舞台にした一人称パドル・ブロック崩し。指先で羽子板を動かし、手まりを途切れさせずに打ち返し、コリドーの奥の紙風船を割り尽くそう。分裂・集中・雉の助っ人などの遊びも。全8ワールド・200ステージ。App Store にて配信中。",
+      bc_title: "Bounce Cat — 跳ね返して、猫を助け出そう。",
+      bc_desc: "ほっこり迷路脱出パズル。迷路の外から毛糸玉を撃ち込み、跳ね返る弾道で壁をずらしたり壊したりして、閉じ込められた猫の逃げ道を開けよう。全200ステージ・10ワールド。Roblox と App Store で配信中。Android テスター募集中。",
+      bc_soon: "近日公開",
+      title: "PixelRyu — 宇宙のパズル＆アクションゲーム",
+      meta_desc: "PixelRyu はモバイルと Roblox 向けに、静かで美しいパズルとアクションのゲームを作っています。静と動が出会う、ひとつの宇宙。",
+      tagline: "静と動の宇宙 — パズル＆アクション",
+      games_heading: "ゲーム",
+      filter_all: "すべて",
+      genre_puzzle: "パズル",
+      genre_action: "アクション",
+      hayate_title: "HAYATE — 疾走せよ。斬り抜けろ。誰よりも先にゴールへ。",
+      hayate_desc: "ISSEN の続編となる 3D 刀スピードレーサー。迫りくる障害をかわすか、追尾する刀を投げて一刀両断に。4 つの舞台・40 ステージ、さらにエンドレスラン付き。App Store にて配信中。Android テスター募集中。",
+      follow_heading: "フォロー",
+      hotaru_title: "HOTARU — 失われた屋敷",
+      hotaru_desc: "美しい和ホラーのウォーキングシミュレーター。蛍を追い、行燈に集め、妖怪に投げ放ち — 夜明けまでに裏門を見つけ出せ。",
+      lg_desc: "深い宇宙の、静かで光り輝くカラーパズル。光る星をタップし、糸でつながった星へ光をスライドさせて、すべてのリングを同じ色に。Roblox で配信中、iPhone は近日公開 — クラシックな並び替えパズルは Android で。",
+      link_privacy: "プライバシー",
+      link_terms: "利用規約",
+      mw_title: "モグラぽかぽか",
+      mw_desc: "30 秒間モグラを叩いてハイスコアを狙うシンプルなタップゲーム。",
+      issen_title: "ISSEN（一閃）— 一拍で、すべてを断つ",
+      issen_desc: "居合の一閃を描く墨絵タイミングアクション。呼吸を整え、間合いを見切り、一筆の完璧な一閃を放つ。App Store にて配信中。Android テスター募集中。",
+      pp_title: "ふんわり配送便 — しあわせを箱詰め。笑顔を出荷。",
+      pp_desc: "ほっこり配送仕分けパズル。可愛い小包を3レーンに振り分け、ベルトの箱に形を合わせて、テーブルが溢れる前に出荷。Android テスター募集中。",
+      sumlings_title: "サムリング — 数を置いて、生き物を孵そう。",
+      sumlings_desc: "ほっこり数のパズル。数字のたまごを箱庭に置いて、各巣の合計をぴったり合わせるとサムリングが孵化。図鑑を集めよう。App Store にて配信中。Android テスター募集中。"
+    },
+    zh: {
+      tatami_title: "TATAMI — 铺好畳席，领取赏赐。",
+      tatami_desc: "在宁静的和室里铺畳的方块拼图，让人放松。把畳席拖到地板上，填满一整行或一整列即可完成该行。随后武士会扛起铺好的畳席送到官老爷那里，呈交后可获得金币，攒下的金币能换取额外的命。轻巧的「赶工」槽让节奏保持流畅。还有吉利的铺法奖励。共 48 关。基础免费，PixelRyu 制作。 即将登陆 App Store。",
+      temari_title: "TEMARI — 用羽子板击回手鞠，击破纸气球。",
+      temari_desc: "以宁静和风之夜为舞台的第一人称拍板打砖块。用指尖移动羽子板，让手鞠不断对打不落，击破长廊深处的纸气球。还有分裂、专注慢动作、雉鸡帮手等玩法。共 8 个世界、200 关。App Store 现已上线。",
+      bc_title: "Bounce Cat — 弹射毛线，救出小猫。",
+      bc_desc: "一款暖心的迷宫脱出解谜。从迷宫外发射毛线，借助反弹，推开或击碎墙壁，让被困的小猫自己找到逃生之路——全 200 关、横跨 10 个世界。Roblox 与 App Store 现已上线。招募 Android 测试员。",
+      bc_soon: "即将上线",
+      title: "PixelRyu — 宇宙益智与动作游戏",
+      meta_desc: "PixelRyu 为移动设备和 Roblox 制作宁静而美丽的益智与动作游戏——静与动，交汇于一片宇宙。",
+      tagline: "静与动的宇宙 — 益智与动作游戏",
+      games_heading: "游戏",
+      filter_all: "全部",
+      genre_puzzle: "益智",
+      genre_action: "动作",
+      hayate_title: "HAYATE — 极速飞驰，利落斩落，率先冲线。",
+      hayate_desc: "一款 3D 武士刀竞速游戏，ISSEN 的续作。躲开迎面飞来的一切，或掷出你的追踪武士刀将其利落斩断——横跨四大世界、四十个关卡，外加无尽模式。App Store 现已上线。招募 Android 测试员。",
+      follow_heading: "关注",
+      hotaru_title: "HOTARU — 失落的屋舍",
+      hotaru_desc: "美丽的日式恐怖步行模拟。追逐萤火,将它们汇聚于行灯,投向妖怪 — 在天明前找到后门。",
+      lg_desc: "一款置身深邃宇宙、静谧而璀璨的配色解谜。轻点一颗发光的星，再点一颗相连的星，让光芒沿着星座滑行，直到每个光环都对上自己的颜色。现已登陆 Roblox，iPhone 即将上线——经典的排序解谜则在 Android 上。",
+      link_privacy: "隐私",
+      link_terms: "条款",
+      mw_title: "モグラぽかぽか (打地鼠)",
+      mw_desc: "简单的 30 秒拍击动作游戏。拍打冒出的鼹鼠,挑战高分。",
+      issen_title: "ISSEN（一闪）— 一息,一斩",
+      issen_desc: "以居合拔刀为核心的水墨节奏动作游戏。调匀呼吸,看准间距,挥出一笔完美的斩击。App Store 现已上线。招募 Android 测试员。",
+      pp_title: "Parcel Pals — 把幸福装进盒子，把笑容送出门",
+      pp_desc: "治愈系包裹分拣益智游戏。把可爱的小包裹分进 3 条传送道，对准传送带上的盒子形状出货，别让桌面爆满。招募 Android 测试员。",
+      sumlings_title: "Sumlings — 摆放数字，孵化奇迹。",
+      sumlings_desc: "治愈系数字益智游戏。把数字蛋放进小箱庭，让每个巢的合计与目标一致——孵化 Sumling，集齐图鉴。App Store 现已上线。招募 Android 测试员。"
+    },
+    ko: {
+      tatami_title: "TATAMI — 다다미를 깔고, 보상을 받으세요.",
+      tatami_desc: "고요한 일본식 방에 다다미를 까는 아늑한 블록 퍼즐. 다다미를 바닥으로 끌어다 한 행이나 한 열을 가득 채우면 그 줄이 완성됩니다. 그러면 사무라이가 다 깔린 다다미를 들고 다다미 관리님에게 가져가고, 바치면 금화를 받아 목숨을 추가로 살 수 있습니다. 가벼운 「서두름」 게이지가 적당한 흐름을 유지해 줍니다. 길한 깔기 보너스도. 총 48 스테이지. 기본 무료, PixelRyu 제작. App Store에서 곧 출시.",
+      temari_title: "TEMARI — 하고이타로 데마리를 받아쳐 종이 풍선을 터뜨리세요.",
+      temari_desc: "고요한 일본의 밤을 무대로 한 1인칭 패들 벽돌깨기. 손끝으로 하고이타를 움직여 데마리를 끊임없는 랠리로 살려두고, 복도 안쪽의 종이 풍선을 모두 터뜨리세요. 분열·집중 슬로모션·꿩 도우미 등 다양한 재미도. 8개 월드·200 스테이지. App Store에서 출시 중.",
+      bc_title: "Bounce Cat — 튕겨서, 고양이를 구해 주세요.",
+      bc_desc: "아늑한 미로 탈출 퍼즐. 미로 밖에서 털실 뭉치를 쏘아 넣고, 튕기는 탄도로 벽을 밀거나 부수면서, 갇힌 고양이가 스스로 빠져나갈 길을 열어 주세요 — 총 200개 미로・10개 월드. Roblox와 App Store에서 출시 중. Android 테스터 모집 중.",
+      bc_soon: "곧 출시",
+      title: "PixelRyu — 우주 퍼즐 & 액션 게임",
+      meta_desc: "PixelRyu는 모바일과 Roblox를 위한 고요하고 아름다운 퍼즐과 액션 게임을 만듭니다 — 고요함과 움직임이 만나는 곳.",
+      tagline: "고요함과 움직임의 우주 — 퍼즐 & 액션",
+      games_heading: "게임",
+      filter_all: "전체",
+      genre_puzzle: "퍼즐",
+      genre_action: "액션",
+      hayate_title: "HAYATE — 질주하라. 깔끔하게 베어라. 1등으로 골인하라.",
+      hayate_desc: "3D 카타나 스피드 레이서이자 ISSEN의 속편. 날아오는 것을 피하거나 유도 카타나를 던져 깔끔하게 베어내라 — 네 개의 세계, 마흔 개의 스테이지, 그리고 엔드리스 주행까지. App Store에서 출시 중. Android 테스터 모집 중.",
+      follow_heading: "팔로우",
+      hotaru_title: "HOTARU — 잃어버린 저택",
+      hotaru_desc: "아름다운 일본 호러 워킹 시뮬레이터. 반딧불을 따라가 행등에 모으고, 요괴에게 던져 — 동트기 전에 뒷문을 찾아라.",
+      lg_desc: "깊은 우주의, 잔잔하고 빛나는 컬러 매칭 퍼즐. 빛나는 별을 탭하고, 이어진 별로 빛을 미끄러뜨려 모든 고리를 같은 색으로 맞추세요. Roblox에서 플레이 중, iPhone에는 곧 출시 — 클래식한 정렬 퍼즐은 Android에서 즐길 수 있습니다.",
+      link_privacy: "개인정보",
+      link_terms: "약관",
+      mw_title: "모구라뽀카뽀카 (두더지잡기)",
+      mw_desc: "30초 동안 두더지를 두드려 최고 점수를 노리는 간단한 탭 게임.",
+      issen_title: "ISSEN（一閃）— 한 호흡, 한 베기",
+      issen_desc: "거합 발도를 그린 수묵 타이밍 액션. 호흡을 가다듬고 간격을 가늠해 한 번의 완벽한 베기를 펼치세요. App Store에서 출시 중. Android 테스터 모집 중.",
+      pp_title: "Parcel Pals — 행복을 담아, 미소를 배송",
+      pp_desc: "힐링 소포 분류 퍼즐. 귀여운 소포를 3개 레인으로 분류하고, 컨베이어 박스에 모양을 맞춰 테이블이 넘치기 전에 출하하세요. Android 테스터 모집 중.",
+      sumlings_title: "Sumlings — 숫자를 놓고 마법을 깨워요.",
+      sumlings_desc: "힐링 숫자 퍼즐. 작은 정원에 숫자 알을 놓아 각 둥지의 합을 목표와 맞추고 Sumling을 부화시켜 도감을 채우세요. App Store에서 출시 중. Android 테스터 모집 중."
+    },
+    hi: {
+      tatami_title: "TATAMI — तातामी बिछाएँ, इनाम पाएँ।",
+      tatami_desc: "एक शांत जापानी कमरे में तातामी बिछाने वाला आरामदेह ब्लॉक पज़ल। चटाई को फर्श पर खींचें और किसी पूरी पंक्ति या स्तंभ को भरकर वह लाइन पूरी करें। फिर एक समुराई बिछ चुकी चटाइयाँ तातामी अधिकारी तक पहुँचाता है, और सौंपने पर सोने के सिक्के मिलते हैं जिनसे अतिरिक्त जीवन खरीदे जा सकते हैं। एक हल्का «जल्दी» गेज आपकी गति बनाए रखता है। साथ में शुभ बिछाने का बोनस। कुल 48 चरण। मुफ़्त, PixelRyu द्वारा। App Store पर जल्द आ रही है।",
+      temari_title: "TEMARI — हागोइता से टेमारी मारें, कागज़ के गुब्बारे फोड़ें।",
+      temari_desc: "एक शांत जापानी रात पर आधारित फर्स्ट-पर्सन पैडल ब्रेकआउट। उँगली से हागोइता घुमाएँ, टेमारी को लगातार रैली में ज़िंदा रखें, और गलियारे की गहराई के कागज़ के गुब्बारे फोड़ें। स्प्लिट, फोकस स्लो-मोशन, तीतर सहायक और बहुत कुछ। 8 दुनिया, 200 चरण। App Store पर अब उपलब्ध।",
+      bc_title: "Bounce Cat — दीवारों से टकराओ, बिल्ली को छुड़ाओ।",
+      bc_desc: "एक प्यारी-सी भूलभुलैया-से-निकलने वाली पहेली। भूलभुलैया के बाहर से ऊन छोड़ो, टकराकर लौटती राह पढ़ो, और दीवारों को खिसकाओ या तोड़ो ताकि फँसी हुई बिल्ली खुद अपना रास्ता ढूँढ़ ले — 10 दुनियाओं में 200 भूलभुलैया। Roblox और App Store पर अभी उपलब्ध। Android परीक्षक आमंत्रित।",
+      bc_soon: "जल्द आ रही है",
+      title: "PixelRyu — ब्रह्मांडीय पज़ल और एक्शन गेम्स",
+      meta_desc: "PixelRyu मोबाइल और Roblox के लिए शांत, सुंदर पज़ल और एक्शन गेम्स बनाता है — जहाँ ठहराव और गति मिलते हैं।",
+      tagline: "ठहराव और गति का ब्रह्मांड — पज़ल और एक्शन",
+      games_heading: "गेम्स",
+      filter_all: "सभी",
+      genre_puzzle: "पज़ल",
+      genre_action: "एक्शन",
+      hayate_title: "HAYATE — तेज़ दौड़ो। सफ़ाई से काटो। पहले पहुँचो।",
+      hayate_desc: "एक 3D कटाना स्पीड-रेसर और ISSEN का सीक्वल। आप पर उड़कर आने वाली चीज़ों को चकमा दें, या अपना होमिंग कटाना फेंककर उन्हें सफ़ाई से काट डालें — चार दुनियाओं, चालीस स्टेज, साथ ही एंडलेस रन में। App Store पर अब उपलब्ध। Android परीक्षक आमंत्रित।",
+      follow_heading: "फ़ॉलो करें",
+      hotaru_title: "HOTARU — खोया हुआ घर",
+      hotaru_desc: "एक सुंदर जापानी हॉरर वॉकिंग सिमुलेटर। जुगनुओं का पीछा करें, उन्हें अंदोन में इकट्ठा करें, यो-काई पर फेंकें — और सुबह से पहले पिछला फाटक ढूँढें।",
+      lg_desc: "गहरे अंतरिक्ष में एक शांत, चमकती रंग-मिलान पहेली। एक चमकते तारे को टैप करें, फिर एक जुड़े हुए तारे को, ताकि उसका प्रकाश तारामंडल के साथ तब तक सरके जब तक हर वलय अपने रंग से मेल न खाए। अब Roblox पर, iPhone पर जल्द आ रही है — क्लासिक सॉर्ट पहेली Android पर है।",
+      link_privacy: "गोपनीयता",
+      link_terms: "शर्तें",
+      mw_title: "मोल वैक",
+      mw_desc: "30 सेकंड का सरल टैप एक्शन। उभरते छछूँदरों पर मारें और हाई-स्कोर का पीछा करें।",
+      issen_title: "ISSEN — एक साँस, एक वार",
+      issen_desc: "इआइदो वार पर आधारित सुमी-ए टाइमिंग एक्शन — साँस साधें, दूरी भाँपें और एक संपूर्ण वार छोड़ें। App Store पर अब उपलब्ध। Android परीक्षक आमंत्रित।",
+      pp_title: "Parcel Pals — खुशियाँ पैक करो, मुस्कान भेजो।",
+      pp_desc: "एक आरामदायक पार्सल छँटाई पहेली। प्यारे पार्सल को 3 लेन में बाँटें, बेल्ट पर डिब्बों से आकार मिलाएँ, और टेबल भरने से पहले भेजें। Android परीक्षक आमंत्रित।",
+      sumlings_title: "Sumlings — अंक रखो। जादू जगाओ।",
+      sumlings_desc: "एक हल्की-फुल्की संख्या पहेली। छोटे टेरारियम में अंक के अंडे रखें ताकि हर घोंसले का कुल लक्ष्य से मिले — Sumling को फूटें और संग्रह भरें। App Store पर अब उपलब्ध। Android परीक्षक आमंत्रित।"
+    },
+    id: {
+      tatami_title: "TATAMI — Pasang tatami. Raih hadiahmu.",
+      tatami_desc: "Puzzle blok yang menenangkan: kamu memasang tikar tatami di ruangan Jepang yang sunyi. Seret tikar ke lantai dan penuhi satu baris atau kolom penuh untuk menyelesaikan baris itu. Lalu seorang samurai memanggul tikar yang sudah terpasang dan membawanya ke petugas tatami, dan menyerahkannya menghasilkan koin emas yang bisa membeli nyawa tambahan. Pengukur «Cepat» yang ringan menjaga temponya. Plus bonus pemasangan bertuah. 48 tahap. Gratis, oleh PixelRyu. Segera hadir di App Store.",
+      temari_title: "TEMARI — Pukul temari dengan hagoita, pecahkan balon kertas.",
+      temari_desc: "Breakout paddle orang-pertama berlatar malam Jepang yang menenangkan. Gerakkan hagoita dengan ujung jari, jaga temari dalam reli tanpa henti, dan pecahkan setiap balon kertas di sepanjang koridor. Ada split, focus gerak lambat, burung pegar pembantu, dan lainnya. 8 dunia, 200 tahap. Sudah tersedia di App Store.",
+      bc_title: "Bounce Cat — Pantulkan benang. Bebaskan si kucing.",
+      bc_desc: "Puzzle kabur-dari-labirin yang menghangatkan hati. Tembakkan benang dari luar labirin, baca lintasan pantulannya, lalu geser atau hancurkan dinding agar si kucing yang terjebak menemukan jalan keluarnya sendiri — 200 labirin di 10 dunia. Sudah tersedia di Roblox dan App Store. Tester Android dipersilakan.",
+      bc_soon: "Segera hadir",
+      title: "PixelRyu — Game puzzle & aksi kosmik",
+      meta_desc: "PixelRyu membuat game puzzle dan aksi yang tenang dan indah untuk mobile dan Roblox — tempat ketenangan bertemu gerak.",
+      tagline: "Ketenangan dan gerak dalam satu kosmos — puzzle & aksi",
+      games_heading: "Game",
+      filter_all: "Semua",
+      genre_puzzle: "Puzzle",
+      genre_action: "Aksi",
+      hayate_title: "HAYATE — Melaju cepat. Tebas bersih. Finis pertama.",
+      hayate_desc: "Balap kecepatan katana 3D dan sekuel dari ISSEN. Hindari yang melesat ke arahmu, atau lempar katana pengejarmu untuk menebasnya bersih — di empat dunia, empat puluh stage, ditambah mode endless. Sudah tersedia di App Store. Tester Android dipersilakan.",
+      follow_heading: "Ikuti",
+      hotaru_title: "HOTARU — Rumah yang Hilang",
+      hotaru_desc: "Simulator berjalan horor Jepang yang indah. Ikuti kunang-kunang, kumpulkan di andon, lemparkan ke yokai — dan temukan pintu belakang sebelum fajar.",
+      lg_desc: "Teka-teki pencocokan warna yang tenang dan bercahaya di angkasa luar. Ketuk bintang yang bersinar, lalu ketuk bintang yang terhubung untuk menggeser cahayanya di sepanjang rasi bintang hingga setiap cincin cocok dengan warnanya. Kini hadir di Roblox, segera hadir di iPhone — teka-teki sortir klasiknya ada di Android.",
+      link_privacy: "Privasi",
+      link_terms: "Ketentuan",
+      mw_title: "Mole Whack",
+      mw_desc: "Aksi tap sederhana 30 detik. Pukul tikus tanah yang muncul dan kejar skor tertinggi Anda.",
+      issen_title: "ISSEN — Satu napas, satu tebasan",
+      issen_desc: "Game aksi ketepatan bergaya sumi-e tentang tarikan pedang iaido — atur napas, baca jarak, dan lepaskan satu tebasan sempurna. Sudah tersedia di App Store. Tester Android dipersilakan.",
+      pp_title: "Parcel Pals — Kemas kebahagiaan. Kirim senyuman.",
+      pp_desc: "Puzzle penyortiran paket yang menenangkan. Sortir paket lucu ke 3 jalur, cocokkan bentuk ke kotak di belt, dan kirim sebelum meja meluap. Tester Android dipersilakan.",
+      sumlings_title: "Sumlings — Letakkan angka. Tetaskan keajaiban.",
+      sumlings_desc: "Teka-teki angka yang nyaman. Letakkan telur angka di terarium kecil sehingga total tiap sarang sesuai targetnya — tetaskan Sumling dan lengkapi koleksi Anda. Sudah tersedia di App Store. Tester Android dipersilakan."
+    },
+    de: {
+      tatami_title: "TATAMI — Leg das Tatami. Hol dir deine Belohnung.",
+      tatami_desc: "Ein gemütliches Block-Puzzle, bei dem du in einem stillen japanischen Zimmer Tatami-Matten auslegst. Ziehe eine Matte auf den Boden und fülle eine ganze Reihe oder Spalte, um diese Linie fertigzustellen. Dann schultert ein Samurai die fertig gelegten Matten und trägt sie zum Aufseher; das Abliefern bringt Goldmünzen, mit denen du zusätzliche Leben kaufst. Eine leichte Eile-Anzeige hält dich in Bewegung. Mit einem glücksverheißenden Lege-Bonus. 48 Level. Kostenlos, von PixelRyu. Demnächst im App Store.",
+      temari_title: "TEMARI — Schlag das Temari, lass die Papierballons platzen.",
+      temari_desc: "Ein Ego-Paddle-Breakout in einer gemütlichen japanischen Nacht. Bewege dein Hagoita mit der Fingerspitze, halte das Temari in endlosem Ballwechsel und lass jeden Papierballon im Korridor platzen — mit Split, Focus-Zeitlupe, einem Fasan-Helfer und mehr. 8 Welten, 200 Level. Jetzt im App Store.",
+      bc_title: "Bounce Cat — Bandenschüsse. Befreie die Katze.",
+      bc_desc: "Ein gemütliches Labyrinth-Ausbruchspuzzle. Schieße Wolle von außerhalb des Labyrinths hinein, reite auf den Abprallern und verschiebe oder zerschmettere Wände, damit die eingesperrte Katze ihren eigenen Weg ins Freie findet — 200 Labyrinthe in 10 Welten. Jetzt auf Roblox und im App Store. Android-Tester gesucht.",
+      bc_soon: "Demnächst",
+      title: "PixelRyu — Kosmische Puzzle- & Actionspiele",
+      meta_desc: "PixelRyu entwickelt ruhige, schöne Puzzle- und Actionspiele für mobile Geräte und Roblox — wo Stille auf Bewegung trifft.",
+      tagline: "Stille und Bewegung — kosmische Puzzle- & Actionspiele",
+      games_heading: "Spiele",
+      filter_all: "Alle",
+      genre_puzzle: "Puzzle",
+      genre_action: "Action",
+      hayate_title: "HAYATE — Schnell fahren. Sauber schneiden. Als Erster ins Ziel.",
+      hayate_desc: "Ein 3D-Katana-Speed-Racer und die Fortsetzung von ISSEN. Weiche allem aus, was auf dich zufliegt, oder wirf deine zielsuchende Katana und schneide es sauber entzwei — über vier Welten, vierzig Stages, plus endlose Läufe. Jetzt im App Store. Android-Tester gesucht.",
+      follow_heading: "Folgen",
+      hotaru_title: "HOTARU — Das verlorene Haus",
+      hotaru_desc: "Ein wunderschöner japanischer Horror-Walking-Simulator. Folge den Glühwürmchen, sammle sie am Andon, schleudere sie auf Yokai — und finde das Hintertor vor Tagesanbruch.",
+      lg_desc: "Ein ruhiges, leuchtendes Farb-Puzzle in den Tiefen des Weltraums. Tippe auf einen leuchtenden Stern und dann auf einen verbundenen Stern, um sein Licht über das Sternbild gleiten zu lassen, bis jeder Ring zu seiner Farbe passt. Jetzt auf Roblox, bald auf iPhone — das klassische Sortier-Puzzle gibt es auf Android.",
+      link_privacy: "Datenschutz",
+      link_terms: "Bedingungen",
+      mw_title: "Mole Whack",
+      mw_desc: "Eine einfache 30-Sekunden-Tipp-Action. Hau die Maulwürfe, sobald sie auftauchen, und jage den Highscore.",
+      issen_title: "ISSEN — Ein Atemzug, ein Schnitt",
+      issen_desc: "Ein Sumi-e-Timing-Actionspiel über den Iaido-Zug — atme, lies die Distanz und entfessle einen perfekten Schnitt. Jetzt im App Store. Android-Tester gesucht.",
+      pp_title: "Parcel Pals — Glück verpacken. Lächeln versenden.",
+      pp_desc: "Ein gemütliches Paket-Sortier-Puzzle. Sortiere niedliche Pakete in 3 Bahnen, passe Formen zu Kisten auf dem Band und versende, bevor der Tisch überläuft. Android-Tester gesucht.",
+      sumlings_title: "Sumlings — Zahlen platzieren. Wunder erwecken.",
+      sumlings_desc: "Ein gemütliches Zahlenrätsel. Platziere Zahleneier in einem kleinen Terrarium, sodass die Summe jedes Nests dem Ziel entspricht — schlüpfe die Sumlings und fülle deine Sammlung. Jetzt im App Store. Android-Tester gesucht."
+    },
+    fr: {
+      tatami_title: "TATAMI — Pose le tatami. Gagne ta récompense.",
+      tatami_desc: "Un puzzle de blocs apaisant où tu poses des tatamis dans une pièce japonaise paisible. Fais glisser une natte sur le sol et remplis une ligne ou une colonne complète pour terminer cette ligne. Un samouraï emporte alors les nattes posées jusqu'au magistrat, et la livraison rapporte des koban qui achètent des vies supplémentaires. Une légère jauge de Hâte t'aide à garder le rythme. Avec un bonus de pose porte-bonheur. 48 niveaux. Gratuit, par PixelRyu. Bientôt sur l'App Store.",
+      temari_title: "TEMARI — Renvoie le temari, fais éclater les ballons en papier.",
+      temari_desc: "Un casse-briques à la raquette en vue subjective dans une douce nuit japonaise. Déplace ton hagoita du bout du doigt, garde le temari en jeu sans fin et fais éclater chaque ballon en papier du couloir — avec split, ralenti focus, un faisan assistant et plus. 8 mondes, 200 niveaux. Disponible sur l'App Store.",
+      bc_title: "Bounce Cat — Des ricochets bien placés. Libère le chat.",
+      bc_desc: "Un puzzle cosy d'évasion dans un labyrinthe. Tire de la laine depuis l'extérieur du labyrinthe, anticipe les ricochets, puis déplace ou brise les murs pour que le chat prisonnier trouve sa propre sortie — 200 labyrinthes sur 10 mondes. Disponible sur Roblox et l'App Store. Testeurs Android bienvenus.",
+      bc_soon: "Bientôt disponible",
+      title: "PixelRyu — Jeux de réflexion & d'action cosmiques",
+      meta_desc: "PixelRyu crée de beaux jeux de réflexion et d'action apaisants pour mobile et Roblox — là où le calme rencontre le mouvement.",
+      tagline: "Calme et mouvement — jeux de réflexion & d'action cosmiques",
+      games_heading: "Jeux",
+      filter_all: "Tout",
+      genre_puzzle: "Réflexion",
+      genre_action: "Action",
+      hayate_title: "HAYATE — Roulez vite. Tranchez net. Finissez premier.",
+      hayate_desc: "Une course de vitesse au katana en 3D, suite d'ISSEN. Esquivez ce qui fonce sur vous, ou lancez votre katana à tête chercheuse pour le trancher net — à travers quatre mondes, quarante niveaux, plus des parties en mode infini. Disponible sur l'App Store. Testeurs Android bienvenus.",
+      follow_heading: "Suivre",
+      hotaru_title: "HOTARU — La Maison Perdue",
+      hotaru_desc: "Un magnifique walking simulator d'horreur japonais. Suis les lucioles, rassemble-les près de l'andon, lance-les sur les yokai — et trouve la porte arrière avant l'aube.",
+      lg_desc: "Un puzzle d'association de couleurs apaisant et lumineux dans l'espace profond. Touchez une étoile brillante, puis une étoile reliée, pour faire glisser sa lumière le long de la constellation jusqu'à ce que chaque anneau s'accorde à sa couleur. Disponible sur Roblox, bientôt sur iPhone — le puzzle de tri classique est sur Android.",
+      link_privacy: "Confidentialité",
+      link_terms: "Conditions",
+      mw_title: "Mole Whack",
+      mw_desc: "Une action tap simple de 30 secondes. Frappe les taupes dès qu'elles surgissent et bats ton meilleur score.",
+      issen_title: "ISSEN — Un souffle, une entaille",
+      issen_desc: "Un jeu d'action de précision sumi-e sur le dégainé de l'iaido — respire, jauge la distance et libère une entaille parfaite. Disponible sur l'App Store. Testeurs Android bienvenus.",
+      pp_title: "Parcel Pals — Emballe le bonheur. Expédie des sourires.",
+      pp_desc: "Un puzzle de tri de colis cosy. Trie de mignons colis dans 3 voies, fais correspondre les formes aux boîtes du tapis et expédie avant que la table ne déborde. Testeurs Android bienvenus.",
+      sumlings_title: "Sumlings — Place les chiffres. Fais éclore la magie.",
+      sumlings_desc: "Un puzzle de chiffres cosy. Place des œufs numérotés dans un petit terrarium pour que la somme de chaque nid corresponde à sa cible — fais éclore les Sumlings et remplis ta collection. Disponible sur l'App Store. Testeurs Android bienvenus."
+    },
+    it: {
+      tatami_title: "TATAMI — Posa il tatami. Guadagna la tua ricompensa.",
+      tatami_desc: "Un rilassante puzzle a blocchi in cui posi le stuoie di tatami in una quieta stanza giapponese. Trascina una stuoia sul pavimento e completa un'intera riga o colonna per terminare quella linea. Poi un samurai si carica in spalla le stuoie posate e le porta al magistrato, e consegnarle frutta monete d'oro con cui acquistare vite extra. Una leggera barra di Fretta ti tiene in movimento. Con un bonus di posa di buon auspicio. 48 livelli. Gratis, di PixelRyu. Presto su App Store.",
+      temari_title: "TEMARI — Colpisci il temari, fai scoppiare i palloncini di carta.",
+      temari_desc: "Un breakout con racchetta in prima persona in una tranquilla notte giapponese. Muovi il tuo hagoita con un dito, tieni il temari in gioco senza sosta e fai scoppiare ogni palloncino di carta del corridoio — con split, focus al rallentatore, un fagiano aiutante e altro. 8 mondi, 200 livelli. Disponibile su App Store.",
+      bc_title: "Bounce Cat — Tiri di sponda. Libera il gatto.",
+      bc_desc: "Un accogliente puzzle di fuga dal labirinto. Spara la lana dall'esterno del labirinto, segui i rimbalzi e sposta o frantuma i muri perché il gatto intrappolato trovi da solo la via d'uscita — 200 labirinti in 10 mondi. Disponibile su Roblox e App Store. Cercasi tester Android.",
+      bc_soon: "Disponibile a breve",
+      title: "PixelRyu — Giochi puzzle e d'azione cosmici",
+      meta_desc: "PixelRyu crea bei giochi puzzle e d'azione tranquilli per mobile e Roblox — dove la quiete incontra il movimento.",
+      tagline: "Quiete e movimento — giochi puzzle e d'azione cosmici",
+      games_heading: "Giochi",
+      filter_all: "Tutti",
+      genre_puzzle: "Puzzle",
+      genre_action: "Azione",
+      hayate_title: "HAYATE — Corri veloce. Taglia netto. Arriva primo.",
+      hayate_desc: "Uno speed-racer con katana in 3D e seguito di ISSEN. Schiva ciò che ti piomba addosso o lancia la tua katana a ricerca per tagliarlo netto, tra quattro mondi, quaranta livelli e corse senza fine. Disponibile su App Store. Cercasi tester Android.",
+      follow_heading: "Segui",
+      hotaru_title: "HOTARU — La Casa Perduta",
+      hotaru_desc: "Un bellissimo walking simulator horror giapponese. Segui le lucciole, raccoglile nell'andon, scagliale contro gli yokai — e trova il portone posteriore prima dell'alba.",
+      lg_desc: "Un puzzle di abbinamento colori calmo e luminoso nello spazio profondo. Tocca una stella che brilla, poi una stella collegata, per far scivolare la sua luce lungo la costellazione finché ogni anello combacia con il suo colore. Ora su Roblox, presto su iPhone — il classico puzzle di ordinamento è su Android.",
+      link_privacy: "Privacy",
+      link_terms: "Termini",
+      mw_title: "Mole Whack",
+      mw_desc: "Una semplice azione tap di 30 secondi. Colpisci le talpe che spuntano e batti il tuo punteggio record.",
+      issen_title: "ISSEN — Un respiro, un taglio",
+      issen_desc: "Un gioco d'azione a tempo in stile sumi-e sull'estrazione dell'iaido — respira, valuta la distanza e libera un taglio perfetto. Disponibile su App Store. Cercasi tester Android.",
+      pp_title: "Parcel Pals — Impacchetta la felicità. Spedisci sorrisi.",
+      pp_desc: "Un puzzle di smistamento pacchi rilassante. Smista pacchi carini in 3 corsie, abbina le forme alle scatole sul nastro e spedisci prima che il tavolo trabocchi. Cercasi tester Android.",
+      sumlings_title: "Sumlings — Posiziona i numeri. Schiudi meraviglie.",
+      sumlings_desc: "Un puzzle di numeri rilassante. Posiziona uova numerate in un piccolo terrario in modo che la somma di ogni nido corrisponda al suo obiettivo — schiudi i Sumling e completa la collezione. Disponibile su App Store. Cercasi tester Android."
+    },
+    es: {
+      tatami_title: "TATAMI — Coloca el tatami. Gana tu recompensa.",
+      tatami_desc: "Un relajante puzle de bloques en el que colocas esteras de tatami en una tranquila sala japonesa. Arrastra una estera al suelo y completa una fila o columna entera para terminar esa línea. Luego un samurái carga al hombro las esteras colocadas y las lleva al oficial, y entregarlas otorga monedas de oro que compran vidas extra. Un ligero medidor de Prisa te mantiene en movimiento. Con un bonus de colocación de buena fortuna. 48 niveles. Gratis, de PixelRyu. Próximamente en App Store.",
+      temari_title: "TEMARI — Golpea el temari, revienta los globos de papel.",
+      temari_desc: "Un breakout de pala en primera persona en una acogedora noche japonesa. Mueve tu hagoita con la punta del dedo, mantén el temari en un peloteo sin fin y revienta cada globo de papel del pasillo — con split, cámara lenta focus, un faisán ayudante y más. 8 mundos, 200 niveles. Ya disponible en App Store.",
+      bc_title: "Bounce Cat — Tiros con rebote. Libera al gato.",
+      bc_desc: "Un acogedor puzle de escape de laberintos. Dispara lana desde fuera del laberinto, sigue el rebote y desplaza o rompe muros para que el gato atrapado encuentre su propia salida: 200 laberintos en 10 mundos. Ya disponible en Roblox y App Store. Se buscan testers de Android.",
+      bc_soon: "Próximamente",
+      title: "PixelRyu — Juegos de puzzle y acción cósmicos",
+      meta_desc: "PixelRyu crea hermosos juegos de puzzle y acción serenos para móvil y Roblox — donde la calma se encuentra con el movimiento.",
+      tagline: "Calma y movimiento — juegos de puzzle y acción cósmicos",
+      games_heading: "Juegos",
+      filter_all: "Todos",
+      genre_puzzle: "Puzzle",
+      genre_action: "Acción",
+      hayate_title: "HAYATE — Corre veloz. Corta limpio. Llega primero.",
+      hayate_desc: "Carreras de velocidad con katana en 3D y secuela de ISSEN. Esquiva lo que vuela hacia ti o lanza tu katana teledirigida para cortarlo limpio: a lo largo de cuatro mundos, cuarenta niveles y carreras sin fin. Ya disponible en App Store. Se buscan testers de Android.",
+      follow_heading: "Seguir",
+      hotaru_title: "HOTARU — La Casa Perdida",
+      hotaru_desc: "Un hermoso simulador de caminata de terror japonés. Sigue a las luciérnagas, reúnelas en el andon, arrójalas a los yokai — y encuentra la puerta trasera antes del amanecer.",
+      lg_desc: "Un sereno y luminoso rompecabezas de colores en el espacio profundo. Toca una estrella brillante y luego una estrella conectada para deslizar su luz por la constelación hasta que cada anillo coincida con su color. Ya en Roblox, muy pronto en iPhone — el clásico rompecabezas de ordenar está en Android.",
+      link_privacy: "Privacidad",
+      link_terms: "Términos",
+      mw_title: "Mole Whack",
+      mw_desc: "Una sencilla acción de toque de 30 segundos. Golpea los topos cuando salgan y persigue tu mejor puntuación.",
+      issen_title: "ISSEN — Un aliento, un corte",
+      issen_desc: "Un juego de acción de precisión sumi-e sobre el desenvaine del iaido — respira, mide la distancia y libera un corte perfecto. Ya disponible en App Store. Se buscan testers de Android.",
+      pp_title: "Parcel Pals — Empaqueta felicidad. Envía sonrisas.",
+      pp_desc: "Un puzzle acogedor de clasificación de paquetes. Clasifica lindos paquetes en 3 carriles, encaja las formas en las cajas de la cinta y envíalos antes de que la mesa se desborde. Se buscan testers de Android.",
+      sumlings_title: "Sumlings — Coloca números. Eclosiona maravillas.",
+      sumlings_desc: "Un puzle de números relajante. Coloca huevos numerados en un pequeño terrario para que la suma de cada nido coincida con su meta — eclosiona los Sumlings y completa tu colección. Ya disponible en App Store. Se buscan testers de Android."
+    },
+    pt: {
+      tatami_title: "TATAMI — Assente o tatame. Ganhe sua recompensa.",
+      tatami_desc: "Um relaxante puzzle de blocos em que você assenta esteiras de tatame numa tranquila sala japonesa. Arraste uma esteira para o piso e preencha uma linha ou coluna inteira para concluir essa linha. Em seguida, um samurai carrega no ombro as esteiras assentadas e as leva ao magistrado, e entregá-las rende moedas de ouro que compram vidas extras. Um leve medidor de Pressa mantém o ritmo. Com um bônus de assentamento auspicioso. 48 fases. Grátis, da PixelRyu. Em breve na App Store.",
+      temari_title: "TEMARI — Rebata o temari, estoure os balões de papel.",
+      temari_desc: "Um breakout de raquete em primeira pessoa numa aconchegante noite japonesa. Mova o seu hagoita com a ponta do dedo, mantenha o temari num peloteio sem fim e estoure cada balão de papel do corredor — com split, câmera lenta focus, um faisão ajudante e mais. 8 mundos, 200 fases. Já disponível na App Store.",
+      bc_title: "Bounce Cat — Mire na parede. Liberte o gatinho.",
+      bc_desc: "Um aconchegante quebra-cabeça de fuga em labirinto. Atire um novelo de lã de fora do labirinto, acompanhe os ricochetes e mova ou estilhace paredes para que o gatinho preso encontre o próprio caminho de saída — 200 labirintos em 10 mundos. Já disponível no Roblox e na App Store. Testadores Android bem-vindos.",
+      bc_soon: "Em breve",
+      title: "PixelRyu — Jogos de puzzle e ação cósmicos",
+      meta_desc: "A PixelRyu cria belos jogos de puzzle e ação tranquilos para celular e Roblox — onde a quietude encontra o movimento.",
+      tagline: "Quietude e movimento — jogos de puzzle e ação cósmicos",
+      games_heading: "Jogos",
+      filter_all: "Todos",
+      genre_puzzle: "Puzzle",
+      genre_action: "Ação",
+      hayate_title: "HAYATE — Pilote rápido. Corte certeiro. Termine em primeiro.",
+      hayate_desc: "Uma corrida de velocidade com katana em 3D e sequência de ISSEN. Desvie do que voa em sua direção ou arremesse sua katana teleguiada para cortá-lo certeiro — por quatro mundos, quarenta fases, mais corridas infinitas. Já disponível na App Store. Testadores Android bem-vindos.",
+      follow_heading: "Seguir",
+      hotaru_title: "HOTARU — A Casa Perdida",
+      hotaru_desc: "Um belo simulador de caminhada de horror japonês. Siga os vaga-lumes, reúna-os no andon, atire-os nos yokai — e encontre o portão dos fundos antes do amanhecer.",
+      lg_desc: "Um quebra-cabeça de combinar cores tranquilo e luminoso no espaço profundo. Toque em uma estrela brilhante e depois em uma estrela conectada para deslizar a luz pela constelação até cada anel combinar com sua cor. Já disponível no Roblox, em breve no iPhone — o quebra-cabeça de organizar clássico está no Android.",
+      link_privacy: "Privacidade",
+      link_terms: "Termos",
+      mw_title: "Mole Whack",
+      mw_desc: "Uma simples ação de toque de 30 segundos. Acerte as toupeiras quando surgirem e persiga sua maior pontuação.",
+      issen_title: "ISSEN — Um sopro, um corte",
+      issen_desc: "Um jogo de ação de precisão em estilo sumi-e sobre o saque do iaido — respire, leia a distância e desfira um corte perfeito. Já disponível na App Store. Testadores Android bem-vindos.",
+      pp_title: "Parcel Pals — Embale felicidade. Envie sorrisos.",
+      pp_desc: "Um puzzle aconchegante de separação de pacotes. Separe pacotes fofos em 3 pistas, combine formas com caixas na esteira e envie antes que a mesa transborde. Testadores Android bem-vindos.",
+      sumlings_title: "Sumlings — Coloque números. Choque maravilhas.",
+      sumlings_desc: "Um quebra-cabeça de números aconchegante. Coloque ovos numerados em um pequeno terrário para que a soma de cada ninho corresponda ao alvo — choque os Sumlings e complete sua coleção. Já disponível na App Store. Testadores Android bem-vindos."
+    },
+    ru: {
+      tatami_title: "TATAMI — Стели татами. Получи награду.",
+      tatami_desc: "Уютная блочная головоломка, в которой вы укладываете маты татами в тихой японской комнате. Перетащите мат на пол и заполните целый ряд или столбец, чтобы завершить эту линию. Затем самурай взваливает уложенные маты на плечо и несёт их чиновнику, а сдача приносит золотые монеты, на которые покупаются дополнительные жизни. Лёгкая шкала Спешки задаёт темп. С бонусом за благоприятную укладку. 48 уровней. Бесплатно, от PixelRyu. Скоро в App Store.",
+      temari_title: "TEMARI — Отбивай тэмари, лопай бумажные шарики.",
+      temari_desc: "Аркада-арканоид от первого лица в уютной японской ночи. Двигай ракетку хагоита кончиком пальца, удерживай тэмари в бесконечном розыгрыше и лопай каждый бумажный шарик в коридоре — со сплитом, замедлением focus, помощником-фазаном и не только. 8 миров, 200 уровней. Уже в App Store.",
+      bc_title: "Bounce Cat — Бей рикошетом. Освободи кота.",
+      bc_desc: "Уютная головоломка о побеге из лабиринта. Запускай пряжу снаружи лабиринта, читай рикошет и сдвигай или разбивай стены, чтобы запертый кот сам нашёл выход — 200 лабиринтов в 10 мирах. Уже в Roblox и App Store. Приглашаются тестировщики Android.",
+      bc_soon: "Скоро выходит",
+      title: "PixelRyu — Космические головоломки и экшен",
+      meta_desc: "PixelRyu создаёт спокойные и красивые головоломки и экшен-игры для мобильных и Roblox — там, где покой встречает движение.",
+      tagline: "Покой и движение — космические головоломки и экшен",
+      games_heading: "Игры",
+      filter_all: "Все",
+      genre_puzzle: "Головоломка",
+      genre_action: "Экшен",
+      hayate_title: "HAYATE — Мчись быстро. Руби чисто. Финишируй первым.",
+      hayate_desc: "3D-гонка с катаной и продолжение ISSEN. Уворачивайся от летящих преград или метни самонаводящуюся катану и разрежь их начисто — четыре мира, сорок этапов и бесконечные забеги. Уже в App Store. Приглашаются тестировщики Android.",
+      follow_heading: "Подписаться",
+      hotaru_title: "HOTARU — Затерянный дом",
+      hotaru_desc: "Красивый японский хоррор-симулятор ходьбы. Следуй за светлячками, собирай их у андона, бросай в ёкаев — и найди заднюю калитку до рассвета.",
+      lg_desc: "Спокойная, светящаяся головоломка на совпадение цветов в глубоком космосе. Коснитесь сияющей звезды, затем соседней, чтобы скользить её светом по созвездию, пока каждое кольцо не совпадёт по цвету. Уже на Roblox, скоро на iPhone — классическая головоломка-сортировка доступна на Android.",
+      link_privacy: "Конфиденциальность",
+      link_terms: "Условия",
+      mw_title: "Mole Whack",
+      mw_desc: "Простой 30-секундный тап-экшен. Бей кротов, как только они появятся, и побей свой рекорд.",
+      issen_title: "ISSEN — Один вдох, один разрез",
+      issen_desc: "Тайминг-экшен в стиле суми-э о выхватывании меча иайдо — дышите, чувствуйте дистанцию и наносите идеальный разрез. Уже в App Store. Приглашаются тестировщики Android.",
+      pp_title: "Parcel Pals — Упакуй счастье. Отправь улыбку.",
+      pp_desc: "Уютная головоломка-сортировка посылок. Сортируй милые посылки по 3 лентам, подбирай формы к коробкам на конвейере и отправляй, пока стол не переполнился. Приглашаются тестировщики Android.",
+      sumlings_title: "Sumlings — Расставь числа. Вылупи чудеса.",
+      sumlings_desc: "Уютная числовая головоломка. Расставляйте числовые яйца в крошечном террариуме так, чтобы сумма каждого гнезда совпадала с целью — вылупляйте Sumling'ов и собирайте коллекцию. Уже в App Store. Приглашаются тестировщики Android."
+    }
+  };
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
+
+  function detectLang() {
+    try {
+      const stored = localStorage.getItem(LANG_STORAGE_KEY);
+      if (stored && i18n[stored]) return stored;
+    } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang, persist) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(opt);
+    }
+    setLang('es', true);
+    sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/' : 'https://pixelryu.github.io/' + v + '/';});
+  })();
+</script>
+<script>
+  // Whole game card is clickable -> opens the game page (same target as the title link).
+  // Nested links (store badges, Privacy, Terms, the title) keep their own behavior.
+  (function () {
+    var list = document.querySelector('.game-list');
+    if (!list) return;
+    list.addEventListener('click', function (e) {
+      var card = e.target.closest('.game-card');
+      if (!card) return;
+      if (e.target.closest('a, button')) return;            // real links/buttons act normally
+      var sel = window.getSelection && window.getSelection();
+      if (sel && String(sel).length) return;                // don't hijack a text selection
+      var link = card.querySelector('.game-head a[href]');
+      if (!link) return;
+      var href = link.getAttribute('href');
+      if (!href) return;
+      if (e.metaKey || e.ctrlKey || e.shiftKey) { window.open(href, '_blank'); return; } // new tab
+      // brief press bounce, then navigate
+      card.classList.remove('tapped');
+      void card.offsetWidth;                                 // reflow so the animation can replay
+      card.classList.add('tapped');
+      card.addEventListener('animationend', function done() {
+        card.classList.remove('tapped');
+        card.removeEventListener('animationend', done);
+      });
+      setTimeout(function () { window.location.href = href; }, 150);
+    });
+  })();
+</script>
+<script>
+  // Genre filter: each card's genre is read from its on-card genre tag (single source of
+  // truth), so adding/retagging a card needs no extra wiring here. Clicking a pill shows
+  // only that genre; "All" shows everything. Counts are filled in once on load.
+  (function () {
+    var bar = document.querySelector('.genre-filter');
+    var list = document.querySelector('.game-list');
+    if (!bar || !list) return;
+    var cards = Array.prototype.slice.call(list.querySelectorAll('.game-card'));
+    cards.forEach(function (card) {
+      var gs = [];
+      card.querySelectorAll('.genre-tag').forEach(function (tag) {
+        tag.classList.forEach(function (cl) {
+          if (cl.indexOf('genre-') === 0 && cl !== 'genre-tag' && gs.indexOf(cl.slice(6)) < 0) gs.push(cl.slice(6));
+        });
+      });
+      card.dataset.genres = gs.join(' ');
+    });
+    var counts = { all: cards.length };
+    cards.forEach(function (c) {
+      c.dataset.genres.split(' ').forEach(function (g) { if (g) counts[g] = (counts[g] || 0) + 1; });
+    });
+    bar.querySelectorAll('.filter-count').forEach(function (el) {
+      var k = el.getAttribute('data-count');
+      el.textContent = counts[k] != null ? counts[k] : 0;
+    });
+    var btns = Array.prototype.slice.call(bar.querySelectorAll('.filter-btn'));
+    function apply(filter) {
+      cards.forEach(function (c) {
+        c.style.display = (filter === 'all' || c.dataset.genres.split(' ').indexOf(filter) >= 0) ? '' : 'none';
+      });
+      btns.forEach(function (b) {
+        var on = b.getAttribute('data-filter') === filter;
+        b.classList.toggle('is-active', on);
+        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      });
+    }
+    bar.addEventListener('click', function (e) {
+      var btn = e.target.closest('.filter-btn');
+      if (btn) apply(btn.getAttribute('data-filter'));
+    });
+  })();
+</script>
+</body>
+</html>

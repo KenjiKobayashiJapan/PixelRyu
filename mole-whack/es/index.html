@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5MH53Z8LM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M5MH53Z8LM');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">Mole Whack — Acción de toques por niveles</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Mole Whack — un juego de toques casual por niveles de PixelRyu. Golpea a los topos, alcanza el objetivo y supera 100 niveles. Únete a la prueba cerrada de Android de 14 días.">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: radial-gradient(ellipse at top, #c8e6b0 0%, #a8d090 50%, #6ba84f 100%);
+    color: #2d3a23;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container {
+    max-width: 580px;
+    width: 100%;
+    padding: 80px 32px;
+    text-align: center;
+    position: relative;
+  }
+  .lang-switch {
+    position: absolute;
+    top: 24px;
+    right: 24px;
+  }
+  .lang-switch select {
+    background: rgba(45, 90, 26, 0.06);
+    color: #2d3a23;
+    border: 1px solid rgba(45, 90, 26, 0.25);
+    border-radius: 4px;
+    padding: 5px 10px;
+    font-size: 13px;
+    font-family: inherit;
+    cursor: pointer;
+  }
+  .lang-switch select:hover {
+    background: rgba(45, 90, 26, 0.12);
+    border-color: rgba(45, 90, 26, 0.55);
+  }
+  .lang-switch select option { background: #eaf3df; color: #2d3a23; }
+  h1 {
+    font-size: 48px;
+    margin: 0 0 12px;
+    color: #2d5a1a;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+  }
+  .tagline {
+    font-size: 14px;
+    color: #4a6b3a;
+    margin-bottom: 8px;
+    letter-spacing: 3px;
+  }
+  .subtitle {
+    font-size: 14px;
+    color: #4a6b3a;
+    margin-bottom: 32px;
+    letter-spacing: 2px;
+  }
+  .icon {
+    width: 128px;
+    height: 128px;
+    margin: 16px auto 24px;
+    border-radius: 24px;
+    display: block;
+    box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  }
+  .appstore-badge {
+    display: inline-block;
+    line-height: 0;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+  .appstore-badge:hover {
+    transform: translateY(-2px);
+    opacity: 0.88;
+  }
+  .appstore-badge svg { display: block; margin: 0 auto; }
+  .tester-card {
+    background: rgba(255, 255, 255, 0.40);
+    border: 1px solid rgba(45, 90, 26, 0.30);
+    border-radius: 16px;
+    padding: 24px 24px 28px;
+    margin: 32px 0 40px;
+    text-align: left;
+    box-shadow: 0 4px 20px rgba(45, 90, 26, 0.08);
+  }
+  .tester-heading {
+    font-size: 13px;
+    color: #2d5a1a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 0 0 4px;
+    font-weight: 700;
+    text-align: center;
+  }
+  .tester-android-note {
+    display: block;
+    font-size: 11px;
+    color: #4a6b3a;
+    text-transform: none;
+    letter-spacing: 0;
+    font-weight: 400;
+    margin-bottom: 16px;
+    text-align: center;
+  }
+  .tester-card p {
+    font-size: 14px;
+    line-height: 1.65;
+    color: #2d3a23;
+    margin: 12px 0;
+  }
+  .tester-section-label {
+    font-size: 13px;
+    font-weight: 700;
+    color: #4a8a3a;
+    margin: 20px 0 6px;
+  }
+  .tester-step {
+    display: block;
+    background: rgba(255, 255, 255, 0.55);
+    border: 1px solid rgba(45, 90, 26, 0.35);
+    border-radius: 10px;
+    padding: 12px 16px;
+    margin: 10px 0;
+    color: #2d5a1a;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 14px;
+    transition: all 0.2s ease;
+  }
+  .tester-step:hover {
+    background: rgba(255, 255, 255, 0.80);
+    border-color: rgba(45, 90, 26, 0.65);
+    color: #1a3d0c;
+  }
+  .tester-card ul {
+    margin: 6px 0 0;
+    padding-left: 22px;
+    color: #2d3a23;
+    font-size: 14px;
+    line-height: 1.7;
+  }
+  .overview-link {
+    display: block;
+    background: #2d5a1a;
+    color: #fff;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 18px 22px;
+    border-radius: 14px;
+    margin: 0 0 8px;
+    transition: all 0.2s ease;
+    box-shadow: 0 6px 18px rgba(45, 90, 26, 0.30);
+  }
+  .overview-link:hover { background: #234715; transform: translateY(-1px); }
+  .promo-video {
+    display: block;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    border-radius: 14px;
+    margin: 16px 0 8px;
+    background: #000;
+    box-shadow: 0 6px 18px rgba(45, 90, 26, 0.30);
+  }
+  .legal-divider {
+    font-size: 12px;
+    color: #4a6b3a;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin: 32px 0 12px;
+  }
+  .links { list-style: none; padding: 0; margin: 0; }
+  .links li {
+    background: rgba(255, 255, 255, 0.40);
+    border: 1px solid rgba(45, 90, 26, 0.25);
+    border-radius: 14px;
+    margin-bottom: 14px;
+    transition: all 0.25s ease;
+  }
+  .links li:hover {
+    background: rgba(255, 255, 255, 0.65);
+    border-color: rgba(45, 90, 26, 0.55);
+  }
+  .links a {
+    color: #2d5a1a;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: 600;
+    display: block;
+    padding: 18px 22px;
+  }
+  .back {
+    display: inline-block;
+    margin-top: 32px;
+    color: #4a6b3a;
+    text-decoration: none;
+    font-size: 13px;
+  }
+  .back:hover { color: #2d5a1a; }
+  @media (max-width: 600px) {
+    .lang-switch { top: 16px; right: 16px; }
+    .tester-card { padding: 20px 18px 22px; }
+  }
+  .social-heading{font-size:13px;color:#4a6b3a;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(45,90,26,0.08);border:1px solid rgba(45,90,26,0.22);color:#2d5a1a;transition:all .25s ease;}
+  .social a:hover{background:rgba(45,90,26,0.15);border-color:rgba(45,90,26,0.45);color:#2d5a1a;transform:translateY(-2px);}
+  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+  .hero-badges {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin: 24px 0 8px;
+  }
+  .hero-badges a { display: inline-block; line-height: 0; margin: 0; transition: transform .2s ease, opacity .2s ease; }
+  .hero-badges a:hover { transform: translateY(-2px); opacity: .85; }
+  .hero-badges svg, .hero-badges img { display: block; }
+  .hero-badges img { height: 51px; width: auto; }
+</style>
+<!-- SEO/LLMO start (managed) -->
+<link rel="canonical" href="https://pixelryu.github.io/mole-whack/es/">
+<link rel="alternate" hreflang="en" href="https://pixelryu.github.io/mole-whack/">
+<link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/mole-whack/ja/">
+<link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/mole-whack/zh/">
+<link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/mole-whack/ko/">
+<link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/mole-whack/hi/">
+<link rel="alternate" hreflang="id" href="https://pixelryu.github.io/mole-whack/id/">
+<link rel="alternate" hreflang="de" href="https://pixelryu.github.io/mole-whack/de/">
+<link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/mole-whack/fr/">
+<link rel="alternate" hreflang="it" href="https://pixelryu.github.io/mole-whack/it/">
+<link rel="alternate" hreflang="es" href="https://pixelryu.github.io/mole-whack/es/">
+<link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/mole-whack/pt/">
+<link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/mole-whack/ru/">
+<link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/mole-whack/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="PixelRyu">
+<meta name="publisher" content="PixelRyu">
+<meta name="keywords" content="Mole Whack, モグラぽかぽか, whack-a-mole, tap game, casual arcade, PixelRyu, indie game, Android, iOS">
+<meta name="theme-color" content="#a8d090">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/mole-whack/icon.png">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/mole-whack/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PixelRyu">
+<meta property="og:title" content="Mole Whack — Acción de toques por niveles">
+<meta property="og:description" content="Mole Whack — un juego de toques casual por niveles de PixelRyu. Golpea a los topos, alcanza el objetivo y supera 100 niveles. Únete a la prueba cerrada de Android de 14 días.">
+<meta property="og:url" content="https://pixelryu.github.io/mole-whack/es/">
+<meta property="og:image" content="https://pixelryu.github.io/mole-whack/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Mole Whack — Acción de toques por niveles">
+<meta property="og:locale" content="es_ES">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Mole Whack — Acción de toques por niveles">
+<meta name="twitter:description" content="Mole Whack — un juego de toques casual por niveles de PixelRyu. Golpea a los topos, alcanza el objetivo y supera 100 niveles. Únete a la prueba cerrada de Android de 14 días.">
+<meta name="twitter:image" content="https://pixelryu.github.io/mole-whack/og.png">
+<meta name="twitter:image:alt" content="Mole Whack — Acción de toques por niveles">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Mole Whack","genre":"Arcade, Casual","url":"https://pixelryu.github.io/mole-whack/es/","image":"https://pixelryu.github.io/mole-whack/icon.png","description":"Mole Whack — un juego de toques casual por niveles de PixelRyu. Golpea a los topos, alcanza el objetivo y supera 100 niveles. Únete a la prueba cerrada de Android de 14 días.","applicationCategory":"GameApplication","operatingSystem":"iOS, Android","author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"alternateName":"モグラぽかぽか","downloadUrl":"https://apps.apple.com/app/id6770864132","sameAs":["https://apps.apple.com/app/id6770864132","https://play.google.com/store/apps/details?id=com.pixelryu.molewhack"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/es/"},{"@type":"ListItem","position":2,"name":"Mole Whack","item":"https://pixelryu.github.io/mole-whack/es/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué tipo de juego es Mole Whack?","acceptedAnswer":{"@type":"Answer","text":"Mole Whack es un juego de toques arcade casual de golpear topos de PixelRyu: golpea a los topos en 30 segundos para alcanzar el objetivo de cada nivel y avanzar."}},{"@type":"Question","name":"¿Mole Whack es gratis?","acceptedAnswer":{"@type":"Answer","text":"Sí, Mole Whack se puede jugar gratis."}},{"@type":"Question","name":"¿Dónde se puede jugar a Mole Whack ahora mismo?","acceptedAnswer":{"@type":"Answer","text":"Está disponible en el App Store; en Android puedes unirte a la prueba cerrada de 14 días a través de Google Play."}},{"@type":"Question","name":"¿Cuántos niveles tiene Mole Whack?","acceptedAnswer":{"@type":"Answer","text":"100 niveles en total, cada vez más rápidos."}},{"@type":"Question","name":"¿Qué idiomas admite Mole Whack?","acceptedAnswer":{"@type":"Answer","text":"12 idiomas: inglés, japonés, chino, coreano, hindi, indonesio, alemán, francés, italiano, español, portugués y ruso."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Mole Whack — Official Trailer","description":"Mole Whack — a casual stage-based tap game by PixelRyu. Hit the moles, clear the target, advance through 100 stages.","thumbnailUrl":"https://pixelryu.github.io/mole-whack/og.png","uploadDate":"2026-05-23","contentUrl":"https://pixelryu.github.io/mole-whack/promotion_H_compilation.mp4?v=20260523112820"}</script>
+<!-- SEO/LLMO end -->
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch"><select id="lang-select" aria-label="Language"></select></div>
+  <img src="https://pixelryu.github.io/mole-whack/icon.png?v=20260521172609" alt="" class="icon">
+  <h1>モグラぽかぽか</h1>
+  <div class="tagline">Mole Whack</div>
+  <div class="subtitle" data-i18n="subtitle">Acción de toques por niveles</div>
+
+  <section class="hero-badges" aria-label="Get the game">
+    <a href="https://apps.apple.com/app/id6770864132" target="_blank" rel="noopener" aria-label="Download Mole Whack on the App Store">
+      <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+        <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+          <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+        </svg>
+        <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+        <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+      </svg>
+    </a>
+    <a href="#tester-heading" aria-label="Join Mole Whack Android testers">
+      <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+    </a>
+  </section>
+
+  <section class="tester-card" aria-labelledby="tester-heading">
+    <div id="tester-heading" class="tester-heading">
+      🔨 <span data-i18n="tester_heading">Buscamos testers de Android</span>
+      <span class="tester-android-note">📱 <span data-i18n="tester_android_note">Solo Android</span></span>
+    </div>
+    <p data-i18n="tester_intro">Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.</p>
+
+    <div class="tester-section-label">🎮 <span data-i18n="tester_what_label">De qué se trata</span></div>
+    <p data-i18n="tester_what">Golpea a los topos en 30 segundos para alcanzar el objetivo de cada nivel y avanzar — una acción de toques por niveles. 100 niveles en total, cada vez más rápidos. Reglas simples, instalación ligera, perfecto para descansos breves.</p>
+
+    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">
+      🔗 <span data-i18n="tester_step1_label">Paso 1 — Únete al grupo de testers</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.molewhack" target="_blank" rel="noopener">
+      📱 <span data-i18n="tester_step2_label">Paso 2 — Inscríbete vía Play Store</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/store/apps/details?id=com.pixelryu.molewhack" target="_blank" rel="noopener">
+      ⬇️ <span data-i18n="tester_step3_label">Paso 3 — Descarga y juega la app</span>
+    </a>
+
+    <div class="tester-section-label">📌 <span data-i18n="tester_ask_label">Lo que pido</span></div>
+    <ul>
+      <li data-i18n="tester_ask_keep">Mantener instalado los 14 días completos</li>
+      <li data-i18n="tester_ask_launch">Abrir cada par de días (unas pocas veces basta)</li>
+      <li data-i18n="tester_ask_minutes">1-2 minutos de juego casual por sesión es suficiente</li>
+    </ul>
+    <p class="tester-note" data-i18n="tester_note_lead">ℹ️ Consejo — los tres pasos siguientes son necesarios:</p>
+    <ul class="tester-note-list">
+      <li data-i18n="tester_note_step1">Paso 1 — Únete al grupo: aunque aparezca «no tienes permiso para ver el contenido», en esa página hay un botón «Unirse al grupo»; tócalo para unirte.</li>
+      <li data-i18n="tester_note_step2">Paso 2 — Hazte tester (participa): en la página de participación, toca para unirte a la prueba. Solo participar no instala la app.</li>
+      <li data-i18n="tester_note_step3">Paso 3 — Descarga y juega: abre la página de descarga, instala la app, ábrela y juega un poco; sin esto, tu prueba no cuenta.</li>
+      <li data-i18n="tester_note_account">Usa la misma cuenta de Google en todos los pasos.</li>
+      <li data-i18n="tester_note_wait">Si el paso 2 o 3 muestra «App not available», espera unas horas después de unirte y vuelve a intentarlo.</li>
+    </ul>
+  </section>
+
+  <a href="https://pixelryu.github.io/mole-whack/overview.html" class="overview-link">🎮 <span data-i18n="link_overview">Ver descripción del juego</span> →</a>
+
+  <video class="promo-video" autoplay loop muted playsinline controls preload="auto">
+    <source src="https://pixelryu.github.io/mole-whack/promotion_H_compilation.mp4?v=20260523112820" type="video/mp4">
+  </video>
+
+  <div class="legal-divider" data-i18n="legal_divider">Documentos legales</div>
+  <ul class="links">
+    <li><a href="https://pixelryu.github.io/mole-whack/privacy_policy.html" data-i18n="link_privacy">Política de privacidad</a></li>
+    <li><a href="https://pixelryu.github.io/mole-whack/terms_of_service.html" data-i18n="link_terms">Términos del servicio</a></li>
+  </ul>
+  <h2 class="social-heading" data-i18n="faq_heading">Preguntas frecuentes</h2>
+  <section class="tester-card" id="faq" style="text-align:left;">
+    <p><strong data-i18n="faq_q1">¿Qué tipo de juego es Mole Whack?</strong></p>
+    <p data-i18n="faq_a1">Mole Whack es un juego de toques arcade casual de golpear topos de PixelRyu: golpea a los topos en 30 segundos para alcanzar el objetivo de cada nivel y avanzar.</p>
+    <p><strong data-i18n="faq_q2">¿Mole Whack es gratis?</strong></p>
+    <p data-i18n="faq_a2">Sí, Mole Whack se puede jugar gratis.</p>
+    <p><strong data-i18n="faq_q3">¿Dónde se puede jugar a Mole Whack ahora mismo?</strong></p>
+    <p data-i18n="faq_a3">Está disponible en el App Store; en Android puedes unirte a la prueba cerrada de 14 días a través de Google Play.</p>
+    <p><strong data-i18n="faq_q4">¿Cuántos niveles tiene Mole Whack?</strong></p>
+    <p data-i18n="faq_a4">100 niveles en total, cada vez más rápidos.</p>
+    <p><strong data-i18n="faq_q5">¿Qué idiomas admite Mole Whack?</strong></p>
+    <p data-i18n="faq_a5">12 idiomas: inglés, japonés, chino, coreano, hindi, indonesio, alemán, francés, italiano, español, portugués y ruso.</p>
+  </section>
+
+  <h2 class="social-heading" data-i18n="more_games_heading">Más juegos de PixelRyu</h2>
+  <ul class="links">
+    <li><a href="https://pixelryu.github.io/bounce-cat/es/"><span data-i18n="mg_1">Bounce Cat — acogedor puzle de escape de laberintos</span></a></li>
+    <li><a href="https://pixelryu.github.io/temari/es/"><span data-i18n="mg_2">TEMARI — breakout de pala en primera persona</span></a></li>
+    <li><a href="https://pixelryu.github.io/parcel-pals/es/"><span data-i18n="mg_3">Parcel Pals — acogedor puzle de clasificación de paquetes</span></a></li>
+  </ul>
+  <a href="https://pixelryu.github.io/es/" class="back" data-i18n="back">← Volver a PixelRyu</a>
+  <h2 class="social-heading">Follow</h2>
+  <div class="social">
+    <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note"><svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+    <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+    en: {
+      title: "Mole Whack — Whack-a-Mole Tap Game, 100 Stages",
+      meta_desc: "Mole Whack — a casual stage-based tap game by PixelRyu. Hit the moles, clear the target, advance through 100 stages. Join the 14-day Android closed testing.",
+      subtitle: "Stage-based tap action",
+      tester_heading: "Android Tester Recruitment",
+      tester_android_note: "Android only",
+      tester_intro: "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
+      tester_what_label: "What it is",
+      tester_what: "Hit the moles within 30 seconds to reach each stage's target and advance to the next — a stage-based tap action. 100 stages in all, getting faster as you go. Simple rules, light install, perfect for short breaks.",
+      tester_step1_label: "Step 1 — Join the tester group",
+      tester_step2_label: "Step 2 — Opt-in via Play Store",
+      tester_step3_label: "Step 3 — Download & play the app",
+      tester_ask_label: "What I'm asking for",
+      tester_ask_keep: "Keep installed for the full 14 days",
+      tester_ask_launch: "Launch every couple of days (a few times is enough)",
+      tester_ask_minutes: "1–2 minutes of casual play per session works fine",
+      tester_note_lead: "ℹ️ Tip — all three steps below are required:",
+      tester_note_step1: "Step 1 — Join the group: even if you see “no permission to view content”, there’s a “Join group” button on that page — tap it to join.",
+      tester_note_step2: "Step 2 — Become a tester (opt-in): on the opt-in page, tap to join the test. Becoming a tester alone does not install the app.",
+      tester_note_step3: "Step 3 — Download & play: open the download page, install the app, launch it and play a little — without this, your testing doesn’t count.",
+      tester_note_account: "Use the same Google account for all steps.",
+      tester_note_wait: "If Step 2 or 3 shows “App not available”, wait a few hours after joining and try again.",
+      link_overview: "View Game Overview",
+      legal_divider: "Legal Documents",
+      link_privacy: "Privacy Policy",
+      link_terms: "Terms of Service",
+      back: "← PixelRyu",
+      faq_heading: "FAQ",
+      faq_q1: "What kind of game is Mole Whack?",
+      faq_a1: "Mole Whack is a casual arcade whack-a-mole tap game by PixelRyu — hit the moles within 30 seconds to reach each stage's target and advance to the next.",
+      faq_q2: "Is Mole Whack free to play?",
+      faq_a2: "Yes, Mole Whack is free to play.",
+      faq_q3: "Where can I play Mole Whack right now?",
+      faq_a3: "Mole Whack is available on the App Store, and on Android you can join the 14-day Android closed testing via Google Play.",
+      faq_q4: "How many stages does Mole Whack have?",
+      faq_a4: "Mole Whack has 100 stages in all, getting faster as you go.",
+      faq_q5: "What languages does Mole Whack support?",
+      faq_a5: "Mole Whack supports 12 languages: English, Japanese, Chinese, Korean, Hindi, Indonesian, German, French, Italian, Spanish, Portuguese, and Russian.",
+      more_games_heading: "More games by PixelRyu",
+      mg_1: "Bounce Cat — cozy maze-escape puzzle",
+      mg_2: "TEMARI — first-person paddle breakout",
+      mg_3: "Parcel Pals — cozy parcel-sorting puzzle"
+    },
+    ja: {
+      title: "モグラぽかぽか — ステージ制タップアクション",
+      meta_desc: "モグラぽかぽか — PixelRyu によるステージ制のカジュアルタップゲーム。モグラを叩いて目標を達成し、全 100 ステージを攻略。14 日間の Android クローズドテストにご参加ください。",
+      subtitle: "ステージ制タップアクション",
+      tester_heading: "Android テスター募集中",
+      tester_android_note: "Android 専用",
+      tester_intro: "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
+      tester_what_label: "ゲーム内容",
+      tester_what: "30 秒以内に目標数のモグラを叩いてクリア、次のステージへ進むステージ制のタップアクション。全 100 ステージ、進むほどスピードアップ。説明不要のルールで、すきま時間にコツコツ遊べます。",
+      tester_step1_label: "ステップ 1 — テスターグループに参加",
+      tester_step2_label: "ステップ 2 — Play ストアでオプトイン",
+      tester_step3_label: "ステップ 3 — アプリをダウンロードしてプレイ",
+      tester_ask_label: "お願いしたいこと",
+      tester_ask_keep: "14 日間アンインストールせずに保持",
+      tester_ask_launch: "数日に一度起動 (合計数回で OK)",
+      tester_ask_minutes: "1 回 1〜2 分の軽いプレイで大丈夫",
+      tester_note_lead: "ℹ️ ヒント — 下記の3つのステップすべてが必要です:",
+      tester_note_step1: "ステップ1 — グループに参加: 「閲覧権限がありません」と表示されても、その画面に「グループに参加」ボタンがあるので押して参加してください。",
+      tester_note_step2: "ステップ2 — テスターになる（オプトイン）: オプトイン画面でテストに参加してください。テスターになっただけではアプリはインストールされません。",
+      tester_note_step3: "ステップ3 — ダウンロードしてプレイ: ダウンロードページを開いてアプリをインストールし、起動して少し遊んでください。これをしないとテストにカウントされません。",
+      tester_note_account: "すべてのステップで同じ Google アカウントをお使いください。",
+      tester_note_wait: "ステップ2または3で「App not available」と表示されるときは、参加から数時間おいて再度お試しください。",
+      link_overview: "ゲーム概要を見る",
+      legal_divider: "規約類",
+      link_privacy: "プライバシーポリシー",
+      link_terms: "利用規約",
+      back: "← PixelRyu へ戻る",
+      faq_heading: "よくある質問",
+      faq_q1: "モグラぽかぽかはどんなゲームですか？",
+      faq_a1: "PixelRyu のカジュアルなアーケード系モグラ叩きタップゲームです。30 秒以内にモグラを叩いて各ステージの目標を達成し、次のステージへ進みます。",
+      faq_q2: "無料で遊べますか？",
+      faq_a2: "はい、無料でプレイできます。",
+      faq_q3: "今どこでプレイできますか？",
+      faq_a3: "App Store でダウンロードできます。Android では Google Play の 14 日間クローズドテストに参加できます。",
+      faq_q4: "ステージはいくつありますか？",
+      faq_a4: "全 100 ステージで、進むほどスピードアップします。",
+      faq_q5: "対応言語は何ですか？",
+      faq_a5: "英語・日本語・中国語・韓国語・ヒンディー語・インドネシア語・ドイツ語・フランス語・イタリア語・スペイン語・ポルトガル語・ロシア語の 12 言語に対応しています。",
+      more_games_heading: "PixelRyu のほかのゲーム",
+      mg_1: "Bounce Cat — ほっこり迷路脱出パズル",
+      mg_2: "TEMARI — 一人称パドルブロック崩し",
+      mg_3: "Parcel Pals — ほっこり荷物仕分けパズル"
+    },
+    zh: {
+      title: "Mole Whack — 闯关式点击动作",
+      meta_desc: "Mole Whack — PixelRyu 出品的闯关式休闲点击游戏。叩打地鼠、达成目标,通关 100 个关卡。欢迎参加为期 14 天的 Android 封闭测试。",
+      subtitle: "闯关式点击动作",
+      tester_heading: "招募 Android 测试者",
+      tester_android_note: "仅限 Android",
+      tester_intro: "我是一名独立开发者,正在为期 14 天的封闭测试招募积极的 Android 测试者。",
+      tester_what_label: "游戏简介",
+      tester_what: "在 30 秒内叩打地鼠达成各关目标,即可进入下一关——一款闯关式点击动作游戏。共 100 关,越往后越快。规则简单、安装轻巧,最适合零碎时间。",
+      tester_step1_label: "第一步 — 加入测试者群组",
+      tester_step2_label: "第二步 — 通过 Play 商店加入测试",
+      tester_step3_label: "第三步 — 下载并试玩应用",
+      tester_ask_label: "我希望你能做到",
+      tester_ask_keep: "完整保留 14 天不卸载",
+      tester_ask_launch: "每隔几天启动一次（几次即可）",
+      tester_ask_minutes: "每次随意玩 1-2 分钟即可",
+      tester_note_lead: "ℹ️ 提示 — 以下三个步骤都必须完成：",
+      tester_note_step1: "第一步 — 加入群组：即使显示“无权限查看内容”，该页面上也有“加入群组”按钮，请点击加入。",
+      tester_note_step2: "第二步 — 成为测试者（加入测试）：在加入测试页面点击加入测试。仅成为测试者并不会安装应用。",
+      tester_note_step3: "第三步 — 下载并试玩：打开下载页面安装应用，然后启动应用并稍微试玩。否则你的测试不会被计入。",
+      tester_note_account: "所有步骤请使用同一个 Google 账号。",
+      tester_note_wait: "如果第二步或第三步显示“App not available”，请在加入后等待几小时再试。",
+      link_overview: "查看游戏简介",
+      legal_divider: "法律文件",
+      link_privacy: "隐私政策",
+      link_terms: "服务条款",
+      back: "← 返回 PixelRyu",
+      faq_heading: "常见问题",
+      faq_q1: "Mole Whack 是一款什么样的游戏？",
+      faq_a1: "Mole Whack 是 PixelRyu 出品的休闲街机式打地鼠点击游戏——在 30 秒内叩打地鼠达成各关目标，进入下一关。",
+      faq_q2: "Mole Whack 免费吗？",
+      faq_a2: "是的，Mole Whack 可以免费游玩。",
+      faq_q3: "现在可以在哪里玩 Mole Whack？",
+      faq_a3: "可在 App Store 下载；Android 用户可通过 Google Play 参加为期 14 天的封闭测试。",
+      faq_q4: "Mole Whack 一共有多少关？",
+      faq_a4: "共 100 关，越往后节奏越快。",
+      faq_q5: "Mole Whack 支持哪些语言？",
+      faq_a5: "支持 12 种语言：英语、日语、中文、韩语、印地语、印尼语、德语、法语、意大利语、西班牙语、葡萄牙语和俄语。",
+      more_games_heading: "PixelRyu 的更多游戏",
+      mg_1: "Bounce Cat — 治愈系迷宫逃脱解谜",
+      mg_2: "TEMARI — 第一人称球拍打砖块",
+      mg_3: "Parcel Pals — 治愈系包裹分拣解谜"
+    },
+    ko: {
+      title: "Mole Whack — 스테이지 방식 탭 액션",
+      meta_desc: "Mole Whack — PixelRyu의 스테이지 방식 캐주얼 탭 게임. 두더지를 두드려 목표를 달성하고 100개 스테이지를 공략하세요. 14일간의 Android 비공개 테스트에 참여해 보세요.",
+      subtitle: "스테이지 방식 탭 액션",
+      tester_heading: "Android 테스터 모집",
+      tester_android_note: "Android 전용",
+      tester_intro: "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
+      tester_what_label: "게임 소개",
+      tester_what: "30초 안에 두더지를 두드려 각 스테이지의 목표를 달성하고 다음으로 진행하는 스테이지 방식 탭 액션. 총 100스테이지, 갈수록 빨라집니다. 간단한 규칙, 가벼운 설치로 짧은 휴식에 안성맞춤.",
+      tester_step1_label: "1단계 — 테스터 그룹 가입",
+      tester_step2_label: "2단계 — Play 스토어에서 옵트인",
+      tester_step3_label: "3단계 — 앱 다운로드 후 플레이",
+      tester_ask_label: "부탁드리는 것",
+      tester_ask_keep: "14일 동안 설치 상태 유지",
+      tester_ask_launch: "며칠에 한 번씩 실행 (몇 번이면 충분합니다)",
+      tester_ask_minutes: "한 번에 1~2분 정도의 가벼운 플레이로 충분",
+      tester_note_lead: "ℹ️ 팁 — 아래 세 단계를 모두 완료해야 합니다:",
+      tester_note_step1: "1단계 — 그룹 가입: “콘텐츠를 볼 권한이 없습니다”라고 표시되어도 그 화면에 “그룹 가입” 버튼이 있으니 눌러서 가입하세요.",
+      tester_note_step2: "2단계 — 테스터 되기(옵트인): 옵트인 화면에서 테스트에 참여하세요. 테스터가 되는 것만으로는 앱이 설치되지 않습니다.",
+      tester_note_step3: "3단계 — 다운로드 후 플레이: 다운로드 페이지를 열어 앱을 설치하고, 실행해 잠깐 플레이하세요. 그렇지 않으면 테스트로 집계되지 않습니다.",
+      tester_note_account: "모든 단계에서 같은 Google 계정을 사용하세요.",
+      tester_note_wait: "2단계 또는 3단계에서 “App not available”이 표시되면 가입 후 몇 시간 기다렸다가 다시 시도하세요.",
+      link_overview: "게임 소개 보기",
+      legal_divider: "법적 고지",
+      link_privacy: "개인정보 처리방침",
+      link_terms: "서비스 이용약관",
+      back: "← PixelRyu로 돌아가기",
+      faq_heading: "자주 묻는 질문",
+      faq_q1: "Mole Whack은 어떤 게임인가요?",
+      faq_a1: "PixelRyu의 캐주얼 아케이드 두더지 잡기 탭 게임입니다. 30초 안에 두더지를 두드려 각 스테이지의 목표를 달성하고 다음으로 진행합니다.",
+      faq_q2: "무료로 플레이할 수 있나요?",
+      faq_a2: "네, Mole Whack은 무료로 플레이할 수 있습니다.",
+      faq_q3: "지금 어디에서 플레이할 수 있나요?",
+      faq_a3: "App Store에서 다운로드할 수 있으며, Android에서는 Google Play의 14일 비공개 테스트에 참여할 수 있습니다.",
+      faq_q4: "스테이지는 몇 개인가요?",
+      faq_a4: "총 100개 스테이지이며, 갈수록 빨라집니다.",
+      faq_q5: "어떤 언어를 지원하나요?",
+      faq_a5: "영어, 일본어, 중국어, 한국어, 힌디어, 인도네시아어, 독일어, 프랑스어, 이탈리아어, 스페인어, 포르투갈어, 러시아어의 12개 언어를 지원합니다.",
+      more_games_heading: "PixelRyu의 다른 게임",
+      mg_1: "Bounce Cat — 아늑한 미로 탈출 퍼즐",
+      mg_2: "TEMARI — 1인칭 패들 블록 깨기",
+      mg_3: "Parcel Pals — 아늑한 소포 분류 퍼즐"
+    },
+    hi: {
+      title: "Mole Whack — स्टेज-आधारित टैप एक्शन",
+      meta_desc: "Mole Whack — PixelRyu का स्टेज-आधारित कैज़ुअल टैप गेम। छछूंदरों को ठोकें, लक्ष्य पूरा करें और 100 स्टेज पार करें। 14 दिन के Android क्लोज़्ड टेस्ट में शामिल हों।",
+      subtitle: "स्टेज-आधारित टैप एक्शन",
+      tester_heading: "Android टेस्टर्स की तलाश",
+      tester_android_note: "केवल Android",
+      tester_intro: "सोलो इंडी डेवलपर हूँ, 14 दिन की क्लोज़्ड टेस्टिंग के लिए सक्रिय Android टेस्टर्स ढूँढ रहा हूँ।",
+      tester_what_label: "यह क्या है",
+      tester_what: "30 सेकंड में छछूंदरों को ठोककर हर स्टेज का लक्ष्य पूरा करें और अगले पर बढ़ें — एक स्टेज-आधारित टैप एक्शन। कुल 100 स्टेज, आगे बढ़ते-बढ़ते तेज़। आसान नियम, हल्की इंस्टॉल, छोटे ब्रेक्स के लिए परफ़ेक्ट।",
+      tester_step1_label: "चरण 1 — टेस्टर ग्रुप में शामिल हों",
+      tester_step2_label: "चरण 2 — Play Store पर ऑप्ट-इन",
+      tester_step3_label: "चरण 3 — ऐप डाउनलोड करके खेलें",
+      tester_ask_label: "मैं क्या माँग रहा हूँ",
+      tester_ask_keep: "पूरे 14 दिन इंस्टॉल रखें",
+      tester_ask_launch: "हर कुछ दिन में लॉन्च करें (कुछ बार ही काफ़ी है)",
+      tester_ask_minutes: "प्रति सेशन 1–2 मिनट का आरामसे प्ले ठीक है",
+      tester_note_lead: "ℹ️ सुझाव — नीचे दिए तीनों चरण ज़रूरी हैं:",
+      tester_note_step1: "चरण 1 — ग्रुप जॉइन करें: भले ही “सामग्री देखने की अनुमति नहीं है” दिखे, उसी पेज पर “ग्रुप जॉइन करें” बटन होता है — उसे दबाकर जॉइन करें।",
+      tester_note_step2: "चरण 2 — टेस्टर बनें (ऑप्ट-इन): ऑप्ट-इन पेज पर टेस्ट में शामिल होने के लिए टैप करें। सिर्फ़ टेस्टर बनने से ऐप इंस्टॉल नहीं होती।",
+      tester_note_step3: "चरण 3 — डाउनलोड करके खेलें: डाउनलोड पेज खोलकर ऐप इंस्टॉल करें, उसे खोलें और थोड़ा खेलें — इसके बिना आपकी टेस्टिंग नहीं गिनी जाती।",
+      tester_note_account: "सभी चरणों में एक ही Google खाते का उपयोग करें।",
+      tester_note_wait: "अगर चरण 2 या 3 में “App not available” दिखे, तो जॉइन करने के कुछ घंटे बाद फिर से कोशिश करें।",
+      link_overview: "गेम अवलोकन देखें",
+      legal_divider: "क़ानूनी दस्तावेज़",
+      link_privacy: "गोपनीयता नीति",
+      link_terms: "सेवा शर्तें",
+      back: "← PixelRyu पर वापस",
+      faq_heading: "अक्सर पूछे जाने वाले सवाल",
+      faq_q1: "Mole Whack किस तरह का गेम है?",
+      faq_a1: "Mole Whack PixelRyu का कैज़ुअल आर्केड व्हैक-अ-मोल टैप गेम है — 30 सेकंड में छछूंदरों को ठोककर हर स्टेज का लक्ष्य पूरा करें और अगले स्टेज पर बढ़ें।",
+      faq_q2: "क्या Mole Whack मुफ़्त है?",
+      faq_a2: "हाँ, Mole Whack मुफ़्त में खेला जा सकता है।",
+      faq_q3: "अभी Mole Whack कहाँ खेल सकते हैं?",
+      faq_a3: "App Store से डाउनलोड किया जा सकता है, और Android पर Google Play के ज़रिए 14 दिन की क्लोज़्ड टेस्टिंग में शामिल हो सकते हैं।",
+      faq_q4: "Mole Whack में कितने स्टेज हैं?",
+      faq_a4: "कुल 100 स्टेज हैं, और आगे बढ़ने पर गेम तेज़ होता जाता है।",
+      faq_q5: "Mole Whack कौन-सी भाषाएँ सपोर्ट करता है?",
+      faq_a5: "12 भाषाएँ सपोर्ट करता है: अंग्रेज़ी, जापानी, चीनी, कोरियाई, हिंदी, इंडोनेशियाई, जर्मन, फ़्रेंच, इतालवी, स्पैनिश, पुर्तगाली और रूसी।",
+      more_games_heading: "PixelRyu के और गेम",
+      mg_1: "Bounce Cat — आरामदायक भूलभुलैया-निकास पहेली",
+      mg_2: "TEMARI — फ़र्स्ट-पर्सन पैडल ब्रेकआउट",
+      mg_3: "Parcel Pals — आरामदायक पार्सल छँटाई पहेली"
+    },
+    id: {
+      title: "Mole Whack — Aksi Ketuk Berbasis Stage",
+      meta_desc: "Mole Whack — game ketuk kasual berbasis stage dari PixelRyu. Pukul tikus tanah, capai target, dan lewati 100 stage. Ikuti closed test Android selama 14 hari.",
+      subtitle: "Aksi ketuk berbasis stage",
+      tester_heading: "Mencari Tester Android",
+      tester_android_note: "Hanya Android",
+      tester_intro: "Saya developer indie solo, mencari tester Android aktif untuk fase closed test 14 hari.",
+      tester_what_label: "Tentang game ini",
+      tester_what: "Pukul tikus tanah dalam 30 detik untuk mencapai target tiap stage dan maju ke berikutnya — aksi ketuk berbasis stage. Total 100 stage, makin cepat seiring waktu. Aturan sederhana, instal ringan, pas untuk jeda singkat.",
+      tester_step1_label: "Langkah 1 — Bergabung dengan grup tester",
+      tester_step2_label: "Langkah 2 — Opt-in via Play Store",
+      tester_step3_label: "Langkah 3 — Unduh & mainkan aplikasi",
+      tester_ask_label: "Yang saya mintakan",
+      tester_ask_keep: "Pertahankan terinstal selama 14 hari penuh",
+      tester_ask_launch: "Luncurkan setiap beberapa hari (beberapa kali sudah cukup)",
+      tester_ask_minutes: "Bermain santai 1–2 menit per sesi sudah cukup",
+      tester_note_lead: "ℹ️ Tips — ketiga langkah berikut wajib dilakukan:",
+      tester_note_step1: "Langkah 1 — Gabung grup: meskipun muncul “tidak ada izin untuk melihat konten”, ada tombol “Gabung grup” di halaman itu — tekan untuk bergabung.",
+      tester_note_step2: "Langkah 2 — Jadi tester (opt-in): di halaman opt-in, ketuk untuk bergabung ke pengujian. Menjadi tester saja tidak memasang aplikasi.",
+      tester_note_step3: "Langkah 3 — Unduh & mainkan: buka halaman unduhan, pasang aplikasinya, buka, dan mainkan sebentar — tanpa ini, pengujianmu tidak terhitung.",
+      tester_note_account: "Gunakan akun Google yang sama untuk semua langkah.",
+      tester_note_wait: "Jika Langkah 2 atau 3 menampilkan “App not available”, tunggu beberapa jam setelah bergabung lalu coba lagi.",
+      link_overview: "Lihat Ikhtisar Game",
+      legal_divider: "Dokumen Hukum",
+      link_privacy: "Kebijakan Privasi",
+      link_terms: "Ketentuan Layanan",
+      back: "← Kembali ke PixelRyu",
+      faq_heading: "Pertanyaan Umum",
+      faq_q1: "Game seperti apa Mole Whack?",
+      faq_a1: "Mole Whack adalah game ketuk arcade kasual ala pukul-tikus-tanah dari PixelRyu — pukul tikus tanah dalam 30 detik untuk mencapai target tiap stage dan maju ke berikutnya.",
+      faq_q2: "Apakah Mole Whack gratis?",
+      faq_a2: "Ya, Mole Whack gratis dimainkan.",
+      faq_q3: "Di mana Mole Whack bisa dimainkan sekarang?",
+      faq_a3: "Tersedia untuk diunduh di App Store, dan di Android kamu bisa ikut closed test 14 hari melalui Google Play.",
+      faq_q4: "Ada berapa stage di Mole Whack?",
+      faq_a4: "Total 100 stage, dan makin lama makin cepat.",
+      faq_q5: "Bahasa apa saja yang didukung Mole Whack?",
+      faq_a5: "Mendukung 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia.",
+      more_games_heading: "Game lain dari PixelRyu",
+      mg_1: "Bounce Cat — puzzle kabur dari labirin yang nyaman",
+      mg_2: "TEMARI — paddle breakout orang pertama",
+      mg_3: "Parcel Pals — puzzle sortir paket yang nyaman"
+    },
+    de: {
+      title: "Mole Whack — Tap-Action mit Stages",
+      meta_desc: "Mole Whack — ein lockeres Tap-Spiel mit Stages von PixelRyu. Triff die Maulwürfe, erreiche das Ziel und meistere 100 Stages. Nimm an der 14-tägigen geschlossenen Android-Testphase teil.",
+      subtitle: "Tap-Action mit Stages",
+      tester_heading: "Android-Tester gesucht",
+      tester_android_note: "Nur für Android",
+      tester_intro: "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
+      tester_what_label: "Worum es geht",
+      tester_what: "Triff die Maulwürfe in 30 Sekunden, erreiche das Ziel jeder Stage und komm weiter — eine Tap-Action mit Stages. Insgesamt 100 Stages, die mit der Zeit schneller werden. Einfache Regeln, schlanke Installation, perfekt für kurze Pausen.",
+      tester_step1_label: "Schritt 1 — Tester-Gruppe beitreten",
+      tester_step2_label: "Schritt 2 — Über den Play Store anmelden",
+      tester_step3_label: "Schritt 3 — App herunterladen & spielen",
+      tester_ask_label: "Worum ich bitte",
+      tester_ask_keep: "14 Tage lang installiert lassen",
+      tester_ask_launch: "Alle paar Tage starten (ein paar Mal reicht)",
+      tester_ask_minutes: "1–2 Minuten lockeres Spielen pro Sitzung reichen aus",
+      tester_note_lead: "ℹ️ Tipp — alle drei Schritte unten sind nötig:",
+      tester_note_step1: "Schritt 1 — Der Gruppe beitreten: Auch wenn „keine Berechtigung zum Anzeigen der Inhalte“ erscheint, gibt es auf der Seite einen Button „Gruppe beitreten“ – tippe darauf, um beizutreten.",
+      tester_note_step2: "Schritt 2 — Tester werden (Opt-in): Tippe auf der Opt-in-Seite, um an der Testphase teilzunehmen. Nur Tester zu werden installiert die App noch nicht.",
+      tester_note_step3: "Schritt 3 — Herunterladen & spielen: Öffne die Download-Seite, installiere die App, öffne sie und spiele kurz – ohne das zählt deine Teilnahme nicht.",
+      tester_note_account: "Verwende für alle Schritte dasselbe Google-Konto.",
+      tester_note_wait: "Wenn Schritt 2 oder 3 „App not available“ anzeigt, warte nach dem Beitritt ein paar Stunden und versuche es erneut.",
+      link_overview: "Spielübersicht ansehen",
+      legal_divider: "Rechtsdokumente",
+      link_privacy: "Datenschutzerklärung",
+      link_terms: "Nutzungsbedingungen",
+      back: "← Zurück zu PixelRyu",
+      faq_heading: "FAQ",
+      faq_q1: "Was für ein Spiel ist Mole Whack?",
+      faq_a1: "Mole Whack ist ein lockeres Arcade-Whack-a-Mole-Tap-Spiel von PixelRyu — triff die Maulwürfe in 30 Sekunden, erreiche das Ziel jeder Stage und komm weiter.",
+      faq_q2: "Ist Mole Whack kostenlos?",
+      faq_a2: "Ja, Mole Whack ist kostenlos spielbar.",
+      faq_q3: "Wo kann man Mole Whack jetzt spielen?",
+      faq_a3: "Es ist im App Store erhältlich; auf Android kannst du über Google Play an der 14-tägigen geschlossenen Testphase teilnehmen.",
+      faq_q4: "Wie viele Stages hat Mole Whack?",
+      faq_a4: "Insgesamt 100 Stages, die mit der Zeit schneller werden.",
+      faq_q5: "Welche Sprachen unterstützt Mole Whack?",
+      faq_a5: "12 Sprachen: Englisch, Japanisch, Chinesisch, Koreanisch, Hindi, Indonesisch, Deutsch, Französisch, Italienisch, Spanisch, Portugiesisch und Russisch.",
+      more_games_heading: "Weitere Spiele von PixelRyu",
+      mg_1: "Bounce Cat — gemütliches Labyrinth-Flucht-Puzzle",
+      mg_2: "TEMARI — Paddle-Breakout aus der Ego-Perspektive",
+      mg_3: "Parcel Pals — gemütliches Paketsortier-Puzzle"
+    },
+    fr: {
+      title: "Mole Whack — Action de tap par niveaux",
+      meta_desc: "Mole Whack — un jeu de tap décontracté par niveaux de PixelRyu. Tape les taupes, atteins l'objectif et franchis 100 niveaux. Rejoins les 14 jours de test fermé Android.",
+      subtitle: "Action de tap par niveaux",
+      tester_heading: "Recherche de testeurs Android",
+      tester_android_note: "Android uniquement",
+      tester_intro: "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
+      tester_what_label: "De quoi il s'agit",
+      tester_what: "Tape les taupes en 30 secondes pour atteindre l'objectif de chaque niveau et passer au suivant — une action de tap par niveaux. 100 niveaux en tout, de plus en plus rapides. Règles simples, installation légère, parfait pour les courtes pauses.",
+      tester_step1_label: "Étape 1 — Rejoindre le groupe de testeurs",
+      tester_step2_label: "Étape 2 — S'inscrire via le Play Store",
+      tester_step3_label: "Étape 3 — Télécharger et jouer",
+      tester_ask_label: "Ce que je demande",
+      tester_ask_keep: "Garder installé pendant les 14 jours complets",
+      tester_ask_launch: "Lancer tous les deux jours (quelques fois suffisent)",
+      tester_ask_minutes: "1 à 2 minutes de jeu décontracté par session suffisent",
+      tester_note_lead: "ℹ️ Astuce — les trois étapes ci-dessous sont nécessaires :",
+      tester_note_step1: "Étape 1 — Rejoindre le groupe : même si « autorisation refusée pour afficher le contenu » s’affiche, un bouton « Rejoindre le groupe » est présent sur la page — appuyez dessus pour rejoindre.",
+      tester_note_step2: "Étape 2 — Devenir testeur (inscription) : sur la page d’inscription, appuyez pour rejoindre le test. S’inscrire seul n’installe pas l’application.",
+      tester_note_step3: "Étape 3 — Télécharger et jouer : ouvrez la page de téléchargement, installez l’application, ouvrez-la et jouez un peu — sans cela, votre participation ne compte pas.",
+      tester_note_account: "Utilisez le même compte Google pour toutes les étapes.",
+      tester_note_wait: "Si l’étape 2 ou 3 affiche « App not available », attendez quelques heures après avoir rejoint, puis réessayez.",
+      link_overview: "Voir l'aperçu du jeu",
+      legal_divider: "Documents légaux",
+      link_privacy: "Politique de confidentialité",
+      link_terms: "Conditions d'utilisation",
+      back: "← Retour à PixelRyu",
+      faq_heading: "FAQ",
+      faq_q1: "Quel genre de jeu est Mole Whack ?",
+      faq_a1: "Mole Whack est un jeu de tap arcade décontracté de type tape-taupe par PixelRyu — tape les taupes en 30 secondes pour atteindre l'objectif de chaque niveau et passer au suivant.",
+      faq_q2: "Mole Whack est-il gratuit ?",
+      faq_a2: "Oui, Mole Whack est jouable gratuitement.",
+      faq_q3: "Où peut-on jouer à Mole Whack en ce moment ?",
+      faq_a3: "Il est disponible sur l'App Store ; sur Android, tu peux rejoindre les 14 jours de test fermé via Google Play.",
+      faq_q4: "Combien de niveaux compte Mole Whack ?",
+      faq_a4: "100 niveaux en tout, de plus en plus rapides.",
+      faq_q5: "Quelles langues Mole Whack prend-il en charge ?",
+      faq_a5: "12 langues : anglais, japonais, chinois, coréen, hindi, indonésien, allemand, français, italien, espagnol, portugais et russe.",
+      more_games_heading: "Plus de jeux de PixelRyu",
+      mg_1: "Bounce Cat — puzzle cosy d'évasion de labyrinthe",
+      mg_2: "TEMARI — casse-briques à raquette en vue subjective",
+      mg_3: "Parcel Pals — puzzle cosy de tri de colis"
+    },
+    it: {
+      title: "Mole Whack — Action a tocchi a livelli",
+      meta_desc: "Mole Whack — un casual tap game a livelli di PixelRyu. Colpisci le talpe, raggiungi l'obiettivo e supera 100 livelli. Partecipa al closed test Android di 14 giorni.",
+      subtitle: "Action a tocchi a livelli",
+      tester_heading: "Cercasi tester Android",
+      tester_android_note: "Solo Android",
+      tester_intro: "Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.",
+      tester_what_label: "Di cosa si tratta",
+      tester_what: "Colpisci le talpe in 30 secondi per raggiungere l'obiettivo di ogni livello e avanzare — un'action a tocchi a livelli. 100 livelli in tutto, sempre più veloci. Regole semplici, installazione leggera, perfetto per brevi pause.",
+      tester_step1_label: "Passo 1 — Unisciti al gruppo tester",
+      tester_step2_label: "Passo 2 — Opt-in tramite Play Store",
+      tester_step3_label: "Passo 3 — Scarica e gioca all’app",
+      tester_ask_label: "Cosa chiedo",
+      tester_ask_keep: "Tienilo installato per tutti i 14 giorni",
+      tester_ask_launch: "Aprilo ogni paio di giorni (poche volte basta)",
+      tester_ask_minutes: "1–2 minuti di gioco rilassato a sessione vanno bene",
+      tester_note_lead: "ℹ️ Suggerimento — servono tutti e tre i passaggi qui sotto:",
+      tester_note_step1: "Passaggio 1 — Iscriviti al gruppo: anche se compare « non hai l’autorizzazione per visualizzare i contenuti », sulla pagina c’è il pulsante « Iscriviti al gruppo » — toccalo per iscriverti.",
+      tester_note_step2: "Passaggio 2 — Diventa tester (opt-in): nella pagina di opt-in, tocca per partecipare al test. Diventare tester da solo non installa l’app.",
+      tester_note_step3: "Passaggio 3 — Scarica e gioca: apri la pagina di download, installa l’app, aprila e gioca un po’ — senza questo, il tuo test non viene conteggiato.",
+      tester_note_account: "Usa lo stesso account Google per tutti i passaggi.",
+      tester_note_wait: "Se il passaggio 2 o 3 mostra « App not available », attendi qualche ora dopo l’iscrizione e riprova.",
+      link_overview: "Vedi la panoramica",
+      legal_divider: "Documenti legali",
+      link_privacy: "Informativa sulla privacy",
+      link_terms: "Termini di servizio",
+      back: "← Torna a PixelRyu",
+      faq_heading: "FAQ",
+      faq_q1: "Che tipo di gioco è Mole Whack?",
+      faq_a1: "Mole Whack è un casual tap game arcade in stile acchiappa-la-talpa di PixelRyu — colpisci le talpe in 30 secondi per raggiungere l'obiettivo di ogni livello e avanzare.",
+      faq_q2: "Mole Whack è gratis?",
+      faq_a2: "Sì, Mole Whack è giocabile gratuitamente.",
+      faq_q3: "Dove si può giocare a Mole Whack adesso?",
+      faq_a3: "È disponibile sull'App Store; su Android puoi partecipare al closed test di 14 giorni tramite Google Play.",
+      faq_q4: "Quanti livelli ha Mole Whack?",
+      faq_a4: "100 livelli in tutto, sempre più veloci.",
+      faq_q5: "Quali lingue supporta Mole Whack?",
+      faq_a5: "12 lingue: inglese, giapponese, cinese, coreano, hindi, indonesiano, tedesco, francese, italiano, spagnolo, portoghese e russo.",
+      more_games_heading: "Altri giochi di PixelRyu",
+      mg_1: "Bounce Cat — rilassante puzzle di fuga dal labirinto",
+      mg_2: "TEMARI — breakout col paddle in prima persona",
+      mg_3: "Parcel Pals — rilassante puzzle di smistamento pacchi"
+    },
+    es: {
+      title: "Mole Whack — Acción de toques por niveles",
+      meta_desc: "Mole Whack — un juego de toques casual por niveles de PixelRyu. Golpea a los topos, alcanza el objetivo y supera 100 niveles. Únete a la prueba cerrada de Android de 14 días.",
+      subtitle: "Acción de toques por niveles",
+      tester_heading: "Buscamos testers de Android",
+      tester_android_note: "Solo Android",
+      tester_intro: "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
+      tester_what_label: "De qué se trata",
+      tester_what: "Golpea a los topos en 30 segundos para alcanzar el objetivo de cada nivel y avanzar — una acción de toques por niveles. 100 niveles en total, cada vez más rápidos. Reglas simples, instalación ligera, perfecto para descansos breves.",
+      tester_step1_label: "Paso 1 — Únete al grupo de testers",
+      tester_step2_label: "Paso 2 — Inscríbete vía Play Store",
+      tester_step3_label: "Paso 3 — Descarga y juega la app",
+      tester_ask_label: "Lo que pido",
+      tester_ask_keep: "Mantener instalado los 14 días completos",
+      tester_ask_launch: "Abrir cada par de días (unas pocas veces basta)",
+      tester_ask_minutes: "1-2 minutos de juego casual por sesión es suficiente",
+      tester_note_lead: "ℹ️ Consejo — los tres pasos siguientes son necesarios:",
+      tester_note_step1: "Paso 1 — Únete al grupo: aunque aparezca «no tienes permiso para ver el contenido», en esa página hay un botón «Unirse al grupo»; tócalo para unirte.",
+      tester_note_step2: "Paso 2 — Hazte tester (participa): en la página de participación, toca para unirte a la prueba. Solo participar no instala la app.",
+      tester_note_step3: "Paso 3 — Descarga y juega: abre la página de descarga, instala la app, ábrela y juega un poco; sin esto, tu prueba no cuenta.",
+      tester_note_account: "Usa la misma cuenta de Google en todos los pasos.",
+      tester_note_wait: "Si el paso 2 o 3 muestra «App not available», espera unas horas después de unirte y vuelve a intentarlo.",
+      link_overview: "Ver descripción del juego",
+      legal_divider: "Documentos legales",
+      link_privacy: "Política de privacidad",
+      link_terms: "Términos del servicio",
+      back: "← Volver a PixelRyu",
+      faq_heading: "Preguntas frecuentes",
+      faq_q1: "¿Qué tipo de juego es Mole Whack?",
+      faq_a1: "Mole Whack es un juego de toques arcade casual de golpear topos de PixelRyu: golpea a los topos en 30 segundos para alcanzar el objetivo de cada nivel y avanzar.",
+      faq_q2: "¿Mole Whack es gratis?",
+      faq_a2: "Sí, Mole Whack se puede jugar gratis.",
+      faq_q3: "¿Dónde se puede jugar a Mole Whack ahora mismo?",
+      faq_a3: "Está disponible en el App Store; en Android puedes unirte a la prueba cerrada de 14 días a través de Google Play.",
+      faq_q4: "¿Cuántos niveles tiene Mole Whack?",
+      faq_a4: "100 niveles en total, cada vez más rápidos.",
+      faq_q5: "¿Qué idiomas admite Mole Whack?",
+      faq_a5: "12 idiomas: inglés, japonés, chino, coreano, hindi, indonesio, alemán, francés, italiano, español, portugués y ruso.",
+      more_games_heading: "Más juegos de PixelRyu",
+      mg_1: "Bounce Cat — acogedor puzle de escape de laberintos",
+      mg_2: "TEMARI — breakout de pala en primera persona",
+      mg_3: "Parcel Pals — acogedor puzle de clasificación de paquetes"
+    },
+    pt: {
+      title: "Mole Whack — Ação de toques por fases",
+      meta_desc: "Mole Whack — um jogo de toques casual por fases da PixelRyu. Acerte as toupeiras, alcance o alvo e avance por 100 fases. Junte-se ao teste fechado Android de 14 dias.",
+      subtitle: "Ação de toques por fases",
+      tester_heading: "Procuramos testers de Android",
+      tester_android_note: "Apenas Android",
+      tester_intro: "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
+      tester_what_label: "Sobre o jogo",
+      tester_what: "Acerte as toupeiras em 30 segundos para alcançar o alvo de cada fase e avançar — uma ação de toques por fases. 100 fases no total, cada vez mais rápidas. Regras simples, instalação leve, perfeito para pausas curtas.",
+      tester_step1_label: "Passo 1 — Entrar no grupo de testers",
+      tester_step2_label: "Passo 2 — Adesão via Play Store",
+      tester_step3_label: "Passo 3 — Baixe e jogue o app",
+      tester_ask_label: "O que peço",
+      tester_ask_keep: "Manter instalado por 14 dias completos",
+      tester_ask_launch: "Abra a cada poucos dias (algumas vezes basta)",
+      tester_ask_minutes: "1-2 minutos de jogo casual por sessão é suficiente",
+      tester_note_lead: "ℹ️ Dica — as três etapas abaixo são necessárias:",
+      tester_note_step1: "Etapa 1 — Entre no grupo: mesmo que apareça “sem permissão para ver o conteúdo”, há um botão “Participar do grupo” na página — toque para entrar.",
+      tester_note_step2: "Etapa 2 — Torne-se tester (opt-in): na página de opt-in, toque para entrar no teste. Apenas virar tester não instala o app.",
+      tester_note_step3: "Etapa 3 — Baixe e jogue: abra a página de download, instale o app, abra e jogue um pouco — sem isso, seu teste não conta.",
+      tester_note_account: "Use a mesma Conta do Google em todas as etapas.",
+      tester_note_wait: "Se a Etapa 2 ou 3 mostrar “App not available”, aguarde algumas horas após participar e tente novamente.",
+      link_overview: "Ver visão geral do jogo",
+      legal_divider: "Documentos legais",
+      link_privacy: "Política de privacidade",
+      link_terms: "Termos de serviço",
+      back: "← Voltar para PixelRyu",
+      faq_heading: "Perguntas frequentes",
+      faq_q1: "Que tipo de jogo é Mole Whack?",
+      faq_a1: "Mole Whack é um jogo de toques arcade casual de acertar toupeiras da PixelRyu — acerte as toupeiras em 30 segundos para alcançar o alvo de cada fase e avançar.",
+      faq_q2: "Mole Whack é grátis?",
+      faq_a2: "Sim, Mole Whack pode ser jogado de graça.",
+      faq_q3: "Onde dá para jogar Mole Whack agora?",
+      faq_a3: "Está disponível na App Store; no Android, você pode participar do teste fechado de 14 dias pelo Google Play.",
+      faq_q4: "Quantas fases tem Mole Whack?",
+      faq_a4: "100 fases no total, cada vez mais rápidas.",
+      faq_q5: "Quais idiomas Mole Whack suporta?",
+      faq_a5: "12 idiomas: inglês, japonês, chinês, coreano, híndi, indonésio, alemão, francês, italiano, espanhol, português e russo.",
+      more_games_heading: "Mais jogos da PixelRyu",
+      mg_1: "Bounce Cat — puzzle aconchegante de fuga do labirinto",
+      mg_2: "TEMARI — breakout de raquete em primeira pessoa",
+      mg_3: "Parcel Pals — puzzle aconchegante de separação de encomendas"
+    },
+    ru: {
+      title: "Mole Whack — Тап-экшен по этапам",
+      meta_desc: "Mole Whack — casual-игра с тапами по этапам от PixelRyu. Бейте кротов, достигайте цели и проходите 100 этапов. Присоединяйтесь к 14-дневному закрытому Android-тестированию.",
+      subtitle: "Тап-экшен по этапам",
+      tester_heading: "Поиск Android-тестеров",
+      tester_android_note: "Только для Android",
+      tester_intro: "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",
+      tester_what_label: "О чём игра",
+      tester_what: "Бейте кротов за 30 секунд, достигайте цели каждого этапа и продвигайтесь дальше — тап-экшен по этапам. Всего 100 этапов, и они становятся быстрее. Простые правила, лёгкая установка, идеально для коротких пауз.",
+      tester_step1_label: "Шаг 1 — Вступить в группу тестеров",
+      tester_step2_label: "Шаг 2 — Подписаться через Play Store",
+      tester_step3_label: "Шаг 3 — Скачать и поиграть",
+      tester_ask_label: "О чём я прошу",
+      tester_ask_keep: "Не удалять приложение все 14 дней",
+      tester_ask_launch: "Запускайте раз в пару дней (нескольких раз достаточно)",
+      tester_ask_minutes: "1–2 минуты неспешной игры за сессию вполне достаточно",
+      tester_note_lead: "ℹ️ Совет — нужны все три шага ниже:",
+      tester_note_step1: "Шаг 1 — Вступите в группу: даже если показано «нет прав для просмотра содержимого», на странице есть кнопка «Присоединиться к группе» — нажмите её, чтобы вступить.",
+      tester_note_step2: "Шаг 2 — Станьте тестером (подтвердите участие): на странице подтверждения нажмите, чтобы присоединиться к тесту. Само подтверждение участия не устанавливает приложение.",
+      tester_note_step3: "Шаг 3 — Скачайте и поиграйте: откройте страницу загрузки, установите приложение, откройте его и немного поиграйте — без этого ваше участие не засчитывается.",
+      tester_note_account: "Используйте один и тот же аккаунт Google для всех шагов.",
+      tester_note_wait: "Если на шаге 2 или 3 появляется «App not available», подождите несколько часов после вступления и попробуйте снова.",
+      link_overview: "Посмотреть об игре",
+      legal_divider: "Правовые документы",
+      link_privacy: "Политика конфиденциальности",
+      link_terms: "Условия использования",
+      back: "← Назад к PixelRyu",
+      faq_heading: "Частые вопросы",
+      faq_q1: "Что за игра Mole Whack?",
+      faq_a1: "Mole Whack — это казуальная аркадная тап-игра в духе «убей крота» от PixelRyu: бейте кротов за 30 секунд, достигайте цели каждого этапа и продвигайтесь дальше.",
+      faq_q2: "Mole Whack — бесплатная игра?",
+      faq_a2: "Да, в Mole Whack можно играть бесплатно.",
+      faq_q3: "Где сейчас можно поиграть в Mole Whack?",
+      faq_a3: "Игра доступна в App Store; на Android можно присоединиться к 14-дневному закрытому тестированию через Google Play.",
+      faq_q4: "Сколько этапов в Mole Whack?",
+      faq_a4: "Всего 100 этапов, и они становятся всё быстрее.",
+      faq_q5: "Какие языки поддерживает Mole Whack?",
+      faq_a5: "12 языков: английский, японский, китайский, корейский, хинди, индонезийский, немецкий, французский, итальянский, испанский, португальский и русский.",
+      more_games_heading: "Другие игры PixelRyu",
+      mg_1: "Bounce Cat — уютная головоломка-побег из лабиринта",
+      mg_2: "TEMARI — паддл-арканоид от первого лица",
+      mg_3: "Parcel Pals — уютная головоломка о сортировке посылок"
+    }
+  };
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
+
+  function detectLang() {
+    try {
+      const stored = localStorage.getItem(LANG_STORAGE_KEY);
+      if (stored && i18n[stored]) return stored;
+    } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang, persist) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(opt);
+    }
+    // Persist on init too — guarantees subsequent pages pick up the same language via the shared localStorage key.
+    setLang('es', true);
+    sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/mole-whack/' : 'https://pixelryu.github.io/mole-whack/' + v + '/';});
+  })();
+</script>
+<script src="https://pixelryu.github.io/breadcrumb.js?v=20260602202548" defer></script>
+</body>
+</html>

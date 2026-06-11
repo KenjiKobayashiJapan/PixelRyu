@@ -1,0 +1,881 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5MH53Z8LM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M5MH53Z8LM');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">TEMARI — 用羽子板击回手鞠，击破纸气球。</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="TEMARI — PixelRyu 出品，以宁静和风之夜为舞台的第一人称拍板打砖块。用指尖移动羽子板，让手鞠在不断的对打中保持不落，击破灯笼长廊深处一排排的纸气球——还有分裂、专注慢动作、雉鸡帮手等玩法。共 8 个世界、200 关。App Store 与 Roblox 现已上线。欢迎 Android 测试者加入。">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: radial-gradient(ellipse at top, #1d1d36 0%, #15152b 54%, #0c0c1d 100%);
+    color: #ece6d6;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container { max-width: 580px; width: 100%; padding: 80px 32px; text-align: center; position: relative; }
+  .lang-switch { position: absolute; top: 24px; right: 24px; }
+  .lang-switch select { background: rgba(255,255,255,0.06); color: #d8b98c; border: 1px solid rgba(255,158,77,0.40); border-radius: 4px; padding: 5px 10px; font-size: 13px; font-family: inherit; cursor: pointer; }
+  .lang-switch select:hover { background: rgba(255,255,255,0.12); border-color: #ff9e4d; }
+  .lang-switch select option { background: #15152b; color: #ece6d6; }
+  .brand-icon { width: 120px; height: 120px; border-radius: 28px; display: block; margin: 0 auto 20px; box-shadow: 0 8px 28px rgba(0,0,0,0.45), 0 0 0 1px rgba(255,158,77,0.22); }
+  .tagline { font-size: 14px; color: #b6ad94; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 3px; }
+  h1 { font-size: 48px; margin: 0 0 6px; color: #f4eede; font-weight: 800; letter-spacing: 0.5px; }
+  h1 .accent { color: #ff9e4d; }
+  h1 .jp { font-size: 26px; color: #d8b98c; font-weight: 700; margin-left: 12px; letter-spacing: 2px; }
+  .subtitle { font-size: 14px; color: #9a93b0; margin-bottom: 22px; text-transform: uppercase; letter-spacing: 2px; }
+  .hero-badges { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; margin: 12px 0 6px; }
+  .hero-badges.soon .soon-cell { position: relative; display: inline-block; line-height: 0; }
+  .hero-badges.soon .appstore-badge,
+  .hero-badges.soon .googleplay-badge,
+  .hero-badges.soon .roblox-badge { display: inline-block; line-height: 0; filter: grayscale(1); opacity: .5; pointer-events: none; }
+  /* Red "COMING SOON" stamp diagonally over each greyed badge (sibling of the badge so
+     grayscale doesn't desaturate the red). */
+  .hero-badges.soon .soon-stamp { position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%) rotate(-12deg); font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap; color: #e11d1d; text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 1px 2px rgba(0,0,0,0.35); pointer-events: none; }
+  .hero-badges img { display: block; height: 51px; width: auto; }
+  .hero-badges svg { display: block; }
+  .soon-note { font-size: 13px; color: #9a93b0; margin: 2px 0 28px; }
+  .overview-link { display: block; background: #ff9e4d; color: #1a1326; text-decoration: none; font-size: 16px; font-weight: 700; padding: 18px 22px; border-radius: 14px; margin: 0 0 24px; transition: all 0.2s ease; box-shadow: 0 6px 22px rgba(255,158,77,0.28); }
+  .overview-link:hover { background: #ffb066; transform: translateY(-1px); }
+  .promo-video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 14px; margin: 0 0 14px; background: #000; box-shadow: 0 6px 22px rgba(0,0,0,0.5); }
+  .what-card { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,158,77,0.22); border-radius: 16px; padding: 20px 22px 24px; margin: 0 0 28px; text-align: left; }
+  .what-label { font-size: 13px; color: #d8b98c; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 8px; font-weight: 700; }
+  .what-card p { font-size: 14px; line-height: 1.7; color: #d6d0c0; margin: 0; }
+  .legal-divider { font-size: 14px; color: #7c7794; text-transform: uppercase; letter-spacing: 2px; margin: 8px 0 16px; }
+  .links { list-style: none; padding: 0; margin: 0; }
+  .links li { background: rgba(255,255,255,0.04); border: 1px solid rgba(255,158,77,0.20); border-radius: 14px; margin-bottom: 14px; transition: all 0.25s ease; }
+  .links li:hover { background: rgba(255,255,255,0.09); border-color: #ff9e4d; }
+  .links a { color: #d8b98c; text-decoration: none; font-size: 18px; font-weight: 600; display: block; padding: 22px 24px; }
+  .back { display: inline-block; margin-top: 48px; color: #7c7794; text-decoration: none; font-size: 14px; }
+  .back:hover { color: #ff9e4d; }
+  @media (max-width: 600px) {
+    .lang-switch { top: 16px; right: 16px; }
+    h1 { font-size: 40px; }
+    h1 .jp { font-size: 22px; }
+    .brand-icon { width: 104px; height: 104px; border-radius: 24px; }
+  }
+  .social-heading{font-size:13px;color:#9a93b0;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(255,158,77,0.08);border:1px solid rgba(255,158,77,0.22);color:#b6ad94;transition:all .25s ease;}
+  .social a:hover{background:rgba(255,158,77,0.16);border-color:rgba(255,158,77,0.50);color:#ff9e4d;transform:translateY(-2px);}
+  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+  /* live badge links + tester card (2026-06-07: Android closed test + Roblox live) */
+  .hero-badges a { display: inline-block; line-height: 0; transition: transform .2s ease, opacity .2s ease; }
+  .hero-badges a:hover { transform: translateY(-2px); opacity: .85; }
+  .tester-card-base { background: rgba(255,255,255,0.55); border: 1px solid rgba(232,136,74,0.40); border-radius: 16px; padding: 24px 24px 28px; margin: 4px 0 28px; text-align: left; box-shadow: 0 8px 24px rgba(95,140,80,0.12); }
+  .tester-heading { font-size: 13px; color: #c2742f; text-transform: uppercase; letter-spacing: 2px; margin: 0 0 4px; font-weight: 700; text-align: center; }
+  .tester-android-note { display: block; font-size: 11px; color: #7a8a6e; text-transform: none; letter-spacing: 0; font-weight: 400; margin-bottom: 16px; text-align: center; }
+  .tester-card-base p { font-size: 14px; line-height: 1.65; color: #3a2e1f; margin: 12px 0; }
+  .tester-section-label { font-size: 13px; font-weight: 700; color: #5a8c4e; margin: 20px 0 6px; }
+  .tester-step { display: block; background: rgba(232,136,74,0.12); border: 1px solid rgba(232,136,74,0.40); border-radius: 10px; padding: 12px 16px; margin: 10px 0; color: #c2742f; text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s ease; }
+  .tester-step:hover { background: rgba(232,136,74,0.22); border-color: rgba(232,136,74,0.70); color: #d9762f; }
+  .tester-card-base ul { margin: 6px 0 0; padding-left: 22px; color: #3a2e1f; font-size: 14px; line-height: 1.7; }
+</style>
+<!-- SEO/LLMO start (managed) -->
+<link rel="canonical" href="https://pixelryu.github.io/temari/zh/">
+<link rel="alternate" hreflang="en" href="https://pixelryu.github.io/temari/">
+<link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/temari/ja/">
+<link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/temari/zh/">
+<link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/temari/ko/">
+<link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/temari/hi/">
+<link rel="alternate" hreflang="id" href="https://pixelryu.github.io/temari/id/">
+<link rel="alternate" hreflang="de" href="https://pixelryu.github.io/temari/de/">
+<link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/temari/fr/">
+<link rel="alternate" hreflang="it" href="https://pixelryu.github.io/temari/it/">
+<link rel="alternate" hreflang="es" href="https://pixelryu.github.io/temari/es/">
+<link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/temari/pt/">
+<link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/temari/ru/">
+<link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/temari/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="PixelRyu">
+<meta name="publisher" content="PixelRyu">
+<meta name="keywords" content="TEMARI, temari, hagoita, hanetsuki, paper balloon, kamifusen, first-person breakout, paddle, Arkanoid, brick breaker, Japanese, cozy, PixelRyu, indie game, iOS, Android, Roblox">
+<meta name="theme-color" content="#15152b">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/temari/icon.png">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/temari/icon.png">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PixelRyu">
+<meta property="og:title" content="TEMARI — 用羽子板击回手鞠，击破纸气球。">
+<meta property="og:description" content="TEMARI — PixelRyu 出品，以宁静和风之夜为舞台的第一人称拍板打砖块。用指尖移动羽子板，让手鞠在不断的对打中保持不落，击破灯笼长廊深处一排排的纸气球——还有分裂、专注慢动作、雉鸡帮手等玩法。共 8 个世界、200 关。App Store 与 Roblox 现已上线。欢迎 Android 测试者加入。">
+<meta property="og:url" content="https://pixelryu.github.io/temari/zh/">
+<meta property="og:image" content="https://pixelryu.github.io/temari/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="TEMARI — 用羽子板击回手鞠，击破纸气球。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="TEMARI — 用羽子板击回手鞠，击破纸气球。">
+<meta name="twitter:description" content="TEMARI — PixelRyu 出品，以宁静和风之夜为舞台的第一人称拍板打砖块。用指尖移动羽子板，让手鞠在不断的对打中保持不落，击破灯笼长廊深处一排排的纸气球——还有分裂、专注慢动作、雉鸡帮手等玩法。共 8 个世界、200 关。App Store 与 Roblox 现已上线。欢迎 Android 测试者加入。">
+<meta name="twitter:image" content="https://pixelryu.github.io/temari/og.png">
+<meta name="twitter:image:alt" content="TEMARI — 用羽子板击回手鞠，击破纸气球。">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"TEMARI","genre":"Arcade, Breakout, Casual","url":"https://pixelryu.github.io/temari/zh/","image":"https://pixelryu.github.io/temari/icon.png","description":"TEMARI — PixelRyu 出品，以宁静和风之夜为舞台的第一人称拍板打砖块。用指尖移动羽子板，让手鞠在不断的对打中保持不落，击破灯笼长廊深处一排排的纸气球——还有分裂、专注慢动作、雉鸡帮手等玩法。共 8 个世界、200 关。App Store 与 Roblox 现已上线。欢迎 Android 测试者加入。","applicationCategory":"GameApplication","sameAs":["https://apps.apple.com/app/id6777618068","https://play.google.com/store/apps/details?id=com.pixelryu.temari","https://www.roblox.com/games/84976260376006/TEMARI-Hanetsuki-Paddle"],"operatingSystem":"iOS, Android, Roblox","author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/zh/"},{"@type":"ListItem","position":2,"name":"TEMARI","item":"https://pixelryu.github.io/temari/zh/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"TEMARI 是什么类型的游戏？","acceptedAnswer":{"@type":"Answer","text":"TEMARI 是 PixelRyu 出品的休闲街机游戏——以宁静和风之夜为舞台的第一人称拍板打砖块。用指尖移动羽子板，让手鞠在对打中保持不落，击破灯笼长廊深处的纸气球。"}},{"@type":"Question","name":"TEMARI 是免费的吗？","acceptedAnswer":{"@type":"Answer","text":"是的，TEMARI 可以免费游玩。"}},{"@type":"Question","name":"现在可以在哪里玩 TEMARI？","acceptedAnswer":{"@type":"Answer","text":"目前可在 Roblox 上游玩，Android 用户可通过 Google Play 参加封闭测试。App Store 版现已上线。"}},{"@type":"Question","name":"TEMARI 有多少关卡？","acceptedAnswer":{"@type":"Answer","text":"共 8 个世界、200 关，还有手鞠分裂、放慢时间的专注、雉鸡帮手等玩法。"}},{"@type":"Question","name":"TEMARI 支持哪些语言？","acceptedAnswer":{"@type":"Answer","text":"支持 12 种语言：英语、日语、中文、韩语、印地语、印尼语、德语、法语、意大利语、西班牙语、葡萄牙语和俄语。"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"TEMARI — Official Trailer","description":"Official trailer for TEMARI by PixelRyu — a first-person paddle breakout in a cozy Japanese night. Move your hagoita with a fingertip, keep the temari in an endless rally, and pop every paper balloon down the lantern-lit corridor.","thumbnailUrl":"https://pixelryu.github.io/temari/og.png","uploadDate":"2026-06-09","contentUrl":"https://pixelryu.github.io/temari/promotion_H_story.mp4?v=20260609111617"}</script>
+<!-- SEO/LLMO end -->
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch">
+    <select id="lang-select" aria-label="Language"></select>
+  </div>
+  <img src="https://pixelryu.github.io/temari/icon.png?v=20260607080510" alt="TEMARI" class="brand-icon">
+  <div class="tagline" data-i18n="tagline">击回手鞠，击破纸气球。</div>
+  <h1><span class="accent">TEMARI</span><span class="jp">手まり</span></h1>
+  <div class="subtitle" data-i18n="subtitle">第一人称羽子板打砖块</div>
+
+  <section class="hero-badges" aria-label="Get the game">
+    <a class="appstore-badge" href="https://apps.apple.com/app/id6777618068" target="_blank" rel="noopener" aria-label="Download TEMARI on the App Store"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+        </svg></a>
+    <a href="#tester-heading" aria-label="Join TEMARI Android testers"><img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51"></a>
+    <a href="https://www.roblox.com/games/84976260376006/TEMARI-Hanetsuki-Paddle" target="_blank" rel="noopener" aria-label="Play TEMARI on Roblox"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg></a>
+  </section>
+
+  <section class="tester-card tester-card-base" aria-labelledby="tester-heading">
+    <div id="tester-heading" class="tester-heading">
+      🎁 <span data-i18n="tester_heading">招募 Android 测试者</span>
+      <span class="tester-android-note">📱 <span data-i18n="tester_android_note">仅限 Android</span></span>
+    </div>
+    <p data-i18n="tester_intro">我是一名独立开发者，正在为期 14 天的封闭测试招募积极的 Android 测试者。</p>
+
+    <div class="tester-section-label">📦 <span data-i18n="tester_what_label">游戏简介</span></div>
+    <p data-i18n="tester_what">以宁静和风之夜为舞台的第一人称拍板打砖块。用指尖移动羽子板，让手鞠在不断的对打中保持不落，击破长廊深处一排排的纸气球。还有手鞠分裂、放慢时间的专注、雉鸡帮手等玩法。共 8 个世界、200 关。</p>
+
+    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">
+      🔗 <span data-i18n="tester_step1_label">第一步 — 加入测试者群组</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.temari" target="_blank" rel="noopener">
+      📱 <span data-i18n="tester_step2_label">第二步 — 通过 Play 商店加入测试</span>
+    </a>
+    <a class="tester-step" href="https://play.google.com/store/apps/details?id=com.pixelryu.temari" target="_blank" rel="noopener">
+      ⬇️ <span data-i18n="tester_step3_label">第三步 — 下载并试玩应用</span>
+    </a>
+
+    <div class="tester-section-label">📌 <span data-i18n="tester_ask_label">我希望你能做到</span></div>
+    <ul>
+      <li data-i18n="tester_ask_keep">完整保留 14 天不卸载</li>
+      <li data-i18n="tester_ask_launch">每隔几天启动一次（几次即可）</li>
+      <li data-i18n="tester_ask_minutes">每次玩一两分钟就够了</li>
+    </ul>
+    <p class="tester-note" data-i18n="tester_note_lead">ℹ️ 提示 — 以下三个步骤都必须完成：</p>
+    <ul class="tester-note-list">
+      <li data-i18n="tester_note_step1">第一步 — 加入群组：即使显示“无权限查看内容”，该页面上也有“加入群组”按钮，请点击加入。</li>
+      <li data-i18n="tester_note_step2">第二步 — 成为测试者（加入测试）：在加入测试页面点击加入测试。仅成为测试者并不会安装应用。</li>
+      <li data-i18n="tester_note_step3">第三步 — 下载并试玩：打开下载页面安装应用，然后启动应用并稍微试玩。否则你的测试不会被计入。</li>
+      <li data-i18n="tester_note_account">所有步骤请使用同一个 Google 账号。</li>
+      <li data-i18n="tester_note_wait">如果第二步或第三步显示“App not available”，请在加入后等待几小时再试。</li>
+    </ul>
+  </section>
+
+
+  <a href="https://pixelryu.github.io/temari/overview.html" class="overview-link">🎍 <span data-i18n="link_overview">查看游戏概览</span> →</a>
+
+  <video id="promo" class="promo-video" autoplay loop muted playsinline controls preload="auto">
+    <source src="https://pixelryu.github.io/temari/promotion_H_story.mp4?v=20260609111617" type="video/mp4">
+  </video>
+
+  <section class="what-card" aria-label="About TEMARI">
+    <div class="what-label">🏮 <span data-i18n="what_label">游戏简介</span></div>
+    <p data-i18n="what">以宁静和风之夜为舞台的第一人称拍板打砖块。用指尖移动羽子板，让手鞠在不断的对打中保持不落，击破长廊深处一排排的纸气球。还有手鞠分裂、放慢时间的专注、雉鸡帮手等玩法。共 8 个世界、200 关。</p>
+  </section>
+
+  <div class="legal-divider" data-i18n="legal_divider">条款文件</div>
+  <ul class="links">
+    <li><a href="https://pixelryu.github.io/temari/privacy_policy.html" data-i18n="link_privacy">隐私政策</a></li>
+    <li><a href="https://pixelryu.github.io/temari/terms_of_service.html" data-i18n="link_terms">服务条款</a></li>
+  </ul>
+  <h2 class="social-heading" data-i18n="faq_heading">常见问题</h2>
+  <section class="tester-card tester-card-base" id="faq" style="text-align:left;">
+    <p><strong data-i18n="faq_q1">TEMARI 是什么类型的游戏？</strong></p>
+    <p data-i18n="faq_a1">TEMARI 是 PixelRyu 出品的休闲街机游戏——以宁静和风之夜为舞台的第一人称拍板打砖块。用指尖移动羽子板，让手鞠在对打中保持不落，击破灯笼长廊深处的纸气球。</p>
+    <p><strong data-i18n="faq_q2">TEMARI 是免费的吗？</strong></p>
+    <p data-i18n="faq_a2">是的，TEMARI 可以免费游玩。</p>
+    <p><strong data-i18n="faq_q3">现在可以在哪里玩 TEMARI？</strong></p>
+    <p data-i18n="faq_a3">目前可在 Roblox 上游玩，Android 用户可通过 Google Play 参加封闭测试。App Store 版现已上线。</p>
+    <p><strong data-i18n="faq_q4">TEMARI 有多少关卡？</strong></p>
+    <p data-i18n="faq_a4">共 8 个世界、200 关，还有手鞠分裂、放慢时间的专注、雉鸡帮手等玩法。</p>
+    <p><strong data-i18n="faq_q5">TEMARI 支持哪些语言？</strong></p>
+    <p data-i18n="faq_a5">支持 12 种语言：英语、日语、中文、韩语、印地语、印尼语、德语、法语、意大利语、西班牙语、葡萄牙语和俄语。</p>
+  </section>
+  <h2 class="social-heading" data-i18n="more_games_heading">PixelRyu 的更多游戏</h2>
+  <ul class="links">
+    <li><a href="https://pixelryu.github.io/tatami/zh/"><span data-i18n="mg_1">TATAMI: Lay the Floor — 治愈系铺榻榻米方块拼图</span></a></li>
+    <li><a href="https://pixelryu.github.io/bounce-cat/zh/"><span data-i18n="mg_2">Bounce Cat — 温馨迷宫逃脱益智游戏</span></a></li>
+    <li><a href="https://pixelryu.github.io/hayate/zh/"><span data-i18n="mg_3">HAYATE — 3D 武士刀竞速</span></a></li>
+  </ul>
+  <a href="https://pixelryu.github.io/zh/" class="back" data-i18n="back">← PixelRyu</a>
+  <h2 class="social-heading">Follow</h2>
+  <div class="social">
+    <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note"><svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+    <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+    "en": {
+        "title": "TEMARI — First-Person Breakout in a Cozy Japanese Night",
+        "meta_desc": "TEMARI — a first-person paddle breakout in a cozy Japanese night by PixelRyu. Move your hagoita with a fingertip, keep the temari thread-ball in an endless rally, and pop every paper balloon down the lantern-lit corridor — with split, focus, a pheasant helper and more. 8 worlds, 200 stages. Out now on the App Store and Roblox. Android testers welcome.",
+        "tagline": "Bat the temari. Pop the balloons.",
+        "subtitle": "First-Person Hanetsuki Breakout",
+        "coming_soon_note": "Coming soon to the App Store.",
+        "tester_heading": "Android Tester Recruitment",
+        "tester_android_note": "Android only",
+        "tester_intro": "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
+        "tester_what_label": "What it is",
+        "tester_step1_label": "Step 1 — Join the tester group",
+        "tester_step2_label": "Step 2 — Opt-in via Play Store",
+        "tester_step3_label": "Step 3 — Download & play the app",
+        "tester_ask_label": "What I'm asking for",
+        "tester_ask_keep": "Keep installed for the full 14 days",
+        "tester_ask_launch": "Launch every couple of days (a few times is enough)",
+        "tester_ask_minutes": "A minute or two of play per session is plenty",
+        "tester_note_lead": "ℹ️ Tip — all three steps below are required:",
+        "tester_note_step1": "Step 1 — Join the group: even if you see “no permission to view content”, there’s a “Join group” button on that page — tap it to join.",
+        "tester_note_step2": "Step 2 — Become a tester (opt-in): on the opt-in page, tap to join the test. Becoming a tester alone does not install the app.",
+        "tester_note_step3": "Step 3 — Download & play: open the download page, install the app, launch it and play a little — without this, your testing doesn’t count.",
+        "tester_note_account": "Use the same Google account for all steps.",
+        "tester_note_wait": "If Step 2 or 3 shows “App not available”, wait a few hours after joining and try again.",
+        "tester_what": "A first-person paddle breakout set in a cozy Japanese night. Move your hagoita (battledore) with a fingertip, keep the temari thread-ball alive in an endless rally, and pop every paper balloon down the corridor — with split balls, focus slow-motion, a pheasant helper and more. 8 worlds, 200 stages.",
+        "what_label": "What it is",
+        "what": "A first-person paddle breakout set in a cozy Japanese night. Move your hagoita (battledore) with a fingertip, keep the temari thread-ball alive in an endless rally, and pop every paper balloon down the corridor — with split balls, focus slow-motion, a pheasant helper and more. 8 worlds, 200 stages.",
+        "link_overview": "View Game Overview",
+        "legal_divider": "Legal Documents",
+        "link_privacy": "Privacy Policy",
+        "link_terms": "Terms of Service",
+        "back": "← PixelRyu",
+        "faq_heading": "FAQ",
+        "faq_q1": "What kind of game is TEMARI?",
+        "faq_a1": "TEMARI by PixelRyu is a casual arcade game — a first-person paddle breakout set in a cozy Japanese night. You move a hagoita (battledore) with a fingertip, keep the temari thread-ball in an endless rally, and pop paper balloons down a lantern-lit corridor.",
+        "faq_q2": "Is TEMARI free to play?",
+        "faq_a2": "Yes — TEMARI is free to play.",
+        "faq_q3": "Where can I play TEMARI right now?",
+        "faq_a3": "TEMARI is playable now on Roblox, and Android closed testing is open via Google Play. It is out now on the App Store.",
+        "faq_q4": "How many stages does TEMARI have?",
+        "faq_a4": "TEMARI offers 8 worlds and 200 stages, with split balls, focus slow-motion and a pheasant helper along the way.",
+        "faq_q5": "What languages does TEMARI support?",
+        "faq_a5": "TEMARI supports 12 languages: English, Japanese, Chinese, Korean, Hindi, Indonesian, German, French, Italian, Spanish, Portuguese and Russian.",
+        "more_games_heading": "More games by PixelRyu",
+        "mg_1": "TATAMI: Lay the Floor — cozy tatami block puzzle",
+        "mg_2": "Bounce Cat — cozy maze-escape puzzle",
+        "mg_3": "HAYATE — 3D katana speed-racer"
+    },
+    "ja": {
+        "title": "TEMARI — 羽子板で手まりを打ち、紙風船を割る。",
+        "meta_desc": "TEMARI — PixelRyu による、和の静かな夜を舞台にした一人称パドル・ブロック崩し。指先で羽子板を動かし、手まりを途切れさせずに打ち返し続け、行灯の灯る縁側コリドーの奥に並ぶ紙風船を割り尽くそう。分裂・集中・雉の助っ人などの遊びも。全8ワールド・200ステージ。App Store と Roblox で配信中。Android テスターも募集中。",
+        "tagline": "羽子板で手まりを打ち、紙風船を割る。",
+        "subtitle": "一人称・羽根突き風ブロック崩し",
+        "coming_soon_note": "App Store で近日公開。",
+        "tester_heading": "Android テスター募集中",
+        "tester_android_note": "Android 専用",
+        "tester_intro": "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
+        "tester_what_label": "ゲーム内容",
+        "tester_step1_label": "ステップ 1 — テスターグループに参加",
+        "tester_step2_label": "ステップ 2 — Play ストアでオプトイン",
+        "tester_step3_label": "ステップ 3 — アプリをダウンロードしてプレイ",
+        "tester_ask_label": "お願いしたいこと",
+        "tester_ask_keep": "14 日間アンインストールせずに保持",
+        "tester_ask_launch": "数日に一度起動 (合計数回で OK)",
+        "tester_ask_minutes": "1 回 1〜2 分の軽いプレイで大丈夫",
+        "tester_note_lead": "ℹ️ ヒント — 下記の3つのステップすべてが必要です:",
+        "tester_note_step1": "ステップ1 — グループに参加: 「閲覧権限がありません」と表示されても、その画面に「グループに参加」ボタンがあるので押して参加してください。",
+        "tester_note_step2": "ステップ2 — テスターになる（オプトイン）: オプトイン画面でテストに参加してください。テスターになっただけではアプリはインストールされません。",
+        "tester_note_step3": "ステップ3 — ダウンロードしてプレイ: ダウンロードページを開いてアプリをインストールし、起動して少し遊んでください。これをしないとテストにカウントされません。",
+        "tester_note_account": "すべてのステップで同じ Google アカウントをお使いください。",
+        "tester_note_wait": "ステップ2または3で「App not available」と表示されるときは、参加から数時間おいて再度お試しください。",
+        "tester_what": "和の静かな夜を舞台にした一人称パドル・ブロック崩し。指先で羽子板を動かし、手まりを途切れさせずに打ち返し続け、コリドーの奥に並ぶ紙風船を割り尽くします。手まりの分裂、時間を緩める集中、雉の助っ人などの遊びも。全8ワールド・200ステージ。",
+        "what_label": "ゲーム内容",
+        "what": "和の静かな夜を舞台にした一人称パドル・ブロック崩し。指先で羽子板を動かし、手まりを途切れさせずに打ち返し続け、コリドーの奥に並ぶ紙風船を割り尽くします。手まりの分裂、時間を緩める集中、雉の助っ人などの遊びも。全8ワールド・200ステージ。",
+        "link_overview": "ゲーム概要を見る",
+        "legal_divider": "規約類",
+        "link_privacy": "プライバシーポリシー",
+        "link_terms": "利用規約",
+        "back": "← PixelRyu へ戻る",
+        "faq_heading": "よくある質問",
+        "faq_q1": "TEMARI はどんなゲームですか？",
+        "faq_a1": "TEMARI は PixelRyu のカジュアルアーケードゲームで、和の静かな夜を舞台にした一人称パドル・ブロック崩しです。指先で羽子板を動かして手まりを途切れさせずに打ち返し続け、行灯の灯るコリドーの奥に並ぶ紙風船を割っていきます。",
+        "faq_q2": "TEMARI は無料で遊べますか？",
+        "faq_a2": "はい、TEMARI は無料でプレイできます。",
+        "faq_q3": "今どこでプレイできますか？",
+        "faq_a3": "現在は Roblox でプレイでき、Android は Google Play 経由のクローズドテストに参加できます。App Store でも配信中です。",
+        "faq_q4": "ステージ数はどれくらいありますか？",
+        "faq_a4": "全8ワールド・200ステージを収録。手まりの分裂、時間を緩める集中、雉の助っ人などの遊びもあります。",
+        "faq_q5": "対応している言語は？",
+        "faq_a5": "英語・日本語・中国語・韓国語・ヒンディー語・インドネシア語・ドイツ語・フランス語・イタリア語・スペイン語・ポルトガル語・ロシア語の12言語に対応しています。",
+        "more_games_heading": "PixelRyu のほかのゲーム",
+        "mg_1": "TATAMI: Lay the Floor — ほっこり畳ならべパズル",
+        "mg_2": "Bounce Cat — ほのぼの迷路脱出パズル",
+        "mg_3": "HAYATE — 3D刀スピードレーサー"
+    },
+    "zh": {
+        "title": "TEMARI — 用羽子板击回手鞠，击破纸气球。",
+        "meta_desc": "TEMARI — PixelRyu 出品，以宁静和风之夜为舞台的第一人称拍板打砖块。用指尖移动羽子板，让手鞠在不断的对打中保持不落，击破灯笼长廊深处一排排的纸气球——还有分裂、专注慢动作、雉鸡帮手等玩法。共 8 个世界、200 关。App Store 与 Roblox 现已上线。欢迎 Android 测试者加入。",
+        "tagline": "击回手鞠，击破纸气球。",
+        "subtitle": "第一人称羽子板打砖块",
+        "coming_soon_note": "即将登陆 App Store。",
+        "tester_heading": "招募 Android 测试者",
+        "tester_android_note": "仅限 Android",
+        "tester_intro": "我是一名独立开发者，正在为期 14 天的封闭测试招募积极的 Android 测试者。",
+        "tester_what_label": "游戏简介",
+        "tester_step1_label": "第一步 — 加入测试者群组",
+        "tester_step2_label": "第二步 — 通过 Play 商店加入测试",
+        "tester_step3_label": "第三步 — 下载并试玩应用",
+        "tester_ask_label": "我希望你能做到",
+        "tester_ask_keep": "完整保留 14 天不卸载",
+        "tester_ask_launch": "每隔几天启动一次（几次即可）",
+        "tester_ask_minutes": "每次玩一两分钟就够了",
+        "tester_note_lead": "ℹ️ 提示 — 以下三个步骤都必须完成：",
+        "tester_note_step1": "第一步 — 加入群组：即使显示“无权限查看内容”，该页面上也有“加入群组”按钮，请点击加入。",
+        "tester_note_step2": "第二步 — 成为测试者（加入测试）：在加入测试页面点击加入测试。仅成为测试者并不会安装应用。",
+        "tester_note_step3": "第三步 — 下载并试玩：打开下载页面安装应用，然后启动应用并稍微试玩。否则你的测试不会被计入。",
+        "tester_note_account": "所有步骤请使用同一个 Google 账号。",
+        "tester_note_wait": "如果第二步或第三步显示“App not available”，请在加入后等待几小时再试。",
+        "tester_what": "以宁静和风之夜为舞台的第一人称拍板打砖块。用指尖移动羽子板，让手鞠在不断的对打中保持不落，击破长廊深处一排排的纸气球。还有手鞠分裂、放慢时间的专注、雉鸡帮手等玩法。共 8 个世界、200 关。",
+        "what_label": "游戏简介",
+        "what": "以宁静和风之夜为舞台的第一人称拍板打砖块。用指尖移动羽子板，让手鞠在不断的对打中保持不落，击破长廊深处一排排的纸气球。还有手鞠分裂、放慢时间的专注、雉鸡帮手等玩法。共 8 个世界、200 关。",
+        "link_overview": "查看游戏概览",
+        "legal_divider": "条款文件",
+        "link_privacy": "隐私政策",
+        "link_terms": "服务条款",
+        "back": "← PixelRyu",
+        "faq_heading": "常见问题",
+        "faq_q1": "TEMARI 是什么类型的游戏？",
+        "faq_a1": "TEMARI 是 PixelRyu 出品的休闲街机游戏——以宁静和风之夜为舞台的第一人称拍板打砖块。用指尖移动羽子板，让手鞠在对打中保持不落，击破灯笼长廊深处的纸气球。",
+        "faq_q2": "TEMARI 是免费的吗？",
+        "faq_a2": "是的，TEMARI 可以免费游玩。",
+        "faq_q3": "现在可以在哪里玩 TEMARI？",
+        "faq_a3": "目前可在 Roblox 上游玩，Android 用户可通过 Google Play 参加封闭测试。App Store 版现已上线。",
+        "faq_q4": "TEMARI 有多少关卡？",
+        "faq_a4": "共 8 个世界、200 关，还有手鞠分裂、放慢时间的专注、雉鸡帮手等玩法。",
+        "faq_q5": "TEMARI 支持哪些语言？",
+        "faq_a5": "支持 12 种语言：英语、日语、中文、韩语、印地语、印尼语、德语、法语、意大利语、西班牙语、葡萄牙语和俄语。",
+        "more_games_heading": "PixelRyu 的更多游戏",
+        "mg_1": "TATAMI: Lay the Floor — 治愈系铺榻榻米方块拼图",
+        "mg_2": "Bounce Cat — 温馨迷宫逃脱益智游戏",
+        "mg_3": "HAYATE — 3D 武士刀竞速"
+    },
+    "ko": {
+        "title": "TEMARI — 하고이타로 데마리를 받아쳐 종이 풍선을 터뜨리세요.",
+        "meta_desc": "TEMARI — PixelRyu가 만든, 고요한 일본의 밤을 무대로 한 1인칭 패들 벽돌깨기. 손끝으로 하고이타를 움직여 데마리를 끊임없는 랠리로 살려두고, 등불이 밝힌 복도 안쪽에 늘어선 종이 풍선을 모두 터뜨리세요 — 분열, 집중 슬로모션, 꿩 도우미 등 다양한 재미도. 8개 월드・200 스테이지. App Store와 Roblox에서 출시 중. Android 테스터 모집 중.",
+        "tagline": "데마리를 받아쳐 종이 풍선을 터뜨리세요.",
+        "subtitle": "1인칭 하고이타 벽돌깨기",
+        "coming_soon_note": "App Store에서 곧 출시.",
+        "tester_heading": "Android 테스터 모집",
+        "tester_android_note": "Android 전용",
+        "tester_intro": "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
+        "tester_what_label": "게임 소개",
+        "tester_step1_label": "1단계 — 테스터 그룹 가입",
+        "tester_step2_label": "2단계 — Play 스토어에서 옵트인",
+        "tester_step3_label": "3단계 — 앱 다운로드 후 플레이",
+        "tester_ask_label": "부탁드리는 것",
+        "tester_ask_keep": "14일 동안 설치 상태 유지",
+        "tester_ask_launch": "며칠에 한 번씩 실행 (몇 번이면 충분합니다)",
+        "tester_ask_minutes": "한 번에 1~2분 가벼운 플레이면 충분합니다",
+        "tester_note_lead": "ℹ️ 팁 — 아래 세 단계를 모두 완료해야 합니다:",
+        "tester_note_step1": "1단계 — 그룹 가입: “콘텐츠를 볼 권한이 없습니다”라고 표시되어도 그 화면에 “그룹 가입” 버튼이 있으니 눌러서 가입하세요.",
+        "tester_note_step2": "2단계 — 테스터 되기(옵트인): 옵트인 화면에서 테스트에 참여하세요. 테스터가 되는 것만으로는 앱이 설치되지 않습니다.",
+        "tester_note_step3": "3단계 — 다운로드 후 플레이: 다운로드 페이지를 열어 앱을 설치하고, 실행해 잠깐 플레이하세요. 그렇지 않으면 테스트로 집계되지 않습니다.",
+        "tester_note_account": "모든 단계에서 같은 Google 계정을 사용하세요.",
+        "tester_note_wait": "2단계 또는 3단계에서 “App not available”이 표시되면 가입 후 몇 시간 기다렸다가 다시 시도하세요.",
+        "tester_what": "고요한 일본의 밤을 무대로 한 1인칭 패들 벽돌깨기. 손끝으로 하고이타를 움직여 데마리를 끊임없는 랠리로 살려두고, 복도 안쪽에 늘어선 종이 풍선을 모두 터뜨립니다. 데마리 분열, 시간을 늦추는 집중, 꿩 도우미 등 다양한 재미도. 8개 월드・200 스테이지.",
+        "what_label": "게임 소개",
+        "what": "고요한 일본의 밤을 무대로 한 1인칭 패들 벽돌깨기. 손끝으로 하고이타를 움직여 데마리를 끊임없는 랠리로 살려두고, 복도 안쪽에 늘어선 종이 풍선을 모두 터뜨립니다. 데마리 분열, 시간을 늦추는 집중, 꿩 도우미 등 다양한 재미도. 8개 월드・200 스테이지.",
+        "link_overview": "게임 개요 보기",
+        "legal_divider": "약관 안내",
+        "link_privacy": "개인정보 처리방침",
+        "link_terms": "이용약관",
+        "back": "← PixelRyu",
+        "faq_heading": "자주 묻는 질문",
+        "faq_q1": "TEMARI는 어떤 게임인가요?",
+        "faq_a1": "TEMARI는 PixelRyu의 캐주얼 아케이드 게임으로, 고요한 일본의 밤을 무대로 한 1인칭 패들 벽돌깨기입니다. 손끝으로 하고이타를 움직여 데마리를 끊임없는 랠리로 받아치며, 등불이 밝힌 복도의 종이 풍선을 터뜨립니다.",
+        "faq_q2": "TEMARI는 무료인가요?",
+        "faq_a2": "네, TEMARI는 무료로 플레이할 수 있습니다.",
+        "faq_q3": "지금 어디에서 플레이할 수 있나요?",
+        "faq_a3": "현재 Roblox에서 플레이할 수 있고, Android는 Google Play를 통한 비공개 테스트에 참여할 수 있습니다. App Store에서도 출시되었습니다.",
+        "faq_q4": "스테이지는 얼마나 있나요?",
+        "faq_a4": "8개 월드, 200개 스테이지가 있으며 데마리 분열, 시간을 늦추는 집중, 꿩 도우미 등의 재미도 있습니다.",
+        "faq_q5": "어떤 언어를 지원하나요?",
+        "faq_a5": "영어, 일본어, 중국어, 한국어, 힌디어, 인도네시아어, 독일어, 프랑스어, 이탈리아어, 스페인어, 포르투갈어, 러시아어의 12개 언어를 지원합니다.",
+        "more_games_heading": "PixelRyu의 다른 게임",
+        "mg_1": "TATAMI: Lay the Floor — 아늑한 다다미 블록 퍼즐",
+        "mg_2": "Bounce Cat — 포근한 미로 탈출 퍼즐",
+        "mg_3": "HAYATE — 3D 카타나 스피드 레이서"
+    },
+    "hi": {
+        "title": "TEMARI — हागोइता से टेमारी मारें, कागज़ के गुब्बारे फोड़ें।",
+        "meta_desc": "TEMARI — PixelRyu का, एक शांत जापानी रात पर आधारित फर्स्ट-पर्सन पैडल ब्रेकआउट। उँगली से हागोइता घुमाएँ, टेमारी को लगातार रैली में ज़िंदा रखें, और लालटेन से रोशन गलियारे की गहराई में सजे कागज़ के गुब्बारे एक-एक करके फोड़ें — साथ में स्प्लिट, फोकस स्लो-मोशन, तीतर सहायक और बहुत कुछ। 8 दुनिया, 200 चरण। App Store और Roblox पर अब उपलब्ध। Android टेस्टर्स का स्वागत है।",
+        "tagline": "टेमारी मारें, गुब्बारे फोड़ें।",
+        "subtitle": "फर्स्ट-पर्सन हागोइता ब्रेकआउट",
+        "coming_soon_note": "App Store पर जल्द आ रही है।",
+        "tester_heading": "Android टेस्टर्स की तलाश",
+        "tester_android_note": "केवल Android",
+        "tester_intro": "सोलो इंडी डेवलपर हूँ, 14 दिन की क्लोज़्ड टेस्टिंग के लिए सक्रिय Android टेस्टर्स ढूँढ रहा हूँ।",
+        "tester_what_label": "यह क्या है",
+        "tester_step1_label": "चरण 1 — टेस्टर ग्रुप में शामिल हों",
+        "tester_step2_label": "चरण 2 — Play Store पर ऑप्ट-इन",
+        "tester_step3_label": "चरण 3 — ऐप डाउनलोड करके खेलें",
+        "tester_ask_label": "मैं क्या माँग रहा हूँ",
+        "tester_ask_keep": "पूरे 14 दिन इंस्टॉल रखें",
+        "tester_ask_launch": "हर कुछ दिन में लॉन्च करें (कुछ बार ही काफ़ी है)",
+        "tester_ask_minutes": "हर सत्र में एक-दो मिनट का खेल काफ़ी है",
+        "tester_note_lead": "ℹ️ सुझाव — नीचे दिए तीनों चरण ज़रूरी हैं:",
+        "tester_note_step1": "चरण 1 — ग्रुप जॉइन करें: भले ही “सामग्री देखने की अनुमति नहीं है” दिखे, उसी पेज पर “ग्रुप जॉइन करें” बटन होता है — उसे दबाकर जॉइन करें।",
+        "tester_note_step2": "चरण 2 — टेस्टर बनें (ऑप्ट-इन): ऑप्ट-इन पेज पर टेस्ट में शामिल होने के लिए टैप करें। सिर्फ़ टेस्टर बनने से ऐप इंस्टॉल नहीं होती।",
+        "tester_note_step3": "चरण 3 — डाउनलोड करके खेलें: डाउनलोड पेज खोलकर ऐप इंस्टॉल करें, उसे खोलें और थोड़ा खेलें — इसके बिना आपकी टेस्टिंग नहीं गिनी जाती।",
+        "tester_note_account": "सभी चरणों में एक ही Google खाते का उपयोग करें।",
+        "tester_note_wait": "अगर चरण 2 या 3 में “App not available” दिखे, तो जॉइन करने के कुछ घंटे बाद फिर से कोशिश करें।",
+        "tester_what": "एक शांत जापानी रात पर आधारित फर्स्ट-पर्सन पैडल ब्रेकआउट। उँगली से हागोइता घुमाएँ, टेमारी को लगातार रैली में ज़िंदा रखें, और गलियारे की गहराई में सजे कागज़ के गुब्बारे एक-एक करके फोड़ें। टेमारी स्प्लिट, समय धीमा करने वाला फोकस, तीतर सहायक और बहुत कुछ। 8 दुनिया, 200 चरण।",
+        "what_label": "यह क्या है",
+        "what": "एक शांत जापानी रात पर आधारित फर्स्ट-पर्सन पैडल ब्रेकआउट। उँगली से हागोइता घुमाएँ, टेमारी को लगातार रैली में ज़िंदा रखें, और गलियारे की गहराई में सजे कागज़ के गुब्बारे एक-एक करके फोड़ें। टेमारी स्प्लिट, समय धीमा करने वाला फोकस, तीतर सहायक और बहुत कुछ। 8 दुनिया, 200 चरण।",
+        "link_overview": "गेम का विवरण देखें",
+        "legal_divider": "कानूनी दस्तावेज़",
+        "link_privacy": "गोपनीयता नीति",
+        "link_terms": "सेवा की शर्तें",
+        "back": "← PixelRyu",
+        "faq_heading": "अक्सर पूछे जाने वाले प्रश्न",
+        "faq_q1": "TEMARI किस तरह का गेम है?",
+        "faq_a1": "TEMARI, PixelRyu का एक कैज़ुअल आर्केड गेम है — एक शांत जापानी रात पर आधारित फर्स्ट-पर्सन पैडल ब्रेकआउट। उँगली से हागोइता घुमाएँ, टेमारी को लगातार रैली में ज़िंदा रखें और लालटेन से रोशन गलियारे के कागज़ के गुब्बारे फोड़ें।",
+        "faq_q2": "क्या TEMARI मुफ़्त है?",
+        "faq_a2": "हाँ — TEMARI मुफ़्त में खेला जा सकता है।",
+        "faq_q3": "TEMARI अभी कहाँ खेल सकते हैं?",
+        "faq_a3": "अभी इसे Roblox पर खेला जा सकता है, और Android पर Google Play के ज़रिए क्लोज़्ड टेस्टिंग में शामिल हो सकते हैं। App Store पर अब उपलब्ध है।",
+        "faq_q4": "TEMARI में कितने चरण हैं?",
+        "faq_a4": "इसमें 8 दुनिया और 200 चरण हैं, साथ ही स्प्लिट, फोकस स्लो-मोशन और तीतर सहायक जैसी खूबियाँ भी।",
+        "faq_q5": "TEMARI कौन-कौन सी भाषाएँ सपोर्ट करता है?",
+        "faq_a5": "यह 12 भाषाएँ सपोर्ट करता है: अंग्रेज़ी, जापानी, चीनी, कोरियाई, हिंदी, इंडोनेशियाई, जर्मन, फ़्रेंच, इतालवी, स्पेनिश, पुर्तगाली और रूसी।",
+        "more_games_heading": "PixelRyu के और गेम",
+        "mg_1": "TATAMI: Lay the Floor — आरामदायक तातामी ब्लॉक पहेली",
+        "mg_2": "Bounce Cat — प्यारी भूलभुलैया-निकास पहेली",
+        "mg_3": "HAYATE — 3D कटाना स्पीड-रेसर"
+    },
+    "id": {
+        "title": "TEMARI — Pukul temari dengan hagoita, pecahkan balon kertas.",
+        "meta_desc": "TEMARI — breakout paddle orang-pertama dari PixelRyu, berlatar malam Jepang yang menenangkan. Gerakkan hagoita dengan ujung jari, jaga temari tetap hidup dalam reli tanpa henti, dan pecahkan setiap balon kertas di sepanjang koridor berlampion — dengan split, focus gerak lambat, burung pegar pembantu, dan lainnya. 8 dunia, 200 tahap. Sudah tersedia di App Store dan Roblox. Tester Android dipersilakan.",
+        "tagline": "Pukul temari. Pecahkan balon.",
+        "subtitle": "Breakout Hagoita Orang-Pertama",
+        "coming_soon_note": "Segera hadir di App Store.",
+        "tester_heading": "Mencari Tester Android",
+        "tester_android_note": "Hanya Android",
+        "tester_intro": "Saya developer indie solo, mencari tester Android aktif untuk fase closed test 14 hari.",
+        "tester_what_label": "Tentang game ini",
+        "tester_step1_label": "Langkah 1 — Bergabung dengan grup tester",
+        "tester_step2_label": "Langkah 2 — Opt-in via Play Store",
+        "tester_step3_label": "Langkah 3 — Unduh & mainkan aplikasi",
+        "tester_ask_label": "Yang saya mintakan",
+        "tester_ask_keep": "Pertahankan terinstal selama 14 hari penuh",
+        "tester_ask_launch": "Luncurkan setiap beberapa hari (beberapa kali sudah cukup)",
+        "tester_ask_minutes": "Cukup main satu–dua menit per sesi",
+        "tester_note_lead": "ℹ️ Tips — ketiga langkah berikut wajib dilakukan:",
+        "tester_note_step1": "Langkah 1 — Gabung grup: meskipun muncul “tidak ada izin untuk melihat konten”, ada tombol “Gabung grup” di halaman itu — tekan untuk bergabung.",
+        "tester_note_step2": "Langkah 2 — Jadi tester (opt-in): di halaman opt-in, ketuk untuk bergabung ke pengujian. Menjadi tester saja tidak memasang aplikasi.",
+        "tester_note_step3": "Langkah 3 — Unduh & mainkan: buka halaman unduhan, pasang aplikasinya, buka, dan mainkan sebentar — tanpa ini, pengujianmu tidak terhitung.",
+        "tester_note_account": "Gunakan akun Google yang sama untuk semua langkah.",
+        "tester_note_wait": "Jika Langkah 2 atau 3 menampilkan “App not available”, tunggu beberapa jam setelah bergabung lalu coba lagi.",
+        "tester_what": "Breakout paddle orang-pertama berlatar malam Jepang yang menenangkan. Gerakkan hagoita dengan ujung jari, jaga temari tetap hidup dalam reli tanpa henti, dan pecahkan setiap balon kertas di sepanjang koridor. Ada split temari, focus yang memperlambat waktu, burung pegar pembantu, dan lainnya. 8 dunia, 200 tahap.",
+        "what_label": "Tentang game ini",
+        "what": "Breakout paddle orang-pertama berlatar malam Jepang yang menenangkan. Gerakkan hagoita dengan ujung jari, jaga temari tetap hidup dalam reli tanpa henti, dan pecahkan setiap balon kertas di sepanjang koridor. Ada split temari, focus yang memperlambat waktu, burung pegar pembantu, dan lainnya. 8 dunia, 200 tahap.",
+        "link_overview": "Lihat Ringkasan Game",
+        "legal_divider": "Dokumen Hukum",
+        "link_privacy": "Kebijakan Privasi",
+        "link_terms": "Ketentuan Layanan",
+        "back": "← PixelRyu",
+        "faq_heading": "FAQ",
+        "faq_q1": "TEMARI itu game seperti apa?",
+        "faq_a1": "TEMARI dari PixelRyu adalah game arcade kasual — breakout paddle orang-pertama berlatar malam Jepang yang menenangkan. Gerakkan hagoita dengan ujung jari, jaga temari tetap hidup dalam reli tanpa henti, dan pecahkan balon kertas di sepanjang koridor berlampion.",
+        "faq_q2": "Apakah TEMARI gratis?",
+        "faq_a2": "Ya — TEMARI gratis dimainkan.",
+        "faq_q3": "Di mana TEMARI bisa dimainkan sekarang?",
+        "faq_a3": "Saat ini bisa dimainkan di Roblox, dan pengguna Android dapat ikut closed testing lewat Google Play. Sudah tersedia di App Store.",
+        "faq_q4": "Berapa banyak tahap di TEMARI?",
+        "faq_a4": "Ada 8 dunia dengan 200 tahap, plus split temari, focus gerak lambat, dan burung pegar pembantu.",
+        "faq_q5": "Bahasa apa saja yang didukung TEMARI?",
+        "faq_a5": "Mendukung 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia.",
+        "more_games_heading": "Game lain dari PixelRyu",
+        "mg_1": "TATAMI: Lay the Floor — puzzle blok tatami yang menenangkan",
+        "mg_2": "Bounce Cat — puzzle kabur dari labirin yang menggemaskan",
+        "mg_3": "HAYATE — speed-racer katana 3D"
+    },
+    "de": {
+        "title": "TEMARI — Schlag das Temari, lass die Papierballons platzen.",
+        "meta_desc": "TEMARI — ein Ego-Paddle-Breakout in einer gemütlichen japanischen Nacht von PixelRyu. Bewege dein Hagoita mit der Fingerspitze, halte das Temari in einem endlosen Ballwechsel am Leben und lass jeden Papierballon im laternenbeleuchteten Korridor platzen — mit Split, Focus-Zeitlupe, einem Fasan-Helfer und mehr. 8 Welten, 200 Level. Jetzt im App Store und auf Roblox. Android-Tester willkommen.",
+        "tagline": "Schlag das Temari. Lass es platzen.",
+        "subtitle": "Ego-Hagoita-Breakout",
+        "coming_soon_note": "Demnächst im App Store.",
+        "tester_heading": "Android-Tester gesucht",
+        "tester_android_note": "Nur für Android",
+        "tester_intro": "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
+        "tester_what_label": "Worum es geht",
+        "tester_step1_label": "Schritt 1 — Tester-Gruppe beitreten",
+        "tester_step2_label": "Schritt 2 — Über den Play Store anmelden",
+        "tester_step3_label": "Schritt 3 — App herunterladen & spielen",
+        "tester_ask_label": "Worum ich bitte",
+        "tester_ask_keep": "14 Tage lang installiert lassen",
+        "tester_ask_launch": "Alle paar Tage starten (ein paar Mal reicht)",
+        "tester_ask_minutes": "Ein bis zwei Minuten Spiel pro Sitzung genügen",
+        "tester_note_lead": "ℹ️ Tipp — alle drei Schritte unten sind nötig:",
+        "tester_note_step1": "Schritt 1 — Der Gruppe beitreten: Auch wenn „keine Berechtigung zum Anzeigen der Inhalte“ erscheint, gibt es auf der Seite einen Button „Gruppe beitreten“ – tippe darauf, um beizutreten.",
+        "tester_note_step2": "Schritt 2 — Tester werden (Opt-in): Tippe auf der Opt-in-Seite, um an der Testphase teilzunehmen. Nur Tester zu werden installiert die App noch nicht.",
+        "tester_note_step3": "Schritt 3 — Herunterladen & spielen: Öffne die Download-Seite, installiere die App, öffne sie und spiele kurz – ohne das zählt deine Teilnahme nicht.",
+        "tester_note_account": "Verwende für alle Schritte dasselbe Google-Konto.",
+        "tester_note_wait": "Wenn Schritt 2 oder 3 „App not available“ anzeigt, warte nach dem Beitritt ein paar Stunden und versuche es erneut.",
+        "tester_what": "Ein Ego-Paddle-Breakout in einer gemütlichen japanischen Nacht. Bewege dein Hagoita mit der Fingerspitze, halte das Temari in einem endlosen Ballwechsel am Leben und lass jeden Papierballon im Korridor platzen. Mit Temari-Split, zeitverlangsamendem Focus, einem Fasan-Helfer und mehr. 8 Welten, 200 Level.",
+        "what_label": "Worum es geht",
+        "what": "Ein Ego-Paddle-Breakout in einer gemütlichen japanischen Nacht. Bewege dein Hagoita mit der Fingerspitze, halte das Temari in einem endlosen Ballwechsel am Leben und lass jeden Papierballon im Korridor platzen. Mit Temari-Split, zeitverlangsamendem Focus, einem Fasan-Helfer und mehr. 8 Welten, 200 Level.",
+        "link_overview": "Spielübersicht ansehen",
+        "legal_divider": "Rechtliche Dokumente",
+        "link_privacy": "Datenschutzerklärung",
+        "link_terms": "Nutzungsbedingungen",
+        "back": "← PixelRyu",
+        "faq_heading": "FAQ",
+        "faq_q1": "Was für ein Spiel ist TEMARI?",
+        "faq_a1": "TEMARI von PixelRyu ist ein lockeres Arcade-Spiel — ein Ego-Paddle-Breakout in einer gemütlichen japanischen Nacht. Bewege dein Hagoita mit der Fingerspitze, halte das Temari im endlosen Ballwechsel am Leben und lass die Papierballons im laternenbeleuchteten Korridor platzen.",
+        "faq_q2": "Ist TEMARI kostenlos?",
+        "faq_a2": "Ja — TEMARI ist kostenlos spielbar.",
+        "faq_q3": "Wo kann ich TEMARI jetzt spielen?",
+        "faq_a3": "TEMARI ist jetzt auf Roblox spielbar, und auf Android läuft ein geschlossener Test über Google Play. Jetzt im App Store.",
+        "faq_q4": "Wie viele Level hat TEMARI?",
+        "faq_a4": "Es gibt 8 Welten mit 200 Leveln — dazu Temari-Split, zeitverlangsamenden Focus und einen Fasan-Helfer.",
+        "faq_q5": "Welche Sprachen unterstützt TEMARI?",
+        "faq_a5": "TEMARI unterstützt 12 Sprachen: Englisch, Japanisch, Chinesisch, Koreanisch, Hindi, Indonesisch, Deutsch, Französisch, Italienisch, Spanisch, Portugiesisch und Russisch.",
+        "more_games_heading": "Weitere Spiele von PixelRyu",
+        "mg_1": "TATAMI: Lay the Floor — gemütliches Tatami-Blockpuzzle",
+        "mg_2": "Bounce Cat — gemütliches Labyrinth-Fluchtpuzzle",
+        "mg_3": "HAYATE — 3D-Katana-Speed-Racer"
+    },
+    "fr": {
+        "title": "TEMARI — Renvoie le temari, fais éclater les ballons en papier.",
+        "meta_desc": "TEMARI — un casse-briques à la raquette en vue subjective dans une douce nuit japonaise, signé PixelRyu. Déplace ton hagoita du bout du doigt, garde le temari en jeu dans un échange sans fin et fais éclater chaque ballon en papier au fond du couloir éclairé aux lanternes — avec split, ralenti focus, un faisan assistant et plus encore. 8 mondes, 200 niveaux. Disponible sur l'App Store et Roblox. Testeurs Android bienvenus.",
+        "tagline": "Renvoie le temari. Fais-le éclater.",
+        "subtitle": "Casse-briques hagoita en vue subjective",
+        "coming_soon_note": "Bientôt disponible sur l'App Store.",
+        "tester_heading": "Recherche de testeurs Android",
+        "tester_android_note": "Android uniquement",
+        "tester_intro": "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
+        "tester_what_label": "De quoi il s'agit",
+        "tester_step1_label": "Étape 1 — Rejoindre le groupe de testeurs",
+        "tester_step2_label": "Étape 2 — S'inscrire via le Play Store",
+        "tester_step3_label": "Étape 3 — Télécharger et jouer",
+        "tester_ask_label": "Ce que je demande",
+        "tester_ask_keep": "Garder installé pendant les 14 jours complets",
+        "tester_ask_launch": "Lancer tous les deux jours (quelques fois suffisent)",
+        "tester_ask_minutes": "Une à deux minutes de jeu par session suffisent",
+        "tester_note_lead": "ℹ️ Astuce — les trois étapes ci-dessous sont nécessaires :",
+        "tester_note_step1": "Étape 1 — Rejoindre le groupe : même si « autorisation refusée pour afficher le contenu » s’affiche, un bouton « Rejoindre le groupe » est présent sur la page — appuyez dessus pour rejoindre.",
+        "tester_note_step2": "Étape 2 — Devenir testeur (inscription) : sur la page d’inscription, appuyez pour rejoindre le test. S’inscrire seul n’installe pas l’application.",
+        "tester_note_step3": "Étape 3 — Télécharger et jouer : ouvrez la page de téléchargement, installez l’application, ouvrez-la et jouez un peu — sans cela, votre participation ne compte pas.",
+        "tester_note_account": "Utilisez le même compte Google pour toutes les étapes.",
+        "tester_note_wait": "Si l’étape 2 ou 3 affiche « App not available », attendez quelques heures après avoir rejoint, puis réessayez.",
+        "tester_what": "Un casse-briques à la raquette en vue subjective dans une douce nuit japonaise. Déplace ton hagoita du bout du doigt, garde le temari en jeu dans un échange sans fin et fais éclater chaque ballon en papier au fond du couloir. Avec split du temari, ralenti focus, un faisan assistant et plus encore. 8 mondes, 200 niveaux.",
+        "what_label": "De quoi il s’agit",
+        "what": "Un casse-briques à la raquette en vue subjective dans une douce nuit japonaise. Déplace ton hagoita du bout du doigt, garde le temari en jeu dans un échange sans fin et fais éclater chaque ballon en papier au fond du couloir. Avec split du temari, ralenti focus, un faisan assistant et plus encore. 8 mondes, 200 niveaux.",
+        "link_overview": "Voir la présentation du jeu",
+        "legal_divider": "Documents légaux",
+        "link_privacy": "Politique de confidentialité",
+        "link_terms": "Conditions d’utilisation",
+        "back": "← PixelRyu",
+        "faq_heading": "FAQ",
+        "faq_q1": "Quel genre de jeu est TEMARI ?",
+        "faq_a1": "TEMARI de PixelRyu est un jeu d'arcade décontracté — un casse-briques à la raquette en vue subjective dans une douce nuit japonaise. Déplace ton hagoita du bout du doigt, garde le temari en jeu dans un échange sans fin et fais éclater les ballons en papier au fond du couloir éclairé aux lanternes.",
+        "faq_q2": "TEMARI est-il gratuit ?",
+        "faq_a2": "Oui — TEMARI est jouable gratuitement.",
+        "faq_q3": "Où peut-on jouer à TEMARI dès maintenant ?",
+        "faq_a3": "TEMARI est jouable dès maintenant sur Roblox, et un test fermé Android est ouvert via Google Play. Disponible sur l'App Store.",
+        "faq_q4": "Combien de niveaux compte TEMARI ?",
+        "faq_a4": "Le jeu propose 8 mondes et 200 niveaux, avec split du temari, ralenti focus et un faisan assistant.",
+        "faq_q5": "Quelles langues TEMARI prend-il en charge ?",
+        "faq_a5": "TEMARI prend en charge 12 langues : anglais, japonais, chinois, coréen, hindi, indonésien, allemand, français, italien, espagnol, portugais et russe.",
+        "more_games_heading": "Plus de jeux par PixelRyu",
+        "mg_1": "TATAMI: Lay the Floor — puzzle de blocs tatami tout doux",
+        "mg_2": "Bounce Cat — puzzle d'évasion de labyrinthe tout mignon",
+        "mg_3": "HAYATE — speed-racer 3D au katana"
+    },
+    "it": {
+        "title": "TEMARI — Colpisci il temari, fai scoppiare i palloncini di carta.",
+        "meta_desc": "TEMARI — un breakout con racchetta in prima persona in una tranquilla notte giapponese, firmato PixelRyu. Muovi il tuo hagoita con un dito, tieni il temari in gioco in uno scambio infinito e fai scoppiare ogni palloncino di carta in fondo al corridoio illuminato dalle lanterne — con split, focus al rallentatore, un fagiano aiutante e altro. 8 mondi, 200 livelli. Disponibile su App Store e Roblox. Tester Android benvenuti.",
+        "tagline": "Colpisci il temari. Fallo scoppiare.",
+        "subtitle": "Breakout hagoita in prima persona",
+        "coming_soon_note": "Presto su App Store.",
+        "tester_heading": "Cercasi tester Android",
+        "tester_android_note": "Solo Android",
+        "tester_intro": "Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.",
+        "tester_what_label": "Di cosa si tratta",
+        "tester_step1_label": "Passo 1 — Unisciti al gruppo tester",
+        "tester_step2_label": "Passo 2 — Opt-in tramite Play Store",
+        "tester_step3_label": "Passo 3 — Scarica e gioca all’app",
+        "tester_ask_label": "Cosa chiedo",
+        "tester_ask_keep": "Tienilo installato per tutti i 14 giorni",
+        "tester_ask_launch": "Aprilo ogni paio di giorni (poche volte basta)",
+        "tester_ask_minutes": "Bastano un paio di minuti di gioco a sessione",
+        "tester_note_lead": "ℹ️ Suggerimento — servono tutti e tre i passaggi qui sotto:",
+        "tester_note_step1": "Passaggio 1 — Iscriviti al gruppo: anche se compare « non hai l’autorizzazione per visualizzare i contenuti », sulla pagina c’è il pulsante « Iscriviti al gruppo » — toccalo per iscriverti.",
+        "tester_note_step2": "Passaggio 2 — Diventa tester (opt-in): nella pagina di opt-in, tocca per partecipare al test. Diventare tester da solo non installa l’app.",
+        "tester_note_step3": "Passaggio 3 — Scarica e gioca: apri la pagina di download, installa l’app, aprila e gioca un po’ — senza questo, il tuo test non viene conteggiato.",
+        "tester_note_account": "Usa lo stesso account Google per tutti i passaggi.",
+        "tester_note_wait": "Se il passaggio 2 o 3 mostra « App not available », attendi qualche ora dopo l’iscrizione e riprova.",
+        "tester_what": "Un breakout con racchetta in prima persona in una tranquilla notte giapponese. Muovi il tuo hagoita con un dito, tieni il temari in gioco in uno scambio infinito e fai scoppiare ogni palloncino di carta in fondo al corridoio. Con split del temari, focus al rallentatore, un fagiano aiutante e altro. 8 mondi, 200 livelli.",
+        "what_label": "Di cosa si tratta",
+        "what": "Un breakout con racchetta in prima persona in una tranquilla notte giapponese. Muovi il tuo hagoita con un dito, tieni il temari in gioco in uno scambio infinito e fai scoppiare ogni palloncino di carta in fondo al corridoio. Con split del temari, focus al rallentatore, un fagiano aiutante e altro. 8 mondi, 200 livelli.",
+        "link_overview": "Scopri la panoramica del gioco",
+        "legal_divider": "Documenti legali",
+        "link_privacy": "Informativa sulla privacy",
+        "link_terms": "Termini di servizio",
+        "back": "← PixelRyu",
+        "faq_heading": "FAQ",
+        "faq_q1": "Che tipo di gioco è TEMARI?",
+        "faq_a1": "TEMARI di PixelRyu è un arcade casual — un breakout con racchetta in prima persona in una tranquilla notte giapponese. Muovi il tuo hagoita con un dito, tieni il temari in gioco in uno scambio infinito e fai scoppiare i palloncini di carta lungo il corridoio illuminato dalle lanterne.",
+        "faq_q2": "TEMARI è gratuito?",
+        "faq_a2": "Sì — TEMARI è giocabile gratuitamente.",
+        "faq_q3": "Dove posso giocare a TEMARI adesso?",
+        "faq_a3": "TEMARI è giocabile ora su Roblox, e su Android è aperto un closed test tramite Google Play. Disponibile su App Store.",
+        "faq_q4": "Quanti livelli ha TEMARI?",
+        "faq_a4": "Offre 8 mondi e 200 livelli, con split del temari, focus al rallentatore e un fagiano aiutante.",
+        "faq_q5": "Quali lingue supporta TEMARI?",
+        "faq_a5": "TEMARI supporta 12 lingue: inglese, giapponese, cinese, coreano, hindi, indonesiano, tedesco, francese, italiano, spagnolo, portoghese e russo.",
+        "more_games_heading": "Altri giochi di PixelRyu",
+        "mg_1": "TATAMI: Lay the Floor — rilassante puzzle di blocchi tatami",
+        "mg_2": "Bounce Cat — tenero puzzle di fuga dal labirinto",
+        "mg_3": "HAYATE — speed-racer 3D con katana"
+    },
+    "es": {
+        "title": "TEMARI — Golpea el temari, revienta los globos de papel.",
+        "meta_desc": "TEMARI — un breakout de pala en primera persona en una acogedora noche japonesa, de PixelRyu. Mueve tu hagoita con la punta del dedo, mantén el temari vivo en un peloteo sin fin y revienta cada globo de papel al fondo del pasillo iluminado por farolillos — con split, cámara lenta focus, un faisán ayudante y más. 8 mundos, 200 niveles. Ya disponible en App Store y Roblox. Testers de Android bienvenidos.",
+        "tagline": "Golpea el temari. Reviéntalo.",
+        "subtitle": "Breakout de hagoita en primera persona",
+        "coming_soon_note": "Próximamente en App Store.",
+        "tester_heading": "Buscamos testers de Android",
+        "tester_android_note": "Solo Android",
+        "tester_intro": "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
+        "tester_what_label": "De qué se trata",
+        "tester_step1_label": "Paso 1 — Únete al grupo de testers",
+        "tester_step2_label": "Paso 2 — Inscríbete vía Play Store",
+        "tester_step3_label": "Paso 3 — Descarga y juega la app",
+        "tester_ask_label": "Lo que pido",
+        "tester_ask_keep": "Mantener instalado los 14 días completos",
+        "tester_ask_launch": "Abrir cada par de días (unas pocas veces basta)",
+        "tester_ask_minutes": "Con un par de minutos de juego por sesión basta",
+        "tester_note_lead": "ℹ️ Consejo — los tres pasos siguientes son necesarios:",
+        "tester_note_step1": "Paso 1 — Únete al grupo: aunque aparezca «no tienes permiso para ver el contenido», en esa página hay un botón «Unirse al grupo»; tócalo para unirte.",
+        "tester_note_step2": "Paso 2 — Hazte tester (participa): en la página de participación, toca para unirte a la prueba. Solo participar no instala la app.",
+        "tester_note_step3": "Paso 3 — Descarga y juega: abre la página de descarga, instala la app, ábrela y juega un poco; sin esto, tu prueba no cuenta.",
+        "tester_note_account": "Usa la misma cuenta de Google en todos los pasos.",
+        "tester_note_wait": "Si el paso 2 o 3 muestra «App not available», espera unas horas después de unirte y vuelve a intentarlo.",
+        "tester_what": "Un breakout de pala en primera persona en una acogedora noche japonesa. Mueve tu hagoita con la punta del dedo, mantén el temari vivo en un peloteo sin fin y revienta cada globo de papel al fondo del pasillo. Con split del temari, cámara lenta focus, un faisán ayudante y más. 8 mundos, 200 niveles.",
+        "what_label": "De qué trata",
+        "what": "Un breakout de pala en primera persona en una acogedora noche japonesa. Mueve tu hagoita con la punta del dedo, mantén el temari vivo en un peloteo sin fin y revienta cada globo de papel al fondo del pasillo. Con split del temari, cámara lenta focus, un faisán ayudante y más. 8 mundos, 200 niveles.",
+        "link_overview": "Ver la descripción del juego",
+        "legal_divider": "Documentos legales",
+        "link_privacy": "Política de privacidad",
+        "link_terms": "Términos del servicio",
+        "back": "← PixelRyu",
+        "faq_heading": "Preguntas frecuentes",
+        "faq_q1": "¿Qué tipo de juego es TEMARI?",
+        "faq_a1": "TEMARI de PixelRyu es un arcade casual: un breakout de pala en primera persona en una acogedora noche japonesa. Mueve tu hagoita con la punta del dedo, mantén el temari vivo en el peloteo y revienta los globos de papel del pasillo iluminado por farolillos.",
+        "faq_q2": "¿TEMARI es gratis?",
+        "faq_a2": "Sí — TEMARI se puede jugar gratis.",
+        "faq_q3": "¿Dónde puedo jugar a TEMARI ahora mismo?",
+        "faq_a3": "TEMARI ya se puede jugar en Roblox, y en Android hay una prueba cerrada abierta a través de Google Play. Ya disponible en App Store.",
+        "faq_q4": "¿Cuántos niveles tiene TEMARI?",
+        "faq_a4": "Ofrece 8 mundos y 200 niveles, con split del temari, cámara lenta focus y un faisán ayudante.",
+        "faq_q5": "¿Qué idiomas admite TEMARI?",
+        "faq_a5": "TEMARI admite 12 idiomas: inglés, japonés, chino, coreano, hindi, indonesio, alemán, francés, italiano, español, portugués y ruso.",
+        "more_games_heading": "Más juegos de PixelRyu",
+        "mg_1": "TATAMI: Lay the Floor — acogedor puzle de bloques de tatami",
+        "mg_2": "Bounce Cat — adorable puzle de escapar del laberinto",
+        "mg_3": "HAYATE — speed-racer 3D con katana"
+    },
+    "pt": {
+        "title": "TEMARI — Rebata o temari, estoure os balões de papel.",
+        "meta_desc": "TEMARI — um breakout de raquete em primeira pessoa numa aconchegante noite japonesa, da PixelRyu. Mova o seu hagoita com a ponta do dedo, mantenha o temari vivo num peloteio sem fim e estoure cada balão de papel no fundo do corredor iluminado por lanternas — com split, câmera lenta focus, um faisão ajudante e mais. 8 mundos, 200 fases. Já disponível na App Store e no Roblox. Testers de Android são bem-vindos.",
+        "tagline": "Rebata o temari. Estoure-o.",
+        "subtitle": "Breakout de hagoita em primeira pessoa",
+        "coming_soon_note": "Em breve na App Store.",
+        "tester_heading": "Procuramos testers de Android",
+        "tester_android_note": "Apenas Android",
+        "tester_intro": "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
+        "tester_what_label": "Sobre o jogo",
+        "tester_step1_label": "Passo 1 — Entrar no grupo de testers",
+        "tester_step2_label": "Passo 2 — Adesão via Play Store",
+        "tester_step3_label": "Passo 3 — Baixe e jogue o app",
+        "tester_ask_label": "O que peço",
+        "tester_ask_keep": "Manter instalado por 14 dias completos",
+        "tester_ask_launch": "Abra a cada poucos dias (algumas vezes basta)",
+        "tester_ask_minutes": "Um ou dois minutos de jogo por sessão já bastam",
+        "tester_note_lead": "ℹ️ Dica — as três etapas abaixo são necessárias:",
+        "tester_note_step1": "Etapa 1 — Entre no grupo: mesmo que apareça “sem permissão para ver o conteúdo”, há um botão “Participar do grupo” na página — toque para entrar.",
+        "tester_note_step2": "Etapa 2 — Torne-se tester (opt-in): na página de opt-in, toque para entrar no teste. Apenas virar tester não instala o app.",
+        "tester_note_step3": "Etapa 3 — Baixe e jogue: abra a página de download, instale o app, abra e jogue um pouco — sem isso, seu teste não conta.",
+        "tester_note_account": "Use a mesma Conta do Google em todas as etapas.",
+        "tester_note_wait": "Se a Etapa 2 ou 3 mostrar “App not available”, aguarde algumas horas após participar e tente novamente.",
+        "tester_what": "Um breakout de raquete em primeira pessoa numa aconchegante noite japonesa. Mova o seu hagoita com a ponta do dedo, mantenha o temari vivo num peloteio sem fim e estoure cada balão de papel no fundo do corredor. Com split do temari, câmera lenta focus, um faisão ajudante e mais. 8 mundos, 200 fases.",
+        "what_label": "Sobre o jogo",
+        "what": "Um breakout de raquete em primeira pessoa numa aconchegante noite japonesa. Mova o seu hagoita com a ponta do dedo, mantenha o temari vivo num peloteio sem fim e estoure cada balão de papel no fundo do corredor. Com split do temari, câmera lenta focus, um faisão ajudante e mais. 8 mundos, 200 fases.",
+        "link_overview": "Ver a visão geral do jogo",
+        "legal_divider": "Documentos legais",
+        "link_privacy": "Política de Privacidade",
+        "link_terms": "Termos de Serviço",
+        "back": "← PixelRyu",
+        "faq_heading": "Perguntas frequentes",
+        "faq_q1": "Que tipo de jogo é TEMARI?",
+        "faq_a1": "TEMARI da PixelRyu é um arcade casual — um breakout de raquete em primeira pessoa numa aconchegante noite japonesa. Mova o hagoita com a ponta do dedo, mantenha o temari vivo no peloteio e estoure os balões de papel do corredor iluminado por lanternas.",
+        "faq_q2": "TEMARI é gratuito?",
+        "faq_a2": "Sim — TEMARI é gratuito para jogar.",
+        "faq_q3": "Onde posso jogar TEMARI agora?",
+        "faq_a3": "TEMARI já pode ser jogado no Roblox, e no Android há um teste fechado aberto via Google Play. Já disponível na App Store.",
+        "faq_q4": "Quantas fases TEMARI tem?",
+        "faq_a4": "São 8 mundos e 200 fases, com split do temari, câmera lenta focus e um faisão ajudante.",
+        "faq_q5": "Quais idiomas TEMARI suporta?",
+        "faq_a5": "TEMARI suporta 12 idiomas: inglês, japonês, chinês, coreano, hindi, indonésio, alemão, francês, italiano, espanhol, português e russo.",
+        "more_games_heading": "Mais jogos da PixelRyu",
+        "mg_1": "TATAMI: Lay the Floor — aconchegante puzzle de blocos de tatame",
+        "mg_2": "Bounce Cat — fofo puzzle de fuga do labirinto",
+        "mg_3": "HAYATE — speed-racer 3D de katana"
+    },
+    "ru": {
+        "title": "TEMARI — Отбивай тэмари, лопай бумажные шарики.",
+        "meta_desc": "TEMARI — аркада-арканоид от первого лица в уютной японской ночи от PixelRyu. Двигай ракетку хагоита кончиком пальца, удерживай тэмари в бесконечном розыгрыше и лопай каждый бумажный шарик в глубине освещённого фонарями коридора — со сплитом, замедлением focus, помощником-фазаном и не только. 8 миров, 200 уровней. Уже в App Store и на Roblox. Android-тестеры приветствуются.",
+        "tagline": "Отбивай тэмари. Лопай шарики.",
+        "subtitle": "Арканоид от первого лица",
+        "coming_soon_note": "Скоро в App Store.",
+        "tester_heading": "Поиск Android-тестеров",
+        "tester_android_note": "Только для Android",
+        "tester_intro": "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",
+        "tester_what_label": "О чём игра",
+        "tester_step1_label": "Шаг 1 — Вступить в группу тестеров",
+        "tester_step2_label": "Шаг 2 — Подписаться через Play Store",
+        "tester_step3_label": "Шаг 3 — Скачать и поиграть",
+        "tester_ask_label": "О чём я прошу",
+        "tester_ask_keep": "Не удалять приложение все 14 дней",
+        "tester_ask_launch": "Запускайте раз в пару дней (нескольких раз достаточно)",
+        "tester_ask_minutes": "Достаточно одной–двух минут игры за сессию",
+        "tester_note_lead": "ℹ️ Совет — нужны все три шага ниже:",
+        "tester_note_step1": "Шаг 1 — Вступите в группу: даже если показано «нет прав для просмотра содержимого», на странице есть кнопка «Присоединиться к группе» — нажмите её, чтобы вступить.",
+        "tester_note_step2": "Шаг 2 — Станьте тестером (подтвердите участие): на странице подтверждения нажмите, чтобы присоединиться к тесту. Само подтверждение участия не устанавливает приложение.",
+        "tester_note_step3": "Шаг 3 — Скачайте и поиграйте: откройте страницу загрузки, установите приложение, откройте его и немного поиграйте — без этого ваше участие не засчитывается.",
+        "tester_note_account": "Используйте один и тот же аккаунт Google для всех шагов.",
+        "tester_note_wait": "Если на шаге 2 или 3 появляется «App not available», подождите несколько часов после вступления и попробуйте снова.",
+        "tester_what": "Аркада-арканоид от первого лица в уютной японской ночи. Двигай ракетку хагоита кончиком пальца, удерживай тэмари в бесконечном розыгрыше и лопай каждый бумажный шарик в глубине коридора. Со сплитом тэмари, замедляющим время focus, помощником-фазаном и не только. 8 миров, 200 уровней.",
+        "what_label": "Что это",
+        "what": "Аркада-арканоид от первого лица в уютной японской ночи. Двигай ракетку хагоита кончиком пальца, удерживай тэмари в бесконечном розыгрыше и лопай каждый бумажный шарик в глубине коридора. Со сплитом тэмари, замедляющим время focus, помощником-фазаном и не только. 8 миров, 200 уровней.",
+        "link_overview": "Открыть обзор игры",
+        "legal_divider": "Правовые документы",
+        "link_privacy": "Политика конфиденциальности",
+        "link_terms": "Условия использования",
+        "back": "← PixelRyu",
+        "faq_heading": "Частые вопросы",
+        "faq_q1": "Что за игра TEMARI?",
+        "faq_a1": "TEMARI от PixelRyu — это казуальная аркада, арканоид от первого лица в уютной японской ночи. Двигай ракетку хагоита кончиком пальца, удерживай тэмари в бесконечном розыгрыше и лопай бумажные шарики в освещённом фонарями коридоре.",
+        "faq_q2": "TEMARI бесплатна?",
+        "faq_a2": "Да — в TEMARI можно играть бесплатно.",
+        "faq_q3": "Где можно поиграть в TEMARI прямо сейчас?",
+        "faq_a3": "Сейчас TEMARI доступна на Roblox, а на Android открыт закрытый тест через Google Play. Уже в App Store.",
+        "faq_q4": "Сколько уровней в TEMARI?",
+        "faq_a4": "В игре 8 миров и 200 уровней, а также сплит тэмари, замедляющий время focus и помощник-фазан.",
+        "faq_q5": "Какие языки поддерживает TEMARI?",
+        "faq_a5": "TEMARI поддерживает 12 языков: английский, японский, китайский, корейский, хинди, индонезийский, немецкий, французский, итальянский, испанский, португальский и русский.",
+        "more_games_heading": "Другие игры PixelRyu",
+        "mg_1": "TATAMI: Lay the Floor — уютная головоломка с укладкой татами",
+        "mg_2": "Bounce Cat — уютная головоломка-побег из лабиринта",
+        "mg_3": "HAYATE — 3D-гонка с катаной"
+    }
+  };
+
+  function applyLang(lang){
+    const dict = i18n[lang] || i18n.en;
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el=>{
+      const k = el.getAttribute('data-i18n');
+      if(dict[k] === undefined) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if(attr){ el.setAttribute(attr, dict[k]); } else { el.textContent = dict[k]; }
+    });
+    // 言語に合わせてプロモ動画を切替（日本語なら日本語字幕版、それ以外は英語字幕版）
+    const v = document.getElementById('promo');
+    if(v){
+      const file = (lang === 'ja')
+        ? 'https://pixelryu.github.io/temari/promotion_H_story_ja.mp4?v=20260609111617'
+        : 'https://pixelryu.github.io/temari/promotion_H_story.mp4?v=20260609111617';
+      const src = v.querySelector('source');
+      if(src && src.getAttribute('src') !== file){
+        src.setAttribute('src', file);
+        v.load();
+        const pr = v.play(); if(pr && pr.catch) pr.catch(()=>{});
+      }
+    }
+    try{ localStorage.setItem('pixelryu_lang', lang); }catch(e){}
+  }
+
+  (function(){
+    const sel = document.getElementById('lang-select');
+    LANGUAGES.forEach(l=>{
+      const o = document.createElement('option');
+      o.value = l.code; o.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(o);
+    });
+    var lang = 'zh'; sel.value = lang; applyLang(lang);
+    sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/temari/' : 'https://pixelryu.github.io/temari/' + v + '/';});
+  })();
+</script>
+<script src="https://pixelryu.github.io/breadcrumb.js?v=20260607083231" defer></script>
+</body>
+</html>

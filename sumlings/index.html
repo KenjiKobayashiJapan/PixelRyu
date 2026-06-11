@@ -200,6 +200,19 @@
 </style>
 <!-- SEO/LLMO start (managed) -->
 <link rel="canonical" href="https://pixelryu.github.io/sumlings/">
+<link rel="alternate" hreflang="en" href="https://pixelryu.github.io/sumlings/">
+<link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/sumlings/ja/">
+<link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/sumlings/zh/">
+<link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/sumlings/ko/">
+<link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/sumlings/hi/">
+<link rel="alternate" hreflang="id" href="https://pixelryu.github.io/sumlings/id/">
+<link rel="alternate" hreflang="de" href="https://pixelryu.github.io/sumlings/de/">
+<link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/sumlings/fr/">
+<link rel="alternate" hreflang="it" href="https://pixelryu.github.io/sumlings/it/">
+<link rel="alternate" hreflang="es" href="https://pixelryu.github.io/sumlings/es/">
+<link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/sumlings/pt/">
+<link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/sumlings/ru/">
+<link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/sumlings/">
 <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
 <meta name="author" content="PixelRyu">
 <meta name="publisher" content="PixelRyu">
@@ -948,7 +961,7 @@
     // Persist on init too — guarantees subsequent pages (privacy/terms/overview)
     // pick up the same language via the shared localStorage key.
     setLang(detectLang(), true);
-    sel.addEventListener('change', e => setLang(e.target.value, true));
+    sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/sumlings/' : 'https://pixelryu.github.io/sumlings/' + v + '/';});
   })();
 </script>
 <script src="../breadcrumb.js?v=20260602202548" defer></script>
