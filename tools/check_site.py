@@ -136,6 +136,39 @@ for p in sorted(glob.glob(os.path.join(ROOT, "*", "*.html"))) + [os.path.join(RO
             if isinstance(o, dict) and o.get("@type") == "VideoGame" and "name" in o and "offers" not in o:
                 warns.append("[jsonld] %s: VideoGame without free offers (price 0)" % rel(p))
 
+# (9/10) sameAs & operatingSystem must match each page's live store badges. A new
+# platform launch (adding an App Store/Roblox <a> badge) easily leaves these stale.
+for d in app_dirs:
+    p = os.path.join(d, "index.html")
+    src = read(p)
+    plats, badge_urls = [], []
+    am = re.search(r'<a[^>]+href="(https://apps\.apple\.com/app/id\d+)"', src)
+    pm = re.search(r'<a[^>]+href="(https://play\.google\.com/store/apps/details\?id=[\w.]+)"', src)
+    rm = re.search(r'<a[^>]+href="(https://www\.roblox\.com/games/\d+/[\w\-]+)"', src)
+    if am: plats.append("iOS"); badge_urls.append(am.group(1))
+    if pm or re.search(r'play\.google\.com/apps/testing', src): plats.append("Android")
+    if pm: badge_urls.append(pm.group(1))
+    if rm: plats.append("Roblox"); badge_urls.append(rm.group(1))
+    if not plats:
+        continue
+    vg = None
+    for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', src, re.S):
+        try:
+            obj = _json.loads(m.group(1))
+        except Exception:
+            continue
+        for o in (obj if isinstance(obj, list) else [obj]):
+            if isinstance(o, dict) and o.get("@type") == "VideoGame":
+                vg = o
+    if vg is None:
+        continue
+    miss = [u for u in badge_urls if u not in (vg.get("sameAs") or [])]
+    if miss:
+        warns.append("[sameAs] %s: VideoGame sameAs missing live badge URL(s): %s" % (rel(p), ", ".join(miss)))
+    os_set = set(x.strip() for x in (vg.get("operatingSystem") or "").replace(" and ", ", ").split(",") if x.strip())
+    if os_set != set(plats):
+        warns.append("[operatingSystem] %s: %r != live platforms %r" % (rel(p), vg.get("operatingSystem"), ", ".join(plats)))
+
 if warns:
     print("\n".join("WARN  " + w for w in sorted(set(warns))))
 if errors:

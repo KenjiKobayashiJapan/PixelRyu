@@ -26,69 +26,77 @@ This file is the expanded, self-contained companion to /llms.txt. It inlines the
 - Platforms (declared): iOS, Android, Roblox
 - Price: Free
 - About: TEMARI — a first-person paddle breakout in a cozy Japanese night by PixelRyu. Move your hagoita with a fingertip, keep the temari thread-ball in an endless rally, and pop every paper balloon down the lantern-lit corridor — with split, focus, a pheasant helper and more. 8 worlds, 200 stages. Out now on the App Store.
+- App Store (iOS): https://apps.apple.com/app/id6777618068
+- Google Play (Android): https://play.google.com/store/apps/details?id=com.pixelryu.temari
 - Roblox: https://www.roblox.com/games/84976260376006/TEMARI-Hanetsuki-Paddle
-- Google Play (Android closed test): https://play.google.com/apps/testing/com.pixelryu.temari
 
 ### TATAMI: Lay the Floor
 - Page: https://pixelryu.github.io/tatami/
-- Platforms (declared): iOS, Android, Roblox
+- Platforms (declared): Android, Roblox
 - Price: Free
 - About: TATAMI: Lay the Floor — a cozy tatami-laying block puzzle in a quiet Japanese room by PixelRyu. Drag a mat and complete a full row or column to finish that line. A samurai carries the finished mats to the tatami magistrate, and delivering earns koban that buy extra lives. A light Haste gauge keeps you moving, with a lucky-laying bonus. 48 stages, free. Coming soon to the App Store.
+- Google Play (Android): https://play.google.com/store/apps/details?id=com.pixelryu.tatami
 - Roblox: https://www.roblox.com/games/134915507341779/TATAMI-Lay-the-Floor
-- Google Play (Android closed test): https://play.google.com/apps/testing/com.pixelryu.tatami
 
 ### Bounce Cat
 - Page: https://pixelryu.github.io/bounce-cat/
 - Platforms (declared): iOS, Android, Roblox
 - Price: Free
 - About: Bounce Cat — a cozy maze-escape puzzle by PixelRyu. Fire a ball of yarn from outside the maze, ride the ricochet, and shift or shatter walls so the trapped cat finds its own way out. 200 mazes across 10 worlds. Out now on Roblox and the App Store. Android testers welcome.
+- App Store (iOS): https://apps.apple.com/app/id6776876260
+- Google Play (Android): https://play.google.com/store/apps/details?id=com.pixelryu.bouncecat
 - Roblox: https://www.roblox.com/games/107578490712285/Bounce-Cat-Rescue-the-Cat
-- Google Play (Android closed test): https://play.google.com/apps/testing/com.pixelryu.bouncecat
 
 ### HAYATE
 - Also known as: 疾風
 - Page: https://pixelryu.github.io/hayate/
-- Platforms (declared): Android, iOS
+- Platforms (declared): iOS, Android, Roblox
 - Price: Free
 - About: HAYATE — a 3D katana speed-racer by PixelRyu, and a sequel to ISSEN. Race the highway, space, the deep and the sky; dodge what flies at you, or throw your homing katana to slice it clean.
 - App Store (iOS): https://apps.apple.com/app/id6775771603
-- Google Play (Android closed test): https://play.google.com/apps/testing/com.pixelryu.hayate
+- Google Play (Android): https://play.google.com/store/apps/details?id=com.pixelryu.hayate
 - Roblox: https://www.roblox.com/games/128048970536729/HAYATE-Katana-Racer
 
 ### Sumlings
 - Page: https://pixelryu.github.io/sumlings/
-- Platforms (declared): Android, iOS
+- Platforms (declared): iOS, Android, Roblox
 - Price: Free
 - About: Sumlings — a cozy number puzzle by PixelRyu. Place number eggs into a tiny terrarium, match each nest's total to its target, and hatch the cute Sumlings. Out now on the App Store and Roblox; Android closed testing open.
+- App Store (iOS): https://apps.apple.com/app/id6774177494
+- Google Play (Android): https://play.google.com/store/apps/details?id=com.pixelryu.sumlings
+- Roblox: https://www.roblox.com/games/90303076167033/Sumlings
 
 ### Parcel Pals
 - Page: https://pixelryu.github.io/parcel-pals/
-- Platforms (declared): Android, iOS
+- Platforms (declared): Android, Roblox
 - Price: Free
 - About: Parcel Pals — a cozy parcel-sorting puzzle by PixelRyu. Sort cute parcels into 3 lanes, match shapes to boxes, and ship before the table overflows. Out now on Roblox; Android closed testing open — coming soon to iOS.
+- Google Play (Android): https://play.google.com/store/apps/details?id=com.pixelryu.parcelpals
+- Roblox: https://www.roblox.com/games/114439228304487/Parcel-Pals
 
 ### ISSEN (一閃)
 - Also known as: 一閃
 - Page: https://pixelryu.github.io/issen/
-- Platforms (declared): Android, iOS
+- Platforms (declared): iOS, Android, Roblox
 - Price: Free
 - About: ISSEN — a sumi-e timing-action game of the iaido draw by PixelRyu. Join the 14-day Android closed testing.
-- Google Play (Android closed test): https://play.google.com/apps/testing/com.pixelryu.issen
+- App Store (iOS): https://apps.apple.com/app/id6772437281
+- Google Play (Android): https://play.google.com/store/apps/details?id=com.pixelryu.issen
 - Roblox: https://www.roblox.com/games/96726954641087/ISSEN-Samurai-Slash
 
 ### HOTARU — The Lost House
 - Also known as: The Lost House
 - Page: https://pixelryu.github.io/hotaru/
-- Platforms (declared): Android, iOS, Roblox
+- Platforms (declared): iOS, Android, Roblox
 - Price: Free
 - About: HOTARU — a quiet Japanese horror walking simulator by PixelRyu. Join the 14-day Android closed testing.
 - App Store (iOS): https://apps.apple.com/app/id6770427114
-- Google Play (Android closed test): https://play.google.com/apps/testing/com.pixelryu.hotaru
+- Google Play (Android): https://play.google.com/store/apps/details?id=com.pixelryu.hotaru
 - Roblox: https://www.roblox.com/games/112246983745989/HOTARU-Lost-Manor
 
 ### Liquid Glow
 - Page: https://pixelryu.github.io/liquid-glow-cosmic/
-- Platforms (declared): iOS, Roblox
+- Platforms (declared): Roblox
 - Price: Free
 - About: Liquid Glow is a calm, luminous color-matching puzzle in deep space. Slide glowing light along the constellation so each star's ring matches its color. Out now on Roblox; coming soon to the App Store.
 - Roblox: https://www.roblox.com/games/121416912707355/Liquid-Glow-Sort-Puzzle
@@ -98,17 +106,17 @@ This file is the expanded, self-contained companion to /llms.txt. It inlines the
 - Platforms (declared): Android, Roblox
 - Price: Free
 - About: Liquid Glow — a cozy sort puzzle by PixelRyu. Out now on Roblox; join the 14-day Android closed testing.
+- Google Play (Android): https://play.google.com/store/apps/details?id=com.pixelryu.liquidglow
 - Roblox: https://www.roblox.com/games/121416912707355/Liquid-Glow-Sort-Puzzle
-- Google Play (Android closed test): https://play.google.com/apps/testing/com.pixelryu.liquidglow
 
 ### Mole Whack (モグラぽかぽか)
 - Also known as: モグラぽかぽか
 - Page: https://pixelryu.github.io/mole-whack/
-- Platforms (declared): Android, iOS
+- Platforms (declared): iOS, Android
 - Price: Free
 - About: Mole Whack — a casual stage-based tap game by PixelRyu. Hit the moles, clear the target, advance through 100 stages. Join the 14-day Android closed testing.
 - App Store (iOS): https://apps.apple.com/app/id6770864132
-- Google Play (Android closed test): https://play.google.com/apps/testing/com.pixelryu.molewhack
+- Google Play (Android): https://play.google.com/store/apps/details?id=com.pixelryu.molewhack
 
 ## How the multilingual site works
 
