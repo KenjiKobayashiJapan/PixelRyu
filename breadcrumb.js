@@ -34,7 +34,8 @@
     "hayate":      { all: "HAYATE" },
     "bounce-cat":  { all: "Bounce Cat" },
     "temari":      { all: "TEMARI" },
-    "tatami":      { all: "TATAMI" }
+    "tatami":      { all: "TATAMI" },
+    "counterparts": { all: "CounterParts" }
   };
 
   // Leaf page labels (localized). Privacy/Terms match the legal-page generator

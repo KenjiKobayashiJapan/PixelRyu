@@ -232,6 +232,40 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/"/>
   </url>
   <url>
+    <loc>https://pixelryu.github.io/counterparts/</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/counterparts/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/counterparts/"/>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/counterparts/og.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/counterparts/icon.png</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://pixelryu.github.io/counterparts/og.png?v=20260613211104</video:thumbnail_loc>
+      <video:title>CounterParts — Official Trailer</video:title>
+      <video:description>Official trailer for CounterParts by PixelRyu — a cozy mirror-twin grid puzzle. One swipe moves two twins, Light and Shade, one cell each in opposite directions; line both up to rest on their matching home pads inside a little brass tally counter.</video:description>
+      <video:content_loc>https://pixelryu.github.io/counterparts/promotion_H_en.mp4?v=20260614100539</video:content_loc>
+      <video:publication_date>2026-06-14T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/counterparts/privacy_policy.html</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/counterparts/terms_of_service.html</loc>
+    <lastmod>2026-06-13</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://pixelryu.github.io/temari/</loc>
     <lastmod>2026-06-11</lastmod>
     <changefreq>monthly</changefreq>

@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5MH53Z8LM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M5MH53Z8LM');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">CounterParts — Cozy Mirror-Twin Grid Puzzle Game</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="CounterParts — a cozy, minimalist mirror-twin grid puzzle by PixelRyu. One swipe moves two twins, Light and Shade, one cell each in opposite directions; line both up to rest on their matching home pads inside a little brass tally counter. 120 levels in 7 families, 12 languages. Coming soon to the App Store, Google Play, and Roblox.">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: radial-gradient(ellipse at top, #faf3e0 0%, #f3ebd6 52%, #e6d8b8 100%);
+    color: #3a2e1a;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .container { max-width: 580px; width: 100%; padding: 80px 32px; text-align: center; position: relative; }
+  .lang-switch { position: absolute; top: 24px; right: 24px; }
+  .lang-switch select { background: rgba(255,255,255,0.50); color: #7a5f1e; border: 1px solid rgba(168,128,31,0.40); border-radius: 4px; padding: 5px 10px; font-size: 13px; font-family: inherit; cursor: pointer; }
+  .lang-switch select:hover { background: rgba(255,255,255,0.70); border-color: #a8801f; }
+  .lang-switch select option { background: #f3ebd6; color: #3a2e1a; }
+  .brand-icon { width: 120px; height: 120px; border-radius: 28px; display: block; margin: 0 auto 20px; box-shadow: 0 8px 28px rgba(120,92,30,0.24), 0 0 0 1px rgba(168,128,31,0.22); }
+  .tagline { font-size: 14px; color: #8a7a52; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 3px; }
+  h1 { font-size: 48px; margin: 0 0 6px; color: #3a2e1a; font-weight: 800; letter-spacing: 0.5px; }
+  h1 .accent { color: #a8801f; }
+  .subtitle { font-size: 14px; color: #8a7a52; margin-bottom: 22px; text-transform: uppercase; letter-spacing: 2px; }
+  .hero-badges { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; margin: 18px 0 6px; }
+  .hero-badges svg { display: block; }
+  /* Unpublished on every platform: greyed badge + diagonal red COMING SOON stamp.
+     The stamp is a sibling of the badge so grayscale doesn't desaturate the red. */
+  .hero-badges .soon-cell { position: relative; display: inline-block; line-height: 0; }
+  .hero-badges .soon-cell svg { filter: grayscale(1); opacity: .5; }
+  .hero-badges .soon-cell .soon-stamp {
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-12deg);
+    color: #e11d1d; font-size: 12px; font-weight: 800; letter-spacing: 1px; white-space: nowrap;
+    text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff; pointer-events: none;
+  }
+  .soon-note { font-size: 13px; color: #8a7a52; margin: 6px 0 26px; }
+  .lead { font-size: 15px; line-height: 1.8; color: #5a4a2c; margin: 0 auto 26px; max-width: 480px; }
+  .legal-divider { font-size: 14px; color: #a79468; text-transform: uppercase; letter-spacing: 2px; margin: 8px 0 16px; }
+  .links { list-style: none; padding: 0; margin: 0; }
+  .links li { background: rgba(255,255,255,0.50); border: 1px solid rgba(168,128,31,0.32); border-radius: 14px; margin-bottom: 14px; transition: all 0.25s ease; }
+  .links li:hover { background: rgba(255,255,255,0.72); border-color: #a8801f; }
+  .links a { color: #9a7b1e; text-decoration: none; font-size: 18px; font-weight: 600; display: block; padding: 22px 24px; }
+  .back { display: inline-block; margin-top: 48px; color: #a79468; text-decoration: none; font-size: 14px; }
+  .back:hover { color: #a8801f; }
+  @media (max-width: 600px) {
+    .lang-switch { top: 16px; right: 16px; }
+    h1 { font-size: 40px; }
+    .brand-icon { width: 104px; height: 104px; border-radius: 24px; }
+  }
+  .faq-card { background: rgba(255,255,255,0.50); border: 1px solid rgba(168,128,31,0.32); border-radius: 16px; padding: 24px 24px 28px; margin: 4px 0 28px; text-align: left; box-shadow: 0 8px 24px rgba(120,92,30,0.10); }
+  .faq-card p { font-size: 14px; line-height: 1.65; color: #4a3c20; margin: 12px 0; }
+  .faq-card strong { color: #3a2e1a; }
+  .social-heading{font-size:13px;color:#8a7a52;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(168,128,31,0.10);border:1px solid rgba(168,128,31,0.25);color:#8a7a52;transition:all .25s ease;}
+  .social a:hover{background:rgba(168,128,31,0.18);border-color:rgba(168,128,31,0.50);color:#7a5f1e;transform:translateY(-2px);}
+  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+  .key-hero { display:block; width:100%; max-width:520px; margin:6px auto 22px; border-radius:18px; box-shadow:0 10px 34px rgba(120,92,30,0.28), 0 0 0 1px rgba(168,128,31,0.20); }
+  .promo-video { display:block; width:100%; max-width:560px; aspect-ratio:16/9; margin:6px auto 22px; border-radius:16px; background:#000; box-shadow:0 10px 34px rgba(120,92,30,0.30), 0 0 0 1px rgba(168,128,31,0.20); }
+  .world-gallery { margin:16px auto 10px; }
+  .world-gallery .wg-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; max-width:560px; margin:10px auto 0; }
+  .world-gallery img { width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(120,92,30,0.20), 0 0 0 1px rgba(168,128,31,0.16); display:block; }
+  @media (max-width:380px){ .world-gallery .wg-grid{ grid-template-columns:1fr; } }
+</style>
+<!-- SEO/LLMO start (managed) -->
+<link rel="canonical" href="https://pixelryu.github.io/counterparts/">
+<link rel="alternate" hreflang="en" href="https://pixelryu.github.io/counterparts/">
+<link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/counterparts/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="PixelRyu">
+<meta name="publisher" content="PixelRyu">
+<meta name="keywords" content="CounterParts, mirror twin puzzle, grid puzzle, turn-based puzzle, point symmetry, tally counter, cozy puzzle, minimalist puzzle, PixelRyu, indie game, Android, iOS, Roblox">
+<meta name="theme-color" content="#f3ebd6">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/counterparts/icon.png?v=20260613211104">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/counterparts/icon.png?v=20260613211104">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PixelRyu">
+<meta property="og:title" content="CounterParts — One swipe moves two.">
+<meta property="og:description" content="CounterParts — a cozy, minimalist mirror-twin grid puzzle by PixelRyu. One swipe moves two twins, Light and Shade, one cell each in opposite directions; line both up to rest on their matching home pads inside a little brass tally counter. 120 levels in 7 families. Coming soon to the App Store, Google Play, and Roblox.">
+<meta property="og:url" content="https://pixelryu.github.io/counterparts/">
+<meta property="og:image" content="https://pixelryu.github.io/counterparts/og.png?v=20260613211104">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="CounterParts — One swipe moves two. Light and Shade.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="CounterParts — One swipe moves two.">
+<meta name="twitter:description" content="A cozy, minimalist mirror-twin grid puzzle by PixelRyu. One swipe moves two twins, Light and Shade, one cell each in opposite directions, inside a little brass tally counter. Coming soon to the App Store, Google Play, and Roblox.">
+<meta name="twitter:image" content="https://pixelryu.github.io/counterparts/og.png?v=20260613211104">
+<meta name="twitter:image:alt" content="CounterParts — One swipe moves two. Light and Shade.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"CounterParts","genre":"Puzzle, Casual","url":"https://pixelryu.github.io/counterparts/","image":"https://pixelryu.github.io/counterparts/icon.png","description":"CounterParts — a cozy, minimalist mirror-twin grid puzzle by PixelRyu. One swipe moves two twins, Light (a warm amber filled disc) and Shade (a cool slate hollow ring), one cell each in opposite directions; line both up to rest on their matching home pads inside a little brass tally counter. 120 levels in 7 families. Coming soon to the App Store, Google Play, and Roblox.","applicationCategory":"GameApplication","operatingSystem":"iOS, Android, Roblox","author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/"},{"@type":"ListItem","position":2,"name":"CounterParts","item":"https://pixelryu.github.io/counterparts/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What kind of game is CounterParts?","acceptedAnswer":{"@type":"Answer","text":"CounterParts is a cozy, minimalist mirror-twin grid puzzle by PixelRyu. One swipe moves two twins — Light (a warm amber filled disc) and Shade (a cool slate hollow ring) — one cell each in opposite directions, and you guide both to rest on their matching-color home pads."}},{"@type":"Question","name":"Is CounterParts free to play?","acceptedAnswer":{"@type":"Answer","text":"Yes — CounterParts is free to play, supported by ads, with no in-app purchases."}},{"@type":"Question","name":"Where can I play CounterParts right now?","acceptedAnswer":{"@type":"Answer","text":"CounterParts is still in development and not yet released. It is coming soon to the App Store, Google Play, and Roblox."}},{"@type":"Question","name":"How do you play CounterParts?","acceptedAnswer":{"@type":"Answer","text":"Each swipe moves both twins one cell in opposite, point-symmetric directions. A wall or edge stops one twin but not the other, so you use that desync to bring both twins to rest on their own pads. Every move clicks the brass tally counter, and you can undo."}},{"@type":"Question","name":"Which languages does CounterParts support?","acceptedAnswer":{"@type":"Answer","text":"CounterParts is nearly text-free and supports 12 languages: English, Japanese, Chinese, Korean, Hindi, Indonesian, German, French, Italian, Spanish, Portuguese, and Russian."}}]}</script>
+<!-- SEO/LLMO end -->
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"CounterParts — Official Trailer","description":"Official trailer for CounterParts by PixelRyu — a cozy mirror-twin grid puzzle. One swipe moves two twins, Light and Shade, one cell each in opposite directions; line both up to rest on their matching home pads inside a little brass tally counter.","thumbnailUrl":"https://pixelryu.github.io/counterparts/og.png?v=20260613211104","uploadDate":"2026-06-14","contentUrl":"https://pixelryu.github.io/counterparts/promotion_H_en.mp4?v=20260614100539"}</script>
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch">
+    <select id="lang-select" aria-label="Language"></select>
+  </div>
+  <img src="icon.png?v=20260613211104" alt="CounterParts" class="brand-icon">
+  <div class="tagline" data-i18n="tagline">One swipe moves two.</div>
+  <h1>Counter<span class="accent">Parts</span></h1>
+  <div class="subtitle" data-i18n="subtitle">Cozy Mirror-Twin Grid Puzzle</div>
+  <video id="promo" class="promo-video" autoplay loop muted playsinline controls preload="auto" poster="key_hero.jpg?v=20260614065756">
+    <source src="promotion_H_en.mp4?v=20260614100539" type="video/mp4">
+  </video>
+
+  <section class="hero-badges" aria-label="Coming soon to the App Store, Google Play, and Roblox">
+    <span class="soon-cell" aria-label="Coming soon to the App Store"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+            <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+        </svg><span class="soon-stamp">COMING SOON</span></span>
+    <span class="soon-cell" aria-label="Coming soon to Google Play"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="11" width="22" height="22" viewBox="0 0 24 24">
+            <path fill="#000" d="M3.6 1.8 13.4 12 3.6 22.2c-.4-.2-.7-.6-.7-1.2V3c0-.6.3-1 .7-1.2zm10.9 11.2 2.6 2.6-3.2 1.8-2.2-2.2 2.8-2.2zm-2.8-1 2.8-2.8 3.2 1.8-2.6 2.6-3.4-1.6zm6.7-3.8 2.5 1.4c.8.5.8 1.7 0 2.2l-2.5 1.4-2.9-2.9 2.9-2.1z"/>
+          </svg>
+          <text x="40" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">GET IT ON</text>
+          <text x="39" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="16" font-weight="500">Google Play</text>
+        </svg><span class="soon-stamp">COMING SOON</span></span>
+    <span class="soon-cell" aria-label="Coming soon to Roblox"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+          <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+          <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
+            <g transform="rotate(13 13 13)">
+              <rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/>
+              <rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/>
+            </g>
+          </svg>
+          <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play soon on</text>
+          <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text>
+        </svg><span class="soon-stamp">COMING SOON</span></span>
+  </section>
+  <p class="soon-note" data-i18n="soon_note">In development — coming soon to the App Store, Google Play, and Roblox.</p>
+
+  <p class="lead" data-i18n="lead">CounterParts is a cozy, minimalist turn-based puzzle. One swipe moves two mirror twins at once — Light, a warm amber disc, and Shade, a cool slate ring — each sliding one cell in opposite, point-symmetric directions. A wall or the board's edge stops one twin while the other keeps going, and that desync is the whole puzzle: line both twins up so a single move brings them to rest together on their own matching home pads. No death, no timer — just quiet, click-by-click thinking inside a little brass tally counter. 120 levels across 7 families.</p>
+
+  <section class="world-gallery" aria-label="A peek inside the machine">
+    <h2 class="social-heading" data-i18n="gallery_heading">A peek inside the machine</h2>
+    <div class="wg-grid">
+      <img src="world_1.jpg?v=20260614065756" alt="The two mirror twins, a gold filled orb and a silver hollow ring, inside the brass window" loading="lazy">
+      <img src="world_2.jpg?v=20260614065756" alt="Both twins gliding one cell in opposite directions on the brass grid" loading="lazy">
+      <img src="world_3.jpg?v=20260614065756" alt="A wall stops one twin while the other keeps moving" loading="lazy">
+      <img src="world_4.jpg?v=20260614065756" alt="Both twins resting together on their matching home pads" loading="lazy">
+    </div>
+  </section>
+
+  <div class="legal-divider" data-i18n="legal_divider">Legal Documents</div>
+  <ul class="links">
+    <li><a href="privacy_policy.html" data-i18n="link_privacy">Privacy Policy</a></li>
+    <li><a href="terms_of_service.html" data-i18n="link_terms">Terms of Service</a></li>
+  </ul>
+  <h2 class="social-heading" data-i18n="faq_heading">FAQ</h2>
+  <section class="faq-card" id="faq">
+    <p><strong data-i18n="faq_q1">What kind of game is CounterParts?</strong></p>
+    <p data-i18n="faq_a1">CounterParts is a cozy, minimalist mirror-twin grid puzzle by PixelRyu. One swipe moves two twins — Light (a warm amber filled disc) and Shade (a cool slate hollow ring) — one cell each in opposite directions, and you guide both to rest on their matching-color home pads.</p>
+    <p><strong data-i18n="faq_q2">Is CounterParts free to play?</strong></p>
+    <p data-i18n="faq_a2">Yes — CounterParts is free to play, supported by ads, with no in-app purchases.</p>
+    <p><strong data-i18n="faq_q3">Where can I play CounterParts right now?</strong></p>
+    <p data-i18n="faq_a3">CounterParts is still in development and not yet released. It is coming soon to the App Store, Google Play, and Roblox.</p>
+    <p><strong data-i18n="faq_q4">How do you play CounterParts?</strong></p>
+    <p data-i18n="faq_a4">Each swipe moves both twins one cell in opposite, point-symmetric directions. A wall or edge stops one twin but not the other, so you use that desync to bring both twins to rest on their own pads. Every move clicks the brass tally counter, and you can undo.</p>
+    <p><strong data-i18n="faq_q5">Which languages does CounterParts support?</strong></p>
+    <p data-i18n="faq_a5">CounterParts is nearly text-free and supports 12 languages: English, Japanese, Chinese, Korean, Hindi, Indonesian, German, French, Italian, Spanish, Portuguese, and Russian.</p>
+  </section>
+  <h2 class="social-heading" data-i18n="more_games_heading">More games by PixelRyu</h2>
+  <ul class="links">
+    <li><a href="../tatami/"><span data-i18n="mg_1">TATAMI: Lay the Floor — cozy tatami block puzzle</span></a></li>
+    <li><a href="../bounce-cat/"><span data-i18n="mg_2">Bounce Cat — cozy maze-escape puzzle</span></a></li>
+    <li><a href="../sumlings/"><span data-i18n="mg_3">Sumlings — cozy number puzzle</span></a></li>
+  </ul>
+  <a href="../" class="back" data-i18n="back">← PixelRyu</a>
+  <h2 class="social-heading">Follow</h2>
+  <div class="social">
+    <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note"><svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+    <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+    en: {
+      title: "CounterParts — Cozy Mirror-Twin Grid Puzzle Game",
+      meta_desc: "CounterParts — a cozy, minimalist mirror-twin grid puzzle by PixelRyu. One swipe moves two twins, Light and Shade, one cell each in opposite directions; line both up to rest on their matching home pads inside a little brass tally counter. 120 levels in 7 families, 12 languages. Coming soon to the App Store, Google Play, and Roblox.",
+      tagline: "One swipe moves two.",
+      subtitle: "Cozy Mirror-Twin Grid Puzzle",
+      soon_note: "In development — coming soon to the App Store, Google Play, and Roblox.",
+      gallery_heading: "A peek inside the machine",
+      lead: "CounterParts is a cozy, minimalist turn-based puzzle. One swipe moves two mirror twins at once — Light, a warm amber disc, and Shade, a cool slate ring — each sliding one cell in opposite, point-symmetric directions. A wall or the board's edge stops one twin while the other keeps going, and that desync is the whole puzzle: line both twins up so a single move brings them to rest together on their own matching home pads. No death, no timer — just quiet, click-by-click thinking inside a little brass tally counter. 120 levels across 7 families.",
+      legal_divider: "Legal Documents",
+      link_privacy: "Privacy Policy",
+      link_terms: "Terms of Service",
+      back: "← PixelRyu",
+      faq_heading: "FAQ",
+      faq_q1: "What kind of game is CounterParts?",
+      faq_a1: "CounterParts is a cozy, minimalist mirror-twin grid puzzle by PixelRyu. One swipe moves two twins — Light (a warm amber filled disc) and Shade (a cool slate hollow ring) — one cell each in opposite directions, and you guide both to rest on their matching-color home pads.",
+      faq_q2: "Is CounterParts free to play?",
+      faq_a2: "Yes — CounterParts is free to play, supported by ads, with no in-app purchases.",
+      faq_q3: "Where can I play CounterParts right now?",
+      faq_a3: "CounterParts is still in development and not yet released. It is coming soon to the App Store, Google Play, and Roblox.",
+      faq_q4: "How do you play CounterParts?",
+      faq_a4: "Each swipe moves both twins one cell in opposite, point-symmetric directions. A wall or edge stops one twin but not the other, so you use that desync to bring both twins to rest on their own pads. Every move clicks the brass tally counter, and you can undo.",
+      faq_q5: "Which languages does CounterParts support?",
+      faq_a5: "CounterParts is nearly text-free and supports 12 languages: English, Japanese, Chinese, Korean, Hindi, Indonesian, German, French, Italian, Spanish, Portuguese, and Russian.",
+      more_games_heading: "More games by PixelRyu",
+      mg_1: "TATAMI: Lay the Floor — cozy tatami block puzzle",
+      mg_2: "Bounce Cat — cozy maze-escape puzzle",
+      mg_3: "Sumlings — cozy number puzzle"
+    },
+    ja: {
+      title: "CounterParts — ほっこり鏡像ツイン・グリッドパズル",
+      meta_desc: "CounterParts — PixelRyu によるほっこりミニマルな鏡像ツインのグリッドパズル。ひとなぞりで2人の分身、ライトとシェイドが反対方向へ1マスずつ動く。真鍮の数取り器の中で、どちらも自分の色のホームパッドにそろえよう。120レベル・7系統、12言語。App Store・Google Play・Roblox にて近日公開。",
+      tagline: "ひとなぞりで、ふたり動く。",
+      subtitle: "ほっこり鏡像ツイン・グリッドパズル",
+      soon_note: "開発中 — App Store・Google Play・Roblox にて近日公開。",
+      gallery_heading: "機械の中をのぞく",
+      lead: "CounterParts は、ほっこりミニマルなターン制パズルです。ひとなぞりで鏡像のツインが同時に動きます — 温かな琥珀色の円盤「ライト」と、冷たいスレート色のリング「シェイド」が、それぞれ点対称の反対方向へ1マスずつスライド。壁や盤の端が片方を止め、もう片方は進み続ける——このズレ（デシンク）こそがパズルの核心です。1手でふたりが同時に、それぞれ自分の色のホームパッドへ収まるように並べましょう。死もタイマーもなし——真鍮の数取り器の中で、カチ、カチと一手ずつ静かに考えるだけ。120レベル・7系統。",
+      legal_divider: "規約類",
+      link_privacy: "プライバシーポリシー",
+      link_terms: "利用規約",
+      back: "← PixelRyu へ戻る",
+      faq_heading: "よくある質問",
+      faq_q1: "CounterParts はどんなゲーム?",
+      faq_a1: "PixelRyu によるほっこりミニマルな鏡像ツインのグリッドパズルです。ひとなぞりで2人の分身——ライト（温かな琥珀色の塗りつぶし円盤）とシェイド（冷たいスレート色の中空リング）——が反対方向へ1マスずつ動き、どちらも自分の色のホームパッドへ導きます。",
+      faq_q2: "CounterParts は無料ですか?",
+      faq_a2: "はい。CounterParts は無料でプレイでき、広告で運営されます。アプリ内課金はありません。",
+      faq_q3: "今どこでプレイできますか?",
+      faq_a3: "CounterParts はまだ開発中で、未リリースです。App Store・Google Play・Roblox にて近日公開予定です。",
+      faq_q4: "どうやって遊ぶの?",
+      faq_a4: "ひとなぞりで、ふたりが点対称の反対方向へ1マスずつ動きます。壁や端は片方だけを止めるので、そのズレ（デシンク）を使って、ふたりをそれぞれのパッドにそろえます。一手ごとに数取り器がカチッと鳴り、巻き戻し（アンドゥ）もできます。",
+      faq_q5: "対応言語は?",
+      faq_a5: "CounterParts はほぼ文字を使わず、英語・日本語・中国語・韓国語・ヒンディー語・インドネシア語・ドイツ語・フランス語・イタリア語・スペイン語・ポルトガル語・ロシア語の12言語に対応しています。",
+      more_games_heading: "PixelRyu のほかのゲーム",
+      mg_1: "TATAMI: Lay the Floor — ほっこり畳ブロックパズル",
+      mg_2: "Bounce Cat — ほっこり迷路脱出パズル",
+      mg_3: "Sumlings — ほっこり数字パズル"
+    },
+    zh: {
+      title: "CounterParts — 暖心镜像双子方格解谜",
+      meta_desc: "CounterParts — PixelRyu 出品的暖心极简镜像双子方格解谜。一次滑动同时移动两个分身——光与影，各自朝相反方向移动一格；在黄铜数取器中让两者都停在各自同色的归位格上。120 关、7 个族系，支持 12 种语言。即将登陆 App Store、Google Play 与 Roblox。",
+      tagline: "一次滑动，双子同动。",
+      subtitle: "暖心镜像双子方格解谜",
+      soon_note: "开发中 — 即将登陆 App Store、Google Play 与 Roblox。",
+      gallery_heading: "机器内部一瞥",
+      lead: "CounterParts 是一款暖心极简的回合制解谜游戏。一次滑动会同时移动两个镜像双子——温暖琥珀色的圆盘「光」与冷调石板色的圆环「影」——各自朝点对称的相反方向移动一格。墙壁或棋盘边缘会挡住其中一个，另一个则继续前进——这种错位（desync）正是解谜的核心：摆好位置，让一次移动就能让两者同时停在各自同色的归位格上。没有死亡，没有计时——只是在一台小巧的黄铜数取器中，咔哒、咔哒地一步步静心思考。120 关，分为 7 个族系。",
+      legal_divider: "条款文件",
+      link_privacy: "隐私政策",
+      link_terms: "服务条款",
+      back: "← 返回 PixelRyu",
+      faq_heading: "常见问题",
+      faq_q1: "CounterParts 是什么类型的游戏？",
+      faq_a1: "这是 PixelRyu 出品的暖心极简镜像双子方格解谜。一次滑动同时移动两个分身——光（温暖琥珀色的实心圆盘）与影（冷调石板色的空心圆环）——各自朝相反方向移动一格，让两者都停在各自同色的归位格上。",
+      faq_q2: "CounterParts 免费吗？",
+      faq_a2: "是的，CounterParts 可以免费游玩，由广告支持，没有应用内购买。",
+      faq_q3: "现在可以在哪里玩？",
+      faq_a3: "CounterParts 仍在开发中，尚未发布。即将登陆 App Store、Google Play 与 Roblox。",
+      faq_q4: "怎么玩 CounterParts？",
+      faq_a4: "每次滑动都会让两个分身朝点对称的相反方向各移动一格。墙壁或边缘只挡住其中一个，你便利用这种错位让两者都停在各自的归位格上。每走一步，黄铜数取器都会咔哒作响，并且可以撤销。",
+      faq_q5: "支持哪些语言？",
+      faq_a5: "CounterParts 几乎不含文字，支持 12 种语言：英语、日语、中文、韩语、印地语、印尼语、德语、法语、意大利语、西班牙语、葡萄牙语和俄语。",
+      more_games_heading: "PixelRyu 的更多游戏",
+      mg_1: "TATAMI: Lay the Floor — 暖心榻榻米方块解谜",
+      mg_2: "Bounce Cat — 暖心迷宫脱出解谜",
+      mg_3: "Sumlings — 暖心数字解谜"
+    },
+    ko: {
+      title: "CounterParts — 아늑한 거울 쌍둥이 그리드 퍼즐",
+      meta_desc: "CounterParts — PixelRyu가 만든 아늑하고 미니멀한 거울 쌍둥이 그리드 퍼즐. 한 번의 스와이프로 두 쌍둥이, 라이트와 셰이드가 서로 반대 방향으로 한 칸씩 이동합니다. 황동 계수기 안에서 둘 다 각자 색의 홈 패드에 맞춰 보세요. 120레벨・7계열, 12개 언어. App Store・Google Play・Roblox에 곧 출시.",
+      tagline: "한 번의 스와이프, 둘이 움직인다.",
+      subtitle: "아늑한 거울 쌍둥이 그리드 퍼즐",
+      soon_note: "개발 중 — App Store・Google Play・Roblox에 곧 출시.",
+      gallery_heading: "기계 속을 들여다보기",
+      lead: "CounterParts는 아늑하고 미니멀한 턴제 퍼즐입니다. 한 번의 스와이프로 거울 쌍둥이가 동시에 움직입니다 — 따뜻한 호박색 원반 '라이트'와 차가운 슬레이트색 고리 '셰이드'가 각각 점대칭의 반대 방향으로 한 칸씩 미끄러집니다. 벽이나 보드의 가장자리가 한쪽을 멈추고 다른 쪽은 계속 나아가는데, 이 어긋남(디싱크)이 퍼즐의 전부입니다. 한 번의 이동으로 둘이 동시에 각자 색의 홈 패드에 안착하도록 맞춰 보세요. 죽음도 타이머도 없이 — 작은 황동 계수기 안에서, 딸깍딸깍 한 수씩 차분히 생각할 뿐입니다. 120레벨, 7계열.",
+      legal_divider: "약관 안내",
+      link_privacy: "개인정보 처리방침",
+      link_terms: "서비스 이용약관",
+      back: "← PixelRyu로 돌아가기",
+      faq_heading: "자주 묻는 질문",
+      faq_q1: "CounterParts는 어떤 게임인가요?",
+      faq_a1: "PixelRyu가 만든 아늑하고 미니멀한 거울 쌍둥이 그리드 퍼즐입니다. 한 번의 스와이프로 두 쌍둥이 — 라이트(따뜻한 호박색 채운 원반)와 셰이드(차가운 슬레이트색 빈 고리) — 가 반대 방향으로 한 칸씩 움직이며, 둘 다 각자 색의 홈 패드에 안착시킵니다.",
+      faq_q2: "CounterParts는 무료인가요?",
+      faq_a2: "네 — CounterParts는 무료로 플레이할 수 있으며 광고로 운영됩니다. 인앱 구매는 없습니다.",
+      faq_q3: "지금 어디에서 플레이할 수 있나요?",
+      faq_a3: "CounterParts는 아직 개발 중이며 출시되지 않았습니다. App Store・Google Play・Roblox에 곧 출시될 예정입니다.",
+      faq_q4: "어떻게 플레이하나요?",
+      faq_a4: "스와이프할 때마다 두 쌍둥이가 점대칭의 반대 방향으로 한 칸씩 이동합니다. 벽이나 가장자리는 한쪽만 멈추므로, 그 어긋남(디싱크)을 이용해 둘 다 각자의 패드에 안착시킵니다. 한 수마다 황동 계수기가 딸깍이며, 되돌리기도 가능합니다.",
+      faq_q5: "어떤 언어를 지원하나요?",
+      faq_a5: "CounterParts는 거의 텍스트가 없으며 영어, 일본어, 중국어, 한국어, 힌디어, 인도네시아어, 독일어, 프랑스어, 이탈리아어, 스페인어, 포르투갈어, 러시아어의 12개 언어를 지원합니다.",
+      more_games_heading: "PixelRyu의 다른 게임",
+      mg_1: "TATAMI: Lay the Floor — 아늑한 다다미 블록 퍼즐",
+      mg_2: "Bounce Cat — 아늑한 미로 탈출 퍼즐",
+      mg_3: "Sumlings — 아늑한 숫자 퍼즐"
+    },
+    hi: {
+      title: "CounterParts — आरामदायक मिरर-ट्विन ग्रिड पहेली",
+      meta_desc: "CounterParts — PixelRyu की एक आरामदायक, मिनिमल मिरर-ट्विन ग्रिड पहेली। एक स्वाइप से दो जुड़वाँ, लाइट और शेड, विपरीत दिशाओं में एक-एक खाना चलते हैं; एक पीतल के टैली काउंटर के भीतर दोनों को उनके अपने रंग के होम पैड पर लाएँ। 7 परिवारों में 120 स्तर, 12 भाषाएँ। App Store, Google Play और Roblox पर जल्द।",
+      tagline: "एक स्वाइप, दो चालें।",
+      subtitle: "आरामदायक मिरर-ट्विन ग्रिड पहेली",
+      soon_note: "विकासाधीन — App Store, Google Play और Roblox पर जल्द आ रही है।",
+      gallery_heading: "मशीन के भीतर एक झलक",
+      lead: "CounterParts एक आरामदायक, मिनिमल टर्न-आधारित पहेली है। एक स्वाइप से दो मिरर जुड़वाँ एक साथ चलते हैं — लाइट, एक गर्म अंबर डिस्क, और शेड, एक ठंडा स्लेट रंग का छल्ला — हर एक बिंदु-सममित विपरीत दिशा में एक-एक खाना खिसकता है। कोई दीवार या बोर्ड का किनारा एक जुड़वाँ को रोक देता है जबकि दूसरा चलता रहता है, और यही असंगति (desync) पूरी पहेली है: दोनों को ऐसे जमाएँ कि एक ही चाल में वे एक साथ अपने-अपने रंग के होम पैड पर आ टिकें। न मौत, न टाइमर — बस एक छोटे पीतल के टैली काउंटर के भीतर, क्लिक-दर-क्लिक शांत सोच। 7 परिवारों में 120 स्तर।",
+      legal_divider: "कानूनी दस्तावेज़",
+      link_privacy: "गोपनीयता नीति",
+      link_terms: "सेवा की शर्तें",
+      back: "← PixelRyu",
+      faq_heading: "अक्सर पूछे जाने वाले सवाल",
+      faq_q1: "CounterParts किस तरह का गेम है?",
+      faq_a1: "यह PixelRyu की एक आरामदायक, मिनिमल मिरर-ट्विन ग्रिड पहेली है। एक स्वाइप से दो जुड़वाँ — लाइट (गर्म अंबर भरी डिस्क) और शेड (ठंडा स्लेट रंग का खोखला छल्ला) — विपरीत दिशाओं में एक-एक खाना चलते हैं, और आप दोनों को उनके अपने रंग के होम पैड पर ले आते हैं।",
+      faq_q2: "क्या CounterParts मुफ़्त है?",
+      faq_a2: "हाँ — CounterParts खेलने के लिए मुफ़्त है, विज्ञापनों से समर्थित, बिना किसी इन-ऐप ख़रीद के।",
+      faq_q3: "अभी इसे कहाँ खेला जा सकता है?",
+      faq_a3: "CounterParts अभी विकासाधीन है और अभी रिलीज़ नहीं हुआ है। यह App Store, Google Play और Roblox पर जल्द आ रहा है।",
+      faq_q4: "CounterParts कैसे खेलें?",
+      faq_a4: "हर स्वाइप दोनों जुड़वाँओं को बिंदु-सममित विपरीत दिशाओं में एक-एक खाना चलाता है। दीवार या किनारा एक को रोकता है पर दूसरे को नहीं, इसलिए उस असंगति का उपयोग करके दोनों को उनके अपने पैड पर लाएँ। हर चाल पर पीतल का टैली काउंटर क्लिक करता है, और आप पूर्ववत (undo) कर सकते हैं।",
+      faq_q5: "कौन-कौन सी भाषाएँ समर्थित हैं?",
+      faq_a5: "CounterParts लगभग बिना टेक्स्ट का है और 12 भाषाओं का समर्थन करता है: अंग्रेज़ी, जापानी, चीनी, कोरियाई, हिंदी, इंडोनेशियाई, जर्मन, फ़्रेंच, इतालवी, स्पेनिश, पुर्तगाली और रूसी।",
+      more_games_heading: "PixelRyu के और गेम",
+      mg_1: "TATAMI: Lay the Floor — आरामदायक तातामी ब्लॉक पहेली",
+      mg_2: "Bounce Cat — आरामदायक भूलभुलैया पहेली",
+      mg_3: "Sumlings — आरामदायक संख्या पहेली"
+    },
+    id: {
+      title: "CounterParts — Teka-Teki Grid Kembar Cermin yang Hangat",
+      meta_desc: "CounterParts — teka-teki grid kembar-cermin yang hangat dan minimalis dari PixelRyu. Satu usapan menggerakkan dua kembar, Light dan Shade, masing-masing satu sel ke arah berlawanan; selaraskan keduanya di home pad berwarna senada di dalam pencacah kuningan. 120 level dalam 7 keluarga, 12 bahasa. Segera di App Store, Google Play, dan Roblox.",
+      tagline: "Satu usapan, dua bergerak.",
+      subtitle: "Teka-Teki Grid Kembar-Cermin yang Hangat",
+      soon_note: "Dalam pengembangan — segera hadir di App Store, Google Play, dan Roblox.",
+      gallery_heading: "Mengintip ke dalam mesin",
+      lead: "CounterParts adalah teka-teki berbasis giliran yang hangat dan minimalis. Satu usapan menggerakkan dua kembar-cermin sekaligus — Light, cakram amber yang hangat, dan Shade, cincin sewarna batu tulis yang sejuk — masing-masing meluncur satu sel ke arah berlawanan yang simetris-titik. Dinding atau tepi papan menghentikan satu kembar sementara yang lain terus melaju, dan ketidakselarasan (desync) itulah inti seluruh teka-tekinya: tata keduanya agar dengan satu gerakan mereka berhenti bersamaan di home pad berwarna senada masing-masing. Tanpa kematian, tanpa pengatur waktu — hanya berpikir tenang, klik demi klik, di dalam pencacah kuningan kecil. 120 level dalam 7 keluarga.",
+      legal_divider: "Dokumen Hukum",
+      link_privacy: "Kebijakan Privasi",
+      link_terms: "Ketentuan Layanan",
+      back: "← PixelRyu",
+      faq_heading: "FAQ",
+      faq_q1: "Game seperti apa CounterParts itu?",
+      faq_a1: "CounterParts adalah teka-teki grid kembar-cermin yang hangat dan minimalis dari PixelRyu. Satu usapan menggerakkan dua kembar — Light (cakram amber terisi) dan Shade (cincin sewarna batu tulis berongga) — masing-masing satu sel ke arah berlawanan, dan kamu mengarahkan keduanya ke home pad berwarna senada.",
+      faq_q2: "Apakah CounterParts gratis?",
+      faq_a2: "Ya — CounterParts gratis dimainkan, didukung iklan, tanpa pembelian dalam aplikasi.",
+      faq_q3: "Di mana saya bisa memainkannya sekarang?",
+      faq_a3: "CounterParts masih dalam pengembangan dan belum dirilis. Game ini segera hadir di App Store, Google Play, dan Roblox.",
+      faq_q4: "Bagaimana cara memainkan CounterParts?",
+      faq_a4: "Setiap usapan menggerakkan kedua kembar satu sel ke arah berlawanan yang simetris-titik. Dinding atau tepi menghentikan satu kembar tetapi tidak yang lain, jadi kamu memakai ketidakselarasan itu untuk membawa keduanya berhenti di pad masing-masing. Setiap gerakan membuat pencacah kuningan berklik, dan kamu bisa membatalkan (undo).",
+      faq_q5: "Bahasa apa saja yang didukung CounterParts?",
+      faq_a5: "CounterParts hampir tanpa teks dan mendukung 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia.",
+      more_games_heading: "Game lain dari PixelRyu",
+      mg_1: "TATAMI: Lay the Floor — teka-teki balok tatami yang hangat",
+      mg_2: "Bounce Cat — teka-teki kabur-dari-labirin yang hangat",
+      mg_3: "Sumlings — teka-teki angka yang hangat"
+    },
+    de: {
+      title: "CounterParts — Gemütliches Spiegel-Zwillings-Gitterpuzzle",
+      meta_desc: "CounterParts — ein gemütliches, minimalistisches Spiegel-Zwillings-Gitterpuzzle von PixelRyu. Ein Wisch bewegt zwei Zwillinge, Light und Shade, je ein Feld in entgegengesetzte Richtungen; bring beide auf ihre farblich passenden Ziel­felder im Inneren eines messingfarbenen Zählwerks. 120 Level in 7 Familien, 12 Sprachen. Bald im App Store, bei Google Play und auf Roblox.",
+      tagline: "Ein Wisch bewegt zwei.",
+      subtitle: "Gemütliches Spiegel-Zwillings-Gitterpuzzle",
+      soon_note: "In Entwicklung — bald im App Store, bei Google Play und auf Roblox.",
+      gallery_heading: "Ein Blick ins Innere der Maschine",
+      lead: "CounterParts ist ein gemütliches, minimalistisches rundenbasiertes Puzzle. Ein Wisch bewegt zwei Spiegel-Zwillinge zugleich — Light, eine warme bernsteinfarbene Scheibe, und Shade, ein kühler schiefergrauer Ring — die jeweils ein Feld in entgegengesetzte, punktsymmetrische Richtungen gleiten. Eine Wand oder der Spielfeldrand stoppt einen Zwilling, während der andere weiterläuft, und genau dieser Versatz (Desync) ist das ganze Rätsel: stell beide so auf, dass sie mit einem einzigen Zug gemeinsam auf ihren eigenen, farblich passenden Zielfeldern zur Ruhe kommen. Kein Tod, keine Uhr — nur stilles, Klick für Klick durchdachtes Spielen im Inneren eines kleinen Messing-Zählwerks. 120 Level in 7 Familien.",
+      legal_divider: "Rechtliche Dokumente",
+      link_privacy: "Datenschutzerklärung",
+      link_terms: "Nutzungsbedingungen",
+      back: "← PixelRyu",
+      faq_heading: "FAQ",
+      faq_q1: "Was für ein Spiel ist CounterParts?",
+      faq_a1: "CounterParts ist ein gemütliches, minimalistisches Spiegel-Zwillings-Gitterpuzzle von PixelRyu. Ein Wisch bewegt zwei Zwillinge — Light (eine warme bernsteinfarbene, gefüllte Scheibe) und Shade (ein kühler schiefergrauer, hohler Ring) — je ein Feld in entgegengesetzte Richtungen, und du führst beide auf ihre farblich passenden Zielfelder.",
+      faq_q2: "Ist CounterParts kostenlos?",
+      faq_a2: "Ja — CounterParts ist kostenlos spielbar, werbefinanziert, ohne In-App-Käufe.",
+      faq_q3: "Wo kann ich CounterParts gerade spielen?",
+      faq_a3: "CounterParts ist noch in Entwicklung und noch nicht veröffentlicht. Es kommt bald in den App Store, zu Google Play und auf Roblox.",
+      faq_q4: "Wie spielt man CounterParts?",
+      faq_a4: "Jeder Wisch bewegt beide Zwillinge ein Feld in entgegengesetzte, punktsymmetrische Richtungen. Eine Wand oder Kante stoppt einen Zwilling, aber nicht den anderen, also nutzt du diesen Versatz, um beide auf ihren eigenen Zielfeldern zur Ruhe zu bringen. Jeder Zug lässt das Messing-Zählwerk klicken, und du kannst Züge rückgängig machen.",
+      faq_q5: "Welche Sprachen unterstützt CounterParts?",
+      faq_a5: "CounterParts ist nahezu textfrei und unterstützt 12 Sprachen: Englisch, Japanisch, Chinesisch, Koreanisch, Hindi, Indonesisch, Deutsch, Französisch, Italienisch, Spanisch, Portugiesisch und Russisch.",
+      more_games_heading: "Mehr Spiele von PixelRyu",
+      mg_1: "TATAMI: Lay the Floor — gemütliches Tatami-Block-Puzzle",
+      mg_2: "Bounce Cat — gemütliches Labyrinth-Fluchtpuzzle",
+      mg_3: "Sumlings — gemütliches Zahlenpuzzle"
+    },
+    fr: {
+      title: "CounterParts — Puzzle de grille à jumeaux miroir, douillet",
+      meta_desc: "CounterParts — un puzzle de grille à jumeaux miroir, douillet et minimaliste, par PixelRyu. Un seul balayage déplace deux jumeaux, Light et Shade, d'une case chacun en sens opposés ; alignez-les sur leurs cases d'arrivée de la bonne couleur, dans un compteur mécanique en laiton. 120 niveaux en 7 familles, 12 langues. Bientôt sur l'App Store, Google Play et Roblox.",
+      tagline: "Un balayage en déplace deux.",
+      subtitle: "Puzzle de grille à jumeaux miroir, douillet",
+      soon_note: "En développement — bientôt sur l'App Store, Google Play et Roblox.",
+      gallery_heading: "Un coup d'œil dans la machine",
+      lead: "CounterParts est un puzzle au tour par tour, douillet et minimaliste. Un seul balayage déplace deux jumeaux miroir à la fois — Light, un disque d'ambre chaud, et Shade, un anneau gris ardoise froid — chacun glissant d'une case en sens opposés, en symétrie centrale. Un mur ou le bord du plateau arrête un jumeau tandis que l'autre continue, et ce décalage (desync) est tout le puzzle : placez-les de sorte qu'un seul coup les amène à s'immobiliser ensemble sur leurs propres cases d'arrivée de la bonne couleur. Ni mort, ni minuteur — juste une réflexion tranquille, clic après clic, à l'intérieur d'un petit compteur en laiton. 120 niveaux en 7 familles.",
+      legal_divider: "Documents juridiques",
+      link_privacy: "Politique de confidentialité",
+      link_terms: "Conditions d'utilisation",
+      back: "← PixelRyu",
+      faq_heading: "FAQ",
+      faq_q1: "Quel genre de jeu est CounterParts ?",
+      faq_a1: "CounterParts est un puzzle de grille à jumeaux miroir, douillet et minimaliste, par PixelRyu. Un seul balayage déplace deux jumeaux — Light (un disque d'ambre chaud, plein) et Shade (un anneau gris ardoise froid, creux) — d'une case chacun en sens opposés, et vous les amenez tous deux sur leurs cases d'arrivée de la bonne couleur.",
+      faq_q2: "CounterParts est-il gratuit ?",
+      faq_a2: "Oui — CounterParts est gratuit, financé par la publicité, sans achats intégrés.",
+      faq_q3: "Où puis-je jouer à CounterParts dès maintenant ?",
+      faq_a3: "CounterParts est encore en développement et pas encore sorti. Il arrive bientôt sur l'App Store, Google Play et Roblox.",
+      faq_q4: "Comment joue-t-on à CounterParts ?",
+      faq_a4: "Chaque balayage déplace les deux jumeaux d'une case en sens opposés, en symétrie centrale. Un mur ou un bord arrête un jumeau mais pas l'autre ; vous utilisez ce décalage pour amener les deux à s'immobiliser sur leurs propres cases. Chaque coup fait cliqueter le compteur en laiton, et vous pouvez annuler.",
+      faq_q5: "Quelles langues CounterParts prend-il en charge ?",
+      faq_a5: "CounterParts est presque sans texte et prend en charge 12 langues : anglais, japonais, chinois, coréen, hindi, indonésien, allemand, français, italien, espagnol, portugais et russe.",
+      more_games_heading: "Plus de jeux de PixelRyu",
+      mg_1: "TATAMI: Lay the Floor — puzzle de blocs tatami, douillet",
+      mg_2: "Bounce Cat — puzzle d'évasion de labyrinthe, douillet",
+      mg_3: "Sumlings — puzzle de nombres, douillet"
+    },
+    it: {
+      title: "CounterParts — Accogliente puzzle a griglia con gemelli speculari",
+      meta_desc: "CounterParts — un accogliente puzzle a griglia con gemelli speculari, minimalista, di PixelRyu. Una sola passata muove due gemelli, Light e Shade, di una casella ciascuno in direzioni opposte; allineali entrambi sulle loro caselle d'arrivo dello stesso colore, dentro un contatore meccanico in ottone. 120 livelli in 7 famiglie, 12 lingue. Presto su App Store, Google Play e Roblox.",
+      tagline: "Una passata ne muove due.",
+      subtitle: "Accogliente puzzle a griglia con gemelli speculari",
+      soon_note: "In sviluppo — presto su App Store, Google Play e Roblox.",
+      gallery_heading: "Uno sguardo dentro la macchina",
+      lead: "CounterParts è un accogliente puzzle a turni, minimalista. Una sola passata muove due gemelli speculari insieme — Light, un disco d'ambra caldo, e Shade, un anello grigio ardesia freddo — ciascuno scivola di una casella in direzioni opposte, in simmetria centrale. Un muro o il bordo della scacchiera ferma un gemello mentre l'altro prosegue, e questo disallineamento (desync) è tutto il puzzle: disponili in modo che con una sola mossa si fermino insieme sulle proprie caselle d'arrivo dello stesso colore. Niente morte, niente timer — solo un pensiero tranquillo, clic dopo clic, dentro un piccolo contatore in ottone. 120 livelli in 7 famiglie.",
+      legal_divider: "Documenti legali",
+      link_privacy: "Informativa sulla privacy",
+      link_terms: "Termini di servizio",
+      back: "← PixelRyu",
+      faq_heading: "FAQ",
+      faq_q1: "Che tipo di gioco è CounterParts?",
+      faq_a1: "CounterParts è un accogliente puzzle a griglia con gemelli speculari, minimalista, di PixelRyu. Una sola passata muove due gemelli — Light (un disco d'ambra caldo, pieno) e Shade (un anello grigio ardesia freddo, cavo) — di una casella ciascuno in direzioni opposte, e tu li porti entrambi sulle loro caselle d'arrivo dello stesso colore.",
+      faq_q2: "CounterParts è gratis?",
+      faq_a2: "Sì — CounterParts è gratuito, supportato dalla pubblicità, senza acquisti in-app.",
+      faq_q3: "Dove posso giocare a CounterParts ora?",
+      faq_a3: "CounterParts è ancora in sviluppo e non è ancora uscito. Arriverà presto su App Store, Google Play e Roblox.",
+      faq_q4: "Come si gioca a CounterParts?",
+      faq_a4: "Ogni passata muove entrambi i gemelli di una casella in direzioni opposte, in simmetria centrale. Un muro o un bordo ferma un gemello ma non l'altro, così usi quel disallineamento per portarli entrambi a fermarsi sulle proprie caselle. Ogni mossa fa scattare il contatore in ottone, e puoi annullare.",
+      faq_q5: "Quali lingue supporta CounterParts?",
+      faq_a5: "CounterParts è quasi privo di testo e supporta 12 lingue: inglese, giapponese, cinese, coreano, hindi, indonesiano, tedesco, francese, italiano, spagnolo, portoghese e russo.",
+      more_games_heading: "Altri giochi di PixelRyu",
+      mg_1: "TATAMI: Lay the Floor — accogliente puzzle a blocchi tatami",
+      mg_2: "Bounce Cat — accogliente puzzle di fuga dal labirinto",
+      mg_3: "Sumlings — accogliente puzzle numerico"
+    },
+    es: {
+      title: "CounterParts — Acogedor puzle de cuadrícula con gemelos espejo",
+      meta_desc: "CounterParts — un acogedor puzle de cuadrícula con gemelos espejo, minimalista, de PixelRyu. Un solo deslizamiento mueve dos gemelos, Light y Shade, una casilla cada uno en direcciones opuestas; alinéalos a ambos en sus casillas de destino del color correspondiente, dentro de un contador mecánico de latón. 120 niveles en 7 familias, 12 idiomas. Pronto en App Store, Google Play y Roblox.",
+      tagline: "Un deslizamiento mueve dos.",
+      subtitle: "Acogedor puzle de cuadrícula con gemelos espejo",
+      soon_note: "En desarrollo — pronto en App Store, Google Play y Roblox.",
+      gallery_heading: "Un vistazo dentro de la máquina",
+      lead: "CounterParts es un acogedor puzle por turnos, minimalista. Un solo deslizamiento mueve a dos gemelos espejo a la vez — Light, un disco de ámbar cálido, y Shade, un anillo gris pizarra frío — cada uno se desliza una casilla en direcciones opuestas, con simetría central. Un muro o el borde del tablero detiene a un gemelo mientras el otro sigue, y ese desfase (desync) es todo el puzle: colócalos de modo que con un solo movimiento se detengan juntos en sus propias casillas de destino del color correspondiente. Sin muertes, sin temporizador — solo pensar con calma, clic a clic, dentro de un pequeño contador de latón. 120 niveles en 7 familias.",
+      legal_divider: "Documentos legales",
+      link_privacy: "Política de privacidad",
+      link_terms: "Términos del servicio",
+      back: "← PixelRyu",
+      faq_heading: "Preguntas frecuentes",
+      faq_q1: "¿Qué tipo de juego es CounterParts?",
+      faq_a1: "CounterParts es un acogedor puzle de cuadrícula con gemelos espejo, minimalista, de PixelRyu. Un solo deslizamiento mueve a dos gemelos — Light (un disco de ámbar cálido, relleno) y Shade (un anillo gris pizarra frío, hueco) — una casilla cada uno en direcciones opuestas, y llevas a ambos a sus casillas de destino del color correspondiente.",
+      faq_q2: "¿CounterParts es gratis?",
+      faq_a2: "Sí — CounterParts es gratis, financiado con anuncios, sin compras dentro de la aplicación.",
+      faq_q3: "¿Dónde puedo jugar a CounterParts ahora mismo?",
+      faq_a3: "CounterParts aún está en desarrollo y todavía no se ha lanzado. Llegará pronto a App Store, Google Play y Roblox.",
+      faq_q4: "¿Cómo se juega a CounterParts?",
+      faq_a4: "Cada deslizamiento mueve a ambos gemelos una casilla en direcciones opuestas, con simetría central. Un muro o borde detiene a un gemelo pero no al otro, así que usas ese desfase para que ambos se detengan en sus propias casillas. Cada movimiento hace sonar el contador de latón, y puedes deshacer.",
+      faq_q5: "¿Qué idiomas admite CounterParts?",
+      faq_a5: "CounterParts es casi sin texto y admite 12 idiomas: inglés, japonés, chino, coreano, hindi, indonesio, alemán, francés, italiano, español, portugués y ruso.",
+      more_games_heading: "Más juegos de PixelRyu",
+      mg_1: "TATAMI: Lay the Floor — acogedor puzle de bloques de tatami",
+      mg_2: "Bounce Cat — acogedor puzle de escape de laberinto",
+      mg_3: "Sumlings — acogedor puzle numérico"
+    },
+    pt: {
+      title: "CounterParts — Aconchegante quebra-cabeça de grade com gêmeos espelhados",
+      meta_desc: "CounterParts — um aconchegante quebra-cabeça de grade com gêmeos espelhados, minimalista, da PixelRyu. Um só deslize move dois gêmeos, Light e Shade, uma célula cada em direções opostas; alinhe ambos em seus campos de destino da cor correspondente, dentro de um contador mecânico de latão. 120 níveis em 7 famílias, 12 idiomas. Em breve na App Store, no Google Play e no Roblox.",
+      tagline: "Um deslize move dois.",
+      subtitle: "Aconchegante quebra-cabeça de grade com gêmeos espelhados",
+      soon_note: "Em desenvolvimento — em breve na App Store, no Google Play e no Roblox.",
+      gallery_heading: "Uma espiada dentro da máquina",
+      lead: "CounterParts é um aconchegante quebra-cabeça por turnos, minimalista. Um só deslize move dois gêmeos espelhados ao mesmo tempo — Light, um disco âmbar quente, e Shade, um anel cinza-ardósia frio — cada um desliza uma célula em direções opostas, em simetria central. Uma parede ou a borda do tabuleiro para um gêmeo enquanto o outro segue, e esse descompasso (desync) é todo o quebra-cabeça: posicione-os de modo que, com um único movimento, parem juntos em seus próprios campos de destino da cor correspondente. Sem morte, sem cronômetro — apenas um raciocínio tranquilo, clique a clique, dentro de um pequeno contador de latão. 120 níveis em 7 famílias.",
+      legal_divider: "Documentos legais",
+      link_privacy: "Política de Privacidade",
+      link_terms: "Termos de Serviço",
+      back: "← PixelRyu",
+      faq_heading: "Perguntas frequentes",
+      faq_q1: "Que tipo de jogo é CounterParts?",
+      faq_a1: "CounterParts é um aconchegante quebra-cabeça de grade com gêmeos espelhados, minimalista, da PixelRyu. Um só deslize move dois gêmeos — Light (um disco âmbar quente, preenchido) e Shade (um anel cinza-ardósia frio, vazado) — uma célula cada em direções opostas, e você leva ambos aos seus campos de destino da cor correspondente.",
+      faq_q2: "CounterParts é gratuito?",
+      faq_a2: "Sim — CounterParts é gratuito, sustentado por anuncios, sem compras no aplicativo.",
+      faq_q3: "Onde posso jogar CounterParts agora?",
+      faq_a3: "CounterParts ainda está em desenvolvimento e ainda não foi lançado. Chegará em breve à App Store, ao Google Play e ao Roblox.",
+      faq_q4: "Como se joga CounterParts?",
+      faq_a4: "Cada deslize move os dois gêmeos uma célula em direções opostas, em simetria central. Uma parede ou borda para um gêmeo, mas não o outro, então você usa esse descompasso para fazer ambos pararem em seus próprios campos. Cada movimento faz o contador de latão clicar, e você pode desfazer.",
+      faq_q5: "Quais idiomas o CounterParts suporta?",
+      faq_a5: "CounterParts é quase sem texto e suporta 12 idiomas: inglês, japonês, chinês, coreano, híndi, indonésio, alemão, francês, italiano, espanhol, português e russo.",
+      more_games_heading: "Mais jogos da PixelRyu",
+      mg_1: "TATAMI: Lay the Floor — aconchegante quebra-cabeça de blocos de tatame",
+      mg_2: "Bounce Cat — aconchegante quebra-cabeça de fuga de labirinto",
+      mg_3: "Sumlings — aconchegante quebra-cabeça numérico"
+    },
+    ru: {
+      title: "CounterParts — уютная головоломка на сетке с зеркальными близнецами",
+      meta_desc: "CounterParts — уютная минималистичная головоломка на сетке с зеркальными близнецами от PixelRyu. Один свайп двигает двух близнецов, Light и Shade, каждого на одну клетку в противоположные стороны; приведите обоих на свои клетки-пристани подходящего цвета внутри латунного счётчика-кликера. 120 уровней в 7 семействах, 12 языков. Скоро в App Store, Google Play и Roblox.",
+      tagline: "Один свайп двигает двоих.",
+      subtitle: "Уютная головоломка с зеркальными близнецами",
+      soon_note: "В разработке — скоро в App Store, Google Play и Roblox.",
+      gallery_heading: "Загляните внутрь механизма",
+      lead: "CounterParts — это уютная минималистичная пошаговая головоломка. Один свайп двигает сразу двух зеркальных близнецов — Light, тёплый янтарный диск, и Shade, холодное кольцо цвета сланца — каждый скользит на одну клетку в противоположных, центрально-симметричных направлениях. Стена или край поля останавливает одного близнеца, пока другой продолжает движение, и именно это рассогласование (desync) и есть вся головоломка: расставьте их так, чтобы за один ход оба одновременно остановились на своих клетках-пристанях подходящего цвета. Ни смерти, ни таймера — только тихое, ход за ходом, размышление внутри маленького латунного счётчика. 120 уровней в 7 семействах.",
+      legal_divider: "Юридические документы",
+      link_privacy: "Политика конфиденциальности",
+      link_terms: "Условия использования",
+      back: "← PixelRyu",
+      faq_heading: "Частые вопросы",
+      faq_q1: "Что за игра CounterParts?",
+      faq_a1: "CounterParts — уютная минималистичная головоломка на сетке с зеркальными близнецами от PixelRyu. Один свайп двигает двух близнецов — Light (тёплый янтарный заполненный диск) и Shade (холодное полое кольцо цвета сланца) — каждого на одну клетку в противоположные стороны, и вы приводите обоих на свои клетки-пристани подходящего цвета.",
+      faq_q2: "CounterParts бесплатна?",
+      faq_a2: "Да — CounterParts бесплатна, поддерживается рекламой, без внутриигровых покупок.",
+      faq_q3: "Где можно поиграть в CounterParts прямо сейчас?",
+      faq_a3: "CounterParts ещё в разработке и пока не вышла. Она скоро появится в App Store, Google Play и Roblox.",
+      faq_q4: "Как играть в CounterParts?",
+      faq_a4: "Каждый свайп двигает обоих близнецов на одну клетку в противоположных, центрально-симметричных направлениях. Стена или край останавливает одного близнеца, но не другого, поэтому вы используете это рассогласование, чтобы привести обоих на свои клетки. Каждый ход щёлкает латунным счётчиком, и можно отменять ходы.",
+      faq_q5: "Какие языки поддерживает CounterParts?",
+      faq_a5: "CounterParts почти без текста и поддерживает 12 языков: английский, японский, китайский, корейский, хинди, индонезийский, немецкий, французский, итальянский, испанский, португальский и русский.",
+      more_games_heading: "Другие игры PixelRyu",
+      mg_1: "TATAMI: Lay the Floor — уютная головоломка с укладкой татами",
+      mg_2: "Bounce Cat — уютная головоломка-побег из лабиринта",
+      mg_3: "Sumlings — уютная числовая головоломка"
+    }
+  };
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
+
+  function detectLang() {
+    try {
+      const stored = localStorage.getItem(LANG_STORAGE_KEY);
+      if (stored && i18n[stored]) return stored;
+    } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang, persist) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    // 言語に合わせてプロモ動画を切替（日本語=日本語字幕版／他=英語字幕版）
+    const v = document.getElementById('promo');
+    if (v) {
+      const file = (lang === 'ja') ? 'promotion_H_ja.mp4?v=20260614100539' : 'promotion_H_en.mp4?v=20260614100539';
+      const src = v.querySelector('source');
+      if (src && src.getAttribute('src') !== file) {
+        src.setAttribute('src', file);
+        v.load();
+        const pr = v.play(); if (pr && pr.catch) pr.catch(() => {});
+      }
+    }
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code;
+      opt.textContent = l.flag + ' ' + l.name;
+      sel.appendChild(opt);
+    }
+    // Single in-place page (no per-language subpaths yet): swap text live, persist choice.
+    setLang(detectLang(), true);
+    sel.addEventListener('change', function (e) { setLang(e.target.value, true); });
+  })();
+</script>
+<script src="../breadcrumb.js?v=20260614110858" defer></script>
+</body>
+</html>
