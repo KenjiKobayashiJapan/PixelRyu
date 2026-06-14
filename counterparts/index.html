@@ -72,6 +72,17 @@
   .social svg{width:22px;height:22px;fill:currentColor;display:block;}
   .key-hero { display:block; width:100%; max-width:520px; margin:6px auto 22px; border-radius:18px; box-shadow:0 10px 34px rgba(120,92,30,0.28), 0 0 0 1px rgba(168,128,31,0.20); }
   .promo-video { display:block; width:100%; max-width:560px; aspect-ratio:16/9; margin:6px auto 22px; border-radius:16px; background:#000; box-shadow:0 10px 34px rgba(120,92,30,0.30), 0 0 0 1px rgba(168,128,31,0.20); }
+  .tester-card-base { background:rgba(184,137,62,0.06); border:1px solid rgba(168,128,31,0.28); border-radius:16px; padding:24px 24px 28px; margin:34px auto 30px; max-width:560px; text-align:left; box-shadow:0 8px 24px rgba(120,92,30,0.12); }
+  .tester-heading { font-size:13px; color:#a8801f; text-transform:uppercase; letter-spacing:2px; margin:0 0 4px; font-weight:700; text-align:center; }
+  .tester-android-note { display:block; font-size:11px; color:#8a7a52; text-transform:none; letter-spacing:0; font-weight:400; margin-bottom:16px; text-align:center; }
+  .tester-card-base p { font-size:14px; line-height:1.65; color:#5a4a2c; margin:12px 0; }
+  .tester-section-label { font-size:13px; font-weight:700; color:#8a5e1a; margin:20px 0 6px; }
+  .tester-step { display:block; background:rgba(184,137,62,0.12); border:1px solid rgba(168,128,31,0.38); border-radius:10px; padding:12px 16px; margin:10px 0; color:#7a531a; text-decoration:none; font-weight:600; font-size:14px; transition:all .2s ease; }
+  .tester-step:hover { background:rgba(184,137,62,0.22); border-color:rgba(168,128,31,0.66); }
+  .tester-card-base ul { margin:6px 0 0; padding-left:22px; color:#5a4a2c; font-size:14px; line-height:1.7; }
+  .tester-note { color:#8a7a52; font-size:13px; margin-top:18px; }
+  .hero-badges a.store-live { display:inline-block; line-height:0; border-radius:9px; transition:transform .2s ease; }
+  .hero-badges a.store-live:hover { transform:translateY(-2px); }
   .world-gallery { margin:16px auto 10px; }
   .world-gallery .wg-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; max-width:560px; margin:10px auto 0; }
   .world-gallery img { width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(120,92,30,0.20), 0 0 0 1px rgba(168,128,31,0.16); display:block; }
@@ -142,14 +153,14 @@
           <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
           <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
         </svg><span class="soon-stamp">COMING SOON</span></span>
-    <span class="soon-cell" aria-label="Coming soon to Google Play"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
+    <a class="store-live" href="#tester-heading" aria-label="Join CounterParts Android testers (Google Play closed test)"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
           <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
           <svg x="11" y="11" width="22" height="22" viewBox="0 0 24 24">
             <path fill="#000" d="M3.6 1.8 13.4 12 3.6 22.2c-.4-.2-.7-.6-.7-1.2V3c0-.6.3-1 .7-1.2zm10.9 11.2 2.6 2.6-3.2 1.8-2.2-2.2 2.8-2.2zm-2.8-1 2.8-2.8 3.2 1.8-2.6 2.6-3.4-1.6zm6.7-3.8 2.5 1.4c.8.5.8 1.7 0 2.2l-2.5 1.4-2.9-2.9 2.9-2.1z"/>
           </svg>
           <text x="40" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">GET IT ON</text>
           <text x="39" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="16" font-weight="500">Google Play</text>
-        </svg><span class="soon-stamp">COMING SOON</span></span>
+        </svg></a>
     <span class="soon-cell" aria-label="Coming soon to Roblox"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg">
           <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
           <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
@@ -174,6 +185,33 @@
       <img src="world_3.jpg?v=20260614065756" alt="A wall stops one twin while the other keeps moving" loading="lazy">
       <img src="world_4.jpg?v=20260614065756" alt="Both twins resting together on their matching home pads" loading="lazy">
     </div>
+  </section>
+
+  <section class="tester-card-base" aria-labelledby="tester-heading">
+    <div id="tester-heading" class="tester-heading">
+      🎁 <span data-i18n="tester_heading">Android Tester Recruitment</span>
+      <span class="tester-android-note">📱 <span data-i18n="tester_android_note">Android only</span></span>
+    </div>
+    <p data-i18n="tester_intro">Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.</p>
+    <div class="tester-section-label">📦 <span data-i18n="tester_what_label">What it is</span></div>
+    <p data-i18n="tester_what">CounterParts — a cozy mirror-twin grid puzzle by PixelRyu. One swipe moves two twins, Light and Shade, in opposite directions; line both up to rest together on their matching home pads inside a little brass tally counter.</p>
+    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">🔗 <span data-i18n="tester_step1_label">Step 1 — Join the tester group</span></a>
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.counterparts" target="_blank" rel="noopener">📱 <span data-i18n="tester_step2_label">Step 2 — Opt-in via Play Store</span></a>
+    <a class="tester-step" href="https://play.google.com/store/apps/details?id=com.pixelryu.counterparts" target="_blank" rel="noopener">⬇️ <span data-i18n="tester_step3_label">Step 3 — Download &amp; play the app</span></a>
+    <div class="tester-section-label">📌 <span data-i18n="tester_ask_label">What I'm asking for</span></div>
+    <ul>
+      <li data-i18n="tester_ask_keep">Keep installed for the full 14 days</li>
+      <li data-i18n="tester_ask_launch">Launch every couple of days (a few times is enough)</li>
+      <li data-i18n="tester_ask_minutes">A minute or two of play per session is plenty</li>
+    </ul>
+    <p class="tester-note" data-i18n="tester_note_lead">ℹ️ Tip — all three steps below are required:</p>
+    <ul>
+      <li data-i18n="tester_note_step1">Step 1 — Join the group.</li>
+      <li data-i18n="tester_note_step2">Step 2 — Become a tester (opt-in): on the opt-in page, tap to join the test. Becoming a tester alone does not install the app.</li>
+      <li data-i18n="tester_note_step3">Step 3 — Download &amp; play: open the download page, install the app, launch it and play a little — without this, your testing doesn’t count.</li>
+      <li data-i18n="tester_note_account">Use the same Google account for all steps.</li>
+      <li data-i18n="tester_note_wait">If Step 2 or 3 shows “App not available”, wait a few hours after joining and try again.</li>
+    </ul>
   </section>
 
   <div class="legal-divider" data-i18n="legal_divider">Legal Documents</div>
@@ -237,6 +275,24 @@
       subtitle: "Cozy Mirror-Twin Grid Puzzle",
       soon_note: "In development — coming soon to the App Store, Google Play, and Roblox.",
       gallery_heading: "A peek inside the machine",
+      tester_heading: "Android Tester Recruitment",
+      tester_android_note: "Android only",
+      tester_intro: "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
+      tester_what_label: "What it is",
+      tester_what: "CounterParts — a cozy mirror-twin grid puzzle by PixelRyu. One swipe moves two twins, Light and Shade, in opposite directions; line both up to rest together on their matching home pads inside a little brass tally counter.",
+      tester_step1_label: "Step 1 — Join the tester group",
+      tester_step2_label: "Step 2 — Opt-in via Play Store",
+      tester_step3_label: "Step 3 — Download & play the app",
+      tester_ask_label: "What I'm asking for",
+      tester_ask_keep: "Keep installed for the full 14 days",
+      tester_ask_launch: "Launch every couple of days (a few times is enough)",
+      tester_ask_minutes: "A minute or two of play per session is plenty",
+      tester_note_lead: "ℹ️ Tip — all three steps below are required:",
+      tester_note_step1: "Step 1 — Join the group: even if you see “no permission to view content”, there’s a “Join group” button on that page — tap it to join.",
+      tester_note_step2: "Step 2 — Become a tester (opt-in): on the opt-in page, tap to join the test. Becoming a tester alone does not install the app.",
+      tester_note_step3: "Step 3 — Download & play: open the download page, install the app, launch it and play a little — without this, your testing doesn’t count.",
+      tester_note_account: "Use the same Google account for all steps.",
+      tester_note_wait: "If Step 2 or 3 shows “App not available”, wait a few hours after joining and try again.",
       lead: "CounterParts is a cozy, minimalist turn-based puzzle. One swipe moves two mirror twins at once — Light, a warm amber disc, and Shade, a cool slate ring — each sliding one cell in opposite, point-symmetric directions. A wall or the board's edge stops one twin while the other keeps going, and that desync is the whole puzzle: line both twins up so a single move brings them to rest together on their own matching home pads. No death, no timer — just quiet, click-by-click thinking inside a little brass tally counter. 120 levels across 7 families.",
       legal_divider: "Legal Documents",
       link_privacy: "Privacy Policy",
@@ -265,6 +321,24 @@
       subtitle: "ほっこり鏡像ツイン・グリッドパズル",
       soon_note: "開発中 — App Store・Google Play・Roblox にて近日公開。",
       gallery_heading: "機械の中をのぞく",
+      tester_heading: "Android テスター募集中",
+      tester_android_note: "Android 専用",
+      tester_intro: "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
+      tester_what_label: "ゲーム内容",
+      tester_what: "CounterParts — PixelRyu が贈る、ほっこり鏡像ツイン・グリッドパズル。1スワイプで光と影のふたごが反対方向へ動く。真鍮の数取り器の中で、両者を同じ色のホームパッドへ同時に収めよう。",
+      tester_step1_label: "ステップ 1 — テスターグループに参加",
+      tester_step2_label: "ステップ 2 — Play ストアでオプトイン",
+      tester_step3_label: "ステップ 3 — アプリをダウンロードしてプレイ",
+      tester_ask_label: "お願いしたいこと",
+      tester_ask_keep: "14 日間アンインストールせずに保持",
+      tester_ask_launch: "数日に一度起動 (合計数回で OK)",
+      tester_ask_minutes: "1 回 1〜2 分の軽いプレイで大丈夫",
+      tester_note_lead: "ℹ️ ヒント — 下記の3つのステップすべてが必要です:",
+      tester_note_step1: "ステップ1 — グループに参加: 「閲覧権限がありません」と表示されても、その画面に「グループに参加」ボタンがあるので押して参加してください。",
+      tester_note_step2: "ステップ2 — テスターになる（オプトイン）: オプトイン画面でテストに参加してください。テスターになっただけではアプリはインストールされません。",
+      tester_note_step3: "ステップ3 — ダウンロードしてプレイ: ダウンロードページを開いてアプリをインストールし、起動して少し遊んでください。これをしないとテストにカウントされません。",
+      tester_note_account: "すべてのステップで同じ Google アカウントをお使いください。",
+      tester_note_wait: "ステップ2または3で「App not available」と表示されるときは、参加から数時間おいて再度お試しください。",
       lead: "CounterParts は、ほっこりミニマルなターン制パズルです。ひとなぞりで鏡像のツインが同時に動きます — 温かな琥珀色の円盤「ライト」と、冷たいスレート色のリング「シェイド」が、それぞれ点対称の反対方向へ1マスずつスライド。壁や盤の端が片方を止め、もう片方は進み続ける——このズレ（デシンク）こそがパズルの核心です。1手でふたりが同時に、それぞれ自分の色のホームパッドへ収まるように並べましょう。死もタイマーもなし——真鍮の数取り器の中で、カチ、カチと一手ずつ静かに考えるだけ。120レベル・7系統。",
       legal_divider: "規約類",
       link_privacy: "プライバシーポリシー",
@@ -293,6 +367,24 @@
       subtitle: "暖心镜像双子方格解谜",
       soon_note: "开发中 — 即将登陆 App Store、Google Play 与 Roblox。",
       gallery_heading: "机器内部一瞥",
+      tester_heading: "招募 Android 测试者",
+      tester_android_note: "仅限 Android",
+      tester_intro: "我是一名独立开发者，正在为期 14 天的封闭测试招募积极的 Android 测试者。",
+      tester_what_label: "游戏简介",
+      tester_what: "CounterParts——PixelRyu 打造的治愈系镜像双子格子解谜。一次滑动让光与影两个双子朝相反方向移动；在小小的黄铜计数器中，让两者同时停在各自匹配的归位格上。",
+      tester_step1_label: "第一步 — 加入测试者群组",
+      tester_step2_label: "第二步 — 通过 Play 商店加入测试",
+      tester_step3_label: "第三步 — 下载并试玩应用",
+      tester_ask_label: "我希望你能做到",
+      tester_ask_keep: "完整保留 14 天不卸载",
+      tester_ask_launch: "每隔几天启动一次（几次即可）",
+      tester_ask_minutes: "每次玩一两分钟就够了",
+      tester_note_lead: "ℹ️ 提示 — 以下三个步骤都必须完成：",
+      tester_note_step1: "第一步 — 加入群组：即使显示“无权限查看内容”，该页面上也有“加入群组”按钮，请点击加入。",
+      tester_note_step2: "第二步 — 成为测试者（加入测试）：在加入测试页面点击加入测试。仅成为测试者并不会安装应用。",
+      tester_note_step3: "第三步 — 下载并试玩：打开下载页面安装应用，然后启动应用并稍微试玩。否则你的测试不会被计入。",
+      tester_note_account: "所有步骤请使用同一个 Google 账号。",
+      tester_note_wait: "如果第二步或第三步显示“App not available”，请在加入后等待几小时再试。",
       lead: "CounterParts 是一款暖心极简的回合制解谜游戏。一次滑动会同时移动两个镜像双子——温暖琥珀色的圆盘「光」与冷调石板色的圆环「影」——各自朝点对称的相反方向移动一格。墙壁或棋盘边缘会挡住其中一个，另一个则继续前进——这种错位（desync）正是解谜的核心：摆好位置，让一次移动就能让两者同时停在各自同色的归位格上。没有死亡，没有计时——只是在一台小巧的黄铜数取器中，咔哒、咔哒地一步步静心思考。120 关，分为 7 个族系。",
       legal_divider: "条款文件",
       link_privacy: "隐私政策",
@@ -321,6 +413,24 @@
       subtitle: "아늑한 거울 쌍둥이 그리드 퍼즐",
       soon_note: "개발 중 — App Store・Google Play・Roblox에 곧 출시.",
       gallery_heading: "기계 속을 들여다보기",
+      tester_heading: "Android 테스터 모집",
+      tester_android_note: "Android 전용",
+      tester_intro: "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
+      tester_what_label: "게임 소개",
+      tester_what: "CounterParts — PixelRyu가 만든 아늑한 거울 쌍둥이 격자 퍼즐. 한 번의 스와이프로 빛과 그림자 쌍둥이가 반대 방향으로 움직입니다. 작은 황동 계수기 속에서 둘을 같은 색 홈 패드에 동시에 안착시키세요.",
+      tester_step1_label: "1단계 — 테스터 그룹 가입",
+      tester_step2_label: "2단계 — Play 스토어에서 옵트인",
+      tester_step3_label: "3단계 — 앱 다운로드 후 플레이",
+      tester_ask_label: "부탁드리는 것",
+      tester_ask_keep: "14일 동안 설치 상태 유지",
+      tester_ask_launch: "며칠에 한 번씩 실행 (몇 번이면 충분합니다)",
+      tester_ask_minutes: "한 번에 1~2분 가벼운 플레이면 충분합니다",
+      tester_note_lead: "ℹ️ 팁 — 아래 세 단계를 모두 완료해야 합니다:",
+      tester_note_step1: "1단계 — 그룹 가입: “콘텐츠를 볼 권한이 없습니다”라고 표시되어도 그 화면에 “그룹 가입” 버튼이 있으니 눌러서 가입하세요.",
+      tester_note_step2: "2단계 — 테스터 되기(옵트인): 옵트인 화면에서 테스트에 참여하세요. 테스터가 되는 것만으로는 앱이 설치되지 않습니다.",
+      tester_note_step3: "3단계 — 다운로드 후 플레이: 다운로드 페이지를 열어 앱을 설치하고, 실행해 잠깐 플레이하세요. 그렇지 않으면 테스트로 집계되지 않습니다.",
+      tester_note_account: "모든 단계에서 같은 Google 계정을 사용하세요.",
+      tester_note_wait: "2단계 또는 3단계에서 “App not available”이 표시되면 가입 후 몇 시간 기다렸다가 다시 시도하세요.",
       lead: "CounterParts는 아늑하고 미니멀한 턴제 퍼즐입니다. 한 번의 스와이프로 거울 쌍둥이가 동시에 움직입니다 — 따뜻한 호박색 원반 '라이트'와 차가운 슬레이트색 고리 '셰이드'가 각각 점대칭의 반대 방향으로 한 칸씩 미끄러집니다. 벽이나 보드의 가장자리가 한쪽을 멈추고 다른 쪽은 계속 나아가는데, 이 어긋남(디싱크)이 퍼즐의 전부입니다. 한 번의 이동으로 둘이 동시에 각자 색의 홈 패드에 안착하도록 맞춰 보세요. 죽음도 타이머도 없이 — 작은 황동 계수기 안에서, 딸깍딸깍 한 수씩 차분히 생각할 뿐입니다. 120레벨, 7계열.",
       legal_divider: "약관 안내",
       link_privacy: "개인정보 처리방침",
@@ -349,6 +459,24 @@
       subtitle: "आरामदायक मिरर-ट्विन ग्रिड पहेली",
       soon_note: "विकासाधीन — App Store, Google Play और Roblox पर जल्द आ रही है।",
       gallery_heading: "मशीन के भीतर एक झलक",
+      tester_heading: "Android टेस्टर्स की तलाश",
+      tester_android_note: "केवल Android",
+      tester_intro: "सोलो इंडी डेवलपर हूँ, 14 दिन की क्लोज़्ड टेस्टिंग के लिए सक्रिय Android टेस्टर्स ढूँढ रहा हूँ।",
+      tester_what_label: "यह क्या है",
+      tester_what: "CounterParts — PixelRyu का एक आरामदायक मिरर-ट्विन ग्रिड पहेली। एक स्वाइप दो जुड़वाँ, लाइट और शेड, को विपरीत दिशाओं में ले जाता है; एक छोटे पीतल के टैली काउंटर में दोनों को उनके मिलते-जुलते होम पैड पर एक साथ टिकाएँ।",
+      tester_step1_label: "चरण 1 — टेस्टर ग्रुप में शामिल हों",
+      tester_step2_label: "चरण 2 — Play Store पर ऑप्ट-इन",
+      tester_step3_label: "चरण 3 — ऐप डाउनलोड करके खेलें",
+      tester_ask_label: "मैं क्या माँग रहा हूँ",
+      tester_ask_keep: "पूरे 14 दिन इंस्टॉल रखें",
+      tester_ask_launch: "हर कुछ दिन में लॉन्च करें (कुछ बार ही काफ़ी है)",
+      tester_ask_minutes: "हर सत्र में एक-दो मिनट का खेल काफ़ी है",
+      tester_note_lead: "ℹ️ सुझाव — नीचे दिए तीनों चरण ज़रूरी हैं:",
+      tester_note_step1: "चरण 1 — ग्रुप जॉइन करें: भले ही “सामग्री देखने की अनुमति नहीं है” दिखे, उसी पेज पर “ग्रुप जॉइन करें” बटन होता है — उसे दबाकर जॉइन करें।",
+      tester_note_step2: "चरण 2 — टेस्टर बनें (ऑप्ट-इन): ऑप्ट-इन पेज पर टेस्ट में शामिल होने के लिए टैप करें। सिर्फ़ टेस्टर बनने से ऐप इंस्टॉल नहीं होती।",
+      tester_note_step3: "चरण 3 — डाउनलोड करके खेलें: डाउनलोड पेज खोलकर ऐप इंस्टॉल करें, उसे खोलें और थोड़ा खेलें — इसके बिना आपकी टेस्टिंग नहीं गिनी जाती।",
+      tester_note_account: "सभी चरणों में एक ही Google खाते का उपयोग करें।",
+      tester_note_wait: "अगर चरण 2 या 3 में “App not available” दिखे, तो जॉइन करने के कुछ घंटे बाद फिर से कोशिश करें।",
       lead: "CounterParts एक आरामदायक, मिनिमल टर्न-आधारित पहेली है। एक स्वाइप से दो मिरर जुड़वाँ एक साथ चलते हैं — लाइट, एक गर्म अंबर डिस्क, और शेड, एक ठंडा स्लेट रंग का छल्ला — हर एक बिंदु-सममित विपरीत दिशा में एक-एक खाना खिसकता है। कोई दीवार या बोर्ड का किनारा एक जुड़वाँ को रोक देता है जबकि दूसरा चलता रहता है, और यही असंगति (desync) पूरी पहेली है: दोनों को ऐसे जमाएँ कि एक ही चाल में वे एक साथ अपने-अपने रंग के होम पैड पर आ टिकें। न मौत, न टाइमर — बस एक छोटे पीतल के टैली काउंटर के भीतर, क्लिक-दर-क्लिक शांत सोच। 7 परिवारों में 120 स्तर।",
       legal_divider: "कानूनी दस्तावेज़",
       link_privacy: "गोपनीयता नीति",
@@ -377,6 +505,24 @@
       subtitle: "Teka-Teki Grid Kembar-Cermin yang Hangat",
       soon_note: "Dalam pengembangan — segera hadir di App Store, Google Play, dan Roblox.",
       gallery_heading: "Mengintip ke dalam mesin",
+      tester_heading: "Mencari Tester Android",
+      tester_android_note: "Hanya Android",
+      tester_intro: "Saya developer indie solo, mencari tester Android aktif untuk fase closed test 14 hari.",
+      tester_what_label: "Tentang game ini",
+      tester_what: "CounterParts — puzzle grid kembar-cermin yang nyaman dari PixelRyu. Satu usapan menggerakkan dua kembar, Light dan Shade, ke arah berlawanan; sejajarkan keduanya agar berhenti bersama di home pad yang cocok di dalam penghitung kuningan kecil.",
+      tester_step1_label: "Langkah 1 — Bergabung dengan grup tester",
+      tester_step2_label: "Langkah 2 — Opt-in via Play Store",
+      tester_step3_label: "Langkah 3 — Unduh & mainkan aplikasi",
+      tester_ask_label: "Yang saya mintakan",
+      tester_ask_keep: "Pertahankan terinstal selama 14 hari penuh",
+      tester_ask_launch: "Luncurkan setiap beberapa hari (beberapa kali sudah cukup)",
+      tester_ask_minutes: "Cukup main satu–dua menit per sesi",
+      tester_note_lead: "ℹ️ Tips — ketiga langkah berikut wajib dilakukan:",
+      tester_note_step1: "Langkah 1 — Gabung grup: meskipun muncul “tidak ada izin untuk melihat konten”, ada tombol “Gabung grup” di halaman itu — tekan untuk bergabung.",
+      tester_note_step2: "Langkah 2 — Jadi tester (opt-in): di halaman opt-in, ketuk untuk bergabung ke pengujian. Menjadi tester saja tidak memasang aplikasi.",
+      tester_note_step3: "Langkah 3 — Unduh & mainkan: buka halaman unduhan, pasang aplikasinya, buka, dan mainkan sebentar — tanpa ini, pengujianmu tidak terhitung.",
+      tester_note_account: "Gunakan akun Google yang sama untuk semua langkah.",
+      tester_note_wait: "Jika Langkah 2 atau 3 menampilkan “App not available”, tunggu beberapa jam setelah bergabung lalu coba lagi.",
       lead: "CounterParts adalah teka-teki berbasis giliran yang hangat dan minimalis. Satu usapan menggerakkan dua kembar-cermin sekaligus — Light, cakram amber yang hangat, dan Shade, cincin sewarna batu tulis yang sejuk — masing-masing meluncur satu sel ke arah berlawanan yang simetris-titik. Dinding atau tepi papan menghentikan satu kembar sementara yang lain terus melaju, dan ketidakselarasan (desync) itulah inti seluruh teka-tekinya: tata keduanya agar dengan satu gerakan mereka berhenti bersamaan di home pad berwarna senada masing-masing. Tanpa kematian, tanpa pengatur waktu — hanya berpikir tenang, klik demi klik, di dalam pencacah kuningan kecil. 120 level dalam 7 keluarga.",
       legal_divider: "Dokumen Hukum",
       link_privacy: "Kebijakan Privasi",
@@ -405,6 +551,24 @@
       subtitle: "Gemütliches Spiegel-Zwillings-Gitterpuzzle",
       soon_note: "In Entwicklung — bald im App Store, bei Google Play und auf Roblox.",
       gallery_heading: "Ein Blick ins Innere der Maschine",
+      tester_heading: "Android-Tester gesucht",
+      tester_android_note: "Nur für Android",
+      tester_intro: "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
+      tester_what_label: "Worum es geht",
+      tester_what: "CounterParts — ein gemütliches Spiegel-Zwillings-Gitterpuzzle von PixelRyu. Ein Wisch bewegt zwei Zwillinge, Licht und Schatten, in entgegengesetzte Richtungen; bring beide zugleich auf ihre passenden Felder in einem kleinen Messing-Zählwerk.",
+      tester_step1_label: "Schritt 1 — Tester-Gruppe beitreten",
+      tester_step2_label: "Schritt 2 — Über den Play Store anmelden",
+      tester_step3_label: "Schritt 3 — App herunterladen & spielen",
+      tester_ask_label: "Worum ich bitte",
+      tester_ask_keep: "14 Tage lang installiert lassen",
+      tester_ask_launch: "Alle paar Tage starten (ein paar Mal reicht)",
+      tester_ask_minutes: "Ein bis zwei Minuten Spiel pro Sitzung genügen",
+      tester_note_lead: "ℹ️ Tipp — alle drei Schritte unten sind nötig:",
+      tester_note_step1: "Schritt 1 — Der Gruppe beitreten: Auch wenn „keine Berechtigung zum Anzeigen der Inhalte“ erscheint, gibt es auf der Seite einen Button „Gruppe beitreten“ – tippe darauf, um beizutreten.",
+      tester_note_step2: "Schritt 2 — Tester werden (Opt-in): Tippe auf der Opt-in-Seite, um an der Testphase teilzunehmen. Nur Tester zu werden installiert die App noch nicht.",
+      tester_note_step3: "Schritt 3 — Herunterladen & spielen: Öffne die Download-Seite, installiere die App, öffne sie und spiele kurz – ohne das zählt deine Teilnahme nicht.",
+      tester_note_account: "Verwende für alle Schritte dasselbe Google-Konto.",
+      tester_note_wait: "Wenn Schritt 2 oder 3 „App not available“ anzeigt, warte nach dem Beitritt ein paar Stunden und versuche es erneut.",
       lead: "CounterParts ist ein gemütliches, minimalistisches rundenbasiertes Puzzle. Ein Wisch bewegt zwei Spiegel-Zwillinge zugleich — Light, eine warme bernsteinfarbene Scheibe, und Shade, ein kühler schiefergrauer Ring — die jeweils ein Feld in entgegengesetzte, punktsymmetrische Richtungen gleiten. Eine Wand oder der Spielfeldrand stoppt einen Zwilling, während der andere weiterläuft, und genau dieser Versatz (Desync) ist das ganze Rätsel: stell beide so auf, dass sie mit einem einzigen Zug gemeinsam auf ihren eigenen, farblich passenden Zielfeldern zur Ruhe kommen. Kein Tod, keine Uhr — nur stilles, Klick für Klick durchdachtes Spielen im Inneren eines kleinen Messing-Zählwerks. 120 Level in 7 Familien.",
       legal_divider: "Rechtliche Dokumente",
       link_privacy: "Datenschutzerklärung",
@@ -433,6 +597,24 @@
       subtitle: "Puzzle de grille à jumeaux miroir, douillet",
       soon_note: "En développement — bientôt sur l'App Store, Google Play et Roblox.",
       gallery_heading: "Un coup d'œil dans la machine",
+      tester_heading: "Recherche de testeurs Android",
+      tester_android_note: "Android uniquement",
+      tester_intro: "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
+      tester_what_label: "De quoi il s'agit",
+      tester_what: "CounterParts — un puzzle de grille à jumeaux-miroirs tout doux par PixelRyu. Un glissement déplace deux jumeaux, Lumière et Ombre, en sens opposés ; aligne-les pour les poser ensemble sur leurs cases assorties dans un petit compteur en laiton.",
+      tester_step1_label: "Étape 1 — Rejoindre le groupe de testeurs",
+      tester_step2_label: "Étape 2 — S'inscrire via le Play Store",
+      tester_step3_label: "Étape 3 — Télécharger et jouer",
+      tester_ask_label: "Ce que je demande",
+      tester_ask_keep: "Garder installé pendant les 14 jours complets",
+      tester_ask_launch: "Lancer tous les deux jours (quelques fois suffisent)",
+      tester_ask_minutes: "Une à deux minutes de jeu par session suffisent",
+      tester_note_lead: "ℹ️ Astuce — les trois étapes ci-dessous sont nécessaires :",
+      tester_note_step1: "Étape 1 — Rejoindre le groupe : même si « autorisation refusée pour afficher le contenu » s’affiche, un bouton « Rejoindre le groupe » est présent sur la page — appuyez dessus pour rejoindre.",
+      tester_note_step2: "Étape 2 — Devenir testeur (inscription) : sur la page d’inscription, appuyez pour rejoindre le test. S’inscrire seul n’installe pas l’application.",
+      tester_note_step3: "Étape 3 — Télécharger et jouer : ouvrez la page de téléchargement, installez l’application, ouvrez-la et jouez un peu — sans cela, votre participation ne compte pas.",
+      tester_note_account: "Utilisez le même compte Google pour toutes les étapes.",
+      tester_note_wait: "Si l’étape 2 ou 3 affiche « App not available », attendez quelques heures après avoir rejoint, puis réessayez.",
       lead: "CounterParts est un puzzle au tour par tour, douillet et minimaliste. Un seul balayage déplace deux jumeaux miroir à la fois — Light, un disque d'ambre chaud, et Shade, un anneau gris ardoise froid — chacun glissant d'une case en sens opposés, en symétrie centrale. Un mur ou le bord du plateau arrête un jumeau tandis que l'autre continue, et ce décalage (desync) est tout le puzzle : placez-les de sorte qu'un seul coup les amène à s'immobiliser ensemble sur leurs propres cases d'arrivée de la bonne couleur. Ni mort, ni minuteur — juste une réflexion tranquille, clic après clic, à l'intérieur d'un petit compteur en laiton. 120 niveaux en 7 familles.",
       legal_divider: "Documents juridiques",
       link_privacy: "Politique de confidentialité",
@@ -461,6 +643,24 @@
       subtitle: "Accogliente puzzle a griglia con gemelli speculari",
       soon_note: "In sviluppo — presto su App Store, Google Play e Roblox.",
       gallery_heading: "Uno sguardo dentro la macchina",
+      tester_heading: "Cercasi tester Android",
+      tester_android_note: "Solo Android",
+      tester_intro: "Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.",
+      tester_what_label: "Di cosa si tratta",
+      tester_what: "CounterParts — un rilassante puzzle a griglia con gemelli speculari di PixelRyu. Uno swipe muove due gemelli, Luce e Ombra, in direzioni opposte; allineali per farli posare insieme sulle loro caselle abbinate dentro un piccolo contatore di ottone.",
+      tester_step1_label: "Passo 1 — Unisciti al gruppo tester",
+      tester_step2_label: "Passo 2 — Opt-in tramite Play Store",
+      tester_step3_label: "Passo 3 — Scarica e gioca all’app",
+      tester_ask_label: "Cosa chiedo",
+      tester_ask_keep: "Tienilo installato per tutti i 14 giorni",
+      tester_ask_launch: "Aprilo ogni paio di giorni (poche volte basta)",
+      tester_ask_minutes: "Bastano un paio di minuti di gioco a sessione",
+      tester_note_lead: "ℹ️ Suggerimento — servono tutti e tre i passaggi qui sotto:",
+      tester_note_step1: "Passaggio 1 — Iscriviti al gruppo: anche se compare « non hai l’autorizzazione per visualizzare i contenuti », sulla pagina c’è il pulsante « Iscriviti al gruppo » — toccalo per iscriverti.",
+      tester_note_step2: "Passaggio 2 — Diventa tester (opt-in): nella pagina di opt-in, tocca per partecipare al test. Diventare tester da solo non installa l’app.",
+      tester_note_step3: "Passaggio 3 — Scarica e gioca: apri la pagina di download, installa l’app, aprila e gioca un po’ — senza questo, il tuo test non viene conteggiato.",
+      tester_note_account: "Usa lo stesso account Google per tutti i passaggi.",
+      tester_note_wait: "Se il passaggio 2 o 3 mostra « App not available », attendi qualche ora dopo l’iscrizione e riprova.",
       lead: "CounterParts è un accogliente puzzle a turni, minimalista. Una sola passata muove due gemelli speculari insieme — Light, un disco d'ambra caldo, e Shade, un anello grigio ardesia freddo — ciascuno scivola di una casella in direzioni opposte, in simmetria centrale. Un muro o il bordo della scacchiera ferma un gemello mentre l'altro prosegue, e questo disallineamento (desync) è tutto il puzzle: disponili in modo che con una sola mossa si fermino insieme sulle proprie caselle d'arrivo dello stesso colore. Niente morte, niente timer — solo un pensiero tranquillo, clic dopo clic, dentro un piccolo contatore in ottone. 120 livelli in 7 famiglie.",
       legal_divider: "Documenti legali",
       link_privacy: "Informativa sulla privacy",
@@ -489,6 +689,24 @@
       subtitle: "Acogedor puzle de cuadrícula con gemelos espejo",
       soon_note: "En desarrollo — pronto en App Store, Google Play y Roblox.",
       gallery_heading: "Un vistazo dentro de la máquina",
+      tester_heading: "Buscamos testers de Android",
+      tester_android_note: "Solo Android",
+      tester_intro: "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
+      tester_what_label: "De qué se trata",
+      tester_what: "CounterParts — un acogedor puzle de cuadrícula de gemelos especulares de PixelRyu. Un deslizamiento mueve a dos gemelos, Luz y Sombra, en direcciones opuestas; alinéalos para que descansen juntos en sus casillas a juego dentro de un pequeño contador de latón.",
+      tester_step1_label: "Paso 1 — Únete al grupo de testers",
+      tester_step2_label: "Paso 2 — Inscríbete vía Play Store",
+      tester_step3_label: "Paso 3 — Descarga y juega la app",
+      tester_ask_label: "Lo que pido",
+      tester_ask_keep: "Mantener instalado los 14 días completos",
+      tester_ask_launch: "Abrir cada par de días (unas pocas veces basta)",
+      tester_ask_minutes: "Con un par de minutos de juego por sesión basta",
+      tester_note_lead: "ℹ️ Consejo — los tres pasos siguientes son necesarios:",
+      tester_note_step1: "Paso 1 — Únete al grupo: aunque aparezca «no tienes permiso para ver el contenido», en esa página hay un botón «Unirse al grupo»; tócalo para unirte.",
+      tester_note_step2: "Paso 2 — Hazte tester (participa): en la página de participación, toca para unirte a la prueba. Solo participar no instala la app.",
+      tester_note_step3: "Paso 3 — Descarga y juega: abre la página de descarga, instala la app, ábrela y juega un poco; sin esto, tu prueba no cuenta.",
+      tester_note_account: "Usa la misma cuenta de Google en todos los pasos.",
+      tester_note_wait: "Si el paso 2 o 3 muestra «App not available», espera unas horas después de unirte y vuelve a intentarlo.",
       lead: "CounterParts es un acogedor puzle por turnos, minimalista. Un solo deslizamiento mueve a dos gemelos espejo a la vez — Light, un disco de ámbar cálido, y Shade, un anillo gris pizarra frío — cada uno se desliza una casilla en direcciones opuestas, con simetría central. Un muro o el borde del tablero detiene a un gemelo mientras el otro sigue, y ese desfase (desync) es todo el puzle: colócalos de modo que con un solo movimiento se detengan juntos en sus propias casillas de destino del color correspondiente. Sin muertes, sin temporizador — solo pensar con calma, clic a clic, dentro de un pequeño contador de latón. 120 niveles en 7 familias.",
       legal_divider: "Documentos legales",
       link_privacy: "Política de privacidad",
@@ -517,6 +735,24 @@
       subtitle: "Aconchegante quebra-cabeça de grade com gêmeos espelhados",
       soon_note: "Em desenvolvimento — em breve na App Store, no Google Play e no Roblox.",
       gallery_heading: "Uma espiada dentro da máquina",
+      tester_heading: "Procuramos testers de Android",
+      tester_android_note: "Apenas Android",
+      tester_intro: "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
+      tester_what_label: "Sobre o jogo",
+      tester_what: "CounterParts — um aconchegante quebra-cabeça de grade com gêmeos espelhados da PixelRyu. Um deslize move dois gêmeos, Luz e Sombra, em direções opostas; alinhe os dois para pousarem juntos em seus painéis correspondentes dentro de um pequeno contador de latão.",
+      tester_step1_label: "Passo 1 — Entrar no grupo de testers",
+      tester_step2_label: "Passo 2 — Adesão via Play Store",
+      tester_step3_label: "Passo 3 — Baixe e jogue o app",
+      tester_ask_label: "O que peço",
+      tester_ask_keep: "Manter instalado por 14 dias completos",
+      tester_ask_launch: "Abra a cada poucos dias (algumas vezes basta)",
+      tester_ask_minutes: "Um ou dois minutos de jogo por sessão já bastam",
+      tester_note_lead: "ℹ️ Dica — as três etapas abaixo são necessárias:",
+      tester_note_step1: "Etapa 1 — Entre no grupo: mesmo que apareça “sem permissão para ver o conteúdo”, há um botão “Participar do grupo” na página — toque para entrar.",
+      tester_note_step2: "Etapa 2 — Torne-se tester (opt-in): na página de opt-in, toque para entrar no teste. Apenas virar tester não instala o app.",
+      tester_note_step3: "Etapa 3 — Baixe e jogue: abra a página de download, instale o app, abra e jogue um pouco — sem isso, seu teste não conta.",
+      tester_note_account: "Use a mesma Conta do Google em todas as etapas.",
+      tester_note_wait: "Se a Etapa 2 ou 3 mostrar “App not available”, aguarde algumas horas após participar e tente novamente.",
       lead: "CounterParts é um aconchegante quebra-cabeça por turnos, minimalista. Um só deslize move dois gêmeos espelhados ao mesmo tempo — Light, um disco âmbar quente, e Shade, um anel cinza-ardósia frio — cada um desliza uma célula em direções opostas, em simetria central. Uma parede ou a borda do tabuleiro para um gêmeo enquanto o outro segue, e esse descompasso (desync) é todo o quebra-cabeça: posicione-os de modo que, com um único movimento, parem juntos em seus próprios campos de destino da cor correspondente. Sem morte, sem cronômetro — apenas um raciocínio tranquilo, clique a clique, dentro de um pequeno contador de latão. 120 níveis em 7 famílias.",
       legal_divider: "Documentos legais",
       link_privacy: "Política de Privacidade",
@@ -545,6 +781,24 @@
       subtitle: "Уютная головоломка с зеркальными близнецами",
       soon_note: "В разработке — скоро в App Store, Google Play и Roblox.",
       gallery_heading: "Загляните внутрь механизма",
+      tester_heading: "Поиск Android-тестеров",
+      tester_android_note: "Только для Android",
+      tester_intro: "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",
+      tester_what_label: "О чём игра",
+      tester_what: "CounterParts — уютная головоломка на сетке с зеркальными близнецами от PixelRyu. Один свайп двигает двух близнецов, Свет и Тень, в противоположные стороны; подведите обоих на их парные клетки внутри маленького латунного счётчика.",
+      tester_step1_label: "Шаг 1 — Вступить в группу тестеров",
+      tester_step2_label: "Шаг 2 — Подписаться через Play Store",
+      tester_step3_label: "Шаг 3 — Скачать и поиграть",
+      tester_ask_label: "О чём я прошу",
+      tester_ask_keep: "Не удалять приложение все 14 дней",
+      tester_ask_launch: "Запускайте раз в пару дней (нескольких раз достаточно)",
+      tester_ask_minutes: "Достаточно одной–двух минут игры за сессию",
+      tester_note_lead: "ℹ️ Совет — нужны все три шага ниже:",
+      tester_note_step1: "Шаг 1 — Вступите в группу: даже если показано «нет прав для просмотра содержимого», на странице есть кнопка «Присоединиться к группе» — нажмите её, чтобы вступить.",
+      tester_note_step2: "Шаг 2 — Станьте тестером (подтвердите участие): на странице подтверждения нажмите, чтобы присоединиться к тесту. Само подтверждение участия не устанавливает приложение.",
+      tester_note_step3: "Шаг 3 — Скачайте и поиграйте: откройте страницу загрузки, установите приложение, откройте его и немного поиграйте — без этого ваше участие не засчитывается.",
+      tester_note_account: "Используйте один и тот же аккаунт Google для всех шагов.",
+      tester_note_wait: "Если на шаге 2 или 3 появляется «App not available», подождите несколько часов после вступления и попробуйте снова.",
       lead: "CounterParts — это уютная минималистичная пошаговая головоломка. Один свайп двигает сразу двух зеркальных близнецов — Light, тёплый янтарный диск, и Shade, холодное кольцо цвета сланца — каждый скользит на одну клетку в противоположных, центрально-симметричных направлениях. Стена или край поля останавливает одного близнеца, пока другой продолжает движение, и именно это рассогласование (desync) и есть вся головоломка: расставьте их так, чтобы за один ход оба одновременно остановились на своих клетках-пристанях подходящего цвета. Ни смерти, ни таймера — только тихое, ход за ходом, размышление внутри маленького латунного счётчика. 120 уровней в 7 семействах.",
       legal_divider: "Юридические документы",
       link_privacy: "Политика конфиденциальности",
