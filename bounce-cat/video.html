@@ -22,7 +22,7 @@
 <meta property="og:image" content="https://pixelryu.github.io/bounce-cat/og.png">
 <meta property="og:type" content="video.other">
 <meta property="og:url" content="https://pixelryu.github.io/bounce-cat/video.html">
-<style>*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;background:radial-gradient(ellipse at top,#10162e 0%,#0b1020 60%,#070b16 100%);color:#e4ebf5;margin:0;min-height:100vh}.container{max-width:760px;margin:0 auto;padding:26px 20px 64px;position:relative}.lang-switch{position:absolute;top:18px;right:18px}.lang-switch select{background:#0d1428;color:#e4ebf5;border:1px solid rgba(160,200,255,.25);border-radius:6px;padding:5px 10px;font-size:13px;font-family:inherit;cursor:pointer}.lang-switch select option{background:#0d1428;color:#e4ebf5}.vp-head{text-align:center;margin:20px 0 30px}.vp-icon{width:96px;height:96px;border-radius:22px;box-shadow:0 8px 30px rgba(0,0,0,.45)}.vp-title{font-size:34px;margin:14px 0 4px;font-weight:700;letter-spacing:.01em}.vp-sub{margin:0;color:#9fb0d0;font-size:15px}.vp-video{display:block;width:100%;background:#000;border-radius:14px;box-shadow:0 10px 36px rgba(0,0,0,.5);margin:0 auto 30px}.vp-h{max-width:720px;aspect-ratio:16/9}.vp-v{max-width:340px;aspect-ratio:9/16}@media(max-width:600px){.vp-title{font-size:28px}.vp-v{max-width:82%}.lang-switch{top:14px;right:14px}}</style>
+<style>*{box-sizing:border-box}body{font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,'Helvetica Neue',sans-serif;background:radial-gradient(ellipse at top,#10162e 0%,#0b1020 60%,#070b16 100%);color:#e4ebf5;margin:0;min-height:100vh}.container{max-width:860px;margin:0 auto;padding:26px 20px 64px;position:relative}.lang-switch{position:absolute;top:18px;right:18px}.lang-switch select{background:#0d1428;color:#e4ebf5;border:1px solid rgba(160,200,255,.25);border-radius:6px;padding:5px 10px;font-size:13px;font-family:inherit;cursor:pointer}.lang-switch select option{background:#0d1428;color:#e4ebf5}.vp-head{text-align:center;margin:20px 0 30px}.vp-icon{width:96px;height:96px;border-radius:22px;box-shadow:0 8px 30px rgba(0,0,0,.45)}.vp-title{font-size:34px;margin:14px 0 4px;font-weight:700;letter-spacing:.01em}.vp-sub{margin:0;color:#9fb0d0;font-size:15px}.vp-video{display:block;width:100%;background:#000;border-radius:14px;box-shadow:0 10px 36px rgba(0,0,0,.5)}.vp-h{max-width:760px;aspect-ratio:16/9;margin:0 auto 34px}.vp-vrow{display:flex;flex-wrap:wrap;gap:20px;justify-content:center;align-items:flex-start}.vp-v{flex:0 1 248px;max-width:300px;aspect-ratio:9/16}@media(max-width:600px){.vp-title{font-size:28px}.vp-v{flex-basis:78%}.lang-switch{top:14px;right:14px}}</style>
 </head>
 <body>
 <div class="container">
@@ -35,17 +35,27 @@
     <p class="vp-sub" data-i18n="videos_sub">Promo videos</p>
   </header>
   <video id="promo-h" class="vp-video vp-h" controls playsinline preload="metadata" poster="og.png" aria-label="Bounce Cat landscape promo video">
-    <source src="promotion_H_story.mp4?v=20260618210000" type="video/mp4">
+    <source src="promotion_H_story.mp4?v=20260618213000" type="video/mp4">
   </video>
-  <video id="promo-v" class="vp-video vp-v" controls playsinline preload="metadata" aria-label="Bounce Cat portrait promo video">
-    <source src="promotion_V.mp4?v=20260618210000" type="video/mp4">
-  </video>
+  <div class="vp-vrow">
+    <video id="promo-v1" class="vp-video vp-v" controls playsinline preload="metadata" aria-label="Bounce Cat portrait promo video 1">
+      <source src="promotion_V_01.mp4?v=20260618213000" type="video/mp4">
+    </video>
+    <video id="promo-v2" class="vp-video vp-v" controls playsinline preload="metadata" aria-label="Bounce Cat portrait promo video 2">
+      <source src="promotion_V_02.mp4?v=20260618213000" type="video/mp4">
+    </video>
+    <video id="promo-v3" class="vp-video vp-v" controls playsinline preload="metadata" aria-label="Bounce Cat portrait promo video 3">
+      <source src="promotion_V_03.mp4?v=20260618213000" type="video/mp4">
+    </video>
+  </div>
 </div>
 <script>
   const LANGUAGES = [{"code":"en","flag":"\ud83c\uddfa\ud83c\uddf8","name":"English"},{"code":"ja","flag":"\ud83c\uddef\ud83c\uddf5","name":"\u65e5\u672c\u8a9e"},{"code":"zh","flag":"\ud83c\udde8\ud83c\uddf3","name":"\u7b80\u4f53\u4e2d\u6587"},{"code":"ko","flag":"\ud83c\uddf0\ud83c\uddf7","name":"\ud55c\uad6d\uc5b4"},{"code":"hi","flag":"\ud83c\uddee\ud83c\uddf3","name":"\u0939\u093f\u0928\u094d\u0926\u0940"},{"code":"id","flag":"\ud83c\uddee\ud83c\udde9","name":"Bahasa Indonesia"},{"code":"de","flag":"\ud83c\udde9\ud83c\uddea","name":"Deutsch"},{"code":"fr","flag":"\ud83c\uddeb\ud83c\uddf7","name":"Fran\u00e7ais"},{"code":"it","flag":"\ud83c\uddee\ud83c\uddf9","name":"Italiano"},{"code":"es","flag":"\ud83c\uddea\ud83c\uddf8","name":"Espa\u00f1ol"},{"code":"pt","flag":"\ud83c\udde7\ud83c\uddf7","name":"Portugu\u00eas"},{"code":"ru","flag":"\ud83c\uddf7\ud83c\uddfa","name":"\u0420\u0443\u0441\u0441\u043a\u0438\u0439"}];
   const SUB = {"en": "Promo videos", "ja": "プロモーション動画", "zh": "宣传视频", "ko": "프로모션 영상", "hi": "प्रोमो वीडियो", "id": "Video promosi", "de": "Promo-Videos", "fr": "Vidéos promo", "it": "Video promozionali", "es": "Vídeos promocionales", "pt": "Vídeos promocionais", "ru": "Промо-видео"};
   const i18n = {}; LANGUAGES.forEach(function(l){ i18n[l.code] = { videos_sub: SUB[l.code] || SUB.en }; });
-  const H_EN = "promotion_H_story.mp4?v=20260618210000", H_JA = "promotion_H_story_ja.mp4?v=20260618210000", V_JA = true;
+  const H_EN = "promotion_H_story.mp4?v=20260618213000", H_JA = "promotion_H_story_ja.mp4?v=20260618213000";
+  const V_PARTS = [{"id": "promo-v1", "base": "promotion_V_01", "ja": true}, {"id": "promo-v2", "base": "promotion_V_02", "ja": true}, {"id": "promo-v3", "base": "promotion_V_03", "ja": true}];
+  const VIDV = "20260618213000";
   const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
 
   function detectLang() {
@@ -70,7 +80,9 @@
     });
     var ja = (lang === 'ja');
     setSrc('promo-h', (ja && H_JA) ? H_JA : H_EN);
-    setSrc('promo-v', (ja && V_JA) ? 'promotion_V_ja.mp4?v=20260618210000' : 'promotion_V.mp4?v=20260618210000');
+    V_PARTS.forEach(function(pt){
+      setSrc(pt.id, pt.base + ((ja && pt.ja) ? '_ja' : '') + '.mp4?v=' + VIDV);
+    });
     var sel = document.getElementById('lang-select'); if (sel) sel.value = lang;
   }
   (function init() {
@@ -84,6 +96,6 @@
     sel.addEventListener('change', function(e){ setLang(e.target.value, true); });
   })();
 </script>
-<script src="../breadcrumb.js?v=20260618210000" defer></script>
+<script src="../breadcrumb.js?v=20260618213000" defer></script>
 </body>
 </html>
