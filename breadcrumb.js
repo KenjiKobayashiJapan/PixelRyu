@@ -56,6 +56,11 @@
       en: "Terms of Service", ja: "利用規約", zh: "服务条款", ko: "서비스 이용약관",
       hi: "सेवा शर्तें", id: "Ketentuan Layanan", de: "Nutzungsbedingungen", fr: "Conditions d’utilisation",
       it: "Termini di servizio", es: "Términos del servicio", pt: "Termos de serviço", ru: "Условия использования"
+    },
+    video: {
+      en: "Video", ja: "ビデオ", zh: "视频", ko: "비디오",
+      hi: "वीडियो", id: "Video", de: "Video", fr: "Vidéo",
+      it: "Video", es: "Vídeo", pt: "Vídeo", ru: "Видео"
     }
   };
 
@@ -97,6 +102,7 @@
     if (file.indexOf("overview") === 0) leaf = "overview";
     else if (file.indexOf("privacy") === 0) leaf = "privacy";
     else if (file.indexOf("terms") === 0) leaf = "terms";
+    else if (file.indexOf("video") === 0) leaf = "video";
     // "" or index.html (or anything else) => treat as the app index
     return { app: app, leaf: leaf };
   }
