@@ -183,6 +183,25 @@
   .filter-puzzle.is-active { background: #67c9d8; border-color: #67c9d8; }
   .filter-action.is-active { background: #eaa63f; border-color: #eaa63f; }
   @media (prefers-reduced-motion: reduce) { .filter-btn:hover { transform: none; } }
+  /* Loading spinner (infinite scroll + language switch) — centered, rotating. */
+  @keyframes pr-spin { to { transform: rotate(360deg); } }
+  .pr-spinner {
+    display: inline-block; width: 34px; height: 34px; border-radius: 50%;
+    border: 3px solid rgba(160, 200, 255, 0.22);
+    border-top-color: #a0c8ff;
+    animation: pr-spin 0.8s linear infinite;
+  }
+  #list-loader { display: none; align-items: center; justify-content: center; padding: 22px 0 6px; }
+  #list-loader.is-loading { display: flex; }
+  #scroll-sentinel { width: 100%; height: 1px; }
+  #lang-overlay {
+    display: none; position: fixed; inset: 0; z-index: 60;
+    align-items: center; justify-content: center;
+    background: rgba(8, 12, 24, 0.5);
+  }
+  #lang-overlay.is-active { display: flex; }
+  #lang-overlay .pr-spinner { width: 46px; height: 46px; border-width: 4px; }
+  @media (prefers-reduced-motion: reduce) { .pr-spinner { animation-duration: 1.6s; } }
   .game-card a {
     color: #7ab0ff;
     text-decoration: none;
@@ -908,6 +927,8 @@
       </div>
     </li>
   </ul>
+  <div id="list-loader" aria-hidden="true"><span class="pr-spinner" role="status" aria-label="Loading"></span></div>
+  <div id="scroll-sentinel" aria-hidden="true"></div>
 
   <div class="footer">© <span id="year"></span> PixelRyu</div>
 </div>
@@ -1402,8 +1423,8 @@
       opt.textContent = l.flag + ' ' + l.name;
       sel.appendChild(opt);
     }
-    setLang('hi', true);
-    sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/' : 'https://pixelryu.github.io/' + v + '/';});
+    setLang(detectLang(), true);
+    sel.addEventListener('change', function(e){ setLang(e.target.value, true); });
   })();
 </script>
 <script>
@@ -1436,14 +1457,21 @@
   })();
 </script>
 <script>
-  // Genre filter: each card's genre is read from its on-card genre tag (single source of
-  // truth), so adding/retagging a card needs no extra wiring here. Clicking a pill shows
-  // only that genre; "All" shows everything. Counts are filled in once on load.
+  // Card feed controller: genre filter + paged reveal (show the first 5, then infinite
+  // scroll the rest with a centered spinner) + a centered spinner during language switch.
+  // Each card's genre is read from its on-card genre tag (single source of truth), so
+  // adding/retagging a card needs no extra wiring here. The visible set is always
+  // (matches the current genre) ∩ (within the revealed count).
   (function () {
-    var bar = document.querySelector('.genre-filter');
     var list = document.querySelector('.game-list');
-    if (!bar || !list) return;
+    if (!list) return;
+    var bar = document.querySelector('.genre-filter');
+    var loader = document.getElementById('list-loader');
+    var sentinel = document.getElementById('scroll-sentinel');
+    var langOverlay = document.getElementById('lang-overlay');
     var cards = Array.prototype.slice.call(list.querySelectorAll('.game-card'));
+
+    // Each card's genre comes from its on-card genre tag (single source of truth).
     cards.forEach(function (card) {
       var gs = [];
       card.querySelectorAll('.genre-tag').forEach(function (tag) {
@@ -1453,30 +1481,86 @@
       });
       card.dataset.genres = gs.join(' ');
     });
-    var counts = { all: cards.length };
-    cards.forEach(function (c) {
-      c.dataset.genres.split(' ').forEach(function (g) { if (g) counts[g] = (counts[g] || 0) + 1; });
-    });
-    bar.querySelectorAll('.filter-count').forEach(function (el) {
-      var k = el.getAttribute('data-count');
-      el.textContent = counts[k] != null ? counts[k] : 0;
-    });
-    var btns = Array.prototype.slice.call(bar.querySelectorAll('.filter-btn'));
-    function apply(filter) {
+    if (bar) {
+      var counts = { all: cards.length };
       cards.forEach(function (c) {
-        c.style.display = (filter === 'all' || c.dataset.genres.split(' ').indexOf(filter) >= 0) ? '' : 'none';
+        c.dataset.genres.split(' ').forEach(function (g) { if (g) counts[g] = (counts[g] || 0) + 1; });
       });
-      btns.forEach(function (b) {
-        var on = b.getAttribute('data-filter') === filter;
-        b.classList.toggle('is-active', on);
-        b.setAttribute('aria-pressed', on ? 'true' : 'false');
+      bar.querySelectorAll('.filter-count').forEach(function (el) {
+        var k = el.getAttribute('data-count');
+        el.textContent = counts[k] != null ? counts[k] : 0;
       });
     }
-    bar.addEventListener('click', function (e) {
-      var btn = e.target.closest('.filter-btn');
-      if (btn) apply(btn.getAttribute('data-filter'));
-    });
+
+    // Feed: show the first INITIAL cards, reveal BATCH more per infinite-scroll step.
+    var INITIAL = 5, BATCH = 5, LOAD_MS = 600;
+    var filter = 'all', revealed = INITIAL, loading = false;
+
+    function matching() {
+      return cards.filter(function (c) {
+        return filter === 'all' || c.dataset.genres.split(' ').indexOf(filter) >= 0;
+      });
+    }
+    function hasMore() { return revealed < matching().length; }
+    function applyView() {
+      var m = matching();
+      cards.forEach(function (c) { c.style.display = 'none'; });
+      m.slice(0, revealed).forEach(function (c) { c.style.display = ''; });
+    }
+    function loadMore() {
+      if (loading || !hasMore()) return;
+      loading = true;
+      if (loader) loader.classList.add('is-loading');   // centered spinner while loading
+      window.setTimeout(function () {
+        revealed += BATCH;
+        applyView();
+        if (loader) loader.classList.remove('is-loading');
+        loading = false;
+      }, LOAD_MS);
+    }
+
+    applyView();
+
+    // Genre filter — restart the feed (first INITIAL of the new genre) on each switch.
+    if (bar) {
+      var btns = Array.prototype.slice.call(bar.querySelectorAll('.filter-btn'));
+      bar.addEventListener('click', function (e) {
+        var btn = e.target.closest('.filter-btn');
+        if (!btn) return;
+        filter = btn.getAttribute('data-filter');
+        revealed = INITIAL;
+        btns.forEach(function (b) {
+          var on = b.getAttribute('data-filter') === filter;
+          b.classList.toggle('is-active', on);
+          b.setAttribute('aria-pressed', on ? 'true' : 'false');
+        });
+        applyView();
+      });
+    }
+
+    // Infinite scroll — reveal the next batch when the bottom sentinel nears the viewport.
+    if (sentinel && 'IntersectionObserver' in window) {
+      new IntersectionObserver(function (entries) {
+        entries.forEach(function (en) { if (en.isIntersecting) loadMore(); });
+      }, { rootMargin: '260px 0px' }).observe(sentinel);
+    } else if (sentinel) {
+      window.addEventListener('scroll', function () {
+        if (sentinel.getBoundingClientRect().top < window.innerHeight + 260) loadMore();
+      }, { passive: true });
+    }
+
+    // Language switch — show the same centered spinner while the list re-renders
+    // (the more cards are revealed, the more text the switch has to repaint).
+    var sel = document.getElementById('lang-select');
+    if (sel && langOverlay) {
+      sel.addEventListener('change', function () {
+        langOverlay.classList.add('is-active');
+        var ms = Math.min(900, 360 + revealed * 24);   // a touch longer when more is shown
+        window.setTimeout(function () { langOverlay.classList.remove('is-active'); }, ms);
+      }, true);
+    }
   })();
 </script>
+<div id="lang-overlay" aria-hidden="true"><span class="pr-spinner" role="status" aria-label="Loading"></span></div>
 </body>
 </html>
