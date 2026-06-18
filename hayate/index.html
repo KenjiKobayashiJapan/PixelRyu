@@ -867,7 +867,7 @@
       const opt = document.createElement('option');
       opt.value = l.code; opt.textContent = l.flag + ' ' + l.name; sel.appendChild(opt);
     }
-    setLang(detectLang(), true);
+    setLang('en', true);
     sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/hayate/' : 'https://pixelryu.github.io/hayate/' + v + '/';});
   })();
 </script>

@@ -1402,7 +1402,7 @@
       opt.textContent = l.flag + ' ' + l.name;
       sel.appendChild(opt);
     }
-    setLang(detectLang());
+    setLang('en', true);
     sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/' : 'https://pixelryu.github.io/' + v + '/';});
   })();
 </script>

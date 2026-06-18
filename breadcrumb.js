@@ -35,7 +35,8 @@
     "bounce-cat":  { all: "Bounce Cat" },
     "temari":      { all: "TEMARI" },
     "tatami":      { all: "TATAMI" },
-    "counterparts": { all: "CounterParts" }
+    "counterparts": { all: "CounterParts" },
+    "wagashi":     { all: "WAGASHI" }
   };
 
   // Leaf page labels (localized). Privacy/Terms match the legal-page generator

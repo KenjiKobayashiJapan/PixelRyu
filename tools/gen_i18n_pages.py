@@ -166,8 +166,11 @@ def rewire_switcher(src, orig, force_lang):
             r"let lang = 'en';.*?sel\.value = lang;\s*applyLang\(lang\);",
             "var lang = %r; sel.value = lang; applyLang(lang);" % force_lang,
             src, flags=re.S)
-        # Template B: `setLang(detectLang(), true);` / `setLang(detectLang());`
-        src = re.sub(r"setLang\(detectLang\(\)(?:,\s*true)?\);",
+        # Template B: `setLang(detectLang());` / `setLang(detectLang(), true);` /
+        # an already-forced `setLang('xx', true);`. Matching the quoted form too
+        # keeps regen idempotent AND lets the en page be forced to 'en' without
+        # leaving a `detectLang()` for a later run to (wrongly) inherit.
+        src = re.sub(r"setLang\((?:detectLang\(\)|'[a-z-]+')(?:,\s*true)?\);",
                      "setLang(%r, true);" % force_lang, src)
     return src
 
@@ -202,7 +205,12 @@ def modify_en_page(src, orig):
     if "hreflang=" not in out:
         out = out.replace('<link rel="canonical" href="%s">' % orig,
                           '<link rel="canonical" href="%s">\n%s' % (orig, hreflang_block(orig)), 1)
-    out = rewire_switcher(out, orig, None)
+    # Force the en canonical page to render English (setLang('en', true)) — symmetric
+    # with the baked language pages that force their own language. Without this the en
+    # page calls setLang(detectLang()), which reads the language a baked page persisted
+    # to localStorage, so once a visitor opened /ja/ etc. the homepage stayed stuck in
+    # that language and English became unreachable from the switcher.
+    out = rewire_switcher(out, orig, "en")
     return out
 
 

@@ -1002,7 +1002,7 @@
       sel.appendChild(opt);
     }
     // Persist on init too — guarantees subsequent pages pick up the same language via the shared localStorage key.
-    setLang(detectLang(), true);
+    setLang('en', true);
     sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/hotaru/' : 'https://pixelryu.github.io/hotaru/' + v + '/';});
   })();
 </script>

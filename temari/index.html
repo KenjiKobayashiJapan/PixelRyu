@@ -872,14 +872,7 @@
       o.value = l.code; o.textContent = l.flag + ' ' + l.name;
       sel.appendChild(o);
     });
-    let lang = 'en';
-    try{ lang = localStorage.getItem('pixelryu_lang') || ''; }catch(e){}
-    if(!i18n[lang]){
-      const nav = (navigator.language||'en').slice(0,2);
-      lang = i18n[nav] ? nav : 'en';
-    }
-    sel.value = lang;
-    applyLang(lang);
+    var lang = 'en'; sel.value = lang; applyLang(lang);
     sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/temari/' : 'https://pixelryu.github.io/temari/' + v + '/';});
   })();
 </script>
