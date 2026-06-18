@@ -153,25 +153,49 @@ def absolutize(src, orig, L):
     return re.sub(r'(\b(?:href|src)=")([^"]+)(")', repl, src)
 
 
-def rewire_switcher(src, orig, force_lang):
-    # the site has two page templates: Template A uses applyLang(), Template B
-    # uses setLang(lang, persist) + detectLang(). Handle both.
-    nav = ("sel.addEventListener('change', function(e){var v=e.target.value;"
-           "window.location.href = v==='en' ? %r : %r + v + '/';});" % (orig, orig))
-    src = re.sub(r"sel\.addEventListener\('change',\s*e\s*=>\s*applyLang\(e\.target\.value\)\);", nav, src)
-    src = re.sub(r"sel\.addEventListener\('change',\s*e\s*=>\s*setLang\(e\.target\.value,\s*true\)\);", nav, src)
-    if force_lang:
-        # Template A: `let lang = 'en'; ...; sel.value = lang; applyLang(lang);`
-        src = re.sub(
-            r"let lang = 'en';.*?sel\.value = lang;\s*applyLang\(lang\);",
-            "var lang = %r; sel.value = lang; applyLang(lang);" % force_lang,
-            src, flags=re.S)
-        # Template B: `setLang(detectLang());` / `setLang(detectLang(), true);` /
-        # an already-forced `setLang('xx', true);`. Matching the quoted form too
-        # keeps regen idempotent AND lets the en page be forced to 'en' without
-        # leaving a `detectLang()` for a later run to (wrongly) inherit.
-        src = re.sub(r"setLang\((?:detectLang\(\)|'[a-z-]+')(?:,\s*true)?\);",
-                     "setLang(%r, true);" % force_lang, src)
+def rewire_switcher(src, orig, force_lang=None):
+    # Language policy (2026-06-18 ユーザー指示): human-facing language is CLIENT-SIDE
+    # and INHERITED across pages. Every page renders the stored-or-browser language on
+    # load (initial display = browser setting; thereafter = the language carried over
+    # from the previous page) and the switcher persists the choice IN PLACE — it does
+    # NOT navigate to a per-language URL. The baked /<lang>/ pages still ship localized
+    # STATIC html for crawlers (SEO), but for humans every page adapts the same way, so
+    # English is always reachable and the chosen language follows you around.
+    #
+    # `force_lang` is kept for call-site compatibility but intentionally UNUSED: forcing
+    # a page's language is exactly what made English unreachable and broke inheritance.
+    # This function normalizes whatever switcher/init is present (navigating OR already
+    # client-side, forced OR adaptive) to the client-side+adaptive form, so it is
+    # idempotent across re-runs.
+    nav_re = (r"sel\.addEventListener\('change',\s*function\(e\)\{var v=e\.target\.value;"
+              r"window\.location\.href = [^;]*?;\}\);")
+    if "function setLang(" in src:
+        # Template B (setLang/detectLang, key 'pixelryu_lang_v2')
+        src = re.sub(nav_re,
+                     "sel.addEventListener('change', function(e){ setLang(e.target.value, true); });",
+                     src)
+        # forced or bare init -> adaptive + persist (matches setLang('xx'[,true]) and
+        # setLang(detectLang()[,true]); never matches the switcher's e.target.value).
+        src = re.sub(r"setLang\((?:'[a-z-]+'|detectLang\(\))(?:,\s*true)?\);",
+                     "setLang(detectLang(), true);", src)
+    else:
+        # Template A (applyLang) — unify the legacy localStorage key, make the switcher
+        # client-side, and detect the initial language (stored || browser).
+        src = src.replace("localStorage.setItem('pixelryu_lang',",
+                          "localStorage.setItem('pixelryu_lang_v2',")
+        src = src.replace("localStorage.getItem('pixelryu_lang')",
+                          "localStorage.getItem('pixelryu_lang_v2')")
+        src = re.sub(nav_re,
+                     "sel.addEventListener('change', function(e){ applyLang(e.target.value); });",
+                     src)
+        adaptive = ("var lang = 'en';"
+                    " try{ lang = localStorage.getItem('pixelryu_lang_v2') || ''; }catch(e){}"
+                    " if(!i18n[lang]){ var nv = (navigator.language||'en').slice(0,2);"
+                    " lang = i18n[nv] ? nv : 'en'; }"
+                    " sel.value = lang; applyLang(lang);")
+        # only the forced one-liner matches; the adaptive block (with its try/if) does not.
+        src = re.sub(r"var lang = '[a-z-]+'; sel\.value = lang; applyLang\(lang\);",
+                     adaptive, src)
     return src
 
 
@@ -205,12 +229,10 @@ def modify_en_page(src, orig):
     if "hreflang=" not in out:
         out = out.replace('<link rel="canonical" href="%s">' % orig,
                           '<link rel="canonical" href="%s">\n%s' % (orig, hreflang_block(orig)), 1)
-    # Force the en canonical page to render English (setLang('en', true)) — symmetric
-    # with the baked language pages that force their own language. Without this the en
-    # page calls setLang(detectLang()), which reads the language a baked page persisted
-    # to localStorage, so once a visitor opened /ja/ etc. the homepage stayed stuck in
-    # that language and English became unreachable from the switcher.
-    out = rewire_switcher(out, orig, "en")
+    # Normalize the en/canonical page to the client-side + adaptive switcher (see
+    # rewire_switcher): initial display follows the browser/stored language, the
+    # switcher persists the choice in place, and the inherited language carries over.
+    out = rewire_switcher(out, orig)
     return out
 
 

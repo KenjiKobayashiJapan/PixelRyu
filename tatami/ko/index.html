@@ -863,7 +863,7 @@
         const pr = v.play(); if(pr && pr.catch) pr.catch(()=>{});
       }
     }
-    try{ localStorage.setItem('pixelryu_lang', lang); }catch(e){}
+    try{ localStorage.setItem('pixelryu_lang_v2', lang); }catch(e){}
   }
 
   (function(){
@@ -873,8 +873,8 @@
       o.value = l.code; o.textContent = l.flag + ' ' + l.name;
       sel.appendChild(o);
     });
-    var lang = 'ko'; sel.value = lang; applyLang(lang);
-    sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/tatami/' : 'https://pixelryu.github.io/tatami/' + v + '/';});
+    var lang = 'en'; try{ lang = localStorage.getItem('pixelryu_lang_v2') || ''; }catch(e){} if(!i18n[lang]){ var nv = (navigator.language||'en').slice(0,2); lang = i18n[nv] ? nv : 'en'; } sel.value = lang; applyLang(lang);
+    sel.addEventListener('change', function(e){ applyLang(e.target.value); });
   })();
 </script>
 <script src="https://pixelryu.github.io/breadcrumb.js?v=20260609120534" defer></script>

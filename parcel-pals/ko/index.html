@@ -948,8 +948,8 @@
     }
     // Persist on init too — guarantees subsequent pages (privacy/terms/overview)
     // pick up the same language via the shared localStorage key.
-    setLang('ko', true);
-    sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/parcel-pals/' : 'https://pixelryu.github.io/parcel-pals/' + v + '/';});
+    setLang(detectLang(), true);
+    sel.addEventListener('change', function(e){ setLang(e.target.value, true); });
   })();
 </script>
 <script src="https://pixelryu.github.io/breadcrumb.js?v=20260602202548" defer></script>

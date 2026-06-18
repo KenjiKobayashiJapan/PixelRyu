@@ -660,8 +660,8 @@
       opt.textContent = l.flag + ' ' + l.name;
       sel.appendChild(opt);
     }
-    setLang('fr', true);
-    sel.addEventListener('change', function(e){var v=e.target.value;window.location.href = v==='en' ? 'https://pixelryu.github.io/liquid-glow-cosmic/' : 'https://pixelryu.github.io/liquid-glow-cosmic/' + v + '/';});
+    setLang(detectLang(), true);
+    sel.addEventListener('change', function(e){ setLang(e.target.value, true); });
   })();
 </script>
 <script src="https://pixelryu.github.io/breadcrumb.js?v=20260610104059" defer></script>
