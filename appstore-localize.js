@@ -1,9 +1,17 @@
-/* PixelRyu — localize App Store links by the selected site language.
+/* PixelRyu — point App Store badge links at a storefront that actually carries
+ * the app, based on the selected site language.
  *
- * A visitor reading the site in Japanese is sent to the Japanese App Store, a
- * German reader to the German store, and so on. Only the clickable <a> links to
- * apps.apple.com are rewritten; the JSON-LD download/canonical URLs are left
- * country-code-less ON PURPOSE (they are the canonical reference for crawlers).
+ * The apps are NOT distributed to every App Store territory, so forcing a
+ * storefront by page language used to send visitors to a store where the
+ * product 404s ("page not found") — e.g. the Russia (ru) or China (cn) store
+ * has no PixelRyu apps. Fix: only confirmed-available storefronts are
+ * localized — Japanese -> the JP store; everything else -> the US (English)
+ * store, which always carries the apps. Where a localized store would 404,
+ * English is the right fallback (owner instruction, 2026-06-20).
+ *
+ * Only the clickable <a> links to apps.apple.com are rewritten; the JSON-LD
+ * download/canonical URLs are left country-code-less ON PURPOSE (they are the
+ * canonical reference for crawlers).
  *
  * Shared & self-contained — included via the root-absolute path
  * "/appstore-localize.js" on every page that has App Store buttons (the top
@@ -18,12 +26,15 @@
   var CODES = ["en", "ja", "zh", "ko", "hi", "id", "de", "fr", "it", "es", "pt", "ru"];
 
   // Site language -> App Store storefront country code.
-  // The site's Chinese is Simplified (zh-Hans) and every app is live on the China
-  // App Store, so zh -> "cn". (A country-code-less apps.apple.com/app/ URL is NOT
-  // auto-redirected to the visitor's store — it resolves to the US storefront.)
+  // ONLY storefronts where the apps are confirmed available are listed here;
+  // any language not in this map falls back to "us" (English) in apply() below.
+  // Rationale: the apps are not distributed to all territories, so previously
+  // localizing pt->br, ru->ru, zh->cn, etc. produced "page not found" in stores
+  // that carry no PixelRyu apps. The US (English) and JP stores always carry
+  // them, so we keep en->us / ja->jp and send every other language to US English.
+  // To re-enable a storefront, confirm the app is on sale there, then add it.
   var STORE = {
-    en: "us", ja: "jp", ko: "kr", hi: "in", id: "id",
-    de: "de", fr: "fr", it: "it", es: "es", pt: "br", ru: "ru", zh: "cn"
+    en: "us", ja: "jp"
   };
 
   function detectLang() {
