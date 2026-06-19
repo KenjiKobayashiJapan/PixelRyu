@@ -18,12 +18,12 @@
   var CODES = ["en", "ja", "zh", "ko", "hi", "id", "de", "fr", "it", "es", "pt", "ru"];
 
   // Site language -> App Store storefront country code.
-  // zh is intentionally left blank: the apps are not published on the China App
-  // Store and zh-Hans has no single unambiguous storefront, so Chinese stays
-  // country-code-less and Apple auto-redirects the visitor to their own store.
+  // The site's Chinese is Simplified (zh-Hans) and every app is live on the China
+  // App Store, so zh -> "cn". (A country-code-less apps.apple.com/app/ URL is NOT
+  // auto-redirected to the visitor's store — it resolves to the US storefront.)
   var STORE = {
     en: "us", ja: "jp", ko: "kr", hi: "in", id: "id",
-    de: "de", fr: "fr", it: "it", es: "es", pt: "br", ru: "ru", zh: ""
+    de: "de", fr: "fr", it: "it", es: "es", pt: "br", ru: "ru", zh: "cn"
   };
 
   function detectLang() {
