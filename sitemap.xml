@@ -274,7 +274,7 @@
       <video:thumbnail_loc>https://pixelryu.github.io/counterparts/og.png?v=20260613211104</video:thumbnail_loc>
       <video:title>CounterParts — Official Trailer</video:title>
       <video:description>Official trailer for CounterParts by PixelRyu — a cozy mirror-twin grid puzzle. One swipe moves two twins, Light and Shade, one cell each in opposite directions; line both up to rest on their matching home pads inside a little brass tally counter.</video:description>
-      <video:content_loc>https://pixelryu.github.io/counterparts/promotion_H_en.mp4?v=20260614100539</video:content_loc>
+      <video:content_loc>https://pixelryu.github.io/counterparts/promotion_H_story.mp4?v=20260619100932</video:content_loc>
       <video:publication_date>2026-06-14T00:00:00+00:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
@@ -3278,6 +3278,12 @@
   <url>
     <loc>https://pixelryu.github.io/mole-whack/video.html</loc>
     <lastmod>2026-06-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/counterparts/video.html</loc>
+    <lastmod>2026-06-19</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
   </url>

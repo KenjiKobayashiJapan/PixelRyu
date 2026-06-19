@@ -45,6 +45,8 @@ SUB = {
 APPS = {
  "wagashi":            ("WAGASHI","promotion_H_story.mp4","promotion_H_story_ja.mp4","0012_wagashi",
                         [("promotion_V_01_en.mp4","promotion_V_01_ja.mp4"),("promotion_V_02_en.mp4","promotion_V_02_ja.mp4"),("promotion_V_03_en.mp4","promotion_V_03_ja.mp4")]),
+ "counterparts":       ("CounterParts","promotion_H_story.mp4","promotion_H_story_ja.mp4","0011_counterparts",
+                        [("promotion_V_01_en.mp4","promotion_V_01_ja.mp4"),("promotion_V_02_en.mp4","promotion_V_02_ja.mp4"),("promotion_V_03_en.mp4","promotion_V_03_ja.mp4")]),
  "tatami":             ("TATAMI","promotion_H_story.mp4","promotion_H_story_ja.mp4","0010_tatami",
                         [("promotion_V_01_en.mp4","promotion_V_01_ja.mp4"),("promotion_V_02_en.mp4","promotion_V_02_ja.mp4"),("promotion_V_03_en.mp4","promotion_V_03_ja.mp4")]),
  "temari":             ("TEMARI","promotion_H_story.mp4","promotion_H_story_ja.mp4","0009_temari",
