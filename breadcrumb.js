@@ -36,7 +36,9 @@
     "temari":      { all: "TEMARI" },
     "tatami":      { all: "TATAMI" },
     "counterparts": { all: "CounterParts" },
-    "wagashi":     { all: "WAGASHI" }
+    "wagashi":     { all: "WAGASHI" },
+    "senko":       { all: "SENKO", ja: "線香" },
+    "shizuku":     { all: "Shizuku", ja: "雫" }
   };
 
   // Leaf page labels (localized). Privacy/Terms match the legal-page generator
