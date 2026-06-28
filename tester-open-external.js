@@ -86,11 +86,12 @@
   function build() {
     var anchor = document.getElementById("tester-heading");
     var card = anchor ? (anchor.closest("section") || anchor.parentNode) : document.querySelector(".tester-card-base");
-    if (!card) return;
+    var testerLinks = document.querySelectorAll('a[href*="play.google.com/apps/testing"], a[href*="groups.google.com"]');
+    if (!card && !testerLinks.length) return;
 
     // LINE only: rewrite the tester links so a direct tap also escapes to Safari/Chrome.
     if (isLine) {
-      var scope = card.querySelectorAll('a[href*="play.google.com"], a[href*="groups.google.com"]');
+      var scope = card ? card.querySelectorAll('a[href*="play.google.com"], a[href*="groups.google.com"]') : testerLinks;
       for (var i = 0; i < scope.length; i++) {
         var h = scope[i].getAttribute("href") || "";
         if (/^https?:\/\//i.test(h)) scope[i].setAttribute("href", withParam(h));
@@ -141,7 +142,9 @@
       });
       b.appendChild(cp);
     }
-    card.insertBefore(b, card.firstChild);
+    var host = card || (testerLinks[0] ? (testerLinks[0].closest("section") || testerLinks[0].parentNode) : null);
+    if (host && host.parentNode) host.parentNode.insertBefore(b, host);
+    else document.body.insertBefore(b, document.body.firstChild);
   }
 
   if (document.readyState === "loading") {
