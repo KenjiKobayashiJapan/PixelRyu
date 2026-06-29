@@ -1,0 +1,644 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<link rel="preconnect" href="https://www.googletagmanager.com" crossorigin>
+<link rel="dns-prefetch" href="https://www.google-analytics.com">
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5MH53Z8LM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-M5MH53Z8LM');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">WAGASHI — Game Puzzle Gabung Manisan Jepang yang Menenangkan</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="WAGASHI — puzzle gabung manisan Jepang yang menenangkan dari PixelRyu. Jatuhkan satu manisan; dua yang sama akan bergabung menjadi yang berikutnya, menapaki rantai 10 langkah dari sebutir kacang azuki mungil hingga kagami-mochi yang megah. Fisika lembut, dua mode (Zen tanpa akhir + 200 stage pesanan) dan dua alat (kipas dan sumpit). 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia. Sudah hadir di Roblox; tester Android dibuka di Google Play; segera di App Store.">
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; background: radial-gradient(ellipse at top, #faf3e0 0%, #f3ebd6 52%, #e6d8b8 100%); color: #3a2e1a; margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .container { max-width: 580px; width: 100%; padding: 80px 32px; text-align: center; position: relative; }
+  .lang-switch { position: absolute; top: 24px; right: 24px; }
+  .lang-switch select { background: rgba(255,255,255,0.50); color: #7a5f1e; border: 1px solid rgba(168,128,31,0.40); border-radius: 4px; padding: 5px 10px; font-size: 13px; font-family: inherit; cursor: pointer; }
+  .lang-switch select:hover { background: rgba(255,255,255,0.70); border-color: #cf8a3a; }
+  .lang-switch select option { background: #f3ebd6; color: #3a2e1a; }
+  .brand-icon { width: 120px; height: 120px; border-radius: 28px; display: block; margin: 0 auto 20px; box-shadow: 0 8px 28px rgba(120,92,30,0.24), 0 0 0 1px rgba(168,128,31,0.22); }
+  .tagline { font-size: 14px; color: #8a7a52; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 3px; }
+  h1 { font-size: 46px; margin: 0 0 6px; color: #3a2e1a; font-weight: 800; letter-spacing: 4px; }
+  h1 .accent { color: #cf8a3a; }
+  .subtitle { font-size: 14px; color: #8a7a52; margin-bottom: 22px; text-transform: uppercase; letter-spacing: 2px; }
+  .key-hero { display:block; width:100%; max-width:520px; margin:6px auto 22px; border-radius:18px; box-shadow:0 10px 34px rgba(120,92,30,0.28), 0 0 0 1px rgba(168,128,31,0.20); }
+  .promo-video { display:block; width:100%; max-width:520px; aspect-ratio:16/9; margin:6px auto 22px; border-radius:18px; background:#000; box-shadow:0 10px 34px rgba(120,92,30,0.28), 0 0 0 1px rgba(168,128,31,0.20); }
+  .hero-badges { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; margin: 18px 0 6px; }
+  .hero-badges svg, .hero-badges img { display: block; }
+  .hero-badges .soon-cell { position: relative; display: inline-block; line-height: 0; }
+  .hero-badges .soon-cell svg, .hero-badges .soon-cell img { filter: grayscale(1); opacity: .5; }
+  .hero-badges .soon-cell .soon-stamp { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-12deg); color: #e11d1d; font-size: 12px; font-weight: 800; letter-spacing: 1px; white-space: nowrap; text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff; pointer-events: none; }
+  .soon-note { font-size: 13px; color: #8a7a52; margin: 6px 0 26px; }
+  .tester-card-base { background:rgba(184,137,62,0.06); border:1px solid rgba(168,128,31,0.28); border-radius:16px; padding:24px 24px 28px; margin:34px auto 30px; max-width:560px; text-align:left; box-shadow:0 8px 24px rgba(120,92,30,0.12); }
+  .tester-heading { font-size:13px; color:#a8801f; text-transform:uppercase; letter-spacing:2px; margin:0 0 4px; font-weight:700; text-align:center; }
+  .tester-android-note { display:block; font-size:11px; color:#8a7a52; text-transform:none; letter-spacing:0; font-weight:400; margin-bottom:16px; text-align:center; }
+  .tester-card-base p { font-size:14px; line-height:1.65; color:#5a4a2c; margin:12px 0; }
+  .tester-section-label { font-size:13px; font-weight:700; color:#8a5e1a; margin:20px 0 6px; }
+  .tester-step { display:block; background:rgba(184,137,62,0.12); border:1px solid rgba(168,128,31,0.38); border-radius:10px; padding:12px 16px; margin:10px 0; color:#7a531a; text-decoration:none; font-weight:600; font-size:14px; transition:all .2s ease; }
+  .tester-step:hover { background:rgba(184,137,62,0.22); border-color:rgba(168,128,31,0.66); }
+  .tester-card-base ul { margin:6px 0 0; padding-left:22px; color:#5a4a2c; font-size:14px; line-height:1.7; }
+  .tester-note { color:#8a7a52; font-size:13px; margin-top:18px; }
+  .lead { font-size: 15px; line-height: 1.8; color: #5a4a2c; margin: 0 auto 26px; max-width: 480px; }
+  .legal-divider { font-size: 14px; color: #a79468; text-transform: uppercase; letter-spacing: 2px; margin: 8px 0 16px; }
+  .links { list-style: none; padding: 0; margin: 0; }
+  .links li { background: rgba(255,255,255,0.50); border: 1px solid rgba(168,128,31,0.32); border-radius: 14px; margin-bottom: 14px; transition: all 0.25s ease; }
+  .links li:hover { background: rgba(255,255,255,0.72); border-color: #cf8a3a; }
+  .links a { color: #9a7b1e; text-decoration: none; font-size: 18px; font-weight: 600; display: block; padding: 22px 24px; }
+  .back { display: inline-block; margin-top: 48px; color: #a79468; text-decoration: none; font-size: 14px; }
+  .back:hover { color: #cf8a3a; }
+  .faq-card { background: rgba(255,255,255,0.50); border: 1px solid rgba(168,128,31,0.32); border-radius: 16px; padding: 24px 24px 28px; margin: 4px 0 28px; text-align: left; box-shadow: 0 8px 24px rgba(120,92,30,0.10); }
+  .faq-card p { font-size: 14px; line-height: 1.65; color: #4a3c20; margin: 12px 0; }
+  .faq-card strong { color: #3a2e1a; }
+  .social-heading{font-size:13px;color:#8a7a52;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(168,128,31,0.10);border:1px solid rgba(168,128,31,0.25);color:#8a7a52;transition:all .25s ease;}
+  .social a:hover{background:rgba(168,128,31,0.18);border-color:rgba(168,128,31,0.50);color:#7a5f1e;transform:translateY(-2px);}
+  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+  .world-gallery { margin:16px auto 10px; }
+  .world-gallery .wg-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; max-width:560px; margin:10px auto 0; }
+  .world-gallery img { width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(120,92,30,0.20), 0 0 0 1px rgba(168,128,31,0.16); display:block; }
+  @media (max-width:380px){ .world-gallery .wg-grid{ grid-template-columns:1fr; } }
+  @media (max-width: 600px) { .lang-switch { top: 16px; right: 16px; } h1 { font-size: 38px; } .brand-icon { width: 104px; height: 104px; border-radius: 24px; } }
+</style>
+<!-- SEO/LLMO start (managed) -->
+<link rel="canonical" href="https://pixelryu.github.io/wagashi/id/">
+<link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/">
+<link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/wagashi/ja/">
+<link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/wagashi/zh/">
+<link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/wagashi/ko/">
+<link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/wagashi/hi/">
+<link rel="alternate" hreflang="id" href="https://pixelryu.github.io/wagashi/id/">
+<link rel="alternate" hreflang="de" href="https://pixelryu.github.io/wagashi/de/">
+<link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/wagashi/fr/">
+<link rel="alternate" hreflang="it" href="https://pixelryu.github.io/wagashi/it/">
+<link rel="alternate" hreflang="es" href="https://pixelryu.github.io/wagashi/es/">
+<link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/wagashi/pt/">
+<link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/wagashi/ru/">
+<link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/wagashi/">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="PixelRyu">
+<meta name="publisher" content="PixelRyu">
+<meta name="keywords" content="WAGASHI, wagashi merge game, japanese sweets game, drop and merge puzzle, merge puzzle, cozy puzzle, mochi, azuki, kagami-mochi, PixelRyu, indie game, Android, iOS, Roblox">
+<meta name="theme-color" content="#f3ebd6">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/wagashi/icon.png?v=20260617172729">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/wagashi/icon.png?v=20260617172729">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PixelRyu">
+<meta property="og:title" content="WAGASHI — Game Puzzle Gabung Manisan Jepang yang Menenangkan">
+<meta property="og:description" content="WAGASHI — puzzle gabung manisan Jepang yang menenangkan dari PixelRyu. Jatuhkan satu manisan; dua yang sama akan bergabung menjadi yang berikutnya, menapaki rantai 10 langkah dari sebutir kacang azuki mungil hingga kagami-mochi yang megah. Fisika lembut, dua mode (Zen tanpa akhir + 200 stage pesanan) dan dua alat (kipas dan sumpit). 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia. Sudah hadir di Roblox; tester Android dibuka di Google Play; segera di App Store.">
+<meta property="og:url" content="https://pixelryu.github.io/wagashi/id/">
+<meta property="og:image" content="https://pixelryu.github.io/wagashi/og.png?v=20260617172729">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="WAGASHI — Game Puzzle Gabung Manisan Jepang yang Menenangkan">
+<meta property="og:locale" content="id_ID">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="WAGASHI — Game Puzzle Gabung Manisan Jepang yang Menenangkan">
+<meta name="twitter:description" content="WAGASHI — puzzle gabung manisan Jepang yang menenangkan dari PixelRyu. Jatuhkan satu manisan; dua yang sama akan bergabung menjadi yang berikutnya, menapaki rantai 10 langkah dari sebutir kacang azuki mungil hingga kagami-mochi yang megah. Fisika lembut, dua mode (Zen tanpa akhir + 200 stage pesanan) dan dua alat (kipas dan sumpit). 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia. Sudah hadir di Roblox; tester Android dibuka di Google Play; segera di App Store.">
+<meta name="twitter:image" content="https://pixelryu.github.io/wagashi/og.png?v=20260617172729">
+<meta name="twitter:image:alt" content="WAGASHI — Game Puzzle Gabung Manisan Jepang yang Menenangkan">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"WAGASHI","genre":"Puzzle, Casual","url":"https://pixelryu.github.io/wagashi/id/","image":"https://pixelryu.github.io/wagashi/icon.png","description":"WAGASHI — puzzle gabung manisan Jepang yang menenangkan dari PixelRyu. Jatuhkan satu manisan; dua yang sama akan bergabung menjadi yang berikutnya, menapaki rantai 10 langkah dari sebutir kacang azuki mungil hingga kagami-mochi yang megah. Fisika lembut, dua mode (Zen tanpa akhir + 200 stage pesanan) dan dua alat (kipas dan sumpit). 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia. Sudah hadir di Roblox; tester Android dibuka di Google Play; segera di App Store.","applicationCategory":"GameApplication","operatingSystem":"Android, Roblox","author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"sameAs":["https://play.google.com/store/apps/details?id=com.pixelryu.wagashi","https://www.roblox.com/games/110385859926306/WAGASHI-Sweet-Merge"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/id/"},{"@type":"ListItem","position":2,"name":"WAGASHI","item":"https://pixelryu.github.io/wagashi/id/"}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Game seperti apa WAGASHI itu?","acceptedAnswer":{"@type":"Answer","text":"WAGASHI adalah puzzle gabung manisan Jepang yang menenangkan dari PixelRyu. Jatuhkan satu manisan ke dalam wadah; saat dua manisan yang sama bersentuhan, keduanya bergabung menjadi yang berikutnya, menaiki rantai 10 langkah dari sebutir kacang azuki mungil hingga kagami-mochi yang megah."}},{"@type":"Question","name":"Apakah WAGASHI gratis dimainkan?","acceptedAnswer":{"@type":"Answer","text":"Ya — WAGASHI gratis dimainkan, didukung oleh iklan opsional. Di Roblox tidak ada iklan; kamu menggunakan koin yang kamu kumpulkan."}},{"@type":"Question","name":"Di mana saya bisa memainkan WAGASHI?","acceptedAnswer":{"@type":"Answer","text":"WAGASHI sudah hadir di Roblox, dan Android sedang dalam pengujian tertutup di Google Play; versi App Store segera menyusul. Ikuti PixelRyu untuk info peluncurannya."}},{"@type":"Question","name":"Bagaimana cara memainkan WAGASHI?","acceptedAnswer":{"@type":"Answer","text":"Geser posisi jatuh ke kiri atau ke kanan, lalu ketuk untuk menjatuhkan manisan. Dua manisan yang sama akan bergabung menjadi tingkat berikutnya. Jangan biarkan manisan mengendap di atas garis peringatan di mulut wadah. Alat digunakan dalam dua langkah: ketuk dulu ikon alat untuk memilihnya (ikonnya menyala, dan kamu boleh mengangkat jari), lalu seret di papan. Ketuk kipas lalu seret di papan untuk mengembuskan angin yang mendorong tumpukan, dan ketuk sumpit lalu seret untuk mengambil satu manisan pilihanmu lalu meletakkannya di mana pun kamu suka. Efeknya baru terjadi saat kamu menyeret. Alatmu terbawa antar-stage dan antara kedua mode, merangkai gabungan memberimu lebih banyak, dan sebuah iklan opsional bisa mengisinya kembali. Perhatikan pratinjau “Berikutnya” untuk merencanakan langkahmu."}},{"@type":"Question","name":"Bahasa apa saja yang didukung WAGASHI?","acceptedAnswer":{"@type":"Answer","text":"WAGASHI mendukung 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"WAGASHI — Official Trailer","description":"Official trailer for WAGASHI — a cozy Japanese-sweets merge puzzle by PixelRyu. Drop a sweet into the vessel; two of the same merge into the next, climbing a 10-step chain from a tiny azuki bean to a grand kagami-mochi. Soft physics, two modes and two tools. Now on Roblox; Android testers welcome on Google Play; coming soon to the App Store.","thumbnailUrl":"https://pixelryu.github.io/wagashi/og.png","uploadDate":"2026-06-18","contentUrl":"https://pixelryu.github.io/wagashi/promotion_H_story.mp4?v=20260624113858"}</script>
+<!-- SEO/LLMO end -->
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch">
+    <select id="lang-select" aria-label="Language"></select>
+  </div>
+  <img src="https://pixelryu.github.io/wagashi/icon.png?v=20260617172729" alt="WAGASHI" class="brand-icon">
+  <div class="tagline" data-i18n="tagline">Jatuhkan dan gabungkan wagashi.</div>
+  <h1>WAGA<span class="accent">SHI</span></h1>
+  <div class="subtitle" data-i18n="subtitle">Puzzle Gabung Manisan Jepang yang Menenangkan</div>
+  <video id="promo" class="promo-video" autoplay loop muted playsinline controls preload="auto" poster="key_hero.jpg?v=20260618113519" aria-label="WAGASHI gameplay trailer — drop and merge Japanese sweets up to a giant mochi">
+    <source src="https://pixelryu.github.io/wagashi/promotion_H_story.mp4?v=20260624113858" type="video/mp4">
+  </video>
+
+  <section class="hero-badges" aria-label="Play on Roblox now; Android testers welcome on Google Play; the App Store coming soon">
+    <span class="soon-cell" aria-label="Coming soon to the App Store"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24"><path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text><text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text></svg><span class="soon-stamp">COMING SOON</span></span>
+    <a class="googleplay-badge" href="#tester-heading" aria-label="Join WAGASHI Android testers (Google Play closed test)"><img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51"></a>
+    <a class="roblox-badge" href="https://www.roblox.com/games/110385859926306/WAGASHI-Sweet-Merge" target="_blank" rel="noopener" aria-label="Play WAGASHI on Roblox"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26"><g transform="rotate(13 13 13)"><rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/><rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/></g></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text><text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text></svg></a>
+  </section>
+  <p class="soon-note" data-i18n="soon_note">Sudah hadir di Roblox; tester Android dibuka di Google Play; segera di App Store.</p>
+
+  <p class="lead" data-i18n="lead">WAGASHI adalah puzzle gabung manisan Jepang yang menenangkan. Jatuhkan satu manisan ke dalam wadah; saat dua manisan yang sama bersentuhan, keduanya bergabung menjadi yang berikutnya, menaiki rantai 10 langkah dari sebutir kacang azuki mungil hingga kagami-mochi yang megah. Manisan bundar menggelinding dan mengendap dengan fisika lembut — asalkan jangan biarkan satu pun berhenti di atas garis peringatan. Mainkan dengan dua cara: mode Zen yang tenang tanpa akhir, atau 200 stage pesanan tempat kamu memenuhi permintaan dalam jumlah gerakan yang terbatas. Alat digunakan dalam dua langkah: ketuk ikon alat untuk memilihnya (ikonnya menyala, dan kamu boleh mengangkat jari), lalu seret di papan untuk memakainya. Setelah kipas dipilih, seret di papan untuk mengembuskan satu hela angin yang mendorong-dorong manisan di dekatnya (sedikit tak terduga, seperti mengipas sungguhan); setelah sumpit dipilih, seret untuk mengambil satu manisan pilihanmu dan meletakkannya di mana pun kamu suka. Efeknya baru terjadi saat kamu menyeret - sekadar mengetuk papan tidak melakukan apa-apa. Alatmu terbawa dari stage ke stage dan di antara kedua mode, dan merangkai gabungan (kombo) memberimu lebih banyak. Kamu juga bisa menonton iklan opsional untuk mengisinya kembali. Pratinjau “Berikutnya” memungkinkanmu merencanakan setiap jatuhan. Tanpa tekanan, 12 bahasa.</p>
+
+  <section class="world-gallery" aria-label="A peek at the vessel">
+    <h2 class="social-heading" data-i18n="gallery_heading">Mengintip ke dalam wadah</h2>
+    <div class="wg-grid">
+      <img src="https://pixelryu.github.io/wagashi/world_1.jpg?v=20260617172729" alt="Dropping a wagashi into the vessel" loading="lazy">
+      <img src="https://pixelryu.github.io/wagashi/world_2.jpg?v=20260617172729" alt="Two matching sweets merging into the next on the chain" loading="lazy">
+      <img src="https://pixelryu.github.io/wagashi/world_3.jpg?v=20260617172729" alt="The fan and chopsticks tools on the HUD" loading="lazy">
+      <img src="https://pixelryu.github.io/wagashi/world_4.jpg?v=20260617172729" alt="Completing an order in Orders mode" loading="lazy">
+    </div>
+  </section>
+
+  <div class="legal-divider" data-i18n="legal_divider">Dokumen Hukum</div>
+  <ul class="links">
+    <li><a href="https://pixelryu.github.io/wagashi/privacy_policy.html" data-i18n="link_privacy">Kebijakan Privasi</a></li>
+    <li><a href="https://pixelryu.github.io/wagashi/terms_of_service.html" data-i18n="link_terms">Ketentuan Layanan</a></li>
+  </ul>
+
+  <h2 class="social-heading" data-i18n="faq_heading">FAQ</h2>
+  <section class="faq-card" id="faq">
+    <p><strong data-i18n="faq_q1">Game seperti apa WAGASHI itu?</strong></p>
+    <p data-i18n="faq_a1">WAGASHI adalah puzzle gabung manisan Jepang yang menenangkan dari PixelRyu. Jatuhkan satu manisan ke dalam wadah; saat dua manisan yang sama bersentuhan, keduanya bergabung menjadi yang berikutnya, menaiki rantai 10 langkah dari sebutir kacang azuki mungil hingga kagami-mochi yang megah.</p>
+    <p><strong data-i18n="faq_q2">Apakah WAGASHI gratis dimainkan?</strong></p>
+    <p data-i18n="faq_a2">Ya — WAGASHI gratis dimainkan, didukung oleh iklan opsional. Di Roblox tidak ada iklan; kamu menggunakan koin yang kamu kumpulkan.</p>
+    <p><strong data-i18n="faq_q3">Di mana saya bisa memainkan WAGASHI?</strong></p>
+    <p data-i18n="faq_a3">WAGASHI sudah hadir di Roblox, dan Android sedang dalam pengujian tertutup di Google Play; versi App Store segera menyusul. Ikuti PixelRyu untuk info peluncurannya.</p>
+    <p><strong data-i18n="faq_q4">Bagaimana cara memainkan WAGASHI?</strong></p>
+    <p data-i18n="faq_a4">Geser posisi jatuh ke kiri atau ke kanan, lalu ketuk untuk menjatuhkan manisan. Dua manisan yang sama akan bergabung menjadi tingkat berikutnya. Jangan biarkan manisan mengendap di atas garis peringatan di mulut wadah. Alat digunakan dalam dua langkah: ketuk dulu ikon alat untuk memilihnya (ikonnya menyala, dan kamu boleh mengangkat jari), lalu seret di papan. Ketuk kipas lalu seret di papan untuk mengembuskan angin yang mendorong tumpukan, dan ketuk sumpit lalu seret untuk mengambil satu manisan pilihanmu lalu meletakkannya di mana pun kamu suka. Efeknya baru terjadi saat kamu menyeret. Alatmu terbawa antar-stage dan antara kedua mode, merangkai gabungan memberimu lebih banyak, dan sebuah iklan opsional bisa mengisinya kembali. Perhatikan pratinjau “Berikutnya” untuk merencanakan langkahmu.</p>
+    <p><strong data-i18n="faq_q5">Bahasa apa saja yang didukung WAGASHI?</strong></p>
+    <p data-i18n="faq_a5">WAGASHI mendukung 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia.</p>
+  </section>
+
+  <h2 class="social-heading" data-i18n="support_heading">Dukungan</h2>
+  <section class="faq-card" id="support">
+    <p data-i18n="support_body">Ada pertanyaan atau butuh bantuan dengan WAGASHI? Kirim email ke alamat di bawah ini, kami biasanya membalas dalam 1-2 hari kerja. Anda juga bisa melihat FAQ di atas.</p>
+    <p style="font-weight:600">📧 <a href="mailto:idev10752@gmail.com">idev10752@gmail.com</a></p>
+  </section>
+
+  <section class="tester-card-base" aria-labelledby="tester-heading">
+    <div id="tester-heading" class="tester-heading">
+      🎁 <span data-i18n="tester_heading">Android Tester Recruitment</span>
+      <span class="tester-android-note">📱 <span data-i18n="tester_android_note">Android only</span></span>
+    </div>
+    <p data-i18n="tester_intro">Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.</p>
+    <div class="tester-section-label">📦 <span data-i18n="tester_what_label">What it is</span></div>
+    <p data-i18n="tester_what">WAGASHI — a cozy Japanese-sweets merge puzzle by PixelRyu. Drop a sweet into the vessel; when two of the same touch, they merge into the next, climbing a 10-step chain from a tiny azuki bean to a grand kagami-mochi.</p>
+    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">🔗 <span data-i18n="tester_step1_label">Step 1 — Join the tester group</span></a>
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.wagashi" target="_blank" rel="noopener">📱 <span data-i18n="tester_step2_label">Step 2 — Opt-in via Play Store</span></a>
+    <a class="tester-step" href="https://play.google.com/store/apps/details?id=com.pixelryu.wagashi" target="_blank" rel="noopener">⬇️ <span data-i18n="tester_step3_label">Step 3 — Download &amp; play the app</span></a>
+    <div class="tester-section-label">📌 <span data-i18n="tester_ask_label">What I'm asking for</span></div>
+    <ul>
+      <li data-i18n="tester_ask_keep">Keep installed for the full 14 days</li>
+      <li data-i18n="tester_ask_launch">Launch every couple of days (a few times is enough)</li>
+      <li data-i18n="tester_ask_minutes">A minute or two of play per session is plenty</li>
+    </ul>
+    <p class="tester-note" data-i18n="tester_note_lead">ℹ️ Tip — all three steps below are required:</p>
+    <ul>
+      <li data-i18n="tester_note_step1">Step 1 — Join the group.</li>
+      <li data-i18n="tester_note_step2">Step 2 — Become a tester (opt-in): on the opt-in page, tap to join the test. Becoming a tester alone does not install the app.</li>
+      <li data-i18n="tester_note_step3">Step 3 — Download &amp; play: open the download page, install the app, launch it and play a little — without this, your testing doesn’t count.</li>
+      <li data-i18n="tester_note_account">Use the same Google account for all steps.</li>
+      <li data-i18n="tester_note_wait">If Step 2 or 3 shows “App not available”, wait a few hours after joining and try again.</li>
+    </ul>
+  </section>
+
+  <h2 class="social-heading" data-i18n="more_games_heading">Game lain dari PixelRyu</h2>
+  <ul class="links">
+    <li><a href="https://pixelryu.github.io/counterparts/id/"><span data-i18n="mg_1">CounterParts — puzzle grid kembar cermin yang menenangkan</span></a></li>
+    <li><a href="https://pixelryu.github.io/tatami/id/"><span data-i18n="mg_2">TATAMI: Lay the Floor — puzzle balok tatami yang menenangkan</span></a></li>
+    <li><a href="https://pixelryu.github.io/bounce-cat/id/"><span data-i18n="mg_3">Bounce Cat — puzzle kabur dari labirin yang menenangkan</span></a></li>
+  </ul>
+  <a href="https://pixelryu.github.io/id/" class="back" data-i18n="back">← PixelRyu</a>
+  <h2 class="social-heading">Follow</h2>
+  <div class="social">
+    <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note"><svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+    <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+</div>
+<script>
+  const LANGUAGES = [{"code": "en", "flag": "🇺🇸", "name": "English"}, {"code": "ja", "flag": "🇯🇵", "name": "日本語"}, {"code": "zh", "flag": "🇨🇳", "name": "简体中文"}, {"code": "ko", "flag": "🇰🇷", "name": "한국어"}, {"code": "hi", "flag": "🇮🇳", "name": "हिन्दी"}, {"code": "id", "flag": "🇮🇩", "name": "Bahasa Indonesia"}, {"code": "de", "flag": "🇩🇪", "name": "Deutsch"}, {"code": "fr", "flag": "🇫🇷", "name": "Français"}, {"code": "it", "flag": "🇮🇹", "name": "Italiano"}, {"code": "es", "flag": "🇪🇸", "name": "Español"}, {"code": "pt", "flag": "🇧🇷", "name": "Português"}, {"code": "ru", "flag": "🇷🇺", "name": "Русский"}];
+  const i18n = {
+  "en": {
+    "title": "WAGASHI — Cozy Japanese-Sweets Merge Puzzle Game",
+    "meta_desc": "WAGASHI — a cozy Japanese-sweets merge puzzle by PixelRyu. Drop a sweet; two of the same merge into the next, up a 10-step chain from a tiny azuki bean to a grand kagami-mochi. Soft physics, two modes (endless Zen + 200 order stages) and two tools (a fan and chopsticks). 12 languages. Now on Roblox; Android testers welcome on Google Play; coming soon to the App Store.",
+    "tagline": "Drop and merge wagashi.",
+    "subtitle": "Cozy Japanese-Sweets Merge Puzzle",
+    "soon_note": "Now on Roblox; Android testers welcome on Google Play; coming soon to the App Store.",
+    "gallery_heading": "A peek at the vessel",
+    "lead": "WAGASHI is a cozy Japanese-sweets merge puzzle. Drop a sweet into the vessel; when two of the same touch, they merge into the next, climbing a 10-step chain from a tiny azuki bean all the way to a grand kagami-mochi. Round sweets roll and settle with soft physics — just don’t let one come to rest above the warning line. Play it two ways: an endless, calm Zen mode, or 200 order stages where you fill a request within a limited number of moves. Each tool takes two steps: tap its icon to select it (the icon highlights, and you can lift your finger), then drag on the board to use it. With the uchiwa fan selected, drag across the board to send a gust through the pile that pushes the nearby sweets around (a bit unpredictable, like real fanning); with the chopsticks selected, drag to pick up one sweet you choose and set it down wherever you like. The effect only happens once you drag - just tapping the board does nothing. Your tools carry over from stage to stage and across both modes, and chaining merges into a combo earns you more; an optional ad can refill them too. A “Next” preview lets you plan each drop. No pressure, 12 languages.",
+    "legal_divider": "Legal Documents",
+    "link_privacy": "Privacy Policy",
+    "link_terms": "Terms of Service",
+    "back": "← PixelRyu",
+    "faq_heading": "FAQ",
+    "faq_q1": "What kind of game is WAGASHI?",
+    "faq_a1": "WAGASHI is a cozy Japanese-sweets merge puzzle by PixelRyu. Drop a sweet into the vessel; when two of the same touch, they merge into the next one, climbing a 10-step chain from a tiny azuki bean to a grand kagami-mochi.",
+    "faq_q2": "Is WAGASHI free to play?",
+    "faq_a2": "Yes — WAGASHI is free to play, supported by optional ads. On Roblox there are no ads; you use coins you earn.",
+    "faq_q3": "Where can I play WAGASHI?",
+    "faq_a3": "WAGASHI is out now on Roblox, with Android in closed testing on Google Play; the App Store version is coming soon. Follow PixelRyu for the launch.",
+    "faq_q4": "How do you play WAGASHI?",
+    "faq_a4": "Move the drop position left or right and tap to drop a sweet. Two of the same merge into the next tier. Don’t let a sweet settle above the warning line at the vessel’s mouth. The two tools each take two steps: first tap a tool’s icon to select it (it highlights, and you can lift your finger), then drag on the board to use it. Tap the uchiwa fan, then drag to send a gust through the pile that pushes the nearby sweets around (a bit unpredictable, like real fanning); tap the chopsticks, then drag to pick up one sweet you choose and place it wherever you like. The effect only happens once you drag. Your tools carry over from stage to stage and across both modes, chaining merges earns you more, and an optional ad can refill them. Watch the “Next” preview to plan ahead.",
+    "faq_q5": "Which languages does WAGASHI support?",
+    "faq_a5": "WAGASHI supports 12 languages: English, Japanese, Chinese, Korean, Hindi, Indonesian, German, French, Italian, Spanish, Portuguese, and Russian.",
+    "support_heading": "Support",
+    "support_body": "Questions or need help with WAGASHI? Email us at the address below and we usually reply within 1-2 business days. You can also check the FAQ above.",
+    "more_games_heading": "More games by PixelRyu",
+    "mg_1": "CounterParts — cozy mirror-twin grid puzzle",
+    "mg_2": "TATAMI: Lay the Floor — cozy tatami block puzzle",
+    "mg_3": "Bounce Cat — cozy maze-escape puzzle"
+  },
+  "ja": {
+    "title": "WAGASHI — ほっこり和菓子マージパズル",
+    "meta_desc": "WAGASHI — PixelRyu が贈る、ほっこり和菓子マージパズル。器に和菓子を落とすと、同じもの同士が合体して次の段位へ。小さな小豆から、橙を載せた鏡餅まで全10段。やわらかな物理、2モード（無限ZEN＋全200のおもてなし）、2道具（うちわと箸）。12言語対応。Roblox で配信中。Android は Google Play でテスター募集中。App Store は近日公開。",
+    "tagline": "和菓子を落として、合体。",
+    "subtitle": "ほっこり和菓子マージパズル",
+    "soon_note": "Roblox で配信中。Android は Google Play でテスター募集中。App Store は近日公開。",
+    "gallery_heading": "器の中をのぞく",
+    "lead": "WAGASHI は、ほっこり和菓子マージパズルです。器に和菓子を落とすと、同じもの同士が触れて合体し、次の段位へ——小さな小豆から、橙を載せた鏡餅まで、全10段の連鎖を育てます。丸い和菓子はやわらかな物理で転がって山に落ち着く——ただし、器の口の警告線より上で静止させないように。遊び方は2つ。無限で穏やかな ZEN モードと、手数内に注文をこなす全200ステージの「おもてなし」。道具の使い方は2ステップです。まず道具のアイコンをタップして選ぶと（アイコンが光り、指を離してもかまいません）、つぎに盤面をドラッグして使います。うちわを選んでから盤面をドラッグすると風がひと吹き起こり、近くの和菓子をあちこちに押し動かします（本物のあおぎのように少し気まぐれ）。箸を選んでからドラッグすれば、選んだ和菓子をひとつだけつまんで好きな場所に置き直せます。効果はドラッグして初めて起こり、盤面をタップしただけでは何も起きません。道具はステージをまたいでも2つのモードをまたいでも引き継がれ、合体を連鎖（コンボ）させるとさらに増えます。任意の広告で補充することもできます。「つぎ」のプレビューで一手先を読む。プレッシャーなし、12言語対応。",
+    "legal_divider": "規約類",
+    "link_privacy": "プライバシーポリシー",
+    "link_terms": "利用規約",
+    "back": "← PixelRyu へ戻る",
+    "faq_heading": "よくある質問",
+    "faq_q1": "WAGASHI はどんなゲーム?",
+    "faq_a1": "PixelRyu が贈る、ほっこり和菓子マージパズルです。器に和菓子を落とすと、同じもの同士が合体して次の段位へ。小さな小豆から橙を載せた鏡餅まで、全10段の連鎖を育てます。",
+    "faq_q2": "WAGASHI は無料ですか?",
+    "faq_a2": "はい。WAGASHI は無料でプレイでき、任意の広告で運営されます。Roblox 版に広告はなく、遊んで貯めたコインを使います。",
+    "faq_q3": "どこでプレイできますか?",
+    "faq_a3": "WAGASHI は Roblox で配信中で、Android は Google Play でクローズドテスト中です。App Store 版は近日公開予定です。公開情報は PixelRyu をフォローしてください。",
+    "faq_q4": "どうやって遊ぶの?",
+    "faq_a4": "落下位置を左右に動かしてタップで和菓子を落とします。同じもの2つが合体して次の段位に。器の口の警告線より上で和菓子を静止させないように。道具は2ステップで使います。まず道具のアイコンをタップして選び（アイコンが光り、指を離してもかまいません）、つぎに盤面をドラッグします。うちわをタップしてから盤面をドラッグすると風で山を押し動かし、箸をタップしてからドラッグすると選んだ和菓子をひとつだけ好きな場所に置き直せます。効果はドラッグして初めて起こります。道具はステージとモードをまたいで引き継がれ、合体を連鎖させるとさらに増え、任意の広告で補充もできます。「つぎ」のプレビューで先を読みましょう。",
+    "faq_q5": "対応言語は?",
+    "faq_a5": "WAGASHI は12言語に対応——英語・日本語・中国語・韓国語・ヒンディー語・インドネシア語・ドイツ語・フランス語・イタリア語・スペイン語・ポルトガル語・ロシア語。",
+    "support_heading": "サポート",
+    "support_body": "WAGASHI について質問やお困りごとがありますか? 下記のアドレスまでメールでお問い合わせください。通常1〜2営業日以内に返信します。上のFAQもご利用いただけます。",
+    "more_games_heading": "PixelRyu のほかのゲーム",
+    "mg_1": "CounterParts — ほっこり鏡像ツイン・グリッドパズル",
+    "mg_2": "TATAMI: Lay the Floor — ほっこり畳ブロックパズル",
+    "mg_3": "Bounce Cat — ほっこり迷路脱出パズル"
+  },
+  "zh": {
+    "title": "WAGASHI——温暖治愈的日式和菓子合成益智游戏",
+    "meta_desc": "WAGASHI——PixelRyu 出品的温暖治愈日式和菓子合成益智游戏。把和菓子放进器皿，两颗相同的便会合成更高一级，沿着十级链条，从小小的 azuki 红豆一路成长为隆重的 kagami-mochi。柔和的物理手感，两种模式（无尽 Zen 模式 + 200 个订单关卡）与两种道具（团扇与筷子）。支持 12 种语言。现已在 Roblox 上线；Android 正在 Google Play 招募测试员；App Store 即将推出。",
+    "tagline": "放下，合成，享受和菓子。",
+    "subtitle": "温暖治愈的日式和菓子合成益智游戏",
+    "soon_note": "现已在 Roblox 上线；Android 正在 Google Play 招募测试员；App Store 即将推出。",
+    "gallery_heading": "器皿一瞥",
+    "lead": "WAGASHI 是一款温暖治愈的日式和菓子合成益智游戏。把和菓子放进器皿，当两颗相同的相碰，便会合成更高一级——沿着十级链条，从小小的 azuki 红豆一路成长为隆重的 kagami-mochi。圆润的和菓子在柔和的物理手感中滚动、落定——只要别让任何一颗停在警戒线之上就好。两种玩法任你选择：宁静无尽的 Zen 模式，或是 200 个订单关卡，在有限步数内完成顾客的心愿。道具分两步使用：先点按道具图标将其选中（图标会高亮，你可以松开手指），再在盘面上拖动来使用。选中团扇后，在盘面上拖动会扇起一阵风，把附近的和菓子轻轻推动（像真的扇风一样，略带几分随性）；选中筷子后拖动，则能夹起你选中的某一颗，放到任意位置。只有拖动时才会生效，只点按盘面不会有任何反应。道具会在关卡之间、以及两种模式之间一直保留，连锁合成（连击）还会让你获得更多。你也可以观看一段可选广告来补充。「Next」预览则让你为每一次放置从容规划。没有压力，支持 12 种语言。",
+    "legal_divider": "法律文件",
+    "link_privacy": "隐私政策",
+    "link_terms": "服务条款",
+    "back": "← 返回 PixelRyu",
+    "faq_heading": "常见问题",
+    "faq_q1": "WAGASHI 是一款怎样的游戏？",
+    "faq_a1": "WAGASHI 是 PixelRyu 出品的一款温暖治愈的日式和菓子合成益智游戏。把和菓子放进器皿，当两颗相同的相碰，便会合成更高一级——沿着十级链条，从小小的 azuki 红豆一路成长为隆重的 kagami-mochi。",
+    "faq_q2": "WAGASHI 是免费游玩的吗？",
+    "faq_a2": "是的——WAGASHI 免费畅玩，由可选广告支持。在 Roblox 上没有广告，你使用自己赚取的金币。",
+    "faq_q3": "我可以在哪里玩 WAGASHI？",
+    "faq_a3": "WAGASHI 现已在 Roblox 上线；Android 正在 Google Play 招募测试员；App Store 即将推出。关注 PixelRyu，第一时间获取上线消息。",
+    "faq_q4": "WAGASHI 怎么玩？",
+    "faq_a4": "左右移动投放位置，点击放下一颗和菓子。两颗相同的会合成更高一级。别让和菓子停在器皿口的警戒线之上。道具分两步使用：先点按道具图标将其选中（图标会高亮，可松开手指），再在盘面上拖动。点按团扇后拖动会扇起一阵风推动整堆，点按筷子后拖动则能夹起你选中的一颗放到任意位置。只有拖动时才会生效。道具会在关卡和两种模式之间一直保留，连锁合成会让你获得更多，也可观看一段可选广告来补充。留意「Next」预览来提前规划。",
+    "faq_q5": "WAGASHI 支持哪些语言？",
+    "faq_a5": "WAGASHI 支持 12 种语言：英语、日语、中文、韩语、印地语、印度尼西亚语、德语、法语、意大利语、西班牙语、葡萄牙语和俄语。",
+    "support_heading": "支持",
+    "support_body": "对 WAGASHI 有疑问或需要帮助? 请通过下方的邮箱与我们联系，我们通常会在1-2个工作日内回复。也可以查看上方的常见问题。",
+    "more_games_heading": "PixelRyu 的更多游戏",
+    "mg_1": "CounterParts——温馨的镜像双子格子益智游戏",
+    "mg_2": "TATAMI: Lay the Floor——温馨的榻榻米方块益智游戏",
+    "mg_3": "Bounce Cat——温馨的迷宫逃脱益智游戏"
+  },
+  "ko": {
+    "title": "WAGASHI — 아늑한 일본 화과자 머지 퍼즐 게임",
+    "meta_desc": "WAGASHI — PixelRyu가 만든 아늑한 일본 화과자 머지 퍼즐. 화과자를 떨어뜨리고, 같은 것 둘이 만나면 다음 단계로 합쳐져 작은 azuki 콩에서 웅장한 kagami-mochi까지 10단계 체인을 올라갑니다. 부드러운 물리, 두 가지 모드(끝없는 Zen + 200개의 주문 스테이지)와 두 가지 도구(부채와 젓가락). 12개 언어. Roblox에서 플레이할 수 있습니다. Android는 Google Play에서 테스터를 모집 중입니다. App Store는 곧 출시됩니다.",
+    "tagline": "화과자를 떨어뜨려 합쳐 보세요.",
+    "subtitle": "아늑한 일본 화과자 머지 퍼즐",
+    "soon_note": "Roblox에서 플레이할 수 있습니다. Android는 Google Play에서 테스터를 모집 중입니다. App Store는 곧 출시됩니다.",
+    "gallery_heading": "그릇 속 들여다보기",
+    "lead": "WAGASHI는 아늑한 일본 화과자 머지 퍼즐입니다. 그릇 안으로 화과자를 떨어뜨리고, 같은 것 둘이 닿으면 다음 단계로 합쳐지며 작은 azuki 콩에서 웅장한 kagami-mochi까지 10단계 체인을 차근차근 올라갑니다. 동그란 화과자는 부드러운 물리로 또르르 굴러 자리를 잡아요 — 다만 경고선 위에 멈춰 쌓이지 않도록 조심하세요. 즐기는 방법은 두 가지. 끝없이 차분한 Zen 모드, 그리고 제한된 이동 횟수 안에서 주문을 채워 가는 200개의 주문 스테이지. 도구는 두 단계로 씁니다. 먼저 도구 아이콘을 탭해서 선택하면 (아이콘이 밝아지고, 손가락을 떼도 괜찮아요), 그다음 보드를 드래그해서 사용해요. 부채를 선택한 뒤 보드를 드래그하면 바람이 한 번 일어 가까운 화과자들을 이리저리 밀어내요 (진짜로 부치는 것처럼 조금 제멋대로예요). 젓가락을 선택한 뒤 드래그하면 고른 화과자 하나를 집어 원하는 곳에 다시 놓을 수 있어요. 효과는 드래그할 때 비로소 일어나고, 보드를 그냥 탭하기만 하면 아무 일도 일어나지 않아요. 도구는 스테이지가 바뀌어도, 두 모드 사이에서도 그대로 이어지고, 합치기를 연달아(콤보) 이으면 더 늘어나요. 원한다면 선택형 광고를 보고 다시 채울 수도 있어요. 'Next' 미리보기로 다음 한 수를 미리 계획할 수 있어요. 부담 없이, 12개 언어로.",
+    "legal_divider": "법적 문서",
+    "link_privacy": "개인정보 처리방침",
+    "link_terms": "이용약관",
+    "back": "← PixelRyu",
+    "faq_heading": "자주 묻는 질문",
+    "faq_q1": "WAGASHI는 어떤 게임인가요?",
+    "faq_a1": "WAGASHI는 PixelRyu가 만든 아늑한 일본 화과자 머지 퍼즐입니다. 그릇 안으로 화과자를 떨어뜨리고, 같은 것 둘이 닿으면 다음 단계로 합쳐지며 작은 azuki 콩에서 웅장한 kagami-mochi까지 10단계 체인을 올라갑니다.",
+    "faq_q2": "WAGASHI는 무료인가요?",
+    "faq_a2": "네 — WAGASHI는 무료로 즐길 수 있으며, 선택형 광고로 운영됩니다. Roblox에서는 광고가 없고, 직접 모은 코인을 사용합니다.",
+    "faq_q3": "WAGASHI는 어디에서 플레이할 수 있나요?",
+    "faq_a3": "WAGASHI는 Roblox에서 플레이할 수 있습니다. Android는 Google Play에서 테스터를 모집 중입니다. App Store는 곧 출시됩니다. 출시 소식은 PixelRyu를 팔로우하세요.",
+    "faq_q4": "WAGASHI는 어떻게 플레이하나요?",
+    "faq_a4": "떨어뜨릴 위치를 좌우로 옮긴 뒤 탭하여 화과자를 떨어뜨리세요. 같은 것 둘이 만나면 다음 단계로 합쳐집니다. 그릇 입구의 경고선 위에 화과자가 멈춰 쌓이지 않도록 하세요. 도구는 두 단계로 씁니다. 먼저 도구 아이콘을 탭해 선택하고 (아이콘이 밝아지며, 손가락을 떼도 돼요), 그다음 보드를 드래그하세요. 부채를 탭한 뒤 보드를 드래그하면 바람으로 더미를 밀어내고, 젓가락을 탭한 뒤 드래그하면 고른 화과자 하나를 원하는 곳에 놓을 수 있어요. 효과는 드래그할 때 비로소 일어나요. 도구는 스테이지와 두 모드 사이에서 그대로 이어지고, 합치기를 연달아 이으면 더 늘어나며, 선택형 광고로 다시 채울 수도 있어요. 'Next' 미리보기를 확인하며 다음 수를 계획하세요.",
+    "faq_q5": "WAGASHI는 어떤 언어를 지원하나요?",
+    "faq_a5": "WAGASHI는 영어, 일본어, 중국어, 한국어, 힌디어, 인도네시아어, 독일어, 프랑스어, 이탈리아어, 스페인어, 포르투갈어, 러시아어 등 12개 언어를 지원합니다.",
+    "support_heading": "지원",
+    "support_body": "WAGASHI에 대해 궁금한 점이 있거나 도움이 필요하신가요? 아래 이메일로 문의해 주시면 보통 1~2영업일 이내에 답변드립니다. 위의 FAQ도 참고하세요.",
+    "more_games_heading": "PixelRyu의 다른 게임",
+    "mg_1": "CounterParts — 아늑한 거울 쌍둥이 격자 퍼즐",
+    "mg_2": "TATAMI: Lay the Floor — 아늑한 다다미 블록 퍼즐",
+    "mg_3": "Bounce Cat — 아늑한 미로 탈출 퍼즐"
+  },
+  "hi": {
+    "title": "WAGASHI — आरामदायक जापानी मिठाइयों वाला मर्ज पज़ल गेम",
+    "meta_desc": "WAGASHI — PixelRyu की ओर से एक आरामदायक जापानी मिठाइयों वाला मर्ज पज़ल। एक मिठाई गिराएँ; एक जैसी दो मिठाइयाँ मिलकर अगली बन जाती हैं, और एक नन्हे azuki दाने से लेकर भव्य kagami-mochi तक 10 चरणों की श्रृंखला चढ़ती हैं। नर्म फ़िज़िक्स, दो मोड (अंतहीन Zen + 200 ऑर्डर स्टेज) और दो औज़ार (एक पंखा और चॉपस्टिक्स)। 12 भाषाएँ। अब Roblox पर उपलब्ध; Android के लिए Google Play पर टेस्टर आमंत्रित; App Store पर जल्द आ रहा है।",
+    "tagline": "wagashi गिराएँ और मिलाएँ।",
+    "subtitle": "आरामदायक जापानी मिठाइयों वाला मर्ज पज़ल",
+    "soon_note": "अब Roblox पर उपलब्ध; Android के लिए Google Play पर टेस्टर आमंत्रित; App Store पर जल्द आ रहा है।",
+    "gallery_heading": "बर्तन की एक झलक",
+    "lead": "WAGASHI एक आरामदायक जापानी मिठाइयों वाला मर्ज पज़ल है। बर्तन में एक मिठाई गिराएँ; जब एक जैसी दो मिठाइयाँ छूती हैं, तो वे मिलकर अगली बन जाती हैं और एक नन्हे azuki दाने से लेकर भव्य kagami-mochi तक 10 चरणों की श्रृंखला चढ़ती जाती हैं। गोल मिठाइयाँ नर्म फ़िज़िक्स के साथ लुढ़कती और जम जाती हैं — बस ध्यान रखें कि कोई भी मिठाई चेतावनी रेखा के ऊपर न ठहर जाए। इसे दो तरह से खेलें: एक अंतहीन, शांत Zen मोड, या 200 ऑर्डर स्टेज जहाँ आप सीमित चालों में किसी फ़रमाइश को पूरा करते हैं। औज़ार दो चरणों में इस्तेमाल होते हैं: पहले औज़ार के आइकन पर टैप करके उसे चुनें (आइकन हाइलाइट हो जाता है, और आप उँगली हटा सकते हैं), फिर उसे इस्तेमाल करने के लिए बोर्ड पर ड्रैग करें। पंखे को चुनने के बाद बोर्ड पर ड्रैग करें तो एक झोंका उठता है जो आस-पास की मिठाइयों को इधर-उधर खिसका देता है (असली हवा झलने की तरह, थोड़ा बेतरतीब)। चॉपस्टिक्स को चुनने के बाद ड्रैग करें तो आप अपनी चुनी हुई एक मिठाई उठाकर मनचाही जगह रख सकते हैं। असर तभी होता है जब आप ड्रैग करते हैं - सिर्फ़ बोर्ड पर टैप करने से कुछ नहीं होता। आपके औज़ार स्टेज दर स्टेज और दोनों मोड के बीच बने रहते हैं, और मर्ज की लड़ी (कॉम्बो) बनाने पर आपको और मिल जाते हैं। चाहें तो एक वैकल्पिक विज्ञापन देखकर इन्हें फिर से भर सकते हैं। एक “Next” झलक आपको हर ड्रॉप की योजना बनाने देती है। कोई दबाव नहीं, 12 भाषाएँ।",
+    "legal_divider": "कानूनी दस्तावेज़",
+    "link_privacy": "गोपनीयता नीति",
+    "link_terms": "सेवा की शर्तें",
+    "back": "← PixelRyu",
+    "faq_heading": "अक्सर पूछे जाने वाले सवाल",
+    "faq_q1": "WAGASHI किस तरह का गेम है?",
+    "faq_a1": "WAGASHI, PixelRyu की ओर से एक आरामदायक जापानी मिठाइयों वाला मर्ज पज़ल है। बर्तन में एक मिठाई गिराएँ; जब एक जैसी दो मिठाइयाँ छूती हैं, तो वे मिलकर अगली बन जाती हैं और एक नन्हे azuki दाने से लेकर भव्य kagami-mochi तक 10 चरणों की श्रृंखला चढ़ती हैं।",
+    "faq_q2": "क्या WAGASHI मुफ़्त में खेला जा सकता है?",
+    "faq_a2": "हाँ — WAGASHI मुफ़्त में खेला जा सकता है, जो वैकल्पिक विज्ञापनों से चलता है। Roblox पर कोई विज्ञापन नहीं हैं; आप अपने कमाए हुए सिक्कों का इस्तेमाल करते हैं।",
+    "faq_q3": "मैं WAGASHI कहाँ खेल सकता हूँ?",
+    "faq_a3": "WAGASHI अब Roblox पर उपलब्ध है, और Android के लिए Google Play पर क्लोज़्ड टेस्टिंग चल रही है; App Store संस्करण जल्द आ रहा है। लॉन्च की जानकारी के लिए PixelRyu को फ़ॉलो करें।",
+    "faq_q4": "WAGASHI कैसे खेलते हैं?",
+    "faq_a4": "ड्रॉप की जगह को बाएँ या दाएँ ले जाएँ और मिठाई गिराने के लिए टैप करें। एक जैसी दो मिठाइयाँ मिलकर अगले स्तर की बन जाती हैं। ध्यान रखें कि कोई मिठाई बर्तन के मुँह पर बनी चेतावनी रेखा के ऊपर न जम जाए। औज़ार दो चरणों में काम करते हैं: पहले औज़ार के आइकन पर टैप करके उसे चुनें (वह हाइलाइट हो जाता है, और आप उँगली हटा सकते हैं), फिर बोर्ड पर ड्रैग करें। पंखे पर टैप करके फिर बोर्ड पर ड्रैग करें तो हवा से ढेर खिसकता है, और चॉपस्टिक्स पर टैप करके फिर ड्रैग करें तो अपनी चुनी हुई एक मिठाई मनचाही जगह रख सकते हैं। असर तभी होता है जब आप ड्रैग करते हैं। आपके औज़ार स्टेज और दोनों मोड के बीच बने रहते हैं, मर्ज की लड़ी बनाने पर और मिलते हैं, और एक वैकल्पिक विज्ञापन से फिर से भरे जा सकते हैं। आगे की योजना बनाने के लिए “Next” झलक देखें।",
+    "faq_q5": "WAGASHI किन भाषाओं को सपोर्ट करता है?",
+    "faq_a5": "WAGASHI 12 भाषाओं को सपोर्ट करता है: अंग्रेज़ी, जापानी, चीनी, कोरियाई, हिन्दी, इंडोनेशियाई, जर्मन, फ़्रेंच, इतालवी, स्पेनिश, पुर्तगाली और रूसी।",
+    "support_heading": "सहायता",
+    "support_body": "WAGASHI के बारे में सवाल हैं या मदद चाहिए? नीचे दिए गए ईमेल पर हमसे संपर्क करें, हम आमतौर पर 1-2 कार्यदिवसों में जवाब देते हैं। आप ऊपर दिए गए सामान्य प्रश्न भी देख सकते हैं।",
+    "more_games_heading": "PixelRyu के और गेम",
+    "mg_1": "CounterParts — आरामदायक मिरर-ट्विन ग्रिड पज़ल",
+    "mg_2": "TATAMI: Lay the Floor — आरामदायक tatami ब्लॉक पज़ल",
+    "mg_3": "Bounce Cat — आरामदायक मेज़-एस्केप पज़ल"
+  },
+  "id": {
+    "title": "WAGASHI — Game Puzzle Gabung Manisan Jepang yang Menenangkan",
+    "meta_desc": "WAGASHI — puzzle gabung manisan Jepang yang menenangkan dari PixelRyu. Jatuhkan satu manisan; dua yang sama akan bergabung menjadi yang berikutnya, menapaki rantai 10 langkah dari sebutir kacang azuki mungil hingga kagami-mochi yang megah. Fisika lembut, dua mode (Zen tanpa akhir + 200 stage pesanan) dan dua alat (kipas dan sumpit). 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia. Sudah hadir di Roblox; tester Android dibuka di Google Play; segera di App Store.",
+    "tagline": "Jatuhkan dan gabungkan wagashi.",
+    "subtitle": "Puzzle Gabung Manisan Jepang yang Menenangkan",
+    "soon_note": "Sudah hadir di Roblox; tester Android dibuka di Google Play; segera di App Store.",
+    "gallery_heading": "Mengintip ke dalam wadah",
+    "lead": "WAGASHI adalah puzzle gabung manisan Jepang yang menenangkan. Jatuhkan satu manisan ke dalam wadah; saat dua manisan yang sama bersentuhan, keduanya bergabung menjadi yang berikutnya, menaiki rantai 10 langkah dari sebutir kacang azuki mungil hingga kagami-mochi yang megah. Manisan bundar menggelinding dan mengendap dengan fisika lembut — asalkan jangan biarkan satu pun berhenti di atas garis peringatan. Mainkan dengan dua cara: mode Zen yang tenang tanpa akhir, atau 200 stage pesanan tempat kamu memenuhi permintaan dalam jumlah gerakan yang terbatas. Alat digunakan dalam dua langkah: ketuk ikon alat untuk memilihnya (ikonnya menyala, dan kamu boleh mengangkat jari), lalu seret di papan untuk memakainya. Setelah kipas dipilih, seret di papan untuk mengembuskan satu hela angin yang mendorong-dorong manisan di dekatnya (sedikit tak terduga, seperti mengipas sungguhan); setelah sumpit dipilih, seret untuk mengambil satu manisan pilihanmu dan meletakkannya di mana pun kamu suka. Efeknya baru terjadi saat kamu menyeret - sekadar mengetuk papan tidak melakukan apa-apa. Alatmu terbawa dari stage ke stage dan di antara kedua mode, dan merangkai gabungan (kombo) memberimu lebih banyak. Kamu juga bisa menonton iklan opsional untuk mengisinya kembali. Pratinjau “Berikutnya” memungkinkanmu merencanakan setiap jatuhan. Tanpa tekanan, 12 bahasa.",
+    "legal_divider": "Dokumen Hukum",
+    "link_privacy": "Kebijakan Privasi",
+    "link_terms": "Ketentuan Layanan",
+    "back": "← PixelRyu",
+    "faq_heading": "FAQ",
+    "faq_q1": "Game seperti apa WAGASHI itu?",
+    "faq_a1": "WAGASHI adalah puzzle gabung manisan Jepang yang menenangkan dari PixelRyu. Jatuhkan satu manisan ke dalam wadah; saat dua manisan yang sama bersentuhan, keduanya bergabung menjadi yang berikutnya, menaiki rantai 10 langkah dari sebutir kacang azuki mungil hingga kagami-mochi yang megah.",
+    "faq_q2": "Apakah WAGASHI gratis dimainkan?",
+    "faq_a2": "Ya — WAGASHI gratis dimainkan, didukung oleh iklan opsional. Di Roblox tidak ada iklan; kamu menggunakan koin yang kamu kumpulkan.",
+    "faq_q3": "Di mana saya bisa memainkan WAGASHI?",
+    "faq_a3": "WAGASHI sudah hadir di Roblox, dan Android sedang dalam pengujian tertutup di Google Play; versi App Store segera menyusul. Ikuti PixelRyu untuk info peluncurannya.",
+    "faq_q4": "Bagaimana cara memainkan WAGASHI?",
+    "faq_a4": "Geser posisi jatuh ke kiri atau ke kanan, lalu ketuk untuk menjatuhkan manisan. Dua manisan yang sama akan bergabung menjadi tingkat berikutnya. Jangan biarkan manisan mengendap di atas garis peringatan di mulut wadah. Alat digunakan dalam dua langkah: ketuk dulu ikon alat untuk memilihnya (ikonnya menyala, dan kamu boleh mengangkat jari), lalu seret di papan. Ketuk kipas lalu seret di papan untuk mengembuskan angin yang mendorong tumpukan, dan ketuk sumpit lalu seret untuk mengambil satu manisan pilihanmu lalu meletakkannya di mana pun kamu suka. Efeknya baru terjadi saat kamu menyeret. Alatmu terbawa antar-stage dan antara kedua mode, merangkai gabungan memberimu lebih banyak, dan sebuah iklan opsional bisa mengisinya kembali. Perhatikan pratinjau “Berikutnya” untuk merencanakan langkahmu.",
+    "faq_q5": "Bahasa apa saja yang didukung WAGASHI?",
+    "faq_a5": "WAGASHI mendukung 12 bahasa: Inggris, Jepang, Mandarin, Korea, Hindi, Indonesia, Jerman, Prancis, Italia, Spanyol, Portugis, dan Rusia.",
+    "support_heading": "Dukungan",
+    "support_body": "Ada pertanyaan atau butuh bantuan dengan WAGASHI? Kirim email ke alamat di bawah ini, kami biasanya membalas dalam 1-2 hari kerja. Anda juga bisa melihat FAQ di atas.",
+    "more_games_heading": "Game lain dari PixelRyu",
+    "mg_1": "CounterParts — puzzle grid kembar cermin yang menenangkan",
+    "mg_2": "TATAMI: Lay the Floor — puzzle balok tatami yang menenangkan",
+    "mg_3": "Bounce Cat — puzzle kabur dari labirin yang menenangkan"
+  },
+  "de": {
+    "title": "WAGASHI – Gemütliches Merge-Puzzle mit japanischen Süßigkeiten",
+    "meta_desc": "WAGASHI – ein gemütliches Merge-Puzzle mit japanischen Süßigkeiten von PixelRyu. Lass eine Süßigkeit fallen; berühren sich zwei gleiche, verschmelzen sie zur nächsten – eine 10-stufige Kette von der winzigen azuki-Bohne bis zum prächtigen kagami-mochi. Sanfte Physik, zwei Modi (endloser Zen-Modus + 200 Bestell-Level) und zwei Werkzeuge (ein Fächer und Stäbchen). 12 Sprachen. Jetzt auf Roblox; Android-Tester willkommen bei Google Play; bald im App Store.",
+    "tagline": "Wagashi fallen lassen und verschmelzen.",
+    "subtitle": "Gemütliches Merge-Puzzle mit japanischen Süßigkeiten",
+    "soon_note": "Jetzt auf Roblox; Android-Tester willkommen bei Google Play; bald im App Store.",
+    "gallery_heading": "Ein Blick in das Gefäß",
+    "lead": "WAGASHI ist ein gemütliches Merge-Puzzle mit japanischen Süßigkeiten. Lass eine Süßigkeit ins Gefäß fallen; berühren sich zwei gleiche, verschmelzen sie zur nächsten und klettern eine 10-stufige Kette hinauf – von der winzigen azuki-Bohne bis zum prächtigen kagami-mochi. Runde Süßigkeiten rollen und kommen mit sanfter Physik zur Ruhe – lass nur keine oberhalb der Warnlinie liegen bleiben. Spiele auf zwei Arten: ein endloser, ruhiger Zen-Modus oder 200 Bestell-Level, in denen du einen Wunsch mit einer begrenzten Zahl an Zügen erfüllst. Werkzeuge nutzt du in zwei Schritten: Tippe auf das Symbol eines Werkzeugs, um es auszuwählen (das Symbol leuchtet auf, und du kannst den Finger abheben), und zieh dann auf dem Spielfeld, um es einzusetzen. Ist der Fächer ausgewählt, zieh über das Spielfeld, um einen Windstoß durch den Haufen zu blasen, der die nahen Süßigkeiten umherschubst (etwas unberechenbar, wie echtes Fächeln); sind die Stäbchen ausgewählt, zieh, um eine einzelne Süßigkeit deiner Wahl aufzunehmen und abzulegen, wo du willst. Der Effekt tritt erst beim Ziehen ein - ein bloßes Tippen aufs Spielfeld bewirkt nichts. Deine Werkzeuge bleiben von Stufe zu Stufe und über beide Modi hinweg erhalten, und das Verketten von Verschmelzungen (ein Combo) bringt dir mehr davon. Du kannst sie auch mit einer optionalen Werbung wieder auffüllen. Eine „Nächste“-Vorschau lässt dich jeden Wurf planen. Kein Stress, 12 Sprachen.",
+    "legal_divider": "Rechtliche Dokumente",
+    "link_privacy": "Datenschutzerklärung",
+    "link_terms": "Nutzungsbedingungen",
+    "back": "← Zurück zu PixelRyu",
+    "faq_heading": "FAQ",
+    "faq_q1": "Was für ein Spiel ist WAGASHI?",
+    "faq_a1": "WAGASHI ist ein gemütliches Merge-Puzzle mit japanischen Süßigkeiten von PixelRyu. Lass eine Süßigkeit ins Gefäß fallen; berühren sich zwei gleiche, verschmelzen sie zur nächsten und klettern eine 10-stufige Kette hinauf – von der winzigen azuki-Bohne bis zum prächtigen kagami-mochi.",
+    "faq_q2": "Ist WAGASHI kostenlos spielbar?",
+    "faq_a2": "Ja – WAGASHI ist kostenlos spielbar und wird durch optionale Werbung unterstützt. Auf Roblox gibt es keine Werbung; dort verwendest du Münzen, die du verdienst.",
+    "faq_q3": "Wo kann ich WAGASHI spielen?",
+    "faq_a3": "WAGASHI ist jetzt auf Roblox, und Android befindet sich bei Google Play im geschlossenen Test; die App-Store-Version erscheint bald. Folge PixelRyu, um den Start nicht zu verpassen.",
+    "faq_q4": "Wie spielt man WAGASHI?",
+    "faq_a4": "Bewege die Abwurfposition nach links oder rechts und tippe, um eine Süßigkeit fallen zu lassen. Zwei gleiche verschmelzen zur nächsten Stufe. Lass keine Süßigkeit oberhalb der Warnlinie am Rand des Gefäßes liegen bleiben. Werkzeuge nutzt du in zwei Schritten: Tippe zuerst auf das Symbol eines Werkzeugs, um es auszuwählen (es leuchtet auf, und du kannst den Finger abheben), und zieh dann auf dem Spielfeld. Tippe auf den Fächer und zieh dann über das Spielfeld, um mit einem Windstoß den Stapel zu schubsen, und tippe auf die Stäbchen und zieh dann, um eine einzelne Süßigkeit deiner Wahl aufzunehmen und überall abzulegen. Der Effekt tritt erst beim Ziehen ein. Deine Werkzeuge bleiben über Stufen und beide Modi hinweg erhalten, das Verketten von Verschmelzungen bringt dir mehr davon, und eine optionale Werbung füllt sie wieder auf. Behalte die „Nächste“-Vorschau im Blick, um vorauszuplanen.",
+    "faq_q5": "Welche Sprachen unterstützt WAGASHI?",
+    "faq_a5": "WAGASHI unterstützt 12 Sprachen: Englisch, Japanisch, Chinesisch, Koreanisch, Hindi, Indonesisch, Deutsch, Französisch, Italienisch, Spanisch, Portugiesisch und Russisch.",
+    "support_heading": "Support",
+    "support_body": "Fragen oder Hilfe zu WAGASHI nötig? Schreiben Sie uns an die untenstehende Adresse; wir antworten meist innerhalb von 1-2 Werktagen. Sie können auch die FAQ oben lesen.",
+    "more_games_heading": "Weitere Spiele von PixelRyu",
+    "mg_1": "CounterParts – gemütliches Gitter-Puzzle mit Spiegelzwillingen",
+    "mg_2": "TATAMI: Lay the Floor – gemütliches Tatami-Block-Puzzle",
+    "mg_3": "Bounce Cat – gemütliches Labyrinth-Flucht-Puzzle"
+  },
+  "fr": {
+    "title": "WAGASHI — Puzzle de fusion tout doux aux pâtisseries japonaises",
+    "meta_desc": "WAGASHI — un puzzle de fusion tout doux aux pâtisseries japonaises signé PixelRyu. Faites tomber une douceur ; deux identiques fusionnent en la suivante, le long d’une chaîne de 10 paliers, du minuscule haricot azuki au majestueux kagami-mochi. Physique tout en douceur, deux modes (Zen sans fin + 200 niveaux de commandes) et deux outils (un éventail et des baguettes). 12 langues. Disponible sur Roblox ; testeurs Android bienvenus sur Google Play ; bientôt sur l’App Store.",
+    "tagline": "Faites tomber et fusionnez vos wagashi.",
+    "subtitle": "Puzzle de fusion tout doux aux pâtisseries japonaises",
+    "soon_note": "Disponible sur Roblox ; testeurs Android bienvenus sur Google Play ; bientôt sur l’App Store.",
+    "gallery_heading": "Un coup d’œil dans le récipient",
+    "lead": "WAGASHI est un puzzle de fusion tout doux aux pâtisseries japonaises. Faites tomber une douceur dans le récipient ; lorsque deux identiques se touchent, elles fusionnent en la suivante et grimpent le long d’une chaîne de 10 paliers, du minuscule haricot azuki jusqu’au majestueux kagami-mochi. Les douceurs rondes roulent et se posent grâce à une physique tout en douceur — veillez simplement à n’en laisser aucune s’immobiliser au-dessus de la ligne d’alerte. Jouez de deux façons : un mode Zen calme et sans fin, ou 200 niveaux de commandes où vous honorez une demande en un nombre de coups limité. Les outils s’utilisent en deux étapes : touchez l’icône d’un outil pour le sélectionner (l’icône s’illumine, et vous pouvez lever le doigt), puis faites glisser sur le plateau pour vous en servir. L’éventail sélectionné, faites glisser sur le plateau pour souffler une bourrasque dans le tas qui pousse les douceurs voisines un peu partout (un peu imprévisible, comme un vrai coup d’éventail) ; les baguettes sélectionnées, faites glisser pour saisir une seule douceur de votre choix et la poser où vous voulez. L’effet ne se produit qu’au moment où vous faites glisser - une simple touche sur le plateau ne fait rien. Vos outils se conservent d’un niveau à l’autre et entre les deux modes, et enchaîner les fusions (un combo) vous en rapporte davantage. Vous pouvez aussi regarder une publicité facultative pour les recharger. Un aperçu « Suivant » vous permet d’anticiper chaque chute. Sans pression, 12 langues.",
+    "legal_divider": "Documents juridiques",
+    "link_privacy": "Politique de confidentialité",
+    "link_terms": "Conditions d’utilisation",
+    "back": "← PixelRyu",
+    "faq_heading": "FAQ",
+    "faq_q1": "Quel genre de jeu est WAGASHI ?",
+    "faq_a1": "WAGASHI est un puzzle de fusion tout doux aux pâtisseries japonaises signé PixelRyu. Faites tomber une douceur dans le récipient ; lorsque deux identiques se touchent, elles fusionnent en la suivante et gravissent une chaîne de 10 paliers, du minuscule haricot azuki au majestueux kagami-mochi.",
+    "faq_q2": "WAGASHI est-il gratuit ?",
+    "faq_a2": "Oui — WAGASHI est gratuit, financé par des publicités facultatives. Sur Roblox, il n’y a aucune publicité : vous utilisez les pièces que vous gagnez.",
+    "faq_q3": "Où puis-je jouer à WAGASHI ?",
+    "faq_a3": "WAGASHI est disponible sur Roblox, et Android est en test fermé sur Google Play ; la version App Store arrive bientôt. Suivez PixelRyu pour ne pas manquer le lancement.",
+    "faq_q4": "Comment joue-t-on à WAGASHI ?",
+    "faq_a4": "Déplacez le point de chute vers la gauche ou la droite, puis touchez l’écran pour faire tomber une douceur. Deux douceurs identiques fusionnent en celle du palier supérieur. Ne laissez aucune douceur s’immobiliser au-dessus de la ligne d’alerte, à l’ouverture du récipient. Les outils s’utilisent en deux étapes : touchez d’abord l’icône d’un outil pour le sélectionner (elle s’illumine, et vous pouvez lever le doigt), puis faites glisser sur le plateau. Touchez l’éventail puis faites glisser sur le plateau pour souffler une bourrasque qui pousse la pile, et touchez les baguettes puis faites glisser pour saisir une seule douceur de votre choix et la poser où vous voulez. L’effet ne se produit qu’au moment où vous faites glisser. Vos outils se conservent d’un niveau à l’autre et entre les deux modes, enchaîner les fusions vous en rapporte davantage, et une publicité facultative permet de les recharger. Gardez un œil sur l’aperçu « Suivant » pour anticiper.",
+    "faq_q5": "Quelles langues WAGASHI prend-il en charge ?",
+    "faq_a5": "WAGASHI prend en charge 12 langues : l’anglais, le japonais, le chinois, le coréen, le hindi, l’indonésien, l’allemand, le français, l’italien, l’espagnol, le portugais et le russe.",
+    "support_heading": "Assistance",
+    "support_body": "Des questions ou besoin d'aide avec WAGASHI ? Écrivez-nous à l'adresse ci-dessous ; nous répondons généralement sous 1 à 2 jours ouvrés. Vous pouvez aussi consulter la FAQ ci-dessus.",
+    "more_games_heading": "D’autres jeux de PixelRyu",
+    "mg_1": "CounterParts — puzzle de grille tout doux à jumeaux en miroir",
+    "mg_2": "TATAMI: Lay the Floor — puzzle de blocs tatami tout doux",
+    "mg_3": "Bounce Cat — puzzle tout doux d’évasion de labyrinthe"
+  },
+  "it": {
+    "title": "WAGASHI — Accogliente puzzle merge di dolci giapponesi",
+    "meta_desc": "WAGASHI — un accogliente puzzle merge di dolci giapponesi firmato PixelRyu. Lascia cadere un dolcetto; due uguali si fondono in quello successivo, lungo una catena di 10 passaggi da un minuscolo fagiolo azuki fino a un grandioso kagami-mochi. Fisica morbida, due modalità (Zen senza fine + 200 livelli con ordinazioni) e due strumenti (un ventaglio e le bacchette). 12 lingue. Ora su Roblox; tester Android benvenuti su Google Play; presto su App Store.",
+    "tagline": "Lascia cadere e fondi i wagashi.",
+    "subtitle": "Accogliente puzzle merge di dolci giapponesi",
+    "soon_note": "Ora su Roblox; tester Android benvenuti su Google Play; presto su App Store.",
+    "gallery_heading": "Uno sguardo dentro il recipiente",
+    "lead": "WAGASHI è un accogliente puzzle merge di dolci giapponesi. Lascia cadere un dolcetto nel recipiente; quando due uguali si toccano, si fondono in quello successivo, salendo lungo una catena di 10 passaggi da un minuscolo fagiolo azuki fino a un grandioso kagami-mochi. I dolcetti rotondi rotolano e si posano con una fisica morbida — basta non lasciarne fermare uno sopra la linea di avviso. Gioca in due modi: una modalità Zen calma e senza fine, oppure 200 livelli con ordinazioni in cui soddisfi una richiesta entro un numero limitato di mosse. Gli strumenti si usano in due passaggi: tocca l’icona di uno strumento per selezionarlo (l’icona si illumina e puoi sollevare il dito), poi trascina sul piano per usarlo. Con il ventaglio selezionato, trascina sul piano per soffiare una folata nel mucchio che spinge qua e là i dolcetti vicini (un po’ imprevedibile, come sventagliare davvero); con le bacchette selezionate, trascina per prendere un singolo dolcetto a tua scelta e posarlo dove preferisci. L’effetto avviene solo quando trascini - un semplice tocco sul piano non fa nulla. I tuoi strumenti si conservano da un livello all’altro e tra le due modalità, e concatenare le fusioni (una combo) te ne fa guadagnare altri. Puoi anche guardare una pubblicità facoltativa per ricaricarli. L’anteprima «Next» ti permette di pianificare ogni rilascio. Nessuna pressione, 12 lingue.",
+    "legal_divider": "Documenti legali",
+    "link_privacy": "Informativa sulla privacy",
+    "link_terms": "Termini di servizio",
+    "back": "← PixelRyu",
+    "faq_heading": "FAQ",
+    "faq_q1": "Che tipo di gioco è WAGASHI?",
+    "faq_a1": "WAGASHI è un accogliente puzzle merge di dolci giapponesi firmato PixelRyu. Lascia cadere un dolcetto nel recipiente; quando due uguali si toccano, si fondono in quello successivo, salendo lungo una catena di 10 passaggi da un minuscolo fagiolo azuki fino a un grandioso kagami-mochi.",
+    "faq_q2": "WAGASHI è gratis?",
+    "faq_a2": "Sì — WAGASHI è gratis, supportato da pubblicità facoltative. Su Roblox non ci sono pubblicità: usi le monete che guadagni.",
+    "faq_q3": "Dove posso giocare a WAGASHI?",
+    "faq_a3": "WAGASHI è ora su Roblox e Android è in test chiuso su Google Play; la versione App Store arriverà presto. Segui PixelRyu per il lancio.",
+    "faq_q4": "Come si gioca a WAGASHI?",
+    "faq_a4": "Sposta la posizione di rilascio a sinistra o a destra e tocca per lasciar cadere un dolcetto. Due uguali si fondono nel livello successivo. Non lasciare che un dolcetto si fermi sopra la linea di avviso all’imboccatura del recipiente. Gli strumenti si usano in due passaggi: tocca prima l’icona di uno strumento per selezionarlo (si illumina e puoi sollevare il dito), poi trascina sul piano. Tocca il ventaglio e poi trascina sul piano per soffiare una folata che spinge la pila, e tocca le bacchette e poi trascina per prendere un singolo dolcetto a tua scelta e posarlo dove preferisci. L’effetto avviene solo quando trascini. I tuoi strumenti si conservano tra i livelli e tra le due modalità, concatenare le fusioni te ne fa guadagnare altri e una pubblicità facoltativa li ricarica. Osserva l’anteprima «Next» per pianificare in anticipo.",
+    "faq_q5": "Quali lingue supporta WAGASHI?",
+    "faq_a5": "WAGASHI supporta 12 lingue: inglese, giapponese, cinese, coreano, hindi, indonesiano, tedesco, francese, italiano, spagnolo, portoghese e russo.",
+    "support_heading": "Supporto",
+    "support_body": "Domande o bisogno di aiuto con WAGASHI? Scrivici all'indirizzo qui sotto; di solito rispondiamo entro 1-2 giorni lavorativi. Puoi anche consultare le FAQ qui sopra.",
+    "more_games_heading": "Altri giochi di PixelRyu",
+    "mg_1": "CounterParts — accogliente puzzle a griglia con gemelli speculari",
+    "mg_2": "TATAMI: Lay the Floor — accogliente puzzle a blocchi di tatami",
+    "mg_3": "Bounce Cat — accogliente puzzle di fuga dal labirinto"
+  },
+  "es": {
+    "title": "WAGASHI — Acogedor juego de puzzle de fusión de dulces japoneses",
+    "meta_desc": "WAGASHI: un acogedor puzzle de fusión de dulces japoneses de PixelRyu. Suelta un dulce; cuando dos iguales se tocan, se fusionan en el siguiente y suben por una cadena de 10 pasos, desde una diminuta alubia azuki hasta un imponente kagami-mochi. Física suave, dos modos (Zen infinito y 200 niveles de pedidos) y dos herramientas (un abanico y unos palillos). 12 idiomas. Ya disponible en Roblox; se buscan testers de Android en Google Play; próximamente en App Store.",
+    "tagline": "Suelta y fusiona wagashi.",
+    "subtitle": "Acogedor puzzle de fusión de dulces japoneses",
+    "soon_note": "Ya disponible en Roblox; se buscan testers de Android en Google Play; próximamente en App Store.",
+    "gallery_heading": "Un vistazo al recipiente",
+    "lead": "WAGASHI es un acogedor puzzle de fusión de dulces japoneses. Suelta un dulce en el recipiente; cuando dos iguales se tocan, se fusionan en el siguiente y ascienden por una cadena de 10 pasos, desde una diminuta alubia azuki hasta un imponente kagami-mochi. Los dulces redondos ruedan y se asientan con una física suave; solo procura que ninguno quede en reposo por encima de la línea de aviso. Juega de dos formas: un modo Zen infinito y tranquilo, o 200 niveles de pedidos en los que completas un encargo dentro de un número limitado de movimientos. Las herramientas se usan en dos pasos: toca el icono de una herramienta para seleccionarla (el icono se ilumina y puedes levantar el dedo) y luego arrastra sobre el tablero para usarla. Con el abanico seleccionado, arrastra sobre el tablero para soplar una ráfaga sobre el montón que empuja los dulces cercanos de un lado a otro (un poco impredecible, como abanicar de verdad); con los palillos seleccionados, arrastra para tomar un solo dulce que elijas y dejarlo donde quieras. El efecto solo ocurre cuando arrastras - tocar el tablero sin más no hace nada. Tus herramientas se conservan de un nivel a otro y entre ambos modos, y encadenar fusiones (un combo) te da más. También puedes ver un anuncio opcional para reponerlas. Una vista previa de «Next» te permite planear cada caída. Sin prisas, en 12 idiomas.",
+    "legal_divider": "Documentos legales",
+    "link_privacy": "Política de privacidad",
+    "link_terms": "Términos del servicio",
+    "back": "← PixelRyu",
+    "faq_heading": "Preguntas frecuentes",
+    "faq_q1": "¿Qué tipo de juego es WAGASHI?",
+    "faq_a1": "WAGASHI es un acogedor puzzle de fusión de dulces japoneses de PixelRyu. Suelta un dulce en el recipiente; cuando dos iguales se tocan, se fusionan en el siguiente y ascienden por una cadena de 10 pasos, desde una diminuta alubia azuki hasta un imponente kagami-mochi.",
+    "faq_q2": "¿WAGASHI es gratis?",
+    "faq_a2": "Sí: WAGASHI es gratis y se financia con anuncios opcionales. En Roblox no hay anuncios; usas las monedas que ganas.",
+    "faq_q3": "¿Dónde puedo jugar a WAGASHI?",
+    "faq_a3": "WAGASHI ya está disponible en Roblox y Android está en pruebas cerradas en Google Play; la versión de App Store llegará próximamente. Sigue a PixelRyu para enterarte del lanzamiento.",
+    "faq_q4": "¿Cómo se juega a WAGASHI?",
+    "faq_a4": "Mueve la posición de caída a izquierda o derecha y toca para soltar un dulce. Dos iguales se fusionan en el siguiente nivel. No dejes que ningún dulce quede en reposo por encima de la línea de aviso, en la boca del recipiente. Las herramientas se usan en dos pasos: primero toca el icono de una herramienta para seleccionarla (se ilumina y puedes levantar el dedo) y luego arrastra sobre el tablero. Toca el abanico y luego arrastra sobre el tablero para soplar una ráfaga que empuja el montón, y toca los palillos y luego arrastra para tomar un solo dulce que elijas y dejarlo donde quieras. El efecto solo ocurre cuando arrastras. Tus herramientas se conservan entre niveles y entre ambos modos, encadenar fusiones te da más, y un anuncio opcional las repone. Fíjate en la vista previa de «Next» para planear con antelación.",
+    "faq_q5": "¿Qué idiomas admite WAGASHI?",
+    "faq_a5": "WAGASHI admite 12 idiomas: inglés, japonés, chino, coreano, hindi, indonesio, alemán, francés, italiano, español, portugués y ruso.",
+    "support_heading": "Soporte",
+    "support_body": "¿Tienes preguntas o necesitas ayuda con WAGASHI? Escríbenos a la dirección de abajo; solemos responder en 1-2 días hábiles. También puedes consultar las preguntas frecuentes de arriba.",
+    "more_games_heading": "Más juegos de PixelRyu",
+    "mg_1": "CounterParts — acogedor puzzle de cuadrícula con gemelos en espejo",
+    "mg_2": "TATAMI: Lay the Floor — acogedor puzzle de bloques de tatami",
+    "mg_3": "Bounce Cat — acogedor puzzle de escape de laberintos"
+  },
+  "pt": {
+    "title": "WAGASHI — Aconchegante Jogo de Puzzle de Fusão de Doces Japoneses",
+    "meta_desc": "WAGASHI — um aconchegante puzzle de fusão de doces japoneses da PixelRyu. Solte um doce; dois iguais se fundem no próximo, subindo uma cadeia de 10 etapas, de um pequeno feijão azuki até um grandioso kagami-mochi. Física suave, dois modos (o modo Zen infinito + 200 fases de pedidos) e duas ferramentas (um leque e hashis). 12 idiomas. Já disponível no Roblox; testadores Android bem-vindos no Google Play; em breve na App Store.",
+    "tagline": "Solte e combine wagashi.",
+    "subtitle": "Aconchegante Puzzle de Fusão de Doces Japoneses",
+    "soon_note": "Já disponível no Roblox; testadores Android bem-vindos no Google Play; em breve na App Store.",
+    "gallery_heading": "Uma espiada no recipiente",
+    "lead": "WAGASHI é um aconchegante puzzle de fusão de doces japoneses. Solte um doce no recipiente; quando dois iguais se tocam, eles se fundem no próximo, subindo uma cadeia de 10 etapas, de um pequeno feijão azuki até um grandioso kagami-mochi. Os doces redondos rolam e se acomodam com uma física suave — só não deixe nenhum descansar acima da linha de aviso. Jogue de duas formas: um modo Zen infinito e tranquilo, ou 200 fases de pedidos, nas quais você atende a uma encomenda dentro de um número limitado de movimentos. As ferramentas são usadas em duas etapas: toque no ícone de uma ferramenta para selecioná-la (o ícone se acende e você pode tirar o dedo) e depois arraste no tabuleiro para usá-la. Com o leque selecionado, arraste no tabuleiro para soprar uma rajada sobre a pilha que empurra os doces próximos de um lado para o outro (um pouco imprevisível, como abanar de verdade); com os hashis selecionados, arraste para pegar um único doce à sua escolha e colocá-lo onde quiser. O efeito só acontece quando você arrasta - apenas tocar no tabuleiro não faz nada. Suas ferramentas se mantêm de uma fase para outra e entre os dois modos, e encadear fusões (um combo) rende mais delas. Você também pode assistir a um anúncio opcional para reabastecê-las. Uma prévia “Próximo” permite planejar cada jogada. Sem pressão, 12 idiomas.",
+    "legal_divider": "Documentos Legais",
+    "link_privacy": "Política de Privacidade",
+    "link_terms": "Termos de Serviço",
+    "back": "← PixelRyu",
+    "faq_heading": "Perguntas frequentes",
+    "faq_q1": "Que tipo de jogo é o WAGASHI?",
+    "faq_a1": "WAGASHI é um aconchegante puzzle de fusão de doces japoneses da PixelRyu. Solte um doce no recipiente; quando dois iguais se tocam, eles se fundem no próximo, subindo uma cadeia de 10 etapas, de um pequeno feijão azuki até um grandioso kagami-mochi.",
+    "faq_q2": "O WAGASHI é gratuito?",
+    "faq_a2": "Sim — o WAGASHI é gratuito, com suporte de anúncios opcionais. No Roblox não há anúncios; você usa as moedas que ganha.",
+    "faq_q3": "Onde posso jogar WAGASHI?",
+    "faq_a3": "O WAGASHI já está disponível no Roblox e o Android está em teste fechado no Google Play; a versão para App Store chega em breve. Siga a PixelRyu para acompanhar o lançamento.",
+    "faq_q4": "Como se joga WAGASHI?",
+    "faq_a4": "Mova a posição de queda para a esquerda ou para a direita e toque para soltar um doce. Dois iguais se fundem no próximo nível. Não deixe nenhum doce se acomodar acima da linha de aviso na boca do recipiente. As ferramentas são usadas em duas etapas: primeiro toque no ícone de uma ferramenta para selecioná-la (ela se acende e você pode tirar o dedo) e depois arraste no tabuleiro. Toque no leque e depois arraste no tabuleiro para soprar uma rajada que empurra a pilha, e toque nos hashis e depois arraste para pegar um único doce à sua escolha e colocá-lo onde quiser. O efeito só acontece quando você arrasta. Suas ferramentas se mantêm entre as fases e entre os dois modos, encadear fusões rende mais delas, e um anúncio opcional as reabastece. Observe a prévia “Próximo” para se planejar.",
+    "faq_q5": "Quais idiomas o WAGASHI suporta?",
+    "faq_a5": "O WAGASHI suporta 12 idiomas: inglês, japonês, chinês, coreano, híndi, indonésio, alemão, francês, italiano, espanhol, português e russo.",
+    "support_heading": "Suporte",
+    "support_body": "Dúvidas ou precisa de ajuda com o WAGASHI? Envie um e-mail para o endereço abaixo; normalmente respondemos em 1-2 dias úteis. Você também pode ver as perguntas frequentes acima.",
+    "more_games_heading": "Mais jogos da PixelRyu",
+    "mg_1": "CounterParts — aconchegante puzzle de grade com gêmeos espelhados",
+    "mg_2": "TATAMI: Lay the Floor — aconchegante puzzle de blocos de tatami",
+    "mg_3": "Bounce Cat — aconchegante puzzle de fuga de labirinto"
+  },
+  "ru": {
+    "title": "WAGASHI — уютная мердж-головоломка про японские сладости",
+    "meta_desc": "WAGASHI — уютная мердж-головоломка про японские сладости от PixelRyu. Роняйте сладость; две одинаковые сливаются в следующую, поднимаясь по цепочке из 10 ступеней — от крошечной фасолинки azuki до величественного kagami-mochi. Мягкая физика, два режима (бесконечный Zen и 200 этапов с заказами) и два инструмента (веер и палочки). 12 языков. Уже в Roblox; идёт набор тестировщиков Android в Google Play; скоро в App Store.",
+    "tagline": "Роняйте и соединяйте wagashi.",
+    "subtitle": "Уютная мердж-головоломка про японские сладости",
+    "soon_note": "Уже в Roblox; идёт набор тестировщиков Android в Google Play; скоро в App Store.",
+    "gallery_heading": "Загляните в сосуд",
+    "lead": "WAGASHI — уютная мердж-головоломка про японские сладости. Роняйте сладость в сосуд; когда две одинаковые соприкасаются, они сливаются в следующую, поднимаясь по цепочке из 10 ступеней — от крошечной фасолинки azuki до величественного kagami-mochi. Круглые сладости катятся и укладываются благодаря мягкой физике — главное, не дайте ни одной остановиться выше предупреждающей черты. Играйте двумя способами: в бесконечном спокойном режиме Zen или на 200 этапах с заказами, где нужно выполнить запрос за ограниченное число ходов. Инструменты используются в два шага: коснитесь значка инструмента, чтобы выбрать его (значок подсветится, и палец можно убрать), затем проведите по полю, чтобы применить его. Выбрав веер, проведите по полю, чтобы дунуть порывом по горке и расшевелить ближние сладости (немного непредсказуемо, как при настоящем обмахивании); выбрав палочки, проведите, чтобы взять одну выбранную сладость и поставить её куда захотите. Эффект срабатывает только при проведении - простое касание поля ничего не делает. Инструменты сохраняются от этапа к этапу и между обоими режимами, а цепочка слияний (комбо) приносит их ещё больше. Можно также посмотреть необязательную рекламу, чтобы пополнить их. Превью «Далее» позволит спланировать каждый бросок. Никакой спешки, 12 языков.",
+    "legal_divider": "Юридические документы",
+    "link_privacy": "Политика конфиденциальности",
+    "link_terms": "Условия использования",
+    "back": "← PixelRyu",
+    "faq_heading": "Частые вопросы",
+    "faq_q1": "Что за игра WAGASHI?",
+    "faq_a1": "WAGASHI — уютная мердж-головоломка про японские сладости от PixelRyu. Роняйте сладость в сосуд; когда две одинаковые соприкасаются, они сливаются в следующую, поднимаясь по цепочке из 10 ступеней — от крошечной фасолинки azuki до величественного kagami-mochi.",
+    "faq_q2": "В WAGASHI можно играть бесплатно?",
+    "faq_a2": "Да — в WAGASHI можно играть бесплатно, проект поддерживается необязательной рекламой. В Roblox рекламы нет; вы используете заработанные монеты.",
+    "faq_q3": "Где можно поиграть в WAGASHI?",
+    "faq_a3": "WAGASHI уже доступна в Roblox, а Android проходит закрытое тестирование в Google Play; версия для App Store скоро выйдет. Следите за PixelRyu, чтобы не пропустить запуск.",
+    "faq_q4": "Как играть в WAGASHI?",
+    "faq_a4": "Смещайте точку броска влево или вправо и касайтесь, чтобы уронить сладость. Две одинаковые сливаются в следующую ступень. Не дайте сладости остановиться выше предупреждающей черты у горлышка сосуда. Инструменты используются в два шага: сначала коснитесь значка инструмента, чтобы выбрать его (он подсветится, и палец можно убрать), затем проведите по полю. Коснитесь веера, затем проведите по полю, чтобы порывом ветра подтолкнуть стопку, а коснитесь палочек, затем проведите, чтобы взять одну выбранную сладость и поставить её куда захотите. Эффект срабатывает только при проведении. Инструменты сохраняются между этапами и обоими режимами, цепочка слияний приносит их ещё больше, а необязательная реклама их пополняет. Следите за превью «Далее», чтобы планировать наперёд.",
+    "faq_q5": "Какие языки поддерживает WAGASHI?",
+    "faq_a5": "WAGASHI поддерживает 12 языков: английский, японский, китайский, корейский, хинди, индонезийский, немецкий, французский, итальянский, испанский, португальский и русский.",
+    "support_heading": "Поддержка",
+    "support_body": "Есть вопросы или нужна помощь с WAGASHI? Напишите нам на адрес ниже — обычно мы отвечаем в течение 1-2 рабочих дней. Также можно посмотреть FAQ выше.",
+    "more_games_heading": "Другие игры от PixelRyu",
+    "mg_1": "CounterParts — уютная головоломка про зеркальных близнецов на сетке",
+    "mg_2": "TATAMI: Lay the Floor — уютная блок-головоломка с татами",
+    "mg_3": "Bounce Cat — уютная головоломка-побег из лабиринта"
+  }
+};
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
+
+  function detectLang() {
+    try { const stored = localStorage.getItem(LANG_STORAGE_KEY); if (stored && i18n[stored]) return stored; } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang, persist) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    // 言語に合わせてプロモ動画を切替（日本語なら日本語字幕版、それ以外は英語字幕版）
+    const v = document.getElementById('promo');
+    if (v) {
+      const file = (lang === 'ja')
+        ? 'https://pixelryu.github.io/wagashi/promotion_H_story_ja.mp4?v=20260624113858'
+        : 'https://pixelryu.github.io/wagashi/promotion_H_story.mp4?v=20260624113858';
+      const src = v.querySelector('source');
+      if (src && src.getAttribute('src') !== file) {
+        src.setAttribute('src', file);
+        v.load();
+        const pr = v.play(); if (pr && pr.catch) pr.catch(() => {});
+      }
+    }
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code; opt.textContent = l.flag + ' ' + l.name; sel.appendChild(opt);
+    }
+    setLang(detectLang(), true);
+    sel.addEventListener('change', function (e) { setLang(e.target.value, true); });
+  })();
+</script>
+<script src="https://pixelryu.github.io/breadcrumb.js?v=20260618145231" defer></script>
+<script src="https://pixelryu.github.io/tester-open-external.js?v=20260625" defer></script>
+</body>
+</html>

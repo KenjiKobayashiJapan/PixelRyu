@@ -5,7 +5,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://pixelryu.github.io/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -24,7 +24,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -43,7 +43,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -81,7 +81,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -100,7 +100,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -119,7 +119,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -138,7 +138,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -157,7 +157,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -176,7 +176,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -195,7 +195,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -214,7 +214,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -232,8 +232,265 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/"/>
   </url>
   <url>
+    <loc>https://pixelryu.github.io/okaeri/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/okaeri/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/okaeri/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/okaeri/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/okaeri/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/okaeri/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/okaeri/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/okaeri/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/okaeri/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/okaeri/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/okaeri/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/okaeri/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/okaeri/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/okaeri/"/>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/okaeri/og.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/okaeri/icon.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/okaeri/key_hero.png</image:loc>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://pixelryu.github.io/okaeri/og.png</video:thumbnail_loc>
+      <video:title>Okaeri — Official Trailer</video:title>
+      <video:description>Official trailer for Okaeri — a cozy pet homecoming slide puzzle by PixelRyu. Slide rows and columns, rotate the outer ring, and bring every pet home.</video:description>
+      <video:content_loc>https://pixelryu.github.io/okaeri/promotion_H_anime_trilogy.mp4?v=20260628114500</video:content_loc>
+      <video:publication_date>2026-06-28T00:00:00+00:00</video:publication_date>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/okaeri/ja/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/okaeri/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/okaeri/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/okaeri/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/okaeri/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/okaeri/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/okaeri/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/okaeri/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/okaeri/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/okaeri/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/okaeri/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/okaeri/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/okaeri/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/okaeri/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/okaeri/zh/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/okaeri/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/okaeri/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/okaeri/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/okaeri/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/okaeri/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/okaeri/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/okaeri/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/okaeri/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/okaeri/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/okaeri/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/okaeri/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/okaeri/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/okaeri/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/okaeri/ko/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/okaeri/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/okaeri/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/okaeri/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/okaeri/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/okaeri/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/okaeri/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/okaeri/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/okaeri/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/okaeri/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/okaeri/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/okaeri/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/okaeri/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/okaeri/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/okaeri/hi/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/okaeri/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/okaeri/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/okaeri/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/okaeri/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/okaeri/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/okaeri/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/okaeri/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/okaeri/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/okaeri/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/okaeri/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/okaeri/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/okaeri/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/okaeri/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/okaeri/id/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/okaeri/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/okaeri/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/okaeri/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/okaeri/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/okaeri/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/okaeri/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/okaeri/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/okaeri/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/okaeri/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/okaeri/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/okaeri/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/okaeri/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/okaeri/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/okaeri/de/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/okaeri/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/okaeri/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/okaeri/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/okaeri/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/okaeri/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/okaeri/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/okaeri/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/okaeri/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/okaeri/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/okaeri/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/okaeri/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/okaeri/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/okaeri/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/okaeri/fr/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/okaeri/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/okaeri/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/okaeri/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/okaeri/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/okaeri/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/okaeri/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/okaeri/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/okaeri/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/okaeri/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/okaeri/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/okaeri/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/okaeri/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/okaeri/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/okaeri/it/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/okaeri/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/okaeri/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/okaeri/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/okaeri/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/okaeri/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/okaeri/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/okaeri/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/okaeri/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/okaeri/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/okaeri/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/okaeri/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/okaeri/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/okaeri/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/okaeri/es/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/okaeri/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/okaeri/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/okaeri/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/okaeri/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/okaeri/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/okaeri/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/okaeri/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/okaeri/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/okaeri/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/okaeri/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/okaeri/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/okaeri/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/okaeri/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/okaeri/pt/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/okaeri/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/okaeri/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/okaeri/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/okaeri/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/okaeri/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/okaeri/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/okaeri/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/okaeri/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/okaeri/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/okaeri/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/okaeri/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/okaeri/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/okaeri/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/okaeri/ru/</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/okaeri/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/okaeri/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/okaeri/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/okaeri/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/okaeri/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/okaeri/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/okaeri/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/okaeri/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/okaeri/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/okaeri/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/okaeri/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/okaeri/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/okaeri/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/okaeri/privacy_policy.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/okaeri/terms_of_service.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://pixelryu.github.io/shizuku/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/shizuku/"/>
@@ -261,15 +518,15 @@
     <video:video>
       <video:thumbnail_loc>https://pixelryu.github.io/shizuku/og.png</video:thumbnail_loc>
       <video:title>Shizuku — Official Trailer</video:title>
-      <video:description>Shizuku — a cozy, deterministic physics puzzle by PixelRyu set in a quiet Japanese garden. You never touch the dewdrops; you arrange the board — bamboo flumes, stones and leaves — so that, when two drops fall, they roll, slide and meet to become one. Set the scene, release the drops, watch your plan play out. 12 languages. Coming soon to the App Store, Google Play and Roblox.</video:description>
-      <video:content_loc>https://pixelryu.github.io/shizuku/promotion_H_story.mp4?v=20260621103040</video:content_loc>
+      <video:description>Shizuku — a cozy, deterministic physics puzzle by PixelRyu set in a quiet Japanese garden. You never touch the dewdrops; you arrange the board — bamboo flumes, stones and leaves — so that, when two drops fall, they roll, slide and meet to become one. Set the scene, release the drops, watch your plan play out. 12 languages. Out now on Roblox; Android testers welcome on Google Play; coming soon to the App Store.</video:description>
+      <video:content_loc>https://pixelryu.github.io/shizuku/promotion_H_story.mp4?v=20260621163408</video:content_loc>
       <video:publication_date>2026-06-21T00:00:00+00:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
   </url>
   <url>
     <loc>https://pixelryu.github.io/shizuku/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/shizuku/"/>
@@ -288,7 +545,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/shizuku/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/shizuku/"/>
@@ -307,7 +564,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/shizuku/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/shizuku/"/>
@@ -326,7 +583,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/shizuku/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/shizuku/"/>
@@ -345,7 +602,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/shizuku/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/shizuku/"/>
@@ -364,7 +621,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/shizuku/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/shizuku/"/>
@@ -383,7 +640,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/shizuku/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/shizuku/"/>
@@ -402,7 +659,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/shizuku/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/shizuku/"/>
@@ -421,7 +678,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/shizuku/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/shizuku/"/>
@@ -440,7 +697,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/shizuku/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/shizuku/"/>
@@ -459,7 +716,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/shizuku/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/shizuku/"/>
@@ -490,7 +747,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/senko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/senko/"/>
@@ -518,7 +775,7 @@
     <video:video>
       <video:thumbnail_loc>https://pixelryu.github.io/senko/og.png</video:thumbnail_loc>
       <video:title>SENKO — Official Trailer</video:title>
-      <video:description>SENKO — a cozy incense-smoke puzzle by PixelRyu. Light a stick of incense; sweep the restless dark smoke with your finger to calm it white, then guide the clear smoke to fill a faint Japanese motif — the moon, a pine, a crane, cherry blossoms and more, across 120 quiet stages. Avoid the red embers; the smoke is finite. 12 languages. Coming soon to the App Store, Google Play and Roblox.</video:description>
+      <video:description>SENKO — a cozy incense-smoke puzzle by PixelRyu. Light a stick of incense; sweep the restless dark smoke with your finger to calm it white, then guide the clear smoke to fill a faint Japanese motif — the moon, a pine, a crane, cherry blossoms and more, across 120 quiet stages. Avoid the red embers; the smoke is finite. 12 languages. Out now on Roblox; Android testers welcome on Google Play; coming soon to the App Store.</video:description>
       <video:content_loc>https://pixelryu.github.io/senko/promotion_H_story.mp4?v=20260621103040</video:content_loc>
       <video:publication_date>2026-06-21T00:00:00+00:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
@@ -526,7 +783,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/senko/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/senko/"/>
@@ -545,7 +802,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/senko/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/senko/"/>
@@ -564,7 +821,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/senko/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/senko/"/>
@@ -583,7 +840,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/senko/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/senko/"/>
@@ -602,7 +859,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/senko/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/senko/"/>
@@ -621,7 +878,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/senko/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/senko/"/>
@@ -640,7 +897,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/senko/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/senko/"/>
@@ -659,7 +916,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/senko/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/senko/"/>
@@ -678,7 +935,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/senko/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/senko/"/>
@@ -697,7 +954,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/senko/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/senko/"/>
@@ -716,7 +973,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/senko/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/senko/"/>
@@ -747,7 +1004,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -776,14 +1033,14 @@
       <video:thumbnail_loc>https://pixelryu.github.io/wagashi/og.png</video:thumbnail_loc>
       <video:title>WAGASHI — Official Trailer</video:title>
       <video:description>Official trailer for WAGASHI — a cozy Japanese-sweets merge puzzle by PixelRyu. Drop a sweet into the vessel; two of the same merge into the next, climbing a 10-step chain from a tiny azuki bean to a grand kagami-mochi. Soft physics, two modes and two tools. Now on Roblox; Android testers welcome on Google Play; coming soon to the App Store.</video:description>
-      <video:content_loc>https://pixelryu.github.io/wagashi/promotion_H_story.mp4?v=20260618192704</video:content_loc>
+      <video:content_loc>https://pixelryu.github.io/wagashi/promotion_H_story.mp4?v=20260624113858</video:content_loc>
       <video:publication_date>2026-06-18T00:00:00+00:00</video:publication_date>
       <video:family_friendly>yes</video:family_friendly>
     </video:video>
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -802,7 +1059,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -821,7 +1078,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -840,7 +1097,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -859,7 +1116,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -878,7 +1135,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -897,7 +1154,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -916,7 +1173,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -935,7 +1192,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -954,7 +1211,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -973,7 +1230,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -1004,7 +1261,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/counterparts/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/counterparts/"/>
@@ -1040,7 +1297,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/counterparts/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/counterparts/"/>
@@ -1059,7 +1316,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/counterparts/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/counterparts/"/>
@@ -1078,7 +1335,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/counterparts/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/counterparts/"/>
@@ -1097,7 +1354,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/counterparts/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/counterparts/"/>
@@ -1116,7 +1373,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/counterparts/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/counterparts/"/>
@@ -1135,7 +1392,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/counterparts/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/counterparts/"/>
@@ -1154,7 +1411,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/counterparts/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/counterparts/"/>
@@ -1173,7 +1430,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/counterparts/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/counterparts/"/>
@@ -1192,7 +1449,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/counterparts/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/counterparts/"/>
@@ -1211,7 +1468,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/counterparts/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/counterparts/"/>
@@ -1230,7 +1487,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/counterparts/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/counterparts/"/>
@@ -1261,7 +1518,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/temari/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/temari/"/>
@@ -1303,7 +1560,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/temari/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/temari/"/>
@@ -1322,7 +1579,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/temari/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/temari/"/>
@@ -1341,7 +1598,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/temari/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/temari/"/>
@@ -1360,7 +1617,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/temari/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/temari/"/>
@@ -1379,7 +1636,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/temari/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/temari/"/>
@@ -1398,7 +1655,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/temari/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/temari/"/>
@@ -1417,7 +1674,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/temari/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/temari/"/>
@@ -1436,7 +1693,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/temari/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/temari/"/>
@@ -1455,7 +1712,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/temari/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/temari/"/>
@@ -1474,7 +1731,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/temari/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/temari/"/>
@@ -1493,7 +1750,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/temari/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/temari/"/>
@@ -1530,7 +1787,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/tatami/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/tatami/"/>
@@ -1563,7 +1820,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/tatami/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/tatami/"/>
@@ -1582,7 +1839,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/tatami/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/tatami/"/>
@@ -1601,7 +1858,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/tatami/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/tatami/"/>
@@ -1620,7 +1877,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/tatami/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/tatami/"/>
@@ -1639,7 +1896,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/tatami/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/tatami/"/>
@@ -1658,7 +1915,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/tatami/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/tatami/"/>
@@ -1677,7 +1934,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/tatami/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/tatami/"/>
@@ -1696,7 +1953,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/tatami/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/tatami/"/>
@@ -1715,7 +1972,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/tatami/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/tatami/"/>
@@ -1734,7 +1991,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/tatami/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/tatami/"/>
@@ -1753,7 +2010,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/tatami/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/tatami/"/>
@@ -1790,7 +2047,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/bounce-cat/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/bounce-cat/"/>
@@ -1823,7 +2080,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/bounce-cat/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/bounce-cat/"/>
@@ -1842,7 +2099,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/bounce-cat/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/bounce-cat/"/>
@@ -1861,7 +2118,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/bounce-cat/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/bounce-cat/"/>
@@ -1880,7 +2137,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/bounce-cat/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/bounce-cat/"/>
@@ -1899,7 +2156,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/bounce-cat/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/bounce-cat/"/>
@@ -1918,7 +2175,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/bounce-cat/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/bounce-cat/"/>
@@ -1937,7 +2194,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/bounce-cat/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/bounce-cat/"/>
@@ -1956,7 +2213,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/bounce-cat/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/bounce-cat/"/>
@@ -1975,7 +2232,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/bounce-cat/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/bounce-cat/"/>
@@ -1994,7 +2251,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/bounce-cat/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/bounce-cat/"/>
@@ -2013,7 +2270,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/bounce-cat/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/bounce-cat/"/>
@@ -2050,7 +2307,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hayate/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hayate/"/>
@@ -2083,7 +2340,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hayate/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hayate/"/>
@@ -2102,7 +2359,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hayate/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hayate/"/>
@@ -2121,7 +2378,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hayate/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hayate/"/>
@@ -2140,7 +2397,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hayate/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hayate/"/>
@@ -2159,7 +2416,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hayate/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hayate/"/>
@@ -2178,7 +2435,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hayate/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hayate/"/>
@@ -2197,7 +2454,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hayate/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hayate/"/>
@@ -2216,7 +2473,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hayate/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hayate/"/>
@@ -2235,7 +2492,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hayate/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hayate/"/>
@@ -2254,7 +2511,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hayate/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hayate/"/>
@@ -2273,7 +2530,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hayate/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hayate/"/>
@@ -2310,7 +2567,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/sumlings/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/sumlings/"/>
@@ -2343,7 +2600,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/sumlings/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/sumlings/"/>
@@ -2362,7 +2619,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/sumlings/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/sumlings/"/>
@@ -2381,7 +2638,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/sumlings/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/sumlings/"/>
@@ -2400,7 +2657,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/sumlings/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/sumlings/"/>
@@ -2419,7 +2676,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/sumlings/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/sumlings/"/>
@@ -2438,7 +2695,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/sumlings/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/sumlings/"/>
@@ -2457,7 +2714,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/sumlings/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/sumlings/"/>
@@ -2476,7 +2733,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/sumlings/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/sumlings/"/>
@@ -2495,7 +2752,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/sumlings/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/sumlings/"/>
@@ -2514,7 +2771,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/sumlings/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/sumlings/"/>
@@ -2533,7 +2790,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/sumlings/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/sumlings/"/>
@@ -2570,7 +2827,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/parcel-pals/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/parcel-pals/"/>
@@ -2603,7 +2860,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/parcel-pals/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/parcel-pals/"/>
@@ -2622,7 +2879,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/parcel-pals/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/parcel-pals/"/>
@@ -2641,7 +2898,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/parcel-pals/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/parcel-pals/"/>
@@ -2660,7 +2917,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/parcel-pals/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/parcel-pals/"/>
@@ -2679,7 +2936,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/parcel-pals/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/parcel-pals/"/>
@@ -2698,7 +2955,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/parcel-pals/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/parcel-pals/"/>
@@ -2717,7 +2974,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/parcel-pals/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/parcel-pals/"/>
@@ -2736,7 +2993,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/parcel-pals/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/parcel-pals/"/>
@@ -2755,7 +3012,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/parcel-pals/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/parcel-pals/"/>
@@ -2774,7 +3031,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/parcel-pals/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/parcel-pals/"/>
@@ -2793,7 +3050,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/parcel-pals/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/parcel-pals/"/>
@@ -2830,7 +3087,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/issen/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/issen/"/>
@@ -2863,7 +3120,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/issen/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/issen/"/>
@@ -2882,7 +3139,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/issen/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/issen/"/>
@@ -2901,7 +3158,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/issen/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/issen/"/>
@@ -2920,7 +3177,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/issen/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/issen/"/>
@@ -2939,7 +3196,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/issen/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/issen/"/>
@@ -2958,7 +3215,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/issen/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/issen/"/>
@@ -2977,7 +3234,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/issen/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/issen/"/>
@@ -2996,7 +3253,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/issen/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/issen/"/>
@@ -3015,7 +3272,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/issen/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/issen/"/>
@@ -3034,7 +3291,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/issen/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/issen/"/>
@@ -3053,7 +3310,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/issen/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/issen/"/>
@@ -3090,7 +3347,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hotaru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hotaru/"/>
@@ -3138,7 +3395,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hotaru/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hotaru/"/>
@@ -3157,7 +3414,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hotaru/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hotaru/"/>
@@ -3176,7 +3433,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hotaru/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hotaru/"/>
@@ -3195,7 +3452,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hotaru/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hotaru/"/>
@@ -3214,7 +3471,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hotaru/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hotaru/"/>
@@ -3233,7 +3490,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hotaru/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hotaru/"/>
@@ -3252,7 +3509,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hotaru/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hotaru/"/>
@@ -3271,7 +3528,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hotaru/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hotaru/"/>
@@ -3290,7 +3547,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hotaru/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hotaru/"/>
@@ -3309,7 +3566,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hotaru/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hotaru/"/>
@@ -3328,7 +3585,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hotaru/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hotaru/"/>
@@ -3365,7 +3622,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow-cosmic/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow-cosmic/"/>
@@ -3415,7 +3672,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow-cosmic/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow-cosmic/"/>
@@ -3434,7 +3691,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow-cosmic/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow-cosmic/"/>
@@ -3453,7 +3710,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow-cosmic/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow-cosmic/"/>
@@ -3472,7 +3729,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow-cosmic/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow-cosmic/"/>
@@ -3491,7 +3748,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow-cosmic/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow-cosmic/"/>
@@ -3510,7 +3767,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow-cosmic/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow-cosmic/"/>
@@ -3529,7 +3786,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow-cosmic/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow-cosmic/"/>
@@ -3548,7 +3805,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow-cosmic/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow-cosmic/"/>
@@ -3567,7 +3824,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow-cosmic/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow-cosmic/"/>
@@ -3586,7 +3843,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow-cosmic/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow-cosmic/"/>
@@ -3605,7 +3862,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow-cosmic/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow-cosmic/"/>
@@ -3642,7 +3899,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow/"/>
@@ -3695,7 +3952,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow/"/>
@@ -3714,7 +3971,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow/"/>
@@ -3733,7 +3990,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow/"/>
@@ -3752,7 +4009,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow/"/>
@@ -3771,7 +4028,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow/"/>
@@ -3790,7 +4047,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow/"/>
@@ -3809,7 +4066,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow/"/>
@@ -3828,7 +4085,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow/"/>
@@ -3847,7 +4104,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow/"/>
@@ -3866,7 +4123,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow/"/>
@@ -3885,7 +4142,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/liquid-glow/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow/"/>
@@ -3922,7 +4179,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/mole-whack/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/mole-whack/"/>
@@ -3958,7 +4215,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/mole-whack/ja/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/mole-whack/"/>
@@ -3977,7 +4234,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/mole-whack/zh/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/mole-whack/"/>
@@ -3996,7 +4253,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/mole-whack/ko/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/mole-whack/"/>
@@ -4015,7 +4272,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/mole-whack/hi/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/mole-whack/"/>
@@ -4034,7 +4291,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/mole-whack/id/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/mole-whack/"/>
@@ -4053,7 +4310,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/mole-whack/de/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/mole-whack/"/>
@@ -4072,7 +4329,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/mole-whack/fr/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/mole-whack/"/>
@@ -4091,7 +4348,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/mole-whack/it/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/mole-whack/"/>
@@ -4110,7 +4367,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/mole-whack/es/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/mole-whack/"/>
@@ -4129,7 +4386,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/mole-whack/pt/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/mole-whack/"/>
@@ -4148,7 +4405,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/mole-whack/ru/</loc>
-    <lastmod>2026-06-21</lastmod>
+    <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/mole-whack/"/>

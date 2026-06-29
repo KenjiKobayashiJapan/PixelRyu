@@ -19,8 +19,9 @@ import io, os, glob, shutil, json
 
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 REPO = os.path.normpath(os.path.join(ROOT, ".."))  # koba_game_01 (holds 00xx_<app>/store)
-BCV = "20260618213000"   # breadcrumb.js cache key for the pages
-VIDV = "20260618213000"  # cache key for the (re)deployed portrait videos
+BCV = "20260618213000"   # default breadcrumb.js cache key for generated pages
+VIDV = "20260618213000"  # default cache key for the (re)deployed portrait videos
+APP_CACHE = {"okaeri": "20260628114500", "wagashi": "20260629104135"}
 
 LANGUAGES = ('[{"code":"en","flag":"\\ud83c\\uddfa\\ud83c\\uddf8","name":"English"},'
  '{"code":"ja","flag":"\\ud83c\\uddef\\ud83c\\uddf5","name":"\\u65e5\\u672c\\u8a9e"},'
@@ -43,6 +44,8 @@ SUB = {
 
 # slug -> (Title, horizontal_en, horizontal_ja|None, src_subdir, [ (vert_src_en, vert_src_ja|None), ... ])
 APPS = {
+ "okaeri":              ("Okaeri","promotion_H_anime_trilogy.mp4",None,"0015_okaeri",
+                        [("promotion_V_01.mp4",None),("promotion_V_02.mp4",None),("promotion_V_03.mp4",None),("promotion_V_anime_trilogy.mp4",None)]),
  "shizuku":            ("Shizuku","promotion_H_story.mp4","promotion_H_story_ja.mp4","0014_shizuku",
                         [("promotion_V_01_en.mp4","promotion_V_01_ja.mp4"),("promotion_V_02_en.mp4","promotion_V_02_ja.mp4"),("promotion_V_03_en.mp4","promotion_V_03_ja.mp4")]),
  "senko":              ("SENKO","promotion_H_story.mp4","promotion_H_story_ja.mp4","0013_senko",
@@ -194,6 +197,8 @@ def jstr(v):
 def main():
     made = 0
     for slug, (title, h_en, h_ja, sub, parts) in APPS.items():
+        cache_v = APP_CACHE.get(slug, VIDV)
+        breadcrumb_v = APP_CACHE.get(slug, BCV)
         appdir = os.path.join(ROOT, slug)
         # clean any previously-deployed portrait videos, then deploy the configured parts
         for old in glob.glob(os.path.join(appdir, "promotion_V*.mp4")):
@@ -212,15 +217,15 @@ def main():
                 '    <video id="%s" class="vp-video vp-v" controls playsinline preload="metadata" '
                 'aria-label="%s portrait promo video %d">\n'
                 '      <source src="%s.mp4?v=%s" type="video/mp4">\n'
-                '    </video>' % (vid, title, i, base, VIDV))
-        h_en_v = h_en + "?v=" + VIDV
-        h_ja_v = (h_ja + "?v=" + VIDV) if h_ja else None
+                '    </video>' % (vid, title, i, base, cache_v))
+        h_en_v = h_en + "?v=" + cache_v
+        h_ja_v = (h_ja + "?v=" + cache_v) if h_ja else None
         html = TPL.format(
             title=title, slug=slug, css=CSS, languages=LANGUAGES,
             sub_json=json.dumps(SUB, ensure_ascii=False),
             vertical_videos="\n".join(vids_html),
             h_en=h_en_v, h_ja_js=jstr(h_ja_v),
-            v_parts_json=json.dumps(v_parts), vidv=VIDV, bcv=BCV)
+            v_parts_json=json.dumps(v_parts), vidv=cache_v, bcv=breadcrumb_v)
         io.open(os.path.join(appdir, "video.html"), "w", encoding="utf-8").write(html)
         print("  %-20s video.html + %d portrait video(s)%s" % (slug, len(parts), " (with ja)" if parts[0][1] else ""))
         made += 1

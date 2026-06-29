@@ -21,6 +21,13 @@ This file is the expanded, self-contained companion to /llms.txt. It inlines the
 
 ## Games — full details
 
+### Okaeri
+- Page: https://pixelryu.github.io/okaeri/
+- Genre: Puzzle, Casual (cozy pet homecoming slide puzzle)
+- Platforms: iOS, Android, Roblox (coming soon to all three)
+- About: Okaeri — a cozy pet homecoming slide puzzle by PixelRyu. Slide a row or column of glassy food bowls; bowls wrap from one edge to the other. When a whole line becomes one pet's favorite food, that pet crosses the board. Then rotate the outer ring, where pets and owners wait, so the matching owner is on the far side. Reunite every pair to clear the stage across 60 quiet stages. No timer, 12 languages. Not released yet; coming soon to the App Store, Google Play, and Roblox.
+- Free to play. Contact: idev10752@gmail.com
+
 ### SENKO
 - Page: https://pixelryu.github.io/senko/
 - Genre: Puzzle, Casual (cozy incense-smoke, two-phase)
