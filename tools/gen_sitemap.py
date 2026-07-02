@@ -55,7 +55,14 @@ def media_xml(slug):
         rows.append("    <image:image>\n      <image:loc>%s%s/%s</image:loc>\n    </image:image>" % (SITE, slug, img))
     for v in vids:
         date = v.get("uploadDate", "")
-        pub = ("\n      <video:publication_date>%sT00:00:00+00:00</video:publication_date>" % date) if re.match(r"^\d{4}-\d{2}-\d{2}$", date) else ""
+        if re.match(r"^\d{4}-\d{2}-\d{2}T", date):
+            # already a full W3C datetime (e.g. 2026-05-23T00:00:00+00:00) — emit as-is
+            pub = "\n      <video:publication_date>%s</video:publication_date>" % date
+        elif re.match(r"^\d{4}-\d{2}-\d{2}$", date):
+            # date-only — append midnight UTC to satisfy the video sitemap datetime format
+            pub = "\n      <video:publication_date>%sT00:00:00+00:00</video:publication_date>" % date
+        else:
+            pub = ""
         rows.append(
             "    <video:video>\n"
             "      <video:thumbnail_loc>%s</video:thumbnail_loc>\n"
