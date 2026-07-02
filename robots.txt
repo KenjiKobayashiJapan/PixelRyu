@@ -2,6 +2,21 @@
 User-agent: *
 Allow: /
 
+# Google crawlers (Search + Ads) — explicitly allowed.
+# AdsBot-Google ignores the "*" group, so it is named here on purpose.
+# (Search + AdSense/AdMob app-ads.txt verification must never be blocked.)
+User-agent: Googlebot
+Allow: /
+
+User-agent: AdsBot-Google
+Allow: /
+
+User-agent: AdsBot-Google-Mobile
+Allow: /
+
+User-agent: Mediapartners-Google
+Allow: /
+
 # AI / LLM crawlers are explicitly welcome (LLMO)
 User-agent: GPTBot
 Allow: /
