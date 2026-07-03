@@ -477,6 +477,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/okaeri/"/>
   </url>
   <url>
+    <loc>https://pixelryu.github.io/okaeri/overview.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://pixelryu.github.io/okaeri/privacy_policy.html</loc>
     <lastmod>2026-06-28</lastmod>
     <changefreq>monthly</changefreq>
@@ -732,6 +738,12 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/shizuku/pt/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/shizuku/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/shizuku/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/shizuku/overview.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://pixelryu.github.io/shizuku/privacy_policy.html</loc>
@@ -991,6 +1003,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/senko/"/>
   </url>
   <url>
+    <loc>https://pixelryu.github.io/senko/overview.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://pixelryu.github.io/senko/privacy_policy.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -1248,6 +1266,12 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/wagashi/"/>
   </url>
   <url>
+    <loc>https://pixelryu.github.io/wagashi/overview.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  <url>
     <loc>https://pixelryu.github.io/wagashi/privacy_policy.html</loc>
     <lastmod>2026-06-21</lastmod>
     <changefreq>monthly</changefreq>
@@ -1503,6 +1527,12 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/counterparts/pt/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/counterparts/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/counterparts/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/counterparts/overview.html</loc>
+    <lastmod>2026-06-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
   </url>
   <url>
     <loc>https://pixelryu.github.io/counterparts/privacy_policy.html</loc>

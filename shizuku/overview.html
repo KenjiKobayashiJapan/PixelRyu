@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5MH53Z8LM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'G-M5MH53Z8LM');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">Shizuku — Game Overview</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Game overview of Shizuku: the quiet Japanese garden, arranging bamboo flumes, stones and leaves so two falling dewdrops meet and become one, the deterministic physics, how to play, and highlights.">
+<style>
+  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; background: radial-gradient(ellipse at top, #faf3e0 0%, #f3ebd6 52%, #e6d8b8 100%); color: #3a2e1a; margin: 0; min-height: 100vh; display: flex; align-items: flex-start; justify-content: center; }
+  .container { max-width: 660px; width: 100%; padding: 64px 32px 80px; text-align: center; position: relative; }
+  .lang-switch { position: absolute; top: 24px; right: 24px; }
+  .lang-switch select { background: rgba(255,255,255,0.50); color: #7a5f1e; border: 1px solid rgba(168,128,31,0.40); border-radius: 4px; padding: 5px 10px; font-size: 13px; font-family: inherit; cursor: pointer; }
+  .lang-switch select option { background: #f3ebd6; color: #3a2e1a; }
+  .tagline { font-size: 13px; color: #8a7a52; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 6px; }
+  h1 { font-size: 44px; margin: 0 0 6px; color: #3a2e1a; font-weight: 800; letter-spacing: 0.5px; }
+  h1 .accent { color: #cf8a3a; }
+  h1 .jp { font-size: 24px; color: #7a5f1e; font-weight: 700; margin-left: 10px; }
+  .page-label { font-size: 13px; color: #a79468; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
+  .lead { font-size: 15px; line-height: 1.85; color: #5a4a2c; margin: 14px auto 8px; max-width: 540px; }
+  .dev-banner { font-size: 12px; color: #8a5e1a; background: rgba(184,137,62,0.12); border: 1px solid rgba(168,128,31,0.38); border-radius: 10px; padding: 10px 14px; margin: 16px auto 0; max-width: 500px; line-height: 1.5; }
+  .wide-shot { width: 100%; margin: 26px auto 4px; }
+  .wide-shot img { width: 100%; border-radius: 16px; border: 1px solid rgba(168,128,31,0.20); box-shadow: 0 10px 34px rgba(120,92,30,0.28); display: block; }
+  .wide-shot figcaption { font-size: 12px; color: #8a7a52; margin-top: 8px; text-align: center; }
+  .section { background: rgba(255,255,255,0.50); border: 1px solid rgba(168,128,31,0.32); border-radius: 16px; padding: 24px 24px 28px; margin: 28px 0; text-align: left; box-shadow: 0 8px 24px rgba(120,92,30,0.10); }
+  .section h2 { font-size: 18px; color: #a8801f; margin: 0 0 4px; font-weight: 800; }
+  .section .sub { font-size: 11px; color: #8a7a52; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 14px; }
+  .section p { font-size: 14px; line-height: 1.8; color: #4a3c20; margin: 12px 0; }
+  .section ol, .section ul { margin: 12px 0 0; padding-left: 22px; font-size: 14px; line-height: 1.85; color: #4a3c20; }
+  .back { display: inline-block; margin-top: 28px; color: #a79468; text-decoration: none; font-size: 14px; }
+  .back:hover { color: #cf8a3a; }
+  @media (max-width: 600px) { .container { padding: 48px 18px 64px; } .lang-switch { top: 16px; right: 16px; } .section { padding: 20px 18px 22px; } h1 { font-size: 36px; } h1 .jp { font-size: 20px; } }
+  .social-heading{font-size:13px;color:#8a7a52;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(168,128,31,0.10);border:1px solid rgba(168,128,31,0.25);color:#8a7a52;transition:all .25s ease;}
+  .social a:hover{background:rgba(168,128,31,0.18);border-color:rgba(168,128,31,0.50);color:#7a5f1e;transform:translateY(-2px);}
+  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+</style>
+<!-- SEO/LLMO start (managed) -->
+<link rel="canonical" href="https://pixelryu.github.io/shizuku/overview.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="PixelRyu">
+<meta name="publisher" content="PixelRyu">
+<meta name="keywords" content="Shizuku, game overview, dewdrop puzzle, physics puzzle, deterministic puzzle, zen garden game, cozy puzzle, relaxing puzzle, japanese garden, water drop game, PixelRyu, indie game, Android, iOS, Roblox">
+<meta name="theme-color" content="#f3ebd6">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/shizuku/icon.png?v=20260621103040">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/shizuku/icon.png?v=20260621103040">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PixelRyu">
+<meta property="og:title" content="Shizuku — Game Overview">
+<meta property="og:description" content="Game overview of Shizuku: the quiet Japanese garden, arranging bamboo flumes, stones and leaves so two falling dewdrops meet and become one, the deterministic physics, how to play, and highlights.">
+<meta property="og:url" content="https://pixelryu.github.io/shizuku/overview.html">
+<meta property="og:image" content="https://pixelryu.github.io/shizuku/og.png?v=20260621103040">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Shizuku — arrange a Japanese garden so two falling dewdrops meet and become one.">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Shizuku — Game Overview">
+<meta name="twitter:description" content="Game overview of Shizuku: the quiet Japanese garden, arranging bamboo flumes, stones and leaves so two falling dewdrops meet and become one, the deterministic physics, how to play, and highlights.">
+<meta name="twitter:image" content="https://pixelryu.github.io/shizuku/og.png?v=20260621103040">
+<meta name="twitter:image:alt" content="Shizuku — arrange a Japanese garden so two falling dewdrops meet and become one.">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Shizuku — Game Overview","url":"https://pixelryu.github.io/shizuku/overview.html","description":"Game overview of Shizuku: the quiet Japanese garden, arranging bamboo flumes, stones and leaves so two falling dewdrops meet and become one, the deterministic physics, how to play, and highlights.","inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"isPartOf":{"@type":"WebSite","name":"PixelRyu","url":"https://pixelryu.github.io/"},"about":{"@type":"VideoGame","name":"Shizuku","url":"https://pixelryu.github.io/shizuku/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/"},{"@type":"ListItem","position":2,"name":"Shizuku","item":"https://pixelryu.github.io/shizuku/"},{"@type":"ListItem","position":3,"name":"Game Overview","item":"https://pixelryu.github.io/shizuku/overview.html"}]}</script>
+<!-- SEO/LLMO end -->
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch"><select id="lang-select" aria-label="Language"></select></div>
+  <div class="tagline" data-i18n="tagline">Set the garden; let two drops meet.</div>
+  <h1>SHIZU<span class="accent">KU</span><span class="jp">雫</span></h1>
+  <div class="page-label" data-i18n="page_label">Game Overview</div>
+  <p class="lead" data-i18n="lead">Shizuku is a cozy, deterministic physics puzzle set in a quiet Japanese garden. You never touch the dewdrops — instead you arrange the board: place bamboo flumes, stones and leaves so that, when two drops fall, they roll, slide and finally meet to become one. Set the scene, release the drops, and watch your plan play out. Because nothing is random, you can think the whole run through before you let go. Calm, hand-made levels and no time pressure. 12 languages.</p>
+  <div class="dev-banner" data-i18n="dev_banner">💧 Out now on Roblox; Android testers welcome on Google Play; coming soon to the App Store.</div>
+
+  <figure class="wide-shot">
+    <img src="key_hero.jpg?v=20260621103040" alt="Shizuku key art: a quiet Japanese garden where two dewdrops are guided to meet">
+    <figcaption data-i18n="cap_hero">Key art — a quiet Japanese garden</figcaption>
+  </figure>
+
+  <section class="section">
+    <h2 data-i18n="loop_label">The Game</h2>
+    <div class="sub">💧</div>
+    <p data-i18n="loop_text">Shizuku is a cozy, deterministic physics puzzle by PixelRyu set in a Japanese garden. You arrange bamboo flumes, stones and leaves so that two falling dewdrops meet and merge into one — you set the board, never touch the drops.</p>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="det_label">Nothing Is Random</h2>
+    <div class="sub">🎋</div>
+    <p data-i18n="det_text">The drops fall and roll under deterministic physics. Because nothing is random, you can think the whole run through before you let go. Calm, hand-made levels and no time pressure.</p>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="howto_label">How to Play</h2>
+    <div class="sub">🍃</div>
+    <ol>
+      <li data-i18n="step1">Place pieces — bamboo flumes, stones and leaves — to shape the path.</li>
+      <li data-i18n="step2">When you are ready, release the two dewdrops; they fall and roll under deterministic physics.</li>
+      <li data-i18n="step3">Guide them so the two meet and become a single drop.</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="feat_label">Highlights</h2>
+    <div class="sub">✨</div>
+    <ul>
+      <li data-i18n="feat1">A cozy, deterministic physics puzzle set in a quiet Japanese garden</li>
+      <li data-i18n="feat2">You set the board — bamboo flumes, stones and leaves — and never touch the drops</li>
+      <li data-i18n="feat3">Nothing is random — plan the whole run before you let go</li>
+      <li data-i18n="feat4">Calm, hand-made levels and no time pressure</li>
+      <li data-i18n="feat5">Free to play with optional ads — no ads on Roblox, where you use coins you earn — in 12 languages</li>
+    </ul>
+  </section>
+
+  <a href="./" class="back" data-i18n="back">← Back to Shizuku</a>
+  <h2 class="social-heading">Follow</h2>
+  <div class="social">
+    <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note"><svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+    <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+        "en": {
+                "title": "Shizuku — Game Overview",
+                "meta_desc": "Game overview of Shizuku: the quiet Japanese garden, arranging bamboo flumes, stones and leaves so two falling dewdrops meet and become one, the deterministic physics, how to play, and highlights.",
+                "tagline": "Set the garden; let two drops meet.",
+                "page_label": "Game Overview",
+                "lead": "Shizuku is a cozy, deterministic physics puzzle set in a quiet Japanese garden. You never touch the dewdrops — instead you arrange the board: place bamboo flumes, stones and leaves so that, when two drops fall, they roll, slide and finally meet to become one. Set the scene, release the drops, and watch your plan play out. Because nothing is random, you can think the whole run through before you let go. Calm, hand-made levels and no time pressure. 12 languages.",
+                "dev_banner": "💧 Out now on Roblox; Android testers welcome on Google Play; coming soon to the App Store.",
+                "cap_hero": "Key art — a quiet Japanese garden",
+                "loop_label": "The Game",
+                "loop_text": "Shizuku is a cozy, deterministic physics puzzle by PixelRyu set in a Japanese garden. You arrange bamboo flumes, stones and leaves so that two falling dewdrops meet and merge into one — you set the board, never touch the drops.",
+                "det_label": "Nothing Is Random",
+                "det_text": "The drops fall and roll under deterministic physics. Because nothing is random, you can think the whole run through before you let go. Calm, hand-made levels and no time pressure.",
+                "howto_label": "How to Play",
+                "step1": "Place pieces — bamboo flumes, stones and leaves — to shape the path.",
+                "step2": "When you are ready, release the two dewdrops; they fall and roll under deterministic physics.",
+                "step3": "Guide them so the two meet and become a single drop.",
+                "feat_label": "Highlights",
+                "feat1": "A cozy, deterministic physics puzzle set in a quiet Japanese garden",
+                "feat2": "You set the board — bamboo flumes, stones and leaves — and never touch the drops",
+                "feat3": "Nothing is random — plan the whole run before you let go",
+                "feat4": "Calm, hand-made levels and no time pressure",
+                "feat5": "Free to play with optional ads — no ads on Roblox, where you use coins you earn — in 12 languages",
+                "back": "← Back to Shizuku"
+        },
+        "ja": {
+                "title": "Shizuku（雫） — ゲーム概要",
+                "meta_desc": "Shizuku（雫）のゲーム概要。静かな日本庭園、竹のとい・石・葉を配置して二つの露のしずくを出会わせ一つにする遊び、決定論的な物理、遊び方、特徴を紹介します。",
+                "tagline": "庭を整え、二つのしずくを出会わせよう。",
+                "page_label": "ゲーム概要",
+                "lead": "Shizuku は、静かな日本庭園を舞台にした癒しの決定論的物理パズルです。露のしずくには触れません — その代わりに盤面を整えます。竹のとい・石・葉を配置し、二つのしずくが落ちて転がり、滑り、ついに出会って一つになるようにします。情景を整え、しずくを放ち、自分の計画が動き出すのを見守りましょう。何ひとつランダムではないので、手を放す前に全行程をじっくり考え抜けます。穏やかで手作りのレベル、時間制限なし。12言語対応。",
+                "dev_banner": "💧 Roblox で配信中。App Store と Google Play は近日公開。",
+                "cap_hero": "キーアート — 静かな日本庭園",
+                "loop_label": "ゲームのせかい",
+                "loop_text": "Shizuku は、日本庭園を舞台にした PixelRyu の癒しの決定論的物理パズルです。竹のとい・石・葉を配置し、落ちてくる二つの露のしずくが出会って一つに溶け合うように導きます — あなたは盤面を整えるだけで、しずくには決して触れません。",
+                "det_label": "何ひとつランダムではない",
+                "det_text": "しずくは決定論的な物理で落ちて転がります。何ひとつランダムではないので、手を放す前に全行程をじっくり考え抜けます。穏やかで手作りのレベル、時間制限なし。",
+                "howto_label": "遊び方",
+                "step1": "ピース — 竹のとい・石・葉 — を配置して道筋を形づくります。",
+                "step2": "準備ができたら、二つの露のしずくを放ちます。しずくは決定論的な物理で落ちて転がります。",
+                "step3": "二つが出会って一つのしずくになるように導きましょう。",
+                "feat_label": "特徴",
+                "feat1": "静かな日本庭園を舞台にした癒しの決定論的物理パズル",
+                "feat2": "盤面を整えるだけ — 竹のとい・石・葉を配置し、しずくには決して触れない",
+                "feat3": "何ひとつランダムではない — 手を放す前に全行程を計画できる",
+                "feat4": "穏やかで手作りのレベル、時間制限なし",
+                "feat5": "無料で遊べて広告は任意 — Roblox では広告なし（獲得したコインを使用）— 12言語対応",
+                "back": "← Shizuku へ戻る"
+        },
+        "zh": {
+                "title": "Shizuku — 游戏概览",
+                "meta_desc": "Shizuku 游戏概览：静谧的日式庭园、摆放竹槽、石头和落叶让两滴落下的露珠相遇合而为一、确定性物理、玩法与亮点。",
+                "tagline": "布置庭园，让两滴露珠相遇。",
+                "page_label": "游戏概览",
+                "lead": "Shizuku 是一款治愈系确定性物理解谜游戏，背景设于静谧的日式庭园。你永远不会触碰露珠——而是布置棋盘：摆放竹槽、石头和落叶，让两滴落下的露珠滚动、滑行，最终相遇合而为一。布置好场景，释放露珠，看着你的计划徐徐展开。由于一切皆非随机，你可以在放手之前把整个流程想清楚。宁静、手工打造的关卡，没有时间压力。支持12种语言。",
+                "dev_banner": "💧 现已登陆 Roblox；App Store 和 Google Play 即将推出。",
+                "cap_hero": "主视觉图 —— 静谧的日式庭园",
+                "loop_label": "游戏世界",
+                "loop_text": "Shizuku 是 PixelRyu 打造的治愈系确定性物理解谜游戏，背景设于日式庭园。你摆放竹槽、石头和落叶，让两滴落下的露珠相遇并合而为一——你只布置棋盘，永远不触碰露珠。",
+                "det_label": "一切皆非随机",
+                "det_text": "露珠会在确定性物理下落下并滚动。由于一切皆非随机，你可以在放手之前把整个流程想清楚。宁静、手工打造的关卡，没有时间压力。",
+                "howto_label": "玩法",
+                "step1": "摆放各种部件——竹槽、石头和落叶——来塑造路径。",
+                "step2": "准备好后，释放两滴露珠；它们会在确定性物理下落下并滚动。",
+                "step3": "引导它们，让两滴相遇并合为一滴。",
+                "feat_label": "亮点",
+                "feat1": "背景设于静谧日式庭园的治愈系确定性物理解谜",
+                "feat2": "你只布置棋盘——摆放竹槽、石头和落叶——永远不触碰露珠",
+                "feat3": "一切皆非随机——放手之前就能规划好整个流程",
+                "feat4": "宁静、手工打造的关卡，没有时间压力",
+                "feat5": "免费游玩、广告可选——Roblox 上没有广告，使用赚取的金币——支持12种语言",
+                "back": "← 返回 Shizuku"
+        },
+        "ko": {
+                "title": "Shizuku — 게임 개요",
+                "meta_desc": "Shizuku 게임 개요. 고요한 일본 정원, 대나무 홈통·돌·잎을 배치해 떨어지는 두 이슬방울을 만나 하나가 되게 하는 플레이, 결정론적 물리, 플레이 방법과 특징을 소개합니다.",
+                "tagline": "정원을 꾸미고, 두 방울을 만나게 하세요.",
+                "page_label": "게임 개요",
+                "lead": "Shizuku는 고요한 일본 정원을 배경으로 한 아늑한 결정론적 물리 퍼즐입니다. 이슬방울에는 손대지 않습니다 — 대신 판을 배치합니다. 대나무 홈통, 돌, 잎을 놓아 두 방울이 떨어질 때 굴러가고 미끄러져 마침내 만나 하나가 되도록 합니다. 장면을 꾸미고, 방울을 떨어뜨리고, 당신의 계획이 펼쳐지는 것을 지켜보세요. 무작위적인 것이 하나도 없기에, 손을 놓기 전에 전 과정을 끝까지 생각해 볼 수 있습니다. 차분하고 손수 만든 레벨, 시간 압박 없음. 12개 언어 지원.",
+                "dev_banner": "💧 Roblox에서 출시 중; App Store와 Google Play는 곧 출시됩니다.",
+                "cap_hero": "키 아트 — 고요한 일본 정원",
+                "loop_label": "게임 세계",
+                "loop_text": "Shizuku는 일본 정원을 배경으로 한 PixelRyu의 아늑한 결정론적 물리 퍼즐입니다. 대나무 홈통, 돌, 잎을 배치해 떨어지는 두 이슬방울이 만나 하나로 합쳐지도록 합니다 — 당신은 판을 꾸밀 뿐, 방울에는 결코 손대지 않습니다.",
+                "det_label": "무작위는 없습니다",
+                "det_text": "방울은 결정론적 물리에 따라 떨어지고 굴러갑니다. 무작위적인 것이 하나도 없기에, 손을 놓기 전에 전 과정을 끝까지 생각해 볼 수 있습니다. 차분하고 손수 만든 레벨, 시간 압박 없음.",
+                "howto_label": "플레이 방법",
+                "step1": "조각 — 대나무 홈통, 돌, 잎 — 을 배치해 경로를 만듭니다.",
+                "step2": "준비가 되면 두 이슬방울을 떨어뜨리세요. 방울은 결정론적 물리에 따라 떨어지고 굴러갑니다.",
+                "step3": "두 방울이 만나 하나의 방울이 되도록 이끄세요.",
+                "feat_label": "특징",
+                "feat1": "고요한 일본 정원을 배경으로 한 아늑한 결정론적 물리 퍼즐",
+                "feat2": "판을 꾸밀 뿐 — 대나무 홈통, 돌, 잎을 배치하고 방울에는 결코 손대지 않습니다",
+                "feat3": "무작위적인 것이 하나도 없어 손을 놓기 전에 전 과정을 계획할 수 있습니다",
+                "feat4": "차분하고 손수 만든 레벨, 시간 압박 없음",
+                "feat5": "무료 플레이·광고는 선택 — Roblox에서는 광고 없이 획득한 코인 사용 — 12개 언어 지원",
+                "back": "← Shizuku로 돌아가기"
+        },
+        "hi": {
+                "title": "Shizuku — गेम का विवरण",
+                "meta_desc": "Shizuku का गेम विवरण: शांत जापानी उद्यान, बाँस की नालियाँ, पत्थर और पत्तियाँ रखकर दो गिरती ओस की बूँदों को मिलाकर एक बनाना, नियतात्मक फ़िज़िक्स, कैसे खेलें और खास बातें।",
+                "tagline": "उद्यान सजाएँ; दो बूँदों को मिलाएँ।",
+                "page_label": "गेम का विवरण",
+                "lead": "Shizuku एक सुकून भरी, नियतात्मक फ़िज़िक्स पहेली है जो एक शांत जापानी उद्यान में रची गई है। आप ओस की बूँदों को कभी नहीं छूते — इसके बजाय आप बोर्ड को सजाते हैं: बाँस की नालियाँ, पत्थर और पत्तियाँ इस तरह रखते हैं कि जब दो बूँदें गिरें, तो वे लुढ़कें, फिसलें और आख़िरकार मिलकर एक बन जाएँ। दृश्य सजाएँ, बूँदें छोड़ें, और अपनी योजना को साकार होते देखें। चूँकि कुछ भी यादृच्छिक नहीं है, आप छोड़ने से पहले पूरी चाल सोच सकते हैं। शांत, हाथ से बनाए गए स्तर और कोई समय का दबाव नहीं। 12 भाषाएँ।",
+                "dev_banner": "💧 Roblox पर अभी उपलब्ध; App Store और Google Play पर जल्द आ रहा है।",
+                "cap_hero": "की आर्ट — एक शांत जापानी उद्यान",
+                "loop_label": "खेल की दुनिया",
+                "loop_text": "Shizuku, PixelRyu द्वारा बनाई गई एक सुकून भरी, नियतात्मक फ़िज़िक्स पहेली है जो एक जापानी उद्यान में रची गई है। आप बाँस की नालियाँ, पत्थर और पत्तियाँ इस तरह सजाते हैं कि गिरती हुई दो ओस की बूँदें मिलकर एक बन जाएँ — आप बोर्ड सजाते हैं, बूँदों को कभी नहीं छूते।",
+                "det_label": "कुछ भी यादृच्छिक नहीं",
+                "det_text": "बूँदें नियतात्मक फ़िज़िक्स के तहत गिरती और लुढ़कती हैं। चूँकि कुछ भी यादृच्छिक नहीं है, आप छोड़ने से पहले पूरी चाल सोच सकते हैं। शांत, हाथ से बनाए गए स्तर और कोई समय का दबाव नहीं।",
+                "howto_label": "कैसे खेलें",
+                "step1": "टुकड़े — बाँस की नालियाँ, पत्थर और पत्तियाँ — रखकर रास्ता बनाएँ।",
+                "step2": "जब आप तैयार हों, तो दो ओस की बूँदें छोड़ें; वे नियतात्मक फ़िज़िक्स के तहत गिरती और लुढ़कती हैं।",
+                "step3": "उन्हें इस तरह दिशा दें कि दोनों मिलकर एक बूँद बन जाएँ।",
+                "feat_label": "खास बातें",
+                "feat1": "शांत जापानी उद्यान में रची गई सुकून भरी नियतात्मक फ़िज़िक्स पहेली",
+                "feat2": "आप बोर्ड सजाते हैं — बाँस की नालियाँ, पत्थर और पत्तियाँ — बूँदों को कभी नहीं छूते",
+                "feat3": "कुछ भी यादृच्छिक नहीं — छोड़ने से पहले पूरी चाल की योजना बनाएँ",
+                "feat4": "शांत, हाथ से बनाए गए स्तर और कोई समय का दबाव नहीं",
+                "feat5": "मुफ़्त, वैकल्पिक विज्ञापन — Roblox पर कोई विज्ञापन नहीं, कमाए हुए सिक्के इस्तेमाल होते हैं — 12 भाषाएँ",
+                "back": "← Shizuku पर वापस जाएँ"
+        },
+        "id": {
+                "title": "Shizuku — Ringkasan Game",
+                "meta_desc": "Ringkasan game Shizuku: taman Jepang yang tenang, menata saluran bambu, batu, dan daun agar dua tetes embun yang jatuh bertemu menjadi satu, fisika deterministik, cara bermain, dan sorotan.",
+                "tagline": "Tata tamannya; biarkan dua tetes bertemu.",
+                "page_label": "Ringkasan Game",
+                "lead": "Shizuku adalah teka-teki fisika deterministik yang menenangkan, berlatar taman Jepang yang tenang. Kamu tidak pernah menyentuh tetes-tetes embun — sebaliknya kamu menata papan: menempatkan saluran bambu, batu, dan daun agar saat dua tetes jatuh, keduanya menggelinding, meluncur, dan akhirnya bertemu menjadi satu. Tata pemandangannya, lepaskan tetesannya, dan saksikan rencanamu terwujud. Karena tidak ada yang acak, kamu bisa memikirkan seluruh rangkaiannya sebelum melepaskannya. Level yang tenang dan buatan tangan, tanpa tekanan waktu. 12 bahasa.",
+                "dev_banner": "💧 Sudah hadir di Roblox; segera hadir di App Store dan Google Play.",
+                "cap_hero": "Key art — taman Jepang yang tenang",
+                "loop_label": "Dunia Permainan",
+                "loop_text": "Shizuku adalah teka-teki fisika deterministik yang menenangkan dari PixelRyu, berlatar taman Jepang. Kamu menata saluran bambu, batu, dan daun agar dua tetes embun yang jatuh bertemu dan menyatu menjadi satu — kamu menata papan, tidak pernah menyentuh tetesannya.",
+                "det_label": "Tidak Ada yang Acak",
+                "det_text": "Tetes-tetes embun jatuh dan menggelinding mengikuti fisika deterministik. Karena tidak ada yang acak, kamu bisa memikirkan seluruh rangkaiannya sebelum melepaskannya. Level yang tenang dan buatan tangan, tanpa tekanan waktu.",
+                "howto_label": "Cara Bermain",
+                "step1": "Tempatkan potongan — saluran bambu, batu, dan daun — untuk membentuk jalur.",
+                "step2": "Saat kamu siap, lepaskan dua tetes embun; keduanya jatuh dan menggelinding mengikuti fisika deterministik.",
+                "step3": "Arahkan agar keduanya bertemu dan menjadi satu tetes.",
+                "feat_label": "Sorotan",
+                "feat1": "Teka-teki fisika deterministik yang menenangkan, berlatar taman Jepang yang tenang",
+                "feat2": "Kamu menata papan — saluran bambu, batu, dan daun — tanpa pernah menyentuh tetesannya",
+                "feat3": "Tidak ada yang acak — rencanakan seluruh rangkaiannya sebelum melepaskannya",
+                "feat4": "Level yang tenang dan buatan tangan, tanpa tekanan waktu",
+                "feat5": "Gratis dimainkan dengan iklan opsional — tanpa iklan di Roblox, pakai koin yang kamu kumpulkan — 12 bahasa",
+                "back": "← Kembali ke Shizuku"
+        },
+        "de": {
+                "title": "Shizuku — Spielübersicht",
+                "meta_desc": "Spielübersicht von Shizuku: der stille japanische Garten, das Anordnen von Bambusrinnen, Steinen und Blättern, damit zwei fallende Tautropfen sich treffen und eins werden, die deterministische Physik, die Spielweise und die Highlights.",
+                "tagline": "Gestalte den Garten; lass zwei Tropfen sich treffen.",
+                "page_label": "Spielübersicht",
+                "lead": "Shizuku ist ein gemütliches, deterministisches Physikpuzzle in einem stillen japanischen Garten. Du berührst die Tautropfen nie — stattdessen gestaltest du das Spielfeld: Platziere Bambusrinnen, Steine und Blätter so, dass die beiden fallenden Tropfen rollen, gleiten und sich schließlich treffen, um eins zu werden. Richte die Szene ein, lass die Tropfen los und sieh zu, wie dein Plan aufgeht. Da nichts zufällig ist, kannst du den ganzen Ablauf durchdenken, bevor du loslässt. Ruhige, handgemachte Level und kein Zeitdruck. 12 Sprachen.",
+                "dev_banner": "💧 Jetzt auf Roblox; bald im App Store und bei Google Play.",
+                "cap_hero": "Key-Art — ein stiller japanischer Garten",
+                "loop_label": "Die Spielwelt",
+                "loop_text": "Shizuku ist ein gemütliches, deterministisches Physikpuzzle von PixelRyu in einem japanischen Garten. Du ordnest Bambusrinnen, Steine und Blätter so an, dass zwei fallende Tautropfen sich treffen und zu einem verschmelzen — du gestaltest das Spielfeld und berührst die Tropfen nie.",
+                "det_label": "Nichts ist zufällig",
+                "det_text": "Die Tropfen fallen und rollen nach deterministischer Physik. Da nichts zufällig ist, kannst du den ganzen Ablauf durchdenken, bevor du loslässt. Ruhige, handgemachte Level und kein Zeitdruck.",
+                "howto_label": "So wird gespielt",
+                "step1": "Platziere Teile — Bambusrinnen, Steine und Blätter —, um den Weg zu formen.",
+                "step2": "Wenn du bereit bist, lass die beiden Tautropfen los; sie fallen und rollen nach deterministischer Physik.",
+                "step3": "Lenke sie so, dass die beiden sich treffen und zu einem einzigen Tropfen werden.",
+                "feat_label": "Highlights",
+                "feat1": "Ein gemütliches, deterministisches Physikpuzzle in einem stillen japanischen Garten",
+                "feat2": "Du gestaltest das Spielfeld — Bambusrinnen, Steine und Blätter — und berührst die Tropfen nie",
+                "feat3": "Nichts ist zufällig — plane den ganzen Ablauf, bevor du loslässt",
+                "feat4": "Ruhige, handgemachte Level und kein Zeitdruck",
+                "feat5": "Kostenlos spielbar mit optionaler Werbung — auf Roblox keine Werbung, du nutzt verdiente Münzen — 12 Sprachen",
+                "back": "← Zurück zu Shizuku"
+        },
+        "fr": {
+                "title": "Shizuku — Présentation du jeu",
+                "meta_desc": "Présentation de Shizuku : le jardin japonais tranquille, l'agencement des chéneaux de bambou, pierres et feuilles pour que deux gouttes de rosée qui tombent se rencontrent et n'en forment qu'une, la physique déterministe, comment jouer et les points forts.",
+                "tagline": "Agence le jardin ; fais se rencontrer deux gouttes.",
+                "page_label": "Présentation du jeu",
+                "lead": "Shizuku est un paisible puzzle physique déterministe dans un jardin japonais tranquille. Tu ne touches jamais les gouttes de rosée — au lieu de cela, tu agences le plateau : place des chéneaux de bambou, des pierres et des feuilles afin que, lorsque deux gouttes tombent, elles roulent, glissent et finissent par se rencontrer pour n'en former qu'une. Mets la scène en place, lâche les gouttes et regarde ton plan se dérouler. Comme rien n'est aléatoire, tu peux réfléchir à tout le parcours avant de lâcher. Des niveaux paisibles, faits à la main, sans pression de temps. 12 langues.",
+                "dev_banner": "💧 Disponible dès maintenant sur Roblox ; bientôt sur l'App Store et Google Play.",
+                "cap_hero": "Illustration principale — un jardin japonais tranquille",
+                "loop_label": "Le monde du jeu",
+                "loop_text": "Shizuku est un paisible puzzle physique déterministe de PixelRyu, dans un jardin japonais. Tu agences des chéneaux de bambou, des pierres et des feuilles afin que deux gouttes de rosée qui tombent se rencontrent et fusionnent en une seule — tu agences le plateau, sans jamais toucher les gouttes.",
+                "det_label": "Rien n'est aléatoire",
+                "det_text": "Les gouttes tombent et roulent selon une physique déterministe. Comme rien n'est aléatoire, tu peux réfléchir à tout le parcours avant de lâcher. Des niveaux paisibles, faits à la main, sans pression de temps.",
+                "howto_label": "Comment jouer",
+                "step1": "Place des pièces — chéneaux de bambou, pierres et feuilles — pour façonner le chemin.",
+                "step2": "Quand tu es prêt, lâche les deux gouttes de rosée ; elles tombent et roulent selon une physique déterministe.",
+                "step3": "Guide-les pour que les deux se rencontrent et deviennent une seule goutte.",
+                "feat_label": "Points forts",
+                "feat1": "Un paisible puzzle physique déterministe dans un jardin japonais tranquille",
+                "feat2": "Tu agences le plateau — chéneaux de bambou, pierres et feuilles — sans jamais toucher les gouttes",
+                "feat3": "Rien n'est aléatoire — planifie tout le parcours avant de lâcher",
+                "feat4": "Des niveaux paisibles, faits à la main, sans pression de temps",
+                "feat5": "Gratuit avec publicités facultatives — pas de publicités sur Roblox, tu utilises les pièces gagnées — 12 langues",
+                "back": "← Retour à Shizuku"
+        },
+        "it": {
+                "title": "Shizuku — Panoramica del gioco",
+                "meta_desc": "Panoramica di Shizuku: il tranquillo giardino giapponese, la disposizione di canalette di bambù, pietre e foglie perché due gocce di rugiada che cadono si incontrino e diventino una sola, la fisica deterministica, come si gioca e i punti di forza.",
+                "tagline": "Sistema il giardino; fai incontrare due gocce.",
+                "page_label": "Panoramica del gioco",
+                "lead": "Shizuku è un accogliente puzzle di fisica deterministica ambientato in un tranquillo giardino giapponese. Non tocchi mai le gocce di rugiada — invece sistemi il tavoliere: posiziona canalette di bambù, pietre e foglie in modo che, quando due gocce cadono, rotolino, scivolino e infine si incontrino per diventare una sola. Prepara la scena, rilascia le gocce e guarda il tuo piano realizzarsi. Poiché nulla è casuale, puoi pensare all'intera sequenza prima di lasciar andare. Livelli tranquilli e fatti a mano, senza pressione di tempo. 12 lingue.",
+                "dev_banner": "💧 Ora disponibile su Roblox; presto su App Store e Google Play.",
+                "cap_hero": "Key art — un tranquillo giardino giapponese",
+                "loop_label": "Il mondo di gioco",
+                "loop_text": "Shizuku è un accogliente puzzle di fisica deterministica di PixelRyu, ambientato in un giardino giapponese. Sistemi canalette di bambù, pietre e foglie in modo che due gocce di rugiada che cadono si incontrino e si fondano in una sola — tu sistemi il tavoliere, senza mai toccare le gocce.",
+                "det_label": "Nulla è casuale",
+                "det_text": "Le gocce cadono e rotolano secondo una fisica deterministica. Poiché nulla è casuale, puoi pensare all'intera sequenza prima di lasciar andare. Livelli tranquilli e fatti a mano, senza pressione di tempo.",
+                "howto_label": "Come si gioca",
+                "step1": "Posiziona i pezzi — canalette di bambù, pietre e foglie — per dare forma al percorso.",
+                "step2": "Quando sei pronto, rilascia le due gocce di rugiada; cadono e rotolano secondo una fisica deterministica.",
+                "step3": "Guidale in modo che le due si incontrino e diventino una sola goccia.",
+                "feat_label": "Punti di forza",
+                "feat1": "Un accogliente puzzle di fisica deterministica in un tranquillo giardino giapponese",
+                "feat2": "Sistemi il tavoliere — canalette di bambù, pietre e foglie — senza mai toccare le gocce",
+                "feat3": "Nulla è casuale — pianifica l'intera sequenza prima di lasciar andare",
+                "feat4": "Livelli tranquilli e fatti a mano, senza pressione di tempo",
+                "feat5": "Gratuito con pubblicità facoltative — su Roblox niente pubblicità, usi le monete che guadagni — 12 lingue",
+                "back": "← Torna a Shizuku"
+        },
+        "es": {
+                "title": "Shizuku — Descripción del juego",
+                "meta_desc": "Descripción del juego Shizuku: el tranquilo jardín japonés, la colocación de canaletas de bambú, piedras y hojas para que dos gotas de rocío que caen se encuentren y se conviertan en una, la física determinista, cómo se juega y lo más destacado.",
+                "tagline": "Prepara el jardín; haz que dos gotas se encuentren.",
+                "page_label": "Descripción del juego",
+                "lead": "Shizuku es un acogedor puzle de física determinista ambientado en un tranquilo jardín japonés. Nunca tocas las gotas de rocío — en su lugar organizas el tablero: coloca canaletas de bambú, piedras y hojas para que, cuando dos gotas caen, rueden, se deslicen y finalmente se encuentren para convertirse en una. Prepara la escena, suelta las gotas y observa cómo tu plan se desarrolla. Como nada es aleatorio, puedes pensar todo el recorrido antes de soltar. Niveles tranquilos y hechos a mano, sin presión de tiempo. 12 idiomas.",
+                "dev_banner": "💧 Ya disponible en Roblox; próximamente en App Store y Google Play.",
+                "cap_hero": "Ilustración principal — un tranquilo jardín japonés",
+                "loop_label": "El mundo del juego",
+                "loop_text": "Shizuku es un acogedor puzle de física determinista de PixelRyu, ambientado en un jardín japonés. Organizas canaletas de bambú, piedras y hojas para que dos gotas de rocío que caen se encuentren y se fusionen en una — tú preparas el tablero, nunca tocas las gotas.",
+                "det_label": "Nada es aleatorio",
+                "det_text": "Las gotas caen y ruedan bajo una física determinista. Como nada es aleatorio, puedes pensar todo el recorrido antes de soltar. Niveles tranquilos y hechos a mano, sin presión de tiempo.",
+                "howto_label": "Cómo se juega",
+                "step1": "Coloca piezas — canaletas de bambú, piedras y hojas — para dar forma al camino.",
+                "step2": "Cuando estés listo, suelta las dos gotas de rocío; caen y ruedan bajo una física determinista.",
+                "step3": "Guíalas para que las dos se encuentren y se conviertan en una sola gota.",
+                "feat_label": "Lo más destacado",
+                "feat1": "Un acogedor puzle de física determinista en un tranquilo jardín japonés",
+                "feat2": "Tú preparas el tablero — canaletas de bambú, piedras y hojas — sin tocar nunca las gotas",
+                "feat3": "Nada es aleatorio — planea todo el recorrido antes de soltar",
+                "feat4": "Niveles tranquilos y hechos a mano, sin presión de tiempo",
+                "feat5": "Gratis con anuncios opcionales — en Roblox no hay anuncios, usas las monedas que ganas — 12 idiomas",
+                "back": "← Volver a Shizuku"
+        },
+        "pt": {
+                "title": "Shizuku — Visão geral do jogo",
+                "meta_desc": "Visão geral de Shizuku: o tranquilo jardim japonês, o posicionamento de calhas de bambu, pedras e folhas para que duas gotas de orvalho que caem se encontrem e virem uma só, a física determinística, como jogar e os destaques.",
+                "tagline": "Monte o jardim; faça duas gotas se encontrarem.",
+                "page_label": "Visão geral do jogo",
+                "lead": "Shizuku é um aconchegante quebra-cabeça de física determinística ambientado num tranquilo jardim japonês. Você nunca toca nas gotas de orvalho — em vez disso, você organiza o tabuleiro: posicione calhas de bambu, pedras e folhas para que, quando duas gotas caem, elas rolem, deslizem e finalmente se encontrem para virar uma só. Monte a cena, solte as gotas e veja seu plano se concretizar. Como nada é aleatório, você pode pensar em todo o percurso antes de soltar. Fases calmas e feitas à mão, sem pressão de tempo. 12 idiomas.",
+                "dev_banner": "💧 Já disponível no Roblox; em breve na App Store e no Google Play.",
+                "cap_hero": "Arte principal — um tranquilo jardim japonês",
+                "loop_label": "O mundo do jogo",
+                "loop_text": "Shizuku é um aconchegante quebra-cabeça de física determinística da PixelRyu, ambientado num jardim japonês. Você organiza calhas de bambu, pedras e folhas para que duas gotas de orvalho que caem se encontrem e se fundam em uma só — você monta o tabuleiro, nunca toca nas gotas.",
+                "det_label": "Nada é aleatório",
+                "det_text": "As gotas caem e rolam sob uma física determinística. Como nada é aleatório, você pode pensar em todo o percurso antes de soltar. Fases calmas e feitas à mão, sem pressão de tempo.",
+                "howto_label": "Como jogar",
+                "step1": "Posicione peças — calhas de bambu, pedras e folhas — para moldar o caminho.",
+                "step2": "Quando estiver pronto, solte as duas gotas de orvalho; elas caem e rolam sob uma física determinística.",
+                "step3": "Guie-as para que as duas se encontrem e virem uma única gota.",
+                "feat_label": "Destaques",
+                "feat1": "Um aconchegante quebra-cabeça de física determinística num tranquilo jardim japonês",
+                "feat2": "Você monta o tabuleiro — calhas de bambu, pedras e folhas — e nunca toca nas gotas",
+                "feat3": "Nada é aleatório — planeje todo o percurso antes de soltar",
+                "feat4": "Fases calmas e feitas à mão, sem pressão de tempo",
+                "feat5": "Gratuito com anúncios opcionais — no Roblox não há anúncios, você usa as moedas que ganha — 12 idiomas",
+                "back": "← Voltar para Shizuku"
+        },
+        "ru": {
+                "title": "Shizuku — Обзор игры",
+                "meta_desc": "Обзор игры Shizuku: тихий японский сад, расстановка бамбуковых желобов, камней и листьев, чтобы две падающие капельки росы встретились и стали одной, детерминированная физика, как играть и ключевые особенности.",
+                "tagline": "Обустройте сад; дайте двум каплям встретиться.",
+                "page_label": "Обзор игры",
+                "lead": "Shizuku — уютная детерминированная физическая головоломка в тихом японском саду. Вы никогда не касаетесь капелек росы — вместо этого вы обустраиваете поле: расставляете бамбуковые желоба, камни и листья так, чтобы при падении две капли катились, скользили и наконец встретились, став одной. Подготовьте сцену, отпустите капли и наблюдайте, как разворачивается ваш замысел. Поскольку ничего случайного нет, вы можете продумать весь путь до того, как отпустите. Спокойные, сделанные вручную уровни и никакого цейтнота. 12 языков.",
+                "dev_banner": "💧 Уже доступно на Roblox; скоро в App Store и Google Play.",
+                "cap_hero": "Ключевой арт — тихий японский сад",
+                "loop_label": "Мир игры",
+                "loop_text": "Shizuku — уютная детерминированная физическая головоломка от PixelRyu в японском саду. Вы расставляете бамбуковые желоба, камни и листья так, чтобы две падающие капельки росы встретились и слились в одну — вы обустраиваете поле, но никогда не касаетесь капель.",
+                "det_label": "Ничего случайного",
+                "det_text": "Капли падают и катятся по детерминированной физике. Поскольку ничего случайного нет, вы можете продумать весь путь до того, как отпустите. Спокойные, сделанные вручную уровни и никакого цейтнота.",
+                "howto_label": "Как играть",
+                "step1": "Расставьте элементы — бамбуковые желоба, камни и листья — чтобы выстроить путь.",
+                "step2": "Когда будете готовы, отпустите две капельки росы; они падают и катятся по детерминированной физике.",
+                "step3": "Направьте их так, чтобы обе встретились и стали одной каплей.",
+                "feat_label": "Ключевые особенности",
+                "feat1": "Уютная детерминированная физическая головоломка в тихом японском саду",
+                "feat2": "Вы обустраиваете поле — бамбуковые желоба, камни и листья — и никогда не касаетесь капель",
+                "feat3": "Ничего случайного — спланируйте весь путь до того, как отпустите",
+                "feat4": "Спокойные, сделанные вручную уровни и никакого цейтнота",
+                "feat5": "Бесплатно с необязательной рекламой — в Roblox рекламы нет, вы используете заработанные монеты — 12 языков",
+                "back": "← Назад к Shizuku"
+        }
+};
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
+  function detectLang() {
+    try { const stored = localStorage.getItem(LANG_STORAGE_KEY); if (stored && i18n[stored]) return stored; } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+  function setLang(lang, persist) {
+    const dict = i18n[lang]; if (!dict) return;
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n'); if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]); else el.textContent = dict[key];
+    });
+    const sel = document.getElementById('lang-select'); if (sel) sel.value = lang;
+  }
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) { const opt = document.createElement('option'); opt.value = l.code; opt.textContent = l.flag + ' ' + l.name; sel.appendChild(opt); }
+    setLang(detectLang(), true);
+    sel.addEventListener('change', e => setLang(e.target.value, true));
+  })();
+</script>
+<script src="../breadcrumb.js?v=20260621103040" defer></script>
+</body>
+</html>
