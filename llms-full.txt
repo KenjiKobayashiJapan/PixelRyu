@@ -25,8 +25,10 @@ This file is the expanded, self-contained companion to /llms.txt. It inlines the
 - Page: https://pixelryu.github.io/okaeri/
 - Overview: https://pixelryu.github.io/okaeri/overview.html
 - Genre: Puzzle, Casual (cozy pet homecoming slide puzzle)
-- Platforms: iOS, Android, Roblox (now on Roblox; Android testers welcome on Google Play; coming soon to the App Store)
-- About: Okaeri — a cozy pet homecoming slide puzzle by PixelRyu. Slide a row or column of glassy food bowls; bowls wrap from one edge to the other. When a whole line becomes one pet's favorite food, that pet crosses the board. Then rotate the outer ring, where pets and owners wait, so the matching owner is on the far side. Reunite every pair to clear the stage across 60 quiet stages. No timer, 12 languages. Now on Roblox; Android testers welcome on Google Play; coming soon to the App Store.
+- Platforms: iOS, Android, Roblox (out now on the App Store and Roblox; Android testers welcome on Google Play)
+- About: Okaeri — a cozy pet homecoming slide puzzle by PixelRyu. Slide a row or column of glassy food bowls; bowls wrap from one edge to the other. When a whole line becomes one pet's favorite food, that pet crosses the board. Then rotate the outer ring, where pets and owners wait, so the matching owner is on the far side. Reunite every pair to clear the stage across 60 quiet stages. No timer, 12 languages. Out now on the App Store and Roblox; Android testers welcome on Google Play.
+- App Store (iOS): https://apps.apple.com/app/id6787373316
+- Roblox: https://www.roblox.com/games/104207794680922/Okaeri-Pet-Reunion-Puzzle
 - Free to play. Contact: idev10752@gmail.com
 
 ### SENKO
@@ -41,8 +43,10 @@ This file is the expanded, self-contained companion to /llms.txt. It inlines the
 - Page: https://pixelryu.github.io/shizuku/
 - Overview: https://pixelryu.github.io/shizuku/overview.html
 - Genre: Puzzle, Casual (cozy deterministic dewdrop physics)
-- Platforms: iOS, Android, Roblox (out now on Roblox; Android testers welcome on Google Play; coming soon to the App Store)
-- About: Shizuku — a cozy, deterministic physics puzzle by PixelRyu set in a quiet Japanese garden. You never touch the dewdrops directly; instead you arrange the board — placing bamboo flumes, stones and leaves — so that, when two drops are released, they roll, slide and finally meet to become a single drop. Set the scene, release the drops, and watch your plan play out; because the physics is fully deterministic (nothing is random), you can reason the whole run through before you let go. Calm, hand-made levels with no time pressure. Free with optional rewarded ads on mobile; the Roblox edition uses coins you earn instead of ads. Nearly text-free in 12 languages. Out now on Roblox; Android testers welcome on Google Play; coming soon to the App Store.
+- Platforms: iOS, Android, Roblox (out now on the App Store and Roblox; Android testers welcome on Google Play)
+- About: Shizuku — a cozy, deterministic physics puzzle by PixelRyu set in a quiet Japanese garden. You never touch the dewdrops directly; instead you arrange the board — placing bamboo flumes, stones and leaves — so that, when two drops are released, they roll, slide and finally meet to become a single drop. Set the scene, release the drops, and watch your plan play out; because the physics is fully deterministic (nothing is random), you can reason the whole run through before you let go. Calm, hand-made levels with no time pressure. Free with optional rewarded ads on mobile; the Roblox edition uses coins you earn instead of ads. Nearly text-free in 12 languages. Out now on the App Store and Roblox; Android testers welcome on Google Play.
+- App Store (iOS): https://apps.apple.com/app/id6782598479
+- Roblox: https://www.roblox.com/games/77915067275756/Shizuku-Dewdrop-Garden
 - Free to play. Contact: idev10752@gmail.com
 
 ### WAGASHI
@@ -144,9 +148,10 @@ This file is the expanded, self-contained companion to /llms.txt. It inlines the
 ### Liquid Glow
 - Page: https://pixelryu.github.io/liquid-glow-cosmic/
 - Overview: https://pixelryu.github.io/liquid-glow-cosmic/overview.html
-- Platforms (declared): Roblox
+- Platforms (declared): iOS, Roblox
 - Price: Free
-- About: Liquid Glow is a calm, luminous color-matching puzzle in deep space. Slide glowing light along the constellation so each star's ring matches its color. Out now on Roblox; coming soon to the App Store.
+- About: Liquid Glow is a calm, luminous color-matching puzzle in deep space. Slide glowing light along the constellation so each star's ring matches its color. Out now on the App Store and Roblox.
+- App Store (iOS): https://apps.apple.com/app/id6770228059
 - Roblox: https://www.roblox.com/games/121416912707355/Liquid-Glow-Sort-Puzzle
 
 ### Liquid Glow (classic sort puzzle)
