@@ -24,6 +24,7 @@
 
   // App display names (brand). `all` is the default; add per-language keys to override.
   var APP_NAMES = {
+    "hanko":       { all: "HANKO" },
     "okaeri":      { all: "Okaeri", ja: "おかえり" },
     "issen":       { all: "ISSEN" },
     "hotaru":      { all: "HOTARU" },
@@ -32,6 +33,7 @@
     "mole-whack":  { all: "Mole Whack", ja: "モグラぽかぽか" },
     "parcel-pals": { all: "Parcel Pals", ja: "ふんわり配送便" },
     "sumlings":    { all: "Sumlings", ja: "サムリング" },
+    "hoshikari":   { all: "Hoshikari", ja: "星狩り" },
     "hayate":      { all: "HAYATE" },
     "bounce-cat":  { all: "Bounce Cat" },
     "temari":      { all: "TEMARI" },

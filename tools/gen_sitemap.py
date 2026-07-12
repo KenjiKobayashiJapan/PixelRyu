@@ -15,10 +15,10 @@ import xml.dom.minidom as minidom
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 SITE = "https://pixelryu.github.io/"
 LANGS = ["en", "ja", "zh", "ko", "hi", "id", "de", "fr", "it", "es", "pt", "ru"]
-GAMES = ["okaeri", "shizuku", "senko", "wagashi", "counterparts", "temari", "tatami", "bounce-cat",
-         "hayate", "sumlings", "parcel-pals", "issen", "hotaru", "liquid-glow-cosmic",
+GAMES = ["hanko", "okaeri", "shizuku", "senko", "wagashi", "counterparts", "temari", "tatami", "bounce-cat",
+         "hoshikari", "hayate", "sumlings", "parcel-pals", "issen", "hotaru", "liquid-glow-cosmic",
          "liquid-glow", "mole-whack"]
-TODAY = "2026-06-28"
+TODAY = "2026-07-10"
 
 
 def existing_lastmods():

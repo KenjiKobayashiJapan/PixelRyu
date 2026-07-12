@@ -6,6 +6,7 @@ PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This sit
 
 ## Games
 
+- [HANKO](https://pixelryu.github.io/hanko/): A Japanese seal-carving logic puzzle built on negative space — the parts you do not carve are the parts that print. Carve grooves into a seal face, press it onto washi paper inside one to four fixed guides, and match the target exactly: one press prints light red, two overlapping prints make a dark red. Feedback is only how many cells are too dark and how many too light, so every stage is solved by deduction. 200 stages, a daily seal, 12 languages. Coming soon to the App Store, Google Play and Roblox.
 - [Okaeri](https://pixelryu.github.io/okaeri/): A cozy pet homecoming slide puzzle — slide rows and columns of glassy food bowls, rotate the outer ring of pets and owners, and reunite every pair across 60 quiet stages. Calm stages, no timer, 12 languages. Out now on the App Store and Roblox; Android testers welcome on Google Play.
 - [SENKO](https://pixelryu.github.io/senko/): A cozy, two-phase incense-smoke puzzle — light a stick of incense and sweep the restless dark smoke with a fingertip to calm it until it turns clear and white, then guide that white smoke to fill a faint Japanese motif (the moon, a pine, a crane, cherry blossoms and more) across 120 quiet stages. Dodge the red embers that burn your smoke back, and finish before the finite smoke runs out; a fan calms broadly and a brush helps you shape. 12 languages. Out now on the App Store and Roblox; Android testers welcome on Google Play.
 - [Shizuku](https://pixelryu.github.io/shizuku/): A cozy, deterministic physics puzzle in a quiet Japanese garden — you never touch the dewdrops; instead you arrange the board (bamboo flumes, stones and leaves) so that two falling drops roll, slide and finally meet to become one. Set the scene, release the drops and watch your plan play out; nothing is random, so you can think the whole run through first. 12 languages. Out now on the App Store and Roblox; Android testers welcome on Google Play.
@@ -14,6 +15,7 @@ PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This sit
 - [TEMARI](https://pixelryu.github.io/temari/): A first-person paddle breakout in a cozy Japanese night — move your hagoita (battledore) with a fingertip, keep the temari thread-ball in an endless rally, and pop every paper balloon down the lantern-lit corridor, with split balls, focus slow-motion, a pheasant helper and more. 8 worlds, 200 stages. Now on the App Store and Roblox; Android closed testing open.
 - [TATAMI: Lay the Floor](https://pixelryu.github.io/tatami/): A cozy tatami-laying block puzzle in a quiet Japanese room — drag a mat and complete a full row or column to clear that line, while a samurai carries the finished mats to the tatami magistrate and delivering earns koban that buy extra lives. 48 stages. Now on Roblox; coming soon to the App Store.
 - [Bounce Cat](https://pixelryu.github.io/bounce-cat/): A cozy maze-escape puzzle — a cat is trapped inside a walled maze you can't enter, so you fire a ball of yarn from the rim, ride the ricochet, and shift or shatter walls until the wandering cat rolls out to freedom. 200 mazes across 10 worlds. Now on the App Store and Roblox; Android closed testing open.
+- [Hoshikari](https://pixelryu.github.io/hoshikari/): A first-person, on-rails space shooter with a Japanese ink-wash look — fly a craft of light through a painted sea of stars, drag to lock the incoming swarm of meteors and drones, and release a fan of homing light-arrows that chain whole clusters in one breath. 12 languages. Coming soon to the App Store, Google Play & Roblox.
 - [HAYATE](https://pixelryu.github.io/hayate/): A 3D katana speed-racer and sequel to ISSEN — dodge what flies at you, or throw a homing katana to slice it clean, across four worlds, forty stages, plus endless runs. iOS, Android & Roblox.
 - [Sumlings](https://pixelryu.github.io/sumlings/): A cozy number puzzle — place number eggs into a tiny terrarium so each nest's total matches its target, hatching Sumlings to fill a collection. iOS, Android & Roblox.
 - [Parcel Pals](https://pixelryu.github.io/parcel-pals/): A cozy parcel-sorting puzzle — sort cute parcels into three lanes and match shapes to boxes on the belt before the table overflows. iOS, Android & Roblox.
@@ -25,6 +27,7 @@ PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This sit
 
 ## Game overviews
 
+- [HANKO](https://pixelryu.github.io/hanko/)
 - [Okaeri — Game Overview](https://pixelryu.github.io/okaeri/overview.html)
 - [SENKO — Game Overview](https://pixelryu.github.io/senko/overview.html)
 - [Shizuku — Game Overview](https://pixelryu.github.io/shizuku/overview.html)
@@ -33,6 +36,7 @@ PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This sit
 - [TEMARI — Game Overview](https://pixelryu.github.io/temari/overview.html)
 - [TATAMI — Game Overview](https://pixelryu.github.io/tatami/overview.html)
 - [Bounce Cat — Game Overview](https://pixelryu.github.io/bounce-cat/overview.html)
+- [Hoshikari — Game Overview](https://pixelryu.github.io/hoshikari/overview.html)
 - [HAYATE — Game Overview](https://pixelryu.github.io/hayate/overview.html)
 - [Sumlings — Game Overview](https://pixelryu.github.io/sumlings/overview.html)
 - [Parcel Pals — Game Overview](https://pixelryu.github.io/parcel-pals/overview.html)
@@ -44,6 +48,8 @@ PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This sit
 
 ## Legal
 
+- [HANKO — Privacy Policy](https://pixelryu.github.io/hanko/privacy_policy.html)
+- [HANKO — Terms of Service](https://pixelryu.github.io/hanko/terms_of_service.html)
 - [Okaeri — Privacy Policy](https://pixelryu.github.io/okaeri/privacy_policy.html)
 - [Okaeri — Terms of Service](https://pixelryu.github.io/okaeri/terms_of_service.html)
 - [WAGASHI — Privacy Policy](https://pixelryu.github.io/wagashi/privacy_policy.html)
@@ -56,6 +62,8 @@ PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This sit
 - [TATAMI — Terms of Service](https://pixelryu.github.io/tatami/terms_of_service.html)
 - [Bounce Cat — Privacy Policy](https://pixelryu.github.io/bounce-cat/privacy_policy.html)
 - [Bounce Cat — Terms of Service](https://pixelryu.github.io/bounce-cat/terms_of_service.html)
+- [Hoshikari — Privacy Policy](https://pixelryu.github.io/hoshikari/privacy_policy.html)
+- [Hoshikari — Terms of Service](https://pixelryu.github.io/hoshikari/terms_of_service.html)
 - [HAYATE — Privacy Policy](https://pixelryu.github.io/hayate/privacy_policy.html)
 - [HAYATE — Terms of Service](https://pixelryu.github.io/hayate/terms_of_service.html)
 - [Sumlings — Privacy Policy](https://pixelryu.github.io/sumlings/privacy_policy.html)

@@ -1,0 +1,491 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-M5MH53Z8LM"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('consent', 'default', {
+    'ad_storage': 'denied',
+    'ad_user_data': 'denied',
+    'ad_personalization': 'denied',
+    'analytics_storage': 'denied'
+  });
+
+  gtag('config', 'G-M5MH53Z8LM');
+</script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title data-i18n="title">Hoshikari — Game Overview</title>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Game overview of Hoshikari: the sectors of the star sea, how to play, and what makes it shine — a first-person, on-rails space shooter with a Japanese ink-wash look.">
+<style>
+  body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
+    background: radial-gradient(ellipse at top, #12203a 0%, #0a1020 50%, #02040c 100%);
+    color: #dbe6f5;
+    margin: 0;
+    min-height: 100vh;
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+  }
+  .container { max-width: 620px; width: 100%; padding: 64px 32px 80px; text-align: center; position: relative; }
+  .lang-switch { position: absolute; top: 24px; right: 24px; }
+  .lang-switch select { background: rgba(51,217,255,0.06); color: #dbe6f5; border: 1px solid rgba(51,217,255,0.20); border-radius: 4px; padding: 5px 10px; font-size: 13px; font-family: inherit; cursor: pointer; }
+  .lang-switch select:hover { background: rgba(51,217,255,0.12); border-color: rgba(51,217,255,0.50); }
+  .lang-switch select option { background: #0a1020; color: #dbe6f5; }
+  .tagline { font-size: 13px; color: #7e8aa6; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 6px; }
+  h1 { font-size: 48px; margin: 0 0 6px; color: #f3f8ff; font-weight: 800; letter-spacing: 2px; }
+  h1 .kanji { color: #33d9ff; font-size: 28px; font-weight: 700; letter-spacing: 4px; margin-left: 10px; vertical-align: 6px; }
+  .page-label { font-size: 13px; color: #7e8aa6; text-transform: uppercase; letter-spacing: 3px; margin-bottom: 12px; }
+  .lead { font-size: 15px; line-height: 1.85; color: #c4d2e8; margin: 14px auto 8px; max-width: 500px; }
+  .section { background: rgba(51,217,255,0.05); border: 1px solid rgba(51,217,255,0.22); border-radius: 16px; padding: 24px 24px 28px; margin: 28px 0; text-align: left; box-shadow: 0 8px 24px rgba(51,217,255,0.08); }
+  .section h2 { font-size: 18px; color: #33d9ff; margin: 0 0 4px; font-weight: 800; }
+  .section .sub { font-size: 14px; color: #7e8aa6; letter-spacing: 2px; margin-bottom: 14px; }
+  .section p { font-size: 14px; line-height: 1.8; color: #c4d2e8; margin: 12px 0; }
+  .section ol, .section ul { margin: 12px 0 0; padding-left: 22px; font-size: 14px; line-height: 1.85; color: #c4d2e8; }
+  .hero-shot { width: 100%; max-width: 200px; margin: 22px auto 4px; }
+  .hero-shot img { width: 100%; border-radius: 26px; border: 1px solid rgba(51,217,255,0.22); box-shadow: 0 10px 32px rgba(0,0,0,0.6), 0 0 0 1px rgba(51,217,255,0.14); display: block; }
+  .hero-shot figcaption { font-size: 12px; color: #7e8aa6; margin-top: 8px; text-align: center; }
+  .back { display: inline-block; margin-top: 28px; color: #7e8aa6; text-decoration: none; font-size: 14px; }
+  .back:hover { color: #33d9ff; }
+  @media (max-width: 600px) { .container { padding: 48px 18px 64px; } .lang-switch { top: 16px; right: 16px; } .section { padding: 20px 18px 22px; } h1 { font-size: 40px; } h1 .kanji { font-size: 24px; } }
+  .social-heading{font-size:13px;color:#7e8aa6;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
+  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
+  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(51,217,255,0.06);border:1px solid rgba(51,217,255,0.20);color:#7e8aa6;transition:all .25s ease;}
+  .social a:hover{background:rgba(51,217,255,0.12);border-color:rgba(51,217,255,0.45);color:#33d9ff;transform:translateY(-2px);}
+  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
+</style>
+<!-- SEO/LLMO start (managed) -->
+<link rel="canonical" href="https://pixelryu.github.io/hoshikari/overview.html">
+<meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1">
+<meta name="author" content="PixelRyu">
+<meta name="publisher" content="PixelRyu">
+<meta name="keywords" content="Hoshikari, 星狩り, Star Hunter, space shooter, on rails, first person, meteor, cosmic, galaxy, arcade, homing, lock on, swarm, ink wash, sumi-e, dodge, shmup, PixelRyu, indie game, Android, iOS">
+<meta name="theme-color" content="#0a1020">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/hoshikari/icon.png">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/hoshikari/icon.png">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="PixelRyu">
+<meta property="og:title" content="Hoshikari — Game Overview">
+<meta property="og:description" content="Game overview of Hoshikari: the sectors of the star sea, how to play, and what makes it shine — a first-person, on-rails space shooter with a Japanese ink-wash look.">
+<meta property="og:url" content="https://pixelryu.github.io/hoshikari/overview.html">
+<meta property="og:image" content="https://pixelryu.github.io/hoshikari/og.png">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="500">
+<meta property="og:image:alt" content="Hoshikari — Game Overview">
+<meta property="og:locale" content="en_US">
+<meta property="og:locale:alternate" content="ja_JP">
+<meta property="og:locale:alternate" content="zh_CN">
+<meta property="og:locale:alternate" content="ko_KR">
+<meta property="og:locale:alternate" content="hi_IN">
+<meta property="og:locale:alternate" content="id_ID">
+<meta property="og:locale:alternate" content="de_DE">
+<meta property="og:locale:alternate" content="fr_FR">
+<meta property="og:locale:alternate" content="it_IT">
+<meta property="og:locale:alternate" content="es_ES">
+<meta property="og:locale:alternate" content="pt_BR">
+<meta property="og:locale:alternate" content="ru_RU">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Hoshikari — Game Overview">
+<meta name="twitter:description" content="Game overview of Hoshikari: the sectors of the star sea, how to play, and what makes it shine — a first-person, on-rails space shooter with a Japanese ink-wash look.">
+<meta name="twitter:image" content="https://pixelryu.github.io/hoshikari/og.png">
+<meta name="twitter:image:alt" content="Hoshikari — Game Overview">
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"WebPage","name":"Hoshikari — Game Overview","url":"https://pixelryu.github.io/hoshikari/overview.html","description":"Game overview of Hoshikari: the sectors of the star sea, how to play, and what makes it shine — a first-person, on-rails space shooter with a Japanese ink-wash look.","inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"isPartOf":{"@type":"WebSite","name":"PixelRyu","url":"https://pixelryu.github.io/"},"about":{"@type":"VideoGame","name":"Hoshikari","url":"https://pixelryu.github.io/hoshikari/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/"},{"@type":"ListItem","position":2,"name":"Hoshikari","item":"https://pixelryu.github.io/hoshikari/"},{"@type":"ListItem","position":3,"name":"Game Overview","item":"https://pixelryu.github.io/hoshikari/overview.html"}]}</script>
+<!-- SEO/LLMO end -->
+</head>
+<body>
+<div class="container">
+  <div class="lang-switch"><select id="lang-select" aria-label="Language"></select></div>
+  <div class="tagline" data-i18n="tagline">Lock the swarm. Loose the light. Hunt the stars.</div>
+  <h1>HOSHIKARI<span class="kanji">星狩り</span></h1>
+  <div class="page-label" data-i18n="page_label">Game Overview</div>
+  <p class="lead" data-i18n="lead">A first-person, on-rails space shooter with a Japanese ink-wash soul. Fly a craft of light through a painted sea of stars, drag to paint lock-ons over the incoming swarm, and release a fan of homing light-arrows that chain through the whole cluster at once — the bigger the lock, the bigger the volley.</p>
+
+  <figure class="hero-shot">
+    <img src="icon.png" alt="Hoshikari app icon — a first-person ink-wash space shooter">
+    <figcaption data-i18n="cap_key">Key art</figcaption>
+  </figure>
+
+  <section class="section">
+    <h2 data-i18n="world_label">Sectors of the Star Sea</h2>
+    <div class="sub">🌌</div>
+    <p data-i18n="world_text">One flight, six sectors — each with its own palette, hazards and rhythm: launch, the nebula, the asteroid belt, the comet field, the aurora, and the deep. Across short tracks bundled by constellation and an endless meteor storm, the star-sea never stops rushing toward you.</p>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="howto_label">How to Play</h2>
+    <div class="sub">🏹</div>
+    <p data-i18n="howto_text">Paint, release, and dodge — all while the star-sea races past. You choose what to lock and when to fire; the homing light-arrows do the rest.</p>
+    <ol>
+      <li data-i18n="step1">Drag across the screen to paint lock-ons over the meteors and drones streaming toward you.</li>
+      <li data-i18n="step2">Lock as many targets as you can before you fire — the bigger the lock, the bigger the volley.</li>
+      <li data-i18n="step3">Release to loose a fan of homing light-arrows that chain through every locked target at once.</li>
+      <li data-i18n="step4">Dodge the debris you can't shoot, gather star-ore to upgrade at the Dock, and ride the overdrive.</li>
+    </ol>
+  </section>
+
+  <section class="section">
+    <h2 data-i18n="feat_label">Highlights</h2>
+    <div class="sub">✨</div>
+    <ul>
+      <li data-i18n="feat1">First-person, on-rails flight with a genuine sense of speed</li>
+      <li data-i18n="feat2">Paint-to-lock, release-to-fire — you choose every shot, never an auto-fire</li>
+      <li data-i18n="feat3">A living ink-wash night sky lit by aurora — hand-tuned, not another neon starfield</li>
+      <li data-i18n="feat4">Six sectors of short tracks bundled by constellation, plus an endless meteor storm</li>
+      <li data-i18n="feat5">Combos climb a half-step in pitch, so a good run sounds like a rising chord; in 12 languages</li>
+    </ul>
+  </section>
+
+  <a href="./" class="back" data-i18n="back">← Back to Hoshikari</a>
+  <h2 class="social-heading">Follow</h2>
+  <div class="social">
+    <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+    <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note"><svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+    <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+    <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+    <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+    <a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+    <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+    <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+</div>
+<script>
+  const LANGUAGES = [
+    {code:'en', flag:'🇺🇸', name:'English'},
+    {code:'ja', flag:'🇯🇵', name:'日本語'},
+    {code:'zh', flag:'🇨🇳', name:'简体中文'},
+    {code:'ko', flag:'🇰🇷', name:'한국어'},
+    {code:'hi', flag:'🇮🇳', name:'हिन्दी'},
+    {code:'id', flag:'🇮🇩', name:'Bahasa Indonesia'},
+    {code:'de', flag:'🇩🇪', name:'Deutsch'},
+    {code:'fr', flag:'🇫🇷', name:'Français'},
+    {code:'it', flag:'🇮🇹', name:'Italiano'},
+    {code:'es', flag:'🇪🇸', name:'Español'},
+    {code:'pt', flag:'🇧🇷', name:'Português'},
+    {code:'ru', flag:'🇷🇺', name:'Русский'}
+  ];
+
+  const i18n = {
+      "en": {
+            "title": "Hoshikari — Game Overview",
+            "meta_desc": "Game overview of Hoshikari: the sectors of the star sea, how to play, and what makes it shine — a first-person, on-rails space shooter with a Japanese ink-wash look.",
+            "tagline": "Lock the swarm. Loose the light. Hunt the stars.",
+            "lead": "A first-person, on-rails space shooter with a Japanese ink-wash soul. Fly a craft of light through a painted sea of stars, drag to paint lock-ons over the incoming swarm, and release a fan of homing light-arrows that chain through the whole cluster at once — the bigger the lock, the bigger the volley.",
+            "world_label": "Sectors of the Star Sea",
+            "world_text": "One flight, six sectors — each with its own palette, hazards and rhythm: launch, the nebula, the asteroid belt, the comet field, the aurora, and the deep. Across short tracks bundled by constellation and an endless meteor storm, the star-sea never stops rushing toward you.",
+            "howto_text": "Paint, release, and dodge — all while the star-sea races past. You choose what to lock and when to fire; the homing light-arrows do the rest.",
+            "step1": "Drag across the screen to paint lock-ons over the meteors and drones streaming toward you.",
+            "step2": "Lock as many targets as you can before you fire — the bigger the lock, the bigger the volley.",
+            "step3": "Release to loose a fan of homing light-arrows that chain through every locked target at once.",
+            "step4": "Dodge the debris you can't shoot, gather star-ore to upgrade at the Dock, and ride the overdrive.",
+            "feat1": "First-person, on-rails flight with a genuine sense of speed",
+            "feat2": "Paint-to-lock, release-to-fire — you choose every shot, never an auto-fire",
+            "feat3": "A living ink-wash night sky lit by aurora — hand-tuned, not another neon starfield",
+            "feat4": "Six sectors of short tracks bundled by constellation, plus an endless meteor storm",
+            "feat5": "Combos climb a half-step in pitch, so a good run sounds like a rising chord; in 12 languages",
+            "back": "← Back to Hoshikari",
+            "page_label": "Game Overview",
+            "howto_label": "How to Play",
+            "feat_label": "Highlights",
+            "cap_key": "Key art"
+      },
+      "ja": {
+            "title": "Hoshikari（星狩り）— ゲーム概要",
+            "meta_desc": "星狩り Hoshikari のゲーム概要。星の海のセクター・遊び方・特徴を紹介。墨絵タッチの一人称オンレール宇宙シューティング。",
+            "tagline": "群れを塗り、光を放ち、星を狩れ。",
+            "lead": "墨絵の魂を宿した、一人称オンレールの宇宙シューティング。光の器を駆り、描かれた星の海を進み、迫りくる群れにロックを塗り、指を離せばホーミングの光矢が扇状に放たれ、群れを一息で連鎖撃破——ロックが多いほど斉射も大きい。",
+            "world_label": "星の海のセクター",
+            "world_text": "一度の出撃で、6つのセクターを飛ぶ——それぞれ色・危険・リズムの異なる、出撃、星雲、小惑星帯、彗星帯、オーロラ、そして深淵。星座ごとに束ねた短いトラックと無限の流星嵐で、星の海は止まることなく迫り続ける。",
+            "howto_text": "塗って、放って、かわす——星の海が高速で流れる中で。何をロックし、いつ撃つかを選ぶだけ。あとはホーミングの光矢が引き受ける。",
+            "step1": "画面をドラッグして、迫りくる流星やドローンにロックを塗る。",
+            "step2": "撃つ前にできるだけ多くロックしよう——ロックが多いほど斉射も大きい。",
+            "step3": "指を離すとホーミングの光矢が扇状に放たれ、ロックした標的すべてを同時に連鎖撃破。",
+            "step4": "撃てないデブリは回避し、星の鉱石を集めてドックで強化、オーバードライブで加速。",
+            "feat1": "スピード感のあるリアルタイム一人称フライト（オンレール）",
+            "feat2": "塗ってロック、離して発射——オートファイアではなく、撃つ瞬間は自分で選ぶ",
+            "feat3": "オーロラに照らされた、生きた墨絵の夜天——ありふれたネオンの星空ではなく手で調律した一枚",
+            "feat4": "星座ごとに束ねた短いトラックの6セクター＋無限の流星嵐",
+            "feat5": "連鎖するたびに音が半音ずつ上がり、good run は登っていく和音のように鳴る。12言語対応",
+            "back": "← Hoshikari のページへ戻る",
+            "page_label": "ゲーム概要",
+            "howto_label": "遊び方",
+            "feat_label": "特徴",
+            "cap_key": "キーアート"
+      },
+      "zh": {
+            "title": "Hoshikari — 游戏简介",
+            "meta_desc": "星狩 Hoshikari 的游戏简介：星海的各个区域、玩法与亮点——一款水墨风格的第一人称在轨宇宙射击游戏。",
+            "tagline": "锁定星群，放出光矢，猎取繁星。",
+            "lead": "一款拥有日式水墨之魂的第一人称在轨宇宙射击游戏。驾驭光舟穿越描绘而成的星海，拖动手指为迎面而来的星群涂上锁定，松手即放出扇形自动追踪光箭，一息之间连锁猎尽整群——锁得越多，齐射越大。",
+            "world_label": "星海的区域",
+            "world_text": "一次出击，六大区域——各有专属的色彩、危险与节奏：出击、星云、小行星带、彗星带、极光，以及深渊。在按星座束集的短赛道与无尽流星风暴中，星海永不停歇地朝你迎来。",
+            "howto_text": "涂抹、松手、闪避——在星海高速流逝之间完成。你只需选择锁定什么、何时开火，其余交给自动追踪光箭。",
+            "step1": "拖动手指，为迎面而来的流星与无人机涂上锁定。",
+            "step2": "开火前尽可能多地锁定目标——锁得越多，齐射越大。",
+            "step3": "松手放出扇形自动追踪光箭，同时连锁击破所有已锁定目标。",
+            "step4": "闪避无法击落的碎片，收集星矿在船坞升级，并驾驭超载冲刺。",
+            "feat1": "富有速度感的实时第一人称飞行（在轨）",
+            "feat2": "涂抹锁定、松手开火——绝非自动开火，每一击都由你决定",
+            "feat3": "极光映照下、鲜活的水墨夜空——非寻常霓虹星野，而是手工调校的一幅画",
+            "feat4": "按星座束集的短赛道，共六大区域，外加无尽流星风暴",
+            "feat5": "连锁每次都让音调升高半音，good run 宛如层层攀升的和弦；支持 12 种语言",
+            "back": "← 返回 Hoshikari",
+            "page_label": "游戏简介",
+            "howto_label": "玩法",
+            "feat_label": "特色",
+            "cap_key": "主视觉"
+      },
+      "ko": {
+            "title": "Hoshikari — 게임 소개",
+            "meta_desc": "호시카리(星狩り) Hoshikari의 게임 소개: 별바다의 섹터, 플레이 방법, 그리고 매력 포인트 — 수묵 느낌의 1인칭 온레일 우주 슈팅.",
+            "tagline": "무리를 칠하고, 빛을 쏘고, 별을 사냥하라.",
+            "lead": "일본 수묵의 혼을 담은 1인칭 온레일 우주 슈팅. 빛의 배를 몰아 그려진 별바다를 누비며, 밀려오는 무리에 손가락으로 락온을 칠하고, 손을 떼면 유도 빛화살이 부채꼴로 퍼져 한 무리를 단숨에 연쇄 사냥한다 — 많이 락온할수록 일제사격도 커진다.",
+            "world_label": "별바다의 섹터",
+            "world_text": "한 번의 출격, 여섯 섹터 — 저마다 색·위험·리듬이 다른 출격, 성운, 소행성대, 혜성지대, 오로라, 그리고 심연. 별자리로 묶은 짧은 트랙과 무한 유성 폭풍에서, 별바다는 멈추지 않고 당신을 향해 밀려온다.",
+            "howto_text": "칠하고, 떼고, 피한다 — 별바다가 고속으로 흐르는 가운데. 무엇을 락온하고 언제 쏠지만 정하면, 나머지는 유도 빛화살이 해낸다.",
+            "step1": "화면을 드래그해 밀려오는 유성과 드론에 락온을 칠하세요.",
+            "step2": "쏘기 전에 최대한 많이 락온하세요 — 많이 락온할수록 일제사격도 커집니다.",
+            "step3": "손을 떼면 유도 빛화살이 부채꼴로 퍼져 락온한 표적 전부를 동시에 연쇄 격파합니다.",
+            "step4": "쏠 수 없는 잔해는 피하고, 별광석을 모아 도크에서 강화하며, 오버드라이브로 가속하세요.",
+            "feat1": "속도감 있는 실시간 1인칭 비행(온레일)",
+            "feat2": "칠해서 락온, 떼서 발사 — 오토파이어가 아니라 매번 당신이 쏘는 순간을 고른다",
+            "feat3": "오로라가 비추는, 살아 있는 수묵 밤하늘 — 흔한 네온 별밭이 아니라 손으로 조율한 한 폭",
+            "feat4": "별자리로 묶은 짧은 트랙의 여섯 섹터, 그리고 무한 유성 폭풍",
+            "feat5": "연쇄마다 음이 반음씩 올라 good run은 상승하는 화음처럼 울린다; 12개 언어 지원",
+            "back": "← Hoshikari로 돌아가기",
+            "page_label": "게임 소개",
+            "howto_label": "플레이 방법",
+            "feat_label": "특징",
+            "cap_key": "키 아트"
+      },
+      "hi": {
+            "title": "Hoshikari — गेम अवलोकन",
+            "meta_desc": "Hoshikari (星狩り) का गेम अवलोकन: तारों के समुद्र के सेक्टर, खेलने का तरीका और इसकी ख़ासियतें — स्याही-चित्र शैली का फर्स्ट-पर्सन ऑन-रेल्स अंतरिक्ष शूटर।",
+            "tagline": "झुंड को रंगो। रोशनी छोड़ो। तारों का शिकार करो।",
+            "lead": "जापानी स्याही-चित्र की आत्मा वाला एक फर्स्ट-पर्सन ऑन-रेल्स अंतरिक्ष शूटर। प्रकाश का यान उड़ाकर चित्रित तारों के समुद्र में बढ़ें, आती हुई भीड़ पर उँगली से लॉक-ऑन रंगें, और छोड़ते ही होमिंग प्रकाश-बाणों का पंखा छूटता है जो पूरे झुंड को एक साथ ज़ंजीर-सा भेदता है — जितने ज़्यादा लॉक, उतनी बड़ी बौछार।",
+            "world_label": "तारों के समुद्र के सेक्टर",
+            "world_text": "एक उड़ान, छह सेक्टर — हर एक के अपने रंग, ख़तरे और लय: प्रक्षेपण, नीहारिका, क्षुद्रग्रह पट्टी, धूमकेतु क्षेत्र, ध्रुवीय ज्योति, और गहराई। तारामंडलों में बँधे छोटे ट्रैक और एक अनंत उल्का-तूफ़ान में, तारों का समुद्र बिना रुके आपकी ओर दौड़ता रहता है।",
+            "howto_text": "रंगें, छोड़ें और चकमा दें — वह भी जब तारों का समुद्र तेज़ी से बीतता है। आप बस चुनें कि क्या लॉक करना है और कब दागना है; बाक़ी होमिंग प्रकाश-बाण संभाल लेते हैं।",
+            "step1": "स्क्रीन पर उँगली फेरकर आती हुई उल्काओं और ड्रोन पर लॉक-ऑन रंगें।",
+            "step2": "दागने से पहले जितने हो सके उतने निशाने लॉक करें — जितने ज़्यादा लॉक, उतनी बड़ी बौछार।",
+            "step3": "छोड़ते ही होमिंग प्रकाश-बाणों का पंखा छूटता है जो हर लॉक किए निशाने को एक साथ भेदता है।",
+            "step4": "जिन्हें नहीं मार सकते उन मलबों से बचें, स्टार-अयस्क जुटाकर डॉक पर अपग्रेड करें, और ओवरड्राइव पर सवार हों।",
+            "feat1": "रफ़्तार के सच्चे एहसास वाली रियल-टाइम फर्स्ट-पर्सन उड़ान (ऑन-रेल्स)",
+            "feat2": "रंगकर लॉक, छोड़कर फ़ायर — ऑटो-फ़ायर नहीं, हर वार आप चुनते हैं",
+            "feat3": "ध्रुवीय ज्योति से रोशन, जीवंत स्याही-चित्र रात्रि-आकाश — कोई आम नियॉन तारा-क्षेत्र नहीं, बल्कि हाथ से सँवारा एक चित्र",
+            "feat4": "तारामंडलों में बँधे छोटे ट्रैक के छह सेक्टर, साथ में एक अनंत उल्का-तूफ़ान",
+            "feat5": "हर ज़ंजीर पर सुर आधा-स्वर चढ़ता है, तो अच्छा दौर एक उठते राग-सा सुनाई देता है; 12 भाषाओं में",
+            "back": "← Hoshikari पर वापस",
+            "page_label": "गेम अवलोकन",
+            "howto_label": "कैसे खेलें",
+            "feat_label": "ख़ासियतें",
+            "cap_key": "की-आर्ट"
+      },
+      "id": {
+            "title": "Hoshikari — Ikhtisar Game",
+            "meta_desc": "Ikhtisar game Hoshikari (星狩り): sektor-sektor lautan bintang, cara bermain, dan keunggulannya — penembak luar angkasa on-rails orang-pertama bergaya tinta.",
+            "tagline": "Kunci gerombolan. Lepaskan cahaya. Buru bintang.",
+            "lead": "Penembak luar angkasa on-rails orang-pertama dengan jiwa tinta khas Jepang. Terbangkan wahana cahaya menembus lautan bintang yang terlukis, seret jari untuk mengecat lock-on pada gerombolan yang datang, dan lepaskan kipas panah cahaya pengejar yang merantai seluruh gerombolan sekaligus — makin banyak lock, makin besar tembakannya.",
+            "world_label": "Sektor Lautan Bintang",
+            "world_text": "Satu penerbangan, enam sektor — masing-masing dengan palet, bahaya, dan iramanya sendiri: peluncuran, nebula, sabuk asteroid, medan komet, aurora, dan kedalaman. Di sepanjang trek pendek yang dikelompokkan per rasi bintang dan badai meteor tanpa akhir, lautan bintang tak henti melesat ke arahmu.",
+            "howto_text": "Cat, lepaskan, dan hindari — semua sembari lautan bintang melesat berlalu. Kamu hanya memilih apa yang dikunci dan kapan menembak; sisanya diurus panah cahaya pengejar.",
+            "step1": "Seret jari di layar untuk mengecat lock-on pada meteor dan drone yang melesat ke arahmu.",
+            "step2": "Kunci sebanyak mungkin target sebelum menembak — makin banyak lock, makin besar tembakannya.",
+            "step3": "Lepaskan untuk memuntahkan kipas panah cahaya pengejar yang merantai setiap target terkunci sekaligus.",
+            "step4": "Hindari puing yang tak bisa ditembak, kumpulkan bijih-bintang untuk upgrade di Dock, dan pacu overdrive.",
+            "feat1": "Penerbangan orang-pertama waktu-nyata (on-rails) dengan rasa kecepatan sungguhan",
+            "feat2": "Cat-untuk-mengunci, lepas-untuk-menembak — kamu memilih tiap tembakan, bukan tembakan otomatis",
+            "feat3": "Langit malam tinta yang hidup, disinari aurora — bukan medan bintang neon biasa, melainkan lukisan yang disetel dengan tangan",
+            "feat4": "Enam sektor trek pendek yang dikelompokkan per rasi bintang, plus badai meteor tanpa akhir",
+            "feat5": "Kombo naik setengah nada, jadi permainan yang bagus terdengar seperti akor yang meninggi; dalam 12 bahasa",
+            "back": "← Kembali ke Hoshikari",
+            "page_label": "Ikhtisar Game",
+            "howto_label": "Cara Bermain",
+            "feat_label": "Sorotan",
+            "cap_key": "Key art"
+      },
+      "de": {
+            "title": "Hoshikari — Spielübersicht",
+            "meta_desc": "Spielübersicht zu Hoshikari (星狩り): die Sektoren des Sternenmeers, das Spielprinzip und was es ausmacht — ein Ego-On-Rails-Weltraum-Shooter im japanischen Tuschestil.",
+            "tagline": "Sperre den Schwarm. Lass das Licht los. Jage die Sterne.",
+            "lead": "Ein Ego-On-Rails-Weltraum-Shooter mit der Seele japanischer Tuschemalerei. Fliege ein Lichtgefährt durch ein gemaltes Sternenmeer, mal per Fingerzug Ziel-Locks auf den heranströmenden Schwarm und lass beim Loslassen einen Fächer zielsuchender Lichtpfeile los, der den ganzen Pulk auf einmal durchkettet — je größer der Lock, desto größer die Salve.",
+            "world_label": "Sektoren des Sternenmeers",
+            "world_text": "Ein Flug, sechs Sektoren — jeder mit eigener Farbpalette, eigenen Gefahren und eigenem Rhythmus: Start, Nebel, Asteroidengürtel, Kometenfeld, Aurora und die Tiefe. Über kurze, nach Sternbildern gebündelte Strecken und einen endlosen Meteorsturm hinweg strömt das Sternenmeer unaufhörlich auf dich zu.",
+            "howto_text": "Malen, loslassen, ausweichen — und das, während das Sternenmeer vorbeirast. Du wählst nur, was du sperrst und wann du feuerst; den Rest erledigen die zielsuchenden Lichtpfeile.",
+            "step1": "Zieh über den Bildschirm, um Ziel-Locks auf die heranströmenden Meteore und Drohnen zu malen.",
+            "step2": "Sperre so viele Ziele wie möglich, bevor du feuerst — je größer der Lock, desto größer die Salve.",
+            "step3": "Lass los, um einen Fächer zielsuchender Lichtpfeile zu entfesseln, der alle gesperrten Ziele auf einmal durchkettet.",
+            "step4": "Weiche dem Schrott aus, den du nicht abschießen kannst, sammle Sternenerz zum Aufrüsten am Dock und nutze den Overdrive.",
+            "feat1": "Echtzeit-Ego-Flug (On-Rails) mit echtem Geschwindigkeitsgefühl",
+            "feat2": "Malen zum Sperren, Loslassen zum Feuern — du wählst jeden Schuss, nie ein Auto-Feuer",
+            "feat3": "Ein lebendiger Tusche-Nachthimmel im Auroralicht — kein weiteres Neon-Sternenfeld, sondern ein von Hand abgestimmtes Bild",
+            "feat4": "Sechs Sektoren kurzer, nach Sternbildern gebündelter Strecken, plus ein endloser Meteorsturm",
+            "feat5": "Combos steigen einen Halbton, sodass ein guter Lauf wie ein aufsteigender Akkord klingt; in 12 Sprachen",
+            "back": "← Zurück zu Hoshikari",
+            "page_label": "Spielübersicht",
+            "howto_label": "So wird gespielt",
+            "feat_label": "Highlights",
+            "cap_key": "Key Art"
+      },
+      "fr": {
+            "title": "Hoshikari — Aperçu du jeu",
+            "meta_desc": "Aperçu du jeu Hoshikari (星狩り) : les secteurs de la mer d'étoiles, comment jouer et ses atouts — un shooter spatial à la première personne, sur rails, à l'encre japonaise.",
+            "tagline": "Verrouillez l'essaim. Lâchez la lumière. Chassez les étoiles.",
+            "lead": "Un shooter spatial à la première personne, sur rails, à l'âme d'encre japonaise. Pilotez un vaisseau de lumière à travers une mer d'étoiles peinte, peignez du doigt vos verrouillages sur l'essaim qui fonce vers vous, et relâchez un éventail de flèches de lumière à tête chercheuse qui enchaîne toute la grappe d'un coup — plus le verrouillage est grand, plus la salve l'est.",
+            "world_label": "Les secteurs de la mer d'étoiles",
+            "world_text": "Un vol, six secteurs — chacun avec sa palette, ses dangers et son rythme : le décollage, la nébuleuse, la ceinture d'astéroïdes, le champ de comètes, l'aurore et les profondeurs. À travers de courtes pistes groupées par constellation et une tempête de météores sans fin, la mer d'étoiles ne cesse de foncer vers vous.",
+            "howto_text": "Peindre, relâcher et esquiver — pendant que la mer d'étoiles défile à toute allure. Vous choisissez seulement quoi verrouiller et quand tirer ; les flèches de lumière à tête chercheuse font le reste.",
+            "step1": "Glissez le doigt sur l'écran pour peindre des verrouillages sur les météores et drones qui foncent vers vous.",
+            "step2": "Verrouillez le plus de cibles possible avant de tirer — plus le verrouillage est grand, plus la salve l'est.",
+            "step3": "Relâchez pour lâcher un éventail de flèches de lumière à tête chercheuse qui enchaîne toutes les cibles verrouillées d'un coup.",
+            "step4": "Esquivez les débris que vous ne pouvez pas abattre, récoltez du minerai d'étoile pour améliorer votre vaisseau au Dock, et chevauchez l'overdrive.",
+            "feat1": "Un vol à la première personne en temps réel (sur rails) avec une vraie sensation de vitesse",
+            "feat2": "Peindre pour verrouiller, relâcher pour tirer — vous choisissez chaque tir, jamais de tir automatique",
+            "feat3": "Un ciel nocturne à l'encre, vivant, éclairé par l'aurore — pas un énième champ d'étoiles néon, mais un tableau réglé à la main",
+            "feat4": "Six secteurs de courtes pistes groupées par constellation, plus une tempête de météores sans fin",
+            "feat5": "Les combos montent d'un demi-ton, si bien qu'une belle partie sonne comme un accord ascendant ; en 12 langues",
+            "back": "← Retour à Hoshikari",
+            "page_label": "Aperçu du jeu",
+            "howto_label": "Comment jouer",
+            "feat_label": "Points forts",
+            "cap_key": "Illustration clé"
+      },
+      "it": {
+            "title": "Hoshikari — Panoramica del gioco",
+            "meta_desc": "Panoramica di Hoshikari (星狩り): i settori del mare di stelle, come si gioca e i suoi punti di forza — uno sparatutto spaziale in prima persona, on-rails, in stile inchiostro giapponese.",
+            "tagline": "Aggancia lo sciame. Sguinzaglia la luce. Caccia le stelle.",
+            "lead": "Uno sparatutto spaziale in prima persona, on-rails, con l'anima dell'inchiostro giapponese. Pilota un velivolo di luce attraverso un mare di stelle dipinto, dipingi col dito gli agganci sullo sciame che ti viene incontro e, al rilascio, scaglia un ventaglio di frecce di luce a ricerca che concatena l'intero gruppo in un colpo solo — più grande è l'aggancio, più grande è la salva.",
+            "world_label": "I settori del mare di stelle",
+            "world_text": "Un volo, sei settori — ciascuno con la propria palette, i propri pericoli e il proprio ritmo: lancio, nebulosa, fascia di asteroidi, campo di comete, aurora e gli abissi. Tra brevi tracciati raggruppati per costellazione e una tempesta di meteore infinita, il mare di stelle non smette mai di correrti incontro.",
+            "howto_text": "Dipingi, rilascia e schiva — mentre il mare di stelle sfreccia via. Tu scegli soltanto cosa agganciare e quando sparare; al resto pensano le frecce di luce a ricerca.",
+            "step1": "Trascina il dito sullo schermo per dipingere gli agganci sui meteoriti e i droni che ti piombano addosso.",
+            "step2": "Aggancia più bersagli che puoi prima di sparare — più grande è l'aggancio, più grande è la salva.",
+            "step3": "Rilascia per scagliare un ventaglio di frecce di luce a ricerca che concatena tutti i bersagli agganciati in un colpo solo.",
+            "step4": "Schiva i detriti che non puoi colpire, raccogli minerale stellare per potenziarti al Dock e cavalca l'overdrive.",
+            "feat1": "Volo in prima persona in tempo reale (on-rails) con un autentico senso di velocità",
+            "feat2": "Dipingi per agganciare, rilascia per sparare — scegli tu ogni colpo, mai un fuoco automatico",
+            "feat3": "Un cielo notturno a inchiostro, vivo, illuminato dall'aurora — non il solito campo stellare al neon, ma un quadro regolato a mano",
+            "feat4": "Sei settori di brevi tracciati raggruppati per costellazione, più una tempesta di meteore infinita",
+            "feat5": "Le combo salgono di un semitono, così una bella partita suona come un accordo che sale; in 12 lingue",
+            "back": "← Torna a Hoshikari",
+            "page_label": "Panoramica del gioco",
+            "howto_label": "Come si gioca",
+            "feat_label": "Punti salienti",
+            "cap_key": "Key art"
+      },
+      "es": {
+            "title": "Hoshikari — Descripción del juego",
+            "meta_desc": "Descripción de Hoshikari (星狩り): los sectores del mar de estrellas, cómo se juega y sus puntos fuertes — un shooter espacial en primera persona, sobre raíles, con estética de tinta japonesa.",
+            "tagline": "Fija el enjambre. Suelta la luz. Caza las estrellas.",
+            "lead": "Un shooter espacial en primera persona, sobre raíles, con alma de tinta japonesa. Pilota una nave de luz por un mar de estrellas pintado, pinta con el dedo los fijados sobre el enjambre que se te viene encima y, al soltar, lanza un abanico de flechas de luz teledirigidas que encadena todo el grupo de una vez — cuanto mayor es el fijado, mayor es la andanada.",
+            "world_label": "Los sectores del mar de estrellas",
+            "world_text": "Un vuelo, seis sectores — cada uno con su paleta, sus peligros y su ritmo: despegue, nebulosa, cinturón de asteroides, campo de cometas, aurora y las profundidades. A lo largo de pistas cortas agrupadas por constelación y una tormenta de meteoros sin fin, el mar de estrellas no deja de venir hacia ti.",
+            "howto_text": "Pinta, suelta y esquiva — todo mientras el mar de estrellas pasa a toda velocidad. Tú solo eliges qué fijar y cuándo disparar; del resto se encargan las flechas de luz teledirigidas.",
+            "step1": "Desliza el dedo por la pantalla para pintar los fijados sobre los meteoros y drones que vuelan hacia ti.",
+            "step2": "Fija cuantos objetivos puedas antes de disparar — cuanto mayor es el fijado, mayor es la andanada.",
+            "step3": "Suelta para lanzar un abanico de flechas de luz teledirigidas que encadena todos los objetivos fijados a la vez.",
+            "step4": "Esquiva los escombros que no puedes derribar, reúne mena estelar para mejorar en el Dique y aprovecha el overdrive.",
+            "feat1": "Vuelo en primera persona en tiempo real (sobre raíles) con una auténtica sensación de velocidad",
+            "feat2": "Pintar para fijar, soltar para disparar — tú eliges cada disparo, nunca un disparo automático",
+            "feat3": "Un cielo nocturno de tinta, vivo, iluminado por la aurora — no otro campo de estrellas de neón, sino un cuadro ajustado a mano",
+            "feat4": "Seis sectores de pistas cortas agrupadas por constelación, más una tormenta de meteoros sin fin",
+            "feat5": "Los combos suben un semitono, así que una buena partida suena como un acorde ascendente; en 12 idiomas",
+            "back": "← Volver a Hoshikari",
+            "page_label": "Descripción del juego",
+            "howto_label": "Cómo se juega",
+            "feat_label": "Lo más destacado",
+            "cap_key": "Arte clave"
+      },
+      "pt": {
+            "title": "Hoshikari — Visão geral do jogo",
+            "meta_desc": "Visão geral de Hoshikari (星狩り): os setores do mar de estrelas, como jogar e seus destaques — um jogo de tiro espacial em primeira pessoa, sobre trilhos, com traço de tinta japonesa.",
+            "tagline": "Trave o enxame. Solte a luz. Cace as estrelas.",
+            "lead": "Um jogo de tiro espacial em primeira pessoa, sobre trilhos, com alma de tinta japonesa. Pilote uma nave de luz por um mar de estrelas pintado, pinte com o dedo as marcações sobre o enxame que voa em sua direção e, ao soltar, dispare um leque de flechas de luz teleguiadas que encadeia o grupo inteiro de uma só vez — quanto maior a trava, maior a saraivada.",
+            "world_label": "Os setores do mar de estrelas",
+            "world_text": "Um voo, seis setores — cada um com sua paleta, seus perigos e seu ritmo: lançamento, nebulosa, cinturão de asteroides, campo de cometas, aurora e as profundezas. Ao longo de pistas curtas agrupadas por constelação e uma tempestade de meteoros sem fim, o mar de estrelas nunca para de vir em sua direção.",
+            "howto_text": "Pinte, solte e desvie — tudo enquanto o mar de estrelas passa em alta velocidade. Você só escolhe o que travar e quando atirar; do resto cuidam as flechas de luz teleguiadas.",
+            "step1": "Arraste o dedo pela tela para pintar as marcações sobre os meteoros e drones que voam em sua direção.",
+            "step2": "Trave o máximo de alvos que puder antes de atirar — quanto maior a trava, maior a saraivada.",
+            "step3": "Solte para disparar um leque de flechas de luz teleguiadas que encadeia todos os alvos travados de uma só vez.",
+            "step4": "Desvie dos destroços que não pode abater, junte minério estelar para melhorar no Dock e aproveite o overdrive.",
+            "feat1": "Voo em primeira pessoa em tempo real (sobre trilhos) com verdadeira sensação de velocidade",
+            "feat2": "Pintar para travar, soltar para atirar — você escolhe cada tiro, nunca um disparo automático",
+            "feat3": "Um céu noturno de tinta, vivo, iluminado pela aurora — não mais um campo de estrelas de neon, mas um quadro ajustado à mão",
+            "feat4": "Seis setores de pistas curtas agrupadas por constelação, mais uma tempestade de meteoros sem fim",
+            "feat5": "Os combos sobem meio tom, então uma boa partida soa como um acorde ascendente; em 12 idiomas",
+            "back": "← Voltar para Hoshikari",
+            "page_label": "Visão geral do jogo",
+            "howto_label": "Como jogar",
+            "feat_label": "Destaques",
+            "cap_key": "Arte principal"
+      },
+      "ru": {
+            "title": "Hoshikari — Об игре",
+            "meta_desc": "Об игре Hoshikari (星狩り): секторы звёздного моря, как играть и в чём её сила — космический шутер от первого лица на рельсах в стиле японской туши.",
+            "tagline": "Захвати рой. Выпусти свет. Охоться за звёздами.",
+            "lead": "Космический шутер от первого лица на рельсах с душой японской туши. Ведите корабль света сквозь нарисованное море звёзд, пальцем наносите захваты на летящий навстречу рой и, отпустив, выпускайте веер самонаводящихся световых стрел, который пробивает всю стаю разом — чем больше захват, тем крупнее залп.",
+            "world_label": "Секторы звёздного моря",
+            "world_text": "Один вылет, шесть секторов — у каждого своя палитра, свои опасности и ритм: старт, туманность, пояс астероидов, кометное поле, полярное сияние и глубина. На коротких трассах, собранных по созвездиям, и в бесконечном метеорном шторме звёздное море без устали несётся вам навстречу.",
+            "howto_text": "Рисуй, отпускай и уворачивайся — пока звёздное море проносится мимо. Вы лишь выбираете, что захватить и когда стрелять; остальное делают самонаводящиеся световые стрелы.",
+            "step1": "Проводите пальцем по экрану, нанося захваты на летящие навстречу метеоры и дроны.",
+            "step2": "Захватите как можно больше целей перед выстрелом — чем больше захват, тем крупнее залп.",
+            "step3": "Отпустите, чтобы выпустить веер самонаводящихся световых стрел, пробивающий все захваченные цели разом.",
+            "step4": "Уворачивайтесь от обломков, которые не сбить, собирайте звёздную руду для улучшений в Доке и разгоняйтесь на овердрайве.",
+            "feat1": "Полёт от первого лица в реальном времени (на рельсах) с настоящим чувством скорости",
+            "feat2": "Рисуешь — захватываешь, отпускаешь — стреляешь: каждый выстрел выбираете вы, никакого автоогня",
+            "feat3": "Живое небо тушью в свете сияния — не очередное неоновое звёздное поле, а полотно, настроенное вручную",
+            "feat4": "Шесть секторов коротких трасс, собранных по созвездиям, плюс бесконечный метеорный шторм",
+            "feat5": "Комбо поднимаются на полтона, и удачный забег звучит как восходящий аккорд; на 12 языках",
+            "back": "← Назад к Hoshikari",
+            "page_label": "Обзор игры",
+            "howto_label": "Как играть",
+            "feat_label": "Ключевые моменты",
+            "cap_key": "Ключевой арт"
+      }
+};
+
+  const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
+
+  function detectLang() {
+    try { const stored = localStorage.getItem(LANG_STORAGE_KEY); if (stored && i18n[stored]) return stored; } catch (e) {}
+    const raw = (navigator.language || 'en').toLowerCase();
+    for (const l of LANGUAGES) if (raw === l.code) return l.code;
+    const head = raw.split(/[-_]/)[0];
+    for (const l of LANGUAGES) if (head === l.code) return l.code;
+    return 'en';
+  }
+
+  function setLang(lang, persist) {
+    const dict = i18n[lang];
+    if (!dict) return;
+    if (persist) { try { localStorage.setItem(LANG_STORAGE_KEY, lang); } catch (e) {} }
+    document.documentElement.lang = lang;
+    document.querySelectorAll('[data-i18n]').forEach(el => {
+      const key = el.getAttribute('data-i18n');
+      if (!(key in dict)) return;
+      const attr = el.getAttribute('data-i18n-attr');
+      if (attr) el.setAttribute(attr, dict[key]);
+      else el.textContent = dict[key];
+    });
+    const sel = document.getElementById('lang-select');
+    if (sel) sel.value = lang;
+  }
+
+  (function init() {
+    const sel = document.getElementById('lang-select');
+    for (const l of LANGUAGES) {
+      const opt = document.createElement('option');
+      opt.value = l.code; opt.textContent = l.flag + ' ' + l.name; sel.appendChild(opt);
+    }
+    // Persist on init too — keeps the chosen language across privacy/terms/overview via the shared key.
+    setLang(detectLang(), true);
+    sel.addEventListener('change', e => setLang(e.target.value, true));
+  })();
+</script>
+<script src="../breadcrumb.js?v=20260711161657" defer></script>
+</body>
+</html>
