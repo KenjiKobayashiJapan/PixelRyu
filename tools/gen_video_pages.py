@@ -44,6 +44,9 @@ SUB = {
 
 # slug -> (Title, horizontal_en, horizontal_ja|None, src_subdir, [ (vert_src_en, vert_src_ja|None), ... ])
 APPS = {
+ # Hoshikari は store/ にフル解像度(1080x1920)のマスターを置き、サイト用の軽量版は store/web/ に別置き。
+ "hoshikari":          ("Hoshikari","promotion_H_story.mp4","promotion_H_story_ja.mp4","0016_hoshikari",
+                        [("web/promotion_V_01_en.mp4","web/promotion_V_01_ja.mp4"),("web/promotion_V_02_en.mp4","web/promotion_V_02_ja.mp4"),("web/promotion_V_03_en.mp4","web/promotion_V_03_ja.mp4")]),
  "okaeri":              ("Okaeri","promotion_H_anime_trilogy.mp4",None,"0015_okaeri",
                         [("promotion_V_01.mp4",None),("promotion_V_02.mp4",None),("promotion_V_03.mp4",None),("promotion_V_anime_trilogy.mp4",None)]),
  "shizuku":            ("Shizuku","promotion_H_story.mp4","promotion_H_story_ja.mp4","0014_shizuku",
