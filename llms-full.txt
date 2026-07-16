@@ -184,10 +184,11 @@ This file is the expanded, self-contained companion to /llms.txt. It inlines the
 - Also known as: モグラぽかぽか
 - Page: https://pixelryu.github.io/mole-whack/
 - Overview: https://pixelryu.github.io/mole-whack/overview.html
-- Platforms (declared): iOS, Android
+- Platforms: iOS, Android, Roblox (out now on the App Store and Roblox; Android testers welcome on Google Play)
 - Price: Free
-- About: Mole Whack — a casual stage-based tap game by PixelRyu. Hit the moles, clear the target, advance through 100 stages. Join the 14-day Android closed testing.
+- About: Mole Whack — a casual stage-based tap game by PixelRyu. Hit the moles, clear the target, advance through 100 stages. Out now on the App Store and Roblox; Android testers welcome on Google Play.
 - App Store (iOS): https://apps.apple.com/app/id6770864132
+- Roblox: https://www.roblox.com/games/112807696439542/Mole-Whack
 - Google Play (Android): https://play.google.com/store/apps/details?id=com.pixelryu.molewhack
 
 ## How the multilingual site works

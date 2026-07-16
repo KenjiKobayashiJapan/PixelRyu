@@ -23,7 +23,7 @@ PixelRyu (屋号: PixelRyu) is an independent developer based in Japan. This sit
 - [HOTARU (The Lost House)](https://pixelryu.github.io/hotaru/): A quiet, atmospheric first-person Japanese horror walking simulator set in a lost house. iOS, Android & Roblox.
 - [Liquid Glow](https://pixelryu.github.io/liquid-glow-cosmic/): A calm, luminous color-matching puzzle in deep space — tap a glowing star, then a connected star, to slide its light along the constellation so each star's ring matches its color. Out now on the App Store (iPhone) and Roblox.
 - [Liquid Glow (classic sort puzzle)](https://pixelryu.github.io/liquid-glow/): The original cozy, minimalist sort puzzle from Japan — arrange flowing liquid colors. Android.
-- [Mole Whack (モグラぽかぽか)](https://pixelryu.github.io/mole-whack/): A casual stage-based whack-a-mole tap game across 100 stages — hit the moles, clear the target, advance. Android & iOS.
+- [Mole Whack (モグラぽかぽか)](https://pixelryu.github.io/mole-whack/): A casual stage-based whack-a-mole tap game across 100 stages — hit the moles, clear the target, advance. Out now on the App Store and Roblox; Android testers welcome on Google Play.
 
 ## Game overviews
 
