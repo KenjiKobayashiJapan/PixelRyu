@@ -119,8 +119,8 @@
 <meta property="og:description" content="TATAMI: Lay the Floor — PixelRyu의 다다미 블록 퍼즐. 다다미를 끌어 행이나 열을 채우면 줄이 완성되고, 금화를 모아 목숨을 늘립니다. 48 스테이지, 기본 무료. App Store에서 곧 출시.">
 <meta property="og:url" content="https://pixelryu.github.io/tatami/ko/">
 <meta property="og:image" content="https://pixelryu.github.io/tatami/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
 <meta property="og:image:alt" content="TATAMI 座敷 퍼즐 — PixelRyu의 일본식 다다미 깔기 퍼즐">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:locale:alternate" content="ja_JP">
@@ -909,7 +909,7 @@
       o.value = l.code; o.textContent = l.flag + ' ' + l.name;
       sel.appendChild(o);
     });
-    var lang = 'en'; try{ lang = localStorage.getItem('pixelryu_lang_v2') || ''; }catch(e){} if(!i18n[lang]){ var nv = (navigator.language||'en').slice(0,2); lang = i18n[nv] ? nv : 'en'; } sel.value = lang; applyLang(lang);
+    var PAGE_LANG = 'ko'; var lang = 'en'; try{ lang = localStorage.getItem('pixelryu_lang_v2') || ''; }catch(e){} if(!i18n[lang] && i18n[PAGE_LANG]){ lang = PAGE_LANG; } if(!i18n[lang]){ var nv = (navigator.language||'en').slice(0,2); lang = i18n[nv] ? nv : 'en'; } sel.value = lang; applyLang(lang);
     sel.addEventListener('change', function(e){ applyLang(e.target.value); });
   })();
 </script>

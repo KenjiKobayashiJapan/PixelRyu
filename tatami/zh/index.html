@@ -119,8 +119,8 @@
 <meta property="og:description" content="TATAMI: Lay the Floor — PixelRyu 出品，在宁静和室里铺畳的方块拼图。拖动畳席填满一行或一列即可完成该行，武士会把铺好的畳席送往官老爷处，呈交得金币，攒金币换命。轻巧的「赶工」槽搭配吉利的铺法奖励，48 关、基础免费。即将登陆 App Store。">
 <meta property="og:url" content="https://pixelryu.github.io/tatami/zh/">
 <meta property="og:image" content="https://pixelryu.github.io/tatami/og.png">
-<meta property="og:image:width" content="1200">
-<meta property="og:image:height" content="630">
+<meta property="og:image:width" content="1024">
+<meta property="og:image:height" content="1024">
 <meta property="og:image:alt" content="TATAMI 座敷拼图 — PixelRyu 的和风铺畳拼图">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:locale:alternate" content="ja_JP">
@@ -909,7 +909,7 @@
       o.value = l.code; o.textContent = l.flag + ' ' + l.name;
       sel.appendChild(o);
     });
-    var lang = 'en'; try{ lang = localStorage.getItem('pixelryu_lang_v2') || ''; }catch(e){} if(!i18n[lang]){ var nv = (navigator.language||'en').slice(0,2); lang = i18n[nv] ? nv : 'en'; } sel.value = lang; applyLang(lang);
+    var PAGE_LANG = 'zh'; var lang = 'en'; try{ lang = localStorage.getItem('pixelryu_lang_v2') || ''; }catch(e){} if(!i18n[lang] && i18n[PAGE_LANG]){ lang = PAGE_LANG; } if(!i18n[lang]){ var nv = (navigator.language||'en').slice(0,2); lang = i18n[nv] ? nv : 'en'; } sel.value = lang; applyLang(lang);
     sel.addEventListener('change', function(e){ applyLang(e.target.value); });
   })();
 </script>

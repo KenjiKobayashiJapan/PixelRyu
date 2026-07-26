@@ -155,19 +155,33 @@ def absolutize(src, orig, L):
 
 
 def rewire_switcher(src, orig, force_lang=None):
-    # Language policy (2026-06-18 ユーザー指示): human-facing language is CLIENT-SIDE
-    # and INHERITED across pages. Every page renders the stored-or-browser language on
-    # load (initial display = browser setting; thereafter = the language carried over
-    # from the previous page) and the switcher persists the choice IN PLACE — it does
-    # NOT navigate to a per-language URL. The baked /<lang>/ pages still ship localized
-    # STATIC html for crawlers (SEO), but for humans every page adapts the same way, so
-    # English is always reachable and the chosen language follows you around.
+    # Language policy — TWO layers, deliberately different. Both must hold at once.
     #
-    # `force_lang` is kept for call-site compatibility but intentionally UNUSED: forcing
-    # a page's language is exactly what made English unreachable and broke inheritance.
-    # This function normalizes whatever switcher/init is present (navigating OR already
-    # client-side, forced OR adaptive) to the client-side+adaptive form, so it is
-    # idempotent across re-runs.
+    #  * HUMANS (2026-06-18 ユーザー指示): client-side and INHERITED across pages. A
+    #    stored choice always wins, the switcher persists in place (it does NOT navigate
+    #    to a per-language URL), so English stays reachable and the chosen language
+    #    follows you around.
+    #
+    #  * CRAWLERS (2026-07-26 fix): Googlebot EXECUTES JavaScript. A baked /<lang>/ page
+    #    that re-detects the language on load therefore renders as ENGLISH for Google and
+    #    collapses into a byte-identical duplicate of the canonical page — proven with
+    #    headless Chrome: /kado/, /kado/ja/ and /kado/de/ rendered to the same visible
+    #    text (similarity 1.0000). That silently killed all 187 localized URLs and is the
+    #    source of Search Console's "duplicate, Google chose a different canonical".
+    #    Each baked page now PINS its own language via PAGE_LANG.
+    #
+    # PAGE_LANG is consulted AFTER localStorage but BEFORE navigator.language:
+    #   - after localStorage  -> a human's explicit choice still wins => the 2026-06-18
+    #                            "language sticking" bug cannot come back.
+    #   - before navigator    -> a crawler (no storage, navigator=en-US) on /kado/ja/
+    #                            gets Japanese. Putting it after navigator would leave
+    #                            the bug fully intact, so the order matters.
+    #
+    # `force_lang` = the language of the page being generated. None or "en" (the
+    # canonical entry page) stays purely browser-adaptive, so "initial display = browser
+    # language" still holds where the user actually lands.
+    page_lang = force_lang if (force_lang and force_lang != "en") else None
+
     nav_re = (r"sel\.addEventListener\('change',\s*function\(e\)\{var v=e\.target\.value;"
               r"window\.location\.href = [^;]*?;\}\);")
     if "function setLang(" in src:
@@ -179,9 +193,35 @@ def rewire_switcher(src, orig, force_lang=None):
         # setLang(detectLang()[,true]); never matches the switcher's e.target.value).
         src = re.sub(r"setLang\((?:'[a-z-]+'|detectLang\(\))(?:,\s*true)?\);",
                      "setLang(detectLang(), true);", src)
+        # PAGE_LANG: strip any previous injection first, then re-add. Both injected forms
+        # live on a line of their own, so line-wise removal is exact and re-runs are
+        # idempotent (and the en page is left clean because page_lang is None there).
+        src = re.sub(r"(?m)^[ \t]*var PAGE_LANG = '[a-z-]+';[ \t]*\n", "", src)
+        src = re.sub(r"(?m)^[ \t]*if \(PAGE_LANG && i18n\[PAGE_LANG\]\) return PAGE_LANG;[ \t]*\n",
+                     "", src)
+        if page_lang:
+            def _declare(m):
+                return "%svar PAGE_LANG = %r;\n%s" % (m.group(1), page_lang, m.group(0))
+            src, n_decl = re.subn(r"(?m)^([ \t]*)function detectLang\(\) \{[ \t]*\n",
+                                  _declare, src, count=1)
+            # Anchor on the navigator.language line rather than the localStorage block:
+            # the storage read exists in both a one-line and a multi-line form across the
+            # hand-authored sources, but this line is byte-identical everywhere, and
+            # inserting *before* it puts PAGE_LANG in exactly the right priority slot
+            # (after localStorage, before navigator).
+            def _consult(m):
+                return "%sif (PAGE_LANG && i18n[PAGE_LANG]) return PAGE_LANG;\n%s" % (m.group(1), m.group(0))
+            src, n_use = re.subn(
+                r"(?m)^([ \t]*)const raw = \(navigator\.language \|\| 'en'\)\.toLowerCase\(\);\n",
+                _consult, src, count=1)
+            if not (n_decl and n_use):
+                raise SystemExit(
+                    "gen_i18n_pages: PAGE_LANG injection failed for %r (decl=%d use=%d). "
+                    "The detectLang() template changed — fix this generator, do NOT hand-edit "
+                    "the generated pages." % (force_lang, n_decl, n_use))
     else:
         # Template A (applyLang) — unify the legacy localStorage key, make the switcher
-        # client-side, and detect the initial language (stored || browser).
+        # client-side, and detect the initial language (stored || PAGE_LANG || browser).
         src = src.replace("localStorage.setItem('pixelryu_lang',",
                           "localStorage.setItem('pixelryu_lang_v2',")
         src = src.replace("localStorage.getItem('pixelryu_lang')",
@@ -189,14 +229,26 @@ def rewire_switcher(src, orig, force_lang=None):
         src = re.sub(nav_re,
                      "sel.addEventListener('change', function(e){ applyLang(e.target.value); });",
                      src)
-        adaptive = ("var lang = 'en';"
+        decl = ("var PAGE_LANG = %r; " % page_lang) if page_lang else ""
+        pin = (" if(!i18n[lang] && i18n[PAGE_LANG]){ lang = PAGE_LANG; }") if page_lang else ""
+        adaptive = (decl +
+                    "var lang = 'en';"
                     " try{ lang = localStorage.getItem('pixelryu_lang_v2') || ''; }catch(e){}"
+                    + pin +
                     " if(!i18n[lang]){ var nv = (navigator.language||'en').slice(0,2);"
                     " lang = i18n[nv] ? nv : 'en'; }"
                     " sel.value = lang; applyLang(lang);")
-        # only the forced one-liner matches; the adaptive block (with its try/if) does not.
-        src = re.sub(r"var lang = '[a-z-]+'; sel\.value = lang; applyLang\(lang\);",
-                     adaptive, src)
+        # Matches the forced one-liner AND any already-rewritten adaptive block (with or
+        # without a previous PAGE_LANG), so the whole init is rebuilt from scratch and
+        # re-runs neither duplicate nor strand the declaration.
+        src, n = re.subn(
+            r"(?:var PAGE_LANG = '[a-z-]+'; )?var lang = '[a-z-]+';[^\n]*?"
+            r"sel\.value = lang; applyLang\(lang\);",
+            lambda m: adaptive, src, count=1)
+        if not n:
+            raise SystemExit(
+                "gen_i18n_pages: applyLang init block not found (%r). The template changed "
+                "— fix this generator, do NOT hand-edit the generated pages." % force_lang)
     return src
 
 

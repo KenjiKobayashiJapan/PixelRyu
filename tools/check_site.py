@@ -152,8 +152,6 @@ for d in app_dirs:
     if pm or re.search(r'play\.google\.com/apps/testing', src): plats.append("Android")
     if pm: badge_urls.append(pm.group(1))
     if rm: plats.append("Roblox"); badge_urls.append(rm.group(1))
-    if not plats:
-        continue
     vg = None
     for m in re.finditer(r'<script type="application/ld\+json">(.*?)</script>', src, re.S):
         try:
@@ -164,6 +162,23 @@ for d in app_dirs:
             if isinstance(o, dict) and o.get("@type") == "VideoGame":
                 vg = o
     if vg is None:
+        continue
+    if not plats:
+        # Nothing is live yet (every store cell is a COMING SOON stamp). Declaring a
+        # PLATFORM here tells Google the game runs somewhere you can actually get it,
+        # which is the same over-claim the operatingSystem check below catches for
+        # released apps. This used to slip through because the loop skipped badge-less
+        # pages entirely, so KADŌ shipped with operatingSystem "iOS, Android" while being
+        # unreleased on every store. ★正直ルール.
+        #
+        # `offers` is deliberately NOT flagged: every PixelRyu game is free, so price 0 is
+        # universally true and keeps the page rich-result eligible. Honesty there is
+        # handled by omitting `availability` (never claim in-stock for a coming-soon
+        # title) — see check (9) below, which requires the free offer on every VideoGame.
+        claimed = [k for k in ("operatingSystem", "gamePlatform") if vg.get(k)]
+        if claimed:
+            warns.append("[unreleased] %s: no live store badge, but VideoGame still claims %s"
+                         % (rel(p), ", ".join(claimed)))
         continue
     miss = [u for u in badge_urls if u not in (vg.get("sameAs") or [])]
     if miss:

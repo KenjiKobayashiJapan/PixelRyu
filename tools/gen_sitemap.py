@@ -8,7 +8,7 @@ per market. Game index entries also carry image/video extensions.
 
 Usage:  python3 tools/gen_sitemap.py   (writes sitemap.xml)
 """
-import os, re, glob, json
+import os, re, glob, json, datetime, subprocess
 from xml.sax.saxutils import escape
 import xml.dom.minidom as minidom
 
@@ -18,7 +18,7 @@ LANGS = ["en", "ja", "zh", "ko", "hi", "id", "de", "fr", "it", "es", "pt", "ru"]
 GAMES = ["kado", "hanko", "okaeri", "shizuku", "senko", "wagashi", "counterparts", "temari", "tatami",
          "bounce-cat", "hoshikari", "hayate", "sumlings", "parcel-pals", "issen", "hotaru",
          "liquid-glow-cosmic", "liquid-glow", "mole-whack"]
-TODAY = "2026-07-10"
+TODAY = datetime.date.today().isoformat()
 
 
 def existing_lastmods():
@@ -32,6 +32,59 @@ def existing_lastmods():
 
 
 PREV = existing_lastmods()
+
+
+# --- lastmod: when the page's CONTENT actually last changed -------------------
+# Previously TODAY was a hardcoded literal, so 247 of 295 URLs all claimed
+# "2026-07-10" no matter what had really changed — the freshness signal was dead.
+# Stamping everything with today's date instead is just as wrong in the other
+# direction (crying wolf costs the whole sitemap's credibility), so the date comes
+# from git: the commit that last touched the backing file, or today if the file is
+# genuinely being changed in this deploy (dirty/untracked).
+def _git_last_change_dates():
+    """repo-relative path -> ISO date of the most recent commit touching it."""
+    dates = {}
+    try:
+        p = subprocess.run(
+            ["git", "-C", ROOT, "log", "--no-renames", "--date=short",
+             "--format=@%cd", "--name-only"],
+            capture_output=True, text=True, timeout=300)
+        cur = None
+        for line in p.stdout.splitlines():
+            if line.startswith("@"):
+                cur = line[1:]
+            elif line and cur and line not in dates:
+                dates[line] = cur          # first hit == most recent commit
+    except Exception:
+        pass
+    return dates
+
+
+def _git_dirty_paths():
+    """repo-relative paths with uncommitted changes (modified, added or untracked)."""
+    try:
+        p = subprocess.run(["git", "-C", ROOT, "status", "--porcelain", "-uall"],
+                           capture_output=True, text=True, timeout=300)
+        out = set()
+        for line in p.stdout.splitlines():
+            if len(line) > 3:
+                out.add(line[3:].strip().strip('"'))
+        return out
+    except Exception:
+        return set()
+
+
+GIT_DATES = _git_last_change_dates()
+DIRTY = _git_dirty_paths()
+
+
+def lastmod_for(rel, loc):
+    """rel = repo-relative file backing this URL; loc = the URL (for PREV fallback)."""
+    if rel and rel in DIRTY:
+        return TODAY
+    if rel and rel in GIT_DATES:
+        return GIT_DATES[rel]
+    return PREV.get(loc, TODAY)
 
 
 def media_xml(slug):
@@ -99,11 +152,14 @@ def url_block(loc, lastmod, priority, hreflang="", media=""):
 def page_group(orig, en_priority, slug=None):
     """Emit en + 11 language <url> entries (hreflang on each); media on the en game index."""
     hl = hreflang_xml(orig)
-    blocks = [url_block(orig, TODAY, en_priority, hl, media_xml(slug) if slug else "")]
+    base = (slug + "/") if slug else ""
+    blocks = [url_block(orig, lastmod_for(base + "index.html", orig), en_priority,
+                        hl, media_xml(slug) if slug else "")]
     for l in LANGS:
         if l == "en":
             continue
-        blocks.append(url_block(orig + l + "/", TODAY, "0.7", hl))
+        loc = orig + l + "/"
+        blocks.append(url_block(loc, lastmod_for(base + l + "/index.html", loc), "0.7", hl))
     return blocks
 
 
@@ -120,10 +176,15 @@ out += page_group(SITE, "1.0")
 for slug in GAMES:
     orig = SITE + slug + "/"
     out += page_group(orig, "0.9", slug=slug)
-    for sub, pri in [("overview.html", "0.7"), ("privacy_policy.html", "0.3"), ("terms_of_service.html", "0.3")]:
+    # video.html was previously omitted here even though it ships robots:index,follow,
+    # a self-canonical and 17 inbound links from the homepage — i.e. it was crawled but
+    # never declared. Declaring it (and giving it VideoObject JSON-LD, see
+    # gen_video_pages.py) is what makes the promo videos eligible for video results.
+    for sub, pri in [("overview.html", "0.7"), ("video.html", "0.6"),
+                     ("privacy_policy.html", "0.3"), ("terms_of_service.html", "0.3")]:
         loc = orig + sub
         if os.path.exists(os.path.join(ROOT, slug, sub)):
-            out.append(url_block(loc, PREV.get(loc, TODAY), pri))
+            out.append(url_block(loc, lastmod_for(slug + "/" + sub, loc), pri))
 
 out.append("</urlset>")
 open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(out) + "\n")

@@ -908,7 +908,7 @@
       o.value = l.code; o.textContent = l.flag + ' ' + l.name;
       sel.appendChild(o);
     });
-    var lang = 'en'; try{ lang = localStorage.getItem('pixelryu_lang_v2') || ''; }catch(e){} if(!i18n[lang]){ var nv = (navigator.language||'en').slice(0,2); lang = i18n[nv] ? nv : 'en'; } sel.value = lang; applyLang(lang);
+    var PAGE_LANG = 'ru'; var lang = 'en'; try{ lang = localStorage.getItem('pixelryu_lang_v2') || ''; }catch(e){} if(!i18n[lang] && i18n[PAGE_LANG]){ lang = PAGE_LANG; } if(!i18n[lang]){ var nv = (navigator.language||'en').slice(0,2); lang = i18n[nv] ? nv : 'en'; } sel.value = lang; applyLang(lang);
     sel.addEventListener('change', function(e){ applyLang(e.target.value); });
   })();
 </script>

@@ -612,8 +612,10 @@
 };
   const LANG_STORAGE_KEY = 'pixelryu_lang_v2';
 
+  var PAGE_LANG = 'ja';
   function detectLang() {
     try { const stored = localStorage.getItem(LANG_STORAGE_KEY); if (stored && i18n[stored]) return stored; } catch (e) {}
+    if (PAGE_LANG && i18n[PAGE_LANG]) return PAGE_LANG;
     const raw = (navigator.language || 'en').toLowerCase();
     for (const l of LANGUAGES) if (raw === l.code) return l.code;
     const head = raw.split(/[-_]/)[0];
