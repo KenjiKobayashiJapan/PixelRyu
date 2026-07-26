@@ -124,8 +124,8 @@ TPL = """<!DOCTYPE html>
 <meta name="description" content="Promotional videos for {title} by PixelRyu — landscape and portrait trailers.">
 <link rel="canonical" href="https://pixelryu.github.io/{slug}/video.html">
 <meta name="robots" content="index,follow">
-<link rel="icon" type="image/png" href="https://pixelryu.github.io/{slug}/icon.png">
-<link rel="apple-touch-icon" href="https://pixelryu.github.io/{slug}/icon.png">
+<link rel="icon" type="image/png" href="https://pixelryu.github.io/{slug}/favicon.png">
+<link rel="apple-touch-icon" href="https://pixelryu.github.io/{slug}/apple-touch-icon.png">
 <meta property="og:title" content="{title} — Promo Videos | PixelRyu">
 <meta property="og:description" content="Landscape and portrait promo videos for {title} by PixelRyu.">
 <meta property="og:image" content="https://pixelryu.github.io/{slug}/og.png">
