@@ -232,6 +232,255 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/"/>
   </url>
   <url>
+    <loc>https://pixelryu.github.io/kado/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.9</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/kado/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/kado/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/kado/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/kado/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/kado/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/kado/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/kado/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/kado/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/kado/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/kado/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/kado/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/kado/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/kado/"/>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/kado/og.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/kado/icon.png</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://pixelryu.github.io/kado/key_hero.png</image:loc>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/kado/ja/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/kado/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/kado/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/kado/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/kado/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/kado/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/kado/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/kado/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/kado/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/kado/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/kado/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/kado/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/kado/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/kado/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/kado/zh/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/kado/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/kado/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/kado/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/kado/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/kado/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/kado/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/kado/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/kado/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/kado/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/kado/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/kado/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/kado/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/kado/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/kado/ko/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/kado/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/kado/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/kado/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/kado/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/kado/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/kado/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/kado/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/kado/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/kado/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/kado/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/kado/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/kado/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/kado/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/kado/hi/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/kado/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/kado/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/kado/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/kado/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/kado/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/kado/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/kado/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/kado/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/kado/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/kado/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/kado/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/kado/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/kado/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/kado/id/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/kado/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/kado/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/kado/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/kado/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/kado/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/kado/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/kado/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/kado/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/kado/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/kado/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/kado/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/kado/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/kado/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/kado/de/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/kado/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/kado/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/kado/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/kado/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/kado/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/kado/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/kado/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/kado/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/kado/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/kado/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/kado/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/kado/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/kado/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/kado/fr/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/kado/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/kado/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/kado/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/kado/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/kado/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/kado/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/kado/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/kado/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/kado/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/kado/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/kado/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/kado/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/kado/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/kado/it/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/kado/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/kado/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/kado/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/kado/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/kado/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/kado/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/kado/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/kado/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/kado/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/kado/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/kado/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/kado/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/kado/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/kado/es/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/kado/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/kado/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/kado/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/kado/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/kado/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/kado/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/kado/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/kado/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/kado/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/kado/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/kado/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/kado/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/kado/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/kado/pt/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/kado/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/kado/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/kado/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/kado/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/kado/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/kado/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/kado/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/kado/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/kado/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/kado/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/kado/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/kado/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/kado/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/kado/ru/</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/kado/"/>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/kado/ja/"/>
+    <xhtml:link rel="alternate" hreflang="zh" href="https://pixelryu.github.io/kado/zh/"/>
+    <xhtml:link rel="alternate" hreflang="ko" href="https://pixelryu.github.io/kado/ko/"/>
+    <xhtml:link rel="alternate" hreflang="hi" href="https://pixelryu.github.io/kado/hi/"/>
+    <xhtml:link rel="alternate" hreflang="id" href="https://pixelryu.github.io/kado/id/"/>
+    <xhtml:link rel="alternate" hreflang="de" href="https://pixelryu.github.io/kado/de/"/>
+    <xhtml:link rel="alternate" hreflang="fr" href="https://pixelryu.github.io/kado/fr/"/>
+    <xhtml:link rel="alternate" hreflang="it" href="https://pixelryu.github.io/kado/it/"/>
+    <xhtml:link rel="alternate" hreflang="es" href="https://pixelryu.github.io/kado/es/"/>
+    <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/kado/pt/"/>
+    <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/kado/ru/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/kado/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/kado/privacy_policy.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/kado/terms_of_service.html</loc>
+    <lastmod>2026-07-10</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.3</priority>
+  </url>
+  <url>
     <loc>https://pixelryu.github.io/hanko/</loc>
     <lastmod>2026-07-10</lastmod>
     <changefreq>monthly</changefreq>

@@ -22,7 +22,7 @@ LOCALE = {"en": "en_US", "ja": "ja_JP", "zh": "zh_CN", "ko": "ko_KR", "hi": "hi_
           "pt": "pt_BR", "ru": "ru_RU"}
 SITE = "https://pixelryu.github.io/"
 
-GAMES = ["hanko", "okaeri", "shizuku", "senko", "wagashi", "counterparts", "temari",
+GAMES = ["kado", "hanko", "okaeri", "shizuku", "senko", "wagashi", "counterparts", "temari",
          "tatami", "bounce-cat", "hoshikari", "hayate", "sumlings", "parcel-pals",
          "issen", "hotaru", "liquid-glow-cosmic", "liquid-glow", "mole-whack"]
 
