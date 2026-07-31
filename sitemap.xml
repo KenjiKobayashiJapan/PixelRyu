@@ -5,7 +5,7 @@
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <url>
     <loc>https://pixelryu.github.io/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>1.0</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -24,7 +24,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/ja/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -43,7 +43,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/zh/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -62,7 +62,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/ko/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -81,7 +81,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/hi/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -100,7 +100,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/id/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -119,7 +119,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/de/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -138,7 +138,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/fr/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -157,7 +157,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/it/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -176,7 +176,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/es/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -195,7 +195,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/pt/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -214,7 +214,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/ru/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/"/>
@@ -467,6 +467,12 @@
     <xhtml:link rel="alternate" hreflang="pt" href="https://pixelryu.github.io/kado/pt/"/>
     <xhtml:link rel="alternate" hreflang="ru" href="https://pixelryu.github.io/kado/ru/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://pixelryu.github.io/kado/"/>
+  </url>
+  <url>
+    <loc>https://pixelryu.github.io/kado/video.html</loc>
+    <lastmod>2026-07-31</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://pixelryu.github.io/kado/privacy_policy.html</loc>
@@ -1544,7 +1550,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -1569,18 +1575,10 @@
     <image:image>
       <image:loc>https://pixelryu.github.io/wagashi/key_hero.jpg</image:loc>
     </image:image>
-    <video:video>
-      <video:thumbnail_loc>https://pixelryu.github.io/wagashi/og.png</video:thumbnail_loc>
-      <video:title>WAGASHI — Official Trailer</video:title>
-      <video:description>Official trailer for WAGASHI — a cozy Japanese-sweets merge puzzle by PixelRyu. Drop a sweet into the vessel; two of the same merge into the next, climbing a 10-step chain from a tiny azuki bean to a grand kagami-mochi. Soft physics, two modes and two tools. Now on Roblox; Android testers welcome on Google Play; coming soon to the App Store.</video:description>
-      <video:content_loc>https://pixelryu.github.io/wagashi/promotion_H_story.mp4?v=20260624113858</video:content_loc>
-      <video:publication_date>2026-06-18T00:00:00+00:00</video:publication_date>
-      <video:family_friendly>yes</video:family_friendly>
-    </video:video>
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/ja/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -1599,7 +1597,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/zh/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -1618,7 +1616,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/ko/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -1637,7 +1635,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/hi/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -1656,7 +1654,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/id/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -1675,7 +1673,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/de/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -1694,7 +1692,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/fr/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -1713,7 +1711,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/it/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -1732,7 +1730,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/es/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -1751,7 +1749,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/pt/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -1770,7 +1768,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/ru/</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <xhtml:link rel="alternate" hreflang="en" href="https://pixelryu.github.io/wagashi/"/>
@@ -1789,7 +1787,7 @@
   </url>
   <url>
     <loc>https://pixelryu.github.io/wagashi/overview.html</loc>
-    <lastmod>2026-07-27</lastmod>
+    <lastmod>2026-07-31</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>

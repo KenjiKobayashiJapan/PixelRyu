@@ -44,6 +44,9 @@ SUB = {
 
 # slug -> (Title, horizontal_en, horizontal_ja|None, src_subdir, [ (vert_src_en, vert_src_ja|None), ... ])
 APPS = {
+ # KADŌ も store/ にフル解像度マスターを置き、サイト用の軽量版は store/web/ に別置き（Hoshikari と同方式）。
+ "kado":                ("KADŌ","promotion_H_story.mp4","promotion_H_story_ja.mp4","0018_kado",
+                        [("web/promotion_V_01_en.mp4","web/promotion_V_01_ja.mp4"),("web/promotion_V_02_en.mp4","web/promotion_V_02_ja.mp4"),("web/promotion_V_03_en.mp4","web/promotion_V_03_ja.mp4")]),
  "hanko":               ("HANKO","promotion_H_story.mp4","promotion_H_story_ja.mp4","0017_hanko",
                         [("promotion_V_01_en.mp4","promotion_V_01_ja.mp4"),("promotion_V_02_en.mp4","promotion_V_02_ja.mp4"),("promotion_V_03_en.mp4","promotion_V_03_ja.mp4")]),
  # Hoshikari は store/ にフル解像度(1080x1920)のマスターを置き、サイト用の軽量版は store/web/ に別置き。
@@ -211,6 +214,15 @@ def main():
         cache_v = APP_CACHE.get(slug, VIDV)
         breadcrumb_v = APP_CACHE.get(slug, BCV)
         appdir = os.path.join(ROOT, slug)
+        # ★安全弁: 削除の前に全ソースの実在を確認する。1本でも欠けているアプリは丸ごとスキップし、
+        #   既にデプロイ済みの動画をそのまま残す。（2026-07-31: wagashi の V_02/V_03 が
+        #   <app>/store/ から消えていたため、途中まで削除→copyfile で例外→配信中の2本が消える、
+        #   という回帰を起こした。欠落は「静かに1本へ減らす」のではなく「触らない」が正しい。）
+        missing = [v for (ven, vja) in parts for v in (ven, vja)
+                   if v and not os.path.exists(os.path.join(REPO, sub, "store", v))]
+        if missing:
+            print("  %-20s SKIP (source missing: %s)" % (slug, ", ".join(missing)))
+            continue
         # clean any previously-deployed portrait videos, then deploy the configured parts
         for old in glob.glob(os.path.join(appdir, "promotion_V*.mp4")):
             os.remove(old)
