@@ -58,8 +58,11 @@ APPS = {
                         [("promotion_V_01_en.mp4","promotion_V_01_ja.mp4"),("promotion_V_02_en.mp4","promotion_V_02_ja.mp4"),("promotion_V_03_en.mp4","promotion_V_03_ja.mp4")]),
  "senko":              ("SENKO","promotion_H_story.mp4","promotion_H_story_ja.mp4","0013_senko",
                         [("promotion_V_01_en.mp4","promotion_V_01_ja.mp4"),("promotion_V_02_en.mp4","promotion_V_02_ja.mp4"),("promotion_V_03_en.mp4","promotion_V_03_ja.mp4")]),
+ # WAGASHI は 2026-07-30 に プロモを ver2（実ゲーム映像・練り仕様）へ切替。ver1（自動合体を描く AI 合成）は
+ # 現行実装と食い違うため <app>/store/promo_v1/ に保全して以後どこにも使わない（store/PROMO_NOTES.md が正）。
+ # ver2 の縦は V_01 の1本のみ（V_02/V_03 は作らない設計）。
  "wagashi":            ("WAGASHI","promotion_H_story.mp4","promotion_H_story_ja.mp4","0012_wagashi",
-                        [("promotion_V_01_en.mp4","promotion_V_01_ja.mp4"),("promotion_V_02_en.mp4","promotion_V_02_ja.mp4"),("promotion_V_03_en.mp4","promotion_V_03_ja.mp4")]),
+                        [("promotion_V_01_en.mp4","promotion_V_01_ja.mp4")]),
  "counterparts":       ("CounterParts","promotion_H_story.mp4","promotion_H_story_ja.mp4","0011_counterparts",
                         [("promotion_V_01_en.mp4","promotion_V_01_ja.mp4"),("promotion_V_02_en.mp4","promotion_V_02_ja.mp4"),("promotion_V_03_en.mp4","promotion_V_03_ja.mp4")]),
  "tatami":             ("TATAMI","promotion_H_story.mp4","promotion_H_story_ja.mp4","0010_tatami",
