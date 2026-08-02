@@ -32,8 +32,10 @@ This file is the expanded, self-contained companion to /llms.txt. It inlines the
 ### HANKO
 - Page: https://pixelryu.github.io/hanko/
 - Genre: Puzzle, Casual (Japanese seal-carving negative-space logic puzzle)
-- Platforms: iOS, Android, Roblox (coming soon to the App Store, Google Play and Roblox)
-- About: HANKO — a quiet Japanese seal-carving logic puzzle by PixelRyu, built on negative space: the parts you do NOT carve are the parts that print. Tap a cell to carve it away from a square seal face; whatever you leave uncarved stays raised, takes vermilion ink, and prints onto the washi paper below. Each stage fixes one to four guide frames on the paper at set positions and rotations. A cell covered by one guide prints light red; where prints from two guides overlap, the ink doubles into a deep dark red. The printed pattern must match the target exactly, including intensity. After each press you are told only two things: how many cells came out too dark and how many too light — no cell is ever pointed out, so every stage is solved by pure deduction and never by guessing. Carving is one-way, so you plan before you cut; a chisel can restore a cell, an ink pad limits how many times you can press, and a reference hint is available. 200 hand-checked stages on a rising curve, one daily seal with a streak, and a stamp book that collects every design you complete. Free to play, ad supported, with no in-app purchases. 12 languages, portrait or landscape, playable offline. Coming soon to the App Store, Google Play and Roblox.
+- Platforms: Android, Roblox (play now on Roblox; Android testers welcome on Google Play; coming soon to the App Store)
+- About: HANKO — a quiet Japanese seal-carving logic puzzle by PixelRyu, built on negative space: the parts you do NOT carve are the parts that print. Tap a cell to carve it away from a square seal face; whatever you leave uncarved stays raised, takes vermilion ink, and prints onto the washi paper below. Each stage fixes one to four guide frames on the paper at set positions and rotations. A cell covered by one guide prints light red; where prints from two guides overlap, the ink doubles into a deep dark red. The printed pattern must match the target exactly, including intensity. After each press you are told only two things: how many cells came out too dark and how many too light — no cell is ever pointed out, so every stage is solved by pure deduction and never by guessing. Carving is one-way, so you plan before you cut; a chisel can restore a cell, an ink pad limits how many times you can press, and a reference hint is available. 200 hand-checked stages on a rising curve, one daily seal with a streak, and a stamp book that collects every design you complete. Free to play, ad supported, with no in-app purchases. 12 languages, portrait or landscape, playable offline. Play now on Roblox. Android testers welcome on Google Play. Coming soon to the App Store.
+- Google Play (Android): https://play.google.com/store/apps/details?id=com.pixelryu.hanko
+- Roblox: https://www.roblox.com/games/123198515047454/HANKO-Zen-Carving-Puzzle
 - Free to play. Contact: idev10752@gmail.com
 
 ### Okaeri
@@ -115,11 +117,12 @@ This file is the expanded, self-contained companion to /llms.txt. It inlines the
 - Overview: https://pixelryu.github.io/hoshikari/overview.html
 - Privacy Policy: https://pixelryu.github.io/hoshikari/privacy_policy.html
 - Terms of Service: https://pixelryu.github.io/hoshikari/terms_of_service.html
-- Platforms: iOS, Roblox (out now on the App Store and Roblox; the Google Play version is coming soon)
+- Platforms: iOS, Android, Roblox (out now on the App Store and Roblox; Android testers welcome on Google Play)
 - Price: Free (ad-supported, optional ad-removal)
 - App Store (iOS): https://apps.apple.com/app/id6790068167
+- Google Play (Android): https://play.google.com/store/apps/details?id=com.pixelryu.hoshikari
 - Roblox: https://www.roblox.com/games/87457084580335/Hoshikari-Star-Hunter
-- About: Hoshikari (Star Hunter) — a first-person, on-rails space shooter by PixelRyu with a Japanese ink-wash look. Fly a craft of light through a painted sea of stars, drag to paint lock-ons over the incoming swarm of meteors and drones, and release a fan of homing light-arrows that chain through a whole cluster at once. Dodge debris you can't shoot, gather star-ore to upgrade at the Dock, grab shields and ride the overdrive; sectors from launch to nebula, asteroid belt, comet field, aurora and the deep, plus an endless meteor storm. 12 languages. Out now on the App Store and Roblox; coming soon to Google Play.
+- About: Hoshikari (Star Hunter) — a first-person, on-rails space shooter by PixelRyu with a Japanese ink-wash look. Fly a craft of light through a painted sea of stars, drag to paint lock-ons over the incoming swarm of meteors and drones, and release a fan of homing light-arrows that chain through a whole cluster at once. Dodge debris you can't shoot, gather star-ore to upgrade at the Dock, grab shields and ride the overdrive; sectors from launch to nebula, asteroid belt, comet field, aurora and the deep, plus an endless meteor storm. 12 languages. Out now on the App Store and Roblox; Android testers welcome on Google Play.
 
 ### HAYATE
 - Also known as: 疾風
