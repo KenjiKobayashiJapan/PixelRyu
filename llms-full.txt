@@ -115,9 +115,11 @@ This file is the expanded, self-contained companion to /llms.txt. It inlines the
 - Overview: https://pixelryu.github.io/hoshikari/overview.html
 - Privacy Policy: https://pixelryu.github.io/hoshikari/privacy_policy.html
 - Terms of Service: https://pixelryu.github.io/hoshikari/terms_of_service.html
-- Platforms (planned): iOS, Android, Roblox (coming soon)
+- Platforms: iOS, Roblox (out now on the App Store and Roblox; the Google Play version is coming soon)
 - Price: Free (ad-supported, optional ad-removal)
-- About: Hoshikari (Star Hunter) — a first-person, on-rails space shooter by PixelRyu with a Japanese ink-wash look. Fly a craft of light through a painted sea of stars, drag to paint lock-ons over the incoming swarm of meteors and drones, and release a fan of homing light-arrows that chain through a whole cluster at once. Dodge debris you can't shoot, gather star-ore to upgrade at the Dock, grab shields and ride the overdrive; sectors from launch to nebula, asteroid belt, comet field, aurora and the deep, plus an endless meteor storm. 12 languages.
+- App Store (iOS): https://apps.apple.com/app/id6790068167
+- Roblox: https://www.roblox.com/games/87457084580335/Hoshikari-Star-Hunter
+- About: Hoshikari (Star Hunter) — a first-person, on-rails space shooter by PixelRyu with a Japanese ink-wash look. Fly a craft of light through a painted sea of stars, drag to paint lock-ons over the incoming swarm of meteors and drones, and release a fan of homing light-arrows that chain through a whole cluster at once. Dodge debris you can't shoot, gather star-ore to upgrade at the Dock, grab shields and ride the overdrive; sectors from launch to nebula, asteroid belt, comet field, aurora and the deep, plus an endless meteor storm. 12 languages. Out now on the App Store and Roblox; coming soon to Google Play.
 
 ### HAYATE
 - Also known as: 疾風
