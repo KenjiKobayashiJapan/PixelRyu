@@ -92,9 +92,10 @@ This file is the expanded, self-contained companion to /llms.txt. It inlines the
 ### TATAMI: Lay the Floor
 - Page: https://pixelryu.github.io/tatami/
 - Overview: https://pixelryu.github.io/tatami/overview.html
-- Platforms (declared): Android, Roblox
+- Platforms: iOS, Android, Roblox (out now on the App Store and Roblox; Android testers welcome on Google Play)
 - Price: Free
-- About: TATAMI: Lay the Floor — a cozy tatami-laying block puzzle in a quiet Japanese room by PixelRyu. Drag a mat and complete a full row or column to finish that line. A samurai carries the finished mats to the tatami magistrate, and delivering earns koban that buy extra lives. A light Haste gauge keeps you moving, with a lucky-laying bonus. 48 stages, free. Coming soon to the App Store.
+- About: TATAMI: Lay the Floor — a cozy tatami-laying block puzzle in a quiet Japanese room by PixelRyu. Drag a mat and complete a full row or column to finish that line. A samurai carries the finished mats to the tatami magistrate, and delivering earns koban that buy extra lives. A light Haste gauge keeps you moving, with a lucky-laying bonus. 48 stages, free. Out now on the App Store and Roblox; Android testers welcome on Google Play.
+- App Store (iOS): https://apps.apple.com/app/id6778282629
 - Google Play (Android): https://play.google.com/store/apps/details?id=com.pixelryu.tatami
 - Roblox: https://www.roblox.com/games/134915507341779/TATAMI-Lay-the-Floor
 
