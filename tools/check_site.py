@@ -147,7 +147,7 @@ for d in app_dirs:
     plats, badge_urls = [], []
     am = re.search(r'<a[^>]+href="(https://apps\.apple\.com/app/id\d+)"', src)
     pm = re.search(r'<a[^>]+href="(https://play\.google\.com/store/apps/details\?id=[\w.]+)"', src)
-    rm = re.search(r'<a[^>]+href="(https://www\.roblox\.com/games/\d+/[\w\-]+)"', src)
+    rm = re.search(r'<a[^>]+href="(https://www\.roblox\.com/games/\d+(?:/[\w\-]*)?)"', src)
     if am: plats.append("iOS"); badge_urls.append(am.group(1))
     if pm or re.search(r'play\.google\.com/apps/testing', src): plats.append("Android")
     if pm: badge_urls.append(pm.group(1))
