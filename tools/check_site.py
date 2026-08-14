@@ -136,7 +136,12 @@ for p in sorted(glob.glob(os.path.join(ROOT, "*", "*.html"))) + [os.path.join(RO
             errors.append("[jsonld] %s block %d is invalid JSON: %s" % (rel(p), i, e))
             continue
         for o in (obj if isinstance(obj, list) else [obj]):
-            if isinstance(o, dict) and o.get("@type") == "VideoGame" and "name" in o and "offers" not in o:
+            if not isinstance(o, dict):
+                continue
+            # @type はマルチタイプ ["VideoGame","MobileApplication"] もありうる（2026-08 刷新）
+            _t = o.get("@type")
+            _t = _t if isinstance(_t, list) else [_t]
+            if "VideoGame" in _t and "name" in o and "offers" not in o:
                 warns.append("[jsonld] %s: VideoGame without free offers (price 0)" % rel(p))
 
 # (9/10) sameAs & operatingSystem must match each page's live store badges. A new
@@ -159,8 +164,14 @@ for d in app_dirs:
         except Exception:
             continue
         for o in (obj if isinstance(obj, list) else [obj]):
-            if isinstance(o, dict) and o.get("@type") == "VideoGame":
-                vg = o
+            # @type は 2026-08 の刷新でマルチタイプ ["VideoGame","MobileApplication"] に
+            # なった（VideoGame 単体は Google がリッチリザルトを出さないため）。
+            # スカラー比較のままだと全ゲームページがこの検査を無言でスキップする。
+            if isinstance(o, dict):
+                t = o.get("@type")
+                t = t if isinstance(t, list) else [t]
+                if "VideoGame" in t:
+                    vg = o
     if vg is None:
         continue
     if not plats:
@@ -195,6 +206,35 @@ for tag in ("image:loc", "video:thumbnail_loc", "video:content_loc"):
         local = m.group(1).replace("https://pixelryu.github.io/", "").split("?")[0]
         if not os.path.exists(os.path.join(ROOT, local)):
             errors.append("[sitemap-media] %s references missing file: %s" % (tag, m.group(1)))
+
+# (12) hreflang は相互参照が必須。en 正規ページ側の <link rel="alternate"> が落ちると
+#      Google は注釈ごと破棄し、多言語URLが canonical に吸収される（2026-07 の再発経路）。
+#      実際 gen_i18n_pages の再挿入ゲートが緩く、共通フッターの <a hreflang> に反応して
+#      en 24本から全消滅していたことがある。目視では気づけないのでここで止める。
+LANG_N = 13   # 12言語 + x-default
+for p in sorted(glob.glob(os.path.join(ROOT, "*", "index.html"))
+                + [os.path.join(ROOT, "index.html")]):
+    d = os.path.basename(os.path.dirname(p))
+    if d in ("ja", "zh", "ko", "hi", "id", "de", "fr", "it", "es", "pt", "ru", "tools"):
+        continue
+    src = read(p)
+    if not glob.glob(os.path.join(os.path.dirname(p), "ja", "index.html")):
+        continue                      # 言語ミラーを持たないページ（press 等）は対象外
+    n = src.count('<link rel="alternate" hreflang=')
+    if n != LANG_N:
+        errors.append("[hreflang] %s: alternate link が %d 本（%d 本であるべき）" % (rel(p), n, LANG_N))
+
+# (13) data-i18n を持つ要素を **空のまま** 出荷しない。実行時に JS が埋める作りだと、
+#      JS を実行しないクローラ（AI 系・本サイトが前提にしている相手）には本文が無い。
+for p in sorted(glob.glob(os.path.join(ROOT, "*", "index.html"))
+                + [os.path.join(ROOT, "index.html")]):
+    if os.path.basename(os.path.dirname(p)) == "tools":
+        continue
+    empties = re.findall(r'<(\w+)[^>]*\bdata-i18n="([a-z0-9_]+)"[^>]*>\s*</\1>', read(p))
+    empties = [k for _t, k in empties]
+    if empties:
+        errors.append("[empty-i18n] %s: 中身が空の data-i18n 要素 %d 件 (%s)"
+                      % (rel(p), len(empties), ", ".join(sorted(set(empties))[:4])))
 
 if warns:
     print("\n".join("WARN  " + w for w in sorted(set(warns))))

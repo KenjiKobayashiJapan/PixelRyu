@@ -22,337 +22,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n="title">PixelRyu — Jeux de réflexion &amp; d'action cosmiques</title>
 <meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="PixelRyu crée de beaux jeux de réflexion et d&#x27;action apaisants pour mobile et Roblox — là où le calme rencontre le mouvement.">
-<style>
-  html, body {
-    overflow-x: hidden;       /* no horizontal scroll/swipe on mobile */
-    max-width: 100%;
-  }
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    background: radial-gradient(ellipse at top, #172244 0%, #080d1f 50%, #02040c 100%);
-    color: #e4ebf5;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .container {
-    box-sizing: border-box;   /* keep width:100% + padding within the viewport */
-    max-width: 720px;
-    width: 100%;
-    padding: 80px 32px;
-    text-align: center;
-    position: relative;
-  }
-  .lang-switch {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-  }
-  .lang-switch select {
-    background: rgba(122, 176, 255, 0.06);
-    color: #e4ebf5;
-    border: 1px solid rgba(122, 176, 255, 0.20);
-    border-radius: 4px;
-    padding: 5px 10px;
-    font-size: 13px;
-    font-family: inherit;
-    cursor: pointer;
-  }
-  .lang-switch select:hover {
-    background: rgba(122, 176, 255, 0.12);
-    border-color: rgba(122, 176, 255, 0.50);
-  }
-  .lang-switch select option { background: #0d1428; color: #e4ebf5; }
-  .logo-wrap { margin-bottom: 24px; }
-  .brand-icon {
-    width: 132px;
-    height: 132px;
-    display: block;
-    margin: 22px auto 0;
-    filter: drop-shadow(0 6px 18px rgba(0, 0, 0, 0.45));
-  }
-  h1 {
-    font-size: 72px;
-    margin: 0;
-    background: linear-gradient(90deg, #5ea1ff 0%, #ff6bc4 60%, #ffd455 100%);
-    -webkit-background-clip: text;
-    background-clip: text;
-    -webkit-text-fill-color: transparent;
-    color: transparent;
-    font-weight: 800;
-    letter-spacing: -1px;
-  }
-  .tagline {
-    font-size: 20px;
-    color: #8b9bbd;
-    margin-bottom: 64px;
-  }
-  h2 {
-    font-size: 14px;
-    color: #6c7d9d;
-    margin: 64px 0 20px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 600;
-  }
-  .game-list { list-style: none; padding: 0; margin: 0; }
-  .game-card {
-    background: rgba(122, 176, 255, 0.06);
-    border: 1px solid rgba(122, 176, 255, 0.20);
-    border-radius: 18px;
-    padding: 28px 32px;
-    margin-bottom: 16px;
-    text-align: left;
-    transition: all 0.25s ease;
-  }
-  .game-card:hover {
-    background: rgba(122, 176, 255, 0.12);
-    border-color: rgba(122, 176, 255, 0.50);
-    transform: translateY(-2px);
-  }
-  .game-card { cursor: pointer; }
-  /* press feedback when clicking anywhere on the card */
-  .game-card:active { transform: scale(0.978); }
-  .game-card.tapped { animation: cardTap 0.22s ease; }
-  @keyframes cardTap {
-    0%   { transform: scale(1); }
-    35%  { transform: scale(0.955); }
-    100% { transform: scale(1); }
-  }
-  @media (prefers-reduced-motion: reduce) {
-    .game-card.tapped { animation: none; }
-    .game-card:active { transform: none; }
-  }
-  .game-head {
-    display: flex;
-    align-items: center;
-    gap: 16px;
-  }
-  .game-icon {
-    width: 56px;
-    height: 56px;
-    border-radius: 13px;
-    flex-shrink: 0;
-    display: block;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
-  }
-  /* Title column: a serial number ("0001") in front of the name, with a genre tag below.
-     On desktop the number sits inline before the title; on mobile it drops to its own
-     centered line above the title (see the max-width:600px block). */
-  .game-title { display: flex; flex-direction: column; gap: 8px; min-width: 0; flex: 1 1 auto; }
-  .game-name-row { display: block; }
-  .game-no {
-    font-family: ui-monospace, SFMono-Regular, "SF Mono", Menlo, Consolas, monospace;
-    font-weight: 700;
-    font-size: 20px;
-    letter-spacing: 1.5px;
-    color: #7d90b8;
-    margin-right: 12px;
-  }
-  .genre-tags { display: flex; flex-wrap: wrap; gap: 6px; }
-  .genre-tag {
-    display: inline-flex;
-    align-items: center;
-    gap: 6px;
-    align-self: flex-start;
-    padding: 3px 11px 3px 9px;
-    border-radius: 999px;
-    font-size: 12px;
-    font-weight: 600;
-    letter-spacing: 0.3px;
-    line-height: 1;
-    border: 1px solid transparent;
-  }
-  .genre-tag .genre-ic { width: 14px; height: 14px; display: block; fill: currentColor; flex: 0 0 auto; }
-  .genre-puzzle { color: #67c9d8; background: rgba(103,201,216,0.12); border-color: rgba(103,201,216,0.34); }
-  .genre-action { color: #eaa63f; background: rgba(234,166,63,0.13); border-color: rgba(234,166,63,0.34); }
-  /* Genre filter bar: pill buttons that show only the cards of the chosen genre. */
-  .genre-filter { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin: 2px 0 26px; }
-  .filter-btn {
-    display: inline-flex; align-items: center; gap: 7px;
-    padding: 7px 15px; border-radius: 999px;
-    font-family: inherit; font-size: 13px; font-weight: 600; letter-spacing: 0.3px;
-    cursor: pointer; transition: background .2s ease, border-color .2s ease, color .2s ease, transform .2s ease;
-    background: rgba(122,176,255,0.06); border: 1px solid rgba(122,176,255,0.22); color: #a8b5d0;
-  }
-  .filter-btn:hover { transform: translateY(-1px); }
-  .filter-btn .filter-ic { width: 15px; height: 15px; display: block; fill: currentColor; flex: 0 0 auto; }
-  .filter-count { font-size: 11px; font-weight: 700; opacity: .6; font-variant-numeric: tabular-nums; }
-  .filter-all    { color: #9fb6e6; }
-  .filter-puzzle { color: #67c9d8; background: rgba(103,201,216,0.10); border-color: rgba(103,201,216,0.30); }
-  .filter-action { color: #eaa63f; background: rgba(234,166,63,0.10); border-color: rgba(234,166,63,0.30); }
-  .filter-btn.is-active { color: #0b1020; }
-  .filter-btn.is-active .filter-count { opacity: .75; }
-  .filter-all.is-active    { background: #7ab0ff; border-color: #7ab0ff; }
-  .filter-puzzle.is-active { background: #67c9d8; border-color: #67c9d8; }
-  .filter-action.is-active { background: #eaa63f; border-color: #eaa63f; }
-  @media (prefers-reduced-motion: reduce) { .filter-btn:hover { transform: none; } }
-  /* Loading spinner (infinite scroll + language switch) — centered, rotating. */
-  @keyframes pr-spin { to { transform: rotate(360deg); } }
-  .pr-spinner {
-    display: inline-block; width: 34px; height: 34px; border-radius: 50%;
-    border: 3px solid rgba(160, 200, 255, 0.22);
-    border-top-color: #a0c8ff;
-    animation: pr-spin 0.8s linear infinite;
-  }
-  #list-loader { display: none; align-items: center; justify-content: center; padding: 22px 0 6px; }
-  #list-loader.is-loading { display: flex; }
-  #scroll-sentinel { width: 100%; height: 1px; }
-  #lang-overlay {
-    display: none; position: fixed; inset: 0; z-index: 60;
-    align-items: center; justify-content: center;
-    background: rgba(8, 12, 24, 0.5);
-  }
-  #lang-overlay.is-active { display: flex; }
-  #lang-overlay .pr-spinner { width: 46px; height: 46px; border-width: 4px; }
-  @media (prefers-reduced-motion: reduce) { .pr-spinner { animation-duration: 1.6s; } }
-  .game-card a {
-    color: #7ab0ff;
-    text-decoration: none;
-    font-size: 26px;
-    font-weight: 700;
-  }
-  .game-card a:hover { color: #a0c8ff; }
-  .game-card .desc { color: #a8b5d0; margin-top: 10px; font-size: 15px; line-height: 1.6; }
-  .game-card .links {
-    margin-top: 14px;
-    font-size: 13px;
-    color: #6c7d9d;
-  }
-  .game-card .links a {
-    font-size: 13px;
-    color: #6c7d9d;
-    text-decoration: underline;
-    margin-right: 14px;
-    font-weight: 400;
-  }
-  .game-card .links a:hover { color: #aac0e0; }
-  .game-card .appstore-badge,
-  .game-card .roblox-badge,
-  .game-card .googleplay-badge {
-    display: inline-block;
-    margin-top: 16px;
-    line-height: 0;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-    vertical-align: top;
-  }
-  .game-card .appstore-badge:hover,
-  .game-card .roblox-badge:hover,
-  .game-card .googleplay-badge:hover { transform: translateY(-2px); opacity: 0.85; }
-  .game-card .appstore-badge svg,
-  .game-card .roblox-badge svg { display: block; margin: 0 auto; }
-  .game-card .googleplay-badge img { display: block; height: 51px; width: auto; }
-  /* Standalone Google Play badge reserves the iPhone badge's slot (150px) + gap (10px)
-     so the Google Play badge sits at the same horizontal position whether or not
-     an App Store badge is present. */
-  .game-card .googleplay-badge { margin-left: 160px; }
-  .game-card .appstore-badge + .googleplay-badge { margin-left: 10px; }
-  .game-card .googleplay-badge + .roblox-badge { margin-left: 10px; }
-  /* When several badges share a row, lay them out with flex so wrapped rows
-     align to the left edge (no leading margin) — keeps the iPhone/Roblox badges
-     flush on narrow/mobile widths instead of shifting by the inline-block margin. */
-  .game-card .store-badges {
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    column-gap: 10px;
-    row-gap: 16px;
-    margin-top: 16px;
-  }
-  .game-card .store-badges .appstore-badge,
-  .game-card .store-badges .googleplay-badge,
-  .game-card .store-badges .roblox-badge { margin-top: 0; margin-left: 0; }
-  /* For a card with no App Store build yet (e.g. HAYATE, Liquid Glow), an invisible,
-     non-interactive placeholder takes up the App Store badge's slot (150px) so the real
-     badges line up with the same columns as the other cards — on desktop and mobile
-     alike, while every badge stays at its natural size. */
-  .game-card .store-badges .badge-ghost {
-    flex: 0 0 150px;
-    height: 51px;
-    visibility: hidden;
-    pointer-events: none;
-  }
-  /* Coming-soon banner: a greyed, non-interactive store badge with a red "COMING SOON"
-     stamp laid diagonally over it. Per-cell (.soon-cell) so a card can mix live and
-     coming-soon banners; the stamp is a sibling of the badge so the badge's grayscale
-     filter doesn't desaturate the red. */
-  .game-card .store-badges .soon-cell { position: relative; display: inline-block; line-height: 0; }
-  .game-card .store-badges .soon-cell .appstore-badge,
-  .game-card .store-badges .soon-cell .googleplay-badge,
-  .game-card .store-badges .soon-cell .roblox-badge { display: inline-block; line-height: 0; filter: grayscale(1); opacity: .5; pointer-events: none; }
-  .game-card .store-badges .soon-cell .soon-stamp {
-    position: absolute; top: 50%; left: 50%;
-    transform: translate(-50%, -50%) rotate(-12deg);
-    font-size: 11px; font-weight: 800; letter-spacing: 1px; text-transform: uppercase; white-space: nowrap;
-    color: #e11d1d; text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 1px 2px rgba(0,0,0,0.35);
-    pointer-events: none;
-  }
-  /* On mobile the row becomes a 2-col grid sized for anchor badges; let the coming-soon
-     cell (a span, not an anchor) and its badge graphic fill the column the same way. */
-  .game-card .store-badges > .soon-cell { display: block; }
-  .social {
-    display: flex;
-    justify-content: center;
-    gap: 14px;
-    margin-top: 20px;
-    flex-wrap: wrap;
-  }
-  .social a {
-    width: 46px;
-    height: 46px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 12px;
-    background: rgba(122, 176, 255, 0.06);
-    border: 1px solid rgba(122, 176, 255, 0.20);
-    color: #8b9bbd;
-    transition: all 0.25s ease;
-  }
-  .social a:hover {
-    background: rgba(122, 176, 255, 0.12);
-    border-color: rgba(122, 176, 255, 0.50);
-    color: #a0c8ff;
-    transform: translateY(-2px);
-  }
-  .social svg { width: 22px; height: 22px; fill: currentColor; display: block; }
-  .social-header { margin-top: 28px; margin-bottom: 4px; }
-  .footer {
-    color: #4a5878;
-    font-size: 13px;
-    margin-top: 96px;
-  }
-  @media (max-width: 600px) {
-    h1 { font-size: 56px; }
-    .brand-icon { width: 104px; height: 104px; }
-    .container { padding: 60px 24px; }
-    .lang-switch { top: 16px; right: 16px; }
-    .game-icon { width: 48px; height: 48px; border-radius: 11px; }
-    /* On mobile the serial number drops onto its own line, centered across the WHOLE
-       card (not just the title column). The number lives in the title column, which is
-       offset from the card's left edge by the icon (48px) + head gap (16px) = 64px, so
-       pull it left by 64px and widen it by 64px to span the full card content width. */
-    .game-name-row .game-no { display: block; text-align: center; margin: 0 0 4px -64px; width: calc(100% + 64px); font-size: 16px; letter-spacing: 2px; }
-    /* Compact the filter pills a touch so they wrap comfortably on narrow phones. */
-    .genre-filter { gap: 8px; }
-    .filter-btn { padding: 6px 13px; font-size: 12.5px; }
-    /* On mobile, lay the store badges out as a 2-column grid: two badges per row, a
-       third drops to a second row, and a missing App Store badge leaves its column as
-       empty space (the .badge-ghost cell). Columns follow the badges' natural widths
-       (150 : 172) so heights match; the grid never grows past the natural 2-badge width. */
-    .game-card .store-badges {
-      display: grid;
-      grid-template-columns: 150fr 172fr;
-      gap: 10px;
-      max-width: 332px;
-      align-items: center;
-    }
-    .game-card .store-badges > a > svg,
-    .game-card .store-badges > a > img { width: 100%; height: auto; display: block; }
-  }
-</style>
+<!-- pr-shell: inline style removed → assets/site.css -->
 <!-- SEO/LLMO start (managed) -->
 <meta name="google-site-verification" content="iUKE_0v-5jn4aownL7sNymhLvRtdX-7Wreqjs1qWKp0">
 <link rel="canonical" href="https://pixelryu.github.io/fr/">
@@ -404,45 +74,60 @@
 <meta name="twitter:image:alt" content="PixelRyu — Jeux de réflexion &amp; d&#x27;action cosmiques">
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/","logo":"https://pixelryu.github.io/icon.png","description":"PixelRyu is a solo indie game studio from Japan making small, polished, fully multilingual games for Android, iOS, and Roblox.","foundingLocation":{"@type":"Country","name":"Japan"},"sameAs":["https://substack.com/@pixelryu","https://note.com/pixelryu","https://www.youtube.com/@PixelRyu-Japan","https://x.com/PixelRyu10752","https://www.instagram.com/pixelryu/","https://www.facebook.com/PixelRyuJapan","https://www.tiktok.com/@pixelryu_japan","https://www.threads.com/@pixelryu"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"WebSite","name":"PixelRyu","url":"https://pixelryu.github.io/","inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"}}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"ItemList","name":"Games by PixelRyu","itemListOrder":"https://schema.org/ItemListOrderDescending","numberOfItems":18,"itemListElement":[{"@type":"ListItem","position":1,"name":"KADŌ","url":"https://pixelryu.github.io/kado/"},{"@type":"ListItem","position":2,"name":"HANKO","url":"https://pixelryu.github.io/hanko/"},{"@type":"ListItem","position":3,"name":"Okaeri","url":"https://pixelryu.github.io/okaeri/"},{"@type":"ListItem","position":4,"name":"Shizuku","url":"https://pixelryu.github.io/shizuku/"},{"@type":"ListItem","position":5,"name":"SENKO","url":"https://pixelryu.github.io/senko/"},{"@type":"ListItem","position":6,"name":"WAGASHI","url":"https://pixelryu.github.io/wagashi/"},{"@type":"ListItem","position":7,"name":"CounterParts","url":"https://pixelryu.github.io/counterparts/"},{"@type":"ListItem","position":8,"name":"TATAMI: Lay the Floor","url":"https://pixelryu.github.io/tatami/"},{"@type":"ListItem","position":9,"name":"TEMARI","url":"https://pixelryu.github.io/temari/"},{"@type":"ListItem","position":10,"name":"Bounce Cat","url":"https://pixelryu.github.io/bounce-cat/"},{"@type":"ListItem","position":11,"name":"HAYATE","url":"https://pixelryu.github.io/hayate/"},{"@type":"ListItem","position":12,"name":"Sumlings","url":"https://pixelryu.github.io/sumlings/"},{"@type":"ListItem","position":13,"name":"Parcel Pals","url":"https://pixelryu.github.io/parcel-pals/"},{"@type":"ListItem","position":14,"name":"ISSEN","url":"https://pixelryu.github.io/issen/"},{"@type":"ListItem","position":15,"name":"HOTARU","url":"https://pixelryu.github.io/hotaru/"},{"@type":"ListItem","position":16,"name":"Liquid Glow","url":"https://pixelryu.github.io/liquid-glow-cosmic/"},{"@type":"ListItem","position":17,"name":"Mole Whack","url":"https://pixelryu.github.io/mole-whack/"},{"@type":"ListItem","position":18,"name":"Hoshikari","url":"https://pixelryu.github.io/hoshikari/"}]}</script>
 <!-- SEO/LLMO end -->
+<!-- pr-shell:css start -->
+<link rel="stylesheet" href="../assets/site.css?v=20260814085000">
+<script>(function(){try{var t=localStorage.getItem("pixelryu_theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",t==="light"?"#F4F1EA":"#0B0E13");}catch(e){}})();</script>
+<!-- pr-shell:css end -->
 </head>
-<body>
+<body class="pr-home">
+<!-- pr-shell:header start -->
+<a class="skip-link" href="#main" data-pr-i18n="skip">Aller au contenu</a>
+<header class="pr-header">
+  <div class="pr-header-in">
+    <a class="pr-brand" href="https://pixelryu.github.io/fr/" aria-label="Accueil PixelRyu" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_home"><img class="pr-brandmark" src="../icon.webp?v=20260704170327" alt="" width="30" height="30" decoding="async">PixelRyu</a>
+    <nav class="pr-nav" aria-label="Main"><a href="https://pixelryu.github.io/games/fr/" data-pr-i18n="nav_games">Jeux</a><a href="https://pixelryu.github.io/about/fr/" data-pr-i18n="nav_about">À propos</a><a href="https://pixelryu.github.io/press/fr/" data-pr-i18n="nav_press">Presse</a><a href="https://pixelryu.substack.com/" target="_blank" rel="noopener" data-pr-i18n-attr="href" data-pr-i18n="news_url"><span data-pr-i18n="nav_news">Journal</span></a><a class="pr-nav-lang" href="#pr-langs" aria-label="Choisir la langue" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg></a><button type="button" class="pr-theme" aria-label="Basculer entre sombre et clair" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_theme" aria-pressed="false"><svg class="pr-ic-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg><svg class="pr-ic-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 13.2A8.2 8.2 0 0 1 10.8 4a8.2 8.2 0 1 0 9.2 9.2z"/></svg></button></nav>
+    <details class="pr-burger">
+      <summary aria-label="Menu" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_menu"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <div class="pr-burger-menu"><a href="https://pixelryu.github.io/games/fr/" data-pr-i18n="nav_games">Jeux</a><a href="https://pixelryu.github.io/about/fr/" data-pr-i18n="nav_about">À propos</a><a href="https://pixelryu.github.io/press/fr/" data-pr-i18n="nav_press">Presse</a><a href="https://pixelryu.substack.com/" target="_blank" rel="noopener" data-pr-i18n-attr="href" data-pr-i18n="news_url"><span data-pr-i18n="nav_news">Journal</span></a><a href="#pr-langs" data-pr-i18n="nav_langs">Langues</a><button type="button" class="pr-theme" aria-pressed="false"><svg class="pr-ic-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg><svg class="pr-ic-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 13.2A8.2 8.2 0 0 1 10.8 4a8.2 8.2 0 1 0 9.2 9.2z"/></svg><span data-pr-i18n="nav_theme">Thème</span></button></div>
+    </details>
+  </div>
+</header>
+<!-- pr-shell:header end -->
 <div class="container">
   <div class="lang-switch">
     <select id="lang-select" aria-label="Language"></select>
   </div>
-  <div class="logo-wrap">
-    <h1>PixelRyu</h1>
-    <div class="social social-header">
-      <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg>
-      </a>
-      <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note">
-        <svg viewBox="129 129 234 234" xmlns="http://www.w3.org/2000/svg"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg>
-      </a>
-      <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg>
-      </a>
-      <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
-      </a>
-      <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg>
-      </a>
-      <a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg>
-      </a>
-      <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg>
-      </a>
-      <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads">
-        <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg>
-      </a>
+  <!-- ★ここが skip-link の着地点。カード一覧だけでなく本文全体を包むこと。 -->
+  <main id="main">
+  <section class="pr-hero">
+    <div class="pr-hero-copy">
+      <h1 data-i18n="hero_title">De petits jeux, façonnés au Japon.</h1>
+      <p class="pr-hero-sub" data-i18n="hero_sub">Des jeux de réflexion et d'action gratuits pour iPhone, Android et Roblox — créés en solo au Japon, jouables en 12 langues.</p>
+      <div class="pr-hero-cta">
+        <a class="pr-btn pr-btn-primary" href="https://pixelryu.github.io/games/fr/" data-i18n="cta_games">Voir tous les jeux</a>
+        <a class="pr-btn pr-btn-ghost" href="https://pixelryu.github.io/about/fr/" data-i18n="cta_about">Rencontrer le développeur</a>
+      </div>
     </div>
-    <img src="https://pixelryu.github.io/icon.webp?v=20260704170327" alt="PixelRyu" class="brand-icon" width="132" height="132" fetchpriority="high">
-  </div>
-  <div class="tagline" data-i18n="tagline">Calme et mouvement — jeux de réflexion &amp; d'action cosmiques</div>
+    <div class="pr-hero-art">
+      <img src="../assets/hero_1.webp?v=20260812232024" alt="" width="480" height="640" fetchpriority="high" decoding="async">
+      <img src="../assets/hero_2.webp?v=20260812232024" alt="" width="480" height="640" loading="lazy" decoding="async">
+      <img src="../assets/hero_3.webp?v=20260812232024" alt="" width="480" height="640" loading="lazy" decoding="async">
+    </div>
+  </section>
+
+  <section class="pr-featured pr-reveal" aria-labelledby="pr-featured-h" data-game="kado">
+    <div class="pr-featured-art">
+      <a href="https://pixelryu.github.io/kado/fr/" tabindex="-1" aria-hidden="true"><img src="../kado/key_hero.webp?v=20260812232024" alt="" width="1200" height="800" loading="lazy" decoding="async"></a>
+    </div>
+    <div class="pr-featured-body">
+      <span class="pr-badge-new" data-i18n="featured_label">Dernière sortie</span>
+      <h3 id="pr-featured-h"><a href="https://pixelryu.github.io/kado/fr/" data-i18n="kado_title">KADŌ — Puzzle floral zen</a></h3>
+      <p class="pr-poetic" data-i18n="featured_tagline">Piquez les branches. Aucune ligne ne se croise.</p>
+      <div class="store-badges"><a class="roblox-badge" href="https://www.roblox.com/games/93633233803153/KAD-Zen-Flower-Puzzle" target="_blank" rel="noopener" aria-label="KADŌ — Play now on Roblox"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26"><g transform="rotate(13 13 13)"><rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/><rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/></g></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text></svg></a></div>
+      <p style="font-size:13px;color:var(--text-2);margin:12px 0 0" data-i18n="featured_avail">Disponible dès maintenant sur Roblox. Testeurs Android bienvenus sur Google Play. Bientôt sur l'App Store.</p>
+    </div>
+  </section>
 
   <h2 data-i18n="games_heading">Jeux</h2>
   <div class="genre-filter" role="group" aria-label="Filter games by genre">
@@ -459,11 +144,10 @@
       <span data-i18n="genre_action">Action</span><span class="filter-count" data-count="action"></span>
     </button>
   </div>
-  <main>
     <ul class="game-list">
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/kado/icon.webp?v=20260726104934" alt="KADŌ — game icon">
+        <img class="game-icon" width="56" height="56" src="../kado/icon.webp?v=20260726104934" alt="KADŌ — game icon">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0018</span><a href="https://pixelryu.github.io/kado/fr/" data-i18n="kado_title">KADŌ — Puzzle floral zen</a></span>
           <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Réflexion</span></span>
@@ -472,7 +156,7 @@
       <div class="desc" data-i18n="kado_desc">KADŌ est un paisible puzzle de composition florale bâti autour du kenzan, le support métallique hérissé de pointes dans lequel un fleuriste japonais enfonce ses tiges. Vous ne déplacez jamais une branche à la main : vous choisissez une branche parmi les cartes du bas, tournez un grand cadran d'angle pour choisir son inclinaison (le cadran se cale sur une série d'angles nets), puis touchez un trou libre du kenzan pour l'y piquer. Une composition achevée doit respecter deux choses à la fois : aucune ligne de branche ne peut en croiser une autre, et chaque branche doit pointer vers la zone que réclame son rôle parmi les trois, le sansai — le ciel se tient presque droit, l'homme penche en diagonale, et la terre repose bas. Chaque étape possède une seule composition correcte, toujours accessible par le raisonnement plutôt que par la chance ; un indice de référence révèle l'angle correct d'une branche, et un retour en arrière limité vous laisse annuler un coup pour repenser. 200 étapes vérifiées à la main sur une courbe douce, des décors saisonniers et 12 langues. Disponible sur Roblox ; testeurs Android bienvenus sur Google Play ; bientôt sur l'App Store.</div>
       <div class="store-badges has-soon" aria-label="Play KADŌ on Roblox now; Android testers welcome on Google Play; the App Store coming soon">
       <span class="soon-cell"><span class="appstore-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Download on the App Store</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24"><path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text></svg></span><span class="soon-stamp">COMING SOON</span></span>
-      <a class="googleplay-badge" href="https://pixelryu.github.io/kado/#tester-heading" aria-label="KADŌ — Get it on Google Play (Android tester recruitment)"><img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142"></a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/kado/#tester-heading" aria-label="KADŌ — Get it on Google Play (Android tester recruitment)"><img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142"></a>
       <a class="roblox-badge" href="https://www.roblox.com/games/93633233803153/KAD-Zen-Flower-Puzzle" target="_blank" rel="noopener" aria-label="KADŌ — Play now on Roblox"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26"><g transform="rotate(13 13 13)"><rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/><rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/></g></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text></svg></a>
       </div>
       <div class="links">
@@ -483,7 +167,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/hanko/icon.webp?v=20260710144520" alt="HANKO — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../hanko/icon.webp?v=20260710144520" alt="HANKO — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0017</span><a href="https://pixelryu.github.io/hanko/fr/" data-i18n="hk_title">HANKO — Puzzle de gravure de sceau zen</a></span>
           <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Réflexion</span></span>
@@ -492,7 +176,7 @@
       <div class="desc" data-i18n="hk_desc">HANKO est un puzzle de logique tout en calme autour de la gravure d'un sceau japonais, et l'idée est inversée à dessein : les parties que vous NE gravez PAS sont celles qui s'impriment. Touchez des cases pour creuser les sillons d'une face de sceau ; ce qui reste en relief prend l'encre vermillon et se tamponne sur le papier washi en dessous, à l'intérieur de un à quatre repères fixes. Sous un seul repère, une case s'imprime en rouge clair ; là où deux empreintes se superposent, l'encre se double en un rouge profond et foncé. Votre empreinte doit donc correspondre exactement à la cible — vierge, claire ou foncée. Après chaque pression, on vous dit seulement combien de cases sont ressorties trop foncées et combien trop claires ; aucune case ne vous est désignée. La gravure est sans retour, alors planifiez avant de tailler. 200 niveaux vérifiés à la main, un sceau quotidien avec une série, un carnet de tampons et 12 langues. Disponible dès maintenant sur Roblox. Testeurs Android bienvenus sur Google Play. Bientôt sur l'App Store.</div>
       <div class="store-badges has-soon" aria-label="Play HANKO on Roblox now; Android testers welcome on Google Play; the App Store coming soon">
       <span class="soon-cell"><span class="appstore-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Download on the App Store</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24"><path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text></svg></span><span class="soon-stamp">COMING SOON</span></span>
-      <a class="googleplay-badge" href="https://pixelryu.github.io/hanko/#tester-heading" aria-label="HANKO — Get it on Google Play (Android tester recruitment)"><img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async"></a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/hanko/#tester-heading" aria-label="HANKO — Get it on Google Play (Android tester recruitment)"><img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async"></a>
       <a class="roblox-badge" href="https://www.roblox.com/games/123198515047454/HANKO-Zen-Carving-Puzzle" target="_blank" rel="noopener" aria-label="HANKO — Play now on Roblox"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26"><g transform="rotate(13 13 13)"><rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/><rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/></g></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text></svg></a>
       </div>
       <div class="links">
@@ -503,7 +187,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/hoshikari/icon.webp?v=20260727065248" alt="Hoshikari — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../hoshikari/icon.webp?v=20260727065248" alt="Hoshikari — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0016</span><a href="https://pixelryu.github.io/hoshikari/fr/" data-i18n="hoshikari_title">Hoshikari（星狩り）— Verrouillez l'essaim. Lâchez la lumière. Chassez les étoiles.</a></span>
           <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg>Space Shooter</span>
@@ -512,7 +196,7 @@
       <div class="desc" data-i18n="hoshikari_desc">Un shooter spatial à la première personne, sur rails, à l'encre japonaise. Peignez du doigt vos verrouillages sur l'essaim de météores et de drones qui fonce vers vous, puis relâchez un éventail de flèches de lumière à tête chercheuse qui enchaîne toute une grappe d'un seul souffle. Traversez des secteurs du décollage aux profondeurs, attrapez des boucliers, chevauchez l'overdrive et affrontez une tempête de météores sans fin. Disponible dès maintenant sur l'App Store et Roblox ; testeurs Android bienvenus sur Google Play.</div>
       <div class="store-badges" aria-label="Download Hoshikari on the App Store; Android testers welcome on Google Play; play now on Roblox">
       <a class="appstore-badge" href="https://apps.apple.com/app/id6790068167" target="_blank" rel="noopener" aria-label="Hoshikari — Download on the App Store"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Download on the App Store</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24"><path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text></svg></a>
-      <a class="googleplay-badge" href="https://pixelryu.github.io/hoshikari/#tester-heading" aria-label="Hoshikari — Get it on Google Play (Android tester recruitment)"><img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async"></a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/hoshikari/#tester-heading" aria-label="Hoshikari — Get it on Google Play (Android tester recruitment)"><img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async"></a>
       <a class="roblox-badge" href="https://www.roblox.com/games/87457084580335/Hoshikari-Star-Hunter" target="_blank" rel="noopener" aria-label="Hoshikari — Play now on Roblox"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26"><g transform="rotate(13 13 13)"><rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/><rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/></g></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text></svg></a>
       </div>
       <div class="links">
@@ -523,7 +207,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/okaeri/icon.webp?v=20260704170327" alt="Okaeri — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../okaeri/icon.webp?v=20260704170327" alt="Okaeri — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0015</span><a href="https://pixelryu.github.io/okaeri/fr/" data-i18n="ok_title">Okaeri — Puzzle cosy de retour à la maison des animaux</a></span>
           <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Réflexion</span></span>
@@ -532,7 +216,7 @@
       <div class="desc" data-i18n="ok_desc">Okaeri est un puzzle cosy de retour à la maison des animaux. Fais glisser une rangée ou une colonne de bols en verre; les bols passent d'un bord à l'autre. Quand toute une ligne devient la nourriture préférée d'un animal, celui-ci traverse le plateau. Fais ensuite tourner l'anneau extérieur, où attendent animaux et maîtres, pour placer le bon maître de l'autre côté. Réunis toutes les paires pour terminer le niveau. Niveaux calmes, pas de minuteur, 12 langues. Disponible dès maintenant sur l'App Store et Roblox ; testeurs Android bienvenus sur Google Play.</div>
       <div class="store-badges" aria-label="Download Okaeri on the App Store; Android testers welcome on Google Play; play on Roblox now">
         <a class="appstore-badge" href="https://apps.apple.com/app/id6787373316" target="_blank" rel="noopener" aria-label="Okaeri — Download on the App Store"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Download on the App Store</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24"><path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text></svg></a>
-        <a class="googleplay-badge" href="https://pixelryu.github.io/okaeri/#tester-heading" aria-label="Okaeri — Get it on Google Play (Android tester recruitment)"><img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async"></a>
+        <a class="googleplay-badge" href="https://pixelryu.github.io/okaeri/#tester-heading" aria-label="Okaeri — Get it on Google Play (Android tester recruitment)"><img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async"></a>
         <a class="roblox-badge" href="https://www.roblox.com/games/104207794680922/Okaeri-Pet-Reunion-Puzzle" target="_blank" rel="noopener" aria-label="Okaeri — Play now on Roblox"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26"><g transform="rotate(13 13 13)"><rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/><rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/></g></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text></svg></a>
       </div>
       <div class="links">
@@ -543,7 +227,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/shizuku/icon.webp?v=20260704170327" alt="Shizuku — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../shizuku/icon.webp?v=20260704170327" alt="Shizuku — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0014</span><a href="https://pixelryu.github.io/shizuku/fr/" data-i18n="sz_title">Shizuku — Agence le jardin ; fais se rencontrer deux gouttes.</a></span>
           <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Réflexion</span></span>
@@ -552,7 +236,7 @@
       <div class="desc" data-i18n="sz_desc">Shizuku est un paisible puzzle physique déterministe dans un jardin japonais tranquille. Tu ne touches jamais les gouttes de rosée — au lieu de cela, tu agences le plateau : place des chéneaux de bambou, des pierres et des feuilles afin que, lorsque deux gouttes tombent, elles roulent, glissent et finissent par se rencontrer pour n'en former qu'une. Mets la scène en place, lâche les gouttes et regarde ton plan se dérouler. Comme rien n'est aléatoire, tu peux réfléchir à tout le parcours avant de lâcher. Des niveaux paisibles, faits à la main, sans pression de temps. 12 langues. Disponible dès maintenant sur l'App Store et Roblox ; testeurs Android bienvenus sur Google Play.</div>
       <div class="store-badges" aria-label="Download Shizuku on the App Store; Android testers welcome on Google Play; play on Roblox now">
       <a class="appstore-badge" href="https://apps.apple.com/app/id6782598479" target="_blank" rel="noopener" aria-label="Shizuku — Download on the App Store"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Download on the App Store</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24"><path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text></svg></a>
-      <a class="googleplay-badge" href="https://pixelryu.github.io/shizuku/#tester-heading" aria-label="Shizuku — Get it on Google Play (Android tester recruitment)"><img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async"></a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/shizuku/#tester-heading" aria-label="Shizuku — Get it on Google Play (Android tester recruitment)"><img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async"></a>
       <a class="roblox-badge" href="https://www.roblox.com/games/77915067275756/Shizuku-Dewdrop-Garden" target="_blank" rel="noopener" aria-label="Shizuku — Play now on Roblox"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26"><g transform="rotate(13 13 13)"><rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/><rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/></g></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text></svg></a>
       </div>
       <div class="links">
@@ -563,7 +247,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/senko/icon.webp?v=20260704170327" alt="SENKO — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../senko/icon.webp?v=20260704170327" alt="SENKO — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0013</span><a href="https://pixelryu.github.io/senko/fr/" data-i18n="sk_title">SENKO — Apaise la fumée, façonne le calme.</a></span>
           <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Réflexion</span></span>
@@ -572,7 +256,7 @@
       <div class="desc" data-i18n="sk_desc">SENKO est un puzzle de fumée apaisant en deux phases. Allume un bâton d'encens et une fumée sombre et agitée s'élève — balaie-la du doigt pour l'apaiser jusqu'à ce qu'elle se pose et devienne claire et blanche. Guide ensuite cette fumée blanche pour remplir un motif japonais ténu : la lune, un pin, une grue, des fleurs de cerisier et bien d'autres, à travers 120 niveaux paisibles. Attention aux braises rouges — en toucher une fait reculer ta fumée en la brûlant, alors faufile-toi autour. La fumée est limitée, alors façonne-la avant que l'encens ne se consume. Un éventail apaise largement et un pinceau t'aide à façonner. Sans pression, 12 langues. Disponible dès maintenant sur l'App Store et Roblox ; testeurs Android bienvenus sur Google Play.</div>
       <div class="store-badges" aria-label="Download SENKO on the App Store; Android testers welcome on Google Play; play on Roblox now">
       <a class="appstore-badge" href="https://apps.apple.com/app/id6782591368" target="_blank" rel="noopener" aria-label="SENKO — Download on the App Store"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Download on the App Store</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24"><path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text></svg></a>
-      <a class="googleplay-badge" href="https://pixelryu.github.io/senko/#tester-heading" aria-label="SENKO — Get it on Google Play (Android tester recruitment)"><img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async"></a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/senko/#tester-heading" aria-label="SENKO — Get it on Google Play (Android tester recruitment)"><img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async"></a>
       <a class="roblox-badge" href="https://www.roblox.com/games/71313769097238/SENKO-Zen-Incense-Smoke" target="_blank" rel="noopener" aria-label="SENKO — Play now on Roblox"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26"><g transform="rotate(13 13 13)"><rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/><rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/></g></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text></svg></a>
       </div>
       <div class="links">
@@ -583,7 +267,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/wagashi/icon.webp?v=20260704170327" alt="WAGASHI — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../wagashi/icon.webp?v=20260704170327" alt="WAGASHI — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0012</span><a href="https://pixelryu.github.io/wagashi/fr/" data-i18n="wg_title">WAGASHI: Knead &amp; Craft — Pétrissez les douceurs à la main.</a></span>
           <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Réflexion</span></span>
@@ -592,7 +276,7 @@
       <div class="desc" data-i18n="wg_desc">WAGASHI: Knead &amp; Craft est un puzzle tout doux aux pâtisseries japonaises bâti sur un seul geste : le pétrissage. Les douceurs ne se combinent jamais au contact — en faire tomber une, c’est seulement disposer un ingrédient. Lorsque deux identiques s’immobilisent côte à côte, un anneau d’or pulsant entoure la grappe ; appuyez longuement et toute la grappe est pétrie d’un coup en la douceur suivante (six deviennent trois en un appui), gravissant une chaîne de 10 paliers du minuscule haricot azuki au majestueux kagami-mochi. Pétrir ne coûte aucun coup, et votre score dépend de la taille et du tassement de la grappe : un éventail uchiwa et une paire de baguettes sont là pour rassembler le tas avant le pétrissage. Deux modes : un mode Zen calme et sans fin, ou 200 niveaux de commandes en un nombre de chutes limité. Sans pression, 12 langues. Disponible sur Roblox ; testeurs Android bienvenus sur Google Play ; bientôt sur l’App Store.</div>
       <div class="store-badges has-soon" aria-label="Play on Roblox now; Android testers welcome on Google Play; the App Store coming soon">
       <span class="soon-cell"><span class="appstore-badge"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Download on the App Store</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24"><path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text><text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text></svg></span><span class="soon-stamp">COMING SOON</span></span>
-      <a class="googleplay-badge" href="https://pixelryu.github.io/wagashi/#tester-heading" aria-label="WAGASHI — Get it on Google Play (Android tester recruitment)"><img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async"></a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/wagashi/#tester-heading" aria-label="WAGASHI — Get it on Google Play (Android tester recruitment)"><img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async"></a>
       <a class="roblox-badge" href="https://www.roblox.com/games/110385859926306/" target="_blank" rel="noopener" aria-label="WAGASHI — Play now on Roblox"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26"><g transform="rotate(13 13 13)"><rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/><rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/></g></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text></svg></a>
       </div>
       <div class="links">
@@ -603,7 +287,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/counterparts/icon.webp?v=20260704170327" alt="CounterParts — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../counterparts/icon.webp?v=20260704170327" alt="CounterParts — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0011</span><a href="https://pixelryu.github.io/counterparts/fr/" data-i18n="cp_title">CounterParts — Un balayage en déplace deux.</a></span>
           <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Réflexion</span></span>
@@ -619,7 +303,7 @@
           <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
           <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
         </svg></a>
-      <a class="googleplay-badge" href="https://pixelryu.github.io/counterparts/#tester-heading" aria-label="CounterParts — Get it on Google Play (Android tester recruitment)"><img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async"></a>
+      <a class="googleplay-badge" href="https://pixelryu.github.io/counterparts/#tester-heading" aria-label="CounterParts — Get it on Google Play (Android tester recruitment)"><img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async"></a>
       <a class="roblox-badge" href="https://www.roblox.com/games/137442522027778/CounterParts" target="_blank" rel="noopener" aria-label="CounterParts — Play now on Roblox"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title>
           <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
           <svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26">
@@ -640,7 +324,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/tatami/icon.webp?v=20260704170327" alt="TATAMI: Lay the Floor — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../tatami/icon.webp?v=20260704170327" alt="TATAMI: Lay the Floor — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0010</span><a href="https://pixelryu.github.io/tatami/fr/" data-i18n="tatami_title">TATAMI — Pose le tatami. Gagne ta récompense.</a></span>
           <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Réflexion</span></span>
@@ -657,7 +341,7 @@
           <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
         </svg></a>
       <a class="googleplay-badge" href="https://pixelryu.github.io/tatami/#tester-heading" aria-label="TATAMI — Get it on Google Play (Android tester recruitment)">
-        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
+        <img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
       </a>
       <a class="roblox-badge" href="https://www.roblox.com/games/134915507341779/TATAMI-Lay-the-Floor" target="_blank" rel="noopener" aria-label="TATAMI — Play now on Roblox">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title>
@@ -681,7 +365,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/temari/icon.webp?v=20260704170327" alt="TEMARI — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../temari/icon.webp?v=20260704170327" alt="TEMARI — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0009</span><a href="https://pixelryu.github.io/temari/fr/" data-i18n="temari_title">TEMARI — Renvoie le temari, fais éclater les ballons en papier.</a></span>
           <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Action</span></span>
@@ -700,7 +384,7 @@
         </svg>
       </a>
       <a class="googleplay-badge" href="https://pixelryu.github.io/temari/#tester-heading" aria-label="TEMARI — Get it on Google Play (Android tester recruitment)">
-        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
+        <img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
       </a>
       <a class="roblox-badge" href="https://www.roblox.com/games/84976260376006/TEMARI-Hanetsuki-Paddle" target="_blank" rel="noopener" aria-label="TEMARI — Play now on Roblox">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title>
@@ -724,7 +408,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/bounce-cat/icon.webp?v=20260704170327" alt="Bounce Cat — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../bounce-cat/icon.webp?v=20260704170327" alt="Bounce Cat — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0008</span><a href="https://pixelryu.github.io/bounce-cat/fr/" data-i18n="bc_title">Bounce Cat — Des ricochets bien placés. Libère le chat.</a></span>
           <span class="genre-tags">
@@ -746,7 +430,7 @@
         </svg>
       </a>
       <a class="googleplay-badge" href="https://pixelryu.github.io/bounce-cat/#tester-heading" aria-label="Bounce Cat — Get it on Google Play (Android tester recruitment)">
-        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
+        <img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
       </a>
       <a class="roblox-badge" href="https://www.roblox.com/games/107578490712285/Bounce-Cat-Rescue-the-Cat" target="_blank" rel="noopener" aria-label="Bounce Cat — Play now on Roblox">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title>
@@ -770,7 +454,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/hayate/icon.webp?v=20260704170327" alt="HAYATE — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../hayate/icon.webp?v=20260704170327" alt="HAYATE — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0007</span><a href="https://pixelryu.github.io/hayate/fr/" data-i18n="hayate_title">HAYATE — Roulez vite. Tranchez net. Finissez premier.</a></span>
           <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Action</span></span>
@@ -789,7 +473,7 @@
         </svg>
       </a>
       <a class="googleplay-badge" href="https://pixelryu.github.io/hayate/#tester-heading" aria-label="HAYATE — Get it on Google Play (Android tester recruitment)">
-        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
+        <img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
       </a>
       <a class="roblox-badge" href="https://www.roblox.com/games/128048970536729/HAYATE-Katana-Racer" target="_blank" rel="noopener" aria-label="HAYATE — Play now on Roblox">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title>
@@ -813,7 +497,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/sumlings/icon.webp?v=20260704170327" alt="Sumlings — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../sumlings/icon.webp?v=20260704170327" alt="Sumlings — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0006</span><a href="https://pixelryu.github.io/sumlings/fr/" data-i18n="sumlings_title">Sumlings — Place les chiffres. Fais éclore la magie.</a></span>
           <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Réflexion</span></span>
@@ -832,7 +516,7 @@
         </svg>
       </a>
       <a class="googleplay-badge" href="https://pixelryu.github.io/sumlings/#tester-heading" aria-label="Sumlings — Get it on Google Play (Android tester recruitment)">
-        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
+        <img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
       </a>
       <a class="roblox-badge" href="https://www.roblox.com/games/90303076167033/Sumlings" target="_blank" rel="noopener" aria-label="Sumlings — Play now on Roblox">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title>
@@ -856,7 +540,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/parcel-pals/icon.webp?v=20260704170327" alt="Parcel Pals — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../parcel-pals/icon.webp?v=20260704170327" alt="Parcel Pals — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0005</span><a href="https://pixelryu.github.io/parcel-pals/fr/" data-i18n="pp_title">Parcel Pals — Emballe le bonheur. Expédie des sourires.</a></span>
           <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Réflexion</span></span>
@@ -875,7 +559,7 @@
         </svg>
       </a>
       <a class="googleplay-badge" href="https://pixelryu.github.io/parcel-pals/#tester-heading" aria-label="Parcel Pals — Get it on Google Play (Android tester recruitment)">
-        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
+        <img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
       </a>
       <a class="roblox-badge" href="https://www.roblox.com/games/114439228304487/Parcel-Pals" target="_blank" rel="noopener" aria-label="Parcel Pals — Play now on Roblox">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title>
@@ -899,7 +583,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/issen/icon.webp?v=20260704170327" alt="ISSEN — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../issen/icon.webp?v=20260704170327" alt="ISSEN — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0004</span><a href="https://pixelryu.github.io/issen/fr/" data-i18n="issen_title">ISSEN — Un souffle, une entaille</a></span>
           <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Action</span></span>
@@ -918,7 +602,7 @@
         </svg>
       </a>
       <a class="googleplay-badge" href="https://pixelryu.github.io/issen/#tester-heading" aria-label="ISSEN — Get it on Google Play (Android tester recruitment)">
-        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
+        <img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
       </a>
       <a class="roblox-badge" href="https://www.roblox.com/games/96726954641087/ISSEN-Samurai-Slash" target="_blank" rel="noopener" aria-label="ISSEN — Play now on Roblox">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title>
@@ -942,7 +626,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/hotaru/icon.webp?v=20260704170327" alt="HOTARU — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../hotaru/icon.webp?v=20260704170327" alt="HOTARU — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0003</span><a href="https://pixelryu.github.io/hotaru/fr/" data-i18n="hotaru_title">HOTARU — La Maison Perdue</a></span>
           <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Action</span></span>
@@ -961,7 +645,7 @@
         </svg>
       </a>
       <a class="googleplay-badge" href="https://pixelryu.github.io/hotaru/#tester-heading" aria-label="HOTARU — Get it on Google Play (Android tester recruitment)">
-        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
+        <img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
       </a>
       <a class="roblox-badge" href="https://www.roblox.com/games/112246983745989/HOTARU-Lost-Manor" target="_blank" rel="noopener" aria-label="HOTARU — Play now on Roblox">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title>
@@ -985,7 +669,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/liquid-glow-cosmic/icon.webp?v=20260704170327" alt="Liquid Glow — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../liquid-glow-cosmic/icon.webp?v=20260704170327" alt="Liquid Glow — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0002</span><a href="https://pixelryu.github.io/liquid-glow-cosmic/fr/">Liquid Glow</a></span>
           <span class="genre-tag genre-puzzle"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 11H19V7c0-1.1-.9-2-2-2h-4V3.5C13 2.12 11.88 1 10.5 1S8 2.12 8 3.5V5H4c-1.1 0-1.99.9-1.99 2v3.8H3.5c1.49 0 2.7 1.21 2.7 2.7s-1.21 2.7-2.7 2.7H2V20c0 1.1.9 2 2 2h3.8v-1.5c0-1.49 1.21-2.7 2.7-2.7s2.7 1.21 2.7 2.7V22H17c1.1 0 2-.9 2-2v-4h1.5c1.38 0 2.5-1.12 2.5-2.5S21.88 11 20.5 11z"/></svg><span data-i18n="genre_puzzle">Réflexion</span></span>
@@ -1002,7 +686,7 @@
           <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
         </svg></a>
       <a class="googleplay-badge" href="https://pixelryu.github.io/liquid-glow/#tester-heading" aria-label="Liquid Glow — Get it on Google Play (Android tester recruitment)">
-        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
+        <img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
       </a>
       <a class="roblox-badge" href="https://www.roblox.com/games/121416912707355/Liquid-Glow-Sort-Puzzle" target="_blank" rel="noopener" aria-label="Liquid Glow — Play now on Roblox">
         <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title>
@@ -1026,7 +710,7 @@
     </li>
     <li class="game-card">
       <div class="game-head">
-        <img class="game-icon" width="56" height="56" src="https://pixelryu.github.io/mole-whack/icon.webp?v=20260704170327" alt="Mole Whack — game icon" loading="lazy" decoding="async">
+        <img class="game-icon" width="56" height="56" src="../mole-whack/icon.webp?v=20260704170327" alt="Mole Whack — game icon" loading="lazy" decoding="async">
         <div class="game-title">
           <span class="game-name-row"><span class="game-no">0001</span><a href="https://pixelryu.github.io/mole-whack/fr/" data-i18n="mw_title">Mole Whack</a></span>
           <span class="genre-tag genre-action"><svg class="genre-ic" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 2v11h3v9l7-12h-4l4-8z"/></svg><span data-i18n="genre_action">Action</span></span>
@@ -1045,7 +729,7 @@
         </svg>
       </a>
       <a class="googleplay-badge" href="https://pixelryu.github.io/mole-whack/#tester-heading" aria-label="Mole Whack — Get it on Google Play (Android tester recruitment)">
-        <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
+        <img src="../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" width="478" height="142" loading="lazy" decoding="async">
       </a>
       <a class="roblox-badge" href="https://www.roblox.com/games/112807696439542/Mole-Whack" target="_blank" rel="noopener" aria-label="Mole Whack — Play now on Roblox"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title>
           <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
@@ -1066,14 +750,58 @@
       </div>
     </li>
   </ul>
-    </main>
-  <div id="list-loader" aria-hidden="true"><span class="pr-spinner" role="status" aria-label="Loading"></span></div>
+  <div id="list-loader" aria-hidden="true"><span class="pr-spinner"></span></div>
   <div id="scroll-sentinel" aria-hidden="true"></div>
+  <section class="pr-section pr-reveal">
+    <div class="pr-washi">
+      <div class="pr-stats">
+        <div class="pr-stat"><b>18</b><span data-i18n="stat_games">jeux</span></div>
+        <div class="pr-stat"><b>12</b><span data-i18n="stat_langs">langues</span></div>
+        <div class="pr-stat"><b>3</b><span data-i18n="stat_platforms">plateformes</span></div>
+      </div>
+    </div>
+    <div class="pr-teasers">
+      <div class="pr-teaser pr-teaser-about">
+        <img class="pr-mascot pr-mascot-sm" src="../icon.webp?v=20260704170327" alt="PixelRyu"
+             width="384" height="384" loading="lazy" decoding="async">
+        <h3 data-i18n="about_t_title">Un développeur. Dix-huit jeux.</h3>
+        <p data-i18n="about_t_body">PixelRyu, c'est une seule personne au Japon qui écrit le code, dessine les graphismes et publie chaque build. Chaque jeu est gratuit, apaisant et pensé pour être terminé en courtes sessions.</p>
+        <a class="pr-btn pr-btn-ghost" href="https://pixelryu.github.io/about/fr/" data-i18n="about_t_more">En savoir plus sur Ryu</a>
+      </div>
+      <div class="pr-teaser">
+        <h3 data-i18n="roblox_t_title">Aussi sur Roblox</h3>
+        <p data-i18n="roblox_t_body">Dix-huit de nos jeux sont jouables gratuitement sur Roblox, avec les mêmes casse-tête reconstruits pour la plateforme.</p>
+        <a class="pr-btn pr-btn-ghost" href="https://pixelryu.github.io/roblox/fr/" data-i18n="roblox_t_more">Jouer sur Roblox</a>
+      </div>
+      <div class="pr-teaser">
+        <h3 data-i18n="devlog_title">Le journal de développement</h3>
+        <p data-i18n="devlog_body">Des notes sincères sur la création et la sortie de petits jeux en solo — ce qui a marché, ce qui a cassé, et les chiffres derrière tout ça.</p>
+        <a class="pr-btn pr-btn-ghost" href="https://pixelryu.substack.com/" target="_blank" rel="noopener" data-pr-i18n-attr="href" data-pr-i18n="news_url" data-i18n="devlog_more">Lire le journal</a>
+      </div>
+    </div>
+  </section>
+  </main>
 
-  <div class="footer">© <span id="year"></span> PixelRyu</div>
+<!-- pr-shell:follow start -->
+  <h2 class="social-heading" data-pr-i18n="h_follow">Suivre</h2>
+  <div class="social">
+      <a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack" title="Substack"><svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a>
+      <a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note" title="note"><svg viewBox="129 129 234 234"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a>
+      <a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a>
+      <a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a>
+      <a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a>
+      <a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a>
+      <a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a>
+      <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads" title="Threads"><svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
+  </div>
+<!-- pr-shell:follow end -->
 </div>
 <script>
-  document.getElementById('year').textContent = new Date().getFullYear();
+  // 旧フッターの <span id="year"> は刷新で無くなった（年は共通フッターに静的に入る）。
+  // ここで null 参照すると、この直後の LANGUAGES / i18n / init() が丸ごと実行されず
+  // 言語切替が死ぬ。存在チェックを必ず通すこと。
+  var _yearEl = document.getElementById('year');
+  if (_yearEl) _yearEl.textContent = new Date().getFullYear();
 
   const LANGUAGES = [
     {code:'en', flag:'🇺🇸', name:'English'},
@@ -1092,6 +820,26 @@
 
   const i18n = {
     en: {
+      hero_title: "Small games, crafted in Japan.",
+      hero_sub: "Free puzzle and action games for iPhone, Android and Roblox — made solo in Japan, playable in 12 languages.",
+      cta_games: "Browse all games",
+      cta_about: "Meet the developer",
+      featured_label: "Latest release",
+      featured_tagline: "Arrange the branches. No two may cross.",
+      featured_avail: "Play now on Roblox. Android testers welcome on Google Play. Coming soon to the App Store.",
+      featured_more: "See the game",
+      about_t_title: "One developer. Eighteen games.",
+      about_t_body: "PixelRyu is one person in Japan writing the code, drawing the art and shipping every build. Every game is free, quiet and made to be finished in short sessions.",
+      about_t_more: "More about Ryu",
+      stat_games: "games",
+      stat_langs: "languages",
+      stat_platforms: "platforms",
+      devlog_title: "From the devlog",
+      devlog_body: "Honest notes on building and shipping small games solo — what worked, what broke, and the numbers behind it.",
+      devlog_more: "Read the devlog",
+      roblox_t_title: "Also on Roblox",
+      roblox_t_body: "Eighteen of our games are playable free on Roblox, with the same puzzles rebuilt for the platform.",
+      roblox_t_more: "Play on Roblox",
       kado_title: "KADŌ — Zen Flower Puzzle",
       kado_desc: "KADŌ is a quiet flower-arranging puzzle built around the kenzan — the spiked metal frog a Japanese arranger presses stems into. You never drag a branch by hand: you pick a branch from the cards at the bottom, turn a large angle dial to choose how it will lean (the dial snaps to a set of clean angles), then tap an open hole on the kenzan to seat it there. A finished arrangement has to obey two things at once: no two branch lines may cross, and each branch belongs to one of the three, the sansai — heaven stands nearly upright, human leans on the diagonal, and earth lies low. Every stage has a single correct arrangement, always reachable by reasoning rather than luck; a reference hint reveals one branch's angle, and a limited undo lets you take a move back and rethink. 200 hand-checked stages on a gentle curve, seasonal backdrops, and 12 languages. Now on Roblox; Android testers welcome on Google Play; coming soon to the App Store.",
       hk_title: "HANKO — Zen Seal Carving Logic Puzzle",
@@ -1141,6 +889,26 @@
       sumlings_desc: "A cozy number puzzle. Place number eggs into a tiny terrarium so each nest's total matches its target — hatch the Sumlings and fill your collection. Out now on the App Store. Android testers welcome."
     },
     ja: {
+      hero_title: "小さなゲームを、日本から。",
+      hero_sub: "iPhone・Android・Roblox 向けの無料パズル＆アクションゲーム — 日本でひとりで作り、12言語で遊べます。",
+      cta_games: "ゲーム一覧を見る",
+      cta_about: "開発者について",
+      featured_label: "最新作",
+      featured_tagline: "枝を活ける。線は交差させない。",
+      featured_avail: "Roblox で配信中。Android テスターは Google Play で募集中。App Store は近日配信。",
+      featured_more: "このゲームを見る",
+      about_t_title: "ひとりの開発者。18本のゲーム。",
+      about_t_body: "PixelRyu は、日本にいるひとりの人間です。コードを書き、絵を描き、ビルドを出すところまで、すべてひとりで。どのゲームも無料で、静かで、短い時間で遊びきれるように作っています。",
+      about_t_more: "Ryu について詳しく",
+      stat_games: "ゲーム",
+      stat_langs: "言語",
+      stat_platforms: "プラットフォーム",
+      devlog_title: "開発日誌から",
+      devlog_body: "小さなゲームをひとりで作り、世に出すまでの正直な記録 — うまくいったこと、壊れたこと、そして実際の数字。",
+      devlog_more: "開発日誌を読む",
+      roblox_t_title: "Roblox でも遊べます",
+      roblox_t_body: "18本のゲームが Roblox で無料で遊べます。同じパズルを、プラットフォームに合わせて作り直しました。",
+      roblox_t_more: "Roblox で遊ぶ",
       kado_title: "KADŌ 華道 — 禅の花パズル",
       kado_desc: "KADŌ（華道）は、剣山（けんざん）を使った静かな花のパズルです。剣山は、花を活ける人が枝や茎を挿し込む、針の並んだ金属の台。枝を手でつまんで動かすことはありません。下の花材カードから一本を選び、大きな角度ダイヤルを回して傾ける角を決め（ダイヤルは決まった角にカチッと収まります）、剣山の空いた穴をタップして挿します。仕上がった活けは、二つのきまりを同時に満たします。どの二本の枝の線も交差させないこと。そして各枝を三才（天はほぼ真上に立て、人はななめに構え、地は低く寝かせる）の役割どおりの向きに収めること。どの面にも正しい活けが一つだけあり、運ではなく筋道で必ずたどり着けます。行き詰まったら、手本ヒントが一本の枝の正しい角度を教え、回数の限られた「戻す」で一手戻して考え直せます。手で検算した200面、季節の背景、12言語を収録。Roblox で配信中。Android は Google Play でテスター募集中。App Store は近日公開。",
       hk_title: "HANKO — 印を彫る論理パズル",
@@ -1190,6 +958,26 @@
       sumlings_desc: "ほっこり数のパズル。数字のたまごを箱庭に置いて、各巣の合計をぴったり合わせるとサムリングが孵化。図鑑を集めよう。App Store にて配信中。Android テスター募集中。"
     },
     zh: {
+      hero_title: "小小的游戏，来自日本。",
+      hero_sub: "面向 iPhone、Android 和 Roblox 的免费益智与动作游戏——在日本独自制作，支持 12 种语言。",
+      cta_games: "浏览全部游戏",
+      cta_about: "认识开发者",
+      featured_label: "最新作品",
+      featured_tagline: "安放花枝。枝线不相交。",
+      featured_avail: "现已登陆 Roblox；Google Play 正在招募安卓测试员；App Store 即将推出。",
+      featured_more: "查看这款游戏",
+      about_t_title: "一个开发者，18 款游戏。",
+      about_t_body: "PixelRyu 是日本的一个人：代码由他写，美术由他画，每一个版本也由他发布。每款游戏都免费、安静，适合在零碎的时间里玩完。",
+      about_t_more: "了解更多关于 Ryu",
+      stat_games: "款游戏",
+      stat_langs: "种语言",
+      stat_platforms: "个平台",
+      devlog_title: "来自开发日志",
+      devlog_body: "一个人做游戏、发游戏的真实记录——什么奏效了，什么出了岔子，以及背后的数字。",
+      devlog_more: "阅读开发日志",
+      roblox_t_title: "Roblox 上也能玩",
+      roblox_t_body: "我们有 18 款游戏可以在 Roblox 上免费游玩，同样的谜题，为这个平台重新打造。",
+      roblox_t_more: "在 Roblox 上游玩",
       kado_title: "KADŌ — 禅意插花解谜",
       kado_desc: "KADŌ 是一款围绕剑山展开的静谧插花解谜游戏。剑山，是插花的人把花枝与花茎按进去、布满钢针的金属座台。你不会用手直接拖动花枝：从底部的花材卡里挑出一根，转动一个大大的角度转盘来决定它倾斜的角度（转盘会咔地卡进一组规整的角度上），再点一下剑山上空着的插孔，把它安放在那里。一幅完成的花艺要同时满足两条规则：任意两根花枝的枝线都不能相交；而每一根枝都归属于三才之一——天几乎笔直向上，人斜斜地探出，地低低地伏下。每一关都只有一种正确的花艺，而且总能靠推理、而不是运气抵达；卡住时，参考提示会揭示某一根枝的正确角度，有限次数的撤销让你退回一步、重新思考。200 个手工验算的关卡、随季节流转的背景，以及 12 种语言。现已在 Roblox 上线；Android 正在 Google Play 招募测试员；App Store 即将推出。",
       hk_title: "HANKO — 禅意篆刻逻辑谜题",
@@ -1239,6 +1027,26 @@
       sumlings_desc: "治愈系数字益智游戏。把数字蛋放进小箱庭，让每个巢的合计与目标一致——孵化 Sumling，集齐图鉴。App Store 现已上线。招募 Android 测试员。"
     },
     ko: {
+      hero_title: "작은 게임을, 일본에서.",
+      hero_sub: "iPhone, Android, Roblox를 위한 무료 퍼즐 & 액션 게임 — 일본에서 혼자 만들고, 12개 언어로 즐길 수 있습니다.",
+      cta_games: "게임 전체 보기",
+      cta_about: "개발자 소개",
+      featured_label: "최신작",
+      featured_tagline: "가지를 꽂는다. 두 선은 교차하지 않는다.",
+      featured_avail: "Roblox에서 출시 중. Google Play에서 안드로이드 테스터 모집 중. App Store에 곧 출시.",
+      featured_more: "게임 보러 가기",
+      about_t_title: "한 명의 개발자, 18개의 게임.",
+      about_t_body: "PixelRyu는 일본에 있는 한 사람입니다. 코드를 쓰고, 그림을 그리고, 빌드를 내보내는 일까지 모두 혼자 합니다. 모든 게임은 무료이고 조용하며, 짧은 시간에 끝낼 수 있도록 만들었습니다.",
+      about_t_more: "Ryu에 대해 더 보기",
+      stat_games: "게임",
+      stat_langs: "언어",
+      stat_platforms: "플랫폼",
+      devlog_title: "개발 일지에서",
+      devlog_body: "작은 게임을 혼자 만들고 내보내며 남긴 솔직한 기록 — 잘된 것, 무너진 것, 그리고 그 뒤의 숫자들.",
+      devlog_more: "개발 일지 읽기",
+      roblox_t_title: "Roblox에서도",
+      roblox_t_body: "18개의 게임을 Roblox에서 무료로 즐길 수 있습니다. 같은 퍼즐을 플랫폼에 맞게 다시 만들었습니다.",
+      roblox_t_more: "Roblox에서 플레이",
       kado_title: "KADŌ — 젠 꽃 퍼즐",
       kado_desc: "KADŌ는 겐잔을 중심으로 한 고요한 꽃 퍼즐입니다. 겐잔은 꽃을 다루는 사람이 가지나 줄기를 꽂아 세우는, 바늘이 촘촘히 박힌 금속 받침입니다. 가지를 손으로 집어 옮기는 일은 없습니다. 아래의 꽃재료 카드에서 한 가지를 고르고, 큰 각도 다이얼을 돌려 기울일 각도를 정한 뒤(다이얼은 정해진 각도에 딱 맞춰집니다), 겐잔의 빈 구멍을 탭해 꽂습니다. 완성된 꽃꽂이는 두 가지를 동시에 만족해야 합니다. 어떤 두 가지의 선도 교차해서는 안 되고, 각 가지는 삼재(三才) 가운데 자기 역할이 요구하는 방향에 놓여야 합니다. 천은 거의 곧게 세우고, 인은 비스듬히 두며, 지는 낮게 눕힙니다. 모든 스테이지에는 올바른 꽃꽂이가 단 하나뿐이며, 운이 아니라 논리로 반드시 도달할 수 있습니다. 막혔을 때는 참고 힌트가 한 가지의 올바른 각도를 알려 주고, 횟수가 제한된 '되돌리기'로 한 수 물러 다시 생각할 수 있습니다. 손으로 검산한 200개 스테이지, 계절 배경, 그리고 12개 언어. Roblox에서 플레이할 수 있습니다. Android는 Google Play에서 테스터를 모집 중입니다. App Store는 곧 출시됩니다.",
       hk_title: "HANKO — 고요한 도장 새김 논리 퍼즐",
@@ -1288,6 +1096,26 @@
       sumlings_desc: "힐링 숫자 퍼즐. 작은 정원에 숫자 알을 놓아 각 둥지의 합을 목표와 맞추고 Sumling을 부화시켜 도감을 채우세요. App Store에서 출시 중. Android 테스터 모집 중."
     },
     hi: {
+      hero_title: "छोटे गेम, जापान में बने।",
+      hero_sub: "iPhone, Android और Roblox के लिए मुफ़्त पज़ल और एक्शन गेम्स — जापान में अकेले बनाए गए, 12 भाषाओं में खेलने योग्य।",
+      cta_games: "सभी गेम्स देखें",
+      cta_about: "डेवलपर से मिलें",
+      featured_label: "नवीनतम रिलीज़",
+      featured_tagline: "शाखाएँ सजाएँ। कोई दो रेखाएँ न कटें।",
+      featured_avail: "Roblox पर अभी उपलब्ध। Google Play पर Android टेस्टर आमंत्रित हैं। App Store पर जल्द।",
+      featured_more: "गेम देखें",
+      about_t_title: "एक डेवलपर। 18 गेम्स।",
+      about_t_body: "PixelRyu जापान में बस एक व्यक्ति है — कोड वही लिखता है, आर्ट वही बनाता है और हर बिल्ड भी वही जारी करता है। हर गेम मुफ़्त है, शांत है और थोड़े-थोड़े समय में पूरा करने के लिए बना है।",
+      about_t_more: "Ryu के बारे में और जानें",
+      stat_games: "गेम्स",
+      stat_langs: "भाषाएँ",
+      stat_platforms: "प्लेटफ़ॉर्म",
+      devlog_title: "डेवलॉग से",
+      devlog_body: "अकेले छोटे गेम बनाने और रिलीज़ करने के ईमानदार नोट्स — क्या काम आया, क्या टूटा, और उसके पीछे के आँकड़े।",
+      devlog_more: "डेवलॉग पढ़ें",
+      roblox_t_title: "Roblox पर भी",
+      roblox_t_body: "हमारे 18 गेम Roblox पर मुफ़्त खेले जा सकते हैं — वही पहेलियाँ, इस प्लेटफ़ॉर्म के लिए दोबारा बनाई गईं।",
+      roblox_t_more: "Roblox पर खेलें",
       kado_title: "KADŌ — जेन फूल पहेली",
       kado_desc: "KADŌ केंज़न पर आधारित एक शांत फूल सजाने की पहेली है। केंज़न वह नुकीली धातु की चौकी है जिसमें एक जापानी कलाकार तनों को दबाकर लगाता है। आप कभी किसी शाखा को हाथ से नहीं खींचते: नीचे दिए कार्डों में से एक शाखा चुनते हैं, एक बड़े कोण-डायल को घुमाकर तय करते हैं कि वह किस कोण पर झुकेगी (डायल कुछ साफ-सुथरे कोणों पर टिक जाता है), फिर केंज़न पर एक खाली छेद को दबाकर उसे वहाँ लगाते हैं। एक पूरी रचना को एक साथ दो बातें माननी होती हैं: किसी दो शाखाओं की रेखाएँ आपस में न कटें, और हर शाखा तीन (सांसाई) में से अपनी भूमिका वाले क्षेत्र की ओर झुके — आकाश लगभग सीधा खड़ा रहता है, मानव तिरछा झुकता है, और धरती नीची लेटती है। हर चरण की एक ही सही रचना होती है, और उस तक हमेशा किस्मत नहीं बल्कि तर्क से पहुँचा जा सकता है; अटक जाने पर एक संदर्भ संकेत किसी एक शाखा का सही कोण बता देता है, और एक सीमित 'वापस लें' आपको एक चाल पीछे लेकर फिर से सोचने देता है। हाथ से जाँचे गए 200 चरण, मौसमी पृष्ठभूमियाँ, और 12 भाषाएँ। अब Roblox पर उपलब्ध; Android के लिए Google Play पर टेस्टर आमंत्रित; App Store पर जल्द आ रहा है।",
       hk_title: "HANKO — ज़ेन मुहर-तराशी तर्क पहेली",
@@ -1337,6 +1165,26 @@
       sumlings_desc: "एक हल्की-फुल्की संख्या पहेली। छोटे टेरारियम में अंक के अंडे रखें ताकि हर घोंसले का कुल लक्ष्य से मिले — Sumling को फूटें और संग्रह भरें। App Store पर अब उपलब्ध। Android परीक्षक आमंत्रित।"
     },
     id: {
+      hero_title: "Game kecil, dibuat di Jepang.",
+      hero_sub: "Game puzzle dan aksi gratis untuk iPhone, Android, dan Roblox — dibuat sendirian di Jepang, bisa dimainkan dalam 12 bahasa.",
+      cta_games: "Lihat semua game",
+      cta_about: "Kenali pengembangnya",
+      featured_label: "Rilis terbaru",
+      featured_tagline: "Tancapkan rantingnya. Tak ada garis yang bersilangan.",
+      featured_avail: "Sudah hadir di Roblox. Penguji Android dipersilakan di Google Play. Segera hadir di App Store.",
+      featured_more: "Lihat game ini",
+      about_t_title: "Satu pengembang. Delapan belas game.",
+      about_t_body: "PixelRyu adalah satu orang di Jepang yang menulis kodenya, menggambar seninya, dan merilis setiap build-nya sendiri. Semua game gratis, tenang, dan dibuat untuk diselesaikan dalam sesi singkat.",
+      about_t_more: "Selengkapnya tentang Ryu",
+      stat_games: "game",
+      stat_langs: "bahasa",
+      stat_platforms: "platform",
+      devlog_title: "Dari devlog",
+      devlog_body: "Catatan jujur tentang membuat dan merilis game kecil seorang diri — apa yang berhasil, apa yang gagal, dan angka-angka di baliknya.",
+      devlog_more: "Baca devlog",
+      roblox_t_title: "Juga di Roblox",
+      roblox_t_body: "Delapan belas game kami bisa dimainkan gratis di Roblox, dengan puzzle yang sama dibangun ulang untuk platform tersebut.",
+      roblox_t_more: "Main di Roblox",
       kado_title: "KADŌ — Puzzle Bunga Zen",
       kado_desc: "KADŌ adalah puzzle merangkai bunga yang tenang, dibangun di sekitar kenzan: dudukan logam berjarum tempat perangkai bunga Jepang menancapkan tangkai. Anda tidak pernah menyeret ranting dengan tangan: Anda memilih satu ranting dari kartu di bagian bawah, memutar tombol sudut yang besar untuk menentukan kemiringannya (tombol mengunci pada sekumpulan sudut yang rapi), lalu mengetuk lubang kosong pada kenzan untuk menancapkannya di sana. Rangkaian yang selesai harus memenuhi dua hal sekaligus: tidak boleh ada dua garis ranting yang bersilangan, dan setiap ranting harus mengarah ke zona yang dituntut perannya di antara tiga peran, sansai — langit berdiri hampir tegak, manusia miring menyerong, dan bumi berbaring rendah. Setiap tahap memiliki satu rangkaian yang benar, dan selalu bisa dicapai lewat penalaran, bukan keberuntungan; petunjuk acuan menampilkan sudut yang benar untuk satu ranting, dan fitur urungkan yang terbatas memungkinkan Anda menarik kembali satu langkah lalu berpikir ulang. 200 tahap yang diperiksa dengan tangan, latar musiman, dan 12 bahasa. Sudah hadir di Roblox; tester Android dibuka di Google Play; segera di App Store.",
       hk_title: "HANKO — Teka-teki Logika Ukir Stempel Zen",
@@ -1386,6 +1234,26 @@
       sumlings_desc: "Teka-teki angka yang nyaman. Letakkan telur angka di terarium kecil sehingga total tiap sarang sesuai targetnya — tetaskan Sumling dan lengkapi koleksi Anda. Sudah tersedia di App Store. Tester Android dipersilakan."
     },
     de: {
+      hero_title: "Kleine Spiele, gemacht in Japan.",
+      hero_sub: "Kostenlose Puzzle- und Actionspiele für iPhone, Android und Roblox — allein in Japan entwickelt, spielbar in 12 Sprachen.",
+      cta_games: "Alle Spiele ansehen",
+      cta_about: "Den Entwickler kennenlernen",
+      featured_label: "Neuester Titel",
+      featured_tagline: "Setze die Zweige. Keine zwei Linien kreuzen sich.",
+      featured_avail: "Jetzt auf Roblox spielbar. Android-Tester willkommen bei Google Play. Bald im App Store.",
+      featured_more: "Zum Spiel",
+      about_t_title: "Ein Entwickler. Achtzehn Spiele.",
+      about_t_body: "PixelRyu ist eine Person in Japan, die den Code schreibt, die Grafiken zeichnet und jeden Build selbst veröffentlicht. Jedes Spiel ist kostenlos, ruhig und für kurze Sitzungen gemacht.",
+      about_t_more: "Mehr über Ryu",
+      stat_games: "Spiele",
+      stat_langs: "Sprachen",
+      stat_platforms: "Plattformen",
+      devlog_title: "Aus dem Devlog",
+      devlog_body: "Ehrliche Notizen über das Entwickeln und Veröffentlichen kleiner Spiele im Alleingang — was funktioniert hat, was kaputtging und die Zahlen dahinter.",
+      devlog_more: "Devlog lesen",
+      roblox_t_title: "Auch auf Roblox",
+      roblox_t_body: "Achtzehn unserer Spiele sind auf Roblox kostenlos spielbar — dieselben Rätsel, neu für die Plattform gebaut.",
+      roblox_t_more: "Auf Roblox spielen",
       kado_title: "KADŌ — Zen-Blumenrätsel",
       kado_desc: "KADŌ ist ein ruhiges Blumenrätsel rund um den Kenzan: den metallenen Steckigel mit spitzen Nadeln, in den man beim japanischen Blumenstecken die Stiele drückt. Du ziehst nie einen Zweig mit der Hand: Du wählst einen Zweig aus den Karten unten, drehst ein großes Winkelrad, um den Neigungswinkel zu bestimmen (das Rad rastet in feste, saubere Winkel ein), und tippst dann ein freies Loch im Kenzan an, um ihn dort zu setzen. Ein fertiges Gesteck muss zwei Dinge zugleich erfüllen: Keine zwei Zweiglinien dürfen sich kreuzen, und jeder Zweig muss in die Zone weisen, die seine Rolle unter den Drei, dem Sansai, verlangt — Himmel steht fast senkrecht, Mensch neigt sich schräg, und Erde liegt tief. Jedes Level hat genau ein richtiges Gesteck, und du erreichst es immer durch Nachdenken statt durch Glück; ein Vorlagen-Hinweis zeigt den richtigen Winkel für einen Zweig, und ein begrenztes Rückgängig lässt dich einen Zug zurücknehmen und neu überlegen. 200 von Hand geprüfte Level auf einer sanften Kurve, jahreszeitliche Hintergründe und 12 Sprachen. Jetzt auf Roblox; Android-Tester willkommen bei Google Play; bald im App Store.",
       hk_title: "HANKO — Zen-Logikrätsel: Siegel schnitzen",
@@ -1435,6 +1303,26 @@
       sumlings_desc: "Ein gemütliches Zahlenrätsel. Platziere Zahleneier in einem kleinen Terrarium, sodass die Summe jedes Nests dem Ziel entspricht — schlüpfe die Sumlings und fülle deine Sammlung. Jetzt im App Store. Android-Tester gesucht."
     },
     fr: {
+      hero_title: "De petits jeux, façonnés au Japon.",
+      hero_sub: "Des jeux de réflexion et d'action gratuits pour iPhone, Android et Roblox — créés en solo au Japon, jouables en 12 langues.",
+      cta_games: "Voir tous les jeux",
+      cta_about: "Rencontrer le développeur",
+      featured_label: "Dernière sortie",
+      featured_tagline: "Piquez les branches. Aucune ligne ne se croise.",
+      featured_avail: "Disponible dès maintenant sur Roblox. Testeurs Android bienvenus sur Google Play. Bientôt sur l'App Store.",
+      featured_more: "Voir le jeu",
+      about_t_title: "Un développeur. Dix-huit jeux.",
+      about_t_body: "PixelRyu, c'est une seule personne au Japon qui écrit le code, dessine les graphismes et publie chaque build. Chaque jeu est gratuit, apaisant et pensé pour être terminé en courtes sessions.",
+      about_t_more: "En savoir plus sur Ryu",
+      stat_games: "jeux",
+      stat_langs: "langues",
+      stat_platforms: "plateformes",
+      devlog_title: "Le journal de développement",
+      devlog_body: "Des notes sincères sur la création et la sortie de petits jeux en solo — ce qui a marché, ce qui a cassé, et les chiffres derrière tout ça.",
+      devlog_more: "Lire le journal",
+      roblox_t_title: "Aussi sur Roblox",
+      roblox_t_body: "Dix-huit de nos jeux sont jouables gratuitement sur Roblox, avec les mêmes casse-tête reconstruits pour la plateforme.",
+      roblox_t_more: "Jouer sur Roblox",
       kado_title: "KADŌ — Puzzle floral zen",
       kado_desc: "KADŌ est un paisible puzzle de composition florale bâti autour du kenzan, le support métallique hérissé de pointes dans lequel un fleuriste japonais enfonce ses tiges. Vous ne déplacez jamais une branche à la main : vous choisissez une branche parmi les cartes du bas, tournez un grand cadran d'angle pour choisir son inclinaison (le cadran se cale sur une série d'angles nets), puis touchez un trou libre du kenzan pour l'y piquer. Une composition achevée doit respecter deux choses à la fois : aucune ligne de branche ne peut en croiser une autre, et chaque branche doit pointer vers la zone que réclame son rôle parmi les trois, le sansai — le ciel se tient presque droit, l'homme penche en diagonale, et la terre repose bas. Chaque étape possède une seule composition correcte, toujours accessible par le raisonnement plutôt que par la chance ; un indice de référence révèle l'angle correct d'une branche, et un retour en arrière limité vous laisse annuler un coup pour repenser. 200 étapes vérifiées à la main sur une courbe douce, des décors saisonniers et 12 langues. Disponible sur Roblox ; testeurs Android bienvenus sur Google Play ; bientôt sur l'App Store.",
       hk_title: "HANKO — Puzzle de gravure de sceau zen",
@@ -1484,6 +1372,26 @@
       sumlings_desc: "Un puzzle de chiffres cosy. Place des œufs numérotés dans un petit terrarium pour que la somme de chaque nid corresponde à sa cible — fais éclore les Sumlings et remplis ta collection. Disponible sur l'App Store. Testeurs Android bienvenus."
     },
     it: {
+      hero_title: "Piccoli giochi, creati in Giappone.",
+      hero_sub: "Giochi puzzle e d'azione gratuiti per iPhone, Android e Roblox — realizzati da solo in Giappone, giocabili in 12 lingue.",
+      cta_games: "Sfoglia tutti i giochi",
+      cta_about: "Conosci lo sviluppatore",
+      featured_label: "Ultima uscita",
+      featured_tagline: "Fissa i rami. Nessuna linea si incrocia.",
+      featured_avail: "Ora disponibile su Roblox. Tester Android benvenuti su Google Play. In arrivo su App Store.",
+      featured_more: "Guarda il gioco",
+      about_t_title: "Uno sviluppatore. Diciotto giochi.",
+      about_t_body: "PixelRyu è una sola persona in Giappone che scrive il codice, disegna la grafica e pubblica ogni build. Ogni gioco è gratuito, tranquillo e pensato per essere finito in sessioni brevi.",
+      about_t_more: "Scopri di più su Ryu",
+      stat_games: "giochi",
+      stat_langs: "lingue",
+      stat_platforms: "piattaforme",
+      devlog_title: "Dal devlog",
+      devlog_body: "Appunti sinceri su come si creano e si pubblicano piccoli giochi da soli — cosa ha funzionato, cosa si è rotto e i numeri dietro tutto questo.",
+      devlog_more: "Leggi il devlog",
+      roblox_t_title: "Anche su Roblox",
+      roblox_t_body: "Diciotto dei nostri giochi sono giocabili gratuitamente su Roblox, con gli stessi rompicapi ricostruiti per la piattaforma.",
+      roblox_t_more: "Gioca su Roblox",
       kado_title: "KADŌ — Puzzle Floreale Zen",
       kado_desc: "KADŌ è un tranquillo puzzle di composizione floreale costruito attorno al kenzan: il supporto metallico irto di punte in cui chi compone i fiori in Giappone infila steli e rami. Non trascini mai un ramo con le dita: scegli un ramo tra le carte in basso, ruoti un grande quadrante per decidere l'angolo di inclinazione (il quadrante scatta su una serie di angoli netti), poi tocchi un foro libero sul kenzan per fissarlo. Una composizione finita deve rispettare due cose insieme: le linee di due rami non possono mai incrociarsi, e ogni ramo deve puntare verso la zona che il suo ruolo richiede tra i tre, il sansai — il cielo si erge quasi verticale, l'uomo si inclina in diagonale e la terra si distende in basso. Ogni livello ha una sola composizione corretta, e la si raggiunge sempre ragionando invece che con la fortuna; un suggerimento di riferimento rivela l'angolo giusto per un ramo, e un numero limitato di annullamenti ti fa tornare indietro di una mossa per ripensarci. 200 livelli verificati a mano su una curva dolce, sfondi stagionali e 12 lingue. Ora su Roblox; tester Android benvenuti su Google Play; presto su App Store.",
       hk_title: "HANKO — Puzzle d'intaglio zen",
@@ -1533,6 +1441,26 @@
       sumlings_desc: "Un puzzle di numeri rilassante. Posiziona uova numerate in un piccolo terrario in modo che la somma di ogni nido corrisponda al suo obiettivo — schiudi i Sumling e completa la collezione. Disponibile su App Store. Cercasi tester Android."
     },
     es: {
+      hero_title: "Juegos pequeños, hechos en Japón.",
+      hero_sub: "Juegos de puzzle y acción gratuitos para iPhone, Android y Roblox — creados en solitario en Japón y jugables en 12 idiomas.",
+      cta_games: "Ver todos los juegos",
+      cta_about: "Conocer al desarrollador",
+      featured_label: "Último lanzamiento",
+      featured_tagline: "Coloca las ramas. Ninguna línea se cruza.",
+      featured_avail: "Ya disponible en Roblox. Se buscan probadores de Android en Google Play. Próximamente en la App Store.",
+      featured_more: "Ver el juego",
+      about_t_title: "Un desarrollador. Dieciocho juegos.",
+      about_t_body: "PixelRyu es una sola persona en Japón que escribe el código, dibuja el arte y publica cada versión. Todos los juegos son gratuitos, serenos y están pensados para terminarse en sesiones cortas.",
+      about_t_more: "Más sobre Ryu",
+      stat_games: "juegos",
+      stat_langs: "idiomas",
+      stat_platforms: "plataformas",
+      devlog_title: "Del diario de desarrollo",
+      devlog_body: "Notas honestas sobre crear y publicar juegos pequeños en solitario — qué funcionó, qué se rompió y los números detrás de todo ello.",
+      devlog_more: "Leer el diario",
+      roblox_t_title: "También en Roblox",
+      roblox_t_body: "Dieciocho de nuestros juegos se pueden jugar gratis en Roblox, con los mismos puzles reconstruidos para la plataforma.",
+      roblox_t_more: "Jugar en Roblox",
       kado_title: "KADŌ — Puzle de flores zen",
       kado_desc: "KADŌ es un puzle floral sereno construido en torno al kenzan: la base metálica erizada de púas donde quien compone flores en Japón clava los tallos. Nunca arrastras una rama con la mano: eliges una rama entre las cartas de abajo, giras un gran dial de ángulo para decidir cuánto se inclinará (el dial encaja en una serie de ángulos limpios) y luego tocas un agujero libre del kenzan para clavarla ahí. Una composición terminada debe cumplir dos cosas a la vez: las líneas de dos ramas no pueden cruzarse, y cada rama debe apuntar hacia la zona que exige su papel entre los tres, el sansai — el cielo se alza casi vertical, el hombre se inclina en diagonal y la tierra queda baja. Cada fase tiene una única composición correcta, y siempre se llega a ella razonando, no por suerte; una pista de referencia revela el ángulo correcto de una rama, y un deshacer limitado te permite retroceder un movimiento y replantearte. 200 fases comprobadas a mano en una curva suave, fondos de temporada y 12 idiomas. Ya disponible en Roblox; se buscan testers de Android en Google Play; próximamente en App Store.",
       hk_title: "HANKO — Puzle de tallado de sellos zen",
@@ -1582,6 +1510,26 @@
       sumlings_desc: "Un puzle de números relajante. Coloca huevos numerados en un pequeño terrario para que la suma de cada nido coincida con su meta — eclosiona los Sumlings y completa tu colección. Ya disponible en App Store. Se buscan testers de Android."
     },
     pt: {
+      hero_title: "Jogos pequenos, feitos no Japão.",
+      hero_sub: "Jogos de puzzle e ação gratuitos para iPhone, Android e Roblox — feitos sozinho no Japão e jogáveis em 12 idiomas.",
+      cta_games: "Ver todos os jogos",
+      cta_about: "Conhecer o desenvolvedor",
+      featured_label: "Lançamento mais recente",
+      featured_tagline: "Arranje os galhos. Nenhuma linha se cruza.",
+      featured_avail: "Já disponível no Roblox. Testadores Android bem-vindos no Google Play. Em breve na App Store.",
+      featured_more: "Ver o jogo",
+      about_t_title: "Um desenvolvedor. Dezoito jogos.",
+      about_t_body: "A PixelRyu é uma única pessoa no Japão que escreve o código, desenha a arte e publica cada build. Todos os jogos são gratuitos, tranquilos e feitos para serem concluídos em sessões curtas.",
+      about_t_more: "Saiba mais sobre o Ryu",
+      stat_games: "jogos",
+      stat_langs: "idiomas",
+      stat_platforms: "plataformas",
+      devlog_title: "Do diário de desenvolvimento",
+      devlog_body: "Anotações honestas sobre criar e lançar jogos pequenos sozinho — o que deu certo, o que quebrou e os números por trás disso.",
+      devlog_more: "Ler o diário",
+      roblox_t_title: "Também no Roblox",
+      roblox_t_body: "Dezoito dos nossos jogos podem ser jogados de graça no Roblox, com os mesmos quebra-cabeças refeitos para a plataforma.",
+      roblox_t_more: "Jogar no Roblox",
       kado_title: "KADŌ — Puzzle de Flores Zen",
       kado_desc: "KADŌ é um quebra-cabeça floral tranquilo construído em torno do kenzan: o suporte metálico com espinhos onde quem faz arranjos japoneses fixa os caules. Você nunca arrasta um galho com a mão: escolhe um galho entre as cartas na parte de baixo, gira um grande mostrador de ângulo para definir a inclinação (o mostrador trava em um conjunto de ângulos exatos) e toca em um furo aberto do kenzan para fixá-lo ali. Um arranjo pronto precisa obedecer a duas coisas ao mesmo tempo: nenhuma linha de galho pode cruzar outra, e cada galho precisa apontar para a zona que seu papel pede entre os três, o sansai — o céu fica quase na vertical, o homem se inclina na diagonal e a terra fica bem baixa. Cada fase tem um único arranjo correto, e sempre dá para chegar nele pelo raciocínio, não pela sorte; uma dica de referência revela o ângulo correto de um galho, e um desfazer limitado deixa você voltar uma jogada e repensar. 200 fases verificadas à mão em uma curva suave, cenários das estações e 12 idiomas. Já disponível no Roblox; testadores Android bem-vindos no Google Play; em breve na App Store.",
       hk_title: "HANKO — Talhe de carimbo zen",
@@ -1631,6 +1579,26 @@
       sumlings_desc: "Um quebra-cabeça de números aconchegante. Coloque ovos numerados em um pequeno terrário para que a soma de cada ninho corresponda ao alvo — choque os Sumlings e complete sua coleção. Já disponível na App Store. Testadores Android bem-vindos."
     },
     ru: {
+      hero_title: "Маленькие игры, сделанные в Японии.",
+      hero_sub: "Бесплатные головоломки и экшен-игры для iPhone, Android и Roblox — созданы в одиночку в Японии, доступны на 12 языках.",
+      cta_games: "Смотреть все игры",
+      cta_about: "Познакомиться с разработчиком",
+      featured_label: "Последний релиз",
+      featured_tagline: "Расставьте ветви. Линии не пересекаются.",
+      featured_avail: "Уже доступно на Roblox. Приглашаем Android-тестеров в Google Play. Скоро в App Store.",
+      featured_more: "Посмотреть игру",
+      about_t_title: "Один разработчик. Восемнадцать игр.",
+      about_t_body: "PixelRyu — это один человек в Японии, который пишет код, рисует графику и сам выпускает каждую сборку. Все игры бесплатны, спокойны и сделаны так, чтобы их можно было пройти за короткие сессии.",
+      about_t_more: "Подробнее о Ryu",
+      stat_games: "игр",
+      stat_langs: "языков",
+      stat_platforms: "платформы",
+      devlog_title: "Из дневника разработки",
+      devlog_body: "Честные заметки о том, как в одиночку делать и выпускать маленькие игры — что сработало, что сломалось и какие за этим цифры.",
+      devlog_more: "Читать дневник",
+      roblox_t_title: "Также в Roblox",
+      roblox_t_body: "Восемнадцать наших игр доступны бесплатно в Roblox — те же головоломки, пересобранные под эту платформу.",
+      roblox_t_more: "Играть в Roblox",
       kado_title: "KADŌ — дзен-головоломка о цветах",
       kado_desc: "KADŌ — тихая головоломка о цветах, построенная вокруг кэндзана: металлической подставки с частыми иглами, в которую японский мастер втыкает стебли и ветви. Вы не двигаете ветвь рукой: вы выбираете ветвь из карточек внизу, поворачиваете большой диск угла, чтобы задать наклон (диск с щелчком встаёт на набор ровных углов), а затем касаетесь свободного отверстия на кэндзане, чтобы вставить её туда. Готовая композиция должна выполнять два условия сразу: линии двух ветвей не должны пересекаться, и каждая ветвь должна указывать в зону, которую требует её роль среди трёх начал, сансай — небо стоит почти прямо, человек склоняется по диагонали, а земля лежит низко. У каждого уровня одна верная композиция, и к ней всегда можно прийти рассуждением, а не удачей; справочная подсказка открывает верный угол для одной ветви, а ограниченная отмена позволяет вернуть ход и подумать заново. 200 проверенных вручную уровней с мягко растущей сложностью, сезонные фоны и 12 языков. Уже в Roblox; идёт набор тестировщиков Android в Google Play; скоро в App Store.",
       hk_title: "HANKO — дзен-головоломка о резьбе печати",
@@ -1754,6 +1722,7 @@
     });
   })();
 </script>
+<!-- pr-feed:script start -->
 <script>
   // Card feed controller: genre filter + paged reveal (show the first 5, then infinite
   // scroll the rest with a centered spinner) + a centered spinner during language switch.
@@ -1791,7 +1760,9 @@
     }
 
     // Feed: show the first INITIAL cards, reveal BATCH more per infinite-scroll step.
-    var INITIAL = 5, BATCH = 5, LOAD_MS = 600;
+    var INITIAL = 9, BATCH = 6, LOAD_MS = 200;   // 作品が増えても初期表示は9件のまま
+    // ※ カードは JS で display:none にするだけで HTML には全件入っている。
+    //    JS を実行しないクローラ（AI 系）には常に全作品が見える＝SEO を落とさない。
     var filter = 'all', revealed = INITIAL, loading = false;
 
     function matching() {
@@ -1814,6 +1785,11 @@
         applyView();
         if (loader) loader.classList.remove('is-loading');
         loading = false;
+        // まだセンチネルが視野に入ったままなら続けて読む。IntersectionObserver は
+        // 「交差し続けている」間は再通知しないので、これが無いと画面が大きいとき
+        // （1画面に次のバッチが収まってしまうとき）に読み込みが止まってしまう。
+        if (sentinel && hasMore() &&
+            sentinel.getBoundingClientRect().top < window.innerHeight + 260) loadMore();
       }, LOAD_MS);
     }
 
@@ -1859,7 +1835,51 @@
     }
   })();
 </script>
+<!-- pr-feed:script end -->
 <div id="lang-overlay" aria-hidden="true"><span class="pr-spinner" role="status" aria-label="Loading"></span></div>
 <script src="https://pixelryu.github.io/appstore-localize.js?v=20260620070331" defer></script>
+<!-- pr-shell:footer start -->
+<footer class="pr-footer">
+  <div class="pr-footer-in">
+    <div>
+      <a class="pr-brand" href="https://pixelryu.github.io/fr/"><img class="pr-brandmark" src="../icon.webp?v=20260704170327" alt="" width="30" height="30" decoding="async">PixelRyu</a>
+      <p style="font-size:14px;margin:14px 0 16px;max-width:30ch" data-pr-i18n="blurb">De petits jeux, façonnés au Japon. Gratuits sur iPhone, Android et Roblox — en 12 langues.</p>
+      <div class="pr-news">
+        <p data-pr-i18n="news_p">Recevez les nouveautés par e-mail. Elles vous parviennent quoi qu'il arrive aux plateformes.</p>
+        <a class="pr-btn pr-btn-primary" href="https://pixelryu.substack.com/" target="_blank" rel="noopener" style="font-size:14px;padding:9px 16px" data-pr-i18n-attr="href" data-pr-i18n="news_url"><span data-pr-i18n="news_cta">Lire le journal</span></a>
+      </div>
+    </div>
+    <div>
+      <h4 data-pr-i18n="h_explore">Explorer</h4>
+      <ul>
+        <li><a href="https://pixelryu.github.io/games/fr/" data-pr-i18n="e_games">Tous les jeux</a></li>
+        <li><a href="https://pixelryu.github.io/roblox/fr/" data-pr-i18n="e_roblox">Jouer sur Roblox</a></li>
+        <li><a href="https://pixelryu.github.io/about/fr/" data-pr-i18n="e_about">À propos de Ryu</a></li>
+        <li><a href="https://pixelryu.github.io/press/fr/" data-pr-i18n="e_press">Kit presse</a></li>
+        <li><a href="https://pixelryu.github.io/support/fr/" data-pr-i18n="e_support">Assistance</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-pr-i18n="h_games">Jeux</h4>
+      <ul style="columns:2;column-gap:18px"><li><a href="https://pixelryu.github.io/kado/fr/">KADŌ</a></li><li><a href="https://pixelryu.github.io/hanko/fr/">HANKO</a></li><li><a href="https://pixelryu.github.io/hoshikari/fr/">Hoshikari</a></li><li><a href="https://pixelryu.github.io/okaeri/fr/">Okaeri</a></li><li><a href="https://pixelryu.github.io/shizuku/fr/">Shizuku</a></li><li><a href="https://pixelryu.github.io/senko/fr/">SENKO</a></li><li><a href="https://pixelryu.github.io/wagashi/fr/">WAGASHI</a></li><li><a href="https://pixelryu.github.io/counterparts/fr/">CounterParts</a></li><li><a href="https://pixelryu.github.io/tatami/fr/">TATAMI</a></li><li><a href="https://pixelryu.github.io/temari/fr/">TEMARI</a></li><li><a href="https://pixelryu.github.io/bounce-cat/fr/">Bounce Cat</a></li><li><a href="https://pixelryu.github.io/hayate/fr/">HAYATE</a></li><li><a href="https://pixelryu.github.io/sumlings/fr/">Sumlings</a></li><li><a href="https://pixelryu.github.io/parcel-pals/fr/">Parcel Pals</a></li><li><a href="https://pixelryu.github.io/issen/fr/">ISSEN</a></li><li><a href="https://pixelryu.github.io/hotaru/fr/">HOTARU</a></li><li><a href="https://pixelryu.github.io/liquid-glow-cosmic/fr/">Liquid Glow</a></li><li><a href="https://pixelryu.github.io/mole-whack/fr/">Mole Whack</a></li></ul>
+    </div>
+    <div>
+      <h4 id="pr-langs" data-pr-i18n="h_langs">Langues</h4>
+      <div class="pr-footer-langs"><a href="https://pixelryu.github.io/" hreflang="en" lang="en" data-pr-lang="en">English</a><a href="https://pixelryu.github.io/ja/" hreflang="ja" lang="ja" data-pr-lang="ja">日本語</a><a href="https://pixelryu.github.io/zh/" hreflang="zh" lang="zh" data-pr-lang="zh">中文</a><a href="https://pixelryu.github.io/ko/" hreflang="ko" lang="ko" data-pr-lang="ko">한국어</a><a href="https://pixelryu.github.io/hi/" hreflang="hi" lang="hi" data-pr-lang="hi">हिन्दी</a><a href="https://pixelryu.github.io/id/" hreflang="id" lang="id" data-pr-lang="id">Indonesia</a><a href="https://pixelryu.github.io/de/" hreflang="de" lang="de" data-pr-lang="de">Deutsch</a><a href="https://pixelryu.github.io/fr/" hreflang="fr" lang="fr" data-pr-lang="fr">Français</a><a href="https://pixelryu.github.io/it/" hreflang="it" lang="it" data-pr-lang="it">Italiano</a><a href="https://pixelryu.github.io/es/" hreflang="es" lang="es" data-pr-lang="es">Español</a><a href="https://pixelryu.github.io/pt/" hreflang="pt" lang="pt" data-pr-lang="pt">Português</a><a href="https://pixelryu.github.io/ru/" hreflang="ru" lang="ru" data-pr-lang="ru">Русский</a></div>
+      <h4 style="margin-top:20px" data-pr-i18n="h_follow">Suivre</h4>
+      <div class="social pr-footer-social"><a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack" title="Substack"><svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a><a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note" title="note"><svg viewBox="129 129 234 234"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a><a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a><a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a><a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads" title="Threads"><svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a></div>
+    </div>
+  </div>
+  <div class="pr-footer-bottom">
+    <span>© 2026 PixelRyu</span>
+    <img class="pr-brandmark" src="../icon.webp?v=20260704170327" alt="" width="22" height="22" decoding="async">
+    <span><a href="https://pixelryu.github.io/support/fr/" data-pr-i18n="contact">Contact</a> · <a href="mailto:idev10752@gmail.com">idev10752@gmail.com</a></span>
+  </div>
+</footer>
+<!-- pr-shell:footer end -->
+<!-- pr-shell:js start -->
+<script src="../assets/shell-i18n.js?v=20260814085000" defer></script>
+<script src="../assets/site.js?v=20260814085000" defer></script>
+<!-- pr-shell:js end -->
 </body>
 </html>

@@ -20,60 +20,9 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n="title">SENKO — Aconchegante jogo de puzzle de calma com fumaça de incenso</title>
-<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="SENKO — puzzle de fumaça de incenso da PixelRyu. Acalme a fumaça escura até ficar branca e preencha motivos japoneses em 120 fases. Na App Store e Roblox."><style>
-  body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif; background: radial-gradient(ellipse at top, #faf3e0 0%, #f3ebd6 52%, #e6d8b8 100%); color: #3a2e1a; margin: 0; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
-  .container { max-width: 580px; width: 100%; padding: 80px 32px; text-align: center; position: relative; }
-  .lang-switch { position: absolute; top: 24px; right: 24px; }
-  .lang-switch select { background: rgba(255,255,255,0.50); color: #7a5f1e; border: 1px solid rgba(168,128,31,0.40); border-radius: 4px; padding: 5px 10px; font-size: 13px; font-family: inherit; cursor: pointer; }
-  .lang-switch select:hover { background: rgba(255,255,255,0.70); border-color: #cf8a3a; }
-  .lang-switch select option { background: #f3ebd6; color: #3a2e1a; }
-  .brand-icon { width: 120px; height: 120px; border-radius: 28px; display: block; margin: 0 auto 20px; box-shadow: 0 8px 28px rgba(120,92,30,0.24), 0 0 0 1px rgba(168,128,31,0.22); }
-  .tagline { font-size: 14px; color: #8a7a52; margin-bottom: 8px; text-transform: uppercase; letter-spacing: 3px; }
-  h1 { font-size: 46px; margin: 0 0 6px; color: #3a2e1a; font-weight: 800; letter-spacing: 4px; }
-  h1 .accent { color: #cf8a3a; }
-  .subtitle { font-size: 14px; color: #8a7a52; margin-bottom: 22px; text-transform: uppercase; letter-spacing: 2px; }
-  .key-hero { display:block; width:100%; max-width:520px; margin:6px auto 22px; border-radius:18px; box-shadow:0 10px 34px rgba(120,92,30,0.28), 0 0 0 1px rgba(168,128,31,0.20); }
-  .promo-video { display:block; width:100%; max-width:520px; aspect-ratio:16/9; margin:6px auto 22px; border-radius:18px; background:#000; box-shadow:0 10px 34px rgba(120,92,30,0.28), 0 0 0 1px rgba(168,128,31,0.20); }
-  .hero-badges { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; margin: 18px 0 6px; }
-  .hero-badges svg, .hero-badges img { display: block; }
-  .hero-badges .soon-cell { position: relative; display: inline-block; line-height: 0; }
-  .hero-badges .soon-cell svg, .hero-badges .soon-cell img { filter: grayscale(1); opacity: .5; }
-  .hero-badges .soon-cell .soon-stamp { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%) rotate(-12deg); color: #e11d1d; font-size: 12px; font-weight: 800; letter-spacing: 1px; white-space: nowrap; text-shadow: 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff; pointer-events: none; }
-  .soon-note { font-size: 13px; color: #8a7a52; margin: 6px 0 26px; }
-  .tester-card-base { background:rgba(184,137,62,0.06); border:1px solid rgba(168,128,31,0.28); border-radius:16px; padding:24px 24px 28px; margin:34px auto 30px; max-width:560px; text-align:left; box-shadow:0 8px 24px rgba(120,92,30,0.12); }
-  .tester-heading { font-size:13px; color:#a8801f; text-transform:uppercase; letter-spacing:2px; margin:0 0 4px; font-weight:700; text-align:center; }
-  .tester-android-note { display:block; font-size:11px; color:#8a7a52; text-transform:none; letter-spacing:0; font-weight:400; margin-bottom:16px; text-align:center; }
-  .tester-card-base p { font-size:14px; line-height:1.65; color:#5a4a2c; margin:12px 0; }
-  .tester-section-label { font-size:13px; font-weight:700; color:#8a5e1a; margin:20px 0 6px; }
-  .tester-step { display:block; background:rgba(184,137,62,0.12); border:1px solid rgba(168,128,31,0.38); border-radius:10px; padding:12px 16px; margin:10px 0; color:#7a531a; text-decoration:none; font-weight:600; font-size:14px; transition:all .2s ease; }
-  .tester-step:hover { background:rgba(184,137,62,0.22); border-color:rgba(168,128,31,0.66); }
-  .tester-card-base ul { margin:6px 0 0; padding-left:22px; color:#5a4a2c; font-size:14px; line-height:1.7; }
-  .tester-note { color:#8a7a52; font-size:13px; margin-top:18px; }
-  .overview-link { display: block; background: #cf8a3a; color: #faf3e0; text-decoration: none; font-size: 16px; font-weight: 700; padding: 18px 22px; border-radius: 14px; margin: 0 0 24px; transition: all 0.2s ease; box-shadow: 0 6px 22px rgba(120,92,30,0.28); }
-  .overview-link:hover { background: #a8801f; transform: translateY(-1px); }
-  .lead { font-size: 15px; line-height: 1.8; color: #5a4a2c; margin: 0 auto 26px; max-width: 480px; }
-  .legal-divider { font-size: 14px; color: #a79468; text-transform: uppercase; letter-spacing: 2px; margin: 8px 0 16px; }
-  .links { list-style: none; padding: 0; margin: 0; }
-  .links li { background: rgba(255,255,255,0.50); border: 1px solid rgba(168,128,31,0.32); border-radius: 14px; margin-bottom: 14px; transition: all 0.25s ease; }
-  .links li:hover { background: rgba(255,255,255,0.72); border-color: #cf8a3a; }
-  .links a { color: #9a7b1e; text-decoration: none; font-size: 18px; font-weight: 600; display: block; padding: 22px 24px; }
-  .back { display: inline-block; margin-top: 48px; color: #a79468; text-decoration: none; font-size: 14px; }
-  .back:hover { color: #cf8a3a; }
-  .faq-card { background: rgba(255,255,255,0.50); border: 1px solid rgba(168,128,31,0.32); border-radius: 16px; padding: 24px 24px 28px; margin: 4px 0 28px; text-align: left; box-shadow: 0 8px 24px rgba(120,92,30,0.10); }
-  .faq-card p { font-size: 14px; line-height: 1.65; color: #4a3c20; margin: 12px 0; }
-  .faq-card strong { color: #3a2e1a; }
-  .social-heading{font-size:13px;color:#8a7a52;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
-  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
-  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(168,128,31,0.10);border:1px solid rgba(168,128,31,0.25);color:#8a7a52;transition:all .25s ease;}
-  .social a:hover{background:rgba(168,128,31,0.18);border-color:rgba(168,128,31,0.50);color:#7a5f1e;transform:translateY(-2px);}
-  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
-  .world-gallery { margin:16px auto 10px; }
-  .world-gallery .wg-grid { display:grid; grid-template-columns:1fr 1fr; gap:12px; max-width:560px; margin:10px auto 0; }
-  .world-gallery img { width:100%; aspect-ratio:3/4; object-fit:cover; border-radius:12px; box-shadow:0 6px 20px rgba(120,92,30,0.20), 0 0 0 1px rgba(168,128,31,0.16); display:block; }
-  @media (max-width:380px){ .world-gallery .wg-grid{ grid-template-columns:1fr; } }
-  @media (max-width: 600px) { .lang-switch { top: 16px; right: 16px; } h1 { font-size: 38px; } .brand-icon { width: 104px; height: 104px; border-radius: 24px; } }
-</style>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="SENKO — puzzle de fumaça de incenso da PixelRyu. Acalme a fumaça escura até ficar branca e preencha motivos japoneses em 120 fases. Na App Store e Roblox."><!-- pr-shell: inline style removed → assets/site.css -->
 <!-- SEO/LLMO start (managed) -->
+<meta name="apple-itunes-app" content="app-id=6782591368">
 <link rel="canonical" href="https://pixelryu.github.io/senko/pt/">
 <link rel="alternate" hreflang="en" href="https://pixelryu.github.io/senko/">
 <link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/senko/ja/">
@@ -121,28 +70,45 @@
 <meta name="twitter:description" content="SENKO — puzzle de fumaça de incenso da PixelRyu. Acalme a fumaça escura até ficar branca e preencha motivos japoneses em 120 fases. Na App Store e Roblox.">
 <meta name="twitter:image" content="https://pixelryu.github.io/senko/og.png?v=20260621103040">
 <meta name="twitter:image:alt" content="SENKO — Aconchegante jogo de puzzle de calma com fumaça de incenso">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"SENKO","genre":"Puzzle, Casual","url":"https://pixelryu.github.io/senko/pt/","image":"https://pixelryu.github.io/senko/icon.png","description":"SENKO — puzzle de fumaça de incenso da PixelRyu. Acalme a fumaça escura até ficar branca e preencha motivos japoneses em 120 fases. Na App Store e Roblox.","applicationCategory":"GameApplication","operatingSystem":"iOS, Android, Roblox","gamePlatform":["iOS","Android","Roblox"],"sameAs":["https://apps.apple.com/app/id6782591368","https://play.google.com/store/apps/details?id=com.pixelryu.senko","https://www.roblox.com/games/71313769097238/SENKO-Zen-Incense-Smoke"],"author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["VideoGame","MobileApplication"],"name":"SENKO","genre":"Puzzle, Casual","url":"https://pixelryu.github.io/senko/","image":"https://pixelryu.github.io/senko/icon.png","description":"SENKO by PixelRyu — cozy incense-smoke puzzle. Calm the dark smoke white and guide it into Japanese motifs over 120 quiet stages. On App Store and Roblox.","applicationCategory":"GameApplication","operatingSystem":"iOS, Android, Roblox","gamePlatform":["iOS","Android","Roblox"],"sameAs":["https://apps.apple.com/app/id6782591368","https://play.google.com/store/apps/details?id=com.pixelryu.senko","https://www.roblox.com/games/71313769097238/SENKO-Zen-Incense-Smoke"],"author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/pt/"},{"@type":"ListItem","position":2,"name":"SENKO","item":"https://pixelryu.github.io/senko/pt/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Que tipo de jogo é SENKO?","acceptedAnswer":{"@type":"Answer","text":"SENKO é um aconchegante puzzle de fumaça em duas fases da PixelRyu. Acenda o incenso, deslize pela fumaça escura e inquieta para acalmá-la até ficar branca e, então, guie a fumaça límpida para preencher um tênue motivo japonês — a lua, um pinheiro, um grou, flores de cerejeira e mais."}},{"@type":"Question","name":"SENKO é gratuito?","acceptedAnswer":{"@type":"Answer","text":"Sim — SENKO é gratuito, sustentado por anúncios opcionais. No Roblox não há anúncios; você usa as moedas que conquista."}},{"@type":"Question","name":"Onde posso jogar SENKO?","acceptedAnswer":{"@type":"Answer","text":"SENKO já está disponível na App Store e no Roblox; testadores Android podem participar no Google Play. Siga a PixelRyu para novidades."}},{"@type":"Question","name":"Como se joga SENKO?","acceptedAnswer":{"@type":"Answer","text":"Deslize o dedo pela fumaça que se ergue para acalmar a fumaça escura e turbulenta até que assente e fique branca. Depois, continue deslizando para reunir a fumaça límpida em um tênue motivo e preencher sua forma. Evite as brasas vermelhas — elas queimam sua fumaça de volta — e termine antes que o incenso acabe. Um leque acalma de forma ampla; um pincel ajuda a posicionar a fumaça."}},{"@type":"Question","name":"Quais idiomas o SENKO oferece?","acceptedAnswer":{"@type":"Answer","text":"SENKO oferece 12 idiomas: inglês, japonês, chinês, coreano, hindi, indonésio, alemão, francês, italiano, espanhol, português e russo."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What kind of game is SENKO?","acceptedAnswer":{"@type":"Answer","text":"SENKO is a cozy two-phase smoke puzzle by PixelRyu. Light incense, sweep the restless dark smoke calm until it turns white, then guide the clear smoke to fill a faint Japanese motif — the moon, a pine, a crane, cherry blossoms and more."}},{"@type":"Question","name":"Is SENKO free to play?","acceptedAnswer":{"@type":"Answer","text":"Yes — SENKO is free to play, supported by optional ads. On Roblox there are no ads; you use coins you earn."}},{"@type":"Question","name":"Where can I play SENKO?","acceptedAnswer":{"@type":"Answer","text":"SENKO is out now on the App Store and Roblox; Android testers can join on Google Play. Follow PixelRyu for updates."}},{"@type":"Question","name":"How do you play SENKO?","acceptedAnswer":{"@type":"Answer","text":"Sweep your finger through the rising smoke to calm the dark, churning smoke until it settles and turns white. Then keep sweeping to gather the clear smoke into a faint motif and fill its shape. Avoid the red embers — they burn your smoke back — and finish before the incense runs out. A fan calms broadly; a brush helps place smoke."}},{"@type":"Question","name":"Which languages does SENKO support?","acceptedAnswer":{"@type":"Answer","text":"SENKO supports 12 languages: English, Japanese, Chinese, Korean, Hindi, Indonesian, German, French, Italian, Spanish, Portuguese, and Russian."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"SENKO — Official Trailer","description":"SENKO by PixelRyu — cozy incense-smoke puzzle. Calm the dark smoke white and guide it into Japanese motifs over 120 quiet stages. On App Store and Roblox.","thumbnailUrl":"https://pixelryu.github.io/senko/og.png","uploadDate":"2026-06-21T00:00:00+00:00","contentUrl":"https://pixelryu.github.io/senko/promotion_H_story.mp4?v=20260621103040"}</script>
 <!-- SEO/LLMO end -->
+<!-- pr-shell:css start -->
+<link rel="stylesheet" href="../../assets/site.css?v=20260814085000">
+<script>(function(){try{var t=localStorage.getItem("pixelryu_theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",t==="light"?"#F4F1EA":"#0B0E13");}catch(e){}})();</script>
+<!-- pr-shell:css end -->
 </head>
-<body>
-<div class="container">
+<body class="pr-game">
+<!-- pr-shell:header start -->
+<a class="skip-link" href="#main" data-pr-i18n="skip">Ir para o conteúdo</a>
+<header class="pr-header">
+  <div class="pr-header-in">
+    <a class="pr-brand" href="https://pixelryu.github.io/pt/" aria-label="Início do PixelRyu" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_home"><img class="pr-brandmark" src="../../icon.webp?v=20260704170327" alt="" width="30" height="30" decoding="async">PixelRyu</a>
+    <nav class="pr-nav" aria-label="Main"><a href="https://pixelryu.github.io/games/pt/" data-pr-i18n="nav_games">Jogos</a><a href="https://pixelryu.github.io/about/pt/" data-pr-i18n="nav_about">Sobre</a><a href="https://pixelryu.github.io/press/pt/" data-pr-i18n="nav_press">Imprensa</a><a href="https://pixelryu.substack.com/" target="_blank" rel="noopener" data-pr-i18n-attr="href" data-pr-i18n="news_url"><span data-pr-i18n="nav_news">Diário</span></a><a class="pr-nav-lang" href="#pr-langs" aria-label="Escolher idioma" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg></a><button type="button" class="pr-theme" aria-label="Alternar entre escuro e claro" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_theme" aria-pressed="false"><svg class="pr-ic-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg><svg class="pr-ic-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 13.2A8.2 8.2 0 0 1 10.8 4a8.2 8.2 0 1 0 9.2 9.2z"/></svg></button></nav>
+    <details class="pr-burger">
+      <summary aria-label="Menu" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_menu"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <div class="pr-burger-menu"><a href="https://pixelryu.github.io/games/pt/" data-pr-i18n="nav_games">Jogos</a><a href="https://pixelryu.github.io/about/pt/" data-pr-i18n="nav_about">Sobre</a><a href="https://pixelryu.github.io/press/pt/" data-pr-i18n="nav_press">Imprensa</a><a href="https://pixelryu.substack.com/" target="_blank" rel="noopener" data-pr-i18n-attr="href" data-pr-i18n="news_url"><span data-pr-i18n="nav_news">Diário</span></a><a href="#pr-langs" data-pr-i18n="nav_langs">Idiomas</a><button type="button" class="pr-theme" aria-pressed="false"><svg class="pr-ic-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg><svg class="pr-ic-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 13.2A8.2 8.2 0 0 1 10.8 4a8.2 8.2 0 1 0 9.2 9.2z"/></svg><span data-pr-i18n="nav_theme">Tema</span></button></div>
+    </details>
+  </div>
+</header>
+<!-- pr-shell:header end -->
+<div class="container" id="main" role="main">
   <div class="lang-switch">
     <select id="lang-select" aria-label="Language"></select>
   </div>
-  <img src="https://pixelryu.github.io/senko/icon.webp?v=20260621103040" alt="SENKO" class="brand-icon" width="132" height="132" fetchpriority="high">
+  <img src="../icon.webp?v=20260621103040" alt="SENKO" class="brand-icon" width="132" height="132" fetchpriority="high">
   <div class="tagline" data-i18n="tagline">Acalme a fumaça, molde a quietude.</div>
   <h1>SEN<span class="accent">KO</span></h1>
   <div class="subtitle" data-i18n="subtitle">Aconchegante puzzle de fumaça de incenso em duas fases</div>
   <video id="promo" class="promo-video" autoplay loop muted playsinline controls preload="auto" poster="key_hero.jpg?v=20260621103040" aria-label="SENKO gameplay trailer — calm the rising incense smoke and shape it into Japanese motifs">
-    <source src="https://pixelryu.github.io/senko/promotion_H_story.mp4?v=20260621103040" type="video/mp4">
+    <source src="../promotion_H_story.mp4?v=20260621103040" type="video/mp4">
   </video>
 
     <section class="hero-badges" aria-label="Download SENKO on the App Store; Android testers welcome on Google Play; play on Roblox now">
     <a class="appstore-badge" href="https://apps.apple.com/app/id6782591368" target="_blank" rel="noopener" aria-label="SENKO — Download on the App Store"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Download on the App Store</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24"><path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text></svg></a>
-    <a class="googleplay-badge" href="#tester-heading" aria-label="SENKO — Get it on Google Play (Android tester recruitment)"><img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51"></a>
+    <a class="googleplay-badge" href="#tester-heading" aria-label="SENKO — Get it on Google Play (Android tester recruitment)"><img src="../../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51"></a>
     <a class="roblox-badge" href="https://www.roblox.com/games/71313769097238/SENKO-Zen-Incense-Smoke" target="_blank" rel="noopener" aria-label="SENKO — Play now on Roblox"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title><rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/><svg x="11" y="9" width="26" height="26" viewBox="0 0 26 26"><g transform="rotate(13 13 13)"><rect x="4.5" y="4.5" width="17" height="17" rx="2" fill="#000"/><rect x="9.75" y="9.75" width="6.5" height="6.5" rx="0.8" fill="#fff"/></g></svg><text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Play now on</text> <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">Roblox</text></svg></a>
   </section>
   <p class="soon-note" data-i18n="soon_note">Já disponível na App Store e no Roblox; testadores Android bem-vindos no Google Play.</p>
@@ -177,28 +143,28 @@
 
   <section class="tester-card-base" aria-labelledby="tester-heading">
     <div id="tester-heading" class="tester-heading">
-      🎁 <span data-i18n="tester_heading">Android Tester Recruitment</span>
-      <span class="tester-android-note">📱 <span data-i18n="tester_android_note">Android only</span></span>
+      🎁 <span data-i18n="tester_heading">Procuramos testers de Android</span>
+      <span class="tester-android-note">📱 <span data-i18n="tester_android_note">Apenas Android</span></span>
     </div>
-    <p data-i18n="tester_intro">Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.</p>
-    <div class="tester-section-label">📦 <span data-i18n="tester_what_label">What it is</span></div>
-    <p data-i18n="tester_what">SENKO — a cozy incense-smoke puzzle by PixelRyu. Calm the restless smoke, turn it white, then guide it into quiet Japanese motifs across 120 stages.</p>
-    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">🔗 <span data-i18n="tester_step1_label">Step 1 — Join the tester group</span></a>
-    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.senko" target="_blank" rel="noopener">📱 <span data-i18n="tester_step2_label">Step 2 — Opt-in via Play Store</span></a>
-    <a class="tester-step" href="https://play.google.com/store/apps/details?id=com.pixelryu.senko" target="_blank" rel="noopener">⬇️ <span data-i18n="tester_step3_label">Step 3 — Download &amp; play the app</span></a>
-    <div class="tester-section-label">📌 <span data-i18n="tester_ask_label">What I'm asking for</span></div>
+    <p data-i18n="tester_intro">Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.</p>
+    <div class="tester-section-label">📦 <span data-i18n="tester_what_label">Sobre o jogo</span></div>
+    <p data-i18n="tester_what">SENKO é um aconchegante puzzle de fumaça em duas fases.Acenda um incenso e uma fumaça escura e inquieta se ergue — deslize o dedo por ela para acalmá-la até que assente e fique límpida e branca.</p>
+    <a class="tester-step" href="https://groups.google.com/g/pixelryu-testers" target="_blank" rel="noopener">🔗 <span data-i18n="tester_step1_label">Passo 1 — Entrar no grupo de testers</span></a>
+    <a class="tester-step" href="https://play.google.com/apps/testing/com.pixelryu.senko" target="_blank" rel="noopener">📱 <span data-i18n="tester_step2_label">Passo 2 — Adesão via Play Store</span></a>
+    <a class="tester-step" href="https://play.google.com/store/apps/details?id=com.pixelryu.senko" target="_blank" rel="noopener">⬇️ <span data-i18n="tester_step3_label">Passo 3 — Baixe e jogue o app</span></a>
+    <div class="tester-section-label">📌 <span data-i18n="tester_ask_label">O que peço</span></div>
     <ul>
-      <li data-i18n="tester_ask_keep">Keep installed for the full 14 days</li>
-      <li data-i18n="tester_ask_launch">Launch every couple of days (a few times is enough)</li>
-      <li data-i18n="tester_ask_minutes">A minute or two of play per session is plenty</li>
+      <li data-i18n="tester_ask_keep">Manter instalado por 14 dias completos</li>
+      <li data-i18n="tester_ask_launch">Abra a cada poucos dias (algumas vezes basta)</li>
+      <li data-i18n="tester_ask_minutes">Um ou dois minutos de jogo por sessão já bastam</li>
     </ul>
-    <p class="tester-note" data-i18n="tester_note_lead">ℹ️ Tip — all three steps below are required:</p>
+    <p class="tester-note" data-i18n="tester_note_lead">ℹ️ Dica — as três etapas abaixo são necessárias:</p>
     <ul>
-      <li data-i18n="tester_note_step1">Step 1 — Join the group.</li>
-      <li data-i18n="tester_note_step2">Step 2 — Become a tester (opt-in): on the opt-in page, tap to join the test. Becoming a tester alone does not install the app.</li>
-      <li data-i18n="tester_note_step3">Step 3 — Download &amp; play: open the download page, install the app, launch it and play a little — without this, your testing doesn’t count.</li>
-      <li data-i18n="tester_note_account">Use the same Google account for all steps.</li>
-      <li data-i18n="tester_note_wait">If Step 2 or 3 shows “App not available”, wait a few hours after joining and try again.</li>
+      <li data-i18n="tester_note_step1">Etapa 1 — Entre no grupo: mesmo que apareça “sem permissão para ver o conteúdo”, há um botão “Participar do grupo” na página — toque para entrar.</li>
+      <li data-i18n="tester_note_step2">Etapa 2 — Torne-se tester (opt-in): na página de opt-in, toque para entrar no teste. Apenas virar tester não instala o app.</li>
+      <li data-i18n="tester_note_step3">Etapa 3 — Baixe e jogue: abra a página de download, instale o app, abra e jogue um pouco — sem isso, seu teste não conta.</li>
+      <li data-i18n="tester_note_account">Use a mesma Conta do Google em todas as etapas.</li>
+      <li data-i18n="tester_note_wait">Se a Etapa 2 ou 3 mostrar “App not available”, aguarde algumas horas após participar e tente novamente.</li>
     </ul>
   </section>
 
@@ -223,11 +189,29 @@
   <a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads"><svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a>
   </div>
 </div>
-<script src="https://pixelryu.github.io/tester-open-external.js?v=20260628113000" defer></script>
+<script src="../../tester-open-external.js?v=20260628113000" defer></script>
 <script>
   const LANGUAGES = [{"code": "en", "flag": "🇺🇸", "name": "English"}, {"code": "ja", "flag": "🇯🇵", "name": "日本語"}, {"code": "zh", "flag": "🇨🇳", "name": "简体中文"}, {"code": "ko", "flag": "🇰🇷", "name": "한국어"}, {"code": "hi", "flag": "🇮🇳", "name": "हिन्दी"}, {"code": "id", "flag": "🇮🇩", "name": "Bahasa Indonesia"}, {"code": "de", "flag": "🇩🇪", "name": "Deutsch"}, {"code": "fr", "flag": "🇫🇷", "name": "Français"}, {"code": "it", "flag": "🇮🇹", "name": "Italiano"}, {"code": "es", "flag": "🇪🇸", "name": "Español"}, {"code": "pt", "flag": "🇧🇷", "name": "Português"}, {"code": "ru", "flag": "🇷🇺", "name": "Русский"}];
   const i18n = {
   "en": {
+    "tester_heading": "Android Tester Recruitment",
+    "tester_android_note": "Android only",
+    "tester_intro": "Solo indie dev here, looking for active Android testers for a 14-day closed testing phase.",
+    "tester_what_label": "What it is",
+    "tester_step1_label": "Step 1 — Join the tester group",
+    "tester_step2_label": "Step 2 — Opt-in via Play Store",
+    "tester_step3_label": "Step 3 — Download & play the app",
+    "tester_ask_label": "What I'm asking for",
+    "tester_ask_keep": "Keep installed for the full 14 days",
+    "tester_ask_launch": "Launch every couple of days (a few times is enough)",
+    "tester_ask_minutes": "A minute or two of play per session is plenty",
+    "tester_note_lead": "ℹ️ Tip — all three steps below are required:",
+    "tester_note_step1": "Step 1 — Join the group: even if you see “no permission to view content”, there’s a “Join group” button on that page — tap it to join.",
+    "tester_note_step2": "Step 2 — Become a tester (opt-in): on the opt-in page, tap to join the test. Becoming a tester alone does not install the app.",
+    "tester_note_step3": "Step 3 — Download & play: open the download page, install the app, launch it and play a little — without this, your testing doesn’t count.",
+    "tester_note_account": "Use the same Google account for all steps.",
+    "tester_note_wait": "If Step 2 or 3 shows “App not available”, wait a few hours after joining and try again.",
+    "tester_what": "SENKO — a cozy incense-smoke puzzle by PixelRyu. Calm the restless smoke, turn it white, then guide it into quiet Japanese motifs across 120 stages.",
     "title": "SENKO — Cozy Incense-Smoke Calm Puzzle Game",
     "meta_desc": "SENKO by PixelRyu — cozy incense-smoke puzzle. Calm the dark smoke white and guide it into Japanese motifs over 120 quiet stages. On App Store and Roblox.",
     "tagline": "Calm the smoke, shape the stillness.",
@@ -259,6 +243,24 @@
     "mg_3": "TATAMI: Lay the Floor — cozy tatami block puzzle"
   },
   "ja": {
+    "tester_heading": "Android テスター募集中",
+    "tester_android_note": "Android 専用",
+    "tester_intro": "個人インディー開発者です。14 日間のクローズドテストにご協力いただける Android テスターを募集中です。",
+    "tester_what_label": "ゲーム内容",
+    "tester_step1_label": "ステップ 1 — テスターグループに参加",
+    "tester_step2_label": "ステップ 2 — Play ストアでオプトイン",
+    "tester_step3_label": "ステップ 3 — アプリをダウンロードしてプレイ",
+    "tester_ask_label": "お願いしたいこと",
+    "tester_ask_keep": "14 日間アンインストールせずに保持",
+    "tester_ask_launch": "数日に一度起動 (合計数回で OK)",
+    "tester_ask_minutes": "1 回 1〜2 分の軽いプレイで大丈夫",
+    "tester_note_lead": "ℹ️ ヒント — 下記の3つのステップすべてが必要です:",
+    "tester_note_step1": "ステップ1 — グループに参加: 「閲覧権限がありません」と表示されても、その画面に「グループに参加」ボタンがあるので押して参加してください。",
+    "tester_note_step2": "ステップ2 — テスターになる（オプトイン）: オプトイン画面でテストに参加してください。テスターになっただけではアプリはインストールされません。",
+    "tester_note_step3": "ステップ3 — ダウンロードしてプレイ: ダウンロードページを開いてアプリをインストールし、起動して少し遊んでください。これをしないとテストにカウントされません。",
+    "tester_note_account": "すべてのステップで同じ Google アカウントをお使いください。",
+    "tester_note_wait": "ステップ2または3で「App not available」と表示されるときは、参加から数時間おいて再度お試しください。",
+    "tester_what": "SENKO は、お香の煙でととのう二段階の癒やしパズル。お香に火を灯すと、揺らめく黒い煙が立ちのぼる — 指でなでて静めると、やがて落ち着いて澄んだ白い煙に変わる。",
     "title": "SENKO — お香の煙でととのう癒やしのパズル",
     "meta_desc": "SENKO — PixelRyu のお香の煙の癒やしパズル。黒い煙を指でなでて静め、白い煙で月や桜など和のモチーフを満たす全120ステージ。App Store・Roblox で配信中、Android テスター募集中。",
     "tagline": "煙を静め、静けさをかたちに。",
@@ -290,6 +292,24 @@
     "mg_3": "TATAMI: Lay the Floor — 畳を敷き詰める癒やしのブロックパズル"
   },
   "zh": {
+    "tester_heading": "招募 Android 测试者",
+    "tester_android_note": "仅限 Android",
+    "tester_intro": "我是一名独立开发者，正在为期 14 天的封闭测试招募积极的 Android 测试者。",
+    "tester_what_label": "游戏简介",
+    "tester_step1_label": "第一步 — 加入测试者群组",
+    "tester_step2_label": "第二步 — 通过 Play 商店加入测试",
+    "tester_step3_label": "第三步 — 下载并试玩应用",
+    "tester_ask_label": "我希望你能做到",
+    "tester_ask_keep": "完整保留 14 天不卸载",
+    "tester_ask_launch": "每隔几天启动一次（几次即可）",
+    "tester_ask_minutes": "每次玩一两分钟就够了",
+    "tester_note_lead": "ℹ️ 提示 — 以下三个步骤都必须完成：",
+    "tester_note_step1": "第一步 — 加入群组：即使显示“无权限查看内容”，该页面上也有“加入群组”按钮，请点击加入。",
+    "tester_note_step2": "第二步 — 成为测试者（加入测试）：在加入测试页面点击加入测试。仅成为测试者并不会安装应用。",
+    "tester_note_step3": "第三步 — 下载并试玩：打开下载页面安装应用，然后启动应用并稍微试玩。否则你的测试不会被计入。",
+    "tester_note_account": "所有步骤请使用同一个 Google 账号。",
+    "tester_note_wait": "如果第二步或第三步显示“App not available”，请在加入后等待几小时再试。",
+    "tester_what": "SENKO 是一款治愈系的两阶段烟雾解谜游戏。点燃一炷香，躁动的黑烟随之升起 — 用手指轻拂使其平静，直到沉淀下来，化为清澈的白烟。",
     "title": "SENKO — 治愈系香烟雾静心解谜游戏",
     "meta_desc": "SENKO — PixelRyu 的治愈系香烟雾解谜游戏。抚平黑烟使其平静转白，引导白烟填满月亮、樱花等和风图案，共120个静谧关卡。现已登陆 App Store 与 Roblox。",
     "tagline": "抚平烟雾，凝定宁静。",
@@ -321,6 +341,24 @@
     "mg_3": "TATAMI: Lay the Floor — 治愈系榻榻米方块解谜"
   },
   "ko": {
+    "tester_heading": "Android 테스터 모집",
+    "tester_android_note": "Android 전용",
+    "tester_intro": "1인 인디 개발자입니다. 14일간의 비공개 테스트에 참여해 주실 적극적인 Android 테스터를 찾고 있습니다.",
+    "tester_what_label": "게임 소개",
+    "tester_step1_label": "1단계 — 테스터 그룹 가입",
+    "tester_step2_label": "2단계 — Play 스토어에서 옵트인",
+    "tester_step3_label": "3단계 — 앱 다운로드 후 플레이",
+    "tester_ask_label": "부탁드리는 것",
+    "tester_ask_keep": "14일 동안 설치 상태 유지",
+    "tester_ask_launch": "며칠에 한 번씩 실행 (몇 번이면 충분합니다)",
+    "tester_ask_minutes": "한 번에 1~2분 가벼운 플레이면 충분합니다",
+    "tester_note_lead": "ℹ️ 팁 — 아래 세 단계를 모두 완료해야 합니다:",
+    "tester_note_step1": "1단계 — 그룹 가입: “콘텐츠를 볼 권한이 없습니다”라고 표시되어도 그 화면에 “그룹 가입” 버튼이 있으니 눌러서 가입하세요.",
+    "tester_note_step2": "2단계 — 테스터 되기(옵트인): 옵트인 화면에서 테스트에 참여하세요. 테스터가 되는 것만으로는 앱이 설치되지 않습니다.",
+    "tester_note_step3": "3단계 — 다운로드 후 플레이: 다운로드 페이지를 열어 앱을 설치하고, 실행해 잠깐 플레이하세요. 그렇지 않으면 테스트로 집계되지 않습니다.",
+    "tester_note_account": "모든 단계에서 같은 Google 계정을 사용하세요.",
+    "tester_note_wait": "2단계 또는 3단계에서 “App not available”이 표시되면 가입 후 몇 시간 기다렸다가 다시 시도하세요.",
+    "tester_what": "SENKO는 향 연기로 마음을 가다듬는 2단계 힐링 퍼즐입니다.향에 불을 붙이면 일렁이는 검은 연기가 피어오릅니다 — 손가락으로 쓸어 잠재우면 이윽고 가라앉아 맑고 하얀 연기로 바뀝니다.",
     "title": "SENKO — 향 연기로 마음을 가다듬는 힐링 퍼즐 게임",
     "meta_desc": "SENKO — PixelRyu의 향 연기 힐링 퍼즐. 검은 연기를 쓸어 하얗게 잠재우고, 달과 벚꽃 등 일본풍 모티프를 채우는 고요한 120개 스테이지. App Store와 Roblox에서 출시 중.",
     "tagline": "연기를 잠재우고, 고요함을 빚다.",
@@ -352,6 +390,24 @@
     "mg_3": "TATAMI: Lay the Floor — 다다미를 까는 힐링 블록 퍼즐"
   },
   "hi": {
+    "tester_heading": "Android टेस्टर्स की तलाश",
+    "tester_android_note": "केवल Android",
+    "tester_intro": "सोलो इंडी डेवलपर हूँ, 14 दिन की क्लोज़्ड टेस्टिंग के लिए सक्रिय Android टेस्टर्स ढूँढ रहा हूँ।",
+    "tester_what_label": "यह क्या है",
+    "tester_step1_label": "चरण 1 — टेस्टर ग्रुप में शामिल हों",
+    "tester_step2_label": "चरण 2 — Play Store पर ऑप्ट-इन",
+    "tester_step3_label": "चरण 3 — ऐप डाउनलोड करके खेलें",
+    "tester_ask_label": "मैं क्या माँग रहा हूँ",
+    "tester_ask_keep": "पूरे 14 दिन इंस्टॉल रखें",
+    "tester_ask_launch": "हर कुछ दिन में लॉन्च करें (कुछ बार ही काफ़ी है)",
+    "tester_ask_minutes": "हर सत्र में एक-दो मिनट का खेल काफ़ी है",
+    "tester_note_lead": "ℹ️ सुझाव — नीचे दिए तीनों चरण ज़रूरी हैं:",
+    "tester_note_step1": "चरण 1 — ग्रुप जॉइन करें: भले ही “सामग्री देखने की अनुमति नहीं है” दिखे, उसी पेज पर “ग्रुप जॉइन करें” बटन होता है — उसे दबाकर जॉइन करें।",
+    "tester_note_step2": "चरण 2 — टेस्टर बनें (ऑप्ट-इन): ऑप्ट-इन पेज पर टेस्ट में शामिल होने के लिए टैप करें। सिर्फ़ टेस्टर बनने से ऐप इंस्टॉल नहीं होती।",
+    "tester_note_step3": "चरण 3 — डाउनलोड करके खेलें: डाउनलोड पेज खोलकर ऐप इंस्टॉल करें, उसे खोलें और थोड़ा खेलें — इसके बिना आपकी टेस्टिंग नहीं गिनी जाती।",
+    "tester_note_account": "सभी चरणों में एक ही Google खाते का उपयोग करें।",
+    "tester_note_wait": "अगर चरण 2 या 3 में “App not available” दिखे, तो जॉइन करने के कुछ घंटे बाद फिर से कोशिश करें।",
+    "tester_what": "SENKO एक सुकून भरा, दो-चरणीय धुएँ का पहेली गेम है। एक अगरबत्ती जलाएँ और एक बेचैन काला धुआँ उठता है — उसे अपनी उँगली से सहलाकर तब तक शांत करें जब तक वह थम न जाए और साफ़, सफ़ेद न हो जाए। फिर उस सफ़ेद धुएँ को घुमाकर एक धुँधली जापानी आकृति भरें: चाँद, चीड़, सारस, चेरी के फूल और भी बहुत कुछ, 120 शांत चरणों में। लाल अंगारों का ध्यान रखें — एक को छूते ही वह आपके धुएँ को जला देता है, इसलिए उनके इर्द-गिर्द बुनते जाएँ। धुआँ सीमित है, इसलिए अगरबत्ती के जलकर खत्म होने से पहले उसे आकार दें। एक पंखा व्यापक रूप से शांत करता है और एक ब्रश आकार देने में मदद करता है। कोई दबाव नहीं, 12 भाषाएँ।",
     "title": "SENKO — सुकून भरा अगरबत्ती-धुएँ का शांत पहेली गेम",
     "meta_desc": "SENKO — PixelRyu का सुकून भरा अगरबत्ती-धुएँ का पहेली गेम। काले धुएँ को सफ़ेद बनाएँ और 120 चरणों में जापानी आकृतियाँ भरें। App Store और Roblox पर उपलब्ध।",
     "tagline": "धुएँ को शांत करें, ठहराव को आकार दें।",
@@ -383,6 +439,24 @@
     "mg_3": "TATAMI: Lay the Floor — सुकून भरा तातामी ब्लॉक पहेली"
   },
   "id": {
+    "tester_heading": "Mencari Tester Android",
+    "tester_android_note": "Hanya Android",
+    "tester_intro": "Saya developer indie solo, mencari tester Android aktif untuk fase closed test 14 hari.",
+    "tester_what_label": "Tentang game ini",
+    "tester_step1_label": "Langkah 1 — Bergabung dengan grup tester",
+    "tester_step2_label": "Langkah 2 — Opt-in via Play Store",
+    "tester_step3_label": "Langkah 3 — Unduh & mainkan aplikasi",
+    "tester_ask_label": "Yang saya mintakan",
+    "tester_ask_keep": "Pertahankan terinstal selama 14 hari penuh",
+    "tester_ask_launch": "Luncurkan setiap beberapa hari (beberapa kali sudah cukup)",
+    "tester_ask_minutes": "Cukup main satu–dua menit per sesi",
+    "tester_note_lead": "ℹ️ Tips — ketiga langkah berikut wajib dilakukan:",
+    "tester_note_step1": "Langkah 1 — Gabung grup: meskipun muncul “tidak ada izin untuk melihat konten”, ada tombol “Gabung grup” di halaman itu — tekan untuk bergabung.",
+    "tester_note_step2": "Langkah 2 — Jadi tester (opt-in): di halaman opt-in, ketuk untuk bergabung ke pengujian. Menjadi tester saja tidak memasang aplikasi.",
+    "tester_note_step3": "Langkah 3 — Unduh & mainkan: buka halaman unduhan, pasang aplikasinya, buka, dan mainkan sebentar — tanpa ini, pengujianmu tidak terhitung.",
+    "tester_note_account": "Gunakan akun Google yang sama untuk semua langkah.",
+    "tester_note_wait": "Jika Langkah 2 atau 3 menampilkan “App not available”, tunggu beberapa jam setelah bergabung lalu coba lagi.",
+    "tester_what": "SENKO adalah teka-teki asap dua tahap yang menenangkan.Nyalakan sebatang dupa dan asap gelap yang gelisah pun naik — sapu dengan jarimu untuk menenangkannya hingga mengendap dan berubah bening serta putih.",
     "title": "SENKO — Gim Teka-teki Menenangkan Bertema Asap Dupa",
     "meta_desc": "SENKO by PixelRyu — puzzle asap dupa menenangkan. Tenangkan asap gelap hingga memutih dan isi motif Jepang di 120 tahap tenang. Di App Store dan Roblox.",
     "tagline": "Tenangkan asapnya, bentuk keheningannya.",
@@ -414,6 +488,24 @@
     "mg_3": "TATAMI: Lay the Floor — teka-teki balok tatami yang menenangkan"
   },
   "de": {
+    "tester_heading": "Android-Tester gesucht",
+    "tester_android_note": "Nur für Android",
+    "tester_intro": "Solo-Indie-Entwickler hier — gesucht werden aktive Android-Tester für eine 14-tägige geschlossene Testphase.",
+    "tester_what_label": "Worum es geht",
+    "tester_step1_label": "Schritt 1 — Tester-Gruppe beitreten",
+    "tester_step2_label": "Schritt 2 — Über den Play Store anmelden",
+    "tester_step3_label": "Schritt 3 — App herunterladen & spielen",
+    "tester_ask_label": "Worum ich bitte",
+    "tester_ask_keep": "14 Tage lang installiert lassen",
+    "tester_ask_launch": "Alle paar Tage starten (ein paar Mal reicht)",
+    "tester_ask_minutes": "Ein bis zwei Minuten Spiel pro Sitzung genügen",
+    "tester_note_lead": "ℹ️ Tipp — alle drei Schritte unten sind nötig:",
+    "tester_note_step1": "Schritt 1 — Der Gruppe beitreten: Auch wenn „keine Berechtigung zum Anzeigen der Inhalte“ erscheint, gibt es auf der Seite einen Button „Gruppe beitreten“ – tippe darauf, um beizutreten.",
+    "tester_note_step2": "Schritt 2 — Tester werden (Opt-in): Tippe auf der Opt-in-Seite, um an der Testphase teilzunehmen. Nur Tester zu werden installiert die App noch nicht.",
+    "tester_note_step3": "Schritt 3 — Herunterladen & spielen: Öffne die Download-Seite, installiere die App, öffne sie und spiele kurz – ohne das zählt deine Teilnahme nicht.",
+    "tester_note_account": "Verwende für alle Schritte dasselbe Google-Konto.",
+    "tester_note_wait": "Wenn Schritt 2 oder 3 „App not available“ anzeigt, warte nach dem Beitritt ein paar Stunden und versuche es erneut.",
+    "tester_what": "SENKO ist ein gemütliches, zweiphasiges Rauch-Puzzle.Zünde ein Räucherstäbchen an, und ein ruheloser dunkler Rauch steigt auf — streiche mit dem Finger hindurch, um ihn zu beruhigen, bis er sich legt und klar und weiß wird.",
     "title": "SENKO — Gemütliches Räucherrauch-Entspannungspuzzle",
     "meta_desc": "SENKO by PixelRyu — Räucherrauch-Puzzle. Beruhige den dunklen Rauch weiß und fülle japanische Motive in 120 stillen Leveln. Im App Store und auf Roblox.",
     "tagline": "Beruhige den Rauch, forme die Stille.",
@@ -445,6 +537,24 @@
     "mg_3": "TATAMI: Lay the Floor — gemütliches Tatami-Block-Puzzle"
   },
   "fr": {
+    "tester_heading": "Recherche de testeurs Android",
+    "tester_android_note": "Android uniquement",
+    "tester_intro": "Développeur indépendant solo, je cherche des testeurs Android actifs pour une phase de test fermée de 14 jours.",
+    "tester_what_label": "De quoi il s'agit",
+    "tester_step1_label": "Étape 1 — Rejoindre le groupe de testeurs",
+    "tester_step2_label": "Étape 2 — S'inscrire via le Play Store",
+    "tester_step3_label": "Étape 3 — Télécharger et jouer",
+    "tester_ask_label": "Ce que je demande",
+    "tester_ask_keep": "Garder installé pendant les 14 jours complets",
+    "tester_ask_launch": "Lancer tous les deux jours (quelques fois suffisent)",
+    "tester_ask_minutes": "Une à deux minutes de jeu par session suffisent",
+    "tester_note_lead": "ℹ️ Astuce — les trois étapes ci-dessous sont nécessaires :",
+    "tester_note_step1": "Étape 1 — Rejoindre le groupe : même si « autorisation refusée pour afficher le contenu » s’affiche, un bouton « Rejoindre le groupe » est présent sur la page — appuyez dessus pour rejoindre.",
+    "tester_note_step2": "Étape 2 — Devenir testeur (inscription) : sur la page d’inscription, appuyez pour rejoindre le test. S’inscrire seul n’installe pas l’application.",
+    "tester_note_step3": "Étape 3 — Télécharger et jouer : ouvrez la page de téléchargement, installez l’application, ouvrez-la et jouez un peu — sans cela, votre participation ne compte pas.",
+    "tester_note_account": "Utilisez le même compte Google pour toutes les étapes.",
+    "tester_note_wait": "Si l’étape 2 ou 3 affiche « App not available », attendez quelques heures après avoir rejoint, puis réessayez.",
+    "tester_what": "SENKO est un puzzle de fumée apaisant en deux phases.Allume un bâton d'encens et une fumée sombre et agitée s'élève — balaie-la du doigt pour l'apaiser jusqu'à ce qu'elle se pose et devienne claire et blanche.",
     "title": "SENKO — Paisible jeu de puzzle à la fumée d'encens",
     "meta_desc": "SENKO de PixelRyu — puzzle apaisant de fumée d'encens. Calme la fumée sombre en blanc et remplis des motifs japonais sur 120 niveaux. App Store et Roblox.",
     "tagline": "Apaise la fumée, façonne le calme.",
@@ -476,6 +586,24 @@
     "mg_3": "TATAMI: Lay the Floor — paisible puzzle de blocs tatami"
   },
   "it": {
+    "tester_heading": "Cercasi tester Android",
+    "tester_android_note": "Solo Android",
+    "tester_intro": "Sviluppatore indie solo, cerco tester Android attivi per una fase di closed test di 14 giorni.",
+    "tester_what_label": "Di cosa si tratta",
+    "tester_step1_label": "Passo 1 — Unisciti al gruppo tester",
+    "tester_step2_label": "Passo 2 — Opt-in tramite Play Store",
+    "tester_step3_label": "Passo 3 — Scarica e gioca all’app",
+    "tester_ask_label": "Cosa chiedo",
+    "tester_ask_keep": "Tienilo installato per tutti i 14 giorni",
+    "tester_ask_launch": "Aprilo ogni paio di giorni (poche volte basta)",
+    "tester_ask_minutes": "Bastano un paio di minuti di gioco a sessione",
+    "tester_note_lead": "ℹ️ Suggerimento — servono tutti e tre i passaggi qui sotto:",
+    "tester_note_step1": "Passaggio 1 — Iscriviti al gruppo: anche se compare « non hai l’autorizzazione per visualizzare i contenuti », sulla pagina c’è il pulsante « Iscriviti al gruppo » — toccalo per iscriverti.",
+    "tester_note_step2": "Passaggio 2 — Diventa tester (opt-in): nella pagina di opt-in, tocca per partecipare al test. Diventare tester da solo non installa l’app.",
+    "tester_note_step3": "Passaggio 3 — Scarica e gioca: apri la pagina di download, installa l’app, aprila e gioca un po’ — senza questo, il tuo test non viene conteggiato.",
+    "tester_note_account": "Usa lo stesso account Google per tutti i passaggi.",
+    "tester_note_wait": "Se il passaggio 2 o 3 mostra « App not available », attendi qualche ora dopo l’iscrizione e riprova.",
+    "tester_what": "SENKO è un rilassante puzzle di fumo in due fasi.Accendi un bastoncino d'incenso e un fumo scuro e irrequieto si leva — sfioralo con il dito per calmarlo finché non si posa e diventa limpido e bianco.",
     "title": "SENKO — Rilassante puzzle di fumo d'incenso",
     "meta_desc": "SENKO — puzzle di fumo d'incenso di PixelRyu. Calma il fumo scuro fino al bianco e riempi motivi giapponesi in 120 livelli. Su App Store e Roblox.",
     "tagline": "Calma il fumo, plasma la quiete.",
@@ -507,6 +635,24 @@
     "mg_3": "TATAMI: Lay the Floor — rilassante puzzle a blocchi tatami"
   },
   "es": {
+    "tester_heading": "Buscamos testers de Android",
+    "tester_android_note": "Solo Android",
+    "tester_intro": "Soy un desarrollador indie en solitario y busco testers Android activos para una fase de pruebas cerradas de 14 días.",
+    "tester_what_label": "De qué se trata",
+    "tester_step1_label": "Paso 1 — Únete al grupo de testers",
+    "tester_step2_label": "Paso 2 — Inscríbete vía Play Store",
+    "tester_step3_label": "Paso 3 — Descarga y juega la app",
+    "tester_ask_label": "Lo que pido",
+    "tester_ask_keep": "Mantener instalado los 14 días completos",
+    "tester_ask_launch": "Abrir cada par de días (unas pocas veces basta)",
+    "tester_ask_minutes": "Con un par de minutos de juego por sesión basta",
+    "tester_note_lead": "ℹ️ Consejo — los tres pasos siguientes son necesarios:",
+    "tester_note_step1": "Paso 1 — Únete al grupo: aunque aparezca «no tienes permiso para ver el contenido», en esa página hay un botón «Unirse al grupo»; tócalo para unirte.",
+    "tester_note_step2": "Paso 2 — Hazte tester (participa): en la página de participación, toca para unirte a la prueba. Solo participar no instala la app.",
+    "tester_note_step3": "Paso 3 — Descarga y juega: abre la página de descarga, instala la app, ábrela y juega un poco; sin esto, tu prueba no cuenta.",
+    "tester_note_account": "Usa la misma cuenta de Google en todos los pasos.",
+    "tester_note_wait": "Si el paso 2 o 3 muestra «App not available», espera unas horas después de unirte y vuelve a intentarlo.",
+    "tester_what": "SENKO es un acogedor puzle de humo en dos fases.Enciende una varita de incienso y se eleva un inquieto humo oscuro — bárrelo con el dedo para calmarlo hasta que se asiente y se vuelva claro y blanco.",
     "title": "SENKO — Acogedor puzle de calma con humo de incienso",
     "meta_desc": "SENKO — puzle de humo de incienso de PixelRyu. Calma el humo oscuro hasta el blanco y rellena motivos japoneses en 120 niveles. En App Store y Roblox.",
     "tagline": "Calma el humo, da forma a la quietud.",
@@ -538,6 +684,24 @@
     "mg_3": "TATAMI: Lay the Floor — acogedor puzle de bloques de tatami"
   },
   "pt": {
+    "tester_heading": "Procuramos testers de Android",
+    "tester_android_note": "Apenas Android",
+    "tester_intro": "Desenvolvedor indie solo aqui, à procura de testers Android ativos para uma fase de teste fechado de 14 dias.",
+    "tester_what_label": "Sobre o jogo",
+    "tester_step1_label": "Passo 1 — Entrar no grupo de testers",
+    "tester_step2_label": "Passo 2 — Adesão via Play Store",
+    "tester_step3_label": "Passo 3 — Baixe e jogue o app",
+    "tester_ask_label": "O que peço",
+    "tester_ask_keep": "Manter instalado por 14 dias completos",
+    "tester_ask_launch": "Abra a cada poucos dias (algumas vezes basta)",
+    "tester_ask_minutes": "Um ou dois minutos de jogo por sessão já bastam",
+    "tester_note_lead": "ℹ️ Dica — as três etapas abaixo são necessárias:",
+    "tester_note_step1": "Etapa 1 — Entre no grupo: mesmo que apareça “sem permissão para ver o conteúdo”, há um botão “Participar do grupo” na página — toque para entrar.",
+    "tester_note_step2": "Etapa 2 — Torne-se tester (opt-in): na página de opt-in, toque para entrar no teste. Apenas virar tester não instala o app.",
+    "tester_note_step3": "Etapa 3 — Baixe e jogue: abra a página de download, instale o app, abra e jogue um pouco — sem isso, seu teste não conta.",
+    "tester_note_account": "Use a mesma Conta do Google em todas as etapas.",
+    "tester_note_wait": "Se a Etapa 2 ou 3 mostrar “App not available”, aguarde algumas horas após participar e tente novamente.",
+    "tester_what": "SENKO é um aconchegante puzzle de fumaça em duas fases.Acenda um incenso e uma fumaça escura e inquieta se ergue — deslize o dedo por ela para acalmá-la até que assente e fique límpida e branca.",
     "title": "SENKO — Aconchegante jogo de puzzle de calma com fumaça de incenso",
     "meta_desc": "SENKO — puzzle de fumaça de incenso da PixelRyu. Acalme a fumaça escura até ficar branca e preencha motivos japoneses em 120 fases. Na App Store e Roblox.",
     "tagline": "Acalme a fumaça, molde a quietude.",
@@ -569,6 +733,24 @@
     "mg_3": "TATAMI: Lay the Floor — aconchegante puzzle de blocos de tatame"
   },
   "ru": {
+    "tester_heading": "Поиск Android-тестеров",
+    "tester_android_note": "Только для Android",
+    "tester_intro": "Я инди-разработчик-одиночка, ищу активных Android-тестеров для 14-дневного закрытого тестирования.",
+    "tester_what_label": "О чём игра",
+    "tester_step1_label": "Шаг 1 — Вступить в группу тестеров",
+    "tester_step2_label": "Шаг 2 — Подписаться через Play Store",
+    "tester_step3_label": "Шаг 3 — Скачать и поиграть",
+    "tester_ask_label": "О чём я прошу",
+    "tester_ask_keep": "Не удалять приложение все 14 дней",
+    "tester_ask_launch": "Запускайте раз в пару дней (нескольких раз достаточно)",
+    "tester_ask_minutes": "Достаточно одной–двух минут игры за сессию",
+    "tester_note_lead": "ℹ️ Совет — нужны все три шага ниже:",
+    "tester_note_step1": "Шаг 1 — Вступите в группу: даже если показано «нет прав для просмотра содержимого», на странице есть кнопка «Присоединиться к группе» — нажмите её, чтобы вступить.",
+    "tester_note_step2": "Шаг 2 — Станьте тестером (подтвердите участие): на странице подтверждения нажмите, чтобы присоединиться к тесту. Само подтверждение участия не устанавливает приложение.",
+    "tester_note_step3": "Шаг 3 — Скачайте и поиграйте: откройте страницу загрузки, установите приложение, откройте его и немного поиграйте — без этого ваше участие не засчитывается.",
+    "tester_note_account": "Используйте один и тот же аккаунт Google для всех шагов.",
+    "tester_note_wait": "Если на шаге 2 или 3 появляется «App not available», подождите несколько часов после вступления и попробуйте снова.",
+    "tester_what": "SENKO — это уютная двухфазная головоломка с дымом.Зажгите палочку благовоний, и поднимется беспокойный тёмный дым — разгоняйте его пальцем, успокаивая, пока он не уляжется и не станет прозрачным и белым.",
     "title": "SENKO — уютная медитативная головоломка с дымом благовоний",
     "meta_desc": "SENKO — головоломка с дымом благовоний от PixelRyu. Успокойте тёмный дым до белизны и заполните японские мотивы на 120 уровнях. В App Store и на Roblox.",
     "tagline": "Успокой дым, придай форму тишине.",
@@ -652,6 +834,49 @@
     sel.addEventListener('change', function (e) { setLang(e.target.value, true); });
   })();
 </script>
-<script src="https://pixelryu.github.io/breadcrumb.js?v=20260621103040" defer></script>
+<script src="../../breadcrumb.js?v=20260621103040" defer></script>
+<!-- pr-shell:footer start -->
+<footer class="pr-footer">
+  <div class="pr-footer-in">
+    <div>
+      <a class="pr-brand" href="https://pixelryu.github.io/pt/"><img class="pr-brandmark" src="../../icon.webp?v=20260704170327" alt="" width="30" height="30" decoding="async">PixelRyu</a>
+      <p style="font-size:14px;margin:14px 0 16px;max-width:30ch" data-pr-i18n="blurb">Jogos pequenos, feitos no Japão. Grátis no iPhone, Android e Roblox — em 12 idiomas.</p>
+      <div class="pr-news">
+        <p data-pr-i18n="news_p">Receba os lançamentos por e-mail. Eles chegam até você aconteça o que acontecer com as plataformas.</p>
+        <a class="pr-btn pr-btn-primary" href="https://pixelryu.substack.com/" target="_blank" rel="noopener" style="font-size:14px;padding:9px 16px" data-pr-i18n-attr="href" data-pr-i18n="news_url"><span data-pr-i18n="news_cta">Ler o diário</span></a>
+      </div>
+    </div>
+    <div>
+      <h4 data-pr-i18n="h_explore">Explorar</h4>
+      <ul>
+        <li><a href="https://pixelryu.github.io/games/pt/" data-pr-i18n="e_games">Todos os jogos</a></li>
+        <li><a href="https://pixelryu.github.io/roblox/pt/" data-pr-i18n="e_roblox">Jogar no Roblox</a></li>
+        <li><a href="https://pixelryu.github.io/about/pt/" data-pr-i18n="e_about">Sobre o Ryu</a></li>
+        <li><a href="https://pixelryu.github.io/press/pt/" data-pr-i18n="e_press">Kit de imprensa</a></li>
+        <li><a href="https://pixelryu.github.io/support/pt/" data-pr-i18n="e_support">Suporte</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-pr-i18n="h_games">Jogos</h4>
+      <ul style="columns:2;column-gap:18px"><li><a href="https://pixelryu.github.io/kado/pt/">KADŌ</a></li><li><a href="https://pixelryu.github.io/hanko/pt/">HANKO</a></li><li><a href="https://pixelryu.github.io/hoshikari/pt/">Hoshikari</a></li><li><a href="https://pixelryu.github.io/okaeri/pt/">Okaeri</a></li><li><a href="https://pixelryu.github.io/shizuku/pt/">Shizuku</a></li><li><a href="https://pixelryu.github.io/senko/pt/">SENKO</a></li><li><a href="https://pixelryu.github.io/wagashi/pt/">WAGASHI</a></li><li><a href="https://pixelryu.github.io/counterparts/pt/">CounterParts</a></li><li><a href="https://pixelryu.github.io/tatami/pt/">TATAMI</a></li><li><a href="https://pixelryu.github.io/temari/pt/">TEMARI</a></li><li><a href="https://pixelryu.github.io/bounce-cat/pt/">Bounce Cat</a></li><li><a href="https://pixelryu.github.io/hayate/pt/">HAYATE</a></li><li><a href="https://pixelryu.github.io/sumlings/pt/">Sumlings</a></li><li><a href="https://pixelryu.github.io/parcel-pals/pt/">Parcel Pals</a></li><li><a href="https://pixelryu.github.io/issen/pt/">ISSEN</a></li><li><a href="https://pixelryu.github.io/hotaru/pt/">HOTARU</a></li><li><a href="https://pixelryu.github.io/liquid-glow-cosmic/pt/">Liquid Glow</a></li><li><a href="https://pixelryu.github.io/mole-whack/pt/">Mole Whack</a></li></ul>
+    </div>
+    <div>
+      <h4 id="pr-langs" data-pr-i18n="h_langs">Idiomas</h4>
+      <div class="pr-footer-langs"><a href="https://pixelryu.github.io/senko/" hreflang="en" lang="en" data-pr-lang="en">English</a><a href="https://pixelryu.github.io/senko/ja/" hreflang="ja" lang="ja" data-pr-lang="ja">日本語</a><a href="https://pixelryu.github.io/senko/zh/" hreflang="zh" lang="zh" data-pr-lang="zh">中文</a><a href="https://pixelryu.github.io/senko/ko/" hreflang="ko" lang="ko" data-pr-lang="ko">한국어</a><a href="https://pixelryu.github.io/senko/hi/" hreflang="hi" lang="hi" data-pr-lang="hi">हिन्दी</a><a href="https://pixelryu.github.io/senko/id/" hreflang="id" lang="id" data-pr-lang="id">Indonesia</a><a href="https://pixelryu.github.io/senko/de/" hreflang="de" lang="de" data-pr-lang="de">Deutsch</a><a href="https://pixelryu.github.io/senko/fr/" hreflang="fr" lang="fr" data-pr-lang="fr">Français</a><a href="https://pixelryu.github.io/senko/it/" hreflang="it" lang="it" data-pr-lang="it">Italiano</a><a href="https://pixelryu.github.io/senko/es/" hreflang="es" lang="es" data-pr-lang="es">Español</a><a href="https://pixelryu.github.io/senko/pt/" hreflang="pt" lang="pt" data-pr-lang="pt">Português</a><a href="https://pixelryu.github.io/senko/ru/" hreflang="ru" lang="ru" data-pr-lang="ru">Русский</a></div>
+      <h4 style="margin-top:20px" data-pr-i18n="h_follow">Seguir</h4>
+      <div class="social pr-footer-social"><a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack" title="Substack"><svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a><a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note" title="note"><svg viewBox="129 129 234 234"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a><a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a><a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a><a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads" title="Threads"><svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a></div>
+    </div>
+  </div>
+  <div class="pr-footer-bottom">
+    <span>© 2026 PixelRyu</span>
+    <img class="pr-brandmark" src="../../icon.webp?v=20260704170327" alt="" width="22" height="22" decoding="async">
+    <span><a href="https://pixelryu.github.io/support/pt/" data-pr-i18n="contact">Contato</a> · <a href="mailto:idev10752@gmail.com">idev10752@gmail.com</a></span>
+  </div>
+</footer>
+<!-- pr-shell:footer end -->
+<!-- pr-shell:js start -->
+<script src="../../assets/shell-i18n.js?v=20260814085000" defer></script>
+<script src="../../assets/site.js?v=20260814085000" defer></script>
+<!-- pr-shell:js end -->
 </body>
 </html>

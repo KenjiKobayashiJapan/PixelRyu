@@ -22,221 +22,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n="title">HOTARU — 失落的屋舍</title>
 <meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="HOTARU — PixelRyu 出品的宁静日式恐怖步行模拟。欢迎参加为期 14 天的 Android 封闭测试。">
-<style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    background: radial-gradient(ellipse at top, #1a1024 0%, #0d0816 50%, #02020a 100%);
-    color: #f4ecd4;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .container {
-    max-width: 580px;
-    width: 100%;
-    padding: 80px 32px;
-    text-align: center;
-    position: relative;
-  }
-  .lang-switch {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-  }
-  .lang-switch select {
-    background: rgba(245, 213, 122, 0.05);
-    color: #f4ecd4;
-    border: 1px solid rgba(245, 213, 122, 0.20);
-    border-radius: 4px;
-    padding: 5px 10px;
-    font-size: 13px;
-    font-family: inherit;
-    cursor: pointer;
-  }
-  .lang-switch select:hover {
-    background: rgba(245, 213, 122, 0.12);
-    border-color: rgba(245, 213, 122, 0.50);
-  }
-  .lang-switch select option { background: #160d18; color: #f4ecd4; }
-  h1 {
-    font-size: 56px;
-    margin: 0 0 12px;
-    color: #f5d57a;
-    font-weight: 800;
-    letter-spacing: -0.5px;
-  }
-  .tagline {
-    font-size: 14px;
-    color: #9a8a6e;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-  }
-  .subtitle {
-    font-size: 14px;
-    color: #9a8a6e;
-    margin-bottom: 32px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  .appstore-badge {
-    display: inline-block;
-    line-height: 0;
-    transition: transform 0.2s ease, opacity 0.2s ease;
-  }
-  .appstore-badge:hover {
-    transform: translateY(-2px);
-    opacity: 0.88;
-  }
-  .appstore-badge svg { display: block; margin: 0 auto; }
-  .tester-card {
-    background: rgba(245, 213, 122, 0.05);
-    border: 1px solid rgba(245, 213, 122, 0.30);
-    border-radius: 16px;
-    padding: 24px 24px 28px;
-    margin: 32px 0 40px;
-    text-align: left;
-    box-shadow: 0 0 30px rgba(245, 213, 122, 0.05);
-  }
-  .tester-heading {
-    font-size: 13px;
-    color: #f5d57a;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 0 0 4px;
-    font-weight: 700;
-    text-align: center;
-  }
-  .tester-android-note {
-    display: block;
-    font-size: 11px;
-    color: #9a8a6e;
-    text-transform: none;
-    letter-spacing: 0;
-    font-weight: 400;
-    margin-bottom: 16px;
-    text-align: center;
-  }
-  .tester-card p {
-    font-size: 14px;
-    line-height: 1.65;
-    color: #d8caa6;
-    margin: 12px 0;
-  }
-  .tester-section-label {
-    font-size: 13px;
-    font-weight: 700;
-    color: #c9b370;
-    margin: 20px 0 6px;
-  }
-  .tester-step {
-    display: block;
-    background: rgba(245, 213, 122, 0.10);
-    border: 1px solid rgba(245, 213, 122, 0.30);
-    border-radius: 10px;
-    padding: 12px 16px;
-    margin: 10px 0;
-    color: #f5d57a;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 14px;
-    transition: all 0.2s ease;
-  }
-  .tester-step:hover {
-    background: rgba(245, 213, 122, 0.18);
-    border-color: rgba(245, 213, 122, 0.60);
-    color: #ffe9a0;
-  }
-  .tester-card ul {
-    margin: 6px 0 0;
-    padding-left: 22px;
-    color: #d8caa6;
-    font-size: 14px;
-    line-height: 1.7;
-  }
-  .overview-link {
-    display: block;
-    background: #f5d57a;
-    color: #160d18;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 700;
-    padding: 18px 22px;
-    border-radius: 14px;
-    margin: 0 0 24px;
-    transition: all 0.2s ease;
-    box-shadow: 0 6px 22px rgba(245, 213, 122, 0.22);
-  }
-  .overview-link:hover { background: #ffe9a0; transform: translateY(-1px); }
-  .promo-video {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 14px;
-    margin: 16px 0 8px;
-    background: #000;
-    box-shadow: 0 6px 22px rgba(245, 213, 122, 0.22);
-  }
-  .legal-divider {
-    font-size: 14px;
-    color: #6c7d9d;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 8px 0 16px;
-  }
-  .links { list-style: none; padding: 0; margin: 0; }
-  .links li {
-    background: rgba(245, 213, 122, 0.05);
-    border: 1px solid rgba(245, 213, 122, 0.20);
-    border-radius: 14px;
-    margin-bottom: 14px;
-    transition: all 0.25s ease;
-  }
-  .links li:hover {
-    background: rgba(245, 213, 122, 0.12);
-    border-color: rgba(245, 213, 122, 0.50);
-  }
-  .links a {
-    color: #f5d57a;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    display: block;
-    padding: 22px 24px;
-  }
-  .back {
-    display: inline-block;
-    margin-top: 48px;
-    color: #6c7d9d;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  .back:hover { color: #aac0e0; }
-  @media (max-width: 600px) {
-    .lang-switch { top: 16px; right: 16px; }
-    .tester-card { padding: 20px 18px 22px; }
-  }
-  .social-heading{font-size:13px;color:#9a8a6e;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
-  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
-  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(245,213,122,0.06);border:1px solid rgba(245,213,122,0.20);color:#9a8a6e;transition:all .25s ease;}
-  .social a:hover{background:rgba(245,213,122,0.12);border-color:rgba(245,213,122,0.45);color:#f5d57a;transform:translateY(-2px);}
-  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
-  .hero-badges {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 24px 0 8px;
-  }
-  .hero-badges a { display: inline-block; line-height: 0; margin: 0; transition: transform .2s ease, opacity .2s ease; }
-  .hero-badges a:hover { transform: translateY(-2px); opacity: .85; }
-  .hero-badges svg, .hero-badges img { display: block; }
-  .hero-badges img { height: 51px; width: auto; }
-</style>
+<!-- pr-shell: inline style removed → assets/site.css -->
 <!-- SEO/LLMO start (managed) -->
+<meta name="apple-itunes-app" content="app-id=6770427114">
 <link rel="canonical" href="https://pixelryu.github.io/hotaru/zh/">
 <link rel="alternate" hreflang="en" href="https://pixelryu.github.io/hotaru/">
 <link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/hotaru/ja/">
@@ -284,14 +72,31 @@
 <meta name="twitter:description" content="HOTARU — PixelRyu 出品的宁静日式恐怖步行模拟。欢迎参加为期 14 天的 Android 封闭测试。">
 <meta name="twitter:image" content="https://pixelryu.github.io/hotaru/og.png">
 <meta name="twitter:image:alt" content="HOTARU — 失落的屋舍">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"HOTARU","genre":"Horror, Adventure","url":"https://pixelryu.github.io/hotaru/zh/","image":"https://pixelryu.github.io/hotaru/icon.png","description":"HOTARU — PixelRyu 出品的宁静日式恐怖步行模拟。欢迎参加为期 14 天的 Android 封闭测试。","applicationCategory":"GameApplication","operatingSystem":"iOS, Android, Roblox","gamePlatform":["iOS","Android","Roblox"],"author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"alternateName":"The Lost House","downloadUrl":"https://apps.apple.com/app/id6770427114","sameAs":["https://apps.apple.com/app/id6770427114","https://play.google.com/store/apps/details?id=com.pixelryu.hotaru","https://www.roblox.com/games/112246983745989/HOTARU-Lost-Manor"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["VideoGame","MobileApplication"],"name":"HOTARU","genre":"Horror, Adventure","url":"https://pixelryu.github.io/hotaru/","image":"https://pixelryu.github.io/hotaru/icon.png","description":"HOTARU — a quiet Japanese horror walking simulator by PixelRyu. Join the 14-day Android closed testing.","applicationCategory":"GameApplication","operatingSystem":"iOS, Android, Roblox","gamePlatform":["iOS","Android","Roblox"],"author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"alternateName":"The Lost House","downloadUrl":"https://apps.apple.com/app/id6770427114","sameAs":["https://apps.apple.com/app/id6770427114","https://play.google.com/store/apps/details?id=com.pixelryu.hotaru","https://www.roblox.com/games/112246983745989/HOTARU-Lost-Manor"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/zh/"},{"@type":"ListItem","position":2,"name":"HOTARU","item":"https://pixelryu.github.io/hotaru/zh/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"HOTARU — The Lost House 是什么类型的游戏？","acceptedAnswer":{"@type":"Answer","text":"HOTARU 是 PixelRyu 出品的第一人称日式恐怖步行模拟游戏，舞台是「迷家」(maioiga)。在行灯的光辉下收集萤火虫，跟随发出绿光的旧地图碎片，并避开徘徊于宅邸中的妖怪。"}},{"@type":"Question","name":"HOTARU 是免费的吗？","acceptedAnswer":{"@type":"Answer","text":"是的 — HOTARU 可以免费游玩。"}},{"@type":"Question","name":"现在可以在哪里玩 HOTARU？","acceptedAnswer":{"@type":"Answer","text":"你可以在 App Store 下载，也可以在 Roblox 上游玩。Android 版正在通过 Google Play 进行为期 14 天的封闭测试。"}},{"@type":"Question","name":"HOTARU 吓人吗？","acceptedAnswer":{"@type":"Answer","text":"它不靠巨响惊吓，而是氛围沉静、略带不安。为了体验氛围，推荐佩戴耳机。"}},{"@type":"Question","name":"HOTARU 支持哪些语言？","acceptedAnswer":{"@type":"Answer","text":"游戏和本网站支持 12 种语言：英语、日语、中文、韩语、印地语、印尼语、德语、法语、意大利语、西班牙语、葡萄牙语和俄语。"}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What kind of game is HOTARU — The Lost House?","acceptedAnswer":{"@type":"Answer","text":"HOTARU is a first-person Japanese horror walking simulator by PixelRyu, set in a \"lost house\" (maioiga). You gather fireflies under andon lantern light, follow glowing green map fragments, and avoid the yokai that wander the halls."}},{"@type":"Question","name":"Is HOTARU free to play?","acceptedAnswer":{"@type":"Answer","text":"Yes — HOTARU is free to play."}},{"@type":"Question","name":"Where can I play HOTARU right now?","acceptedAnswer":{"@type":"Answer","text":"You can download HOTARU on the App Store and play it on Roblox. On Android, it is in a 14-day closed testing phase via Google Play."}},{"@type":"Question","name":"Is HOTARU scary?","acceptedAnswer":{"@type":"Answer","text":"It is atmospheric, quiet, and a little unsettling rather than loud. Headphones are recommended for the ambience."}},{"@type":"Question","name":"What languages does HOTARU support?","acceptedAnswer":{"@type":"Answer","text":"The game and this site support 12 languages: English, Japanese, Chinese, Korean, Hindi, Indonesian, German, French, Italian, Spanish, Portuguese, and Russian."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"HOTARU — The Lost House: Official Trailer","description":"HOTARU — a quiet Japanese horror walking simulator by PixelRyu.","thumbnailUrl":"https://pixelryu.github.io/hotaru/og.png","uploadDate":"2026-05-23T00:00:00+00:00","contentUrl":"https://pixelryu.github.io/hotaru/promotion_H_01.mp4?v=20260523212743"}</script>
 <!-- SEO/LLMO end -->
+<!-- pr-shell:css start -->
+<link rel="stylesheet" href="../../assets/site.css?v=20260814085000">
+<script>(function(){try{var t=localStorage.getItem("pixelryu_theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",t==="light"?"#F4F1EA":"#0B0E13");}catch(e){}})();</script>
+<!-- pr-shell:css end -->
 </head>
-<body>
-<div class="container">
+<body class="pr-game">
+<!-- pr-shell:header start -->
+<a class="skip-link" href="#main" data-pr-i18n="skip">跳到主要内容</a>
+<header class="pr-header">
+  <div class="pr-header-in">
+    <a class="pr-brand" href="https://pixelryu.github.io/zh/" aria-label="PixelRyu 首页" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_home"><img class="pr-brandmark" src="../../icon.webp?v=20260704170327" alt="" width="30" height="30" decoding="async">PixelRyu</a>
+    <nav class="pr-nav" aria-label="Main"><a href="https://pixelryu.github.io/games/zh/" data-pr-i18n="nav_games">游戏</a><a href="https://pixelryu.github.io/about/zh/" data-pr-i18n="nav_about">关于</a><a href="https://pixelryu.github.io/press/zh/" data-pr-i18n="nav_press">媒体</a><a href="https://pixelryu.substack.com/" target="_blank" rel="noopener" data-pr-i18n-attr="href" data-pr-i18n="news_url"><span data-pr-i18n="nav_news">开发日志</span></a><a class="pr-nav-lang" href="#pr-langs" aria-label="选择语言" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg></a><button type="button" class="pr-theme" aria-label="切换深色/浅色" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_theme" aria-pressed="false"><svg class="pr-ic-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg><svg class="pr-ic-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 13.2A8.2 8.2 0 0 1 10.8 4a8.2 8.2 0 1 0 9.2 9.2z"/></svg></button></nav>
+    <details class="pr-burger">
+      <summary aria-label="菜单" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_menu"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <div class="pr-burger-menu"><a href="https://pixelryu.github.io/games/zh/" data-pr-i18n="nav_games">游戏</a><a href="https://pixelryu.github.io/about/zh/" data-pr-i18n="nav_about">关于</a><a href="https://pixelryu.github.io/press/zh/" data-pr-i18n="nav_press">媒体</a><a href="https://pixelryu.substack.com/" target="_blank" rel="noopener" data-pr-i18n-attr="href" data-pr-i18n="news_url"><span data-pr-i18n="nav_news">开发日志</span></a><a href="#pr-langs" data-pr-i18n="nav_langs">语言</a><button type="button" class="pr-theme" aria-pressed="false"><svg class="pr-ic-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg><svg class="pr-ic-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 13.2A8.2 8.2 0 0 1 10.8 4a8.2 8.2 0 1 0 9.2 9.2z"/></svg><span data-pr-i18n="nav_theme">主题</span></button></div>
+    </details>
+  </div>
+</header>
+<!-- pr-shell:header end -->
+<div class="container" id="main" role="main">
   <div class="lang-switch">
     <select id="lang-select" aria-label="Language"></select>
   </div>
@@ -311,7 +116,7 @@
       </svg>
     </a>
     <a href="#tester-heading" aria-label="Join HOTARU Android testers">
-      <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+      <img src="../../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
     </a>
     <a href="https://www.roblox.com/games/112246983745989/HOTARU-Lost-Manor" target="_blank" rel="noopener" aria-label="Play HOTARU on Roblox">
       <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title>
@@ -368,7 +173,7 @@
   <a href="https://pixelryu.github.io/hotaru/overview.html" class="overview-link">🏮 <span data-i18n="link_overview">查看游戏简介</span> →</a>
 
   <video class="promo-video" autoplay loop muted playsinline controls preload="auto">
-    <source src="https://pixelryu.github.io/hotaru/promotion_H_01.mp4?v=20260523212743" type="video/mp4">
+    <source src="../promotion_H_01.mp4?v=20260523212743" type="video/mp4">
   </video>
 
   <div class="legal-divider" data-i18n="legal_divider">法律文件</div>
@@ -1044,8 +849,51 @@
     sel.addEventListener('change', function(e){ setLang(e.target.value, true); });
   })();
 </script>
-<script src="https://pixelryu.github.io/breadcrumb.js?v=20260602202548" defer></script>
-<script src="https://pixelryu.github.io/tester-open-external.js?v=20260625" defer></script>
+<script src="../../breadcrumb.js?v=20260602202548" defer></script>
+<script src="../../tester-open-external.js?v=20260625" defer></script>
 <script src="https://pixelryu.github.io/appstore-localize.js?v=20260620070331" defer></script>
+<!-- pr-shell:footer start -->
+<footer class="pr-footer">
+  <div class="pr-footer-in">
+    <div>
+      <a class="pr-brand" href="https://pixelryu.github.io/zh/"><img class="pr-brandmark" src="../../icon.webp?v=20260704170327" alt="" width="30" height="30" decoding="async">PixelRyu</a>
+      <p style="font-size:14px;margin:14px 0 16px;max-width:30ch" data-pr-i18n="blurb">小小的游戏，来自日本。在 iPhone、Android 和 Roblox 上免费畅玩，支持 12 种语言。</p>
+      <div class="pr-news">
+        <p data-pr-i18n="news_p">通过邮件获取新作消息。无论平台发生什么，它都能送到你手中。</p>
+        <a class="pr-btn pr-btn-primary" href="https://pixelryu.substack.com/" target="_blank" rel="noopener" style="font-size:14px;padding:9px 16px" data-pr-i18n-attr="href" data-pr-i18n="news_url"><span data-pr-i18n="news_cta">阅读开发日志</span></a>
+      </div>
+    </div>
+    <div>
+      <h4 data-pr-i18n="h_explore">浏览</h4>
+      <ul>
+        <li><a href="https://pixelryu.github.io/games/zh/" data-pr-i18n="e_games">全部游戏</a></li>
+        <li><a href="https://pixelryu.github.io/roblox/zh/" data-pr-i18n="e_roblox">在 Roblox 上游玩</a></li>
+        <li><a href="https://pixelryu.github.io/about/zh/" data-pr-i18n="e_about">关于 Ryu</a></li>
+        <li><a href="https://pixelryu.github.io/press/zh/" data-pr-i18n="e_press">媒体资料</a></li>
+        <li><a href="https://pixelryu.github.io/support/zh/" data-pr-i18n="e_support">支持</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-pr-i18n="h_games">游戏</h4>
+      <ul style="columns:2;column-gap:18px"><li><a href="https://pixelryu.github.io/kado/zh/">KADŌ</a></li><li><a href="https://pixelryu.github.io/hanko/zh/">HANKO</a></li><li><a href="https://pixelryu.github.io/hoshikari/zh/">Hoshikari</a></li><li><a href="https://pixelryu.github.io/okaeri/zh/">Okaeri</a></li><li><a href="https://pixelryu.github.io/shizuku/zh/">Shizuku</a></li><li><a href="https://pixelryu.github.io/senko/zh/">SENKO</a></li><li><a href="https://pixelryu.github.io/wagashi/zh/">WAGASHI</a></li><li><a href="https://pixelryu.github.io/counterparts/zh/">CounterParts</a></li><li><a href="https://pixelryu.github.io/tatami/zh/">TATAMI</a></li><li><a href="https://pixelryu.github.io/temari/zh/">TEMARI</a></li><li><a href="https://pixelryu.github.io/bounce-cat/zh/">Bounce Cat</a></li><li><a href="https://pixelryu.github.io/hayate/zh/">HAYATE</a></li><li><a href="https://pixelryu.github.io/sumlings/zh/">Sumlings</a></li><li><a href="https://pixelryu.github.io/parcel-pals/zh/">Parcel Pals</a></li><li><a href="https://pixelryu.github.io/issen/zh/">ISSEN</a></li><li><a href="https://pixelryu.github.io/hotaru/zh/">HOTARU</a></li><li><a href="https://pixelryu.github.io/liquid-glow-cosmic/zh/">Liquid Glow</a></li><li><a href="https://pixelryu.github.io/mole-whack/zh/">Mole Whack</a></li></ul>
+    </div>
+    <div>
+      <h4 id="pr-langs" data-pr-i18n="h_langs">语言</h4>
+      <div class="pr-footer-langs"><a href="https://pixelryu.github.io/hotaru/" hreflang="en" lang="en" data-pr-lang="en">English</a><a href="https://pixelryu.github.io/hotaru/ja/" hreflang="ja" lang="ja" data-pr-lang="ja">日本語</a><a href="https://pixelryu.github.io/hotaru/zh/" hreflang="zh" lang="zh" data-pr-lang="zh">中文</a><a href="https://pixelryu.github.io/hotaru/ko/" hreflang="ko" lang="ko" data-pr-lang="ko">한국어</a><a href="https://pixelryu.github.io/hotaru/hi/" hreflang="hi" lang="hi" data-pr-lang="hi">हिन्दी</a><a href="https://pixelryu.github.io/hotaru/id/" hreflang="id" lang="id" data-pr-lang="id">Indonesia</a><a href="https://pixelryu.github.io/hotaru/de/" hreflang="de" lang="de" data-pr-lang="de">Deutsch</a><a href="https://pixelryu.github.io/hotaru/fr/" hreflang="fr" lang="fr" data-pr-lang="fr">Français</a><a href="https://pixelryu.github.io/hotaru/it/" hreflang="it" lang="it" data-pr-lang="it">Italiano</a><a href="https://pixelryu.github.io/hotaru/es/" hreflang="es" lang="es" data-pr-lang="es">Español</a><a href="https://pixelryu.github.io/hotaru/pt/" hreflang="pt" lang="pt" data-pr-lang="pt">Português</a><a href="https://pixelryu.github.io/hotaru/ru/" hreflang="ru" lang="ru" data-pr-lang="ru">Русский</a></div>
+      <h4 style="margin-top:20px" data-pr-i18n="h_follow">关注</h4>
+      <div class="social pr-footer-social"><a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack" title="Substack"><svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a><a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note" title="note"><svg viewBox="129 129 234 234"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a><a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a><a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a><a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads" title="Threads"><svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a></div>
+    </div>
+  </div>
+  <div class="pr-footer-bottom">
+    <span>© 2026 PixelRyu</span>
+    <img class="pr-brandmark" src="../../icon.webp?v=20260704170327" alt="" width="22" height="22" decoding="async">
+    <span><a href="https://pixelryu.github.io/support/zh/" data-pr-i18n="contact">联系</a> · <a href="mailto:idev10752@gmail.com">idev10752@gmail.com</a></span>
+  </div>
+</footer>
+<!-- pr-shell:footer end -->
+<!-- pr-shell:js start -->
+<script src="../../assets/shell-i18n.js?v=20260814085000" defer></script>
+<script src="../../assets/site.js?v=20260814085000" defer></script>
+<!-- pr-shell:js end -->
 </body>
 </html>

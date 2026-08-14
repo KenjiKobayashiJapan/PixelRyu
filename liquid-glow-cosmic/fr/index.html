@@ -22,61 +22,9 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n="title">Liquid Glow — un puzzle cosmique d'association de couleurs</title>
 <meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Liquid Glow par PixelRyu — puzzle de couleurs dans l&#x27;espace. Glissez la lumière sur la constellation, accordez les anneaux. Disponible sur l&#x27;App Store et Roblox.">
-<style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    background: radial-gradient(ellipse at top, #172244 0%, #080d1f 50%, #02040c 100%);
-    color: #e4ebf5; margin: 0; min-height: 100vh;
-    display: flex; align-items: center; justify-content: center;
-  }
-  .container { max-width: 580px; width: 100%; padding: 80px 32px; text-align: center; position: relative; }
-  .lang-switch { position: absolute; top: 24px; right: 24px; }
-  .lang-switch select {
-    background: rgba(122, 176, 255, 0.06); color: #e4ebf5; border: 1px solid rgba(122, 176, 255, 0.20);
-    border-radius: 4px; padding: 5px 10px; font-size: 13px; font-family: inherit; cursor: pointer;
-  }
-  .lang-switch select:hover { background: rgba(122, 176, 255, 0.12); border-color: rgba(122, 176, 255, 0.50); }
-  .lang-switch select option { background: #0d1428; color: #e4ebf5; }
-  .back { display: inline-block; margin-top: 40px; color: #6c7d9d; text-decoration: none; font-size: 14px; }
-  .back:hover { color: #aac0e0; }
-  .social-heading{font-size:13px;color:#6c7d9d;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
-  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
-  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(122,176,255,0.06);border:1px solid rgba(122,176,255,0.20);color:#8b9bbd;transition:all .25s ease;}
-  .social a:hover{background:rgba(122,176,255,0.12);border-color:rgba(122,176,255,0.50);color:#a0c8ff;transform:translateY(-2px);}
-  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
-  .brand-icon { width: 120px; height: 120px; border-radius: 28px; display: block; margin: 0 auto 18px; box-shadow: 0 8px 28px rgba(0,0,0,0.45), 0 0 0 1px rgba(122,176,255,0.22); }
-  h1 { font-size: 56px; margin: 0 0 12px; color: #d8e3f5; font-weight: 800; letter-spacing: -0.5px; }
-  .tagline { font-size: 16px; color: #6c7d9d; margin-bottom: 28px; text-transform: uppercase; letter-spacing: 2px; }
-  .lead { font-size: 15px; line-height: 1.8; color: #c5d0e6; margin: 0 auto 22px; max-width: 480px; }
-  .hero-badges { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: 12px; margin: 24px 0 6px; }
-  .hero-badges a { display: inline-block; line-height: 0; margin: 0; transition: transform .2s ease, opacity .2s ease; }
-  .hero-badges a:hover { transform: translateY(-2px); opacity: .85; }
-  .hero-badges svg, .hero-badges img { display: block; }
-  .appstore-note { font-size: 12px; color: #8b9bbd; margin: 2px 0 22px; }
-  .overview-link {
-    display: block; background: #7ab0ff; color: #08122b; text-decoration: none; font-size: 16px;
-    font-weight: 700; padding: 18px 22px; border-radius: 14px; margin: 0 0 26px;
-    transition: all 0.2s ease; box-shadow: 0 6px 22px rgba(122, 176, 255, 0.25);
-  }
-  .overview-link:hover { background: #a0c8ff; transform: translateY(-1px); }
-  .video-heading { font-size: 13px; color: #6c7d9d; text-transform: uppercase; letter-spacing: 2px; margin: 8px 0 14px; }
-  .video-pair { display: flex; flex-direction: column; gap: 20px; align-items: center; margin: 4px 0 6px; }
-  .video-col { width: 100%; }
-  .video-col .video-label { font-size: 12px; color: #8b9bbd; margin: 0 0 8px; font-weight: 600; }
-  .promo-video { display: block; width: 100%; aspect-ratio: 16 / 9; border-radius: 12px; background: #000; box-shadow: 0 6px 22px rgba(122, 176, 255, 0.20); }
-  .classic-cta { display: inline-block; margin: 2px 0 6px; color: #7ab0ff; text-decoration: none; font-size: 13px; }
-  .classic-cta:hover { color: #a0c8ff; text-decoration: underline; }
-  .legal-divider { font-size: 13px; color: #6c7d9d; text-transform: uppercase; letter-spacing: 2px; margin: 30px 0 16px; }
-  .links { list-style: none; padding: 0; margin: 0; }
-  .links li { background: rgba(122, 176, 255, 0.06); border: 1px solid rgba(122, 176, 255, 0.20); border-radius: 14px; margin-bottom: 14px; transition: all 0.25s ease; }
-  .links li:hover { background: rgba(122, 176, 255, 0.12); border-color: rgba(122, 176, 255, 0.50); }
-  .links a { color: #7ab0ff; text-decoration: none; font-size: 18px; font-weight: 600; display: block; padding: 22px 24px; }
-  @media (max-width: 600px) { .lang-switch { top: 16px; right: 16px; } .brand-icon { width: 104px; height: 104px; border-radius: 24px; } }
-  .tester-card { background: rgba(122, 176, 255, 0.06); border: 1px solid rgba(122, 176, 255, 0.30); border-radius: 16px; padding: 24px 24px 28px; margin: 32px 0 40px; text-align: left; box-shadow: 0 0 30px rgba(122, 176, 255, 0.05); }
-  .tester-card p { font-size: 14px; line-height: 1.65; color: #c5d0e6; margin: 12px 0; }
-  .tester-card strong { color: #d8e3f5; }
-</style>
+<!-- pr-shell: inline style removed → assets/site.css -->
 <!-- SEO/LLMO start (managed) -->
+<meta name="apple-itunes-app" content="app-id=6770228059">
 <link rel="canonical" href="https://pixelryu.github.io/liquid-glow-cosmic/fr/">
 <link rel="alternate" hreflang="en" href="https://pixelryu.github.io/liquid-glow-cosmic/">
 <link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/liquid-glow-cosmic/ja/">
@@ -124,16 +72,33 @@
 <meta name="twitter:description" content="Liquid Glow par PixelRyu — puzzle de couleurs dans l&#x27;espace. Glissez la lumière sur la constellation, accordez les anneaux. Disponible sur l&#x27;App Store et Roblox.">
 <meta name="twitter:image" content="https://pixelryu.github.io/liquid-glow-cosmic/og.png?v=20260610104059">
 <meta name="twitter:image:alt" content="Liquid Glow — un puzzle cosmique d&#x27;association de couleurs">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Liquid Glow","genre":"Puzzle, Casual","url":"https://pixelryu.github.io/liquid-glow-cosmic/fr/","image":"https://pixelryu.github.io/liquid-glow-cosmic/icon.png","description":"Liquid Glow par PixelRyu — puzzle de couleurs dans l'espace. Glissez la lumière sur la constellation, accordez les anneaux. Disponible sur l'App Store et Roblox.","applicationCategory":"GameApplication","operatingSystem":"iOS, Roblox","gamePlatform":["iOS","Roblox"],"author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"sameAs":["https://apps.apple.com/app/id6770228059","https://www.roblox.com/games/121416912707355/Liquid-Glow-Sort-Puzzle"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["VideoGame","MobileApplication"],"name":"Liquid Glow","genre":"Puzzle, Casual","url":"https://pixelryu.github.io/liquid-glow-cosmic/","image":"https://pixelryu.github.io/liquid-glow-cosmic/icon.png","description":"Liquid Glow is a calm, luminous color-matching puzzle in deep space. Slide glowing light along the constellation so each star's ring matches its color. Out now on the App Store and Roblox.","applicationCategory":"GameApplication","operatingSystem":"iOS, Roblox","gamePlatform":["iOS","Roblox"],"author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"sameAs":["https://apps.apple.com/app/id6770228059","https://www.roblox.com/games/121416912707355/Liquid-Glow-Sort-Puzzle"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"}}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/fr/"},{"@type":"ListItem","position":2,"name":"Liquid Glow","item":"https://pixelryu.github.io/liquid-glow-cosmic/fr/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Quel genre de jeu est Liquid Glow ?","acceptedAnswer":{"@type":"Answer","text":"Liquid Glow par PixelRyu est un puzzle d'association de couleurs apaisant et lumineux dans l'espace profond. Un jeu de couleurs méditatif, jamais une course."}},{"@type":"Question","name":"Liquid Glow est-il gratuit ?","acceptedAnswer":{"@type":"Answer","text":"Oui, Liquid Glow est jouable gratuitement."}},{"@type":"Question","name":"Où peut-on y jouer dès maintenant ?","acceptedAnswer":{"@type":"Answer","text":"Téléchargez la version iPhone sur l'App Store, ou jouez-y dès maintenant sur Roblox. Le puzzle de tri classique est disponible sur Google Play (Android)."}},{"@type":"Question","name":"Comment joue-t-on à Liquid Glow ?","acceptedAnswer":{"@type":"Answer","text":"Touchez une étoile brillante, puis une étoile reliée, pour faire glisser sa lumière le long des fils. Amenez chaque lumière jusqu'à l'étoile dont l'anneau affiche sa couleur."}},{"@type":"Question","name":"Quelles langues sont prises en charge ?","acceptedAnswer":{"@type":"Answer","text":"Le jeu et ce site prennent en charge 12 langues : anglais, japonais, chinois, coréen, hindi, indonésien, allemand, français, italien, espagnol, portugais et russe."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What kind of game is Liquid Glow?","acceptedAnswer":{"@type":"Answer","text":"Liquid Glow by PixelRyu is a calm, luminous color-matching puzzle set in deep space. It is a meditative play of color, never a race."}},{"@type":"Question","name":"Is Liquid Glow free to play?","acceptedAnswer":{"@type":"Answer","text":"Yes, Liquid Glow is free to play."}},{"@type":"Question","name":"Where can I play Liquid Glow right now?","acceptedAnswer":{"@type":"Answer","text":"Download the iPhone version on the App Store, or play it now on Roblox. The classic sort puzzle is available on Google Play (Android)."}},{"@type":"Question","name":"How do you play Liquid Glow?","acceptedAnswer":{"@type":"Answer","text":"Tap a glowing star, then a connected star, to slide its light along the threads. Bring each light to the star whose ring shows its color."}},{"@type":"Question","name":"Which languages does Liquid Glow support?","acceptedAnswer":{"@type":"Answer","text":"The game and this site support 12 languages: English, Japanese, Chinese, Korean, Hindi, Indonesian, German, French, Italian, Spanish, Portuguese, and Russian."}}]}</script>
 <script type="application/ld+json">[{"@context":"https://schema.org","@type":"VideoObject","name":"Liquid Glow — Official Trailer (New Version, iPhone & Roblox)","description":"Liquid Glow by PixelRyu — a calm, luminous color-matching puzzle in deep space. Slide glowing light along the constellation so every ring matches its color.","thumbnailUrl":"https://pixelryu.github.io/liquid-glow-cosmic/og.png","uploadDate":"2026-06-10T00:00:00+00:00","contentUrl":"https://pixelryu.github.io/liquid-glow-cosmic/promotion_H_story.mp4?v=20260610104059"},{"@context":"https://schema.org","@type":"VideoObject","name":"Liquid Glow — Classic Sort Puzzle Trailer (Google Play, Android)","description":"The classic Liquid Glow sort puzzle by PixelRyu, available on Google Play (Android).","thumbnailUrl":"https://pixelryu.github.io/liquid-glow-cosmic/og.png","uploadDate":"2026-06-10T00:00:00+00:00","contentUrl":"https://pixelryu.github.io/liquid-glow-cosmic/promotion_H_classic.mp4?v=20260610104059"}]</script>
 <!-- SEO/LLMO end -->
+<!-- pr-shell:css start -->
+<link rel="stylesheet" href="../../assets/site.css?v=20260814085000">
+<script>(function(){try{var t=localStorage.getItem("pixelryu_theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",t==="light"?"#F4F1EA":"#0B0E13");}catch(e){}})();</script>
+<!-- pr-shell:css end -->
 </head>
-<body>
-<div class="container">
+<body class="pr-game">
+<!-- pr-shell:header start -->
+<a class="skip-link" href="#main" data-pr-i18n="skip">Aller au contenu</a>
+<header class="pr-header">
+  <div class="pr-header-in">
+    <a class="pr-brand" href="https://pixelryu.github.io/fr/" aria-label="Accueil PixelRyu" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_home"><img class="pr-brandmark" src="../../icon.webp?v=20260704170327" alt="" width="30" height="30" decoding="async">PixelRyu</a>
+    <nav class="pr-nav" aria-label="Main"><a href="https://pixelryu.github.io/games/fr/" data-pr-i18n="nav_games">Jeux</a><a href="https://pixelryu.github.io/about/fr/" data-pr-i18n="nav_about">À propos</a><a href="https://pixelryu.github.io/press/fr/" data-pr-i18n="nav_press">Presse</a><a href="https://pixelryu.substack.com/" target="_blank" rel="noopener" data-pr-i18n-attr="href" data-pr-i18n="news_url"><span data-pr-i18n="nav_news">Journal</span></a><a class="pr-nav-lang" href="#pr-langs" aria-label="Choisir la langue" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg></a><button type="button" class="pr-theme" aria-label="Basculer entre sombre et clair" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_theme" aria-pressed="false"><svg class="pr-ic-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg><svg class="pr-ic-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 13.2A8.2 8.2 0 0 1 10.8 4a8.2 8.2 0 1 0 9.2 9.2z"/></svg></button></nav>
+    <details class="pr-burger">
+      <summary aria-label="Menu" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_menu"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <div class="pr-burger-menu"><a href="https://pixelryu.github.io/games/fr/" data-pr-i18n="nav_games">Jeux</a><a href="https://pixelryu.github.io/about/fr/" data-pr-i18n="nav_about">À propos</a><a href="https://pixelryu.github.io/press/fr/" data-pr-i18n="nav_press">Presse</a><a href="https://pixelryu.substack.com/" target="_blank" rel="noopener" data-pr-i18n-attr="href" data-pr-i18n="news_url"><span data-pr-i18n="nav_news">Journal</span></a><a href="#pr-langs" data-pr-i18n="nav_langs">Langues</a><button type="button" class="pr-theme" aria-pressed="false"><svg class="pr-ic-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg><svg class="pr-ic-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 13.2A8.2 8.2 0 0 1 10.8 4a8.2 8.2 0 1 0 9.2 9.2z"/></svg><span data-pr-i18n="nav_theme">Thème</span></button></div>
+    </details>
+  </div>
+</header>
+<!-- pr-shell:header end -->
+<div class="container" id="main" role="main">
   <div class="lang-switch"><select id="lang-select" aria-label="Language"></select></div>
-  <img src="https://pixelryu.github.io/liquid-glow-cosmic/icon.webp?v=20260610104059" alt="Liquid Glow" class="brand-icon" width="132" height="132" fetchpriority="high">
+  <img src="../icon.webp?v=20260610104059" alt="Liquid Glow" class="brand-icon" width="132" height="132" fetchpriority="high">
   <h1>Liquid Glow</h1>
   <div class="tagline" data-i18n="tagline">Un puzzle cosmique d'association de couleurs</div>
 
@@ -169,13 +134,13 @@
     <div class="video-col">
       <div class="video-label" data-i18n="video_new_label">Nouvelle version — iPhone &amp; Roblox</div>
       <video id="promo-new" class="promo-video" autoplay loop muted playsinline controls preload="auto">
-        <source src="https://pixelryu.github.io/liquid-glow-cosmic/promotion_H_story.mp4?v=20260610104059" type="video/mp4">
+        <source src="../promotion_H_story.mp4?v=20260610104059" type="video/mp4">
       </video>
     </div>
     <div class="video-col">
       <div class="video-label" data-i18n="video_classic_label">Classique — sur Google Play (Android)</div>
       <video class="promo-video" loop muted playsinline controls preload="metadata">
-        <source src="https://pixelryu.github.io/liquid-glow-cosmic/promotion_H_classic.mp4?v=20260610104059" type="video/mp4">
+        <source src="../promotion_H_classic.mp4?v=20260610104059" type="video/mp4">
       </video>
       <a class="classic-cta" href="https://pixelryu.github.io/liquid-glow/fr/" data-i18n="classic_cta">Vous cherchez le puzzle de tri classique ? Jouez-y sur Google Play (Android) →</a>
     </div>
@@ -694,6 +659,49 @@
     sel.addEventListener('change', function(e){ setLang(e.target.value, true); });
   })();
 </script>
-<script src="https://pixelryu.github.io/breadcrumb.js?v=20260610104059" defer></script>
+<script src="../../breadcrumb.js?v=20260610104059" defer></script>
+<!-- pr-shell:footer start -->
+<footer class="pr-footer">
+  <div class="pr-footer-in">
+    <div>
+      <a class="pr-brand" href="https://pixelryu.github.io/fr/"><img class="pr-brandmark" src="../../icon.webp?v=20260704170327" alt="" width="30" height="30" decoding="async">PixelRyu</a>
+      <p style="font-size:14px;margin:14px 0 16px;max-width:30ch" data-pr-i18n="blurb">De petits jeux, façonnés au Japon. Gratuits sur iPhone, Android et Roblox — en 12 langues.</p>
+      <div class="pr-news">
+        <p data-pr-i18n="news_p">Recevez les nouveautés par e-mail. Elles vous parviennent quoi qu'il arrive aux plateformes.</p>
+        <a class="pr-btn pr-btn-primary" href="https://pixelryu.substack.com/" target="_blank" rel="noopener" style="font-size:14px;padding:9px 16px" data-pr-i18n-attr="href" data-pr-i18n="news_url"><span data-pr-i18n="news_cta">Lire le journal</span></a>
+      </div>
+    </div>
+    <div>
+      <h4 data-pr-i18n="h_explore">Explorer</h4>
+      <ul>
+        <li><a href="https://pixelryu.github.io/games/fr/" data-pr-i18n="e_games">Tous les jeux</a></li>
+        <li><a href="https://pixelryu.github.io/roblox/fr/" data-pr-i18n="e_roblox">Jouer sur Roblox</a></li>
+        <li><a href="https://pixelryu.github.io/about/fr/" data-pr-i18n="e_about">À propos de Ryu</a></li>
+        <li><a href="https://pixelryu.github.io/press/fr/" data-pr-i18n="e_press">Kit presse</a></li>
+        <li><a href="https://pixelryu.github.io/support/fr/" data-pr-i18n="e_support">Assistance</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-pr-i18n="h_games">Jeux</h4>
+      <ul style="columns:2;column-gap:18px"><li><a href="https://pixelryu.github.io/kado/fr/">KADŌ</a></li><li><a href="https://pixelryu.github.io/hanko/fr/">HANKO</a></li><li><a href="https://pixelryu.github.io/hoshikari/fr/">Hoshikari</a></li><li><a href="https://pixelryu.github.io/okaeri/fr/">Okaeri</a></li><li><a href="https://pixelryu.github.io/shizuku/fr/">Shizuku</a></li><li><a href="https://pixelryu.github.io/senko/fr/">SENKO</a></li><li><a href="https://pixelryu.github.io/wagashi/fr/">WAGASHI</a></li><li><a href="https://pixelryu.github.io/counterparts/fr/">CounterParts</a></li><li><a href="https://pixelryu.github.io/tatami/fr/">TATAMI</a></li><li><a href="https://pixelryu.github.io/temari/fr/">TEMARI</a></li><li><a href="https://pixelryu.github.io/bounce-cat/fr/">Bounce Cat</a></li><li><a href="https://pixelryu.github.io/hayate/fr/">HAYATE</a></li><li><a href="https://pixelryu.github.io/sumlings/fr/">Sumlings</a></li><li><a href="https://pixelryu.github.io/parcel-pals/fr/">Parcel Pals</a></li><li><a href="https://pixelryu.github.io/issen/fr/">ISSEN</a></li><li><a href="https://pixelryu.github.io/hotaru/fr/">HOTARU</a></li><li><a href="https://pixelryu.github.io/liquid-glow-cosmic/fr/">Liquid Glow</a></li><li><a href="https://pixelryu.github.io/mole-whack/fr/">Mole Whack</a></li></ul>
+    </div>
+    <div>
+      <h4 id="pr-langs" data-pr-i18n="h_langs">Langues</h4>
+      <div class="pr-footer-langs"><a href="https://pixelryu.github.io/liquid-glow-cosmic/" hreflang="en" lang="en" data-pr-lang="en">English</a><a href="https://pixelryu.github.io/liquid-glow-cosmic/ja/" hreflang="ja" lang="ja" data-pr-lang="ja">日本語</a><a href="https://pixelryu.github.io/liquid-glow-cosmic/zh/" hreflang="zh" lang="zh" data-pr-lang="zh">中文</a><a href="https://pixelryu.github.io/liquid-glow-cosmic/ko/" hreflang="ko" lang="ko" data-pr-lang="ko">한국어</a><a href="https://pixelryu.github.io/liquid-glow-cosmic/hi/" hreflang="hi" lang="hi" data-pr-lang="hi">हिन्दी</a><a href="https://pixelryu.github.io/liquid-glow-cosmic/id/" hreflang="id" lang="id" data-pr-lang="id">Indonesia</a><a href="https://pixelryu.github.io/liquid-glow-cosmic/de/" hreflang="de" lang="de" data-pr-lang="de">Deutsch</a><a href="https://pixelryu.github.io/liquid-glow-cosmic/fr/" hreflang="fr" lang="fr" data-pr-lang="fr">Français</a><a href="https://pixelryu.github.io/liquid-glow-cosmic/it/" hreflang="it" lang="it" data-pr-lang="it">Italiano</a><a href="https://pixelryu.github.io/liquid-glow-cosmic/es/" hreflang="es" lang="es" data-pr-lang="es">Español</a><a href="https://pixelryu.github.io/liquid-glow-cosmic/pt/" hreflang="pt" lang="pt" data-pr-lang="pt">Português</a><a href="https://pixelryu.github.io/liquid-glow-cosmic/ru/" hreflang="ru" lang="ru" data-pr-lang="ru">Русский</a></div>
+      <h4 style="margin-top:20px" data-pr-i18n="h_follow">Suivre</h4>
+      <div class="social pr-footer-social"><a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack" title="Substack"><svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a><a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note" title="note"><svg viewBox="129 129 234 234"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a><a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a><a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a><a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads" title="Threads"><svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a></div>
+    </div>
+  </div>
+  <div class="pr-footer-bottom">
+    <span>© 2026 PixelRyu</span>
+    <img class="pr-brandmark" src="../../icon.webp?v=20260704170327" alt="" width="22" height="22" decoding="async">
+    <span><a href="https://pixelryu.github.io/support/fr/" data-pr-i18n="contact">Contact</a> · <a href="mailto:idev10752@gmail.com">idev10752@gmail.com</a></span>
+  </div>
+</footer>
+<!-- pr-shell:footer end -->
+<!-- pr-shell:js start -->
+<script src="../../assets/shell-i18n.js?v=20260814085000" defer></script>
+<script src="../../assets/site.js?v=20260814085000" defer></script>
+<!-- pr-shell:js end -->
 </body>
 </html>

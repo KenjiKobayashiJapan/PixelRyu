@@ -15,6 +15,9 @@ hreflang + language-switcher each run.
 import os, re, sys, json, html, subprocess, tempfile
 from urllib.parse import urljoin
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from shell_i18n import SHELL, check as shell_i18n_check   # 共通シェルの12言語辞書（正本）
+
 ROOT = os.path.normpath(os.path.join(os.path.dirname(os.path.abspath(__file__)), ".."))
 LANGS = ["en", "ja", "zh", "ko", "hi", "id", "de", "fr", "it", "es", "pt", "ru"]
 LOCALE = {"en": "en_US", "ja": "ja_JP", "zh": "zh_CN", "ko": "ko_KR", "hi": "hi_IN",
@@ -25,6 +28,12 @@ SITE = "https://pixelryu.github.io/"
 GAMES = ["kado", "hanko", "okaeri", "shizuku", "senko", "wagashi", "counterparts", "temari",
          "tatami", "bounce-cat", "hoshikari", "hayate", "sumlings", "parcel-pals",
          "issen", "hotaru", "liquid-glow-cosmic", "liquid-glow", "mole-whack"]
+
+# ゲームではないサイトセクション（2026-08 刷新で新設）。
+# ここに入れると (a) 12言語ページが生成され (b) 言語ページ間のリンクが同じ言語に閉じる。
+# press は当初「メディア向けだから英語のみ」としていたが、2026-08-14 にユーザー依頼で
+# 12言語化した（海外メディア／配信者は英語圏だけではない）。
+PAGES = ["games", "roblox", "support", "about", "press"]
 
 
 def esc_text(s):
@@ -76,30 +85,38 @@ def hreflang_block(orig):
     return "\n".join(rows)
 
 
-def apply_i18n(src, d):
+def apply_i18n(src, d, key_attr="data-i18n"):
+    """`<key_attr>` を持つ要素を辞書 d の訳で置き換える。
+    key_attr="data-pr-i18n" で共通シェル（ヘッダー/フッター）にも同じ機構を使う。
+    シェルはページ辞書と名前空間が別（tools/shell_i18n.py が正本）。"""
+    attr_attr = key_attr + "-attr"
     # attr-type (e.g. <meta data-i18n-attr="content" data-i18n="meta_desc" ...>)
     def attr_repl(m):
         tag = m.group(0)
-        km = re.search(r'data-i18n="([^"]+)"', tag)
-        am = re.search(r'data-i18n-attr="([^"]+)"', tag)
+        km = re.search(r'%s="([^"]+)"' % key_attr, tag)
+        am = re.search(r'%s="([^"]+)"' % attr_attr, tag)
         if not km or not am or km.group(1) not in d:
             return tag
         attr, val = am.group(1), esc_attr(d[km.group(1)])
         if re.search(r'\b%s="[^"]*"' % re.escape(attr), tag):
             return re.sub(r'\b%s="[^"]*"' % re.escape(attr), lambda _m: '%s="%s"' % (attr, val), tag, count=1)
         return tag[:-1] + ' %s="%s">' % (attr, val)
-    src = re.sub(r'<\w+\b[^>]*\bdata-i18n-attr="[^"]+"[^>]*>', attr_repl, src)
+    src = re.sub(r'<\w+\b[^>]*\b%s="[^"]+"[^>]*>' % attr_attr, attr_repl, src)
 
     # text-type
     def text_repl(m):
         tag, attrs, inner = m.group(1), m.group(2), m.group(3)
-        if 'data-i18n-attr' in attrs:
-            return m.group(0)
-        km = re.search(r'\bdata-i18n="([^"]+)"', attrs)
+        if attr_attr in attrs:
+            # 属性側を訳す要素（例: aria-label 付きボタン）でも、その中の子要素は訳す。
+            # ここで丸ごと返すと re.sub がマッチ末尾から再開するため、内側の
+            # <span data-pr-i18n="..."> に二度と到達しない（英語のまま残る）。
+            return '<%s%s>%s</%s>' % (tag, attrs, apply_i18n(inner, d, key_attr), tag)
+        km = re.search(r'\b%s="([^"]+)"' % key_attr, attrs)
         if not km or km.group(1) not in d:
             return m.group(0)
         return '<%s%s>%s</%s>' % (tag, attrs, esc_text(d[km.group(1)]), tag)
-    return re.sub(r'<(\w+)((?:[^>]*\s)?data-i18n="[^"]+"[^>]*)>(.*?)</\1>', text_repl, src, flags=re.S)
+    return re.sub(r'<(\w+)((?:[^>]*\s)?%s="[^"]+"[^>]*)>(.*?)</\1>' % key_attr,
+                  text_repl, src, flags=re.S)
 
 
 def transform_jsonld(src, d, langurl, home_lang):
@@ -121,29 +138,58 @@ def transform_jsonld(src, d, langurl, home_lang):
                         it["item"] = home_lang
                     elif it.get("position") == 2:
                         it["item"] = langurl
-            elif t == "FAQPage" and "faq_q1" in d:
+            elif t == "FAQPage":
+                # ゲームページは faq_q1..q5、/support/ は q1..q6 のキー体系
                 me = []
-                for i in range(1, 6):
-                    q, a = d.get("faq_q%d" % i), d.get("faq_a%d" % i)
-                    if q and a:
-                        me.append({"@type": "Question", "name": q,
-                                   "acceptedAnswer": {"@type": "Answer", "text": a}})
+                for prefix, n in (("faq_q%d", 6), ("q%d", 7)):
+                    for i in range(1, n):
+                        q = d.get(prefix % i)
+                        a = d.get(prefix.replace("q", "a") % i)
+                        if q and a:
+                            me.append({"@type": "Question", "name": q,
+                                       "acceptedAnswer": {"@type": "Answer", "text": a}})
+                    if me:
+                        break
                 if me:
                     o["mainEntity"] = me
+            elif t in ("CollectionPage", "AboutPage", "ContactPage", "WebPage", "ItemList"):
+                # 新設セクション（/games/ /roblox/ /support/ /about/）。
+                # url と description を言語版へ寄せないと、各言語ページが英語 URL を
+                # 構造化データで主張し続ける（重複判定の再発リスク）。
+                if "url" in o:
+                    o["url"] = langurl
+                if "meta_desc" in d and "description" in o:
+                    o["description"] = d["meta_desc"]
+                if "title" in d and "name" in o:
+                    o["name"] = d["title"]
         new = json.dumps(obj, ensure_ascii=False, separators=(",", ":"))
         return '<script type="application/ld+json">%s</script>' % new
     return re.sub(r'<script type="application/ld\+json">(.+?)</script>', repl, src, flags=re.S)
+
+
+ASSET_EXT = (".css", ".js", ".png", ".jpg", ".jpeg", ".webp", ".gif", ".svg",
+             ".ico", ".mp4", ".webm", ".woff", ".woff2")
 
 
 def absolutize(src, orig, L):
     # links to game-index pages / the homepage get the language suffix so a
     # language page links within its own language cluster; assets/overview/legal
     # links stay on the shared (en) resource.
-    game_index = set(SITE + g + "/" for g in GAMES)
+    #
+    # ASSETS ARE THE EXCEPTION and stay RELATIVE (2026-08-13). A language mirror sits
+    # exactly one directory below its source page, so "../" + the original relative path
+    # always resolves. Absolutizing them made every mirror unviewable until deploy —
+    # css/js/images pointed at production URLs that do not exist yet, so opening
+    # /hi/index.html locally rendered as bare unstyled HTML. Relative paths work both
+    # locally and in production; canonical/hreflang/og:* stay absolute (they are not
+    # matched here: those live in <meta content=...>, and page links below stay absolute).
+    game_index = set(SITE + g + "/" for g in GAMES + PAGES)
     def repl(m):
         pre, url, post = m.group(1), m.group(2), m.group(3)
         if re.match(r'(https?:)?//|^#|^mailto:|^tel:|^javascript:|^data:|^\{', url):
             return m.group(0)
+        if not url.startswith("/") and url.split("?")[0].lower().endswith(ASSET_EXT):
+            return pre + "../" + url + post
         absu = urljoin(orig, url)
         if L != "en":
             if absu in game_index:
@@ -151,6 +197,16 @@ def absolutize(src, orig, L):
             elif absu == SITE:
                 absu = SITE + L + "/"
         return pre + absu + post
+    # 共通フッターの言語リンクだけは先に絶対URLへ固定する。英語エントリの href は
+    # "../kado/" のようにゲーム索引と同形で、下の repl が言語サフィックスを足してしまい
+    # 「English を押すと同じ言語ページに戻る」状態になる（しかも site.js が 'en' を保存
+    # するので、以後どのページも英語で描画される）。
+    def lang_link(m):
+        pre, url, post = m.group(1), m.group(2), m.group(3)
+        if re.match(r'(https?:)?//|^#|^mailto:', url):
+            return m.group(0)
+        return pre + urljoin(orig, url) + post
+    src = re.sub(r'(<a [^>]*?\bhref=")([^"]*)(")(?=[^>]*\bdata-pr-lang=")', lang_link, src)
     return re.sub(r'(\b(?:href|src)=")([^"]+)(")', repl, src)
 
 
@@ -258,6 +314,10 @@ def gen_lang_page(src, i18n, L, orig, home_lang):
     out = src
     out = re.sub(r'<html lang="[^"]*">', '<html lang="%s">' % L, out, count=1)
     out = apply_i18n(out, d)
+    # 共通シェル（ヘッダー/フッター/Follow）も静的に焼き込む。
+    # site.js でも実行時に同じ辞書を当てるが、AIクローラ/Googlebot 対策として
+    # HTML 側にも各言語の文言を残す必要がある（JS 非実行のクローラがいる）。
+    out = apply_i18n(out, SHELL[L], "data-pr-i18n")
     out = out.replace('<link rel="canonical" href="%s">' % orig,
                       '<link rel="canonical" href="%s">\n%s' % (langurl, hreflang_block(orig)), 1)
     for prop, key in [('og:title', 'title'), ('og:description', 'meta_desc'),
@@ -279,7 +339,10 @@ def gen_lang_page(src, i18n, L, orig, home_lang):
 
 def modify_en_page(src, orig):
     out = src
-    if "hreflang=" not in out:
+    # ★ゲートは <link rel="alternate"> の有無で見ること。単に "hreflang=" を探すと、
+    #   共通フッターの言語リンク <a hreflang="ja"> に反応して常に真になり、
+    #   hreflang 注釈が二度と挿入されなくなる（片方向 hreflang ＝ Google に無視される）。
+    if '<link rel="alternate" hreflang=' not in out:
         out = out.replace('<link rel="canonical" href="%s">' % orig,
                           '<link rel="canonical" href="%s">\n%s' % (orig, hreflang_block(orig)), 1)
     # Normalize the en/canonical page to the client-side + adaptive switcher (see
@@ -314,7 +377,33 @@ def process(slug):
 
 
 if __name__ == "__main__":
-    targets = sys.argv[1:] or (["", *GAMES])
+    targets = sys.argv[1:] or (["", *GAMES, *PAGES])
+    # 先に全対象の言語辞書の完全性を確かめる（preflight）。
+    # 途中で KeyError を出すと「ja..pt は新版・ru は旧版」という部分更新状態で止まり、
+    # 生成物が壊れたままデプロイされうるため、1ファイルも書く前に落とす。
+    shell_i18n_check()
+    _missing = ["shell_i18n: 言語が足りない -> %s" % ",".join(L for L in LANGS if L not in SHELL)] \
+        if [L for L in LANGS if L not in SHELL] else []
+    for _t in ["" if t in ("home", "homepage", "/") else t for t in targets]:
+        _rel = (_t + "/index.html") if _t else "index.html"
+        _p = os.path.join(ROOT, _rel)
+        if not os.path.exists(_p):
+            _missing.append("%s: ファイルが無い" % _rel)
+            continue
+        try:
+            _d = extract_i18n(open(_p, encoding="utf-8").read())
+        except Exception as e:
+            _missing.append("%s: i18n を読めない (%s)" % (_rel, e))
+            continue
+        _lack = [L for L in LANGS if L not in _d]
+        if _lack:
+            _missing.append("%s: 言語が足りない -> %s" % (_rel, ",".join(_lack)))
+    if _missing:
+        print("preflight 失敗（1ファイルも書いていない）:")
+        for m in _missing:
+            print("   ", m)
+        raise SystemExit(1)
+
     targets = ["" if t in ("home", "homepage", "/") else t for t in targets]
     for t in targets:
         process(t)

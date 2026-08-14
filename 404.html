@@ -66,6 +66,11 @@
 </head>
 <body>
 <main class="container">
+  <!-- 404 は共通シェルの対象外＝site.css を読まないので、寸法・形は自前で持つ。
+       height:auto が無いと width/height 属性が効いて 132×384 の縦長になる。 -->
+  <img class="pr-mascot" src="/icon.webp?v=20260704170327" alt="PixelRyu"
+       width="384" height="384"
+       style="max-width:132px;height:auto;border-radius:50%;margin:8px auto 20px">
   <h1>404</h1>
   <p class="sub">This page drifted off into the cosmos. The games are still here.</p>
   <a class="home" href="/">← PixelRyu home</a>

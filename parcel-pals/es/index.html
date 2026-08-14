@@ -21,190 +21,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title data-i18n="title">Parcel Pals — Empaqueta felicidad. Envía sonrisas.</title>
-<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Parcel Pals de PixelRyu — puzzle acogedor: clasifica paquetes en 3 carriles y envía a tiempo. Ya en Roblox; prueba cerrada Android en curso.">
-<style>
-  body {
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", sans-serif;
-    background: radial-gradient(ellipse at top, #ffd9e5 0%, #ffbed4 50%, #ffa8c5 100%);
-    color: #3a1d2a;
-    margin: 0;
-    min-height: 100vh;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-  }
-  .container {
-    max-width: 580px;
-    width: 100%;
-    padding: 80px 32px;
-    text-align: center;
-    position: relative;
-  }
-  .lang-switch {
-    position: absolute;
-    top: 24px;
-    right: 24px;
-  }
-  .lang-switch select {
-    background: rgba(255, 255, 255, 0.40);
-    color: #3a1d2a;
-    border: 1px solid rgba(122, 63, 44, 0.35);
-    border-radius: 4px;
-    padding: 5px 10px;
-    font-size: 13px;
-    font-family: inherit;
-    cursor: pointer;
-  }
-  .lang-switch select:hover {
-    background: rgba(255, 255, 255, 0.55);
-    border-color: rgba(122, 63, 44, 0.65);
-  }
-  .lang-switch select option { background: #ffbed4; color: #3a1d2a; }
-  .brand-icon {
-    width: 120px;
-    height: 120px;
-    border-radius: 28px;
-    display: block;
-    margin: 0 auto 20px;
-    box-shadow: 0 8px 28px rgba(196, 53, 111, 0.22), 0 0 0 1px rgba(196, 53, 111, 0.18);
-  }
-  .tagline {
-    font-size: 14px;
-    color: #8c5a73;
-    margin-bottom: 8px;
-    text-transform: uppercase;
-    letter-spacing: 3px;
-  }
-  h1 {
-    font-size: 48px;
-    margin: 0 0 6px;
-    color: #3a1d2a;
-    font-weight: 800;
-    letter-spacing: 0.5px;
-  }
-  h1 .accent {
-    color: #7a3f2c;
-  }
-  /* Brand mark: EN by default, JP variant for Japanese users (toggled via <html lang> by setLang). */
-  h1 .brand-ja { display: none; }
-  html[lang="ja"] h1 .brand-en { display: none; }
-  html[lang="ja"] h1 .brand-ja { display: inline; }
-  .subtitle {
-    font-size: 14px;
-    color: #8c5a73;
-    margin-bottom: 32px;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-  }
-  /* === Tester card === Android closed testing is now open. */
-  .tester-card-base {
-    background: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(122, 63, 44, 0.40);
-    border-radius: 16px;
-    padding: 24px 24px 28px;
-    margin: 32px 0 40px;
-    text-align: left;
-    box-shadow: 0 8px 24px rgba(196, 53, 111, 0.12);
-  }
-  .tester-heading {
-    font-size: 13px; color: #7a3f2c; text-transform: uppercase;
-    letter-spacing: 2px; margin: 0 0 4px; font-weight: 700; text-align: center;
-  }
-  .tester-android-note {
-    display: block; font-size: 11px; color: #8c5a73; text-transform: none;
-    letter-spacing: 0; font-weight: 400; margin-bottom: 16px; text-align: center;
-  }
-  .tester-card p { font-size: 14px; line-height: 1.65; color: #4a2538; margin: 12px 0; }
-  .tester-section-label { font-size: 13px; font-weight: 700; color: #c4356f; margin: 20px 0 6px; }
-  .tester-step {
-    display: block; background: rgba(122, 63, 44, 0.15); border: 1px solid rgba(122, 63, 44, 0.40);
-    border-radius: 10px; padding: 12px 16px; margin: 10px 0; color: #7a3f2c;
-    text-decoration: none; font-weight: 600; font-size: 14px; transition: all 0.2s ease;
-  }
-  .tester-step:hover { background: rgba(122, 63, 44, 0.25); border-color: rgba(122, 63, 44, 0.70); color: #9a5841; }
-  .tester-card ul { margin: 6px 0 0; padding-left: 22px; color: #4a2538; font-size: 14px; line-height: 1.7; }
-  .overview-link {
-    display: block;
-    background: #7a3f2c;
-    color: #ffffff;
-    text-decoration: none;
-    font-size: 16px;
-    font-weight: 700;
-    padding: 18px 22px;
-    border-radius: 14px;
-    margin: 0 0 24px;
-    transition: all 0.2s ease;
-    box-shadow: 0 6px 22px rgba(122, 63, 44, 0.30);
-  }
-  .overview-link:hover { background: #9a5841; transform: translateY(-1px); }
-  .promo-video {
-    display: block;
-    width: 100%;
-    aspect-ratio: 16 / 9;
-    border-radius: 14px;
-    margin: 16px 0 8px;
-    background: #000;
-    box-shadow: 0 6px 22px rgba(122, 63, 44, 0.30);
-  }
-  .legal-divider {
-    font-size: 14px;
-    color: #9a7384;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    margin: 8px 0 16px;
-  }
-  .links { list-style: none; padding: 0; margin: 0; }
-  .links li {
-    background: rgba(255, 255, 255, 0.45);
-    border: 1px solid rgba(122, 63, 44, 0.30);
-    border-radius: 14px;
-    margin-bottom: 14px;
-    transition: all 0.25s ease;
-  }
-  .links li:hover {
-    background: rgba(255, 255, 255, 0.55);
-    border-color: rgba(122, 63, 44, 0.60);
-  }
-  .links a {
-    color: #7a3f2c;
-    text-decoration: none;
-    font-size: 18px;
-    font-weight: 600;
-    display: block;
-    padding: 22px 24px;
-  }
-  .back {
-    display: inline-block;
-    margin-top: 48px;
-    color: #9a7384;
-    text-decoration: none;
-    font-size: 14px;
-  }
-  .back:hover { color: #c4356f; }
-  @media (max-width: 600px) {
-    .lang-switch { top: 16px; right: 16px; }
-    h1 { font-size: 40px; }
-    .brand-icon { width: 104px; height: 104px; border-radius: 24px; }
-  }
-  .social-heading{font-size:13px;color:#8c5a73;margin:56px 0 18px;text-transform:uppercase;letter-spacing:2px;font-weight:600;text-align:center;}
-  .social{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;margin-bottom:8px;}
-  .social a{width:46px;height:46px;display:flex;align-items:center;justify-content:center;border-radius:12px;background:rgba(255,255,255,0.40);border:1px solid rgba(122,63,44,0.30);color:#8c5a73;transition:all .25s ease;}
-  .social a:hover{background:rgba(255,255,255,0.55);border-color:rgba(122,63,44,0.55);color:#7a3f2c;transform:translateY(-2px);}
-  .social svg{width:22px;height:22px;fill:currentColor;display:block;}
-  .hero-badges {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    gap: 12px;
-    margin: 24px 0 8px;
-  }
-  .hero-badges a { display: inline-block; line-height: 0; margin: 0; transition: transform .2s ease, opacity .2s ease; }
-  .hero-badges a:hover { transform: translateY(-2px); opacity: .85; }
-  .hero-badges svg, .hero-badges img { display: block; }
-  .hero-badges img { height: 51px; width: auto; }
-</style>
+<meta name="description" data-i18n-attr="content" data-i18n="meta_desc" content="Parcel Pals de PixelRyu — puzzle acogedor: clasifica paquetes en 3 carriles y envía a tiempo. Ya en App Store y Roblox; prueba cerrada Android en curso.">
+<!-- pr-shell: inline style removed → assets/site.css -->
 <!-- SEO/LLMO start (managed) -->
+<meta name="apple-itunes-app" content="app-id=6772976470">
 <link rel="canonical" href="https://pixelryu.github.io/parcel-pals/es/">
 <link rel="alternate" hreflang="en" href="https://pixelryu.github.io/parcel-pals/">
 <link rel="alternate" hreflang="ja" href="https://pixelryu.github.io/parcel-pals/ja/">
@@ -229,7 +49,7 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PixelRyu">
 <meta property="og:title" content="Parcel Pals — Empaqueta felicidad. Envía sonrisas.">
-<meta property="og:description" content="Parcel Pals de PixelRyu — puzzle acogedor: clasifica paquetes en 3 carriles y envía a tiempo. Ya en Roblox; prueba cerrada Android en curso.">
+<meta property="og:description" content="Parcel Pals de PixelRyu — puzzle acogedor: clasifica paquetes en 3 carriles y envía a tiempo. Ya en App Store y Roblox; prueba cerrada Android en curso.">
 <meta property="og:url" content="https://pixelryu.github.io/parcel-pals/es/">
 <meta property="og:image" content="https://pixelryu.github.io/parcel-pals/og.png">
 <meta property="og:image:width" content="1024">
@@ -249,28 +69,53 @@
 <meta property="og:locale:alternate" content="ru_RU">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Parcel Pals — Empaqueta felicidad. Envía sonrisas.">
-<meta name="twitter:description" content="Parcel Pals de PixelRyu — puzzle acogedor: clasifica paquetes en 3 carriles y envía a tiempo. Ya en Roblox; prueba cerrada Android en curso.">
+<meta name="twitter:description" content="Parcel Pals de PixelRyu — puzzle acogedor: clasifica paquetes en 3 carriles y envía a tiempo. Ya en App Store y Roblox; prueba cerrada Android en curso.">
 <meta name="twitter:image" content="https://pixelryu.github.io/parcel-pals/og.png">
 <meta name="twitter:image:alt" content="Parcel Pals — Empaqueta felicidad. Envía sonrisas.">
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoGame","name":"Parcel Pals","genre":"Puzzle, Casual","url":"https://pixelryu.github.io/parcel-pals/es/","image":"https://pixelryu.github.io/parcel-pals/icon.png","description":"Parcel Pals de PixelRyu — puzzle acogedor: clasifica paquetes en 3 carriles y envía a tiempo. Ya en Roblox; prueba cerrada Android en curso.","applicationCategory":"GameApplication","operatingSystem":"Android, Roblox","gamePlatform":["Android","Roblox"],"author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://play.google.com/store/apps/details?id=com.pixelryu.parcelpals","https://www.roblox.com/games/114439228304487/Parcel-Pals"]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":["VideoGame","MobileApplication"],"name":"Parcel Pals","genre":"Puzzle, Casual","url":"https://pixelryu.github.io/parcel-pals/","image":"https://pixelryu.github.io/parcel-pals/icon.png","description":"Parcel Pals — a cozy parcel-sorting puzzle by PixelRyu. Sort cute parcels into 3 lanes, match shapes to boxes, and ship before the table overflows. Out now on the App Store and Roblox; Android closed testing open.","applicationCategory":"GameApplication","operatingSystem":"iOS, Android, Roblox","gamePlatform":["iOS","Android","Roblox"],"author":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"publisher":{"@type":"Organization","name":"PixelRyu","url":"https://pixelryu.github.io/"},"inLanguage":["en","ja","zh","ko","hi","id","de","fr","it","es","pt","ru"],"offers":{"@type":"Offer","price":"0","priceCurrency":"USD"},"sameAs":["https://apps.apple.com/app/id6772976470","https://play.google.com/store/apps/details?id=com.pixelryu.parcelpals","https://www.roblox.com/games/114439228304487/Parcel-Pals"]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"PixelRyu","item":"https://pixelryu.github.io/es/"},{"@type":"ListItem","position":2,"name":"Parcel Pals","item":"https://pixelryu.github.io/parcel-pals/es/"}]}</script>
-<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"¿Qué tipo de juego es Parcel Pals?","acceptedAnswer":{"@type":"Answer","text":"Parcel Pals es un puzzle acogedor de clasificación de paquetes de PixelRyu. Clasifica lindos paquetes en 3 carriles, encaja las formas en las cajas y envíalos antes de que la mesa se desborde."}},{"@type":"Question","name":"¿Es gratis Parcel Pals?","acceptedAnswer":{"@type":"Answer","text":"Sí, Parcel Pals es gratuito (free-to-play)."}},{"@type":"Question","name":"¿Dónde puedo jugarlo ahora mismo?","acceptedAnswer":{"@type":"Answer","text":"Puedes jugarlo ahora en Roblox. En Android está en una fase de pruebas cerradas de 14 días a través de Google Play Store, y llegará pronto a iOS."}},{"@type":"Question","name":"¿Cómo se juega a Parcel Pals?","acceptedAnswer":{"@type":"Answer","text":"Arrastra formas a 3 carriles, encaja cada paquete con su caja en la cinta y envía paquetes perfectos antes de que la mesa se desborde."}},{"@type":"Question","name":"¿Qué idiomas admite?","acceptedAnswer":{"@type":"Answer","text":"El juego y este sitio admiten 12 idiomas: inglés, japonés, chino, coreano, hindi, indonesio, alemán, francés, italiano, español, portugués y ruso."}}]}</script>
+<script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"What kind of game is Parcel Pals?","acceptedAnswer":{"@type":"Answer","text":"Parcel Pals is a cozy parcel-sorting puzzle game by PixelRyu. You sort cute parcels into 3 lanes, match shapes to boxes, and ship them before the table overflows."}},{"@type":"Question","name":"Is Parcel Pals free to play?","acceptedAnswer":{"@type":"Answer","text":"Yes, Parcel Pals is free to play."}},{"@type":"Question","name":"Where can I play Parcel Pals right now?","acceptedAnswer":{"@type":"Answer","text":"You can play now on Roblox. On Android the game is in a 14-day closed testing phase via the Google Play Store. It is out now on the App Store."}},{"@type":"Question","name":"How do you play Parcel Pals?","acceptedAnswer":{"@type":"Answer","text":"Drag shapes into 3 lanes, match each parcel to its box on the conveyor, and ship perfect packs before the table overflows."}},{"@type":"Question","name":"What languages does Parcel Pals support?","acceptedAnswer":{"@type":"Answer","text":"The game and this site support 12 languages: English, Japanese, Chinese, Korean, Hindi, Indonesian, German, French, Italian, Spanish, Portuguese, and Russian."}}]}</script>
 <script type="application/ld+json">{"@context":"https://schema.org","@type":"VideoObject","name":"Parcel Pals — Official Trailer","description":"Parcel Pals — a cozy parcel-sorting puzzle by PixelRyu. Sort cute parcels into 3 lanes, match shapes to boxes, and ship before the table overflows.","thumbnailUrl":"https://pixelryu.github.io/parcel-pals/og.png","uploadDate":"2026-05-27T00:00:00+00:00","contentUrl":"https://pixelryu.github.io/parcel-pals/promotion_H_story.mp4?v=20260527093605"}</script>
 <!-- SEO/LLMO end -->
+<!-- pr-shell:css start -->
+<link rel="stylesheet" href="../../assets/site.css?v=20260814085000">
+<script>(function(){try{var t=localStorage.getItem("pixelryu_theme");if(t==="light"||t==="dark")document.documentElement.setAttribute("data-theme",t);var m=document.querySelector('meta[name="theme-color"]');if(m)m.setAttribute("content",t==="light"?"#F4F1EA":"#0B0E13");}catch(e){}})();</script>
+<!-- pr-shell:css end -->
 </head>
-<body>
-<div class="container">
+<body class="pr-game">
+<!-- pr-shell:header start -->
+<a class="skip-link" href="#main" data-pr-i18n="skip">Saltar al contenido</a>
+<header class="pr-header">
+  <div class="pr-header-in">
+    <a class="pr-brand" href="https://pixelryu.github.io/es/" aria-label="Inicio de PixelRyu" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_home"><img class="pr-brandmark" src="../../icon.webp?v=20260704170327" alt="" width="30" height="30" decoding="async">PixelRyu</a>
+    <nav class="pr-nav" aria-label="Main"><a href="https://pixelryu.github.io/games/es/" data-pr-i18n="nav_games">Juegos</a><a href="https://pixelryu.github.io/about/es/" data-pr-i18n="nav_about">Acerca de</a><a href="https://pixelryu.github.io/press/es/" data-pr-i18n="nav_press">Prensa</a><a href="https://pixelryu.substack.com/" target="_blank" rel="noopener" data-pr-i18n-attr="href" data-pr-i18n="news_url"><span data-pr-i18n="nav_news">Diario</span></a><a class="pr-nav-lang" href="#pr-langs" aria-label="Elegir idioma" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_lang"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.5 2.6 2.5 15.4 0 18M12 3c-2.5 2.6-2.5 15.4 0 18"/></svg></a><button type="button" class="pr-theme" aria-label="Cambiar entre oscuro y claro" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_theme" aria-pressed="false"><svg class="pr-ic-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg><svg class="pr-ic-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 13.2A8.2 8.2 0 0 1 10.8 4a8.2 8.2 0 1 0 9.2 9.2z"/></svg></button></nav>
+    <details class="pr-burger">
+      <summary aria-label="Menú" data-pr-i18n-attr="aria-label" data-pr-i18n="aria_menu"><svg viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M4 7h16M4 12h16M4 17h16"/></svg></summary>
+      <div class="pr-burger-menu"><a href="https://pixelryu.github.io/games/es/" data-pr-i18n="nav_games">Juegos</a><a href="https://pixelryu.github.io/about/es/" data-pr-i18n="nav_about">Acerca de</a><a href="https://pixelryu.github.io/press/es/" data-pr-i18n="nav_press">Prensa</a><a href="https://pixelryu.substack.com/" target="_blank" rel="noopener" data-pr-i18n-attr="href" data-pr-i18n="news_url"><span data-pr-i18n="nav_news">Diario</span></a><a href="#pr-langs" data-pr-i18n="nav_langs">Idiomas</a><button type="button" class="pr-theme" aria-pressed="false"><svg class="pr-ic-sun" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.6v2.2M12 19.2v2.2M2.6 12h2.2M19.2 12h2.2M5.4 5.4l1.6 1.6M17 17l1.6 1.6M18.6 5.4L17 7M7 17l-1.6 1.6"/></svg><svg class="pr-ic-moon" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M20 13.2A8.2 8.2 0 0 1 10.8 4a8.2 8.2 0 1 0 9.2 9.2z"/></svg><span data-pr-i18n="nav_theme">Tema</span></button></div>
+    </details>
+  </div>
+</header>
+<!-- pr-shell:header end -->
+<div class="container" id="main" role="main">
   <div class="lang-switch">
     <select id="lang-select" aria-label="Language"></select>
   </div>
-  <img src="https://pixelryu.github.io/parcel-pals/icon.webp" alt="Parcel Pals" class="brand-icon" width="132" height="132" fetchpriority="high">
+  <img src="../icon.webp" alt="Parcel Pals" class="brand-icon" width="132" height="132" fetchpriority="high">
   <div class="tagline" data-i18n="tagline">Empaqueta felicidad. Envía sonrisas.</div>
   <h1><span class="brand-en">Parcel <span class="accent">Pals</span></span><span class="brand-ja">ふんわり<span class="accent">配送便</span></span></h1>
   <div class="subtitle" data-i18n="subtitle">Puzzle acogedor de clasificación de paquetes</div>
 
   <section class="hero-badges" aria-label="Get the game">
+    <a class="appstore-badge" href="https://apps.apple.com/app/id6772976470" target="_blank" rel="noopener" aria-label="Parcel Pals — Download on the App Store"><svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Download on the App Store</title>
+        <rect x="0.5" y="0.5" width="129" height="43" rx="9" fill="#fff" stroke="#d9d9d9" stroke-width="1"/>
+        <svg x="11" y="9" width="26" height="26" viewBox="0 0 24 24">
+          <path fill="#000" d="M17.05 20.28c-.98.95-2.05.8-3.08.35-1.09-.46-2.09-.48-3.24 0-1.44.62-2.2.44-3.06-.35C2.79 15.25 3.51 7.59 9.05 7.31c1.35.07 2.29.74 3.08.8 1.18-.24 2.31-.93 3.57-.84 1.51.12 2.65.72 3.4 1.8-3.12 1.87-2.38 5.98.48 7.13-.57 1.5-1.31 2.99-2.54 4.09l.01-.01zM12.03 7.25c-.15-2.23 1.66-4.07 3.74-4.25.29 2.58-2.34 4.5-3.74 4.25z"/>
+        </svg>
+        <text x="44" y="18" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="8">Download on the</text>
+        <text x="43" y="34" fill="#000" font-family="-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif" font-size="17" font-weight="500">App Store</text>
+      </svg></a>
     <a href="#tester-heading" aria-label="Join Parcel Pals Android testers">
-      <img src="https://pixelryu.github.io/GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
+      <img src="../../GetItOnGooglePlay_Badge_Web_color_English.png" alt="Get it on Google Play (Android tester recruitment)" height="51">
     </a>
     <a href="https://www.roblox.com/games/114439228304487/Parcel-Pals" target="_blank" rel="noopener" aria-label="Play Parcel Pals on Roblox">
       <svg viewBox="0 0 130 44" width="150" height="51" role="img" xmlns="http://www.w3.org/2000/svg"><title>Play now on Roblox</title>
@@ -327,7 +172,7 @@
   <a href="https://pixelryu.github.io/parcel-pals/overview.html" class="overview-link">📦 <span data-i18n="link_overview">Ver descripción del juego</span> →</a>
 
   <video class="promo-video" autoplay loop muted playsinline controls preload="auto">
-    <source src="https://pixelryu.github.io/parcel-pals/promotion_H_story.mp4?v=20260527093605" type="video/mp4">
+    <source src="../promotion_H_story.mp4?v=20260527093605" type="video/mp4">
   </video>
 
   <div class="legal-divider" data-i18n="legal_divider">Documentos legales</div>
@@ -342,7 +187,7 @@
     <p><strong data-i18n="faq_q2">¿Es gratis Parcel Pals?</strong></p>
     <p data-i18n="faq_a2">Sí, Parcel Pals es gratuito (free-to-play).</p>
     <p><strong data-i18n="faq_q3">¿Dónde puedo jugarlo ahora mismo?</strong></p>
-    <p data-i18n="faq_a3">Puedes jugarlo ahora en Roblox. En Android está en una fase de pruebas cerradas de 14 días a través de Google Play Store, y llegará pronto a iOS.</p>
+    <p data-i18n="faq_a3">Puedes jugarlo ahora en Roblox. En Android está en una fase de pruebas cerradas de 14 días a través de Google Play Store. Ya disponible en App Store.</p>
     <p><strong data-i18n="faq_q4">¿Cómo se juega a Parcel Pals?</strong></p>
     <p data-i18n="faq_a4">Arrastra formas a 3 carriles, encaja cada paquete con su caja en la cinta y envía paquetes perfectos antes de que la mesa se desborde.</p>
     <p><strong data-i18n="faq_q5">¿Qué idiomas admite?</strong></p>
@@ -392,7 +237,7 @@
   const i18n = {
     en: {
       title: "Parcel Pals — Cozy Parcel-Sorting Puzzle Game",
-      meta_desc: "Parcel Pals by PixelRyu — cozy parcel-sorting puzzle. Sort parcels into 3 lanes, ship before the table overflows. Now on Roblox; Android closed test open.",
+      meta_desc: "Parcel Pals by PixelRyu — cozy parcel-sorting puzzle. Sort parcels into 3 lanes, ship before the table overflows. Now on App Store and Roblox; Android closed test open.",
       tagline: "Pack happiness. Ship smiles.",
       subtitle: "Cozy Parcel-Sorting Puzzle",
       tester_heading: "Android Tester Recruitment",
@@ -423,7 +268,7 @@
       faq_q2: "Is Parcel Pals free to play?",
       faq_a2: "Yes, Parcel Pals is free to play.",
       faq_q3: "Where can I play Parcel Pals right now?",
-      faq_a3: "You can play now on Roblox. On Android the game is in a 14-day closed testing phase via the Google Play Store, and it is coming soon to iOS.",
+      faq_a3: "You can play now on Roblox. On Android the game is in a 14-day closed testing phase via the Google Play Store. It is out now on the App Store.",
       faq_q4: "How do you play Parcel Pals?",
       faq_a4: "Drag shapes into 3 lanes, match each parcel to its box on the conveyor, and ship perfect packs before the table overflows.",
       faq_q5: "What languages does Parcel Pals support?",
@@ -438,7 +283,7 @@
     },
     ja: {
       title: "ふんわり配送便 — しあわせを箱詰め。笑顔を出荷。",
-      meta_desc: "ふんわり配送便 — PixelRyu による癒し系の配送仕分けパズル。可愛い小包を3レーンに振り分け、ベルトの箱に形を合わせて、テーブルが溢れる前に出荷。Roblox で配信中。Android はクローズドテスト実施中、iOS は近日公開予定。",
+      meta_desc: "ふんわり配送便 — PixelRyu による癒し系の配送仕分けパズル。可愛い小包を3レーンに振り分け、ベルトの箱に形を合わせて、テーブルが溢れる前に出荷。App Store・Roblox で配信中。Android はクローズドテスト実施中。",
       tagline: "しあわせを箱詰め。笑顔を出荷。",
       subtitle: "ほっこり配送仕分けパズル",
       tester_heading: "Android テスター募集中",
@@ -469,7 +314,7 @@
       faq_q2: "無料で遊べますか？",
       faq_a2: "はい、基本プレイ無料です。",
       faq_q3: "今どこで遊べますか？",
-      faq_a3: "Roblox で今すぐプレイできます。Android では Google Play ストア経由の14日間クローズドテストを実施中で、iOS では近日公開予定です。",
+      faq_a3: "Roblox で今すぐプレイできます。Android では Google Play ストア経由の14日間クローズドテストを実施中です。App Store でも配信中です。",
       faq_q4: "どうやって遊ぶの？",
       faq_a4: "3レーンに形をドラッグして振り分け、コンベアの箱と小包の形を合わせ、テーブルが溢れる前に完璧な梱包を出荷します。",
       faq_q5: "対応言語は？",
@@ -484,7 +329,7 @@
     },
     zh: {
       title: "Parcel Pals — 把幸福装进盒子，把笑容送出门",
-      meta_desc: "Parcel Pals — PixelRyu 出品的治愈系包裹分拣益智游戏。把可爱的小包裹分进 3 条传送道，对准传送带上的盒子形状出货，别让桌面爆满。现已在 Roblox 上线；Android 封闭测试进行中，iOS 版即将推出。",
+      meta_desc: "Parcel Pals — PixelRyu 出品的治愈系包裹分拣益智游戏。把可爱的小包裹分进 3 条传送道，对准传送带上的盒子形状出货，别让桌面爆满。App Store 与 Roblox 现已上线；Android 封闭测试进行中。",
       tagline: "把幸福装进盒子，把笑容送出门。",
       subtitle: "治愈系包裹分拣益智游戏",
       tester_heading: "招募 Android 测试者",
@@ -515,7 +360,7 @@
       faq_q2: "游戏免费吗？",
       faq_a2: "是的，Parcel Pals 可以免费游玩。",
       faq_q3: "现在可以在哪里玩？",
-      faq_a3: "现在可以在 Roblox 上游玩。Android 版正在通过 Google Play 商店进行为期 14 天的封闭测试，iOS 版即将推出。",
+      faq_a3: "现在可以在 Roblox 上游玩。Android 版正在通过 Google Play 商店进行为期 14 天的封闭测试。App Store 版现已上线。",
       faq_q4: "怎么玩 Parcel Pals？",
       faq_a4: "将形状拖进 3 条分拣道，把每个包裹对准传送带上的盒子，在桌面爆满前完成完美出货。",
       faq_q5: "支持哪些语言？",
@@ -530,7 +375,7 @@
     },
     ko: {
       title: "Parcel Pals — 행복을 담아, 미소를 배송.",
-      meta_desc: "Parcel Pals — PixelRyu가 만드는 힐링 소포 분류 퍼즐. 귀여운 소포를 3개 레인으로 분류하고, 컨베이어 박스에 모양을 맞춰 테이블이 넘치기 전에 출하하세요. 지금 Roblox에서 플레이 가능; Android 비공개 테스트 진행 중, iOS는 곧 출시 예정.",
+      meta_desc: "Parcel Pals — PixelRyu가 만드는 힐링 소포 분류 퍼즐. 귀여운 소포를 3개 레인으로 분류하고, 컨베이어 박스에 모양을 맞춰 테이블이 넘치기 전에 출하하세요. App Store・Roblox 출시 중; Android 비공개 테스트 진행 중.",
       tagline: "행복을 담아, 미소를 배송.",
       subtitle: "힐링 소포 분류 퍼즐",
       tester_heading: "Android 테스터 모집",
@@ -561,7 +406,7 @@
       faq_q2: "무료인가요?",
       faq_a2: "네, Parcel Pals는 무료로 플레이할 수 있습니다.",
       faq_q3: "지금 어디에서 플레이할 수 있나요?",
-      faq_a3: "지금 Roblox에서 플레이할 수 있습니다. Android에서는 Google Play 스토어를 통한 14일 비공개 테스트가 진행 중이며, iOS에는 곧 출시될 예정입니다.",
+      faq_a3: "지금 Roblox에서 플레이할 수 있습니다. Android에서는 Google Play 스토어를 통한 14일 비공개 테스트가 진행 중입니다. App Store에서도 출시되었습니다.",
       faq_q4: "어떻게 플레이하나요?",
       faq_a4: "3개 레인으로 모양을 드래그하고, 컨베이어의 상자와 소포 모양을 맞춰 테이블이 넘치기 전에 완벽한 포장을 출하하세요.",
       faq_q5: "어떤 언어를 지원하나요?",
@@ -576,7 +421,7 @@
     },
     hi: {
       title: "Parcel Pals — खुशियाँ पैक करो, मुस्कान भेजो।",
-      meta_desc: "Parcel Pals — PixelRyu की आरामदायक पार्सल छँटाई पहेली। पार्सल को 3 लेन में बाँटें और टेबल भरने से पहले भेजें। अभी Roblox पर; Android क्लोज़्ड टेस्ट चालू।",
+      meta_desc: "Parcel Pals — PixelRyu की आरामदायक पार्सल छँटाई पहेली। पार्सल को 3 लेन में बाँटें और टेबल भरने से पहले भेजें। App Store और Roblox पर उपलब्ध; Android क्लोज़्ड टेस्ट चालू।",
       tagline: "खुशियाँ पैक करो, मुस्कान भेजो।",
       subtitle: "आरामदायक पार्सल छँटाई पहेली",
       tester_heading: "Android टेस्टर्स की तलाश",
@@ -607,7 +452,7 @@
       faq_q2: "क्या यह मुफ़्त है?",
       faq_a2: "हाँ, Parcel Pals खेलने के लिए मुफ़्त है।",
       faq_q3: "अभी इसे कहाँ खेल सकते हैं?",
-      faq_a3: "अभी आप इसे Roblox पर खेल सकते हैं। Android पर Google Play Store के ज़रिए 14 दिन की क्लोज़्ड टेस्टिंग चल रही है, और यह iOS पर जल्द आ रहा है।",
+      faq_a3: "अभी आप इसे Roblox पर खेल सकते हैं। Android पर Google Play Store के ज़रिए 14 दिन की क्लोज़्ड टेस्टिंग चल रही है। App Store पर अब उपलब्ध है।",
       faq_q4: "इसे कैसे खेलते हैं?",
       faq_a4: "आकारों को 3 लेन में खींचें, हर पार्सल को कन्वेयर पर उसके डिब्बे से मिलाएँ, और टेबल भरने से पहले परफेक्ट पैक भेजें।",
       faq_q5: "कौन-कौन सी भाषाएँ समर्थित हैं?",
@@ -622,7 +467,7 @@
     },
     id: {
       title: "Parcel Pals — Kemas kebahagiaan. Kirim senyuman.",
-      meta_desc: "Parcel Pals dari PixelRyu — puzzle sortir paket menenangkan. Sortir paket ke 3 jalur, kirim sebelum meja meluap. Kini di Roblox; closed test Android buka.",
+      meta_desc: "Parcel Pals dari PixelRyu — puzzle sortir paket menenangkan. Sortir paket ke 3 jalur, kirim sebelum meja meluap. Di App Store dan Roblox; closed test Android buka.",
       tagline: "Kemas kebahagiaan. Kirim senyuman.",
       subtitle: "Puzzle Penyortiran Paket yang Menenangkan",
       tester_heading: "Mencari Tester Android",
@@ -653,7 +498,7 @@
       faq_q2: "Apakah gratis dimainkan?",
       faq_a2: "Ya, Parcel Pals gratis dimainkan.",
       faq_q3: "Di mana bisa dimainkan sekarang?",
-      faq_a3: "Kamu bisa memainkannya sekarang di Roblox. Di Android game ini sedang dalam fase closed test 14 hari melalui Google Play Store, dan segera hadir di iOS.",
+      faq_a3: "Kamu bisa memainkannya sekarang di Roblox. Di Android game ini sedang dalam fase closed test 14 hari melalui Google Play Store. Sudah tersedia di App Store.",
       faq_q4: "Bagaimana cara memainkannya?",
       faq_a4: "Tarik bentuk ke 3 jalur, cocokkan setiap paket dengan kotaknya di konveyor, dan kirim paket sempurna sebelum meja meluap.",
       faq_q5: "Bahasa apa saja yang didukung?",
@@ -668,7 +513,7 @@
     },
     de: {
       title: "Parcel Pals — Glück verpacken. Lächeln versenden.",
-      meta_desc: "Parcel Pals von PixelRyu — gemütliches Paket-Sortier-Puzzle. Sortiere Pakete in 3 Bahnen und versende rechtzeitig. Jetzt auf Roblox; Android-Test läuft.",
+      meta_desc: "Parcel Pals von PixelRyu — gemütliches Paket-Sortier-Puzzle. Sortiere Pakete in 3 Bahnen und versende rechtzeitig. Im App Store und auf Roblox; Android-Test läuft.",
       tagline: "Glück verpacken. Lächeln versenden.",
       subtitle: "Gemütliches Paket-Sortier-Puzzle",
       tester_heading: "Android-Tester gesucht",
@@ -699,7 +544,7 @@
       faq_q2: "Ist Parcel Pals kostenlos?",
       faq_a2: "Ja, Parcel Pals ist kostenlos spielbar (Free-to-Play).",
       faq_q3: "Wo kann ich Parcel Pals jetzt spielen?",
-      faq_a3: "Du kannst es jetzt auf Roblox spielen. Auf Android läuft eine 14-tägige geschlossene Testphase über den Google Play Store, und für iOS erscheint es demnächst.",
+      faq_a3: "Du kannst es jetzt auf Roblox spielen. Auf Android läuft eine 14-tägige geschlossene Testphase über den Google Play Store. Jetzt im App Store.",
       faq_q4: "Wie spielt man Parcel Pals?",
       faq_a4: "Ziehe Formen in 3 Bahnen, passe jedes Paket zu seiner Kiste auf dem Förderband und versende perfekte Pakete, bevor der Tisch überläuft.",
       faq_q5: "Welche Sprachen werden unterstützt?",
@@ -714,7 +559,7 @@
     },
     fr: {
       title: "Parcel Pals — Emballe le bonheur. Expédie des sourires.",
-      meta_desc: "Parcel Pals par PixelRyu — puzzle cosy de tri de colis. Trie les colis en 3 voies et expédie à temps. Sur Roblox ; test fermé Android en cours.",
+      meta_desc: "Parcel Pals par PixelRyu — puzzle cosy de tri de colis. Trie les colis en 3 voies et expédie à temps. Sur l'App Store et Roblox ; test fermé Android en cours.",
       tagline: "Emballe le bonheur. Expédie des sourires.",
       subtitle: "Puzzle de tri de colis cosy",
       tester_heading: "Recherche de testeurs Android",
@@ -745,7 +590,7 @@
       faq_q2: "Parcel Pals est-il gratuit ?",
       faq_a2: "Oui, Parcel Pals est gratuit (free-to-play).",
       faq_q3: "Où peut-on y jouer dès maintenant ?",
-      faq_a3: "Tu peux y jouer dès maintenant sur Roblox. Sur Android, le jeu est en phase de test fermé de 14 jours via le Google Play Store, et il arrive bientôt sur iOS.",
+      faq_a3: "Tu peux y jouer dès maintenant sur Roblox. Sur Android, le jeu est en phase de test fermé de 14 jours via le Google Play Store. Disponible sur l'App Store.",
       faq_q4: "Comment joue-t-on à Parcel Pals ?",
       faq_a4: "Glisse des formes dans 3 voies, fais correspondre chaque colis à sa boîte sur le convoyeur et expédie des paquets parfaits avant que la table ne déborde.",
       faq_q5: "Quelles langues sont prises en charge ?",
@@ -760,7 +605,7 @@
     },
     it: {
       title: "Parcel Pals — Impacchetta la felicità. Spedisci sorrisi.",
-      meta_desc: "Parcel Pals di PixelRyu — puzzle rilassante di smistamento pacchi. Smista pacchi in 3 corsie e spedisci in tempo. Su Roblox; closed test Android in corso.",
+      meta_desc: "Parcel Pals di PixelRyu — puzzle rilassante di smistamento pacchi. Smista pacchi in 3 corsie e spedisci in tempo. Su App Store e Roblox; closed test Android in corso.",
       tagline: "Impacchetta la felicità. Spedisci sorrisi.",
       subtitle: "Puzzle di smistamento pacchi rilassante",
       tester_heading: "Cercasi tester Android",
@@ -791,7 +636,7 @@
       faq_q2: "Parcel Pals è gratuito?",
       faq_a2: "Sì, Parcel Pals è gratuito (free-to-play).",
       faq_q3: "Dove posso giocarci adesso?",
-      faq_a3: "Puoi giocarci subito su Roblox. Su Android il gioco è in una fase di closed test di 14 giorni tramite il Google Play Store, e arriverà presto su iOS.",
+      faq_a3: "Puoi giocarci subito su Roblox. Su Android il gioco è in una fase di closed test di 14 giorni tramite il Google Play Store. Disponibile su App Store.",
       faq_q4: "Come si gioca a Parcel Pals?",
       faq_a4: "Trascina forme in 3 corsie, abbina ogni pacco alla sua scatola sul convogliatore e spedisci pacchi perfetti prima che il tavolo trabocchi.",
       faq_q5: "Quali lingue sono supportate?",
@@ -806,7 +651,7 @@
     },
     es: {
       title: "Parcel Pals — Empaqueta felicidad. Envía sonrisas.",
-      meta_desc: "Parcel Pals de PixelRyu — puzzle acogedor: clasifica paquetes en 3 carriles y envía a tiempo. Ya en Roblox; prueba cerrada Android en curso.",
+      meta_desc: "Parcel Pals de PixelRyu — puzzle acogedor: clasifica paquetes en 3 carriles y envía a tiempo. Ya en App Store y Roblox; prueba cerrada Android en curso.",
       tagline: "Empaqueta felicidad. Envía sonrisas.",
       subtitle: "Puzzle acogedor de clasificación de paquetes",
       tester_heading: "Buscamos testers de Android",
@@ -837,7 +682,7 @@
       faq_q2: "¿Es gratis Parcel Pals?",
       faq_a2: "Sí, Parcel Pals es gratuito (free-to-play).",
       faq_q3: "¿Dónde puedo jugarlo ahora mismo?",
-      faq_a3: "Puedes jugarlo ahora en Roblox. En Android está en una fase de pruebas cerradas de 14 días a través de Google Play Store, y llegará pronto a iOS.",
+      faq_a3: "Puedes jugarlo ahora en Roblox. En Android está en una fase de pruebas cerradas de 14 días a través de Google Play Store. Ya disponible en App Store.",
       faq_q4: "¿Cómo se juega a Parcel Pals?",
       faq_a4: "Arrastra formas a 3 carriles, encaja cada paquete con su caja en la cinta y envía paquetes perfectos antes de que la mesa se desborde.",
       faq_q5: "¿Qué idiomas admite?",
@@ -852,7 +697,7 @@
     },
     pt: {
       title: "Parcel Pals — Embale felicidade. Envie sorrisos.",
-      meta_desc: "Parcel Pals da PixelRyu — puzzle aconchegante de separar pacotes. Separe pacotes em 3 pistas e envie a tempo. Já no Roblox; teste fechado Android ativo.",
+      meta_desc: "Parcel Pals da PixelRyu — puzzle aconchegante de separar pacotes. Separe pacotes em 3 pistas e envie a tempo. Já na App Store e no Roblox; teste fechado Android ativo.",
       tagline: "Embale felicidade. Envie sorrisos.",
       subtitle: "Puzzle aconchegante de separação de pacotes",
       tester_heading: "Procuramos testers de Android",
@@ -883,7 +728,7 @@
       faq_q2: "Parcel Pals é gratuito?",
       faq_a2: "Sim, Parcel Pals é gratuito (free-to-play).",
       faq_q3: "Onde posso jogar agora?",
-      faq_a3: "Você pode jogar agora no Roblox. No Android, o jogo está em uma fase de teste fechado de 14 dias via Google Play Store, e em breve chega ao iOS.",
+      faq_a3: "Você pode jogar agora no Roblox. No Android, o jogo está em uma fase de teste fechado de 14 dias via Google Play Store. Já disponível na App Store.",
       faq_q4: "Como se joga Parcel Pals?",
       faq_a4: "Arraste formas para 3 pistas, combine cada pacote com sua caixa na esteira e envie pacotes perfeitos antes que a mesa transborde.",
       faq_q5: "Quais idiomas são suportados?",
@@ -898,7 +743,7 @@
     },
     ru: {
       title: "Parcel Pals — Упакуй счастье. Отправь улыбку.",
-      meta_desc: "Parcel Pals от PixelRyu — уютная головоломка-сортировка посылок. Сортируй посылки по 3 лентам и отправляй в срок. Уже на Roblox; закрытый тест на Android.",
+      meta_desc: "Parcel Pals от PixelRyu — уютная головоломка-сортировка посылок. Сортируй посылки по 3 лентам и отправляй в срок. Уже в App Store и на Roblox; закрытый тест на Android.",
       tagline: "Упакуй счастье. Отправь улыбку.",
       subtitle: "Уютная головоломка-сортировка посылок",
       tester_heading: "Поиск Android-тестеров",
@@ -929,7 +774,7 @@
       faq_q2: "Игра бесплатная?",
       faq_a2: "Да, в Parcel Pals можно играть бесплатно.",
       faq_q3: "Где можно поиграть прямо сейчас?",
-      faq_a3: "Играть можно уже сейчас на Roblox. На Android идёт 14-дневное закрытое тестирование через Google Play Store, а на iOS игра выйдет скоро.",
+      faq_a3: "Играть можно уже сейчас на Roblox. На Android идёт 14-дневное закрытое тестирование через Google Play Store. Уже в App Store.",
       faq_q4: "Как играть в Parcel Pals?",
       faq_a4: "Перетаскивай формы в 3 ленты, подбирай каждую посылку к её коробке на конвейере и отправляй идеальные посылки, пока стол не переполнился.",
       faq_q5: "Какие языки поддерживаются?",
@@ -990,7 +835,50 @@
     sel.addEventListener('change', function(e){ setLang(e.target.value, true); });
   })();
 </script>
-<script src="https://pixelryu.github.io/breadcrumb.js?v=20260602202548" defer></script>
-<script src="https://pixelryu.github.io/tester-open-external.js?v=20260625" defer></script>
+<script src="../../breadcrumb.js?v=20260602202548" defer></script>
+<script src="../../tester-open-external.js?v=20260625" defer></script>
+<!-- pr-shell:footer start -->
+<footer class="pr-footer">
+  <div class="pr-footer-in">
+    <div>
+      <a class="pr-brand" href="https://pixelryu.github.io/es/"><img class="pr-brandmark" src="../../icon.webp?v=20260704170327" alt="" width="30" height="30" decoding="async">PixelRyu</a>
+      <p style="font-size:14px;margin:14px 0 16px;max-width:30ch" data-pr-i18n="blurb">Juegos pequeños, hechos en Japón. Gratis en iPhone, Android y Roblox — en 12 idiomas.</p>
+      <div class="pr-news">
+        <p data-pr-i18n="news_p">Recibe los lanzamientos por correo. Te llegan pase lo que pase con cualquier plataforma.</p>
+        <a class="pr-btn pr-btn-primary" href="https://pixelryu.substack.com/" target="_blank" rel="noopener" style="font-size:14px;padding:9px 16px" data-pr-i18n-attr="href" data-pr-i18n="news_url"><span data-pr-i18n="news_cta">Leer el diario</span></a>
+      </div>
+    </div>
+    <div>
+      <h4 data-pr-i18n="h_explore">Explorar</h4>
+      <ul>
+        <li><a href="https://pixelryu.github.io/games/es/" data-pr-i18n="e_games">Todos los juegos</a></li>
+        <li><a href="https://pixelryu.github.io/roblox/es/" data-pr-i18n="e_roblox">Jugar en Roblox</a></li>
+        <li><a href="https://pixelryu.github.io/about/es/" data-pr-i18n="e_about">Sobre Ryu</a></li>
+        <li><a href="https://pixelryu.github.io/press/es/" data-pr-i18n="e_press">Kit de prensa</a></li>
+        <li><a href="https://pixelryu.github.io/support/es/" data-pr-i18n="e_support">Soporte</a></li>
+      </ul>
+    </div>
+    <div>
+      <h4 data-pr-i18n="h_games">Juegos</h4>
+      <ul style="columns:2;column-gap:18px"><li><a href="https://pixelryu.github.io/kado/es/">KADŌ</a></li><li><a href="https://pixelryu.github.io/hanko/es/">HANKO</a></li><li><a href="https://pixelryu.github.io/hoshikari/es/">Hoshikari</a></li><li><a href="https://pixelryu.github.io/okaeri/es/">Okaeri</a></li><li><a href="https://pixelryu.github.io/shizuku/es/">Shizuku</a></li><li><a href="https://pixelryu.github.io/senko/es/">SENKO</a></li><li><a href="https://pixelryu.github.io/wagashi/es/">WAGASHI</a></li><li><a href="https://pixelryu.github.io/counterparts/es/">CounterParts</a></li><li><a href="https://pixelryu.github.io/tatami/es/">TATAMI</a></li><li><a href="https://pixelryu.github.io/temari/es/">TEMARI</a></li><li><a href="https://pixelryu.github.io/bounce-cat/es/">Bounce Cat</a></li><li><a href="https://pixelryu.github.io/hayate/es/">HAYATE</a></li><li><a href="https://pixelryu.github.io/sumlings/es/">Sumlings</a></li><li><a href="https://pixelryu.github.io/parcel-pals/es/">Parcel Pals</a></li><li><a href="https://pixelryu.github.io/issen/es/">ISSEN</a></li><li><a href="https://pixelryu.github.io/hotaru/es/">HOTARU</a></li><li><a href="https://pixelryu.github.io/liquid-glow-cosmic/es/">Liquid Glow</a></li><li><a href="https://pixelryu.github.io/mole-whack/es/">Mole Whack</a></li></ul>
+    </div>
+    <div>
+      <h4 id="pr-langs" data-pr-i18n="h_langs">Idiomas</h4>
+      <div class="pr-footer-langs"><a href="https://pixelryu.github.io/parcel-pals/" hreflang="en" lang="en" data-pr-lang="en">English</a><a href="https://pixelryu.github.io/parcel-pals/ja/" hreflang="ja" lang="ja" data-pr-lang="ja">日本語</a><a href="https://pixelryu.github.io/parcel-pals/zh/" hreflang="zh" lang="zh" data-pr-lang="zh">中文</a><a href="https://pixelryu.github.io/parcel-pals/ko/" hreflang="ko" lang="ko" data-pr-lang="ko">한국어</a><a href="https://pixelryu.github.io/parcel-pals/hi/" hreflang="hi" lang="hi" data-pr-lang="hi">हिन्दी</a><a href="https://pixelryu.github.io/parcel-pals/id/" hreflang="id" lang="id" data-pr-lang="id">Indonesia</a><a href="https://pixelryu.github.io/parcel-pals/de/" hreflang="de" lang="de" data-pr-lang="de">Deutsch</a><a href="https://pixelryu.github.io/parcel-pals/fr/" hreflang="fr" lang="fr" data-pr-lang="fr">Français</a><a href="https://pixelryu.github.io/parcel-pals/it/" hreflang="it" lang="it" data-pr-lang="it">Italiano</a><a href="https://pixelryu.github.io/parcel-pals/es/" hreflang="es" lang="es" data-pr-lang="es">Español</a><a href="https://pixelryu.github.io/parcel-pals/pt/" hreflang="pt" lang="pt" data-pr-lang="pt">Português</a><a href="https://pixelryu.github.io/parcel-pals/ru/" hreflang="ru" lang="ru" data-pr-lang="ru">Русский</a></div>
+      <h4 style="margin-top:20px" data-pr-i18n="h_follow">Seguir</h4>
+      <div class="social pr-footer-social"><a href="https://substack.com/@pixelryu" target="_blank" rel="noopener" aria-label="Substack" title="Substack"><svg viewBox="0 0 24 24"><path d="M22.539 8.242H1.46V5.406h21.08v2.836zM1.46 10.812V24L12 18.11 22.54 24V10.812H1.46zM22.54 0H1.46v2.836h21.08V0z"/></svg></a><a href="https://note.com/pixelryu" target="_blank" rel="noopener" aria-label="note" title="note"><svg viewBox="129 129 234 234"><path d="m139.57,142.06c41.19,0,97.6-2.09,138.1-1.04,54.34,1.39,74.76,25.06,75.45,83.53.69,33.06,0,127.73,0,127.73h-58.79c0-82.83.35-96.5,0-122.6-.69-22.97-7.25-33.92-24.9-36.01-18.69-2.09-71.07-.35-71.07-.35v158.96h-58.79v-210.22Z" fill="currentColor"/></svg></a><a href="https://www.youtube.com/@PixelRyu-Japan" target="_blank" rel="noopener" aria-label="YouTube" title="YouTube"><svg viewBox="0 0 24 24"><path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/></svg></a><a href="https://x.com/PixelRyu10752" target="_blank" rel="noopener" aria-label="X" title="X"><svg viewBox="0 0 24 24"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg></a><a href="https://www.instagram.com/pixelryu/" target="_blank" rel="noopener" aria-label="Instagram" title="Instagram"><svg viewBox="0 0 24 24"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163C8.741 0 8.333.014 7.053.072 2.695.272.273 2.69.073 7.052.014 8.333 0 8.741 0 12c0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98C8.333 23.986 8.741 24 12 24c3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98C15.668.014 15.259 0 12 0zm0 5.838a6.162 6.162 0 100 12.324 6.162 6.162 0 000-12.324zM12 16a4 4 0 110-8 4 4 0 010 8zm6.406-11.845a1.44 1.44 0 100 2.881 1.44 1.44 0 000-2.881z"/></svg></a><a href="https://www.facebook.com/PixelRyuJapan" target="_blank" rel="noopener" aria-label="Facebook" title="Facebook"><svg viewBox="0 0 24 24"><path d="M9.101 23.691v-7.98H6.627v-3.667h2.474v-1.58c0-4.085 1.848-5.978 5.858-5.978.401 0 .955.042 1.468.103a8.68 8.68 0 0 1 1.141.195v3.325a8.623 8.623 0 0 0-.653-.036 26.805 26.805 0 0 0-.733-.009c-.707 0-1.259.096-1.675.309a1.686 1.686 0 0 0-.679.622c-.258.42-.374.995-.374 1.752v1.297h3.919l-.386 2.103-.287 1.564h-3.246v8.245C19.396 23.238 24 18.179 24 12.044c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.628 3.874 10.35 9.101 11.647Z"/></svg></a><a href="https://www.tiktok.com/@pixelryu_japan" target="_blank" rel="noopener" aria-label="TikTok" title="TikTok"><svg viewBox="0 0 24 24"><path d="M12.525.02c1.31-.02 2.61-.01 3.91-.02.08 1.53.63 3.09 1.75 4.17 1.12 1.11 2.7 1.62 4.24 1.79v4.03c-1.44-.05-2.89-.35-4.2-.97-.57-.26-1.1-.59-1.62-.93-.01 2.92.01 5.84-.02 8.75-.08 1.4-.54 2.79-1.35 3.94-1.31 1.92-3.58 3.17-5.91 3.21-1.43.08-2.86-.31-4.08-1.03-2.02-1.19-3.44-3.37-3.65-5.71-.02-.5-.03-1-.01-1.49.18-1.9 1.12-3.72 2.58-4.96 1.66-1.44 3.98-2.13 6.15-1.72.02 1.48-.04 2.96-.04 4.44-.99-.32-2.15-.23-3.02.37-.63.41-1.11 1.04-1.36 1.75-.21.51-.15 1.08-.14 1.62.24 1.64 1.82 3.02 3.5 2.87 1.12-.01 2.19-.66 2.77-1.61.19-.33.4-.67.41-1.06.1-1.79.06-3.57.07-5.36.01-4.03-.01-8.05.02-12.07z"/></svg></a><a href="https://www.threads.com/@pixelryu" target="_blank" rel="noopener" aria-label="Threads" title="Threads"><svg viewBox="0 0 24 24"><path d="M12.186 24h-.007c-3.581-.024-6.334-1.205-8.184-3.509C2.35 18.44 1.5 15.586 1.472 12.01v-.017c.03-3.579.879-6.43 2.525-8.482C5.845 1.205 8.6.024 12.18 0h.014c2.746.02 5.043.725 6.826 2.098 1.677 1.29 2.858 3.13 3.509 5.467l-2.04.569c-1.104-3.96-3.898-5.984-8.304-6.015-2.91.022-5.11.936-6.54 2.717C4.307 6.504 3.616 8.914 3.589 12c.027 3.086.718 5.496 2.057 7.164 1.43 1.781 3.631 2.695 6.54 2.717 2.623-.02 4.358-.631 5.8-2.045 1.647-1.613 1.618-3.593 1.09-4.798-.31-.71-.873-1.3-1.634-1.75-.192 1.352-.622 2.446-1.284 3.272-.886 1.102-2.14 1.704-3.73 1.79-1.202.065-2.361-.218-3.259-.801-1.063-.689-1.685-1.74-1.752-2.964-.065-1.19.408-2.285 1.33-3.082.88-.76 2.119-1.207 3.583-1.291a13.853 13.853 0 0 1 3.02.142c-.126-.742-.375-1.332-.75-1.757-.513-.586-1.308-.883-2.359-.89h-.029c-.844 0-1.992.232-2.721 1.32L7.734 7.847c.98-1.454 2.568-2.256 4.478-2.256h.044c3.194.02 5.097 1.975 5.287 5.388.108.046.216.094.321.142 1.49.7 2.58 1.761 3.154 3.07.797 1.82.871 4.79-1.548 7.158-1.85 1.81-4.094 2.628-7.277 2.65Zm1.003-11.69c-.242 0-.487.007-.739.021-1.836.103-2.98.946-2.916 2.143.067 1.256 1.452 1.839 2.784 1.767 1.224-.065 2.818-.543 3.086-3.71a10.5 10.5 0 0 0-2.215-.221Z"/></svg></a></div>
+    </div>
+  </div>
+  <div class="pr-footer-bottom">
+    <span>© 2026 PixelRyu</span>
+    <img class="pr-brandmark" src="../../icon.webp?v=20260704170327" alt="" width="22" height="22" decoding="async">
+    <span><a href="https://pixelryu.github.io/support/es/" data-pr-i18n="contact">Contacto</a> · <a href="mailto:idev10752@gmail.com">idev10752@gmail.com</a></span>
+  </div>
+</footer>
+<!-- pr-shell:footer end -->
+<!-- pr-shell:js start -->
+<script src="../../assets/shell-i18n.js?v=20260814085000" defer></script>
+<script src="../../assets/site.js?v=20260814085000" defer></script>
+<!-- pr-shell:js end -->
 </body>
 </html>

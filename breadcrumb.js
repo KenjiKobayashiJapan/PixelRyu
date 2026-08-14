@@ -42,7 +42,14 @@
     "counterparts": { all: "CounterParts" },
     "wagashi":     { all: "WAGASHI" },
     "senko":       { all: "SENKO", ja: "線香" },
-    "shizuku":     { all: "Shizuku", ja: "雫" }
+    "shizuku":     { all: "Shizuku", ja: "雫" },
+
+    // Site sections (not games) — added in the 2026-08 site redesign.
+    "games":       { all: "Games", ja: "ゲーム一覧", zh: "全部游戏", ko: "게임", de: "Spiele", fr: "Jeux", it: "Giochi", es: "Juegos", pt: "Jogos", ru: "Игры", id: "Game", hi: "गेम" },
+    "roblox":      { all: "Roblox" },
+    "support":     { all: "Support", ja: "サポート", zh: "支持", ko: "지원", de: "Hilfe", fr: "Aide", it: "Assistenza", es: "Soporte", pt: "Suporte", ru: "Поддержка", id: "Bantuan", hi: "सहायता" },
+    "about":       { all: "About", ja: "PixelRyu について", zh: "关于", ko: "소개", de: "Über uns", fr: "À propos", it: "Chi siamo", es: "Acerca de", pt: "Sobre", ru: "О нас", id: "Tentang", hi: "परिचय" },
+    "press":       { all: "Press Kit", ja: "プレスキット", zh: "媒体资料包", ko: "프레스 킷", de: "Pressekit", fr: "Kit presse", it: "Kit stampa", es: "Kit de prensa", pt: "Kit de imprensa", ru: "Пресс-кит", id: "Press kit", hi: "प्रेस किट" }
   };
 
   // Leaf page labels (localized). Privacy/Terms match the legal-page generator
@@ -82,6 +89,14 @@
       var s = localStorage.getItem(LANG_KEY);
       if (s && CODES.indexOf(s) !== -1) return s;
     } catch (e) {}
+    // 各ページ本体と同じ優先順位（localStorage → ページの言語 → navigator）に合わせる。
+    // これが無いと、日本語で焼いた /support/ja/ でパンくずだけ英語のままになる
+    // （保存値の無い訪問者・クローラは navigator=en-US で英語に落ちるため）。
+    // "en" は除外する: 英語の正規ページは「ブラウザの言語に追従」が既定のため。
+    // なおページ本体の init は解析中に走り <html lang> を確定させるので、
+    // DOMContentLoaded で動くここからは常に確定後の値が読める。
+    var pl = (document.documentElement.getAttribute("lang") || "").toLowerCase();
+    if (pl && pl !== "en" && CODES.indexOf(pl) !== -1) return pl;
     var raw = (navigator.language || "en").toLowerCase();
     if (CODES.indexOf(raw) !== -1) return raw;
     var head = raw.split(/[-_]/)[0];
@@ -137,8 +152,20 @@
 
   var info = detect();
 
+  // Home link. On a language mirror (/kado/ja/) "../" would land on /kado/, not the
+  // site root — so go up twice and back into the same language (/ja/).
+  function homeHref() {
+    var parts = location.pathname.split("/").filter(Boolean);
+    if (parts.length && parts[parts.length - 1].indexOf(".html") !== -1) parts.pop();
+    var last = parts[parts.length - 1];
+    if (parts.length >= 2 && CODES.indexOf(last) !== -1 && last !== "en") {
+      return "../../" + last + "/";
+    }
+    return "../";
+  }
+
   function crumbs(lang) {
-    var list = [{ label: HOME_LABEL, href: "../" }]; // PixelRyu (home)
+    var list = [{ label: HOME_LABEL, href: homeHref() }]; // PixelRyu (home)
     var appLabel = pick(APP_NAMES[info.app], lang);
     if (info.leaf) {
       list.push({ label: appLabel, href: "./" });        // app index

@@ -20,6 +20,13 @@ GAMES = ["kado", "hanko", "okaeri", "shizuku", "senko", "wagashi", "counterparts
          "liquid-glow-cosmic", "liquid-glow", "mole-whack"]
 TODAY = datetime.date.today().isoformat()
 
+# ゲーム以外のサイトセクション（2026-08 刷新で新設）。すべて12言語ページを持つ。
+# EN_ONLY_PAGES は「言語ミラーを持たないページ」用の枠で、現在は空
+# （press は 2026-08-14 に12言語化した）。ミラーの無いページをここへ入れないと、
+# page_group が存在しない /<slug>/ja/ を sitemap に載せて 404 になる。
+I18N_PAGES = ["games", "roblox", "support", "about", "press"]
+EN_ONLY_PAGES = []   # press は 2026-08-14 に12言語化して I18N_PAGES へ移した
+
 
 def existing_lastmods():
     out = {}
@@ -149,12 +156,13 @@ def url_block(loc, lastmod, priority, hreflang="", media=""):
     return "\n".join(parts)
 
 
-def page_group(orig, en_priority, slug=None):
-    """Emit en + 11 language <url> entries (hreflang on each); media on the en game index."""
+def page_group(orig, en_priority, slug=None, media=True):
+    """Emit en + 11 language <url> entries (hreflang on each); media on the en game index.
+    media=False は新設セクション用（og.png 等をゲーム扱いで拾わせない）。"""
     hl = hreflang_xml(orig)
     base = (slug + "/") if slug else ""
     blocks = [url_block(orig, lastmod_for(base + "index.html", orig), en_priority,
-                        hl, media_xml(slug) if slug else "")]
+                        hl, media_xml(slug) if (slug and media) else "")]
     for l in LANGS:
         if l == "en":
             continue
@@ -185,6 +193,13 @@ for slug in GAMES:
         loc = orig + sub
         if os.path.exists(os.path.join(ROOT, slug, sub)):
             out.append(url_block(loc, lastmod_for(slug + "/" + sub, loc), pri))
+
+# サイトセクション（/games/ /roblox/ /support/ /about/ は12言語、/press/ は英語のみ）
+for slug in I18N_PAGES:
+    out += page_group(SITE + slug + "/", "0.8", slug=slug, media=False)
+for slug, pri in EN_ONLY_PAGES:
+    loc = SITE + slug + "/"
+    out.append(url_block(loc, lastmod_for(slug + "/index.html", loc), pri))
 
 out.append("</urlset>")
 open(os.path.join(ROOT, "sitemap.xml"), "w", encoding="utf-8").write("\n".join(out) + "\n")
