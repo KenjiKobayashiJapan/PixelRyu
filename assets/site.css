@@ -862,6 +862,22 @@ img.pr-mascot-sm { max-width: 96px; }
 :root[data-theme="light"] .soon-cell > svg,
 :root[data-theme="light"] .soon-cell > img { filter: grayscale(1) brightness(.98); opacity: .45; }
 
+/* ---------- 15f. スマホだけ操作の行を中央揃え ----------
+   2026-08-14 ユーザー依頼。狭い画面では行幅と要素幅が近く、左寄せだと右に半端な
+   余白が残って落ち着かない。ボタン列・ストアバッジ列・SNSアイコン列だけ中央へ寄せる。
+   ★PC の意匠は変えない指示なので、**この @media の外には絶対に書かない**。
+   760px はヘッダーがバーガーに切り替わる幅＝「スマホ版」の境界と同じにしてある。 */
+@media (max-width: 760px) {
+  .pr-hero-cta { justify-content: center; }
+  .store-badges, .hero-badges { justify-content: center !important; }
+  /* 本文の Follow 節だけ。フッター内のアイコンは他の列（サイト内/ゲーム/言語）が
+     左寄せなので、そこだけ中央にすると不揃いになる → .container 配下に限定する。 */
+  .container .social { justify-content: center; }
+  /* .pr-btn は inline-flex なので、中央寄せは幅を内容に合わせてから auto マージンで行う */
+  .pr-teaser .pr-btn,
+  .pr-news .pr-btn { display: flex; width: fit-content; margin-left: auto; margin-right: auto; }
+}
+
 /* ---------- 16. モーション削減 ---------- */
 @media (prefers-reduced-motion: reduce) {
   html { scroll-behavior: auto; }

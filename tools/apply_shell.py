@@ -385,9 +385,6 @@ def apply_to(path: str, rel: str, lang_base: str, ver: str, is_home: bool,
     # 2) ヘッダーを <body> 直後へ
     html = replace_or_insert(html, H_START, H_END, header_html(rel), body_open_tag(html), where="after")
 
-    # 2.5) 本文に Follow 節が無いページ（トップ・新設セクション）へ追加
-    html = ensure_follow(html)
-
     # 3) フッター + site.js を </body> 直前へ
     foot = footer_html(rel, lang_base)
     # defer は記述順に実行されるので、辞書 → site.js の順で確実に読める。
@@ -396,6 +393,13 @@ def apply_to(path: str, rel: str, lang_base: str, ver: str, is_home: bool,
           f'<script src="{rel}assets/site.js?v={ver}" defer></script>\n{J_END}')
     html = replace_or_insert(html, F_START, F_END, foot, "</body>", where="before")
     html = replace_or_insert(html, J_START, J_END, js, "</body>", where="before")
+
+    # 3.5) 本文に Follow 節が無いページ（トップ・新設セクション）へ追加。
+    #      ★必ずフッター挿入の **後** に呼ぶこと。ensure_follow は挿入位置の基準に
+    #        フッターのマーカーを使うので、先に呼ぶと gen_pages.py で作り直した直後の
+    #        ページ（マーカーがまだ無い）では黙って何もせず、Follow 節が2回目の実行まで
+    #        入らない。実際 /games/ /roblox/ /support/ /about/ /press/ が本番でそうなっていた。
+    html = ensure_follow(html)
 
     # 4) ランドマーク（skip-link の着地点）
     if is_home:
