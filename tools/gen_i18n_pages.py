@@ -206,8 +206,24 @@ def absolutize(src, orig, L):
         if re.match(r'(https?:)?//|^#|^mailto:', url):
             return m.group(0)
         return pre + urljoin(orig, url) + post
+
+    def srcset(m):
+        """Keep responsive image candidates relative to each generated mirror."""
+        candidates = []
+        for candidate in m.group(2).split(","):
+            parts = candidate.strip().split()
+            if not parts:
+                continue
+            url = parts[0]
+            if (not re.match(r'(https?:)?//|^data:', url)
+                    and url.split("?")[0].lower().endswith(ASSET_EXT)):
+                url = "../" + url
+            candidates.append(" ".join([url] + parts[1:]))
+        return m.group(1) + ", ".join(candidates) + m.group(3)
+
     src = re.sub(r'(<a [^>]*?\bhref=")([^"]*)(")(?=[^>]*\bdata-pr-lang=")', lang_link, src)
-    return re.sub(r'(\b(?:href|src)=")([^"]+)(")', repl, src)
+    src = re.sub(r'(\b(?:href|src)=")([^"]+)(")', repl, src)
+    return re.sub(r'(\b(?:srcset|imagesrcset)=")([^"]+)(")', srcset, src)
 
 
 def rewire_switcher(src, orig, force_lang=None):
